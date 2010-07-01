@@ -3,21 +3,16 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.0.beta4'
 gem 'pg'
 gem 'unicorn'
+gem 'haml'
+gem 'mongoid'
+# gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :development do
+  gem 'rails3-generators'
+  gem 'ruby-debug19'
+end
 
-# To use debugger
-# gem 'ruby-debug'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri', '1.4.1'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for certain environments:
-# gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end
+group :test do
+  gem 'shoulda'
+  gem 'factory_girl'
+end
