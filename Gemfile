@@ -14,6 +14,7 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails', '>= 2.0.0.beta.15'
   gem 'shoulda'
   gem 'factory_girl'
 end
