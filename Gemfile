@@ -9,8 +9,8 @@ gem "bson_ext", "1.0.1"
 # gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 group :development do
-  gem 'rails3-generators'
-  gem 'ruby-debug19'
+  gem 'rails3-generators', :path => "~/dev/rails3-generators"
+  gem 'ruby-debug'
 end
 
 group :test do
