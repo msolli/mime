@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+require 'rails/generators'
+Rails::Generators.fallbacks[:shoulda] = :test_unit
+
 module Ableksikon
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -46,6 +49,3 @@ module Ableksikon
     config.filter_parameters += [:password]
   end
 end
-
-require 'rails/generators'
-Rails::Generators.fallbacks[:shoulda] = :test_unit

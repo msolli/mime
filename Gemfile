@@ -4,7 +4,8 @@ gem 'rails', '3.0.0.beta4'
 gem 'pg'
 gem 'unicorn'
 gem 'haml'
-gem 'mongoid'
+gem "mongoid", ">= 2.0.0.beta9"
+gem "bson_ext", "1.0.1"
 # gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 group :development do
