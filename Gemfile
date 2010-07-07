@@ -9,12 +9,19 @@ gem "bson_ext", "1.0.1"
 # gem "formtastic", :git => "git://github.com/justinfrench/formtastic.git", :branch => "rails3"
 
 group :development do
-  gem 'rails3-generators', :path => "~/dev/rails3-generators"
+  gem 'rails3-generators'
   gem 'ruby-debug'
 end
 
 group :test do
-  gem 'rspec-rails', '>= 2.0.0.beta.15'
+  # http://github.com/aslakhellesoy/cucumber-rails
+  #gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails', '>= 0.3.2'
+  #gem 'spork'
+  #gem 'launchy'
+
+  gem 'rspec-rails', '>= 2.0.0.beta.16'
   gem 'shoulda'
   gem 'factory_girl'
 end
