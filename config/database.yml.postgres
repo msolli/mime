@@ -15,7 +15,7 @@ development:
   # The server defaults to notice.
   #min_messages: warning
 
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: ableksikon_test
@@ -30,3 +30,6 @@ production:
   pool: 5
   username: ableksikon
   password:
+
+cucumber:
+  <<: *test
