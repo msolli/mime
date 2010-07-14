@@ -8,8 +8,12 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /the home\s?page/
+    when /forsiden/
       '/'
+    when /ny artikkel-siden/
+      new_article_path
+    when /artikkelvisning for "([^"]*)"$/
+      article_path Article.where(:headword => $1).first
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

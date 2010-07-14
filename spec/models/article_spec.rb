@@ -14,11 +14,5 @@ describe Article do
     @article.should_not be_valid
   end
 
-  it "is not valid without text" do
-    @article.text = nil
-    @article.should_not be_valid
-  end
-
   it { should validate_presence_of(:headword) }
-  it { should validate_presence_of(:text) }
 end
