@@ -186,7 +186,7 @@ specs:
     version: 1.0.0
 - unicorn: 
     version: 1.1.2
-hash: 911aab557fde81d8ee5df78c480447bd753e6b46
+hash: 0cc9c017368f003a282f2a24b28e81a1e135ea7c
 sources: 
 - Git: 
     uri: git://github.com/justinfrench/formtastic.git
