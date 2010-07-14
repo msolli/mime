@@ -8,11 +8,11 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: ableksikon_development
+  database: mime_development
 
 test:
   <<: *defaults
-  database: ableksikon_test
+  database: mime_test
 
 # set these environment variables on your prod server
 production:
