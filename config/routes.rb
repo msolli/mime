@@ -1,4 +1,4 @@
-Mime::Application.routes.draw do |map|
+Mime::Application.routes.draw do
   resources :articles, :only => [:new, :create, :show]
 
   # The priority is based upon order of creation:

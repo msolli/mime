@@ -8,6 +8,6 @@ Egenskap: Artikler
   Scenario: opprette ny artikkel
     Gitt at jeg står på ny artikkel-siden
     Og jeg fyller inn "Oppslagsord" med "Foo-tittel"
-    Når jeg trykker "Lagre"
+    Når jeg trykker "Opprett"
     Så skal jeg komme til artikkelvisning for "Foo-tittel"
     Og jeg skal se "Foo-tittel"

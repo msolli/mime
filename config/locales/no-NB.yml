@@ -1,0 +1,11 @@
+no-NB:
+  errors:
+    messages:
+      blank: kan ikke være tom
+  formtastic:
+    actions:
+      create: Opprett
+      update: Lagre endringer
+    labels:
+      article:
+        headword: "Oppslagsord"
