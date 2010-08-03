@@ -26,4 +26,5 @@ group :test do
   gem 'factory_girl'
 
   gem 'syntax'
+  gem 'rcov'
 end

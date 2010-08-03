@@ -18,18 +18,24 @@ begin
       t.binary = vendored_cucumber_bin # If nil, the gem's binary is used.
       t.fork = true # You may get faster startup if you set this to false
       t.profile = 'default'
+      t.rcov = true
+      t.rcov_opts << %[--exclude features]
     end
 
     Cucumber::Rake::Task.new({:wip => 'db:test:prepare'}, 'Run features that are being worked on') do |t|
       t.binary = vendored_cucumber_bin
       t.fork = true # You may get faster startup if you set this to false
       t.profile = 'wip'
+      t.rcov = true
+      t.rcov_opts << %[--exclude features]
     end
 
     Cucumber::Rake::Task.new({:rerun => 'db:test:prepare'}, 'Record failing features and run only them if any exist') do |t|
       t.binary = vendored_cucumber_bin
       t.fork = true # You may get faster startup if you set this to false
       t.profile = 'rerun'
+      t.rcov = true
+      t.rcov_opts << %[--exclude features]
     end
 
     desc 'Run all features'
