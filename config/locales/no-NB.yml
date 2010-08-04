@@ -9,3 +9,4 @@ no-NB:
     labels:
       article:
         headword: "Oppslagsord"
+        text: "Artikkeltekst"
