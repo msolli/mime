@@ -14,6 +14,8 @@ module NavigationHelpers
       new_article_path
     when /artikkelvisning for "([^"]*)"$/
       article_path Article.where(:headword => $1).first
+    when /artikkelredigering for "([^"]*)"$/
+      edit_article_path Article.where(:headword => $1).first
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

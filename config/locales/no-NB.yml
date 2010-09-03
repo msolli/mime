@@ -2,11 +2,14 @@ no-NB:
   errors:
     messages:
       blank: kan ikke være tom
+      invalid: er ugyldig
   formtastic:
     actions:
       create: Opprett
       update: Lagre endringer
     labels:
       article:
-        headword: "Oppslagsord"
-        text: "Artikkeltekst"
+        headword: Oppslagsord
+        text: Artikkeltekst
+        lng: Lengdegrad
+        lat: Breddegrad

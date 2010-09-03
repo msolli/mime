@@ -1,27 +1,32 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~>3.0.0.rc'
+gem 'rails', '~>3.0'
 gem 'pg'
 gem 'unicorn'
 gem 'haml'
-gem 'mongoid', '~>2.0.0.beta9'
-gem 'bson_ext', '~>1.0.4'
-gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git', :branch => 'rails3'
+gem 'mongoid', :git => 'http://github.com/mongoid/mongoid.git'
+gem 'bson', '~>1.0'
+gem 'bson_ext', '1.0.4'
+gem 'mongo', '~>1.0'
+gem 'formtastic', :git => 'http://github.com/justinfrench/formtastic.git', :branch => 'rails3'
+gem 'nokogiri'
 
 group :development do
   gem 'rails3-generators'
   gem 'ruby-debug'
+  gem 'wirble'
+  gem 'hirb'
 end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'cucumber-rails', '~>0.3.2'
+  gem 'cucumber-rails', '~>0.3'
   #gem 'spork'
   #gem 'launchy'
 
-  gem 'rspec-rails', '~>2.0.0.beta.16'
+  gem 'rspec-rails', '~>2.0.0.beta'
   gem 'shoulda'
   gem 'factory_girl'
 

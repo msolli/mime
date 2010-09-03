@@ -1,0 +1,7 @@
+= semantic_form_for @article do |f|
+  = f.input :headword
+  = f.input :text, :as => :text
+  = f.input :lng
+  = f.input :lat
+  = f.buttons do
+    = f.commit_button

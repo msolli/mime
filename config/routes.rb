@@ -1,5 +1,5 @@
 Mime::Application.routes.draw do
-  resources :articles, :only => [:new, :create, :show]
+  resources :articles, :only => [:new, :create, :show, :edit]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
