@@ -6,7 +6,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     if @article.save
+      flash[:notice] = t('articles.saved')
       redirect_to @article
+    else
+      flash[:error] = t('articles.errors.save')
+      render :action => "new"
     end
   end
 

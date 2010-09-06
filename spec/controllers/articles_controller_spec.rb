@@ -15,15 +15,27 @@ describe ArticlesController do
   end
   
   describe "#create" do
-    before :each do
-      post :create, :article => { :headword => "foo", :text => "bar" }
+    context "with a valid article" do
+      before :each do
+        post :create, :article => { :headword => "foo", :text => "bar" }
+      end
+      it "creates a new article" do
+        assigns(:article).should_not be_nil
+        assigns(:article).headword.should == "foo"
+      end
+      it "redirects to the article page" do
+        response.should redirect_to article_path(assigns(:article))
+      end
+      it "sets a flash[:notice] message" do
+        flash[:notice].should_not be_nil
+      end
     end
-    it "creates a new article" do
-      assigns(:article).should_not be_nil
-      assigns(:article).headword.should == "foo"
-    end
-    it "redirects to the article page" do
-      response.should redirect_to article_path(assigns(:article))
+
+    context "with an article with errors" do
+      it "renders the #new template" do
+        post :create, :article => { :headword => "foo", :text => "bar", :lng => "60", :lat => "10" }
+        response.should render_template(:new)
+      end
     end
   end
   
