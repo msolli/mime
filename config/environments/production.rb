@@ -1,4 +1,7 @@
 Mime::Application.configure do
+  # This must be required here (and not in Gemfile) for Rails.root to be set, which it needs.
+  require 'hassle'
+
   # Settings specified here will take precedence over those in config/environment.rb
 
   # The production environment is meant for finished, "live" apps.

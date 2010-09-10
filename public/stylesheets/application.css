@@ -1,0 +1,15 @@
+body {
+  font: normal 100% Helvetica, Arial, sans-serif;
+  background: #efeeeb; }
+
+#messages {
+  width: 100%; }
+
+#main {
+  margin: auto;
+  padding: 1em;
+  max-width: 61.75em; }
+  #main #content {
+    outline: 1px solid red; }
+  #main #info {
+    outline: 1px solid green; }

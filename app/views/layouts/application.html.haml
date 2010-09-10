@@ -2,15 +2,37 @@
 %html
   %head
     %title Mime
-    = stylesheet_link_tag :all
+
+    = stylesheet_link_tag "http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css"
+    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "formtastic", "formtastic_changes"
+
+    /[if lt IE 9]
+      %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
+      %script{:src => "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"}
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"}
+    %script{:src => "http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js"}
+    %script{:src => "http://www.google.com/jsapi?key=ABQIAAAA5Dv5TxV8lPXuM3G_ZxUKdBRzYoIzFCn6WH8ww2gK3BwzWZF03hTYnQj9-M47JSP4lbSEWBeHiVcSQQ"}
     = javascript_include_tag
+
     = csrf_meta_tag
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "initial-scale=1.0, width=device-width, maximum-scale=1.0"}
 
   %body
+    %header
+      %h1 Mime
+      %nav<
+        %ul
+          %li Forside
 
-    - if flash[:notice]
-      #notice= flash[:notice]
-    - if flash[:error]
-      #error= flash[:error]
+    %section#messages
+      - if flash[:notice]
+        #notice= flash[:notice]
+      - if flash[:error]
+        #error= flash[:error]
 
-    = yield
+    %section#main
+      %section#content
+        = yield
+      %aside#info
