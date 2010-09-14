@@ -3,8 +3,11 @@ class Article
 
   field :headword
   field :text
+  field :years, :type => Array
+  field :end_year, :type => Date
   field :location, :type => Array
   index [[ :location, Mongo::GEO2D ]]
+  key :headword
 
   validates_presence_of :headword, :text
   validates :location, :location => true

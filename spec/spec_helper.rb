@@ -20,4 +20,16 @@ RSpec.configure do |config|
 
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
   # config.use_transactional_fixtures = false
+
+  # Mongoid (http://mongoid.org/docs/integration/)
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.orm = "mongoid"
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.clean
+  end
+
+  config.include Mongoid::Matchers
 end

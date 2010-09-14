@@ -5,7 +5,7 @@ gem 'pg'
 gem 'unicorn'
 gem 'hassle', :require => false
 gem 'haml'
-gem 'mongoid', :git => 'http://github.com/mongoid/mongoid.git'
+gem 'mongoid', ">= 2.0.0.beta.17"
 gem 'bson', '~> 1.0'
 gem 'bson_ext', '1.0.4'
 gem 'mongo', '~> 1.0'
@@ -27,6 +27,7 @@ group :test do
   #gem 'spork'
   #gem 'launchy'
 
+  gem 'mongoid-rspec'
   gem 'rspec-rails', '~> 2.0.0.beta'
   gem 'shoulda'
   gem 'factory_girl'

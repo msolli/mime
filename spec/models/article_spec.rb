@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe Article do
+
+  it { should have_fields(:headword, :text).of_type(String) }
+  it { should have_field(:location).of_type(Array) }
+  it { should have_field(:years).of_type(Array) }
+  it { should have_field(:end_year).of_type(Date) }
+
   it "is valid with valid attributes" do
     article = Article.new(:headword => 'foo', :text => 'bar')
     article.should be_valid
@@ -8,6 +14,11 @@ describe Article do
 
   it { should validate_presence_of(:headword) }
   it { should validate_presence_of(:text) }
+
+  it "has headword as key (id)" do
+    article = Article.new(:headword => 'Foo', :text => 'bar')
+    article.id.should == 'Foo'.downcase
+  end
 
   context "with location" do
     before(:each) do
