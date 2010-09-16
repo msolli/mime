@@ -11,6 +11,7 @@ gem 'bson_ext', '1.0.4'
 gem 'mongo', '~> 1.0'
 gem 'formtastic', '~> 1.1'
 gem 'nokogiri'
+gem 'sax-machine'
 
 group :development do
   gem 'rails3-generators'

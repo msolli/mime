@@ -130,6 +130,8 @@ GEM
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
     rubyzip (0.9.4)
+    sax-machine (0.0.15)
+      nokogiri (> 0.0.0)
     selenium-webdriver (0.0.28)
       ffi (>= 0.6.1)
       json_pure
@@ -171,6 +173,7 @@ DEPENDENCIES
   rcov
   rspec-rails (~> 2.0.0.beta)
   ruby-debug
+  sax-machine
   shoulda
   syntax
   unicorn
