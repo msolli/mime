@@ -33,3 +33,7 @@ RSpec.configure do |config|
 
   config.include Mongoid::Matchers
 end
+
+def logger
+  ::Rails.logger
+end

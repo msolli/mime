@@ -3,6 +3,7 @@ class Article
 
   field :headword
   field :text
+  field :definition
   field :years, :type => Array
   field :end_year, :type => Date
   field :ambiguous, :type => Boolean

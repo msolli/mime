@@ -14,9 +14,9 @@ describe "Import::ArticleXml" do
               <field id="headword">Headword</field>
               <field id="clarification">Clarification **</field>
             </metadata>
-            <html><head><meta http-equiv="content-type" content="text/html; charset=utf-8" /></head><body><![CDATA[
-            <p>tidligere husmannsplass i på Ostøya i Bærum, lå under <a class="crossref" href="sl14012479">Oust</a>.</p>
-            ]]></body></html>
+            <html><head><meta http-equiv="content-type" content="text/html; charset=utf-8" /></head><body>
+            <p>tidligere husmannsplass på Ostøya i Bærum, lå under <a class="crossref" href="sl14012479">Oust</a>.</p>
+            </body></html>
           </article>
           <article>
           </article>
@@ -42,10 +42,13 @@ describe "Import::ArticleXml" do
 
       @import.articles.first.epoch_start.should == "1910"
       @import.articles.first.epoch_end.should == "1940"
+
+      @import.articles.first.clarification == "Clarification **"
     end
 
     it "has body text" do
-      @import.articles.first.text.should =~ /^<p>tidligere husmannsplass/
+      @import.articles.first.text.should =~ /^<p>tidligere husmannsplass på Ostøya/
+      @import.articles.first.text.should =~ /under <a class="crossref" href="sl14012479">Oust<\/a>.<\/p>$/
     end
 
     it "has attributes hash" do
@@ -58,8 +61,9 @@ describe "Import::Main" do
   before :each do
     xml = <<-EOXML
       <lex-import>
-        <article id_def="gård i Asker"><metadata><field id="headword">Foo</field></metadata></article>
-        <article id_def="gård i Bærum"><metadata><field id="headword">Foo</field></metadata></article>
+        <article id_def="gård i Asker"><metadata><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
+        <article id_def="gård i Bærum"><metadata><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
+        <article id_def="gård i Bærum"><metadata><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
       </lex-import>
     EOXML
     @doc = Nokogiri::XML(xml) do |config|
@@ -79,12 +83,15 @@ describe "Import::Main" do
     end
 
     it "saves articles" do
-      Article.all.count.should == 2
+      Article.all.count.should == 4
     end
 
     it "checks for duplicates" do
+      Article.where(:headword => 'Foo').first.text.should be_blank
       Article.where(:headword => 'Foo').first.ambiguous.should be_true
+      Article.where(:headword => 'Foo (gård i Asker)').first.ambiguous.should be_true
       Article.where(:headword => 'Foo (gård i Bærum)').first.ambiguous.should be_true
+      Article.where(:headword => 'Foo (gård i Bærum - 2)').first.ambiguous.should be_true
     end
   end
 end

@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Article do
 
   it { should have_fields(:headword, :text).of_type(String) }
+  it { should have_field(:definition).of_type(String) }
   it { should have_field(:location).of_type(Array) }
   it { should have_field(:years).of_type(Array) }
   it { should have_field(:end_year).of_type(Date) }

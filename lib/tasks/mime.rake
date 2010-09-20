@@ -1,7 +1,7 @@
 namespace :mime do
   require 'import'
   desc "Import av XML-data fra Kunnskapsforlaget"
-  task :import => "mime:xml:read" do
+  task :import => [:environment, "mime:xml:read"] do
     Import::Main.run(@doc)
   end
 
