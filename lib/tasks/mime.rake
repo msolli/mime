@@ -1,19 +1,11 @@
 namespace :mime do
   require 'import'
   desc "Import av XML-data fra Kunnskapsforlaget"
-  task :import => "mime:xml:preprocess" do
-    import = Import::Article.parse("#{Rails.root}/tmp/import/abl-p.xml")
-    puts import.articles.size
+  task :import => "mime:xml:read" do
+    Import::Main.run(@doc)
   end
 
   namespace :xml do
-    task :preprocess => :read do
-      @doc.xpath('//body').each do |body|
-        body.inner_html = Nokogiri::XML::CDATA.new(@doc, body.inner_html)
-      end
-      File.open("#{Rails.root}/tmp/import/abl-p.xml", 'w') { |f| f.write(@doc.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::NO_DECLARATION)) }
-    end
-
     task :a => :read do
       @doc.xpath('//a').each do |node|
         puts node
@@ -47,6 +39,12 @@ namespace :mime do
     task :field_clarification => :read do
       @doc.xpath('//field[@id="clarification"]').each do |node|
         puts node.content
+      end
+    end
+
+    task :field_headword => :read do
+      @doc.xpath('//field[@id="headword"]').each do |node|
+        puts node.to_xml.unpack("U*").collect {|s| (s > 127 ? "&##{s};" : s.chr) }.join("")
       end
     end
 

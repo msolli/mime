@@ -6,23 +6,26 @@ describe Article do
   it { should have_field(:location).of_type(Array) }
   it { should have_field(:years).of_type(Array) }
   it { should have_field(:end_year).of_type(Date) }
+  it { should have_field(:ambiguous).of_type(Boolean) }
+
+  it { should validate_presence_of(:headword) }
+  it { should validate_uniqueness_of(:headword) }
 
   it "is valid with valid attributes" do
-    article = Article.new(:headword => 'foo', :text => 'bar')
+    article = Article.new(:headword => 'foo')
     article.should be_valid
   end
 
-  it { should validate_presence_of(:headword) }
-  it { should validate_presence_of(:text) }
-
-  it "has headword as key (id)" do
-    article = Article.new(:headword => 'Foo', :text => 'bar')
-    article.id.should == 'Foo'.downcase
+  it "validates uniqueness of :headword" do
+    Article.create!(:headword => 'foo')
+    lambda {
+      Article.create!(:headword => 'foo')
+    }.should raise_error(Mongoid::Errors::Validations)
   end
 
   context "with location" do
     before(:each) do
-      @article = Article.new(:headword => 'foo', :text => 'bar')
+      @article = Article.new(:headword => 'foo')
     end
 
     it "has location when it has lng and lat" do

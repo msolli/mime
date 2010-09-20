@@ -5,11 +5,12 @@ class Article
   field :text
   field :years, :type => Array
   field :end_year, :type => Date
+  field :ambiguous, :type => Boolean
   field :location, :type => Array
   index [[ :location, Mongo::GEO2D ]]
-  key :headword
 
-  validates_presence_of :headword, :text
+  validates_presence_of :headword
+  validates_uniqueness_of :headword
   validates :location, :location => true
 
   def lat

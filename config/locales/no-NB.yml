@@ -3,6 +3,9 @@ no-NB:
     messages:
       blank: kan ikke være tom
       invalid: er ugyldig
+  support:
+    array:
+      two_words_connector: ' og '
   articles:
     saved: Artikkelen er lagret
     errors:
