@@ -48,6 +48,28 @@ namespace :mime do
       end
     end
 
+    task :field_author => :read do
+      @doc.xpath('//field[@id="author"]').each do |node|
+        puts "'#{node.content}'"
+      end
+    end
+
+    task :field_subject => :read do
+      @doc.xpath('//field[@id="subject"]').each do |node|
+        puts node.content
+      end
+    end
+
+    task :field_subject_summary => :read do
+      subjects = {}
+      @doc.xpath('//field[@id="subject"]').each do |node|
+        subjects[node.content] = (subjects[node.content].nil? ? 1 : subjects[node.content] + 1)
+      end
+      subjects.sort {|a,b| a[1]<=>b[1]}.each do |a|
+        puts "#{a[0]}: #{a[1]}"
+      end
+    end
+
     task :read do
       @doc = Nokogiri::XML(File.open("#{Rails.root}/tmp/import/abl.xml")) do |config|
         config.strict.noent

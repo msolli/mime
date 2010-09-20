@@ -6,6 +6,8 @@ module Import
     attr_reader :ambiguous
 
     def initialize(node)
+      # TODO: subject
+      # TODO: author  obs: kan ha flere
       if headword_node = node.at_xpath('metadata/field[@id="headword"]')
         @headword = headword_node.content
       end
