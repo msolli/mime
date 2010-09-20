@@ -1,2 +1,2 @@
 require 'import/main'
-require 'import/article'
+require 'import/article_xml'
