@@ -24,7 +24,7 @@ module Import
         import.articles.map do |article|
           article.save!
         end
-        puts "Opprettet #{Article.count} artikler, hvorav #{Article.where(:ambiguous => true, :text => nil).count} flertydighetsartikler."
+        Rails.logger.debug("Opprettet #{Article.count} artikler, hvorav #{Article.where(:ambiguous => true, :text => nil).count} flertydighetsartikler.")
       end
     end
   end
