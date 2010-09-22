@@ -15,6 +15,7 @@ gem 'sax-machine'
 
 group :development do
   gem 'rails3-generators'
+  gem 'haml-rails'
   gem 'ruby-debug'
   gem 'wirble'
   gem 'hirb'

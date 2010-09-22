@@ -1,5 +1,9 @@
 Mime::Application.routes.draw do
+  get "home/index"
+
   resources :articles, :only => [:new, :create, :show, :edit]
+
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

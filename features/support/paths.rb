@@ -9,7 +9,7 @@ module NavigationHelpers
     case page_name
 
     when /forsiden/
-      '/'
+      root_path
     when /ny artikkel-siden/
       new_article_path
     when /artikkelvisning for "([^"]*)"$/

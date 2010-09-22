@@ -64,6 +64,9 @@ GEM
     gherkin (2.1.5)
       trollop (~> 1.16.2)
     haml (3.0.18)
+    haml-rails (0.2)
+      haml (~> 3.0)
+      rails (~> 3.0.0.rc)
     hassle (0.0.1)
       haml
       rack
@@ -161,6 +164,7 @@ DEPENDENCIES
   factory_girl
   formtastic (~> 1.1)
   haml
+  haml-rails
   hassle
   hirb
   mongo (~> 1.0)
