@@ -1,20 +1,76 @@
-body {
-	font: normal 100% Helvetica, Arial, sans-serif;
-	background: #efeeeb;
+article, aside, footer, header, hgroup, nav, section {
+	margin: 0;
 }
 
-#messages {
-	width: 100%;
+$background: #bfbfbf;
+$container-width: #{(1060/16)}em;
+$content-width: #{((530+50)/16)}em;
+$info-width: #{(430/16)}em;
+$main-padding-left: 50px;
+
+html, body {
+  background: $background;
+}
+
+body {
+	.container {
+		position: relative;
+		margin: auto;
+		max-width: $container-width;
+		-moz-box-shadow: #777 0px 2px 10px;
+		box-shadow: #777 0px 2px 10px;
+		behavior: url(PIE.htc); -webkit-box-shadow: #777 0px 2px 10px;
+	}
+}
+
+header {
+	background: #fff;
+
+	h1 {
+		padding-left: $main-padding-left;
+		font: 1.5em Georgia;
+	}
+	nav {
+
+	  ul {
+			padding-left: $main-padding-left;
+			border-top: 3px solid #efeeeb;
+			border-bottom: 4px solid #efeeeb;
+			li {
+				display: inline;
+				margin-right: 0.5em;
+			}
+		}
+	}
 }
 
 #main {
-	margin: auto;
-	padding: 1em;
-	max-width: 61.75em;
+	background: #efefef;
+	
+
 	#content {
-		outline: 1px solid red;
+		article {
+			header {
+				padding-left: $main-padding-left;
+				background: #45494f;
+				h2 {
+					font-size: 1.8em;
+					padding-top: 0.5em;
+					color: white;
+				}
+			}
+		}
 	}
-	#info {
-		outline: 1px solid green;
+	footer {
+		clear: both;
+		padding-left: $main-padding-left;
+	}
+
+	&:after {
+		clear: both;
+		content: ".";
+		display: block;
+		height: 0;
+		visibility: hidden;
 	}
 }

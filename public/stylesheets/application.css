@@ -1,15 +1,49 @@
-body {
-  font: normal 100% Helvetica, Arial, sans-serif;
-  background: #efeeeb; }
+article, aside, footer, header, hgroup, nav, section {
+  margin: 0; }
 
-#messages {
-  width: 100%; }
+html, body {
+  background: #bfbfbf; }
+
+body .container {
+  position: relative;
+  margin: auto;
+  max-width: 66.25em;
+  -moz-box-shadow: #777 0px 2px 10px;
+  box-shadow: #777 0px 2px 10px;
+  behavior: url(PIE.htc);
+  -webkit-box-shadow: #777 0px 2px 10px; }
+
+header {
+  background: #fff; }
+  header h1 {
+    padding-left: 50px;
+    font: 1.5em Georgia; }
+  header nav ul {
+    padding-left: 50px;
+    border-top: 3px solid #efeeeb;
+    border-bottom: 4px solid #efeeeb; }
+    header nav ul li {
+      display: inline;
+      margin-right: 0.5em; }
 
 #main {
-  margin: auto;
-  padding: 1em;
-  max-width: 61.75em; }
-  #main #content {
-    outline: 1px solid red; }
-  #main #info {
-    outline: 1px solid green; }
+  background: #efefef; }
+  #main #content article header {
+    padding-left: 50px;
+    background: #45494f; }
+    #main #content article header h2 {
+      font-size: 1.8em;
+      padding-top: 0.5em;
+      color: white; }
+  #main footer {
+    clear: both;
+    padding-left: 50px; }
+  #main:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden; }
+
+body {
+  font: 100%/1.4 Verdana, helvetica, sans-serif; }
