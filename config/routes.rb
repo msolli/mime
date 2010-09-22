@@ -1,6 +1,4 @@
 Mime::Application.routes.draw do
-  get "home/index"
-
   resources :articles, :only => [:new, :create, :show, :edit]
 
   root :to => 'home#index'

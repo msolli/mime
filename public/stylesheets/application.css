@@ -16,15 +16,20 @@ body .container {
 header {
   background: #fff; }
   header h1 {
-    padding-left: 50px;
-    font: 1.5em Georgia; }
-  header nav ul {
-    padding-left: 50px;
+    padding: 1em 0 0.3em 50px; }
+  header nav ul.links {
+    padding: 0.5em 50px;
     border-top: 3px solid #efeeeb;
     border-bottom: 4px solid #efeeeb; }
-    header nav ul li {
+    header nav ul.links ul.letters {
+      padding: 0;
+      border: none;
+      display: inline; }
+      header nav ul.links ul.letters li {
+        margin-right: 0.5em; }
+    header nav ul.links li {
       display: inline;
-      margin-right: 0.5em; }
+      margin-right: 1em; }
 
 #main {
   background: #efefef; }
@@ -32,12 +37,17 @@ header {
     padding-left: 50px;
     background: #45494f; }
     #main #content article header h2 {
-      font-size: 1.8em;
       padding-top: 0.5em;
-      color: white; }
+      padding-bottom: 0.2em; }
+  #main #content article aside.info {
+    padding-left: 50px;
+    padding-top: 0.5em; }
+    #main #content article aside.info ul li {
+      display: inline;
+      margin-right: 0.5em; }
   #main footer {
-    clear: both;
-    padding-left: 50px; }
+    padding-left: 50px;
+    clear: both; }
   #main:after {
     clear: both;
     content: ".";
@@ -45,5 +55,38 @@ header {
     height: 0;
     visibility: hidden; }
 
+/*
+"ff-dagny-web-pro-1","ff-dagny-web-pro-2"
+"ff-meta-web-pro-1","ff-meta-web-pro-2"
+"ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2"
+"garamond-premier-pro-display-1","garamond-premier-pro-display-2"
+*/
 body {
-  font: 100%/1.4 Verdana, helvetica, sans-serif; }
+  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", Georgia, Utopia, "Palatino", "Palatino Linotype", serif;
+  font-size: 100%;
+  font-weight: 500; }
+
+header h1 {
+  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 187.5%;
+  font-weight: 700;
+  color: #494d52; }
+header nav {
+  font-weight: bold; }
+
+#content article header h2 {
+  font-size: 175%;
+  font-weight: 700;
+  color: white; }
+#content article aside.info {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 68.75%;
+  color: #7a7a7a; }
+
+a {
+  color: #30538f;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+  a:visited {
+    color: #233d69; }

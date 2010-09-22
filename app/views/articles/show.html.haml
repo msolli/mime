@@ -1,2 +1,5 @@
-%h2= @article.headword
-.articletext= @article.text
+%article
+  %header
+    %h2= @article.headword
+  = render :partial => 'info', :locals => { :article => @article }
+  .articletext= @article.text

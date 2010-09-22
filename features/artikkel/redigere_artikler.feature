@@ -17,4 +17,3 @@ Egenskap: Redigere artikler
       Og jeg fyller inn "Lengdegrad" med "10"
       Når jeg trykker "Lagre"
       Så skal jeg komme til artikkelvisning for "Foo"
-      Og jeg skal se et kart

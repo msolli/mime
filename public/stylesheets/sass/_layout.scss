@@ -2,12 +2,6 @@ article, aside, footer, header, hgroup, nav, section {
 	margin: 0;
 }
 
-$background: #bfbfbf;
-$container-width: #{(1060/16)}em;
-$content-width: #{((530+50)/16)}em;
-$info-width: #{(430/16)}em;
-$main-padding-left: 50px;
-
 html, body {
   background: $background;
 }
@@ -27,18 +21,25 @@ header {
 	background: #fff;
 
 	h1 {
-		padding-left: $main-padding-left;
-		font: 1.5em Georgia;
+		padding: 1em 0 0.3em $main-padding-left;
 	}
 	nav {
 
-	  ul {
-			padding-left: $main-padding-left;
+	  ul.links {
+			padding: 0.5em $main-padding-left;
 			border-top: 3px solid #efeeeb;
 			border-bottom: 4px solid #efeeeb;
+			ul.letters {
+				padding: 0;
+				border: none;
+				display: inline;
+				li {
+					margin-right: 0.5em;
+				}
+			}
 			li {
 				display: inline;
-				margin-right: 0.5em;
+				margin-right: 1em;
 			}
 		}
 	}
@@ -46,24 +47,32 @@ header {
 
 #main {
 	background: #efefef;
-	
 
 	#content {
 		article {
 			header {
-				padding-left: $main-padding-left;
+				@include padding-main;
 				background: #45494f;
 				h2 {
-					font-size: 1.8em;
 					padding-top: 0.5em;
-					color: white;
+					padding-bottom: 0.2em;
+				}
+			}
+			aside.info {
+				@include padding-main;
+				padding-top: 0.5em;
+				ul {
+					li {
+						display: inline;
+						margin-right: 0.5em;
+					}
 				}
 			}
 		}
 	}
 	footer {
+		@include padding-main;
 		clear: both;
-		padding-left: $main-padding-left;
 	}
 
 	&:after {

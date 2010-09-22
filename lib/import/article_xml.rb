@@ -8,6 +8,7 @@ module Import
     def initialize(node)
       # TODO: subject
       # TODO: author  obs: kan ha flere
+      # TODO: sette timestamp til da boka ble utgitt
       if headword_node = node.at_xpath('metadata/field[@id="headword"]')
         @headword = headword_node.content
       end

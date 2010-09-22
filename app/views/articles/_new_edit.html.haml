@@ -2,11 +2,7 @@
   %header
     %h2= @article.headword || t('articles.new')
     - unless @article.new_record?
-      %aside
-        %ul
-          %li> Bidragsytere
-          %li> Siste oppdatert
-
+      = render :partial => 'info', :locals => { :article => @article }
   = semantic_form_for @article do |f|
     = f.input :headword
     = f.input :text, :as => :text

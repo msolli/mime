@@ -1,0 +1,15 @@
+@mixin padding-main {
+	padding-left: $main-padding-left;
+}
+
+@mixin main-font {
+	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", Georgia, Utopia, "Palatino", "Palatino Linotype", serif;
+}
+
+@mixin heading-font {
+	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;
+}
+
+@mixin small-font {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
