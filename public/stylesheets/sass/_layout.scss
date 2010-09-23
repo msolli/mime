@@ -78,6 +78,23 @@ header {
 				@include padding-main;
 				max-width: $article-width;
 			}
+			aside.tags {
+				background: white;
+				border: 1px solid #ccc;
+				margin: 1em 65px 2em 35px;
+				padding: 1em 14px;
+				ul {
+					li {
+						display: inline;
+						&:after {
+							content: ", ";
+						}
+						&:last-of-type:after {
+							content: "";
+						}
+					}
+				}
+			}
 		}
 		.forside-tmp {
 			width: $grid-width;

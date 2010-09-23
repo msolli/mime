@@ -44,6 +44,17 @@ header {
 			font-size: $font20px;
 			font-weight: 700;
 		}
+		aside.tags {
+			color: $content-bg;
+			font-size: $font12px;
+			h3 {
+				@include heading-font;
+				text-transform: uppercase;
+			}
+			li {
+				@include small-font;
+			}
+		}
 	}
 }
 

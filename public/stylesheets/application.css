@@ -52,6 +52,17 @@ header {
       margin-bottom: 1em; }
       #main #content article .articletext p:first-child {
         margin-top: 1em; }
+  #main #content article aside.tags {
+    background: white;
+    border: 1px solid #ccc;
+    margin: 1em 65px 2em 35px;
+    padding: 1em 14px; }
+    #main #content article aside.tags ul li {
+      display: inline; }
+      #main #content article aside.tags ul li:after {
+        content: ", "; }
+      #main #content article aside.tags ul li:last-of-type:after {
+        content: ""; }
   #main #content .forside-tmp {
     width: 60em;
     margin: 0 65px 25px 35px;
@@ -110,6 +121,14 @@ header nav {
 #content article h2 {
   font-size: 125%;
   font-weight: 700; }
+#content article aside.tags {
+  color: #45494f;
+  font-size: 75%; }
+  #content article aside.tags h3 {
+    font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;
+    text-transform: uppercase; }
+  #content article aside.tags li {
+    font-family: Tahoma, Arial, Helvetica, sans-serif; }
 
 footer {
   font-family: Tahoma, Arial, Helvetica, sans-serif;
