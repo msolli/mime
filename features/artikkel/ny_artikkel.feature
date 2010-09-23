@@ -8,7 +8,7 @@ Egenskap: Ny artikkel
   Bakgrunn: Skrevet ny artikkel
     Gitt at jeg står på ny artikkel-siden
     Og jeg fyller inn "Oppslagsord" med "Xyzzy-tittel"
-    Og jeg fyller inn "Artikkeltekst" med "Xyzzy-artikkeltekst"
+    Og jeg fyller inn "article[text]" med "Xyzzy-artikkeltekst"
   
     Scenario: opprette ny artikkel
       Når jeg trykker "Opprett"

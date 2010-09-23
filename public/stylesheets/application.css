@@ -47,11 +47,16 @@ header {
       margin-right: 0.5em; }
   #main #content article .articletext {
     padding-left: 50px;
-    max-width: 33.125em; }
+    max-width: 33.125em;
+    padding-top: 1em; }
     #main #content article .articletext p {
       margin-bottom: 1em; }
-      #main #content article .articletext p:first-child {
-        margin-top: 1em; }
+  #main #content article form.formtastic.article {
+    padding-left: 50px;
+    max-width: 33.125em;
+    padding-top: 1em; }
+    #main #content article form.formtastic.article textarea {
+      width: 100%; }
   #main #content article aside.tags {
     background: white;
     border: 1px solid #ccc;

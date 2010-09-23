@@ -56,4 +56,13 @@ describe ArticlesController do
       assigns(:article).should_not be_nil
     end
   end
+
+  describe "#update" do
+    it "updates an article" do
+      a = Article.create!(:headword => "foo", :text => "bar")
+      put :update, :id => a.id, :article => { :text => "ny bar" }
+      response.should redirect_to(a)
+      assigns(:article).text.should == "ny bar"
+    end
+  end
 end

@@ -5,6 +5,7 @@ no-NB:
       invalid: er ugyldig
   articles:
     new: Ny artikkel
+    edit: Redigér
     contributors: Bidragsytere
     last_updated: "Sist oppdatert for %{time_ago} siden."
     version_log: Versjonslogg

@@ -69,14 +69,20 @@ header {
 				}
 			}
 			.articletext {
-				p {
-					margin-bottom: 1em;
-					&:first-child {
-						margin-top: 1em;
-					}
-				}
 				@include padding-main;
 				max-width: $article-width;
+				padding-top: 1em;
+				p {
+					margin-bottom: 1em;
+				}
+			}
+			form.formtastic.article {
+				@include padding-main;
+				max-width: $article-width;
+				padding-top: 1em;
+				textarea {
+					width: 100%;
+				}
 			}
 			aside.tags {
 				background: white;

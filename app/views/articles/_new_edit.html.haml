@@ -1,12 +1,12 @@
 %article
   %header
     %h1= @article.headword || t('articles.new')
-    - unless @article.new_record?
-      = render :partial => 'info', :locals => { :article => @article }
+  - unless @article.new_record?
+    = render :partial => 'info', :locals => { :article => @article }
   = semantic_form_for @article do |f|
-    = f.input :headword
-    = f.input :text, :as => :text
-    = f.input :lng
-    = f.input :lat
+    = f.inputs do
+      - if @article.new_record?
+        = f.input :headword
+      = f.input :text, :as => :text, :label => false, :input_html => { :cols => '80' }
     = f.buttons do
       = f.commit_button
