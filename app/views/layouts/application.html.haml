@@ -24,7 +24,7 @@
   %body
     .container
       %header
-        %h1 Leksikon for Asker og Bærum
+        %h1.title Leksikon for Asker og Bærum
         %nav
           = render :partial => "common/nav"
       %section#messages
@@ -40,3 +40,4 @@
           = yield
 
         %footer
+          %p Leksikonet er en tjeneste fra Budstikka.Media #{image_tag 'budstikka-logo-bw.png'}

@@ -1,6 +1,6 @@
 %article
   %header
-    %h2= @article.headword || t('articles.new')
+    %h1= @article.headword || t('articles.new')
     - unless @article.new_record?
       = render :partial => 'info', :locals => { :article => @article }
   = semantic_form_for @article do |f|

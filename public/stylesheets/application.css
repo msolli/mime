@@ -15,12 +15,12 @@ body .container {
 
 header {
   background: #fff; }
-  header h1 {
+  header h1.title {
     padding: 1em 0 0.3em 50px; }
   header nav ul.links {
     padding: 0.5em 50px;
-    border-top: 3px solid #efeeeb;
-    border-bottom: 4px solid #efeeeb; }
+    border-top: 2px solid #efeeeb;
+    border-bottom: 2px solid #efeeeb; }
     header nav ul.links ul.letters {
       padding: 0;
       border: none;
@@ -33,10 +33,10 @@ header {
 
 #main {
   background: #efefef; }
-  #main #content article header {
+  #main #content header {
     padding-left: 50px;
     background: #45494f; }
-    #main #content article header h2 {
+    #main #content header h1 {
       padding-top: 0.5em;
       padding-bottom: 0.2em; }
   #main #content article aside.info {
@@ -45,9 +45,34 @@ header {
     #main #content article aside.info ul li {
       display: inline;
       margin-right: 0.5em; }
+  #main #content article .articletext {
+    padding-left: 50px;
+    max-width: 33.125em; }
+    #main #content article .articletext p {
+      margin-bottom: 1em; }
+      #main #content article .articletext p:first-child {
+        margin-top: 1em; }
+  #main #content .forside-tmp {
+    width: 60em;
+    margin: 0 65px 25px 35px;
+    background: white; }
   #main footer {
     padding-left: 50px;
-    clear: both; }
+    clear: both;
+    border-top: 2px solid #45494f;
+    background: white;
+    height: 5em; }
+    #main footer p:first-child {
+      text-align: right;
+      position: relative;
+      margin: 2em 65px 0 0;
+      padding-right: 110px; }
+      #main footer p:first-child img {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: 22px;
+        margin-top: -11px; }
   #main:after {
     clear: both;
     content: ".";
@@ -66,7 +91,7 @@ body {
   font-size: 100%;
   font-weight: 500; }
 
-header h1 {
+header h1.title {
   font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;
   font-size: 187.5%;
   font-weight: 700;
@@ -74,14 +99,22 @@ header h1 {
 header nav {
   font-weight: bold; }
 
-#content article header h2 {
+#content header h1 {
   font-size: 175%;
   font-weight: 700;
   color: white; }
 #content article aside.info {
   font-family: Tahoma, Arial, Helvetica, sans-serif;
-  font-size: 68.75%;
+  font-size: 75%;
   color: #7a7a7a; }
+#content article h2 {
+  font-size: 125%;
+  font-weight: 700; }
+
+footer {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 68.75%;
+  color: #828589; }
 
 a {
   color: #30538f;

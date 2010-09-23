@@ -20,15 +20,15 @@ body {
 header {
 	background: #fff;
 
-	h1 {
+	h1.title {
 		padding: 1em 0 0.3em $main-padding-left;
 	}
 	nav {
 
 	  ul.links {
 			padding: 0.5em $main-padding-left;
-			border-top: 3px solid #efeeeb;
-			border-bottom: 4px solid #efeeeb;
+			border-top: 2px solid #efeeeb;
+			border-bottom: 2px solid #efeeeb;
 			ul.letters {
 				padding: 0;
 				border: none;
@@ -49,15 +49,15 @@ header {
 	background: #efefef;
 
 	#content {
-		article {
-			header {
-				@include padding-main;
-				background: #45494f;
-				h2 {
-					padding-top: 0.5em;
-					padding-bottom: 0.2em;
-				}
+		header {
+			@include padding-main;
+			background: $content-bg;
+			h1 {
+				padding-top: 0.5em;
+				padding-bottom: 0.2em;
 			}
+		}
+		article {
 			aside.info {
 				@include padding-main;
 				padding-top: 0.5em;
@@ -68,11 +68,42 @@ header {
 					}
 				}
 			}
+			.articletext {
+				p {
+					margin-bottom: 1em;
+					&:first-child {
+						margin-top: 1em;
+					}
+				}
+				@include padding-main;
+				max-width: $article-width;
+			}
+		}
+		.forside-tmp {
+			width: $grid-width;
+			margin: 0 65px 25px 35px;
+			background: white;
 		}
 	}
 	footer {
 		@include padding-main;
 		clear: both;
+		border-top: 2px solid $content-bg;
+		background: white;
+		height: 5em;
+		p:first-child {
+			text-align: right;
+			position: relative;
+			margin: 2em 65px 0 0;
+			padding-right: 110px;
+			img {
+				position: absolute;
+				right: 0;
+				top: 50%;
+				height: 22px;
+				margin-top: -11px;
+			}
+		}
 	}
 
 	&:after {

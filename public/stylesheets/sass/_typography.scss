@@ -15,7 +15,7 @@ body {
 }
 
 header {
-	h1 {
+	h1.title {
 		@include heading-font;
 		font-size: $font30px;
 		font-weight: 700;
@@ -27,20 +27,30 @@ header {
 }
 
 #content {
-	article {
-		header {
-			h2 {
-				font-size: $font28px;
-				font-weight: 700;
-				color: white;
-			}
-		}
-		aside.info {
-			@include small-font;
-			font-size: $font11px;
-			color: #7a7a7a;
+	header {
+		h1 {
+			font-size: $font28px;
+			font-weight: 700;
+			color: white;
 		}
 	}
+	article {
+		aside.info {
+			@include small-font;
+			font-size: $font12px;
+			color: #7a7a7a;
+		}
+		h2 {
+			font-size: $font20px;
+			font-weight: 700;
+		}
+	}
+}
+
+footer {
+	@include small-font;
+	font-size: $font11px;
+	color: #828589;
 }
 
 a {
