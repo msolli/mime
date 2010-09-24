@@ -66,6 +66,16 @@ header {
 						display: inline;
 						margin-right: 0.5em;
 					}
+					li.edit-link {
+						text-transform: uppercase;
+						background: #2f528f;
+						padding: 2px 0.4em;
+						border-radius: 3px;
+						-moz-border-radius: 3px;
+						a {
+							color: white;
+						}
+					}
 				}
 			}
 			.articletext {

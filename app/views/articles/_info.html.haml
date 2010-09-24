@@ -4,5 +4,5 @@
     %li>= t('articles.last_updated', :time_ago => time_ago_in_words(article.updated_at))
     %li>= link_to t('articles.version_log'), "TODO"
     %li>= link_to t('articles.report_error'), "TODO"
-    %li>= link_to t('articles.edit'), edit_article_path(article)
-    %li>= image_tag('aside-info-buttons.png')
+    %li.edit-link>= link_to t('articles.edit'), edit_article_path(article)
+    %li>= image_tag('share-buttons.png')

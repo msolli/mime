@@ -45,6 +45,14 @@ header {
     #main #content article aside.info ul li {
       display: inline;
       margin-right: 0.5em; }
+    #main #content article aside.info ul li.edit-link {
+      text-transform: uppercase;
+      background: #2f528f;
+      padding: 2px 0.4em;
+      border-radius: 3px;
+      -moz-border-radius: 3px; }
+      #main #content article aside.info ul li.edit-link a {
+        color: white; }
   #main #content article .articletext {
     padding-left: 50px;
     max-width: 33.125em;
