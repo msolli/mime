@@ -1,4 +1,5 @@
 article, aside, footer, header, hgroup, nav, section {
+  display: block;
   margin: 0; }
 
 html, body {
@@ -8,13 +9,13 @@ body .container {
   position: relative;
   margin: auto;
   max-width: 66.25em;
-  -moz-box-shadow: #777 0px 2px 10px;
   box-shadow: #777 0px 2px 10px;
-  behavior: url(PIE.htc);
-  -webkit-box-shadow: #777 0px 2px 10px; }
+  -moz-box-shadow: #777 0px 2px 10px;
+  -webkit-box-shadow: #777 0px 2px 10px;
+  behavior: url(PIE.htc); }
 
 header {
-  background: #fff; }
+  background: white; }
   header h1.title {
     padding: 1em 0 0.3em 50px; }
   header nav ul.links {
