@@ -44,6 +44,16 @@ header {
 			font-size: $font20px;
 			font-weight: 700;
 		}
+		aside.image {
+			p {
+				@include small-font;
+				color: $content-bg;
+				font-size: $font12px;
+				&:first-of-type {
+					margin-top: 5px;
+				}
+			}
+		}
 		aside.tags {
 			color: $content-bg;
 			font-size: $font12px;

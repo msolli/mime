@@ -48,9 +48,20 @@ header {
   #main #content article .articletext {
     padding-left: 50px;
     max-width: 33.125em;
-    padding-top: 1em; }
+    padding-top: 1em;
+    overflow: visible; }
     #main #content article .articletext p {
       margin-bottom: 1em; }
+    #main #content article .articletext .image-wrap {
+      float: right;
+      position: relative;
+      width: 128px; }
+      #main #content article .articletext .image-wrap aside.image {
+        margin-top: 6px;
+        width: 228px;
+        border: 1px solid #cccccc;
+        padding: 5px;
+        background: white; }
   #main #content article form.formtastic.article {
     padding-left: 50px;
     max-width: 33.125em;
@@ -59,7 +70,7 @@ header {
       width: 100%; }
   #main #content article aside.tags {
     background: white;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     margin: 1em 65px 2em 35px;
     padding: 1em 14px; }
     #main #content article aside.tags ul li {
@@ -126,6 +137,12 @@ header nav {
 #content article h2 {
   font-size: 125%;
   font-weight: 700; }
+#content article aside.image p {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  color: #45494f;
+  font-size: 75%; }
+  #content article aside.image p:first-of-type {
+    margin-top: 5px; }
 #content article aside.tags {
   color: #45494f;
   font-size: 75%; }
