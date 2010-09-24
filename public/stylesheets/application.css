@@ -1,3 +1,9 @@
+/*
+"ff-dagny-web-pro-1","ff-dagny-web-pro-2"
+"ff-meta-web-pro-1","ff-meta-web-pro-2"
+"ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2"
+"garamond-premier-pro-display-1","garamond-premier-pro-display-2"
+*/
 article, aside, footer, header, hgroup, nav, section {
   display: block;
   margin: 0; }
@@ -19,7 +25,7 @@ header {
   header h1.title {
     padding: 1em 0 0.3em 50px; }
   header nav ul.links {
-    padding: 0.5em 50px;
+    padding: 8px 50px;
     border-top: 2px solid #efeeeb;
     border-bottom: 2px solid #efeeeb; }
     header nav ul.links ul.letters {
@@ -116,14 +122,18 @@ header {
     height: 0;
     visibility: hidden; }
 
-/*
-"ff-dagny-web-pro-1","ff-dagny-web-pro-2"
-"ff-meta-web-pro-1","ff-meta-web-pro-2"
-"ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2"
-"garamond-premier-pro-display-1","garamond-premier-pro-display-2"
-*/
+.wf-loading header h1.title {
+  visibility: hidden; }
+.wf-loading header li {
+  line-height: 1.5; }
+.wf-loading #content h1 {
+  line-height: 1.5458; }
+.wf-loading #content article .articletext {
+  visibility: hidden; }
+
 body {
-  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", Georgia, Utopia, "Palatino", "Palatino Linotype", serif;
+  /*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;
   font-size: 100%;
   font-weight: 500; }
 

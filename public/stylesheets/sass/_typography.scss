@@ -1,12 +1,23 @@
-/*
-"ff-dagny-web-pro-1","ff-dagny-web-pro-2"
-"ff-meta-web-pro-1","ff-meta-web-pro-2"
-"ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2"
-"garamond-premier-pro-display-1","garamond-premier-pro-display-2"
-*/
-
-$link-color: #30538f;
-$link-visited-color: darken($link-color, 10%);
+.wf-loading {
+	header {
+		h1.title {
+			visibility: hidden;
+		}
+		li {
+			line-height: 1.5;
+		}
+	}
+	#content {
+		h1 {
+			line-height: 1.5458;
+		}
+		article {
+			.articletext {
+				visibility: hidden;
+			}
+		}
+	}
+}
 
 body {
 	@include main-font;

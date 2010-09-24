@@ -2,8 +2,17 @@
 	padding-left: $main-padding-left;
 }
 
+
+/*
+"ff-dagny-web-pro-1","ff-dagny-web-pro-2"
+"ff-meta-web-pro-1","ff-meta-web-pro-2"
+"ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2"
+"garamond-premier-pro-display-1","garamond-premier-pro-display-2"
+*/
+
 @mixin main-font {
-	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", Georgia, Utopia, "Palatino", "Palatino Linotype", serif;
+/*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;
 }
 
 @mixin heading-font {

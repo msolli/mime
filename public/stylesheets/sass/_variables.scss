@@ -1,6 +1,9 @@
 $background: #bfbfbf;
 $content-bg: #45494f;
 $box-border-color: #ccc;
+$link-color: #30538f;
+$link-visited-color: darken($link-color, 10%);
+
 $container-width: #{(1060/16)}em;
 $article-width: #{(530/16)}em;
 $grid-width: #{(960/16)}em;
