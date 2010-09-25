@@ -1,8 +1,5 @@
-.wf-loading {
+.wf-inactive {
 	header {
-		h1.title {
-			visibility: hidden;
-		}
 		li {
 			line-height: 1.5;
 		}
@@ -10,11 +7,6 @@
 	#content {
 		h1 {
 			line-height: 1.5458;
-		}
-		article {
-			.articletext {
-				visibility: hidden;
-			}
 		}
 	}
 }

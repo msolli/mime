@@ -122,14 +122,10 @@ header {
     height: 0;
     visibility: hidden; }
 
-.wf-loading header h1.title {
-  visibility: hidden; }
-.wf-loading header li {
+.wf-inactive header li {
   line-height: 1.5; }
-.wf-loading #content h1 {
+.wf-inactive #content h1 {
   line-height: 1.5458; }
-.wf-loading #content article .articletext {
-  visibility: hidden; }
 
 body {
   /*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
