@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
 
   def alphabetic
-    logger.debug "home#alphabetic"
-    @articles = Article.where(:headword => /^#{params[:letter]}/i)
+    @letter = params[:letter]
+    @articles = Article.where(:headword => /^#{@letter}/i)
   end
 end

@@ -9,11 +9,18 @@ describe HomeController do
   end
 
   describe "#alphabetic" do
-    it "show a list of articles" do
+    it "shows a list of articles" do
       Article.create!(:headword => "Asker")
       get :alphabetic, {:letter => 'a'}
       response.should be_success
       assigns(:articles).first.headword.should == "Asker"
+    end
+
+    it "handles norwegian characters i url" do
+      Article.create!(:headword => "Åh")
+      get :alphabetic, {:letter => 'å'}
+      response.should be_success
+      assigns(:articles).first.headword.should == "Åh"
     end
   end
 end

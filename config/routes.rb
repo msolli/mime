@@ -1,7 +1,8 @@
 Mime::Application.routes.draw do
   resources :articles, :only => [:new, :create, :show, :edit, :update]
 
-  match '/:letter' => 'home#alphabetic', :letter => /[a-z]/i, :as => :alphabetic
+  # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å
+  match '/:letter' => 'home#alphabetic', :letter => /[a-z]|%C3%A6|%C3%86|%C3%B8|%C3%98|%C3%A5|%C3%85/i, :as => :alphabetic
 
   root :to => 'home#index'
 

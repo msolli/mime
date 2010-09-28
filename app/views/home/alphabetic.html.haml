@@ -1,6 +1,7 @@
 %header
-  %h1 The letter #{@letter}
+  -# Når Ruby 1.9.2 er støttet på Heroku, se http://unicode-utils.rubyforge.org/
+  %h1 #{@letter.mb_chars.upcase.to_s} #{@letter.mb_chars.downcase.to_s}
 
 %ul
   - @articles.each do |article|
-    %li= article.headword
+    %li= link_to article.headword, article
