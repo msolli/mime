@@ -3,3 +3,7 @@ Gitt /^følgende artikler:$/ do |article_data|
     Article.create!(hash)
   end
 end
+
+Gitt /^artikkelen "([^"]*)" finnes$/ do |headword|
+  Article.create!(:headword => headword)
+end

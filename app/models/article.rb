@@ -9,6 +9,8 @@ class Article
   field :end_year, :type => Date
   field :ambiguous, :type => Boolean
   field :location, :type => Array
+
+  index :headword, :unique => true
   index [[ :location, Mongo::GEO2D ]]
 
   validates_presence_of :headword

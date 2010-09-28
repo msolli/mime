@@ -1,0 +1,6 @@
+%header
+  %h1 The letter #{@letter}
+
+%ul
+  - @articles.each do |article|
+    %li= article.headword

@@ -16,17 +16,8 @@ Egenskap: Redigere artikler
       Når jeg klikker "Redigér"
       Så skal jeg komme til artikkelredigering for "Foo"
 
-    @wip
     Scenario: redigere tekst i artikkel
       Gitt at jeg står på artikkelredigering for "Foo"
       Og jeg fyller inn "article[text]" med "Ny tekst om foo"
       Når jeg trykker "Lagre"
       Så skal jeg se "Ny tekst om foo"
-
-    @wip
-    Scenario: geokoding
-      Gitt at jeg står på artikkelredigering for "Foo"
-      Og jeg fyller inn "Breddegrad" med "60"
-      Og jeg fyller inn "Lengdegrad" med "10"
-      Når jeg trykker "Lagre"
-      Så skal jeg komme til artikkelvisning for "Foo"

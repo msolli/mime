@@ -20,7 +20,6 @@ Egenskap: Ny artikkel
       Når jeg trykker "Opprett"
       Så skal jeg se "er lagret"
 
-    @wip
     Scenario: sist oppdater
       Når jeg trykker "Opprett"
       Så skal jeg se "Sist oppdatert"

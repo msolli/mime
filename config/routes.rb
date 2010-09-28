@@ -1,6 +1,8 @@
 Mime::Application.routes.draw do
   resources :articles, :only => [:new, :create, :show, :edit, :update]
 
+  match '/:letter' => 'home#alphabetic', :letter => /[a-z]/i, :as => :alphabetic
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
