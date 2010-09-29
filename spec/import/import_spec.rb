@@ -93,5 +93,10 @@ describe "Import::Main" do
       Article.where(:headword => 'Foo (gård i Bærum)').first.ambiguous.should be_true
       Article.where(:headword => 'Foo (gård i Bærum - 2)').first.ambiguous.should be_true
     end
+
+    it "sets updated_to to publish date of book" do
+      Article.first.created_at.should == Time.local(2008, 10, 16, 12, 00, 00)
+      Article.first.updated_at.should == Time.local(2008, 10, 16, 12, 00, 00)
+    end
   end
 end
