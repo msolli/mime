@@ -127,6 +127,9 @@ header {
 				}
 			}
 		}
+		ul.alphabetic {
+			@include padding-main;
+		}
 		.forside-tmp {
 			width: $grid-width;
 			margin: 0 65px 25px 35px;

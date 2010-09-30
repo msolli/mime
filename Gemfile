@@ -7,11 +7,12 @@ gem 'hassle', :require => false
 gem 'haml'
 gem 'mongoid', ">= 2.0.0.beta.18"
 gem 'bson', '~> 1.0'
-gem 'bson_ext', '1.0.4'
+gem 'bson_ext'
 gem 'mongo', '~> 1.0'
 gem 'formtastic', '~> 1.1'
 gem 'nokogiri'
 gem 'sax-machine'
+gem 'devise', :git => "http://github.com/plataformatec/devise.git"
 
 group :development do
   gem 'rails3-generators'

@@ -94,6 +94,8 @@ header {
         content: ", "; }
       #main #content article aside.tags ul li:last-of-type:after {
         content: ""; }
+  #main #content ul.alphabetic {
+    padding-left: 50px; }
   #main #content .forside-tmp {
     width: 60em;
     margin: 0 65px 25px 35px;
