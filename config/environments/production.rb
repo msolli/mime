@@ -37,8 +37,13 @@ Mime::Application.configure do
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
-  # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  # Devise wants this
+  # TODO - pass på at dette virker med Heroku og Sendgrid
+  config.action_mailer.default_url_options = { :host => 'ableksikon.heroku.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
 
   # Enable threaded mode
   # config.threadsafe!

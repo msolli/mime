@@ -21,3 +21,4 @@ Egenskap: Redigere artikler
       Og jeg fyller inn "article[text]" med "Ny tekst om foo"
       Når jeg trykker "Lagre"
       Så skal jeg se "Ny tekst om foo"
+      Og jeg skal se "Artikkelen er lagret" under "#notice"

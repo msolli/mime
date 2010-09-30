@@ -1,4 +1,6 @@
 Mime::Application.routes.draw do
+  devise_for :users
+
   resources :articles, :only => [:new, :create, :show, :edit, :update]
 
   # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å

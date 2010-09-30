@@ -31,10 +31,10 @@
           = render :partial => "common/nav"
       %section#messages
         -# TODO - flytt meldingsfeltet til høyre for artikkelen
-        - if flash[:notice]
-          #notice= flash[:notice]
-        - if flash[:error]
-          #error= flash[:error]
+        - if notice
+          #notice= notice
+        - if alert
+          #alert= alert
 
       %section#main
 

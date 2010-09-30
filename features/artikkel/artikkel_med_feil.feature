@@ -10,4 +10,4 @@ Egenskap: Artikkel med feil
 
     Scenario: melding om at artikkel ikke ble lagret
       Når jeg trykker "Opprett"
-      Så skal jeg se "ikke lagret"
+      Så skal jeg se "ikke lagret" under "#alert"
