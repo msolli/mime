@@ -1,3 +1,18 @@
+# Facebook Connect config
+# If config/facebook.yml is present, use it to set the environment variables.
+# This would be the thing to do in development. Do not check it into git.
+#
+# On Heroku, make sure the environment variables are set with 'heroku config'.
+# heroku config:add FACEBOOK_APP_ID=... FACEBOOK_APP_SECRET=...
+
+config_file = Rails.root.join("config", "facebook.yml")
+if config_file.file?
+  settings = YAML.load(ERB.new(config_file.read).result)[Rails.env]
+  settings.each_pair do |name, value|
+    ENV["FACEBOOK_#{name}"] = value.to_s
+  end
+end
+
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
@@ -73,7 +88,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 6..20.
-  # config.password_length = 6..20
+  config.password_length = 6..60
 
   # Regex to use to validate the email address
   # config.email_regexp = /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
@@ -156,6 +171,12 @@ Devise.setup do |config|
   #   :authorize_path    => '/login/oauth/authorize',
   #   :access_token_path => '/login/oauth/access_token',
   #   :scope             => %w(user public_repo)
+
+  config.oauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
+      :site => "https://graph.facebook.com/",
+      :authorize_path    => '/oauth/authorize',
+      :access_token_path => '/oauth/access_token',
+      :scope             => %w(email offline_access)
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

@@ -96,6 +96,18 @@ header {
         content: ""; }
   #main #content ul.alphabetic {
     padding-left: 50px; }
+  #main #content .login {
+    padding-left: 50px; }
+    #main #content .login .info-wrap {
+      float: right;
+      position: relative;
+      width: 30em;
+      margin-right: 50px;
+      margin-bottom: 50px; }
+      #main #content .login .info-wrap aside {
+        border: 1px solid #cccccc;
+        padding: 5px;
+        background: white; }
   #main #content .forside-tmp {
     width: 60em;
     margin: 0 65px 25px 35px;
@@ -168,6 +180,12 @@ header nav {
     text-transform: uppercase; }
   #content article aside.tags li {
     font-family: Tahoma, Arial, Helvetica, sans-serif; }
+#content .login {
+  font-size: 75%; }
+  #content .login dl dt {
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 5px; }
 
 footer {
   font-family: Tahoma, Arial, Helvetica, sans-serif;

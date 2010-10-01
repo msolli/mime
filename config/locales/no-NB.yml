@@ -14,6 +14,16 @@ no-NB:
     saved: Artikkelen er lagret
     errors:
       save: Artikkelen ble ikke lagret
+  users:
+    login:
+      log_in: Logg inn
+      facebook:
+        log_in: Logg inn med Facebook
+        info: "På neste side blir du bedt om gi oss noen tillatelser. Vi henter disse, og bare disse, opplysningene fra din Facebook-profil:"
+        name_and_picture: "Navn og profilbilde"
+        name_and_picture_desc: "Vi viser navnet ditt under \"Bidragsytere\" og i versjonsloggen for artikler du redigerer, og profilbildet vises sammen med navnet ditt der det gir mening."
+        email: Epostadresse
+        email_desc: "Du kan be om å få beskjed fra oss på epost når en artikkel blir oppdatert, f.eks. Vi deler ikke epostadressen din med noen."
   formtastic:
     actions:
       create: Opprett
@@ -24,6 +34,10 @@ no-NB:
         text: Artikkeltekst
         lng: Lengdegrad
         lat: Breddegrad
+  mongoid:
+    errors:
+      messages:
+        validations: Yo
 
 # Norwegian, norsk bokmål, by irb.no
   support:

@@ -13,6 +13,7 @@ gem 'formtastic', '~> 1.1'
 gem 'nokogiri'
 gem 'sax-machine'
 gem 'devise', :git => "http://github.com/plataformatec/devise.git"
+gem 'oauth2'
 
 group :development do
   gem 'rails3-generators'

@@ -69,6 +69,19 @@ header {
 			}
 		}
 	}
+	.login {
+		font-size: $font12px;
+		dl {
+			dt {
+				font-weight: 700;
+				line-height: 1.5;
+				margin-top: 5px;
+			}
+			dd {
+				
+			}
+		}
+	}
 }
 
 footer {

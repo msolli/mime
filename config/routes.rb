@@ -1,7 +1,9 @@
 Mime::Application.routes.draw do
-  devise_for :users, :controllers => { :sessions => "sessions" } do
-    get "/users/sso_callback", :to => "sessions#sso_callback"
-  end
+  devise_for :users
+  ## Edda SSO
+  # devise_for :users, :controllers => { :sessions => "sessions" } do
+  #   get "/users/sso_callback", :to => "sessions#sso_callback"
+  # end
 
   resources :articles, :only => [:new, :create, :show, :edit, :update]
 

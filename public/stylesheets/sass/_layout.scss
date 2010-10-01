@@ -130,6 +130,21 @@ header {
 		ul.alphabetic {
 			@include padding-main;
 		}
+		.login {
+			@include padding-main;
+			.info-wrap {
+				float: right;
+				position: relative;
+				width: $info-width;
+				margin-right: 50px;
+				margin-bottom: 50px;
+				aside {
+					border: 1px solid $box-border-color;
+					padding: 5px;
+					background: white;
+				}
+			}
+		}
 		.forside-tmp {
 			width: $grid-width;
 			margin: 0 65px 25px 35px;
