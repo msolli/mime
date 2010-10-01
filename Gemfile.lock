@@ -82,6 +82,7 @@ GEM
       haml
       rack
     hirb (0.3.4)
+    hpricot (0.8.2)
     i18n (0.4.1)
     json (1.4.6)
     json_pure (1.4.6)
@@ -143,6 +144,8 @@ GEM
       ruby-debug-base (~> 0.10.3.0)
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
+    ruby_parser (2.0.5)
+      sexp_processor (~> 3.0)
     rubyzip (0.9.4)
     sax-machine (0.0.15)
       nokogiri (> 0.0.0)
@@ -150,6 +153,7 @@ GEM
       ffi (>= 0.6.1)
       json_pure
       rubyzip
+    sexp_processor (3.0.5)
     shoulda (2.11.3)
     syntax (1.0.0)
     term-ansicolor (1.0.5)
@@ -181,6 +185,7 @@ DEPENDENCIES
   haml-rails
   hassle
   hirb
+  hpricot
   mongo (~> 1.0)
   mongoid (>= 2.0.0.beta.18)
   mongoid-rspec
@@ -191,6 +196,7 @@ DEPENDENCIES
   rcov
   rspec-rails (~> 2.0.0.beta)
   ruby-debug
+  ruby_parser
   sax-machine
   shoulda
   syntax

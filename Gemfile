@@ -20,6 +20,8 @@ group :development do
   gem 'ruby-debug'
   gem 'wirble'
   gem 'hirb'
+  gem 'hpricot'
+  gem 'ruby_parser'
 end
 
 group :test do
