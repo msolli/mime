@@ -25,6 +25,16 @@ header {
 	h1.title {
 		padding: 1em 0 0.3em $main-padding-left;
 	}
+	aside.user-links {
+		float: right;
+		margin-right: 65px;
+		ul {
+			li {
+				display: inline;
+				margin-right: 1em;
+			}
+		}
+	}
 	nav {
 
 	  ul.links {
@@ -132,17 +142,13 @@ header {
 		}
 		.login {
 			@include padding-main;
-			.info-wrap {
-				float: right;
-				position: relative;
-				width: $info-width;
-				margin-right: 50px;
-				margin-bottom: 50px;
-				aside {
-					border: 1px solid $box-border-color;
-					padding: 5px;
-					background: white;
-				}
+			.facebook {
+				width: $login-width;
+				border: 1px solid $box-border-color;
+				padding: 5px;
+				margin: 20px 0 5px 0;
+				background: white;
+				@include fb-button;
 			}
 		}
 		.forside-tmp {

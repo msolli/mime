@@ -2,12 +2,14 @@
   %h1= t('users.login.log_in')
 
 .login
-  %p= link_to t('users.login.facebook.log_in'), user_oauth_authorize_url(:facebook)
-  .info-wrap
-    %aside
-      %p= t('users.login.facebook.info')
-      %dl
-        %dt= t('users.login.facebook.name_and_picture')
-        %dd= t('users.login.facebook.name_and_picture_desc')
-        %dt= t('users.login.facebook.email')
-        %dd= t('users.login.facebook.email_desc')
+  .facebook
+    %p
+      = link_to user_oauth_authorize_url(:facebook), :class => 'fb-button' do
+        %span.fb-button-text= t('users.login.facebook.log_in')
+
+    %p= t('users.login.facebook.info')
+    %dl
+      %dt= t('users.login.facebook.name_and_picture')
+      %dd= t('users.login.facebook.name_and_picture_desc')
+      %dt= t('users.login.facebook.email')
+      %dd= t('users.login.facebook.email_desc')

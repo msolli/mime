@@ -18,6 +18,8 @@ module NavigationHelpers
       edit_article_path Article.where(:headword => $1).first
     when /alfabetisk-siden for "([^"]*)"$/
       alphabetic_path $1
+    when /innloggingssiden$/
+      new_user_session_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

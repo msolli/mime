@@ -1,4 +1,4 @@
-en:
+no-NB:
   errors:
     messages:
       not_found: "not found"
@@ -16,7 +16,7 @@ en:
       inactive: 'Your account was not activated yet.'
     sessions:
       signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_out: 'Nå er du logget ut. Snakkes neste gang!'
     passwords:
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
       updated: 'Your password was changed successfully. You are now signed in.'
@@ -34,6 +34,9 @@ en:
     oauth_callbacks:
       success: 'Successfully authorized from %{kind} account.'
       failure: 'Could not authorize you from %{kind} because "%{reason}".'
+      user:
+        facebook:
+          success: "Nå er du logget inn med ved hjelp av Facebook."
     mailer:
       confirmation_instructions:
         subject: 'Confirmation instructions'

@@ -17,6 +17,9 @@ no-NB:
   users:
     login:
       log_in: Logg inn
+      log_out: Logg ut
+      logged_in_as: "Logget inn som %{username}"
+      not_you: Ikke deg?
       facebook:
         log_in: Logg inn med Facebook
         info: "På neste side blir du bedt om gi oss noen tillatelser. Vi henter disse, og bare disse, opplysningene fra din Facebook-profil:"
@@ -34,10 +37,6 @@ no-NB:
         text: Artikkeltekst
         lng: Lengdegrad
         lat: Breddegrad
-  mongoid:
-    errors:
-      messages:
-        validations: Yo
 
 # Norwegian, norsk bokmål, by irb.no
   support:

@@ -22,3 +22,28 @@
 @mixin small-font {
 	font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
+
+@mixin fb-button {
+	a {
+		font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
+		color: #3B5998;
+		background: #29447E url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
+		background-position: 0% -210px;
+		cursor: pointer;
+		display: inline-block;
+		padding: 0px 0px 0px 1px;
+		text-decoration: none;
+
+		span.fb-button-text {
+			color: white;
+			display: block;
+			font-weight: bold;
+			margin: 0px 1px 0px 21px;
+			padding: 2px 6px 3px;
+			background: #4F6AA3;
+			border-bottom: 1px solid #29447E;
+			border-top: 1px solid #45619D;
+			text-shadow: none;
+		}
+	}
+}

@@ -24,6 +24,12 @@ header {
   background: white; }
   header h1.title {
     padding: 1em 0 0.3em 50px; }
+  header aside.user-links {
+    float: right;
+    margin-right: 65px; }
+    header aside.user-links ul li {
+      display: inline;
+      margin-right: 1em; }
   header nav ul.links {
     padding: 8px 50px;
     border-top: 2px solid #efeeeb;
@@ -98,16 +104,31 @@ header {
     padding-left: 50px; }
   #main #content .login {
     padding-left: 50px; }
-    #main #content .login .info-wrap {
-      float: right;
-      position: relative;
+    #main #content .login .facebook {
       width: 30em;
-      margin-right: 50px;
-      margin-bottom: 50px; }
-      #main #content .login .info-wrap aside {
-        border: 1px solid #cccccc;
-        padding: 5px;
-        background: white; }
+      border: 1px solid #cccccc;
+      padding: 5px;
+      margin: 20px 0 5px 0;
+      background: white; }
+      #main #content .login .facebook a {
+        font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
+        color: #3B5998;
+        background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
+        background-position: 0% -210px;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0px 0px 0px 1px;
+        text-decoration: none; }
+        #main #content .login .facebook a span.fb-button-text {
+          color: white;
+          display: block;
+          font-weight: bold;
+          margin: 0px 1px 0px 21px;
+          padding: 2px 6px 3px;
+          background: #4F6AA3;
+          border-bottom: 1px solid #29447E;
+          border-top: 1px solid #45619D;
+          text-shadow: none; }
   #main #content .forside-tmp {
     width: 60em;
     margin: 0 65px 25px 35px;

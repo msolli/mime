@@ -26,6 +26,8 @@
   %body
     .container
       %header
+        %aside.user-links
+          = render :partial => "common/user-links"
         %h1.title Leksikon for Asker og Bærum
         %nav
           = render :partial => "common/nav"
