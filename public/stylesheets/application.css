@@ -222,6 +222,9 @@ header h1.title {
   font-size: 187.5%;
   font-weight: 700;
   color: #45494f; }
+header aside.user-links {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 87.5%; }
 header nav {
   font-weight: bold; }
 

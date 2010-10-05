@@ -31,11 +31,12 @@
         %h1.title Leksikon for Asker og Bærum
         %nav
           = render :partial => "common/nav"
-      %section#messages
-        - if notice
-          #notice= notice
-        - if alert
-          #alert= alert
+      - if notice || alert
+        %section#messages
+          - if notice
+            #notice= notice
+          - if alert
+            #alert= alert
 
       %section#main
 

@@ -24,6 +24,10 @@ header {
 		font-weight: 700;
 		color: $dark-grey-color;
 	}
+	aside.user-links {
+		@include small-font;
+		font-size: $font14px;
+	}
 	nav {
 		font-weight: bold;
 	}
