@@ -3,6 +3,8 @@
     %h1= @article.headword || t('articles.new')
   - unless @article.new_record?
     = render :partial => 'info', :locals => { :article => @article }
+  - unless user_signed_in?
+    %aside.messages= raw(t('articles.login_teaser', :login_link => link_to(t('articles.login_link'), user_oauth_authorize_url(:facebook))))
   = semantic_form_for @article do |f|
     = f.inputs do
       - if @article.new_record?

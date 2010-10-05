@@ -83,6 +83,15 @@ header {
         border: 1px solid #cccccc;
         padding: 5px;
         background: white; }
+  #main #content article aside.messages {
+    margin: 10px 65px 5px 50px;
+    padding: 2px 5px;
+    background: #81c95a;
+    border: 1px solid #45494f;
+    box-shadow: #777 0px 2px 10px;
+    -moz-box-shadow: #777 0px 2px 10px;
+    -webkit-box-shadow: #777 0px 2px 10px;
+    behavior: url(/stylesheets/PIE.htc); }
   #main #content article form.formtastic.article {
     padding-left: 50px;
     max-width: 33.125em;
@@ -172,7 +181,7 @@ header h1.title {
   font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;
   font-size: 187.5%;
   font-weight: 700;
-  color: #494d52; }
+  color: #45494f; }
 header nav {
   font-weight: bold; }
 
@@ -184,6 +193,11 @@ header nav {
   font-family: Tahoma, Arial, Helvetica, sans-serif;
   font-size: 75%;
   color: #7a7a7a; }
+#content article aside.messages {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 87.5%; }
+  #content article aside.messages a {
+    text-decoration: underline; }
 #content article h2 {
   font-size: 125%;
   font-weight: 700; }

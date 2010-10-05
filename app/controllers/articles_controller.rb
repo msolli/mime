@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def new
     @article = Article.new
+    session[:user_return_to] = new_article_path
   end
 
   def create
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    session[:user_return_to] = edit_article_path(@article)
   end
 
   def update

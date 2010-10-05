@@ -22,7 +22,7 @@ header {
 		@include heading-font;
 		font-size: $font30px;
 		font-weight: 700;
-		color: #494d52;
+		color: $dark-grey-color;
 	}
 	nav {
 		font-weight: bold;
@@ -43,6 +43,13 @@ header {
 			font-size: $font12px;
 			color: #7a7a7a;
 		}
+		aside.messages {
+			@include small-font;
+			font-size: $font14px;
+			a {
+				text-decoration: underline;
+			}
+		}
 		h2 {
 			font-size: $font20px;
 			font-weight: 700;
@@ -50,7 +57,7 @@ header {
 		aside.image {
 			p {
 				@include small-font;
-				color: $content-bg;
+				color: $dark-grey-color;
 				font-size: $font12px;
 				&:first-of-type {
 					margin-top: 5px;
@@ -58,7 +65,7 @@ header {
 			}
 		}
 		aside.tags {
-			color: $content-bg;
+			color: $dark-grey-color;
 			font-size: $font12px;
 			h3 {
 				@include heading-font;

@@ -1,5 +1,5 @@
 $background: #bfbfbf;
-$content-bg: #45494f;
+$dark-grey-color: #45494f;
 $box-border-color: #ccc;
 $link-color: #30538f;
 $link-visited-color: darken($link-color, 10%);
@@ -9,9 +9,11 @@ $article-width: #{(530/16)}em;
 $grid-width: #{(960/16)}em;
 $login-width: #{(480/16)}em;
 $main-padding-left: 50px;
+$main-margin-left: 50px;
 
 $font11px: percentage(11/16);
 $font12px: percentage(12/16);
+$font14px: percentage(14/16);
 $font20px: percentage(20/16);
 $font28px: percentage(28/16);
 $font30px: percentage(30/16);

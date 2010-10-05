@@ -63,7 +63,7 @@ header {
 	#content {
 		header {
 			@include padding-main;
-			background: $content-bg;
+			background: $dark-grey-color;
 			h1 {
 				padding-top: 0.5em;
 				padding-bottom: 0.2em;
@@ -110,6 +110,13 @@ header {
 						background: white;
 					}
 				}
+			}
+			aside.messages {
+				margin: 10px 65px 5px $main-margin-left;
+				padding: 2px 5px;
+				background: #81c95a;
+				border: 1px solid $dark-grey-color;
+				@include box-shadow;
 			}
 			form.formtastic.article {
 				@include padding-main;
@@ -160,7 +167,7 @@ header {
 	footer {
 		@include padding-main;
 		clear: both;
-		border-top: 2px solid $content-bg;
+		border-top: 2px solid $dark-grey-color;
 		background: white;
 		height: 5em;
 		p:first-child {
