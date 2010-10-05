@@ -4,18 +4,14 @@ article, aside, footer, header, hgroup, nav, section {
 }
 
 html, body {
-  background: $background;
+  background: $background-color;
 }
 
 body {
 	.container {
-		position: relative;
 		margin: auto;
 		max-width: $container-width;
-		box-shadow: #777 0px 2px 10px;
-		-moz-box-shadow: #777 0px 2px 10px;
-		-webkit-box-shadow: #777 0px 2px 10px;
-		behavior: url(/stylesheets/PIE.htc);
+		@include box-shadow;
 	}
 }
 
@@ -54,6 +50,17 @@ header {
 				margin-right: 1em;
 			}
 		}
+	}
+}
+
+#messages {
+	background: white;
+	padding: 5px 0;
+	#notice {
+		@include message-box($message-notice-color);
+	}
+	#alert {
+		@include message-box($message-alert-color);
 	}
 }
 
@@ -111,12 +118,8 @@ header {
 					}
 				}
 			}
-			aside.messages {
-				margin: 10px 65px 5px $main-margin-left;
-				padding: 2px 5px;
-				background: #81c95a;
-				border: 1px solid $dark-grey-color;
-				@include box-shadow;
+			aside.article-messages {
+				@include message-box($message-notice-color);
 			}
 			form.formtastic.article {
 				@include padding-main;

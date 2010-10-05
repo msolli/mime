@@ -29,6 +29,14 @@ header {
 	}
 }
 
+#messages {
+	@include small-font;
+	font-size: $font14px;
+	a {
+		text-decoration: underline;
+	}
+}
+
 #content {
 	header {
 		h1 {
@@ -43,7 +51,7 @@ header {
 			font-size: $font12px;
 			color: #7a7a7a;
 		}
-		aside.messages {
+		aside.article-messages {
 			@include small-font;
 			font-size: $font14px;
 			a {

@@ -47,9 +47,27 @@
 	}
 }
 
+@mixin message-box($border) {
+	margin: 5px 65px 5px ($main-margin-left - 13px);
+	padding: 10px;
+	background: $main-background-color;
+	border: 3px solid $border;
+	@include box-shadow;
+	@include rounded-corners(8px);
+}
+
 @mixin box-shadow {
+	position: relative;
 	box-shadow: #777 0px 2px 10px;
 	-moz-box-shadow: #777 0px 2px 10px;
 	-webkit-box-shadow: #777 0px 2px 10px;
+	behavior: url(/stylesheets/PIE.htc);
+}
+
+@mixin rounded-corners($radius) {
+	position: relative;
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
 	behavior: url(/stylesheets/PIE.htc);
 }

@@ -12,9 +12,9 @@ html, body {
   background: #bfbfbf; }
 
 body .container {
-  position: relative;
   margin: auto;
   max-width: 66.25em;
+  position: relative;
   box-shadow: #777 0px 2px 10px;
   -moz-box-shadow: #777 0px 2px 10px;
   -webkit-box-shadow: #777 0px 2px 10px;
@@ -43,6 +43,40 @@ header {
     header nav ul.links li {
       display: inline;
       margin-right: 1em; }
+
+#messages {
+  background: white;
+  padding: 5px 0; }
+  #messages #notice {
+    margin: 5px 65px 5px 37px;
+    padding: 10px;
+    background: #efefef;
+    border: 3px solid #818f2f;
+    position: relative;
+    box-shadow: #777 0px 2px 10px;
+    -moz-box-shadow: #777 0px 2px 10px;
+    -webkit-box-shadow: #777 0px 2px 10px;
+    behavior: url(/stylesheets/PIE.htc);
+    position: relative;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    behavior: url(/stylesheets/PIE.htc); }
+  #messages #alert {
+    margin: 5px 65px 5px 37px;
+    padding: 10px;
+    background: #efefef;
+    border: 3px solid #8f3c2f;
+    position: relative;
+    box-shadow: #777 0px 2px 10px;
+    -moz-box-shadow: #777 0px 2px 10px;
+    -webkit-box-shadow: #777 0px 2px 10px;
+    behavior: url(/stylesheets/PIE.htc);
+    position: relative;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    behavior: url(/stylesheets/PIE.htc); }
 
 #main {
   background: #efefef; }
@@ -83,14 +117,20 @@ header {
         border: 1px solid #cccccc;
         padding: 5px;
         background: white; }
-  #main #content article aside.messages {
-    margin: 10px 65px 5px 50px;
-    padding: 2px 5px;
-    background: #81c95a;
-    border: 1px solid #45494f;
+  #main #content article aside.article-messages {
+    margin: 5px 65px 5px 37px;
+    padding: 10px;
+    background: #efefef;
+    border: 3px solid #818f2f;
+    position: relative;
     box-shadow: #777 0px 2px 10px;
     -moz-box-shadow: #777 0px 2px 10px;
     -webkit-box-shadow: #777 0px 2px 10px;
+    behavior: url(/stylesheets/PIE.htc);
+    position: relative;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
   #main #content article form.formtastic.article {
     padding-left: 50px;
@@ -185,6 +225,12 @@ header h1.title {
 header nav {
   font-weight: bold; }
 
+#messages {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 87.5%; }
+  #messages a {
+    text-decoration: underline; }
+
 #content header h1 {
   font-size: 175%;
   font-weight: 700;
@@ -193,10 +239,10 @@ header nav {
   font-family: Tahoma, Arial, Helvetica, sans-serif;
   font-size: 75%;
   color: #7a7a7a; }
-#content article aside.messages {
+#content article aside.article-messages {
   font-family: Tahoma, Arial, Helvetica, sans-serif;
   font-size: 87.5%; }
-  #content article aside.messages a {
+  #content article aside.article-messages a {
     text-decoration: underline; }
 #content article h2 {
   font-size: 125%;
