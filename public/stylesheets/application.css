@@ -212,24 +212,29 @@ header {
   line-height: 1.5458; }
 
 body {
+  font-family: "droid-serif-1", "droid-serif-2";
   /*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
-  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;
-  font-size: 100%;
-  font-weight: 500; }
+  /*	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+  font-size: 100%; }
 
 header h1.title {
-  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "coolvetica-1", "coolvetica-2";
+  /*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 187.5%;
   font-weight: 700;
   color: #45494f; }
 header aside.user-links {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
-  font-size: 87.5%; }
+  font-family: "coolvetica-1", "coolvetica-2";
+  font-weight: 300;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+  font-size: 100%; }
 header nav {
   font-weight: bold; }
 
 #messages {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "coolvetica-1", "coolvetica-2";
+  font-weight: 300;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 87.5%; }
   #messages a {
     text-decoration: underline; }
@@ -239,11 +244,15 @@ header nav {
   font-weight: 700;
   color: white; }
 #content article aside.info {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "coolvetica-1", "coolvetica-2";
+  font-weight: 300;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 75%;
   color: #7a7a7a; }
 #content article aside.article-messages {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "coolvetica-1", "coolvetica-2";
+  font-weight: 300;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 87.5%; }
   #content article aside.article-messages a {
     text-decoration: underline; }
@@ -251,7 +260,9 @@ header nav {
   font-size: 125%;
   font-weight: 700; }
 #content article aside.image p {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "coolvetica-1", "coolvetica-2";
+  font-weight: 300;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   color: #45494f;
   font-size: 75%; }
   #content article aside.image p:first-of-type {
@@ -260,10 +271,13 @@ header nav {
   color: #45494f;
   font-size: 75%; }
   #content article aside.tags h3 {
-    font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;
+    font-family: "coolvetica-1", "coolvetica-2";
+    /*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
     text-transform: uppercase; }
   #content article aside.tags li {
-    font-family: Tahoma, Arial, Helvetica, sans-serif; }
+    font-family: "coolvetica-1", "coolvetica-2";
+    font-weight: 300;
+    /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
 #content .login {
   font-size: 75%; }
   #content .login dl dt {
@@ -272,7 +286,9 @@ header nav {
     margin-top: 5px; }
 
 footer {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "coolvetica-1", "coolvetica-2";
+  font-weight: 300;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 68.75%;
   color: #828589; }
 
