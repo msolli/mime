@@ -17,9 +17,11 @@ body {
 
 header {
 	background: white;
-
+  @extend .clearfix;
+	
 	h1.title {
 		padding: 1em 0 0.3em $main-padding-left;
+		float: left;
 	}
 	aside.user-links {
 		float: right;
@@ -32,8 +34,13 @@ header {
 			}
 		}
 	}
+	aside.search {
+		float: right;
+		margin-top: 20px;
+		margin-right: 65px;
+	}
 	nav {
-
+		clear: both;
 	  ul.links {
 			padding: 8px $main-padding-left;
 			border-top: 2px solid #efeeeb;
@@ -80,16 +87,19 @@ header {
 		article {
 			aside.info {
 				@include padding-main;
-				padding-top: 0.5em;
+				padding-top: 2px;
 				ul {
 					li {
 						display: inline;
 						margin-right: 0.5em;
+						img {
+							vertical-align: bottom;
+						}
 					}
 					li.edit-link {
 						text-transform: uppercase;
 						background: #2f528f;
-						padding: 2px 0.4em;
+						padding: 1px 0.4em 0px 0.4em;
 						border-radius: 3px;
 						-moz-border-radius: 3px;
 						a {
@@ -188,7 +198,10 @@ header {
 			}
 		}
 	}
+	@extend .clearfix;
+}
 
+.clearfix {
 	&:after {
 		clear: both;
 		content: ".";

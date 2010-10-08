@@ -1,11 +1,13 @@
 no-NB:
+  mime:
+    title: "Leksikon for Asker og Bærum"
   errors:
     messages:
       blank: kan ikke være tom
       invalid: er ugyldig
   articles:
     new: Ny artikkel
-    edit: Redigér
+    edit: Rediger
     contributors: Bidragsytere
     last_updated: Sist oppdatert
     time_ago: "for %{time_ago} siden."
@@ -43,6 +45,7 @@ no-NB:
         lat: Breddegrad
   words:
     or: eller
+    search: søk
 
 # Norwegian, norsk bokmål, by irb.no
   support:

@@ -1,9 +1,3 @@
-/*
-"ff-dagny-web-pro-1","ff-dagny-web-pro-2"
-"ff-meta-web-pro-1","ff-meta-web-pro-2"
-"ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2"
-"garamond-premier-pro-display-1","garamond-premier-pro-display-2"
-*/
 article, aside, footer, header, hgroup, nav, section {
   display: block;
   margin: 0; }
@@ -23,7 +17,8 @@ body .container {
 header {
   background: white; }
   header h1.title {
-    padding: 1em 0 0.3em 50px; }
+    padding: 1em 0 0.3em 50px;
+    float: left; }
   header aside.user-links {
     float: right;
     margin-top: 10px;
@@ -31,19 +26,25 @@ header {
     header aside.user-links ul li {
       display: inline;
       margin-left: 1em; }
-  header nav ul.links {
-    padding: 8px 50px;
-    border-top: 2px solid #efeeeb;
-    border-bottom: 2px solid #efeeeb; }
-    header nav ul.links ul.letters {
-      padding: 0;
-      border: none;
-      display: inline; }
-      header nav ul.links ul.letters li {
-        margin-right: 0.5em; }
-    header nav ul.links li {
-      display: inline;
-      margin-right: 1em; }
+  header aside.search {
+    float: right;
+    margin-top: 20px;
+    margin-right: 65px; }
+  header nav {
+    clear: both; }
+    header nav ul.links {
+      padding: 8px 50px;
+      border-top: 2px solid #efeeeb;
+      border-bottom: 2px solid #efeeeb; }
+      header nav ul.links ul.letters {
+        padding: 0;
+        border: none;
+        display: inline; }
+        header nav ul.links ul.letters li {
+          margin-right: 0.5em; }
+      header nav ul.links li {
+        display: inline;
+        margin-right: 1em; }
 
 #messages {
   background: white;
@@ -89,14 +90,16 @@ header {
       padding-bottom: 0.2em; }
   #main #content article aside.info {
     padding-left: 50px;
-    padding-top: 0.5em; }
+    padding-top: 2px; }
     #main #content article aside.info ul li {
       display: inline;
       margin-right: 0.5em; }
+      #main #content article aside.info ul li img {
+        vertical-align: bottom; }
     #main #content article aside.info ul li.edit-link {
       text-transform: uppercase;
       background: #2f528f;
-      padding: 2px 0.4em;
+      padding: 1px 0.4em 0px 0.4em;
       border-radius: 3px;
       -moz-border-radius: 3px; }
       #main #content article aside.info ul li.edit-link a {
@@ -200,17 +203,13 @@ header {
         top: 50%;
         height: 22px;
         margin-top: -11px; }
-  #main:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    visibility: hidden; }
 
-.wf-inactive header li {
-  line-height: 1.5; }
-.wf-inactive #content h1 {
-  line-height: 1.5458; }
+.clearfix:after, header:after, #main:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden; }
 
 body {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
@@ -223,6 +222,10 @@ header h1.title {
   /*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 187.5%;
   color: #45494f; }
+  header h1.title a {
+    text-decoration: none; }
+    header h1.title a:hover {
+      text-decoration: underline; }
 header aside.user-links {
   font-family: "Lucida Grande", Tahoma, Arial;
   /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
@@ -232,6 +235,8 @@ header nav {
   font-weight: bold; }
   header nav a {
     text-decoration: none; }
+    header nav a:hover {
+      text-decoration: underline; }
 
 #messages {
   font-family: "Lucida Grande", Tahoma, Arial;
@@ -242,11 +247,18 @@ header nav {
   font-size: 175%;
   font-weight: 700;
   color: white; }
+#content article .articletext {
+  font-size: 100%;
+  line-height: 1.5; }
 #content article aside.info {
   font-family: "Lucida Grande", Tahoma, Arial;
   /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 75%;
   color: #7a7a7a; }
+  #content article aside.info a {
+    text-decoration: none; }
+    #content article aside.info a:hover {
+      text-decoration: underline; }
 #content article aside.article-messages {
   font-family: "Lucida Grande", Tahoma, Arial;
   /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/

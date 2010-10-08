@@ -27,9 +27,11 @@
   %body
     .container
       %header
+        %h1.title= link_to t('mime.title'), root_path
         %aside.user-links
           = render :partial => "common/user-links"
-        %h1.title Leksikon for Asker og Bærum
+        %aside.search
+          = render :partial => "common/search"
         %nav
           = render :partial => "common/nav"
       - if notice || alert

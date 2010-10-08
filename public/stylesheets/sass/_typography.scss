@@ -1,14 +1,17 @@
-.wf-inactive {
-	header {
-		li {
-			line-height: 1.5;
-		}
-	}
-	#content {
-		h1 {
-			line-height: 1.5458;
-		}
-	}
+@mixin serif {
+	font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+/*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+/*	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+}
+
+@mixin large-sans {
+	font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
+/*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
+}
+
+@mixin small-sans {
+	font-family: "Lucida Grande", Tahoma, Arial;
+/*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
 }
 
 body {
@@ -19,6 +22,7 @@ body {
 header {
 	h1.title {
 		@include large-sans;
+		@include no-underline;
 		font-size: $font30px;
 		color: $dark-grey-color;
 	}
@@ -29,9 +33,7 @@ header {
 	}
 	nav {
 		font-weight: bold;
-		a {
-			text-decoration: none;
-		}
+		@include no-underline;
 	}
 }
 
@@ -49,10 +51,15 @@ header {
 		}
 	}
 	article {
+		.articletext {
+			font-size: $font16px;
+			line-height: 1.5;
+		}
 		aside.info {
 			@include small-sans;
 			font-size: $font12px;
 			color: #7a7a7a;
+			@include no-underline;
 		}
 		aside.article-messages {
 			@include small-sans;
