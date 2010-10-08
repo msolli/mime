@@ -9,20 +9,19 @@
 "garamond-premier-pro-display-1","garamond-premier-pro-display-2"
 */
 
-@mixin main-font {
-	font-family: "droid-serif-1", "droid-serif-2";
+@mixin serif {
+	font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
 /*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 /*	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 }
 
-@mixin heading-font {
-	font-family: "coolvetica-1", "coolvetica-2";
+@mixin large-sans {
+	font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
 /*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
 }
 
-@mixin small-font {
-	font-family: "coolvetica-1", "coolvetica-2";
-	font-weight: 300;
+@mixin small-sans {
+	font-family: "Lucida Grande", Tahoma, Arial;
 /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
 }
 

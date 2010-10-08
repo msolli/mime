@@ -12,32 +12,32 @@
 }
 
 body {
-	@include main-font;
+	@include serif;
 	font-size: 100%;
 }
 
 header {
 	h1.title {
-		@include heading-font;
+		@include large-sans;
 		font-size: $font30px;
-		font-weight: 700;
 		color: $dark-grey-color;
 	}
 	aside.user-links {
-		@include small-font;
-		font-size: $font16px;
+		@include small-sans;
+		font-size: $font12px;
+		color: $user-links-color;
 	}
 	nav {
 		font-weight: bold;
+		a {
+			text-decoration: none;
+		}
 	}
 }
 
 #messages {
-	@include small-font;
+	@include small-sans;
 	font-size: $font14px;
-	a {
-		text-decoration: underline;
-	}
 }
 
 #content {
@@ -50,16 +50,13 @@ header {
 	}
 	article {
 		aside.info {
-			@include small-font;
+			@include small-sans;
 			font-size: $font12px;
 			color: #7a7a7a;
 		}
 		aside.article-messages {
-			@include small-font;
+			@include small-sans;
 			font-size: $font14px;
-			a {
-				text-decoration: underline;
-			}
 		}
 		h2 {
 			font-size: $font20px;
@@ -67,7 +64,7 @@ header {
 		}
 		aside.image {
 			p {
-				@include small-font;
+				@include small-sans;
 				color: $dark-grey-color;
 				font-size: $font12px;
 				&:first-of-type {
@@ -79,11 +76,12 @@ header {
 			color: $dark-grey-color;
 			font-size: $font12px;
 			h3 {
-				@include heading-font;
+				@include small-sans;
 				text-transform: uppercase;
+				font-weight: bold;
 			}
 			li {
-				@include small-font;
+				@include small-sans;
 			}
 		}
 	}
@@ -103,14 +101,13 @@ header {
 }
 
 footer {
-	@include small-font;
+	@include small-sans;
 	font-size: $font11px;
 	color: #828589;
 }
 
 a {
 	color: $link-color;
-	text-decoration: none;
 	&:hover {
 		text-decoration: underline;
 	}

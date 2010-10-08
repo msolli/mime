@@ -3,4 +3,5 @@
     %li= t('users.login.logged_in_as', :username => current_user.email)
     %li #{t('users.login.not_you')} #{link_to t('users.login.log_out'), destroy_user_session_path}
   - else
-    %li= link_to t('users.login.log_in'), new_user_session_path
+    %li= t('users.login.help_us')
+    %li #{link_to t('users.login.register'), '#TODO'} #{t('words.or')} #{link_to t('users.login.log_in'), new_user_session_path}

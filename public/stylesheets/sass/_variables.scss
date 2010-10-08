@@ -2,8 +2,9 @@ $background-color: #bfbfbf;
 $main-background-color: #efefef;
 $dark-grey-color: #45494f;
 $box-border-color: #ccc;
-$link-color: #30538f;
+$link-color: #284D92;
 $link-visited-color: darken($link-color, 10%);
+$user-links-color: lighten($link-color, 10%);
 $message-notice-color: #818f2f;
 $message-alert-color: #8f3c2f;
 

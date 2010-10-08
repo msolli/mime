@@ -18,6 +18,8 @@ no-NB:
     login_link: logge inn
   users:
     login:
+      help_us: "Hjelp oss å oppdatere leksikonet:"
+      register: "Registrér deg"
       log_in: Logg inn
       log_out: Logg ut
       logged_in_as: "Logget inn som %{username}"
@@ -39,6 +41,8 @@ no-NB:
         text: Artikkeltekst
         lng: Lengdegrad
         lat: Breddegrad
+  words:
+    or: eller
 
 # Norwegian, norsk bokmål, by irb.no
   support:
