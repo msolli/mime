@@ -42,9 +42,11 @@
             #alert= alert
 
       %section#main
-
-        %section#content
+        - if controller_name == 'home'
           = yield
+        - else
+          %section#content
+            = yield
 
         %footer
           %p Leksikonet er en tjeneste fra Budstikka.Media #{image_tag 'budstikka-logo-bw.png'}

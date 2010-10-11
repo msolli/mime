@@ -1,3 +1,4 @@
+# encoding: utf-8
 # language: no
 Egenskap: Logge inn med Facebook-konto
 
@@ -28,7 +29,7 @@ Egenskap: Logge inn med Facebook-konto
   Scenario: få beskjed om at du kan logge inn når du redigerer en artikkel
     Gitt at artikkelen "Foo" finnes
     Og at jeg står på artikkelvisning for "Foo"
-    Når jeg klikker "Redigér"
+    Når jeg klikker "Rediger"
     Så skal jeg komme til artikkelredigering for "Foo"
     Og jeg skal se "logge inn"
 

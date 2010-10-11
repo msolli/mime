@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module Import
   class ArticleXml
     attr_reader :headword, :text
@@ -13,7 +15,7 @@ module Import
         @headword = headword_node.content
       end
       if text_node = node.at_xpath('html/body')
-        @text = CGI.unescapeHTML(text_node.inner_html.strip)
+        @text = CGI::unescapeHTML(text_node.inner_html.strip)
       end
       if subject_node = node.at_xpath('metadata/field[@id="subject"]')
         @subject = subject_node.content

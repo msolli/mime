@@ -18,7 +18,7 @@ gem 'oauth2'
 group :development do
   gem 'rails3-generators'
   gem 'haml-rails'
-  gem 'ruby-debug'
+  gem 'ruby-debug' + (RUBY_VERSION =~ /^1\.9\./ ? '19' : '')
   gem 'wirble'
   gem 'hirb'
   gem 'hpricot'
@@ -34,7 +34,7 @@ group :test do
   #gem 'launchy'
 
   gem 'mongoid-rspec'
-  gem 'rspec-rails', '~> 2.0.0.beta'
+  gem 'rspec-rails', '~> 2.0.0'
   gem 'shoulda'
   gem 'factory_girl'
 

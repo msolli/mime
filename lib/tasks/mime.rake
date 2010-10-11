@@ -71,7 +71,7 @@ namespace :mime do
     end
 
     task :read do
-      @doc = Nokogiri::XML(File.open("#{Rails.root}/tmp/import/abl.xml")) do |config|
+      @doc = Nokogiri::XML(File.open("#{Rails.root}/tmp/import/abl.xml"), nil, "utf-8") do |config|
         config.strict.noent
       end
     end

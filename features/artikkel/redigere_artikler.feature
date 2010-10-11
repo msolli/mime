@@ -1,3 +1,4 @@
+# encoding: utf-8
 # language: no
 Egenskap: Redigere artikler
 
@@ -13,7 +14,7 @@ Egenskap: Redigere artikler
 
     Scenario: gå til artikkelredigering fra artikkelvisning
       Gitt at jeg står på artikkelvisning for "Foo"
-      Når jeg klikker "Redigér"
+      Når jeg klikker "Rediger"
       Så skal jeg komme til artikkelredigering for "Foo"
 
     Scenario: redigere tekst i artikkel

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe "Import::ArticleXml" do
@@ -22,7 +24,7 @@ describe "Import::ArticleXml" do
           </article>
         </lex-import>
       ]
-      @import = Import::Main.parse(Nokogiri::XML(xml))
+      @import = Import::Main.parse(Nokogiri::XML(xml, nil, "utf-8"))
     end
 
     it "has two article elements" do
@@ -66,7 +68,7 @@ describe "Import::Main" do
         <article id_def="gård i Bærum"><metadata><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
       </lex-import>
     EOXML
-    @doc = Nokogiri::XML(xml) do |config|
+    @doc = Nokogiri::XML(xml, nil, "utf-8") do |config|
       config.noent
     end
   end

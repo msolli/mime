@@ -17,7 +17,7 @@ body .container {
 header {
   background: white; }
   header h1.title {
-    padding: 1em 0 0.3em 50px;
+    padding: 1em 0 0.3em 35px;
     float: left; }
   header aside.user-links {
     float: right;
@@ -33,7 +33,7 @@ header {
   header nav {
     clear: both; }
     header nav ul.links {
-      padding: 8px 50px;
+      padding: 8px 35px;
       border-top: 2px solid #efeeeb;
       border-bottom: 2px solid #efeeeb; }
       header nav ul.links ul.letters {
@@ -50,7 +50,7 @@ header {
   background: white;
   padding: 5px 0; }
   #messages #notice {
-    margin: 5px 65px 5px 37px;
+    margin: 5px 65px 5px 22px;
     padding: 10px;
     background: #efefef;
     border: 3px solid #818f2f;
@@ -65,7 +65,7 @@ header {
     -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
   #messages #alert {
-    margin: 5px 65px 5px 37px;
+    margin: 5px 65px 5px 22px;
     padding: 10px;
     background: #efefef;
     border: 3px solid #8f3c2f;
@@ -83,13 +83,13 @@ header {
 #main {
   background: #efefef; }
   #main #content header {
-    padding-left: 50px;
+    padding-left: 35px;
     background: #45494f; }
     #main #content header h1 {
       padding-top: 0.5em;
       padding-bottom: 0.2em; }
   #main #content article aside.info {
-    padding-left: 50px;
+    padding-left: 35px;
     padding-top: 2px; }
     #main #content article aside.info ul li {
       display: inline;
@@ -105,7 +105,7 @@ header {
       #main #content article aside.info ul li.edit-link a {
         color: white; }
   #main #content article .articletext {
-    padding-left: 50px;
+    padding-left: 35px;
     max-width: 33.125em;
     padding-top: 1em;
     overflow: visible; }
@@ -122,7 +122,7 @@ header {
         padding: 5px;
         background: white; }
   #main #content article aside.article-messages {
-    margin: 5px 65px 5px 37px;
+    margin: 5px 65px 5px 22px;
     padding: 10px;
     background: #efefef;
     border: 3px solid #818f2f;
@@ -137,7 +137,7 @@ header {
     -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
   #main #content article form.formtastic.article {
-    padding-left: 50px;
+    padding-left: 35px;
     max-width: 33.125em;
     padding-top: 1em; }
     #main #content article form.formtastic.article textarea {
@@ -154,9 +154,9 @@ header {
       #main #content article aside.tags ul li:last-of-type:after {
         content: ""; }
   #main #content ul.alphabetic {
-    padding-left: 50px; }
+    padding-left: 35px; }
   #main #content .login {
-    padding-left: 50px; }
+    padding-left: 35px; }
     #main #content .login .facebook {
       width: 30em;
       border: 1px solid #cccccc;
@@ -182,12 +182,16 @@ header {
           border-bottom: 1px solid #29447E;
           border-top: 1px solid #45619D;
           text-shadow: none; }
-  #main #content .forside-tmp {
-    width: 60em;
-    margin: 0 65px 25px 35px;
-    background: white; }
+  #main .col {
+    float: left;
+    display: inline;
+    width: 14.875em;
+    margin-right: 2px;
+    background-color: #45494f; }
+  #main .col.left {
+    padding-left: 35px; }
   #main footer {
-    padding-left: 50px;
+    padding-left: 35px;
     clear: both;
     border-top: 2px solid #45494f;
     background: white;

@@ -172,12 +172,19 @@ header {
 				@include fb-button;
 			}
 		}
-		.forside-tmp {
-			width: $grid-width;
-			margin: 0 65px 25px 35px;
-			background: white;
-		}
 	}
+
+	.col {
+		float: left;
+		display: inline;
+		width: #{(238/16)}em;
+		margin-right: 2px;
+		background-color: $dark-grey-color;
+	}
+	.col.left {
+		@include padding-main;
+	}
+
 	footer {
 		@include padding-main;
 		clear: both;

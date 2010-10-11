@@ -1,3 +1,4 @@
+# encoding: utf-8
 # language: no
 Egenskap: Artikkel med feil
 
