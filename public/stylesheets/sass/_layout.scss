@@ -75,15 +75,16 @@ header {
 #main {
 	background: #efefef;
 
-	#content {
-		header {
-			@include padding-main;
-			background: $dark-grey-color;
-			h1 {
-				padding-top: 0.5em;
-				padding-bottom: 0.2em;
-			}
+	header {
+		@include padding-main;
+		background: $dark-grey-color;
+		h1 {
+			padding-top: 0.5em;
+			padding-bottom: 0.2em;
 		}
+	}
+
+	#content {
 		article {
 			aside.info {
 				@include padding-main;

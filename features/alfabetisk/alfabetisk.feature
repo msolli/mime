@@ -19,3 +19,13 @@ Egenskap: Alfabetisk
     Når jeg klikker "a"
     Så skal jeg komme til alfabetisk-siden for "a"
     Og jeg skal se "Asker (kommune)"
+
+  @wip
+  Scenario: navn på personer skal sorteres på etternavn
+    Gitt følgende artikler:
+      | headword       | headword_sorting |
+      | Anton Oskarsen | Oskarsen, Anton  |
+      | Anton Sport    |                  |
+    Når jeg står på alfabetisk-siden for "a"
+    Så skal jeg se "Anton Sport"
+    Og jeg skal ikke se "Anton Oskarsen"

@@ -28,12 +28,13 @@ group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'cucumber-rails', '~> 0.3'
-  #gem 'spork'
-  #gem 'launchy'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'rspec-rails', '~> 2.0.0'
+  gem 'spork'
+  gem 'launchy'
 
   gem 'mongoid-rspec'
-  gem 'rspec-rails', '~> 2.0.0'
   gem 'shoulda'
   gem 'factory_girl'
 

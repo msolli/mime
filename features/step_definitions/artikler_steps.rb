@@ -5,6 +5,6 @@ Gitt /^følgende artikler:$/ do |article_data|
   end
 end
 
-Gitt /^(?:at )artikkelen "([^"]*)" finnes$/ do |headword|
+Gitt /^(?:|at )artikkelen "([^"]*)" finnes$/ do |headword|
   Article.create!(:headword => headword)
 end

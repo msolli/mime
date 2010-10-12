@@ -82,10 +82,10 @@ header {
 
 #main {
   background: #efefef; }
-  #main #content header {
+  #main header {
     padding-left: 35px;
     background: #45494f; }
-    #main #content header h1 {
+    #main header h1 {
       padding-top: 0.5em;
       padding-bottom: 0.2em; }
   #main #content article aside.info {
@@ -247,50 +247,50 @@ header nav {
   /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 87.5%; }
 
-#content header h1 {
+#main header h1 {
   font-size: 175%;
   font-weight: 700;
   color: white; }
-#content article .articletext {
+#main article .articletext {
   font-size: 100%;
   line-height: 1.5; }
-#content article aside.info {
+#main article aside.info {
   font-family: "Lucida Grande", Tahoma, Arial;
   /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 75%;
   color: #7a7a7a; }
-  #content article aside.info a {
+  #main article aside.info a {
     text-decoration: none; }
-    #content article aside.info a:hover {
+    #main article aside.info a:hover {
       text-decoration: underline; }
-#content article aside.article-messages {
+#main article aside.article-messages {
   font-family: "Lucida Grande", Tahoma, Arial;
   /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   font-size: 87.5%; }
-#content article h2 {
+#main article h2 {
   font-size: 125%;
   font-weight: 700; }
-#content article aside.image p {
+#main article aside.image p {
   font-family: "Lucida Grande", Tahoma, Arial;
   /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
   color: #45494f;
   font-size: 75%; }
-  #content article aside.image p:first-of-type {
+  #main article aside.image p:first-of-type {
     margin-top: 5px; }
-#content article aside.tags {
+#main article aside.tags {
   color: #45494f;
   font-size: 75%; }
-  #content article aside.tags h3 {
+  #main article aside.tags h3 {
     font-family: "Lucida Grande", Tahoma, Arial;
     /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
     text-transform: uppercase;
     font-weight: bold; }
-  #content article aside.tags li {
+  #main article aside.tags li {
     font-family: "Lucida Grande", Tahoma, Arial;
     /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
-#content .login {
+#main .login {
   font-size: 75%; }
-  #content .login dl dt {
+  #main .login dl dt {
     font-weight: 700;
     line-height: 1.5;
     margin-top: 5px; }
