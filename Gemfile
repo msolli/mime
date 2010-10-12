@@ -31,7 +31,6 @@ group :test do
   gem 'cucumber-rails'
   gem 'cucumber'
   gem 'rspec-rails', '~> 2.0.0'
-  gem 'spork'
   gem 'launchy'
 
   gem 'mongoid-rspec'
