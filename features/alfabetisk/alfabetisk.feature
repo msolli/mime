@@ -20,12 +20,20 @@ Egenskap: Alfabetisk
     Så skal jeg komme til alfabetisk-siden for "a"
     Og jeg skal se "Asker (kommune)"
 
-  @wip
-  Scenario: navn på personer skal sorteres på etternavn
+  Scenario: navn på personer skal sorteres på etternavn I
     Gitt følgende artikler:
-      | headword       | headword_sorting |
-      | Anton Oskarsen | Oskarsen, Anton  |
-      | Anton Sport    |                  |
+      | headword        | headword_presentation |
+      | Oskarsen, Anton | Anton Oskarsen        |
+      | Anton Sport     |                       |
     Når jeg står på alfabetisk-siden for "a"
     Så skal jeg se "Anton Sport"
     Og jeg skal ikke se "Anton Oskarsen"
+
+  Scenario: navn på personer skal sorteres på etternavn II
+    Gitt følgende artikler:
+      | headword        | headword_presentation |
+      | Oskarsen, Anton | Anton Oskarsen        |
+      | Anton Sport     |                       |
+    Når jeg står på alfabetisk-siden for "o"
+    Så skal jeg se "Anton Oskarsen"
+    Og jeg skal ikke se "Anton Sport"

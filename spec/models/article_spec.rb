@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Article do
 
   it { should have_fields(:headword, :text).of_type(String) }
+  it { should have_field(:headword_presentation).of_type(String) }
   it { should have_field(:definition).of_type(String) }
   it { should have_field(:location).of_type(Array) }
   it { should have_field(:years).of_type(Array) }
@@ -22,6 +23,16 @@ describe Article do
     lambda {
       Article.create!(:headword => 'foo')
     }.should raise_error(Mongoid::Errors::Validations)
+  end
+
+  it "uses headword when presentation headword is blank" do
+    @article = Article.new(:headword => 'foo')
+    @article.headword_presentation.should == 'foo'
+  end
+
+  it "has presentation headword with presentation headword" do
+    @article = Article.new(:headword => 'foo', :headword_presentation => 'Foobar')
+    @article.headword_presentation.should == 'Foobar'
   end
 
   context "with location" do

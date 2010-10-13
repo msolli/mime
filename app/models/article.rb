@@ -3,6 +3,7 @@ class Article
   include Mongoid::Timestamps
 
   field :headword
+  field :headword_presentation
   field :text
   field :definition
   field :years, :type => Array
@@ -16,6 +17,10 @@ class Article
   validates_presence_of :headword
   validates_uniqueness_of :headword
   validates :location, :location => true
+
+  def headword_presentation
+    self[:headword_presentation].blank? ? headword : self[:headword_presentation]
+  end
 
   def lat
     self.location ? self.location[0] : nil
