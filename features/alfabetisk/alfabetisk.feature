@@ -20,6 +20,11 @@ Egenskap: Alfabetisk
     Så skal jeg komme til alfabetisk-siden for "a"
     Og jeg skal se "Asker (kommune)"
 
+  Scenario: takler norske bokstaver
+    Gitt at artikkelen "Åh" finnes
+    Når jeg står på alfabetisk-siden for "å"
+    Så skal jeg se "Åh"
+
   Scenario: navn på personer skal sorteres på etternavn I
     Gitt følgende artikler:
       | headword        | headword_presentation |

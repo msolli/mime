@@ -1,3 +1,5 @@
+require File.expand_path('../../lib/route_constraints', __FILE__)
+
 Mime::Application.routes.draw do
   devise_for :users
   ## Edda SSO
@@ -8,7 +10,9 @@ Mime::Application.routes.draw do
   resources :articles, :only => [:new, :create, :show, :edit, :update]
 
   # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å
-  match '/:letter' => 'home#alphabetic', :letter => /[a-z]|%C3%A6|%C3%86|%C3%B8|%C3%98|%C3%A5|%C3%85/i, :as => :alphabetic
+  constraints AlphabeticConstraint.new do
+    match '/:letter' => 'home#alphabetic', :as => :alphabetic
+  end
 
   root :to => 'home#index'
 
