@@ -10,8 +10,8 @@ describe "routing to alphabetic listing" do
       :letter => "a")
   end
 
-  # Does not work, bug in rspec-rails?
-  # http://github.com/rspec/rspec-rails/issues/#issue/239
+  # Does not work, bug in rails?
+  # https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/5805-assert_recognizes-does-not-support-constraints
   # it "does not route /aa" do
   #   { :get => "/aa" }.should_not be_routable
   # end
