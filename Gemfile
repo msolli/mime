@@ -14,31 +14,28 @@ gem 'sax-machine'
 gem 'devise', :git => "http://github.com/plataformatec/devise.git"
 gem 'oauth2'
 
-unless ENV['HEROKU']
-  group :development do
-    gem 'rails3-generators'
-    gem 'haml-rails'
-    gem 'ruby-debug' + (RUBY_VERSION =~ /^1\.9\./ ? '19' : '')
-    gem 'wirble'
-    gem 'hirb'
-    gem 'hpricot'
-    gem 'ruby_parser'
-  end
+group :development do
+  gem 'rails3-generators'
+  gem 'haml-rails'
+  gem 'wirble'
+  gem 'hirb'
+  gem 'hpricot'
+  gem 'ruby_parser'
+end
 
-  group :test do
-    # http://github.com/aslakhellesoy/cucumber-rails
-    gem 'capybara'
-    gem 'database_cleaner'
-    gem 'cucumber-rails'
-    gem 'cucumber'
-    gem 'rspec-rails', '~> 2.0.0'
-    gem 'launchy'
+group :test do
+  # http://github.com/aslakhellesoy/cucumber-rails
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'rspec-rails', '~> 2.0.0'
+  gem 'launchy'
 
-    gem 'mongoid-rspec'
-    gem 'shoulda'
-    gem 'factory_girl'
+  gem 'mongoid-rspec'
+  gem 'shoulda'
+  gem 'factory_girl'
 
-    gem 'syntax'
-    gem 'rcov'
-  end
+  gem 'syntax'
+  gem 'rcov'
 end
