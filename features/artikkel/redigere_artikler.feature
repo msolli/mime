@@ -23,3 +23,10 @@ Egenskap: Redigere artikler
       Når jeg trykker "Lagre"
       Så skal jeg se "Ny tekst om foo"
       Og jeg skal se "Artikkelen er lagret" under "#notice"
+
+    Scenario: legge til oppslagsord som skal brukes i steden for det egentlige
+      Gitt at jeg står på artikkelredigering for "Foo"
+      Og jeg fyller inn "article[headword_presentation]" med "Føø"
+      Når jeg trykker "Lagre"
+      Så skal jeg se "Føø"
+      Og jeg skal ikke se "Foo"

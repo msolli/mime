@@ -1,6 +1,6 @@
 %article
   %header
-    %h1= @article.headword
+    %h1= @article.headword_presentation
   = render :partial => 'info', :locals => { :article => @article }
   .articletext!= @article.text
   %aside.tags
