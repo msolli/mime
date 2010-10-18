@@ -41,6 +41,13 @@ describe Article do
     @article['headword_presentation'].should be_nil
   end
 
+  it "has versioning" do
+    a = Article.create(:headword => 'foo')
+    a.version.should == 1
+    a.save
+    a.version.should == 2
+  end
+
   context "with location" do
     before(:each) do
       @article = Article.new(:headword => 'foo')

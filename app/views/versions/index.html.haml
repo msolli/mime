@@ -1,0 +1,11 @@
+%header
+  %h1= t('articles.version_log')
+
+- if @versions.blank?
+  %p
+    = t('articles.versions.only_one')
+
+%ul.versions
+  = render :partial => 'version_info', :locals => { :version => @article }
+  - @versions.reverse.each do |version|
+    = render :partial => 'version_info', :locals => { :version => version }

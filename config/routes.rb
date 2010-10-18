@@ -5,7 +5,9 @@ Mime::Application.routes.draw do
   #   get "/users/sso_callback", :to => "sessions#sso_callback"
   # end
 
-  resources :articles, :only => [:new, :create, :show, :edit, :update]
+  resources :articles, :only => [:new, :create, :show, :edit, :update] do
+    resources :versions, :only => [:index]
+  end
 
   # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å, /1, /2, ...
   constraints(lambda { |req| req.params[:letter].size == 1 }) do
