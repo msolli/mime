@@ -9,3 +9,12 @@
     setTimeout(f,3000); 
   }
 })();
+
+$(document).ready(function() {
+	// Don't show presentation headword in edit article form if it's the same as
+	// headword
+	e = $("article #article_headword_presentation");
+	if (e.val() == $("article h1").html()) {
+		e.val('');
+	}
+});

@@ -22,6 +22,10 @@ class Article
     self[:headword_presentation].blank? ? headword : self[:headword_presentation]
   end
 
+  def headword_presentation=(new_value)
+    self[:headword_presentation] = (new_value == self[:headword] ? nil : new_value)
+  end
+
   def lat
     self.location ? self.location[0] : nil
   end

@@ -24,9 +24,14 @@ Egenskap: Redigere artikler
       Så skal jeg se "Ny tekst om foo"
       Og jeg skal se "Artikkelen er lagret" under "#notice"
 
-    Scenario: legge til oppslagsord som skal brukes i steden for det egentlige
+    Scenario: legge til alternativt oppslagsord
       Gitt at jeg står på artikkelredigering for "Foo"
       Og jeg fyller inn "article[headword_presentation]" med "Føø"
       Når jeg trykker "Lagre"
       Så skal jeg se "Føø"
       Og jeg skal ikke se "Foo"
+
+    @javascript
+    Scenario: alternativt oppslagsord vises ikke når tomt
+      Når jeg står på artikkelredigering for "Foo"
+      Så skal feltet "article[headword_presentation]" ikke inneholde "Foo"

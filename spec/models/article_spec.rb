@@ -35,6 +35,12 @@ describe Article do
     @article.headword_presentation.should == 'Foobar'
   end
 
+  it "does not set presentation headword when it's the same as headword" do
+    @article = Article.new(:headword => 'foo')
+    @article.headword_presentation = 'foo'
+    @article['headword_presentation'].should be_nil
+  end
+
   context "with location" do
     before(:each) do
       @article = Article.new(:headword => 'foo')
