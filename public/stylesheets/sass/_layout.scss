@@ -159,9 +159,6 @@ header {
 				}
 			}
 		}
-		ul.alphabetic {
-			@include padding-main;
-		}
 		.login {
 			@include padding-main;
 			.facebook {
@@ -173,6 +170,10 @@ header {
 				@include fb-button;
 			}
 		}
+	}
+
+	div.maincol {
+		@include padding-main;
 	}
 
 	.col {

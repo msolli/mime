@@ -1,7 +1,8 @@
-%header
+- content_for :header do
   -# Når Ruby 1.9.2 er støttet på Heroku, se http://unicode-utils.rubyforge.org/
-  %h1 #{@letter.mb_chars.upcase.to_s} #{@letter.mb_chars.downcase.to_s}
+  #{@letter.mb_chars.upcase.to_s} #{@letter.mb_chars.downcase.to_s}
 
-%ul.alphabetic
-  - @articles.each do |article|
-    %li= link_to article.headword_presentation, article
+.maincol
+  %ul.alphabetic
+    - @articles.each do |article|
+      %li= link_to article.headword_presentation, article

@@ -1,9 +1,10 @@
-%header
-  %h1= t('articles.version_log')
+- content_for :header do
+  = t('articles.version_log')
 
 - if @versions.blank?
-  %p
-    = t('articles.versions.only_one')
+  %p= t('articles.versions.only_one')
+- else
+  %p= t('articles.versions.count', :count => @versions.size + 1)
 
 %ul.versions
   = render :partial => 'version_info', :locals => { :version => @article }

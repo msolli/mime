@@ -10,11 +10,18 @@
   }
 })();
 
+// ECMAScript 5 trim()
+if (typeof(String.prototype.trim) === "undefined") {
+    String.prototype.trim = function() {
+        return String(this).replace(/^\s+|\s+$/g, '');
+    };
+}
+
 $(document).ready(function() {
 	// Don't show presentation headword in edit article form if it's the same as
 	// headword
-	e = $("article #article_headword_presentation");
-	if (e.val() == $("article h1").html()) {
+	e = $("article form #article_headword_presentation");
+	if (e.val().trim() == $("article header h1").html().trim()) {
 		e.val('');
 	}
 });

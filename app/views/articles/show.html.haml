@@ -1,10 +1,10 @@
-%article
-  %header
-    %h1= @article.headword_presentation
-  = render :partial => 'info', :locals => { :article => @article }
-  .articletext!= @article.text
-  %aside.tags
-    %h3 Nøkkelord
-    %ul
-      - %w[hus fly sjøfly landfly gressholmen fornebu flyrutenett flyplass småfly flyhistorie].each do |tag|
-        %li>= link_to tag, "#TODO"
+- content_for :header do
+  = @article.headword_presentation
+
+= render :partial => 'info', :locals => { :article => @article }
+.articletext!= @article.text
+%aside.tags
+  %h3 Nøkkelord
+  %ul
+    - %w[hus fly sjøfly landfly gressholmen fornebu flyrutenett flyplass småfly flyhistorie].each do |tag|
+      %li>= link_to tag, "#TODO"

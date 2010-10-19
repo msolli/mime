@@ -1,3 +1,5 @@
 %li
+  %span.version_number
+    = version.version
   %span.version_date
-    = version.versions.blank? ? l(version.created_at) : l(version.updated_at)
+    = l(version.updated_at)

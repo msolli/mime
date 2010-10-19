@@ -20,6 +20,7 @@ no-NB:
     login_link: logge inn
     versions:
       only_one: "Det er bare én versjon av artikkelen."
+      count: "Det er %{count} versjoner av artikkelen."
   users:
     login:
       help_us: "Hjelp oss å oppdatere leksikonet:"

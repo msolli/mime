@@ -153,8 +153,6 @@ header {
         content: ", "; }
       #main #content article aside.tags ul li:last-of-type:after {
         content: ""; }
-  #main #content ul.alphabetic {
-    padding-left: 35px; }
   #main #content .login {
     padding-left: 35px; }
     #main #content .login .facebook {
@@ -182,6 +180,8 @@ header {
           border-bottom: 1px solid #29447E;
           border-top: 1px solid #45619D;
           text-shadow: none; }
+  #main div.maincol {
+    padding-left: 35px; }
   #main .col {
     float: left;
     display: inline;

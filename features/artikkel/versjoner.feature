@@ -16,3 +16,17 @@ Egenskap: Versjonering av artikler
       Når jeg klikker "Versjonslogg"
       Så skal jeg komme til versjonsloggen for "Foo"
       Og jeg skal se "bare én versjon"
+
+    Scenario: to versjoner
+      Gitt at jeg står på artikkelredigering for "Foo"
+      Og jeg trykker "Lagre"
+      Og jeg klikker "Versjonslogg"
+      Så skal jeg se "2 versjoner"
+
+    Scenario: flere versjoner
+      Gitt at jeg står på artikkelredigering for "Foo"
+      Når jeg trykker "Lagre"
+      Og jeg klikker "Rediger"
+      Og jeg trykker "Lagre"
+      Og jeg klikker "Versjonslogg"
+      Så skal jeg se "3 versjoner"

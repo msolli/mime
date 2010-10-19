@@ -43,10 +43,21 @@
 
       %section#main
         - if controller_name == 'home'
+          %header
+            %h1<= yield :header
           = yield
+        - elsif controller_name == 'articles'
+          %section#content
+            %article
+              %header
+                %h1<= yield :header
+              = yield
         - else
           %section#content
-            = yield
+            %header
+              %h1<= yield :header
+            .maincol
+              = yield
 
         %footer
           %p Leksikonet er en tjeneste fra Budstikka.Media #{image_tag 'budstikka-logo-bw.png'}
