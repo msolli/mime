@@ -44,13 +44,14 @@ namespace :mime do
 
     task :field_headword => :read do
       @doc.xpath('//field[@id="headword"]').each do |node|
-        puts node.to_xml.unpack("U*").collect {|s| (s > 127 ? "&##{s};" : s.chr) }.join("")
+        puts node.content
+        # puts unpack_utf8(node.to_xml)
       end
     end
 
     task :field_author => :read do
       @doc.xpath('//field[@id="author"]').each do |node|
-        puts "'#{node.content}'"
+        puts node.content
       end
     end
 
@@ -70,10 +71,22 @@ namespace :mime do
       end
     end
 
+    task :no_author => :read do
+      @doc.xpath('//field[@id="author"]').each do |node|
+        if node.content == 'Red'
+          puts node.xpath('../field[@id="headword"]').first.content
+        end
+      end
+    end
+
     task :read do
       @doc = Nokogiri::XML(File.open("#{Rails.root}/tmp/import/abl.xml"), nil, "utf-8") do |config|
         config.strict.noent
       end
     end
   end
+end
+
+def unpack_utf8(xml)
+  xml.unpack("U*").collect {|s| (s > 127 ? "&##{s};" : s.chr) }.join("")
 end
