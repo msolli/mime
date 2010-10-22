@@ -3,6 +3,7 @@
 module Import
   class ArticleXml
     cattr_accessor :authors
+    cattr_accessor :editor
 
     attr_reader :headword, :text
     attr_reader :subject, :author, :user
@@ -48,7 +49,13 @@ module Import
     # * En 'disambiguation page' uten tekst opprettes.
     # * Alle disse får ambiguous-flagget satt.
     def save!
-      @user = ArticleXml.get_user(ArticleXml.authors[@author]['email'])
+      # Find or create the author
+      @user = if ArticleXml.authors[@author].instance_of?(Hash)
+        ArticleXml.get_user(ArticleXml.authors[@author]['email'],
+                            ArticleXml.authors[@author]['name'])
+      else
+        nil
+      end
 
       begin
         Rails.logger.debug("  MIME: Prøver å opprette artikkel med standard headword")
@@ -60,7 +67,7 @@ module Import
           first.update_attributes!(:headword => ArticleXml.extended_headword(first), :ambiguous => true)
           Rails.logger.debug("  MIME: Oppdaterte artikkel, nytt headword: '#{first.headword}'")
           Rails.logger.debug("  MIME: Oppretter disambiguation page")
-          Article.create!(:headword => @headword, :ambiguous => true)
+          Article.create!(:headword => @headword, :ambiguous => true, :author => ArticleXml.get_editor)
         end
         this_article = Article.new(self.attributes)
         this_article.ambiguous = true
@@ -100,11 +107,19 @@ module Import
         candidate
       end
 
-      def get_user(email)
+      def get_user(email, name)
         User.find_or_initialize_by(:email => email).tap do |user|
-          user.password = 'nothing' if user.new_record?
-          user.save!
+          if user.new_record?
+            user.password = 'nothing'
+            user.name = name
+            user.save!
+          end
         end
+      end
+
+      def get_editor
+        get_user(ArticleXml.authors[ArticleXml.editor]['email'],
+                 ArticleXml.authors[ArticleXml.editor]['name'])
       end
     end
   end

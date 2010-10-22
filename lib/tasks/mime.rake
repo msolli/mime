@@ -3,8 +3,10 @@
 namespace :mime do
   require 'import'
   desc "Import av XML-data fra Kunnskapsforlaget"
-  task :import => [:environment, "mime:xml:read", "mime:xml:authors"] do
-    Import::ArticleXml.authors = YAML.load("#{Rails.root}/tmp/import/forfattere.yml".read)
+  task :import => [:environment, "mime:xml:read"] do
+    author_conf = YAML.load(IO.read("#{Rails.root}/tmp/import/forfattere.yml"))
+    Import::ArticleXml.authors = author_conf['authors']
+    Import::ArticleXml.editor = author_conf['editor']
     Import::Main.run(@doc)
   end
 

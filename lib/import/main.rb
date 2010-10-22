@@ -22,6 +22,9 @@ module Import
       def run(doc)
         import = self.new(doc)
 
+        Rails.logger.debug("  MIME: Sletter alle brukere")
+        User.delete_all
+
         Rails.logger.debug("  MIME: Sletter alle artikler")
         Article.delete_all
         Rails.logger.debug("  MIME: Lagrer artikler")
@@ -30,6 +33,7 @@ module Import
         end
         Article.collection.update({}, {"$set" => {:created_at => CREATED_AT, :updated_at => CREATED_AT}}, :multi => true)
         Rails.logger.debug("Opprettet #{Article.count} artikler, hvorav #{Article.where(:ambiguous => true, :text => nil).count} flertydighetsartikler.")
+        Rails.logger.debug("Opprettet #{User.count} brukere.")
       end
     end
   end

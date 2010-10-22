@@ -66,15 +66,21 @@ describe "Import::Main" do
         <article id_def="gård i Asker"><metadata><field id="author">Forfatter1</field><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
         <article id_def="gård i Bærum"><metadata><field id="author">Forfatter2</field><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
         <article id_def="gård i Bærum"><metadata><field id="author">Forfatter1</field><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
+        <article><metadata><field id="author">UkjentForfatter</field><field id="headword">Bar</field></metadata><html><body>Artikkeltekst **</body></html></article>
       </lex-import>
     EOXML
-    @authors = YAML::load(%[
-      Forfatter1:
-        name: Forfatter1 Etternavn
-        email: f1@ableksikon.no
-      Forfatter2:
-        name: Forfatter2 Etternavn
-        email: f2@ableksikon.no
+    @author_conf = YAML::load(%[
+      editor: Red
+      authors:
+        Forfatter1:
+          name: Forfatter1 Etternavn
+          email: f1@ableksikon.no
+        Forfatter2:
+          name: Forfatter2 Etternavn
+          email: f2@ableksikon.no
+        Red:
+          name: Redaksjonen
+          email: redaksjonen@ableksikon.no
     ])
     @doc = Nokogiri::XML(xml, nil, "utf-8") do |config|
       config.noent
@@ -83,23 +89,25 @@ describe "Import::Main" do
 
   it "throws no exceptions when importing" do
     lambda {
-      Import::ArticleXml.authors = @authors
+      Import::ArticleXml.authors = @author_conf['authors']
+      Import::ArticleXml.editor = @author_conf['editor']
       Import::Main.run(@doc)
     }.should_not raise_error
   end
 
   describe "when importing" do
     before :each do
-      Import::ArticleXml.authors = @authors
+      Import::ArticleXml.authors = @author_conf['authors']
+      Import::ArticleXml.editor = @author_conf['editor']
       Import::Main.run(@doc)
     end
 
     it "saves articles" do
-      Article.all.count.should == 4
+      Article.all.count.should == 5
     end
 
     it "saves authors" do
-      User.all.count.should == 2
+      User.all.count.should == 3
     end
 
     it "checks for duplicates" do
@@ -119,6 +127,14 @@ describe "Import::Main" do
       Article.where(:headword => 'Foo (gård i Asker)').first.author.should == User.where(:email => 'f1@ableksikon.no').first
       Article.where(:headword => 'Foo (gård i Bærum)').first.author.should == User.where(:email => 'f2@ableksikon.no').first
       Article.where(:headword => 'Foo (gård i Bærum - 2)').first.author.should == User.where(:email => 'f1@ableksikon.no').first
+    end
+
+    it "associates disambiguation articles to an author" do
+      Article.where(:headword => 'Foo').first.author.name.should == "Redaksjonen"
+    end
+
+    it "handles articles with unknown author" do
+      Article.where(:headword => 'Bar').first.author.should be_nil
     end
   end
 end
