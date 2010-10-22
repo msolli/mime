@@ -1,7 +1,10 @@
+# encoding: utf-8
+
 namespace :mime do
   require 'import'
   desc "Import av XML-data fra Kunnskapsforlaget"
-  task :import => [:environment, "mime:xml:read"] do
+  task :import => [:environment, "mime:xml:read", "mime:xml:authors"] do
+    Import::ArticleXml.authors = YAML.load("#{Rails.root}/tmp/import/forfattere.yml".read)
     Import::Main.run(@doc)
   end
 
@@ -75,6 +78,16 @@ namespace :mime do
       @doc.xpath('//field[@id="author"]').each do |node|
         if node.content == 'Red'
           puts node.xpath('../field[@id="headword"]').first.content
+        end
+      end
+    end
+
+    task :vei_asker_red => :read do
+      @doc.xpath('//article[@id_def="vei i Asker"]').each do |node|
+        node.xpath('.//field[@id="author"]').each do |author_node|
+          if author_node.content == 'Red'
+            puts node.xpath('.//field[@id="headword"]').first.content
+          end
         end
       end
     end

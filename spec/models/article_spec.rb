@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Article do
 
+  it { should be_referenced_in :user }
+
   it { should have_fields(:headword, :text).of_type(String) }
   it { should have_field(:headword_presentation).of_type(String) }
   it { should have_field(:definition).of_type(String) }

@@ -2,14 +2,16 @@
 
 module Import
   class ArticleXml
+    cattr_accessor :authors
+
     attr_reader :headword, :text
-    attr_reader :subject, :author
+    attr_reader :subject, :author, :user
     attr_reader :oldid, :definition, :epoch_start, :epoch_end, :clarification
     attr_reader :ambiguous
 
     def initialize(node)
       # TODO: subject
-      # TODO: author  obs: kan ha flere
+      # TODO: flere forfattere
       # TODO: sette timestamp til da boka ble utgitt
       if headword_node = node.at_xpath('metadata/field[@id="headword"]')
         @headword = headword_node.content
@@ -46,6 +48,8 @@ module Import
     # * En 'disambiguation page' uten tekst opprettes.
     # * Alle disse får ambiguous-flagget satt.
     def save!
+      @user = ArticleXml.get_user(ArticleXml.authors[@author]['email'])
+
       begin
         Rails.logger.debug("  MIME: Prøver å opprette artikkel med standard headword")
         Article.create!(self.attributes)
@@ -71,7 +75,7 @@ module Import
         :headword => @headword,
         :text => @text,
         :subject => @subject,
-        :author => @author,
+        :author => @user,
         :epoch_start => @epoch_start,
         :epoch_end => @epoch_end,
         :oldid => @oldid,
@@ -94,6 +98,13 @@ module Import
           end
         end
         candidate
+      end
+
+      def get_user(email)
+        User.find_or_initialize_by(:email => email).tap do |user|
+          user.password = 'nothing' if user.new_record?
+          user.save!
+        end
       end
     end
   end

@@ -63,11 +63,19 @@ describe "Import::Main" do
   before :each do
     xml = <<-EOXML
       <lex-import>
-        <article id_def="gård i Asker"><metadata><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
-        <article id_def="gård i Bærum"><metadata><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
-        <article id_def="gård i Bærum"><metadata><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
+        <article id_def="gård i Asker"><metadata><field id="author">Forfatter1</field><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
+        <article id_def="gård i Bærum"><metadata><field id="author">Forfatter2</field><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
+        <article id_def="gård i Bærum"><metadata><field id="author">Forfatter1</field><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
       </lex-import>
     EOXML
+    @authors = YAML::load(%[
+      Forfatter1:
+        name: Forfatter1 Etternavn
+        email: f1@ableksikon.no
+      Forfatter2:
+        name: Forfatter2 Etternavn
+        email: f2@ableksikon.no
+    ])
     @doc = Nokogiri::XML(xml, nil, "utf-8") do |config|
       config.noent
     end
@@ -75,17 +83,23 @@ describe "Import::Main" do
 
   it "throws no exceptions when importing" do
     lambda {
+      Import::ArticleXml.authors = @authors
       Import::Main.run(@doc)
     }.should_not raise_error
   end
 
   describe "when importing" do
     before :each do
+      Import::ArticleXml.authors = @authors
       Import::Main.run(@doc)
     end
 
     it "saves articles" do
       Article.all.count.should == 4
+    end
+
+    it "saves authors" do
+      User.all.count.should == 2
     end
 
     it "checks for duplicates" do
@@ -99,6 +113,12 @@ describe "Import::Main" do
     it "sets updated_to to publish date of book" do
       Article.first.created_at.should == Time.local(2008, 10, 16, 12, 00, 00)
       Article.first.updated_at.should == Time.local(2008, 10, 16, 12, 00, 00)
+    end
+
+    it "associates articles with users as authors" do
+      Article.where(:headword => 'Foo (gård i Asker)').first.author.should == User.where(:email => 'f1@ableksikon.no').first
+      Article.where(:headword => 'Foo (gård i Bærum)').first.author.should == User.where(:email => 'f2@ableksikon.no').first
+      Article.where(:headword => 'Foo (gård i Bærum - 2)').first.author.should == User.where(:email => 'f1@ableksikon.no').first
     end
   end
 end

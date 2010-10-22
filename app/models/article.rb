@@ -3,6 +3,10 @@ class Article
   include Mongoid::Timestamps
   include Mongoid::Versioning
 
+  referenced_in :user
+  alias :author :user
+  alias :author= :user=
+
   field :headword
   field :headword_presentation
   field :text

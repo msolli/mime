@@ -21,10 +21,11 @@ module Import
       
       def run(doc)
         import = self.new(doc)
+
         Rails.logger.debug("  MIME: Sletter alle artikler")
         Article.delete_all
         Rails.logger.debug("  MIME: Lagrer artikler")
-        import.articles.map do |article|
+        import.articles.each do |article|
           article.save!
         end
         Article.collection.update({}, {"$set" => {:created_at => CREATED_AT, :updated_at => CREATED_AT}}, :multi => true)
