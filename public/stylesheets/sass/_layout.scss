@@ -170,6 +170,15 @@ header {
 				@include fb-button;
 			}
 		}
+		table.versions {
+			border: 1px solid $box-border-color;
+			td, th {
+				padding: 5px;
+			}
+			tr.current {
+				background: mix($message-notice-color, $main-background-color, 25%);
+			}
+		}
 	}
 
 	div.maincol {

@@ -19,8 +19,15 @@ no-NB:
     login_teaser: "Du er ikke logget inn. Det er helt fint, for leksikonet er åpent for redigering av hvem som helst. Men hvis du ønsker navnet ditt under \"Bidragsytere\", så må du først %{login_link}."
     login_link: logge inn
     versions:
+      version: Versjon
+      versions: Versjoner
+      summary: "Oversikt over versjoner av artikkelen."
+      date: Tidspunkt
+      author: Bidragsyter
       only_one: "Det er bare én versjon av artikkelen."
-      count: "Det er %{count} versjoner av artikkelen."
+      count:
+        one: "har bare én versjon."
+        other: "har %{count} versjoner."
   users:
     login:
       help_us: "Hjelp oss å oppdatere leksikonet:"

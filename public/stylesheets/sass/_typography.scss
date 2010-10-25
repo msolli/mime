@@ -105,6 +105,9 @@ header {
 			}
 		}
 	}
+	table.versions {
+		@include small-sans;
+	}
 }
 
 footer {

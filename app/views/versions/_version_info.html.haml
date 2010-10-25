@@ -1,5 +1,7 @@
-%li
-  %span.version_number
+%tr{:class => "#{ current ? 'current' : '' }"}
+  %td.version_number
     = version.version
-  %span.version_date
+  %td.version_date
     = l(version.updated_at)
+  %td.author
+    = version.author.name

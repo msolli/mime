@@ -1,12 +1,16 @@
 - content_for :header do
   = t('articles.version_log')
 
-- if @versions.blank?
-  %p= t('articles.versions.only_one')
-- else
-  %p= t('articles.versions.count', :count => @versions.size + 1)
+- caption = link_to(@article.headword, @article) + ' ' + t('articles.versions.count', :count => @versions.size + 1)
 
-%ul.versions
-  = render :partial => 'version_info', :locals => { :version => @article }
-  - @versions.reverse.each do |version|
-    = render :partial => 'version_info', :locals => { :version => version }
+%table.versions{:caption => caption, :summary => t('articles.versions.summary')}
+  %caption= caption
+  %thead
+    %tr
+      %th= t('articles.versions.version')
+      %th= t('articles.versions.date')
+      %th= t('articles.versions.author')
+  %tbody
+    = render :partial => 'version_info', :locals => { :version => @article, :current => true }
+    - @versions.reverse.each do |version|
+      = render :partial => 'version_info', :locals => { :version => version, :current => false }

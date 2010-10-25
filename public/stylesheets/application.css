@@ -180,6 +180,12 @@ header {
           border-bottom: 1px solid #29447E;
           border-top: 1px solid #45619D;
           text-shadow: none; }
+  #main #content table.versions {
+    border: 1px solid #cccccc; }
+    #main #content table.versions td, #main #content table.versions th {
+      padding: 5px; }
+    #main #content table.versions tr.current {
+      background: #d3d7bf; }
   #main div.maincol {
     padding-left: 35px; }
   #main .col {
@@ -294,6 +300,9 @@ header nav {
     font-weight: 700;
     line-height: 1.5;
     margin-top: 5px; }
+#main table.versions {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
 
 footer {
   font-family: "Lucida Grande", Tahoma, Arial;
