@@ -138,3 +138,55 @@ describe "Import::Main" do
     end
   end
 end
+
+describe "Import::Crossref" do
+  before :each do
+    xml = <<-EOXML
+      <lex-import>
+        <article oldid="sl101"><metadata><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **Lenke til <a class="crossref" href="sl102">Bar</a></body></html></article>
+        <article oldid="sl102"><metadata><field id="headword">Bar</field></metadata><html><body>Artikkeltekst ** Lenke til <a class="crossref" href="sl">Baz</a></body></html></article>
+        <article oldid="sl103"><metadata><field id="headword">Baz</field></metadata><html><body>Artikkeltekst **</body></html></article>
+      </lex-import>
+    EOXML
+    @doc = Nokogiri::XML(xml, nil, "utf-8")
+    Import::Main.run(@doc)
+  end
+
+  it "finds the referenced article when the crossref id is present" do
+    crossref = Import::Crossref.new(Article.where(:oldid => "sl101").first)
+    crossref.find_ref(crossref.refs.first).headword.should == 'Bar'
+  end
+
+  it "finds the referenced article when the crossref id is missing" do
+    crossref = Import::Crossref.new(Article.where(:oldid => "sl102").first)
+    crossref.find_ref(crossref.refs.first).headword.should == 'Baz'
+  end
+
+  it "raises exception when referenced article is not found" do
+    xml = <<-EOXML
+      <lex-import>
+        <article oldid="sl200"><metadata><field id="headword">Xyzzy</field></metadata><html><body>Artikkeltekst **<a class="crossref" href="sl666">Ukjent</a></body></html></article>
+      </lex-import>
+    EOXML
+    doc = Nokogiri::XML(xml, nil, "utf-8")
+    Import::Main.run(doc)
+    expect {
+      crossref = Import::Crossref.new(Article.where(:oldid => "sl200").first)
+      crossref.find_ref(crossref.refs.first)
+    }.to raise_error(NoRefError)
+  end
+
+  it "updates crossrefs when the crossref id is present" do
+    Import::Crossref.run
+    foo = Article.where(:headword => 'Foo').first
+    bar = Article.where(:headword => 'Bar').first
+    foo.text.should =~ /#{bar.id.to_s}/
+  end
+
+  it "updates crossrefs when the crossref id is missing" do
+    Import::Crossref.run
+    bar = Article.where(:headword => 'Bar').first
+    baz = Article.where(:headword => 'Baz').first
+    bar.text.should =~ /#{baz.id.to_s}/
+  end
+end

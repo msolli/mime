@@ -50,4 +50,10 @@ class Article
     self.location ||= []
     self.location[1] = longitude
   end
+
+  class << self
+    def without_versioning(&block)
+      without_callback(:save, :before, :revise) { yield }
+    end
+  end
 end

@@ -18,6 +18,13 @@ describe HomeController do
       assigns(:articles).first.headword.should == "Asker"
     end
 
+    it "shows articles where first char of headword is not a letter" do
+      Article.create!(:headword => "«Hartmann»")
+      get :alphabetic, {:letter => 'h'}
+      response.should be_success
+      assigns(:articles).first.headword.should == "«Hartmann»"
+    end
+
     it "handles norwegian characters i url" do
       Article.create!(:headword => "Åh")
       get :alphabetic, {:letter => 'å'}

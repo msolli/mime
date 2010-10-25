@@ -4,6 +4,6 @@ class HomeController < ApplicationController
 
   def alphabetic
     @letter = params[:letter]
-    @articles = Article.where(:headword => /^#{@letter}/i)
+    @articles = Article.where(:headword => /^\W?#{@letter}/i)
   end
 end

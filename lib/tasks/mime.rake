@@ -8,6 +8,12 @@ namespace :mime do
     Import::ArticleXml.authors = author_conf['authors']
     Import::ArticleXml.editor = author_conf['editor']
     Import::Main.run(@doc)
+    Import::Crossref.run
+  end
+
+  desc "Oppdater kryssreferanser etter import"
+  task :crossref => :environment do
+    Import::Crossref.run
   end
 
   namespace :xml do
