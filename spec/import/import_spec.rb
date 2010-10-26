@@ -118,11 +118,6 @@ describe "Import::Main" do
       Article.where(:headword => 'Foo (gård i Bærum - 2)').first.ambiguous.should be_true
     end
 
-    it "sets updated_to to publish date of book" do
-      Article.first.created_at.should == Time.local(2008, 10, 16, 12, 00, 00)
-      Article.first.updated_at.should == Time.local(2008, 10, 16, 12, 00, 00)
-    end
-
     it "associates articles with users as authors" do
       Article.where(:headword => 'Foo (gård i Asker)').first.author.should == User.where(:email => 'f1@ableksikon.no').first
       Article.where(:headword => 'Foo (gård i Bærum)').first.author.should == User.where(:email => 'f2@ableksikon.no').first

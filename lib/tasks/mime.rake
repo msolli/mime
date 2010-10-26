@@ -9,6 +9,10 @@ namespace :mime do
     Import::ArticleXml.editor = author_conf['editor']
     Import::Main.run(@doc)
     Import::Crossref.run
+
+    # Leksikonet ble utgitt 16. oktober 2008
+    CREATED_AT = Time.local(2008, 10, 16, 12, 00, 00)
+    Article.collection.update({}, {"$set" => {:created_at => CREATED_AT, :updated_at => CREATED_AT}}, :multi => true)
   end
 
   desc "Oppdater kryssreferanser etter import"

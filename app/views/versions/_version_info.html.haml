@@ -4,4 +4,4 @@
   %td.version_date
     = l(version.updated_at)
   %td.author
-    = version.author.name
+    = version.author.name if version.author

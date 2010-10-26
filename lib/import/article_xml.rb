@@ -64,7 +64,9 @@ module Import
         first = Article.where(:headword => @headword).first
         Rails.logger.debug("  MIME: Artikkel '#{first.headword}' fantes fra før")
         unless first.text.blank?  # not a disambiguation page - update it and create dis'n page
-          first.update_attributes!(:headword => ArticleXml.extended_headword(first), :ambiguous => true)
+          Article.without_versioning do
+            first.update_attributes!(:headword => ArticleXml.extended_headword(first), :ambiguous => true)
+          end
           Rails.logger.debug("  MIME: Oppdaterte artikkel, nytt headword: '#{first.headword}'")
           Rails.logger.debug("  MIME: Oppretter disambiguation page")
           Article.create!(:headword => @headword, :ambiguous => true, :author => ArticleXml.get_editor)
