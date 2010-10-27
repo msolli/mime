@@ -21,7 +21,11 @@ $(document).ready(function() {
 	// Don't show presentation headword in edit article form if it's the same as
 	// headword
 	e = $("article form #article_headword_presentation");
-	if (e.val().trim() == $("article header h1").html().trim()) {
+	if (e.length && e.val().trim() == $("article header h1").html().trim()) {
 		e.val('');
 	}
+
+	// jQuery.timeago() (http://timeago.yarp.com/)
+	$.timeago.settings.cutoff = 7*24*60*60*1000;
+	$("time.timeago").timeago();
 });

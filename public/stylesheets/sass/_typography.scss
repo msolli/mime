@@ -51,6 +51,8 @@ header {
 		}
 	}
 	article {
+		color: $text-color;
+
 		.articletext {
 			font-size: $font16px;
 			line-height: 1.5;
@@ -67,6 +69,11 @@ header {
 		}
 		h2 {
 			font-size: $font20px;
+			font-weight: 700;
+			color: darken($text-color, 5%);
+		}
+		h3 {
+			font-size: $font17px;
 			font-weight: 700;
 		}
 		aside.image {

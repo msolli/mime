@@ -1,7 +1,7 @@
 %aside.info
   %ul
     %li>= link_to t('articles.contributors'), "TODO"
-    %li> #{t('articles.last_updated')} #{time_ago_in_mostly_words(article.updated_at)}
+    %li> #{t('articles.last_updated')} #{timeago(article.updated_at)}
     %li>= link_to t('articles.version_log'), article_versions_path(article)
     %li>= link_to t('articles.report_error'), "TODO"
     %li.edit-link>= link_to t('articles.edit'), edit_article_path(article)

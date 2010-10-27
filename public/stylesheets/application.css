@@ -257,43 +257,49 @@ header nav {
   font-size: 175%;
   font-weight: 700;
   color: white; }
-#main article .articletext {
-  font-size: 100%;
-  line-height: 1.5; }
-#main article aside.info {
-  font-family: "Lucida Grande", Tahoma, Arial;
-  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
-  font-size: 75%;
-  color: #7a7a7a; }
-  #main article aside.info a {
-    text-decoration: none; }
-    #main article aside.info a:hover {
-      text-decoration: underline; }
-#main article aside.article-messages {
-  font-family: "Lucida Grande", Tahoma, Arial;
-  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
-  font-size: 87.5%; }
-#main article h2 {
-  font-size: 125%;
-  font-weight: 700; }
-#main article aside.image p {
-  font-family: "Lucida Grande", Tahoma, Arial;
-  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
-  color: #45494f;
-  font-size: 75%; }
-  #main article aside.image p:first-of-type {
-    margin-top: 5px; }
-#main article aside.tags {
-  color: #45494f;
-  font-size: 75%; }
-  #main article aside.tags h3 {
+#main article {
+  color: #383838; }
+  #main article .articletext {
+    font-size: 100%;
+    line-height: 1.5; }
+  #main article aside.info {
     font-family: "Lucida Grande", Tahoma, Arial;
     /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
-    text-transform: uppercase;
-    font-weight: bold; }
-  #main article aside.tags li {
+    font-size: 75%;
+    color: #7a7a7a; }
+    #main article aside.info a {
+      text-decoration: none; }
+      #main article aside.info a:hover {
+        text-decoration: underline; }
+  #main article aside.article-messages {
     font-family: "Lucida Grande", Tahoma, Arial;
-    /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
+    /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+    font-size: 87.5%; }
+  #main article h2 {
+    font-size: 125%;
+    font-weight: 700;
+    color: #2b2b2b; }
+  #main article h3 {
+    font-size: 106.25%;
+    font-weight: 700; }
+  #main article aside.image p {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+    color: #45494f;
+    font-size: 75%; }
+    #main article aside.image p:first-of-type {
+      margin-top: 5px; }
+  #main article aside.tags {
+    color: #45494f;
+    font-size: 75%; }
+    #main article aside.tags h3 {
+      font-family: "Lucida Grande", Tahoma, Arial;
+      /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+      text-transform: uppercase;
+      font-weight: bold; }
+    #main article aside.tags li {
+      font-family: "Lucida Grande", Tahoma, Arial;
+      /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
 #main .login {
   font-size: 75%; }
   #main .login dl dt {
