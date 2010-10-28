@@ -31,8 +31,8 @@ no-NB:
     unlocks:
       send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
       unlocked: 'Your account was successfully unlocked. You are now signed in.'
-    oauth_callbacks:
-      success: 'Successfully authorized from %{kind} account.'
+    omniauth_callbacks:
+      success: 'Nå er du logget inn som %{name} via %{kind}.'
       failure: 'Could not authorize you from %{kind} because "%{reason}".'
       user:
         facebook:

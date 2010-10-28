@@ -10,4 +10,14 @@ describe User do
   it { should validate_uniqueness_of(:email) }
 
   it { should reference_many :articles }
+
+  it "has name_or_email with email" do
+    u = User.new(:email => 'yo@yo.com')
+    u.name_or_email.should == 'yo@yo.com'
+  end
+
+  it "has name_or_email with name" do
+    u = User.new(:email => 'yo@yo.com', :name => "Yoman")
+    u.name_or_email.should == 'Yoman'
+  end
 end

@@ -1,6 +1,6 @@
 %ul
   - if user_signed_in?
-    %li= t('users.login.logged_in_as', :username => current_user.email)
+    %li= t('users.login.logged_in_as', :username => current_user.name_or_email)
     %li #{t('users.login.not_you')} #{link_to t('users.login.log_out'), destroy_user_session_path}
   - else
     %li= t('users.login.help_us')

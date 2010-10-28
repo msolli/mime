@@ -1,5 +1,5 @@
 Mime::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   ## Edda SSO
   # devise_for :users, :controllers => { :sessions => "sessions" } do
   #   get "/users/sso_callback", :to => "sessions#sso_callback"

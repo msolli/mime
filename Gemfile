@@ -11,8 +11,8 @@ gem 'mongo', '~> 1.0'
 gem 'formtastic', '~> 1.1'
 gem 'nokogiri'
 gem 'sax-machine'
-gem 'devise', :git => "http://github.com/plataformatec/devise.git"
-gem 'oauth2'
+gem 'devise', :git => "http://github.com/plataformatec/devise.git", :branch => 'omniauth'
+gem "oa-oauth", :require => "omniauth/oauth"
 
 group :development do
   gem 'rails3-generators'
