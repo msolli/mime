@@ -6,14 +6,13 @@ class HomeController < ApplicationController
 
   def alphabetic
     @letter = params[:letter]
-    re = if @letter == 'å'
-        /^(\p{P})*(å|aa)/i
-      elsif @letter == 'a'
-        /^(\p{P})*a[^a]/i
-      else
-        /^(\p{P})*#{@letter}/i
-      end
-    @articles = Article.where(:headword => re).all.sort do |a, b|
+    # Handle Norwegian letter 'aa' -> 'å'
+    headword_re = case @letter
+      when 'å' then /^(\p{P})*(å|aa)/i
+      when 'a' then /^(\p{P})*a[^a]/i
+      else /^(\p{P})*#{@letter}/i
+    end
+    @articles = Article.where(:headword => headword_re).all.sort do |a, b|
       a.headword_sorting <=> b.headword_sorting
     end
   end
