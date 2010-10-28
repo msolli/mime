@@ -45,8 +45,8 @@ header {
 #main {
 	header {
 		h1 {
-			font-size: $font28px;
-			font-weight: 700;
+			font-size: $font32px;
+			font-weight: bold;
 			color: white;
 		}
 	}
@@ -69,12 +69,12 @@ header {
 		}
 		h2 {
 			font-size: $font20px;
-			font-weight: 700;
+			font-weight: bold;
 			color: darken($text-color, 5%);
 		}
 		h3 {
 			font-size: $font17px;
-			font-weight: 700;
+			font-weight: bold;
 		}
 		aside.image {
 			p {
@@ -99,11 +99,20 @@ header {
 			}
 		}
 	}
+	aside.intro {
+		@include small-sans;
+	}
+	.alphabetic {
+		@include small-sans;
+		@include no-underline;
+		font-size: $font12px;
+		line-height: 1.67;
+	}
 	.login {
 		font-size: $font12px;
 		dl {
 			dt {
-				font-weight: 700;
+				font-weight: bold;
 				line-height: 1.5;
 				margin-top: 5px;
 			}
@@ -131,4 +140,8 @@ a {
 	&:visited {
 		color: $link-visited-color;
 	}
+}
+
+strong {
+	font-weight: bold;
 }

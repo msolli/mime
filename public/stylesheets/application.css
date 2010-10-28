@@ -9,9 +9,9 @@ body .container {
   margin: auto;
   max-width: 66.25em;
   position: relative;
-  box-shadow: #777 0px 2px 10px;
-  -moz-box-shadow: #777 0px 2px 10px;
-  -webkit-box-shadow: #777 0px 2px 10px;
+  box-shadow: #777777 0px 2px 10px;
+  -moz-box-shadow: #777777 0px 2px 10px;
+  -webkit-box-shadow: #777777 0px 2px 10px;
   behavior: url(/stylesheets/PIE.htc); }
 
 header {
@@ -52,12 +52,12 @@ header {
   #messages #notice {
     margin: 5px 65px 5px 22px;
     padding: 10px;
-    background: #efefef;
+    background: #e2e2e2;
     border: 3px solid #818f2f;
     position: relative;
-    box-shadow: #777 0px 2px 10px;
-    -moz-box-shadow: #777 0px 2px 10px;
-    -webkit-box-shadow: #777 0px 2px 10px;
+    box-shadow: #777777 0px 2px 10px;
+    -moz-box-shadow: #777777 0px 2px 10px;
+    -webkit-box-shadow: #777777 0px 2px 10px;
     behavior: url(/stylesheets/PIE.htc);
     position: relative;
     border-radius: 8px;
@@ -67,12 +67,12 @@ header {
   #messages #alert {
     margin: 5px 65px 5px 22px;
     padding: 10px;
-    background: #efefef;
+    background: #e2e2e2;
     border: 3px solid #8f3c2f;
     position: relative;
-    box-shadow: #777 0px 2px 10px;
-    -moz-box-shadow: #777 0px 2px 10px;
-    -webkit-box-shadow: #777 0px 2px 10px;
+    box-shadow: #777777 0px 2px 10px;
+    -moz-box-shadow: #777777 0px 2px 10px;
+    -webkit-box-shadow: #777777 0px 2px 10px;
     behavior: url(/stylesheets/PIE.htc);
     position: relative;
     border-radius: 8px;
@@ -87,81 +87,98 @@ header {
     background: #45494f; }
     #main header h1 {
       padding-top: 0.5em;
-      padding-bottom: 0.2em; }
-  #main #content article aside.info {
+      padding-bottom: 2px; }
+  #main article aside.info {
     padding-left: 35px;
     padding-top: 2px; }
-    #main #content article aside.info ul li {
+    #main article aside.info ul li {
       display: inline;
       margin-right: 0.5em; }
-      #main #content article aside.info ul li img {
+      #main article aside.info ul li img {
         vertical-align: bottom; }
-    #main #content article aside.info ul li.edit-link {
+    #main article aside.info ul li.edit-link {
       text-transform: uppercase;
       background: #2f528f;
       padding: 1px 0.4em 0px 0.4em;
       border-radius: 3px;
       -moz-border-radius: 3px; }
-      #main #content article aside.info ul li.edit-link a {
+      #main article aside.info ul li.edit-link a {
         color: white; }
-  #main #content article .articletext {
+  #main article .articletext {
     padding-left: 35px;
     max-width: 33.125em;
     padding-top: 1em;
     overflow: visible; }
-    #main #content article .articletext p {
+    #main article .articletext p {
       margin-bottom: 1em; }
-    #main #content article .articletext .image-wrap {
+    #main article .articletext .image-wrap {
       float: right;
       position: relative;
       width: 128px; }
-      #main #content article .articletext .image-wrap aside.image {
+      #main article .articletext .image-wrap aside.image {
         margin-top: 6px;
         width: 228px;
         border: 1px solid #cccccc;
         padding: 5px;
         background: white; }
-  #main #content article aside.article-messages {
+  #main article aside.article-messages {
     margin: 5px 65px 5px 22px;
     padding: 10px;
-    background: #efefef;
+    background: #e2e2e2;
     border: 3px solid #818f2f;
     position: relative;
-    box-shadow: #777 0px 2px 10px;
-    -moz-box-shadow: #777 0px 2px 10px;
-    -webkit-box-shadow: #777 0px 2px 10px;
+    box-shadow: #777777 0px 2px 10px;
+    -moz-box-shadow: #777777 0px 2px 10px;
+    -webkit-box-shadow: #777777 0px 2px 10px;
     behavior: url(/stylesheets/PIE.htc);
     position: relative;
     border-radius: 8px;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
-  #main #content article form.formtastic.article {
+  #main article form.formtastic.article {
     padding-left: 35px;
     max-width: 33.125em;
     padding-top: 1em; }
-    #main #content article form.formtastic.article textarea {
+    #main article form.formtastic.article textarea {
       width: 100%; }
-  #main #content article aside.tags {
+  #main article aside.tags {
     background: white;
     border: 1px solid #cccccc;
     margin: 1em 65px 2em 35px;
     padding: 1em 14px; }
-    #main #content article aside.tags ul li {
+    #main article aside.tags ul li {
       display: inline; }
-      #main #content article aside.tags ul li:after {
+      #main article aside.tags ul li:after {
         content: ", "; }
-      #main #content article aside.tags ul li:last-of-type:after {
+      #main article aside.tags ul li:last-of-type:after {
         content: ""; }
-  #main #content .login {
+  #main aside.intro {
+    margin: 5px 65px 5px 22px;
+    padding: 10px;
+    background: #fcfcfc;
+    border: 1px solid #cccccc;
+    position: relative;
+    box-shadow: #cccccc 0px 2px 10px;
+    -moz-box-shadow: #cccccc 0px 2px 10px;
+    -webkit-box-shadow: #cccccc 0px 2px 10px;
+    behavior: url(/stylesheets/PIE.htc);
+    position: relative;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    behavior: url(/stylesheets/PIE.htc); }
+  #main .alphabetic {
     padding-left: 35px; }
-    #main #content .login .facebook {
+  #main .login {
+    padding-left: 35px; }
+    #main .login .facebook {
       width: 30em;
       border: 1px solid #cccccc;
       padding: 5px;
       margin: 20px 0 5px 0;
       background: white; }
-      #main #content .login .facebook a {
+      #main .login .facebook a {
         font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
         color: #3B5998;
         background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
@@ -170,7 +187,7 @@ header {
         display: inline-block;
         padding: 0px 0px 0px 1px;
         text-decoration: none; }
-        #main #content .login .facebook a span.fb-button-text {
+        #main .login .facebook a span.fb-button-text {
           color: white;
           display: block;
           font-weight: bold;
@@ -180,11 +197,11 @@ header {
           border-bottom: 1px solid #29447E;
           border-top: 1px solid #45619D;
           text-shadow: none; }
-  #main #content table.versions {
+  #main table.versions {
     border: 1px solid #cccccc; }
-    #main #content table.versions td, #main #content table.versions th {
+    #main table.versions td, #main table.versions th {
       padding: 5px; }
-    #main #content table.versions tr.current {
+    #main table.versions tr.current {
       background: #d3d7bf; }
   #main div.maincol {
     padding-left: 35px; }
@@ -254,8 +271,8 @@ header nav {
   font-size: 87.5%; }
 
 #main header h1 {
-  font-size: 175%;
-  font-weight: 700;
+  font-size: 200%;
+  font-weight: bold;
   color: white; }
 #main article {
   color: #383838; }
@@ -277,11 +294,11 @@ header nav {
     font-size: 87.5%; }
   #main article h2 {
     font-size: 125%;
-    font-weight: 700;
+    font-weight: bold;
     color: #2b2b2b; }
   #main article h3 {
     font-size: 106.25%;
-    font-weight: 700; }
+    font-weight: bold; }
   #main article aside.image p {
     font-family: "Lucida Grande", Tahoma, Arial;
     /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
@@ -300,10 +317,22 @@ header nav {
     #main article aside.tags li {
       font-family: "Lucida Grande", Tahoma, Arial;
       /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
+#main aside.intro {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
+#main .alphabetic {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+  font-size: 75%;
+  line-height: 1.67; }
+  #main .alphabetic a {
+    text-decoration: none; }
+    #main .alphabetic a:hover {
+      text-decoration: underline; }
 #main .login {
   font-size: 75%; }
   #main .login dl dt {
-    font-weight: 700;
+    font-weight: bold;
     line-height: 1.5;
     margin-top: 5px; }
 #main table.versions {
@@ -322,3 +351,6 @@ a {
     text-decoration: underline; }
   a:visited {
     color: #1d386a; }
+
+strong {
+  font-weight: bold; }

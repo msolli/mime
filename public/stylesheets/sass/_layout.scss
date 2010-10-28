@@ -80,104 +80,108 @@ header {
 		background: $dark-grey-color;
 		h1 {
 			padding-top: 0.5em;
-			padding-bottom: 0.2em;
+			padding-bottom: 2px;
 		}
 	}
 
-	#content {
-		article {
-			aside.info {
-				@include padding-main;
-				padding-top: 2px;
-				ul {
-					li {
-						display: inline;
-						margin-right: 0.5em;
-						img {
-							vertical-align: bottom;
-						}
-					}
-					li.edit-link {
-						text-transform: uppercase;
-						background: #2f528f;
-						padding: 1px 0.4em 0px 0.4em;
-						border-radius: 3px;
-						-moz-border-radius: 3px;
-						a {
-							color: white;
-						}
-					}
-				}
-			}
-			.articletext {
-				@include padding-main;
-				max-width: $article-width;
-				padding-top: 1em;
-				overflow: visible;
-				p {
-					margin-bottom: 1em;
-				}
-				.image-wrap {
-					float: right;
-					position: relative;
-					width: 128px;
-					aside.image {
-						margin-top: 6px;
-						width: 228px;
-						border: 1px solid $box-border-color;
-						padding: 5px;
-						background: white;
-					}
-				}
-			}
-			aside.article-messages {
-				@include message-box($message-notice-color);
-			}
-			form.formtastic.article {
-				@include padding-main;
-				max-width: $article-width;
-				padding-top: 1em;
-				textarea {
-					width: 100%;
-				}
-			}
-			aside.tags {
-				background: white;
-				border: 1px solid $box-border-color;
-				margin: 1em 65px 2em 35px;
-				padding: 1em 14px;
-				ul {
-					li {
-						display: inline;
-						&:after {
-							content: ", ";
-						}
-						&:last-of-type:after {
-							content: "";
-						}
-					}
-				}
-			}
-		}
-		.login {
+	article {
+		aside.info {
 			@include padding-main;
-			.facebook {
-				width: $login-width;
-				border: 1px solid $box-border-color;
-				padding: 5px;
-				margin: 20px 0 5px 0;
-				background: white;
-				@include fb-button;
+			padding-top: 2px;
+			ul {
+				li {
+					display: inline;
+					margin-right: 0.5em;
+					img {
+						vertical-align: bottom;
+					}
+				}
+				li.edit-link {
+					text-transform: uppercase;
+					background: #2f528f;
+					padding: 1px 0.4em 0px 0.4em;
+					border-radius: 3px;
+					-moz-border-radius: 3px;
+					a {
+						color: white;
+					}
+				}
 			}
 		}
-		table.versions {
+		.articletext {
+			@include padding-main;
+			max-width: $article-width;
+			padding-top: 1em;
+			overflow: visible;
+			p {
+				margin-bottom: 1em;
+			}
+			.image-wrap {
+				float: right;
+				position: relative;
+				width: 128px;
+				aside.image {
+					margin-top: 6px;
+					width: 228px;
+					border: 1px solid $box-border-color;
+					padding: 5px;
+					background: white;
+				}
+			}
+		}
+		aside.article-messages {
+			@include message-box($message-notice-color);
+		}
+		form.formtastic.article {
+			@include padding-main;
+			max-width: $article-width;
+			padding-top: 1em;
+			textarea {
+				width: 100%;
+			}
+		}
+		aside.tags {
+			background: white;
 			border: 1px solid $box-border-color;
-			td, th {
-				padding: 5px;
+			margin: 1em 65px 2em 35px;
+			padding: 1em 14px;
+			ul {
+				li {
+					display: inline;
+					&:after {
+						content: ", ";
+					}
+					&:last-of-type:after {
+						content: "";
+					}
+				}
 			}
-			tr.current {
-				background: mix($message-notice-color, $main-background-color, 25%);
-			}
+		}
+	}
+	aside.intro {
+		@include intro-box;
+	}
+	.alphabetic {
+		@include padding-main;
+	}
+	.login {
+		@include padding-main;
+		.facebook {
+			width: $login-width;
+			border: 1px solid $box-border-color;
+			padding: 5px;
+			margin: 20px 0 5px 0;
+			background: white;
+			@include fb-button;
+		}
+	}
+	table.versions {
+		border: 1px solid $box-border-color;
+		td, th {
+			padding: 5px;
+		}
+		tr.current {
+			background: mix($message-notice-color, $main-background-color, 25%);
 		}
 	}
 

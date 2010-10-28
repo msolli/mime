@@ -43,6 +43,9 @@ no-NB:
         name_and_picture_desc: "Vi viser navnet ditt under \"Bidragsytere\" og i versjonsloggen for artikler du redigerer, og profilbildet vises sammen med navnet ditt der det gir mening."
         email: Epostadresse
         email_desc: "Du kan be om å få beskjed fra oss på epost når en artikkel blir oppdatert, f.eks. Vi deler ikke epostadressen din med noen."
+  alphabetic:
+    description: "Artikler på %{letter} - Leksikonet for Asker og Bærum"
+    intro: "Artikler på <strong>%{letter}</strong>"
   formtastic:
     actions:
       create: Opprett
