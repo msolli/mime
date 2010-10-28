@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe Article do
@@ -41,6 +43,23 @@ describe Article do
     @article = Article.new(:headword => 'foo')
     @article.headword_presentation = 'foo'
     @article['headword_presentation'].should be_nil
+  end
+
+  describe "headword_sorting" do
+    it "downcases headword" do
+      @article = Article.new(:headword => 'Øy')
+      @article.headword_sorting.should == 'øy'
+    end
+
+    it "removes leading non-letter chars" do
+      @article = Article.new(:headword => '«"Foo"»')
+      @article.headword_sorting.should == 'foo"»'
+    end
+
+    it "truncates aa til å" do
+      @article = Article.new(:headword => 'Aas pilsener')
+      @article.headword_sorting.should == 'ås pilsener'
+    end
   end
 
   it "has versioning" do

@@ -6,8 +6,15 @@ class HomeController < ApplicationController
 
   def alphabetic
     @letter = params[:letter]
-    @articles = Article.where(:headword => /^(\p{P})*#{@letter}/i).all.sort do |a, b|
-      a.headword.sub(/^(\p{P})+/, '').mb_chars.downcase <=> b.headword.sub(/^(\p{P})+/, '').mb_chars.downcase
+    re = if @letter == 'å'
+        /^(\p{P})*(å|aa)/i
+      elsif @letter == 'a'
+        /^(\p{P})*a[^a]/i
+      else
+        /^(\p{P})*#{@letter}/i
+      end
+    @articles = Article.where(:headword => re).all.sort do |a, b|
+      a.headword_sorting <=> b.headword_sorting
     end
   end
 end

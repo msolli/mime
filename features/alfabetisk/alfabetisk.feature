@@ -52,3 +52,13 @@ Egenskap: Alfabetisk
     Gitt at artikkelen "«Alabama»" finnes
     Når jeg står på alfabetisk-siden for "a"
     Så skal jeg se "«Alabama»"
+
+  Scenario: artikler på Aa fins under å
+    Gitt at artikkelen "Aaby" finnes
+    Når jeg står på alfabetisk-siden for "å"
+    Så skal jeg se "Aaby"
+
+  Scenario: artikler på Aa fins ikke under a
+    Gitt at artikkelen "Aaby" finnes
+    Når jeg står på alfabetisk-siden for "a"
+    Så skal jeg ikke se "Aaby"

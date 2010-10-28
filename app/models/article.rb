@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Article
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -29,6 +31,10 @@ class Article
 
   def headword_presentation=(new_value)
     self[:headword_presentation] = (new_value == self[:headword] ? nil : new_value)
+  end
+
+  def headword_sorting
+    self[:headword].sub(/^(\p{P})+/, '').mb_chars.downcase.sub(/aa/, 'å')
   end
 
   def lat
