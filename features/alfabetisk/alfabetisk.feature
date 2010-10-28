@@ -20,10 +20,15 @@ Egenskap: Alfabetisk
     Så skal jeg komme til alfabetisk-siden for "a"
     Og jeg skal se "Asker (kommune)"
 
-  Scenario: takler norske bokstaver
+  Scenario: takler norske bokstaver I
     Gitt at artikkelen "Åh" finnes
     Når jeg står på alfabetisk-siden for "å"
     Så skal jeg se "Åh"
+
+  Scenario: takler norske bokstaver II
+    Gitt at artikkelen "Åh" finnes
+    Når jeg står på alfabetisk-siden for "h"
+    Så skal jeg ikke se "Åh"
 
   Scenario: navn på personer skal sorteres på etternavn I
     Gitt følgende artikler:
@@ -32,7 +37,7 @@ Egenskap: Alfabetisk
       | Anton Sport     |                       |
     Når jeg står på alfabetisk-siden for "a"
     Så skal jeg se "Anton Sport"
-    Og jeg skal ikke se "Anton Oskarsen"
+    Og jeg skal ikke se "Oskarsen"
 
   Scenario: navn på personer skal sorteres på etternavn II
     Gitt følgende artikler:
@@ -40,5 +45,10 @@ Egenskap: Alfabetisk
       | Oskarsen, Anton | Anton Oskarsen        |
       | Anton Sport     |                       |
     Når jeg står på alfabetisk-siden for "o"
-    Så skal jeg se "Anton Oskarsen"
+    Så skal jeg se "Oskarsen, Anton"
     Og jeg skal ikke se "Anton Sport"
+
+  Scenario: artikler som begynner på spesialtegn
+    Gitt at artikkelen "«Alabama»" finnes
+    Når jeg står på alfabetisk-siden for "a"
+    Så skal jeg se "«Alabama»"
