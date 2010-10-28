@@ -18,7 +18,7 @@ begin
       t.binary = vendored_cucumber_bin # If nil, the gem's binary is used.
       t.fork = true # You may get faster startup if you set this to false
       t.profile = 'default'
-      t.rcov = true
+      t.rcov = false
       t.rcov_opts << %[--exclude features]
     end
 
@@ -26,7 +26,7 @@ begin
       t.binary = vendored_cucumber_bin
       t.fork = true # You may get faster startup if you set this to false
       t.profile = 'wip'
-      t.rcov = true
+      t.rcov = false
       t.rcov_opts << %[--exclude features]
     end
 
@@ -34,7 +34,7 @@ begin
       t.binary = vendored_cucumber_bin
       t.fork = true # You may get faster startup if you set this to false
       t.profile = 'rerun'
-      t.rcov = true
+      t.rcov = false
       t.rcov_opts << %[--exclude features]
     end
 

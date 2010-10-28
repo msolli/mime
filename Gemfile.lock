@@ -143,7 +143,6 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
-    rcov (0.9.9)
     rspec (2.0.0)
       rspec-core (= 2.0.0)
       rspec-expectations (= 2.0.0)
@@ -168,7 +167,6 @@ GEM
       rubyzip
     sexp_processor (3.0.5)
     shoulda (2.11.3)
-    syntax (1.0.0)
     term-ansicolor (1.0.5)
     thor (0.14.3)
     treetop (1.4.8)
@@ -206,10 +204,8 @@ DEPENDENCIES
   pg
   rails (~> 3.0)
   rails3-generators
-  rcov
   rspec-rails (~> 2.0.0)
   ruby_parser
   sax-machine
   shoulda
-  syntax
   wirble
