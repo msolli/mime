@@ -25,6 +25,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    @article.author = current_user
+    @article.ip = request.remote_ip
     @article.update_attributes!(params[:article])
     redirect_to @article, :notice => t('articles.saved')
   end

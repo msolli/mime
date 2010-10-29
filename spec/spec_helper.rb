@@ -32,6 +32,7 @@ RSpec.configure do |config|
   end
 
   config.include Mongoid::Matchers
+  config.include Devise::TestHelpers, :type => :controller
 end
 
 def logger

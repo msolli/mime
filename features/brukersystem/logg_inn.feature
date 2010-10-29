@@ -16,7 +16,7 @@ Egenskap: Logge inn med Facebook-konto
     Gitt at jeg står på innloggingssiden
     Når jeg klikker "Logg inn med Facebook"
     Så skal jeg komme til forsiden
-    Og jeg skal se "Logget inn som"
+    Og jeg skal se "Logget inn som Navn Navnesen"
 
   @devise
   Scenario: logge ut

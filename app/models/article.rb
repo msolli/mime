@@ -17,6 +17,7 @@ class Article
   field :end_year, :type => Date
   field :ambiguous, :type => Boolean
   field :location, :type => Array
+  field :ip
 
   index :headword, :unique => true
   index [[ :location, Mongo::GEO2D ]]
@@ -24,6 +25,8 @@ class Article
   validates_presence_of :headword
   validates_uniqueness_of :headword
   validates :location, :location => true
+
+  attr_protected :ip
 
   def headword_presentation
     self[:headword_presentation].blank? ? headword : self[:headword_presentation]
@@ -35,6 +38,10 @@ class Article
 
   def headword_sorting
     self[:headword].sub(/^(\p{P})+/, '').mb_chars.downcase.sub(/aa/, 'å')
+  end
+
+  def author_or_ip
+    self.user ? self.user.name_or_email : ip
   end
 
   def lat

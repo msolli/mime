@@ -24,6 +24,22 @@ Egenskap: Redigere artikler
       Så skal jeg se "Ny tekst om foo"
       Og jeg skal se "Artikkelen er lagret" under "#notice"
 
+    Scenario: anonym bidragsyter
+      Gitt at jeg står på artikkelredigering for "Foo"
+      Og jeg fyller inn "article[text]" med "Anonym sin tekst om foo"
+      Når jeg trykker "Lagre"
+      Og jeg klikker "Versjonslogg"
+      Så skal jeg se "127.0.0.1"
+
+    @devise
+    Scenario: innlogget bidragsyter
+      Gitt at jeg er logget inn
+      Og jeg står på artikkelredigering for "Foo"
+      Og jeg fyller inn "article[text]" med "Ny tekst om foo"
+      Når jeg trykker "Lagre"
+      Og jeg klikker "Versjonslogg"
+      Så skal jeg se "Navn Navnesen" under "table.versions"
+
     Scenario: legge til alternativt oppslagsord
       Gitt at jeg står på artikkelredigering for "Foo"
       Og jeg fyller inn "article[headword_presentation]" med "Føø"

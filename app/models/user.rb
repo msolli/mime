@@ -25,9 +25,8 @@ class User
       Rails.logger.debug("auth_info: " + auth_info.to_json)
       Rails.logger.debug("signed_in_resource: " + signed_in_resource.to_json)
 
-      user_hash = auth_info['extra']['user_hash']
-      email = user_hash['email']
-      name = user_hash['name']
+      email = auth_info['extra']['user_hash']['email']
+      name = auth_info['user_info']['name']
       access_token = auth_info['credentials']['token']
 
       # Link the account if an e-mail already exists in the database

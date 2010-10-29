@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title<= content_for?(:title) ? yield(:title) : 'TODO'
+    %title<= content_for?(:title) ? yield(:title) : t('mime.title')
     %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : 'TODO - generell meta description'}
     %meta{:charset => "utf-8"}
     %meta{:'http-equiv' => "content-language", :content => "no"}

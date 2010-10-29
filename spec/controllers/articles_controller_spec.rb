@@ -38,7 +38,7 @@ describe ArticlesController do
       end
     end
   end
-  
+
   describe "#show" do
     it "shows an article" do
       a = Article.create!(:headword => "foo", :text => "bar")
