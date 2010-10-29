@@ -28,4 +28,9 @@ $(document).ready(function() {
 	// jQuery.timeago() (http://timeago.yarp.com/)
 	$.timeago.settings.cutoff = 7*24*60*60*1000;
 	$("time.timeago").timeago();
+
+	// Formtastic
+	$('form.formtastic label abbr').html(function() {
+		return '(' + $(this).attr('title') + ')';
+	});
 });

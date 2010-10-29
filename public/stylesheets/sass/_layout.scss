@@ -136,9 +136,6 @@ header {
 			@include padding-main;
 			max-width: $article-width;
 			padding-top: 1em;
-			textarea {
-				width: 100%;
-			}
 		}
 		aside.tags {
 			background: white;
@@ -221,6 +218,49 @@ header {
 		}
 	}
 	@extend .clearfix;
+}
+
+form.formtastic {
+	fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
+		input[type="text"] {
+			max-width: 100%;
+			width: 100%;
+			border: 1px solid $box-border-color;
+			padding: 0.1em 0.2em 0 0.2em;
+		}
+		label {
+			display: block;
+			float: none;
+			width: 100%;
+			abbr {
+				padding-left: 1em;
+			}
+		}
+		textarea {
+			width: 100%;
+			border: 1px solid $box-border-color;
+			padding: 0.2em;
+		}
+		input[type="submit"] {
+			padding: 0.4em 2em 0.2em 2em;
+			background: $button-color;
+			@include rounded-corners(4px);
+			border: 1px solid $box-border-color;
+			border-top-color: darken($box-border-color, 10%);
+			border-left-color: darken($box-border-color, 10%);
+			&:hover {
+				background: $button-alt-color;
+			}
+			&:active {
+				border: 1px solid darken($box-border-color, 10%);
+				border-top-color: $box-border-color;
+				border-left-color: $box-border-color;
+			}
+		}
+	}
+	fieldset.buttons {
+		padding-left: 0;
+	}
 }
 
 .clearfix {

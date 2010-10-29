@@ -60,7 +60,7 @@ header {
 		aside.info {
 			@include small-sans;
 			font-size: $font12px;
-			color: #7a7a7a;
+			color: $light-grey-color;
 			@include no-underline;
 		}
 		aside.article-messages {
@@ -123,6 +123,40 @@ header {
 	}
 	table.versions {
 		@include small-sans;
+	}
+}
+
+form.formtastic {
+	fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
+		input[type="text"] {
+			font-size: $font32px;
+			font-weight: bold;
+			color: $dark-grey-color;
+		}
+		label {
+			@include small-sans;
+			color: $dark-grey-color;
+			font-size: $font12px;
+			text-transform: uppercase;
+			font-weight: bold;
+			abbr {
+				text-transform: none;
+				color: $light-grey-color;
+				font-weight: normal;
+			}
+		}
+		textarea {
+			color: $text-color;
+			font-size: $font16px;
+			line-height: 1.5;
+		}
+		input[type="submit"] {
+			@include small-sans;
+			color: white;
+			font-size: $font18px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
 	}
 }
 

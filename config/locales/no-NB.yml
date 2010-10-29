@@ -47,9 +47,10 @@ no-NB:
     description: "Artikler på %{letter} - Leksikonet for Asker og Bærum"
     intro: "Artikler på <strong>%{letter}</strong>"
   formtastic:
+    required: påkrevet
     actions:
       create: Opprett
-      update: Lagre endringer
+      update: Lagre og publiser
     labels:
       article:
         headword: Oppslagsord
