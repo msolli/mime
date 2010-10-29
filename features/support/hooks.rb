@@ -24,3 +24,7 @@ After("@devise") do
   Devise::OmniAuth.unshort_circuit_authorizers!
   Devise::OmniAuth.reset_stubs!
 end
+
+Before("@logged_in") do
+  Gitt %{at jeg er logget inn}
+end

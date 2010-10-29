@@ -21,3 +21,14 @@ Egenskap: Ny artikkel
     Scenario: melding om at artikkel er opprettet
       Når jeg trykker "Opprett"
       Så skal jeg se "er lagret"
+
+    Scenario: anonym bidragsyter
+      Når jeg trykker "Opprett"
+      Og jeg klikker "Versjonslogg"
+      Så skal jeg se "127.0.0.1" under "table.versions"
+
+    @devise @logged_in
+    Scenario: innlogget bruker
+      Når jeg trykker "Opprett"
+      Og jeg klikker "Versjonslogg"
+      Så skal jeg se "Navn Navnesen" under "table.versions"

@@ -6,6 +6,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
+    @article.author = current_user
+    @article.ip = request.remote_ip
     if @article.save
       redirect_to @article, :notice => t('articles.saved')
     else
