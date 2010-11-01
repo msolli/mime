@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.0'
-gem 'pg'
 gem 'hassle', :require => false
 gem 'haml'
 gem 'mongoid', ">= 2.0.0.beta.18"
