@@ -94,6 +94,18 @@ namespace :mime do
       end
     end
 
+    task :multiple_authors => :read do
+      @doc.xpath('//article').each do |node|
+        num_authors = node.xpath('.//field[@id="author"]').size
+        if num_authors > 1
+          puts node.xpath('.//field[@id="headword"]').first.content + " [#{num_authors}]"
+          node.xpath('.//field[@id="author"]').each do |author_node|
+            puts "  " + author_node.content
+          end
+        end
+      end
+    end
+
     task :vei_asker_red => :read do
       @doc.xpath('//article[@id_def="vei i Asker"]').each do |node|
         node.xpath('.//field[@id="author"]').each do |author_node|

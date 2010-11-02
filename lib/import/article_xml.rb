@@ -11,9 +11,7 @@ module Import
     attr_reader :ambiguous
 
     def initialize(node)
-      # TODO: subject
       # TODO: flere forfattere
-      # TODO: sette timestamp til da boka ble utgitt
       if headword_node = node.at_xpath('metadata/field[@id="headword"]')
         @headword = headword_node.content
       end
@@ -114,7 +112,12 @@ module Import
           if user.new_record?
             user.password = 'nothing'
             user.name = name
-            user.save!
+            begin
+              user.save!
+            rescue => e
+              puts user.to_json
+              raise e
+            end
           end
         end
       end
