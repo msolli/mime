@@ -150,7 +150,7 @@ article, aside, footer, header, hgroup, nav, section { display: block; margin: 0
 
 html, body { background: #bfbfbf; }
 
-body .container { margin: auto; max-width: 66.25em; position: relative; box-shadow: #777777 0px 2px 10px; -moz-box-shadow: #777777 0px 2px 10px; -webkit-box-shadow: #777777 0px 2px 10px; behavior: url(/stylesheets/PIE.htc); }
+body .container { margin: auto; max-width: 66.25em; position: relative; box-shadow: 0px 2px 10px #777777; -moz-box-shadow: 0px 2px 10px #777777; -webkit-box-shadow: 0px 2px 10px #777777; behavior: url(/stylesheets/PIE.htc); }
 
 header { background: white; }
 header h1.title { padding: 1em 0 0.3em 35px; float: left; }
@@ -164,8 +164,8 @@ header nav ul.links ul.letters li { margin-right: 0.5em; }
 header nav ul.links li { display: inline; margin-right: 1em; }
 
 #messages { background: white; padding: 5px 0; }
-#messages #notice { margin: 5px 65px 5px 22px; padding: 10px; background: #e2e2e2; border: 3px solid #818f2f; position: relative; box-shadow: #777777 0px 2px 10px; -moz-box-shadow: #777777 0px 2px 10px; -webkit-box-shadow: #777777 0px 2px 10px; behavior: url(/stylesheets/PIE.htc); position: relative; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; behavior: url(/stylesheets/PIE.htc); }
-#messages #alert { margin: 5px 65px 5px 22px; padding: 10px; background: #e2e2e2; border: 3px solid #8f3c2f; position: relative; box-shadow: #777777 0px 2px 10px; -moz-box-shadow: #777777 0px 2px 10px; -webkit-box-shadow: #777777 0px 2px 10px; behavior: url(/stylesheets/PIE.htc); position: relative; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; behavior: url(/stylesheets/PIE.htc); }
+#messages #notice { margin: 5px 65px 5px 22px; padding: 10px; background: #e2e2e2; border: 3px solid #818f2f; position: relative; box-shadow: 0px 2px 10px #777777; -moz-box-shadow: 0px 2px 10px #777777; -webkit-box-shadow: 0px 2px 10px #777777; behavior: url(/stylesheets/PIE.htc); position: relative; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; behavior: url(/stylesheets/PIE.htc); }
+#messages #alert { margin: 5px 65px 5px 22px; padding: 10px; background: #e2e2e2; border: 3px solid #8f3c2f; position: relative; box-shadow: 0px 2px 10px #777777; -moz-box-shadow: 0px 2px 10px #777777; -webkit-box-shadow: 0px 2px 10px #777777; behavior: url(/stylesheets/PIE.htc); position: relative; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; behavior: url(/stylesheets/PIE.htc); }
 
 #main { background: #efefef; }
 #main header { padding-left: 35px; background: #45494f; }
@@ -179,13 +179,13 @@ header nav ul.links li { display: inline; margin-right: 1em; }
 #main article .articletext p { margin-bottom: 1em; }
 #main article .articletext .image-wrap { float: right; position: relative; width: 128px; }
 #main article .articletext .image-wrap aside.image { margin-top: 6px; width: 228px; border: 1px solid #cccccc; padding: 5px; background: white; }
-#main article aside.article-messages { margin: 5px 65px 5px 22px; padding: 10px; background: #e2e2e2; border: 3px solid #818f2f; position: relative; box-shadow: #777777 0px 2px 10px; -moz-box-shadow: #777777 0px 2px 10px; -webkit-box-shadow: #777777 0px 2px 10px; behavior: url(/stylesheets/PIE.htc); position: relative; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; behavior: url(/stylesheets/PIE.htc); }
+#main article aside.article-messages { margin: 5px 65px 5px 22px; padding: 10px; background: #e2e2e2; border: 3px solid #818f2f; position: relative; box-shadow: 0px 2px 10px #777777; -moz-box-shadow: 0px 2px 10px #777777; -webkit-box-shadow: 0px 2px 10px #777777; behavior: url(/stylesheets/PIE.htc); position: relative; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; behavior: url(/stylesheets/PIE.htc); }
 #main article form.formtastic.article { padding-left: 35px; max-width: 33.125em; padding-top: 1em; }
 #main article aside.tags { background: white; border: 1px solid #cccccc; margin: 1em 65px 2em 35px; padding: 1em 14px; }
 #main article aside.tags ul li { display: inline; }
 #main article aside.tags ul li:after { content: ", "; }
 #main article aside.tags ul li:last-of-type:after { content: ""; }
-#main aside.intro { margin: 5px 65px 5px 22px; padding: 10px; background: #fcfcfc; border: 1px solid #cccccc; position: relative; box-shadow: #cccccc 0px 2px 10px; -moz-box-shadow: #cccccc 0px 2px 10px; -webkit-box-shadow: #cccccc 0px 2px 10px; behavior: url(/stylesheets/PIE.htc); position: relative; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; behavior: url(/stylesheets/PIE.htc); }
+#main aside.intro { margin: 5px 65px 5px 22px; padding: 10px; background: #fcfcfc; border: 1px solid #cccccc; position: relative; box-shadow: 0px 2px 10px #cccccc; -moz-box-shadow: 0px 2px 10px #cccccc; -webkit-box-shadow: 0px 2px 10px #cccccc; behavior: url(/stylesheets/PIE.htc); position: relative; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; behavior: url(/stylesheets/PIE.htc); }
 #main .alphabetic { padding-left: 35px; }
 #main .login { padding-left: 35px; }
 #main .login .facebook { width: 30em; border: 1px solid #cccccc; padding: 5px; margin: 20px 0 5px 0; background: white; }
