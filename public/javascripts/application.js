@@ -33,4 +33,16 @@ $(document).ready(function() {
 	$('form.formtastic label abbr').html(function() {
 		return '(' + $(this).attr('title') + ')';
 	});
+	
+	$('[data-tooltip-enable]').tooltip({
+		layout: '<div><span/></div>',
+		
+		onBeforeShow: function() {
+			var	el		= this.getTrigger(),
+					conf	= this.getConf();
+			
+			conf.position = ['top right'];
+			conf.offset = [this.getTip().outerHeight() - 8, 25];
+		}
+	});
 });
