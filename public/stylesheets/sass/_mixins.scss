@@ -69,3 +69,10 @@
 		}
 	}
 }
+
+@mixin opacity($value) {
+	// The order of these filters are important, else IE8 as IE7 will not apply the opacity correct
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value*100})"; // IE 8
+	filter: alpha(opacity=#{$value * 100}); // IE 7@
+	opacity: $value;
+}
