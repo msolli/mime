@@ -51,3 +51,14 @@ Egenskap: Redigere artikler
     Scenario: alternativt oppslagsord vises ikke når tomt
       Når jeg står på artikkelredigering for "Foo"
       Så skal feltet "article[headword_presentation]" ikke inneholde "Foo"
+    
+    @javascript
+    Scenario: tooltip skal vises ikke vises med mindre det fokuseres på et felt med data-tooltip-enable => true
+      Når jeg står på artikkelredigering for "Foo"
+      Så skal ikke ".tooltip" være synlig
+    
+    @javascript
+    Scenario: tooltip skal vises ved fokus på felt med attributet data-tooltip-enable => true
+      Når jeg står på artikkelredigering for "Foo"
+      Og jeg fyller inn "" for "article[headword_presentation]"
+      Så skal ".tooltip" være synlig

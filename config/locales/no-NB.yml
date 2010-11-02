@@ -5,6 +5,9 @@ no-NB:
     messages:
       blank: kan ikke være tom
       invalid: er ugyldig
+  tooltips:
+    articles:
+      headword_presentation: 'Dersom tittelen på siden skal være en annen enn den som vises i oversikten, kan du skrive den inn her. F.eks. vil en person skrives som "Nordmann, Ola" i oversikten, mens i presentasjonen er "Ola Nordmann" ønskelig. Da skriver du inn "Ola Nordmann" i dette feltet.'
   articles:
     new: Ny artikkel
     edit: Rediger

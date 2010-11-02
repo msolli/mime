@@ -217,3 +217,11 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then /^"([^\"]*)" should be visible$/ do |selector|
+  assert_not_nil page.has_css?(selector, :visible => true)
+end
+
+Then /^"([^\"]*)" should not be visible$/ do |selector|
+  page.has_css?(selector, :visible => true).should be_false
+end
