@@ -112,7 +112,12 @@ module Import
           if user.new_record?
             user.password = 'nothing'
             user.name = name
-            user.save!
+            begin
+              user.save!
+            rescue => e
+              puts user.to_json
+              raise e
+            end
           end
         end
       end
