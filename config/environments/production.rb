@@ -53,4 +53,6 @@ Mime::Application.configure do
   config.i18n.fallbacks = true
 
   config.active_support.deprecation = :notify
+  
+  config.action_view.javascript_expansions[:aloha] = %w(/lib/aloha/aloha/aloha)
 end

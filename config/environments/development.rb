@@ -23,4 +23,6 @@ Mime::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.active_support.deprecation = :log
+  
+  config.action_view.javascript_expansions[:aloha] = %w(/lib/aloha/debug/aloha)
 end

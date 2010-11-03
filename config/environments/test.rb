@@ -31,4 +31,6 @@ Mime::Application.configure do
   # config.active_record.schema_format = :sql
 
   config.active_support.deprecation = :stderr
+  
+  config.action_view.javascript_expansions[:aloha] = %w(/lib/aloha/aloha/aloha)
 end
