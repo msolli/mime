@@ -5,11 +5,12 @@
   = render :partial => 'info', :locals => { :article => @article }
 - unless user_signed_in?
   %aside.article-messages= raw(t('articles.login_teaser', :login_link => link_to(t('articles.login_link'), user_omniauth_authorize_path(:facebook))))
-= semantic_form_for @article do |f|
-  = f.inputs do
-    - if @article.new_record?
-      = f.input :headword
-    = f.input :headword_presentation, :input_html => { :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword_presentation')}
-    = f.input :text, :as => :text, :input_html => { :cols => '80' }
-  = f.buttons do
-    = f.commit_button
+%article
+  = semantic_form_for @article do |f|
+    = f.inputs do
+      - if @article.new_record?
+        = f.input :headword
+      = f.input :headword_presentation, :input_html => { :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword_presentation')}
+      = f.input :text, :as => :text, :input_html => { :cols => '80', :class => 'articletext' }
+    = f.buttons do
+      = f.commit_button
