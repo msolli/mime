@@ -20,6 +20,7 @@ group :development do
   gem 'hirb'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'heroku'
 end
 
 group :test do
