@@ -24,5 +24,10 @@ Mime::Application.configure do
 
   config.active_support.deprecation = :log
   
-  config.action_view.javascript_expansions[:aloha] = %w(/lib/aloha/debug/aloha)
+  config.action_view.javascript_expansions[:aloha] = %w(/lib/aloha/debug/aloha aloha-config)
+  config.action_view.javascript_expansions[:aloha_plugins] = [
+    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.Format/plugin.js',
+    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.List/plugin.js',
+    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.Table/plugin.js'
+    ]
 end
