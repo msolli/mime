@@ -5,7 +5,7 @@ namespace :mime do
   desc "Import av XML-data fra Kunnskapsforlaget"
   task :import => [:environment, "mime:xml:read"] do
     author_conf = YAML.load(IO.read("#{Rails.root}/tmp/import/forfattere.yml"))
-    Import::ArticleXml.authors = author_conf['authors']
+    Import::ArticleXml.all_authors = author_conf['authors']
     Import::ArticleXml.editor = author_conf['editor']
     Import::Main.run(@doc)
     Import::Crossref.run

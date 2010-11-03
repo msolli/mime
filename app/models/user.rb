@@ -1,6 +1,6 @@
 class User
   include Mongoid::Document
-  references_many :articles
+  references_many :articles, :stored_as => :array, :inverse_of => :users
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable and :timeoutable

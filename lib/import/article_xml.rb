@@ -2,16 +2,15 @@
 
 module Import
   class ArticleXml
-    cattr_accessor :authors
+    cattr_accessor :all_authors
     cattr_accessor :editor
 
     attr_reader :headword, :text
-    attr_reader :subject, :author, :user
+    attr_reader :subject, :authors, :user
     attr_reader :oldid, :definition, :epoch_start, :epoch_end, :clarification
     attr_reader :ambiguous
 
     def initialize(node)
-      # TODO: flere forfattere
       if headword_node = node.at_xpath('metadata/field[@id="headword"]')
         @headword = headword_node.content
       end
@@ -21,8 +20,9 @@ module Import
       if subject_node = node.at_xpath('metadata/field[@id="subject"]')
         @subject = subject_node.content
       end
-      if author_node = node.at_xpath('metadata/field[@id="author"]')
-        @author = author_node.content
+      @authors = []
+      node.xpath('metadata/field[@id="author"]').each do |author_node|
+        @authors << author_node.content
       end
       if epoch_start_node = node.at_xpath('metadata/field[@id="epoch_start"]')
         @epoch_start = epoch_start_node.content
@@ -47,17 +47,13 @@ module Import
     # * En 'disambiguation page' uten tekst opprettes.
     # * Alle disse får ambiguous-flagget satt.
     def save!
-      # Find or create the author
-      @user = if ArticleXml.authors[@author].instance_of?(Hash)
-        ArticleXml.get_user(ArticleXml.authors[@author]['email'],
-                            ArticleXml.authors[@author]['name'])
-      else
-        nil
-      end
+      @users = @authors.map { |a| ArticleXml.get_user(a) }.compact
 
       begin
         Rails.logger.debug("  MIME: Prøver å opprette artikkel med standard headword")
-        Article.create!(self.attributes)
+        a = Article.new(self.attributes)
+        a.authors = @users
+        a.save!
       rescue Mongoid::Errors::Validations => e
         first = Article.where(:headword => @headword).first
         Rails.logger.debug("  MIME: Artikkel '#{first.headword}' fantes fra før")
@@ -67,11 +63,14 @@ module Import
           end
           Rails.logger.debug("  MIME: Oppdaterte artikkel, nytt headword: '#{first.headword}'")
           Rails.logger.debug("  MIME: Oppretter disambiguation page")
-          Article.create!(:headword => @headword, :ambiguous => true, :author => ArticleXml.get_editor)
+          a = Article.new(:headword => @headword, :ambiguous => true)
+          a.authors << ArticleXml.get_editor
+          a.save!
         end
         this_article = Article.new(self.attributes)
         this_article.ambiguous = true
         this_article.headword = ArticleXml.extended_headword(this_article)
+        this_article.authors = @users
         Rails.logger.debug("  MIME: Oppretter endelig artikkel med headword '#{this_article.headword}'")
         this_article.save!
       end
@@ -82,7 +81,6 @@ module Import
         :headword => @headword,
         :text => @text,
         :subject => @subject,
-        :author => @user,
         :epoch_start => @epoch_start,
         :epoch_end => @epoch_end,
         :oldid => @oldid,
@@ -107,24 +105,27 @@ module Import
         candidate
       end
 
-      def get_user(email, name)
-        User.find_or_initialize_by(:email => email).tap do |user|
-          if user.new_record?
-            user.password = 'nothing'
-            user.name = name
-            begin
-              user.save!
-            rescue => e
-              puts user.to_json
-              raise e
+      def get_user(author)
+        if ArticleXml.all_authors[author].instance_of?(Hash)
+          email = ArticleXml.all_authors[author]['email']
+          name = ArticleXml.all_authors[author]['name']
+          User.find_or_initialize_by(:email => email).tap do |user|
+            if user.new_record?
+              user.password = Devise.friendly_token
+              user.name = name
+              begin
+                user.save!
+              rescue => e
+                puts user.to_json
+                raise e
+              end
             end
           end
         end
       end
 
       def get_editor
-        get_user(ArticleXml.authors[ArticleXml.editor]['email'],
-                 ArticleXml.authors[ArticleXml.editor]['name'])
+        get_user(ArticleXml.editor)
       end
     end
   end

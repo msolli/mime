@@ -40,7 +40,7 @@ describe "Import::ArticleXml" do
       @import.articles.first.headword.should == "Headword"
 
       @import.articles.first.subject.should == "7413-92"
-      @import.articles.first.author.should == "FHvU"
+      @import.articles.first.authors.first.should == "FHvU"
 
       @import.articles.first.epoch_start.should == "1910"
       @import.articles.first.epoch_end.should == "1940"
@@ -67,6 +67,7 @@ describe "Import::Main" do
         <article id_def="gård i Bærum"><metadata><field id="author">Forfatter2</field><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
         <article id_def="gård i Bærum"><metadata><field id="author">Forfatter1</field><field id="headword">Foo</field></metadata><html><body>Artikkeltekst **</body></html></article>
         <article><metadata><field id="author">UkjentForfatter</field><field id="headword">Bar</field></metadata><html><body>Artikkeltekst **</body></html></article>
+        <article><metadata><field id="author">Forfatter1</field><field id="author">Forfatter2</field><field id="headword">Baz</field></metadata><html><body>Artikkeltekst **</body></html></article>
       </lex-import>
     EOXML
     @author_conf = YAML::load(%[
@@ -89,7 +90,7 @@ describe "Import::Main" do
 
   it "throws no exceptions when importing" do
     lambda {
-      Import::ArticleXml.authors = @author_conf['authors']
+      Import::ArticleXml.all_authors = @author_conf['authors']
       Import::ArticleXml.editor = @author_conf['editor']
       Import::Main.run(@doc)
     }.should_not raise_error
@@ -97,13 +98,13 @@ describe "Import::Main" do
 
   describe "when importing" do
     before :each do
-      Import::ArticleXml.authors = @author_conf['authors']
+      Import::ArticleXml.all_authors = @author_conf['authors']
       Import::ArticleXml.editor = @author_conf['editor']
       Import::Main.run(@doc)
     end
 
     it "saves articles" do
-      Article.all.count.should == 5
+      Article.all.count.should == 6
     end
 
     it "saves authors" do
@@ -119,17 +120,24 @@ describe "Import::Main" do
     end
 
     it "associates articles with users as authors" do
-      Article.where(:headword => 'Foo (gård i Asker)').first.author.should == User.where(:email => 'f1@ableksikon.no').first
-      Article.where(:headword => 'Foo (gård i Bærum)').first.author.should == User.where(:email => 'f2@ableksikon.no').first
-      Article.where(:headword => 'Foo (gård i Bærum - 2)').first.author.should == User.where(:email => 'f1@ableksikon.no').first
+      Article.where(:headword => 'Foo (gård i Asker)').first.authors.first.should == User.where(:email => 'f1@ableksikon.no').first
+      Article.where(:headword => 'Foo (gård i Bærum)').first.authors.first.should == User.where(:email => 'f2@ableksikon.no').first
+      Article.where(:headword => 'Foo (gård i Bærum - 2)').first.authors.first.should == User.where(:email => 'f1@ableksikon.no').first
     end
 
     it "associates disambiguation articles to an author" do
-      Article.where(:headword => 'Foo').first.author.name.should == "Redaksjonen"
+      Article.where(:headword => 'Foo').first.authors.first.name.should == "Redaksjonen"
     end
 
     it "handles articles with unknown author" do
-      Article.where(:headword => 'Bar').first.author.should be_nil
+      Article.where(:headword => 'Bar').first.authors.first.should be_nil
+    end
+
+    it "handles multiple authors" do
+      a = Article.where(:headword => 'Baz').first
+      a.authors.size.should == 2
+      a.authors.first.should == User.where(:email => 'f1@ableksikon.no').first
+      a.authors.last.should == User.where(:email => 'f2@ableksikon.no').first
     end
   end
 end

@@ -9,7 +9,7 @@ describe User do
   it { should validate_presence_of(:email) }
   it { should validate_uniqueness_of(:email) }
 
-  it { should reference_many :articles }
+  it { should be_referenced_in(:articles).as_inverse_of(:users).stored_as(:array) }
 
   it "has name_or_email with email" do
     u = User.new(:email => 'yo@yo.com')

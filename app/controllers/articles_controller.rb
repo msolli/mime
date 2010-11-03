@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
-    @article.author = current_user
+    @article.authors << current_user if current_user
     @article.ip = request.remote_ip
     if @article.save
       redirect_to @article, :notice => t('articles.saved')
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.author = current_user
+    @article.authors << current_user if current_user
     @article.ip = request.remote_ip
     @article.update_attributes!(params[:article])
     redirect_to @article, :notice => t('articles.saved')

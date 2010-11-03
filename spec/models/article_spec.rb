@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe Article do
 
-  it { should be_referenced_in :user }
+  it { should be_referenced_in(:users).as_inverse_of(:articles).stored_as(:array) }
 
   it { should have_fields(:headword, :text).of_type(String) }
   it { should have_field(:headword_presentation).of_type(String) }
@@ -49,24 +49,40 @@ describe Article do
   it "saves the author" do
     @article = Article.create!(:headword => 'foo')
     @user = User.create!(:email => 'yo@yo.com', :password => Devise.friendly_token)
-    @article.author = @user
+    @article.authors << @user
     @article.save!
-    @article.author.email.should == 'yo@yo.com'
+    @article.authors.first.email.should == 'yo@yo.com'
   end
 
-  describe "author_or_ip" do
+  it "saves multiple authors" do
+    @article = Article.create!(:headword => 'foo')
+    @article.authors << User.create!(:email => 'yo1@yo.com', :password => Devise.friendly_token)
+    @article.authors << User.create!(:email => 'yo2@yo.com', :password => Devise.friendly_token)
+    @article.save!
+    @article.authors.size.should == 2
+    @article.authors.first.email.should == 'yo1@yo.com'
+    @article.authors.last.email.should == 'yo2@yo.com'
+  end
+
+  describe "authors_or_ip" do
     before :each do
       @article = Article.new(:headword => 'foo')
       @article.ip = "127.0.0.1"
     end
 
     it "shows author name when author is present" do
-      @article.author = User.create!(:email => 'yo@yo.com', :password => Devise.friendly_token, :name => "Yoman")
-      @article.author_or_ip.should == 'Yoman'
+      @article.authors << User.create!(:email => 'yo@yo.com', :password => Devise.friendly_token, :name => "Yoman")
+      @article.authors_or_ip.should == 'Yoman'
+    end
+
+    it "shows all authors when multiple authors" do
+      @article.authors << User.create!(:email => 'yo@yo.com', :password => Devise.friendly_token, :name => "Yoman Yo")
+      @article.authors << User.create!(:email => 'foo@yo.com', :password => Devise.friendly_token, :name => "Fooman Foo")
+      @article.authors_or_ip.should == 'Yoman Yo, Fooman Foo'
     end
 
     it "shows ip when no author" do
-      @article.author_or_ip.should == "127.0.0.1"
+      @article.authors_or_ip.should == "127.0.0.1"
     end
   end
 

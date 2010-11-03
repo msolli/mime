@@ -5,9 +5,9 @@ class Article
   include Mongoid::Timestamps
   include Mongoid::Versioning
 
-  referenced_in :user
-  alias :author :user
-  alias :author= :user=
+  references_many :users, :stored_as => :array, :inverse_of => :articles
+  alias :authors :users
+  alias :authors= :users=
 
   field :headword
   field :headword_presentation
@@ -40,8 +40,8 @@ class Article
     self[:headword].sub(/^(\p{P})+/, '').mb_chars.downcase.sub(/aa/, 'å')
   end
 
-  def author_or_ip
-    self.user ? self.user.name_or_email : ip
+  def authors_or_ip
+    self.users.blank? ? ip : self.users.map(&:name_or_email).join(', ')
   end
 
   def lat
