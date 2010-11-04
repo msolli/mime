@@ -12,6 +12,7 @@ gem 'nokogiri'
 gem 'sax-machine'
 gem 'devise', :git => "http://github.com/plataformatec/devise.git", :branch => 'omniauth'
 gem "oa-oauth", :require => "omniauth/oauth"
+gem "escape_utils" # A way to silence stupid stupid stupid Rack::Utils::escape
 
 group :development do
   gem 'rails3-generators'
