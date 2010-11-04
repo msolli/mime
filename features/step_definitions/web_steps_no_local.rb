@@ -34,3 +34,12 @@ end
 Så /^(?:skal )"([^"]*)" være redigerbar$/ do |selector|
   Then %{"#{selector}" should be editable}
 end
+
+Then /^I debug$/ do
+  breakpoint
+  0 # necesary, else breakpoint will loose context
+end
+
+Så /^debugger jeg$/ do
+  Then %{I debug}
+end
