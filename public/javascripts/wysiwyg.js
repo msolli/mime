@@ -10,7 +10,7 @@ mime.wysiwyg.prototype.setup = function() {
 	var e = null;
 	this.elements.each(function(index) {
 		e = jQuery(this);		
-		jQuery('<article/>', {
+		jQuery('<div/>', {
 			id: e.attr('name'),
 			'class': e.attr('class')
 		}).insertBefore(e.hide()).append(e.val()).aloha();
