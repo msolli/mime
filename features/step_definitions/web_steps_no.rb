@@ -113,11 +113,3 @@ end
 Så /^vil jeg se siden$/ do |page_name|
   Then %{show me the page}
 end
-
-Så /^(?:skal )"([^"]*)" være synlig$/ do |selector|
-  Then %{"#{selector}" should be visible}
-end
-
-Så /^(?:skal )ikke "([^"]*)" være synlig$/ do |selector|
-  Then %{"#{selector}" should not be visible}
-end

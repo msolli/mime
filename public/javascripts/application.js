@@ -34,6 +34,8 @@ $(document).ready(function() {
 		return '(' + $(this).attr('title') + ')';
 	});
 	
+	new mime.wysiwyg('textarea');
+	
 	$('[data-tooltip-enable]').tooltip({
 		layout: '<div><span/></div>',
 		
