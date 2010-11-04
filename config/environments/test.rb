@@ -31,11 +31,4 @@ Mime::Application.configure do
   # config.active_record.schema_format = :sql
 
   config.active_support.deprecation = :stderr
-  
-  config.action_view.javascript_expansions[:aloha] = %w(/lib/aloha/aloha/aloha)
-  config.action_view.javascript_expansions[:aloha_plugins] = [
-    '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.Format/plugin.js',
-    '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.List/plugin.js',
-    '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.Table/plugin.js'
-    ]
 end
