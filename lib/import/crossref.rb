@@ -22,7 +22,7 @@ module Import
             next
           end
           Rails.logger.debug("  MIME: Oppdaterer artikkel '#{@article.headword}' med ny referanse ('#{old_href}' -> '#{article_path(ref)}')")
-          node['href'] = article_path(ref)
+          node['href'] = pretty_article_path(ref)
         end
         @article.text = @html.to_s
         Article.without_versioning do

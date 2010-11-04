@@ -24,7 +24,7 @@ describe ArticlesController do
         assigns(:article).headword.should == "foo"
       end
       it "redirects to the article page" do
-        response.should redirect_to article_path(assigns(:article))
+        response.should redirect_to pretty_article_path(assigns(:article))
       end
       it "sets a flash[:notice] message" do
         flash[:notice].should_not be_nil
@@ -40,9 +40,9 @@ describe ArticlesController do
   end
 
   describe "#show" do
-    it "shows an article" do
+    it "shows an article with pretty url" do
       a = Article.create!(:headword => "foo", :text => "bar")
-      get :show, :id => a.id
+      get :show, :slug => 'foo'
       response.should be_success
       assigns(:article).should_not be_nil
     end
@@ -51,7 +51,7 @@ describe ArticlesController do
   describe "#edit" do
     it "edits an article" do
       a = Article.create!(:headword => "foo", :text => "bar")
-      get :edit, :id => a.id
+      get :edit, :id => a.to_param
       response.should be_success
       assigns(:article).should_not be_nil
     end
@@ -60,8 +60,8 @@ describe ArticlesController do
   describe "#update" do
     it "updates an article" do
       a = Article.create!(:headword => "foo", :text => "bar")
-      put :update, :id => a.id, :article => { :text => "ny bar" }
-      response.should redirect_to(a)
+      put :update, :id => a.to_param, :article => { :text => "ny bar" }
+      response.should redirect_to(pretty_article_path(assigns(:article)))
       assigns(:article).text.should == "ny bar"
     end
   end

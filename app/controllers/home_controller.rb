@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def alphabetic
-    @letter = params[:letter]
+    @letter = params[:slug]
     # Handle Norwegian letter 'aa' -> 'å'
     headword_re = case @letter
       when 'å' then /^(\p{P})*(å|aa)/i

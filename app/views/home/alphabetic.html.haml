@@ -8,4 +8,4 @@
 %aside.intro= raw(t('alphabetic.intro', :letter => @letter.mb_chars.upcase))
 %ul.alphabetic
   - @articles.each do |article|
-    %li= link_to article.headword, article
+    %li= link_to article.headword, pretty_article_path(article)

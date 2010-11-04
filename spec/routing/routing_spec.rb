@@ -7,7 +7,7 @@ describe "routing to alphabetic listing" do
     { :get => "/a" }.should route_to(
       :controller => "home",
       :action => "alphabetic",
-      :letter => "a")
+      :slug => "a")
   end
 
   # Does not work, bug in rails?

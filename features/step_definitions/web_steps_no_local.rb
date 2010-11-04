@@ -6,7 +6,7 @@ Gitt /^(?:|at )jeg står på (.*)$/ do |page_name|
   Given %{I am on #{page_name}}
 end
 
-Så /^(?:|skal )feltet "([^"]*)" ikke (?:|skal )inneholde "([^"]*)"$/ do |field, value|
+Så /^(?:|skal )feltet "([^"]*)" (?:|skal )ikke inneholde "([^"]*)"$/ do |field, value|
   Then %{the "#{field}" field should not contain "#{value}"}
 end
 
@@ -42,4 +42,14 @@ end
 
 Så /^debugger jeg$/ do
   Then %{I debug}
+end
+
+Så /^skal feltet "([^"]*)" være tomt$/ do |field|
+  field = find_field(field)
+  field_value = (field.tag_name == 'textarea') ? field.text : field.value
+  if field_value.respond_to? :should
+    field_value.should == ''
+  else
+    assert_blank field_value
+  end
 end

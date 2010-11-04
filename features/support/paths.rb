@@ -13,7 +13,7 @@ module NavigationHelpers
     when /ny artikkel-siden/
       new_article_path
     when /artikkelvisning for "([^"]*)"$/
-      article_path Article.where(:headword => $1).first
+      pretty_article_path Article.where(:headword => $1).first
     when /artikkelredigering for "([^"]*)"$/
       edit_article_path Article.where(:headword => $1).first
     when /alfabetisk-siden for "([^"]*)"$/

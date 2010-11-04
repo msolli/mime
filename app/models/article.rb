@@ -28,6 +28,10 @@ class Article
 
   attr_protected :ip
 
+  def to_param
+    self.headword.gsub(/ /, '_').gsub(/\//, '%2F')
+  end
+
   def headword_presentation
     self[:headword_presentation].blank? ? headword : self[:headword_presentation]
   end

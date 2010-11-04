@@ -20,9 +20,16 @@ if (typeof(String.prototype.trim) === "undefined") {
 $(document).ready(function() {
 	// Don't show presentation headword in edit article form if it's the same as
 	// headword
-	e = $("article form #article_headword_presentation");
-	if (e.length && e.val().trim() == $("article header h1").html().trim()) {
-		e.val('');
+	var e = $("article form #article_headword_presentation");
+	if (e.length) {
+		var value = e.val().trim();
+		var replaceChar = [[/&/g, "&amp;"], [/</g, "&lt;"], [/>/g, "&gt;"]];
+		for (var i in replaceChar) {
+			value = value.replace(replaceChar[i][0], replaceChar[i][1]);
+		}
+		if (value == $("article header h1").html().trim()) {
+			e.val('');
+		}
 	}
 
 	// jQuery.timeago() (http://timeago.yarp.com/)

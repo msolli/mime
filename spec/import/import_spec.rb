@@ -183,13 +183,13 @@ describe "Import::Crossref" do
     Import::Crossref.run
     foo = Article.where(:headword => 'Foo').first
     bar = Article.where(:headword => 'Bar').first
-    foo.text.should =~ /#{bar.id.to_s}/
+    foo.text.should =~ /#{bar.to_param}/
   end
 
   it "updates crossrefs when the crossref id is missing" do
     Import::Crossref.run
     bar = Article.where(:headword => 'Bar').first
     baz = Article.where(:headword => 'Baz').first
-    bar.text.should =~ /#{baz.id.to_s}/
+    bar.text.should =~ /#{baz.to_param}/
   end
 end

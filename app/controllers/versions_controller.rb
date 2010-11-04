@@ -1,6 +1,7 @@
 class VersionsController < ApplicationController
+  before_filter :find_article, :only => [:index]
+
   def index
-    @article = Article.find(params[:article_id])
     @versions = @article.versions
   end
 end

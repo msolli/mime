@@ -40,18 +40,6 @@ Egenskap: Redigere artikler
       Og jeg klikker "Versjonslogg"
       Så skal jeg se "Navn Navnesen" under "table.versions"
 
-    Scenario: legge til alternativt oppslagsord
-      Gitt at jeg står på artikkelredigering for "Foo"
-      Og jeg fyller inn "article[headword_presentation]" med "Føø"
-      Når jeg trykker "Lagre"
-      Så skal jeg se "Føø"
-      Og jeg skal ikke se "Foo"
-
-    @javascript
-    Scenario: alternativt oppslagsord vises ikke når tomt
-      Når jeg står på artikkelredigering for "Foo"
-      Så skal feltet "article[headword_presentation]" ikke inneholde "Foo"
-    
     @javascript
     Scenario: tooltip skal vises ikke vises med mindre det fokuseres på et felt med data-tooltip-enable => true
       Når jeg står på artikkelredigering for "Foo"
