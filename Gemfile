@@ -26,7 +26,9 @@ end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
-  gem 'capybara'
+  gem 'xpath', :git => 'http://github.com/budstikka/xpath.git'
+  gem 'capybara', :git => 'http://github.com/budstikka/capybara.git'
+  # gem 'capybara'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
