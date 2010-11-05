@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :redirect_if_id, :only => [:show]
   before_filter :find_article, :only => [:show, :edit, :update]
 
   def new
@@ -34,6 +35,12 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def redirect_if_id
+    if params[:id]
+      redirect_to pretty_article_path(params[:id]), :status => :moved_permanently
+    end
+  end
 
   def redirect_to_unless_equal(article, slug)
     unless article.to_param == slug.gsub(/\//, '%2F')

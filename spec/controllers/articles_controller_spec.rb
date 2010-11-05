@@ -41,10 +41,16 @@ describe ArticlesController do
 
   describe "#show" do
     it "shows an article with pretty url" do
-      a = Article.create!(:headword => "foo", :text => "bar")
+      a = Article.create!(:headword => "foo")
       get :show, :slug => 'foo'
       response.should be_success
       assigns(:article).should_not be_nil
+    end
+
+    it "redirects to canonical url when id parameter is set" do
+      a = Article.create!(:headword => "Foo")
+      get :show, :id => 'Foo'
+      response.should redirect_to(pretty_article_path(a))
     end
 
     it "redirects to canonical url when slug has wrong case" do
