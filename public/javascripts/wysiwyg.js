@@ -9,7 +9,7 @@ mime.wysiwyg = function(elements) {
 mime.wysiwyg.prototype.setup = function() {
 	var e = null;
 	this.elements.each(function(index) {
-		e = jQuery(this);		
+		e = jQuery(this);
 		jQuery('<div/>', {
 			id: e.attr('name'),
 			'class': e.attr('class')
