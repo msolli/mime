@@ -57,11 +57,14 @@ header {
 			font-size: $font16px;
 			line-height: 1.5;
 		}
-		aside.info {
+		aside.info, aside.redirected {
 			@include small-sans;
 			font-size: $font12px;
 			color: $light-grey-color;
 			@include no-underline;
+		}
+		aside.redirected {
+			font-style: italic;
 		}
 		aside.article-messages {
 			@include small-sans;

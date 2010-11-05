@@ -2,6 +2,7 @@
   = @article.headword_presentation
 
 = render :partial => 'info', :locals => { :article => @article }
+= render :partial => 'redirected_from', :locals => { :from => flash[:redirected_from] }
 .articletext!= @article.text
 %aside.tags
   %h3 Nøkkelord

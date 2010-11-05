@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    redirect_to_unless_equal(@article, @req_headword)
   end
 
   def edit
@@ -30,5 +31,13 @@ class ArticlesController < ApplicationController
     @article.ip = request.remote_ip
     @article.update_attributes!(params[:article])
     redirect_to pretty_article_path(@article), :notice => t('articles.saved')
+  end
+
+  private
+
+  def redirect_to_unless_equal(article, req_headword)
+    unless article.headword == req_headword
+      redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => req_headword }
+    end
   end
 end

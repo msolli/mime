@@ -46,6 +46,12 @@ describe ArticlesController do
       response.should be_success
       assigns(:article).should_not be_nil
     end
+
+    it "redirects to the canonical headword when slug has wrong case" do
+      a = Article.create!(:headword => "foo")
+      get :show, :slug => 'Foo'
+      response.should redirect_to(pretty_article_path(a))
+    end
   end
 
   describe "#edit" do

@@ -10,6 +10,7 @@ Egenskap: Oppslagsord skiller ikke mellom store og små bokstaver
     Gitt at artikkelen "<headword>" finnes
     Når jeg går til artikkelvisning for "<url-segment>"
     Så skal jeg se "<headword>" under "h1"
+    Og jeg skal se "<url-segment>" under "aside.redirected"
 
     Eksempler:
       | headword        | url-segment     |

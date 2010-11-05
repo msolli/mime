@@ -10,133 +10,224 @@ This stylesheet forms part of the Formtastic Rails Plugin
 --------------------------------------------------------------------------------------------------*/
 /* NORMALIZE AND RESET - obviously inspired by Yahoo's reset.css, but scoped to just form.formtastic
 --------------------------------------------------------------------------------------------------*/
-form.formtastic, form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic select, form.formtastic p { margin: 0; padding: 0; }
+form.formtastic, form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic select, form.formtastic p {
+  margin: 0;
+  padding: 0; }
 
-form.formtastic fieldset { border: 0; }
+form.formtastic fieldset {
+  border: 0; }
 
-form.formtastic em, form.formtastic strong { font-style: normal; font-weight: normal; }
+form.formtastic em, form.formtastic strong {
+  font-style: normal;
+  font-weight: normal; }
 
-form.formtastic ol, form.formtastic ul { list-style: none; }
+form.formtastic ol, form.formtastic ul {
+  list-style: none; }
 
-form.formtastic abbr, form.formtastic acronym { border: 0; font-variant: normal; }
+form.formtastic abbr, form.formtastic acronym {
+  border: 0;
+  font-variant: normal; }
 
-form.formtastic input, form.formtastic textarea, form.formtastic select { font-family: inherit; font-size: inherit; font-weight: inherit; }
+form.formtastic input, form.formtastic textarea, form.formtastic select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit; }
 
-form.formtastic input, form.formtastic textarea, form.formtastic select { font-size: 100%; }
+form.formtastic input, form.formtastic textarea, form.formtastic select {
+  font-size: 100%; }
 
-form.formtastic legend { white-space: normal; color: #000; }
+form.formtastic legend {
+  white-space: normal;
+  color: #000; }
 
 /* SEMANTIC ERRORS
 --------------------------------------------------------------------------------------------------*/
-form.formtastic ul.errors { color: #cc0000; margin: 0.5em 0 1.5em 25%; list-style: square; }
+form.formtastic ul.errors {
+  color: #cc0000;
+  margin: 0.5em 0 1.5em 25%;
+  list-style: square; }
 
-form.formtastic ul.errors li { padding: 0; border: none; display: list-item; }
+form.formtastic ul.errors li {
+  padding: 0;
+  border: none;
+  display: list-item; }
 
 /* FIELDSETS & LISTS
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset.buttons { padding-left: 25%; }
+form.formtastic fieldset.buttons {
+  padding-left: 25%; }
 
-form.formtastic fieldset.buttons li { float: left; padding-right: 0.5em; }
+form.formtastic fieldset.buttons li {
+  float: left;
+  padding-right: 0.5em; }
 
 /* clearfixing the fieldsets */
-form.formtastic fieldset { display: inline-block; }
+form.formtastic fieldset {
+  display: inline-block; }
 
-form.formtastic fieldset:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+form.formtastic fieldset:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
 
-html[xmlns] form.formtastic fieldset { display: block; }
+html[xmlns] form.formtastic fieldset {
+  display: block; }
 
-* html form.formtastic fieldset { height: 1%; }
+* html form.formtastic fieldset {
+  height: 1%; }
 
 /* INPUT LIs
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li { margin-bottom: 1.5em; }
+form.formtastic fieldset > ol > li {
+  margin-bottom: 1.5em; }
 
 /* clearfixing the li's */
-form.formtastic fieldset > ol > li { display: inline-block; }
+form.formtastic fieldset > ol > li {
+  display: inline-block; }
 
-form.formtastic fieldset > ol > li:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+form.formtastic fieldset > ol > li:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
 
-html[xmlns] form.formtastic fieldset > ol > li { display: block; }
+html[xmlns] form.formtastic fieldset > ol > li {
+  display: block; }
 
-* html form.formtastic fieldset > ol > li { height: 1%; }
+* html form.formtastic fieldset > ol > li {
+  height: 1%; }
 
 /* LABELS
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li label { display: block; width: 25%; float: left; padding-top: .2em; }
+form.formtastic fieldset > ol > li label {
+  display: block;
+  width: 25%;
+  float: left;
+  padding-top: .2em; }
 
-form.formtastic fieldset > ol > li > li label { line-height: 100%; padding-top: 0; }
+form.formtastic fieldset > ol > li > li label {
+  line-height: 100%;
+  padding-top: 0; }
 
-form.formtastic fieldset > ol > li > li label input { line-height: 100%; vertical-align: middle; margin-top: -0.1em; }
+form.formtastic fieldset > ol > li > li label input {
+  line-height: 100%;
+  vertical-align: middle;
+  margin-top: -0.1em; }
 
 /* NESTED FIELDSETS AND LEGENDS (radio, check boxes and date/time inputs use nested fieldsets)
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li fieldset { position: relative; }
+form.formtastic fieldset > ol > li fieldset {
+  position: relative; }
 
-form.formtastic fieldset > ol > li fieldset legend { position: absolute; width: 95%; padding-top: 0.1em; left: 0px; }
+form.formtastic fieldset > ol > li fieldset legend {
+  position: absolute;
+  width: 95%;
+  padding-top: 0.1em;
+  left: 0px; }
 
-form.formtastic fieldset > ol > li fieldset legend span { position: absolute; }
+form.formtastic fieldset > ol > li fieldset legend span {
+  position: absolute; }
 
-form.formtastic fieldset > ol > li fieldset legend.label label { position: absolute; }
+form.formtastic fieldset > ol > li fieldset legend.label label {
+  position: absolute; }
 
-form.formtastic fieldset > ol > li fieldset ol { float: left; width: 74%; margin: 0; padding: 0 0 0 25%; }
+form.formtastic fieldset > ol > li fieldset ol {
+  float: left;
+  width: 74%;
+  margin: 0;
+  padding: 0 0 0 25%; }
 
-form.formtastic fieldset > ol > li fieldset ol li { padding: 0; border: 0; }
+form.formtastic fieldset > ol > li fieldset ol li {
+  padding: 0;
+  border: 0; }
 
 /* INLINE HINTS
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li p.inline-hints { color: #666; margin: 0.5em 0 0 25%; }
+form.formtastic fieldset > ol > li p.inline-hints {
+  color: #666;
+  margin: 0.5em 0 0 25%; }
 
 /* INLINE ERRORS
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li p.inline-errors { color: #cc0000; margin: 0.5em 0 0 25%; }
+form.formtastic fieldset > ol > li p.inline-errors {
+  color: #cc0000;
+  margin: 0.5em 0 0 25%; }
 
-form.formtastic fieldset > ol > li ul.errors { color: #cc0000; margin: 0.5em 0 0 25%; list-style: square; }
+form.formtastic fieldset > ol > li ul.errors {
+  color: #cc0000;
+  margin: 0.5em 0 0 25%;
+  list-style: square; }
 
-form.formtastic fieldset > ol > li ul.errors li { padding: 0; border: none; display: list-item; }
+form.formtastic fieldset > ol > li ul.errors li {
+  padding: 0;
+  border: none;
+  display: list-item; }
 
 /* STRING & NUMERIC OVERRIDES
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li.string input { max-width: 74%; }
+form.formtastic fieldset > ol > li.string input {
+  max-width: 74%; }
 
-form.formtastic fieldset > ol > li.password input { max-width: 13em; }
+form.formtastic fieldset > ol > li.password input {
+  max-width: 13em; }
 
-form.formtastic fieldset > ol > li.numeric input { max-width: 74%; }
+form.formtastic fieldset > ol > li.numeric input {
+  max-width: 74%; }
 
 /* TEXTAREA OVERRIDES
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li.text textarea { width: 74%; }
+form.formtastic fieldset > ol > li.text textarea {
+  width: 74%; }
 
 /* HIDDEN OVERRIDES
 The dual declarations are required because of our clearfix display hack on the LIs, which is more
 specific than the more general rule below. TODO: Revist the clearing hack and this rule.
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset ol li.hidden, html[xmlns] form.formtastic fieldset ol li.hidden { display: none; }
+form.formtastic fieldset ol li.hidden,
+html[xmlns] form.formtastic fieldset ol li.hidden {
+  display: none; }
 
 /* BOOLEAN OVERRIDES
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li.boolean label { padding-left: 25%; width: auto; }
+form.formtastic fieldset > ol > li.boolean label {
+  padding-left: 25%;
+  width: auto; }
 
-form.formtastic fieldset > ol > li.boolean label input { margin: 0 0.5em 0 0.2em; }
+form.formtastic fieldset > ol > li.boolean label input {
+  margin: 0 0.5em 0 0.2em; }
 
 /* RADIO OVERRIDES
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li.radio fieldset ol { margin-bottom: -0.6em; }
+form.formtastic fieldset > ol > li.radio fieldset ol {
+  margin-bottom: -0.6em; }
 
-form.formtastic fieldset > ol > li.radio fieldset ol li { margin: 0.1em 0 0.5em 0; }
+form.formtastic fieldset > ol > li.radio fieldset ol li {
+  margin: 0.1em 0 0.5em 0; }
 
-form.formtastic fieldset > ol > li.radio fieldset ol li label { float: none; width: 100%; }
+form.formtastic fieldset > ol > li.radio fieldset ol li label {
+  float: none;
+  width: 100%; }
 
-form.formtastic fieldset > ol > li.radio fieldset ol li label input { margin-right: 0.2em; }
+form.formtastic fieldset > ol > li.radio fieldset ol li label input {
+  margin-right: 0.2em; }
 
 /* CHECK BOXES (COLLECTION) OVERRIDES
 --------------------------------------------------------------------------------------------------*/
-form.formtastic fieldset > ol > li.check_boxes fieldset ol { margin-bottom: -0.6em; }
+form.formtastic fieldset > ol > li.check_boxes fieldset ol {
+  margin-bottom: -0.6em; }
 
-form.formtastic fieldset > ol > li.check_boxes fieldset ol li { margin: 0.1em 0 0.5em 0; }
+form.formtastic fieldset > ol > li.check_boxes fieldset ol li {
+  margin: 0.1em 0 0.5em 0; }
 
-form.formtastic fieldset > ol > li.check_boxes fieldset ol li label { float: none; width: 100%; }
+form.formtastic fieldset > ol > li.check_boxes fieldset ol li label {
+  float: none;
+  width: 100%; }
 
-form.formtastic fieldset > ol > li.check_boxes fieldset ol li label input { margin-right: 0.2em; }
+form.formtastic fieldset > ol > li.check_boxes fieldset ol li label input {
+  margin-right: 0.2em; }
 
 /* DATE & TIME OVERRIDES
 --------------------------------------------------------------------------------------------------*/
@@ -266,3 +357,467 @@ a:hover { text-decoration: underline; }
 a:visited { color: #1d386a; }
 
 strong { font-weight: bold; }
+=======
+form.formtastic fieldset > ol > li.date fieldset ol li,
+form.formtastic fieldset > ol > li.time fieldset ol li,
+form.formtastic fieldset > ol > li.datetime fieldset ol li {
+  float: left;
+  width: auto;
+  margin: 0 .3em 0 0; }
+
+form.formtastic fieldset > ol > li.date fieldset ol li label,
+form.formtastic fieldset > ol > li.time fieldset ol li label,
+form.formtastic fieldset > ol > li.datetime fieldset ol li label {
+  display: none; }
+
+form.formtastic fieldset > ol > li.date fieldset ol li label input,
+form.formtastic fieldset > ol > li.time fieldset ol li label input,
+form.formtastic fieldset > ol > li.datetime fieldset ol li label input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, footer, header, hgroup, nav, section {
+  display: block;
+  margin: 0; }
+
+html, body {
+  background: #bfbfbf; }
+
+body .container {
+  margin: auto;
+  max-width: 66.25em;
+  position: relative;
+  box-shadow: 0px 2px 10px #777777;
+  -moz-box-shadow: 0px 2px 10px #777777;
+  -webkit-box-shadow: 0px 2px 10px #777777;
+  behavior: url(/stylesheets/PIE.htc); }
+
+header {
+  background: white; }
+  header h1.title {
+    padding: 1em 0 0.3em 35px;
+    float: left; }
+  header aside.user-links {
+    float: right;
+    margin-top: 10px;
+    margin-right: 65px; }
+    header aside.user-links ul li {
+      display: inline;
+      margin-left: 1em; }
+  header aside.search {
+    float: right;
+    margin-top: 20px;
+    margin-right: 65px; }
+  header nav {
+    clear: both; }
+    header nav ul.links {
+      padding: 8px 35px;
+      border-top: 2px solid #efeeeb;
+      border-bottom: 2px solid #efeeeb; }
+      header nav ul.links ul.letters {
+        padding: 0;
+        border: none;
+        display: inline; }
+        header nav ul.links ul.letters li {
+          margin-right: 0.5em; }
+      header nav ul.links li {
+        display: inline;
+        margin-right: 1em; }
+
+#messages {
+  background: white;
+  padding: 5px 0; }
+  #messages #notice {
+    margin: 5px 65px 5px 22px;
+    padding: 10px;
+    background: #e2e2e2;
+    border: 3px solid #818f2f;
+    position: relative;
+    box-shadow: 0px 2px 10px #777777;
+    -moz-box-shadow: 0px 2px 10px #777777;
+    -webkit-box-shadow: 0px 2px 10px #777777;
+    behavior: url(/stylesheets/PIE.htc);
+    position: relative;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    behavior: url(/stylesheets/PIE.htc); }
+  #messages #alert {
+    margin: 5px 65px 5px 22px;
+    padding: 10px;
+    background: #e2e2e2;
+    border: 3px solid #8f3c2f;
+    position: relative;
+    box-shadow: 0px 2px 10px #777777;
+    -moz-box-shadow: 0px 2px 10px #777777;
+    -webkit-box-shadow: 0px 2px 10px #777777;
+    behavior: url(/stylesheets/PIE.htc);
+    position: relative;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    behavior: url(/stylesheets/PIE.htc); }
+
+#main {
+  background: #efefef; }
+  #main header {
+    padding-left: 35px;
+    background: #45494f; }
+    #main header h1 {
+      padding-top: 0.5em;
+      padding-bottom: 2px; }
+  #main article aside.info {
+    padding-left: 35px;
+    padding-top: 2px; }
+    #main article aside.info ul li {
+      display: inline;
+      margin-right: 0.5em; }
+      #main article aside.info ul li img {
+        vertical-align: bottom; }
+    #main article aside.info ul li.edit-link {
+      text-transform: uppercase;
+      background: #2f528f;
+      padding: 1px 0.4em 0px 0.4em;
+      border-radius: 3px;
+      -moz-border-radius: 3px; }
+      #main article aside.info ul li.edit-link a {
+        color: white; }
+  #main article aside.redirected {
+    padding-left: 35px; }
+  #main article .articletext {
+    padding-left: 35px;
+    max-width: 33.125em;
+    padding-top: 1em;
+    overflow: visible; }
+    #main article .articletext p {
+      margin-bottom: 1em; }
+    #main article .articletext .image-wrap {
+      float: right;
+      position: relative;
+      width: 128px; }
+      #main article .articletext .image-wrap aside.image {
+        margin-top: 6px;
+        width: 228px;
+        border: 1px solid #cccccc;
+        padding: 5px;
+        background: white; }
+  #main article aside.article-messages {
+    margin: 5px 65px 5px 22px;
+    padding: 10px;
+    background: #e2e2e2;
+    border: 3px solid #818f2f;
+    position: relative;
+    box-shadow: 0px 2px 10px #777777;
+    -moz-box-shadow: 0px 2px 10px #777777;
+    -webkit-box-shadow: 0px 2px 10px #777777;
+    behavior: url(/stylesheets/PIE.htc);
+    position: relative;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    behavior: url(/stylesheets/PIE.htc); }
+  #main article form.formtastic.article {
+    padding-left: 35px;
+    max-width: 33.125em;
+    padding-top: 1em; }
+  #main article aside.tags {
+    background: white;
+    border: 1px solid #cccccc;
+    margin: 1em 65px 2em 35px;
+    padding: 1em 14px; }
+    #main article aside.tags ul li {
+      display: inline; }
+      #main article aside.tags ul li:after {
+        content: ", "; }
+      #main article aside.tags ul li:last-of-type:after {
+        content: ""; }
+  #main aside.intro {
+    margin: 5px 65px 5px 22px;
+    padding: 10px;
+    background: #fcfcfc;
+    border: 1px solid #cccccc;
+    position: relative;
+    box-shadow: 0px 2px 10px #cccccc;
+    -moz-box-shadow: 0px 2px 10px #cccccc;
+    -webkit-box-shadow: 0px 2px 10px #cccccc;
+    behavior: url(/stylesheets/PIE.htc);
+    position: relative;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    behavior: url(/stylesheets/PIE.htc); }
+  #main .alphabetic {
+    padding-left: 35px; }
+  #main .login {
+    padding-left: 35px; }
+    #main .login .facebook {
+      width: 30em;
+      border: 1px solid #cccccc;
+      padding: 5px;
+      margin: 20px 0 5px 0;
+      background: white; }
+      #main .login .facebook a {
+        font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
+        color: #3B5998;
+        background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
+        background-position: 0% -210px;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0px 0px 0px 1px;
+        text-decoration: none; }
+        #main .login .facebook a span.fb-button-text {
+          color: white;
+          display: block;
+          font-weight: bold;
+          margin: 0px 1px 0px 21px;
+          padding: 2px 6px 3px;
+          background: #4F6AA3;
+          border-bottom: 1px solid #29447E;
+          border-top: 1px solid #45619D;
+          text-shadow: none; }
+  #main table.versions {
+    border: 1px solid #cccccc; }
+    #main table.versions td, #main table.versions th {
+      padding: 5px; }
+    #main table.versions tr.current {
+      background: #d3d7bf; }
+  #main div.maincol {
+    padding-left: 35px; }
+  #main .col {
+    float: left;
+    display: inline;
+    width: 14.875em;
+    margin-right: 2px;
+    background-color: #45494f; }
+  #main .col.left {
+    padding-left: 35px; }
+  #main footer {
+    padding-left: 35px;
+    clear: both;
+    border-top: 2px solid #45494f;
+    background: white;
+    height: 5em; }
+    #main footer p:first-child {
+      text-align: right;
+      position: relative;
+      margin: 2em 65px 0 0;
+      padding-right: 110px; }
+      #main footer p:first-child img {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: 22px;
+        margin-top: -11px; }
+
+form.formtastic fieldset > ol > li input[type="text"], form.formtastic fieldset > ol > li.string input[type="text"], form.formtastic fieldset > ol > li.text input[type="text"] {
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding: 0.1em 0.2em 0 0.2em; }
+form.formtastic fieldset > ol > li label, form.formtastic fieldset > ol > li.string label, form.formtastic fieldset > ol > li.text label {
+  display: block;
+  float: none;
+  width: 100%; }
+  form.formtastic fieldset > ol > li label abbr, form.formtastic fieldset > ol > li.string label abbr, form.formtastic fieldset > ol > li.text label abbr {
+    padding-left: 1em; }
+form.formtastic fieldset > ol > li textarea, form.formtastic fieldset > ol > li.string textarea, form.formtastic fieldset > ol > li.text textarea {
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding: 0.2em; }
+form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldset > ol > li.string input[type="submit"], form.formtastic fieldset > ol > li.text input[type="submit"] {
+  padding: 0.4em 2em 0.2em 2em;
+  background: #2f528f;
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  border: 1px solid #cccccc;
+  border-top-color: #b3b3b3;
+  border-left-color: #b3b3b3; }
+  form.formtastic fieldset > ol > li input[type="submit"]:hover, form.formtastic fieldset > ol > li.string input[type="submit"]:hover, form.formtastic fieldset > ol > li.text input[type="submit"]:hover {
+    background: #fab45b; }
+  form.formtastic fieldset > ol > li input[type="submit"]:active, form.formtastic fieldset > ol > li.string input[type="submit"]:active, form.formtastic fieldset > ol > li.text input[type="submit"]:active {
+    border: 1px solid #b3b3b3;
+    border-top-color: #cccccc;
+    border-left-color: #cccccc; }
+form.formtastic fieldset.buttons {
+  padding-left: 0; }
+
+.tooltip {
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  color: #F4B55E;
+  position: relative;
+  box-shadow: 0px 2px 10px #777777;
+  -moz-box-shadow: 0px 2px 10px #777777;
+  -webkit-box-shadow: 0px 2px 10px #777777;
+  behavior: url(/stylesheets/PIE.htc); }
+  .tooltip span {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    display: block;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent #D7D7D7 transparent transparent;
+    top: 10px;
+    left: -40px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: 0.7; }
+
+.clearfix:after, header:after, #main:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden; }
+
+body {
+  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  /*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+  /*	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+  font-size: 100%; }
+
+header h1.title {
+  font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
+  /*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
+  font-size: 187.5%;
+  color: #45494f; }
+  header h1.title a {
+    text-decoration: none; }
+    header h1.title a:hover {
+      text-decoration: underline; }
+header aside.user-links {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+  font-size: 75%;
+  color: #3362ba; }
+header nav {
+  font-weight: bold; }
+  header nav a {
+    text-decoration: none; }
+    header nav a:hover {
+      text-decoration: underline; }
+
+#messages {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+  font-size: 87.5%; }
+
+#main header h1 {
+  font-size: 200%;
+  font-weight: bold;
+  color: white; }
+#main article {
+  color: #383838; }
+  #main article .articletext {
+    font-size: 100%;
+    line-height: 1.5; }
+  #main article aside.info, #main article aside.redirected {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+    font-size: 75%;
+    color: #7a7a7a; }
+    #main article aside.info a, #main article aside.redirected a {
+      text-decoration: none; }
+      #main article aside.info a:hover, #main article aside.redirected a:hover {
+        text-decoration: underline; }
+  #main article aside.redirected {
+    font-style: italic; }
+  #main article aside.article-messages {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+    font-size: 87.5%; }
+  #main article h2 {
+    font-size: 125%;
+    font-weight: bold;
+    color: #2b2b2b; }
+  #main article h3 {
+    font-size: 106.25%;
+    font-weight: bold; }
+  #main article aside.image p {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+    color: #45494f;
+    font-size: 75%; }
+    #main article aside.image p:first-of-type {
+      margin-top: 5px; }
+  #main article aside.tags {
+    color: #45494f;
+    font-size: 75%; }
+    #main article aside.tags h3 {
+      font-family: "Lucida Grande", Tahoma, Arial;
+      /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+      text-transform: uppercase;
+      font-weight: bold; }
+    #main article aside.tags li {
+      font-family: "Lucida Grande", Tahoma, Arial;
+      /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
+#main aside.intro {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
+#main .alphabetic {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+  font-size: 75%;
+  line-height: 1.67; }
+  #main .alphabetic a {
+    text-decoration: none; }
+    #main .alphabetic a:hover {
+      text-decoration: underline; }
+#main .login {
+  font-size: 75%; }
+  #main .login dl dt {
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 5px; }
+#main table.versions {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/ }
+
+form.formtastic fieldset > ol > li input[type="text"], form.formtastic fieldset > ol > li.string input[type="text"], form.formtastic fieldset > ol > li.text input[type="text"] {
+  font-size: 200%;
+  font-weight: bold;
+  color: #45494f; }
+form.formtastic fieldset > ol > li label, form.formtastic fieldset > ol > li.string label, form.formtastic fieldset > ol > li.text label {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+  color: #45494f;
+  font-size: 75%;
+  text-transform: uppercase;
+  font-weight: bold; }
+  form.formtastic fieldset > ol > li label abbr, form.formtastic fieldset > ol > li.string label abbr, form.formtastic fieldset > ol > li.text label abbr {
+    text-transform: none;
+    color: #7a7a7a;
+    font-weight: normal; }
+form.formtastic fieldset > ol > li textarea, form.formtastic fieldset > ol > li.string textarea, form.formtastic fieldset > ol > li.text textarea {
+  color: #383838;
+  font-size: 100%;
+  line-height: 1.5; }
+form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldset > ol > li.string input[type="submit"], form.formtastic fieldset > ol > li.text input[type="submit"] {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+  color: white;
+  font-size: 112.5%;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+footer {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  /*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+  font-size: 68.75%;
+  color: #828589; }
+
+a {
+  color: #284d92; }
+  a:hover {
+    text-decoration: underline; }
+  a:visited {
+    color: #1d386a; }
+
+strong {
+  font-weight: bold; }

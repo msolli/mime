@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
     else
       params[:id]
     end
-    @article = Article.where(:headword => /^#{Regexp.escape(deparameterize(slug))}$/i).first
+    @req_headword = deparameterize(slug)
+    @article = Article.where(:headword => /^#{Regexp.escape(@req_headword)}$/i).first
   end
 
   def deparameterize(thing)
