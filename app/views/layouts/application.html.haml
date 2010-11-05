@@ -5,6 +5,7 @@
     %title<= content_for?(:title) ? yield(:title) : t('mime.title')
     %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : 'TODO - generell meta description'}
     %meta{:'http-equiv' => "content-language", :content => "no"}
+    = yield :canonical
 
     = stylesheet_link_tag "http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css"
     = stylesheet_link_tag "application"

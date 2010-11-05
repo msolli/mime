@@ -1,3 +1,6 @@
+- content_for :canonical do
+  ! <link href="#{pretty_article_path(@article)}" rel="canonical" />
+
 - content_for :header do
   = @article.headword_presentation
 
