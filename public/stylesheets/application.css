@@ -209,6 +209,7 @@ form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldse
 form.formtastic fieldset > ol > li input[type="submit"]:hover, form.formtastic fieldset > ol > li.string input[type="submit"]:hover, form.formtastic fieldset > ol > li.text input[type="submit"]:hover { background: #fab45b; }
 form.formtastic fieldset > ol > li input[type="submit"]:active, form.formtastic fieldset > ol > li.string input[type="submit"]:active, form.formtastic fieldset > ol > li.text input[type="submit"]:active { border: 1px solid #b3b3b3; border-top-color: #cccccc; border-left-color: #cccccc; }
 form.formtastic fieldset.buttons { padding-left: 0; }
+form.formtastic .GENTICS_editable { min-height: 2em; }
 form.formtastic .GENTICS_editable.articletext { padding: 0 !important; width: 33.125em; }
 
 .GENTICS_editable { background-color: #fff; outline: 1px solid #ccc; }
