@@ -5,4 +5,4 @@ tmp/**/*
 coverage/*
 .sass-cache
 config/facebook.yml
-
+.DS_Store
