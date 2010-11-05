@@ -34,7 +34,7 @@ group :test do
   gem 'cucumber'
   gem 'rspec-rails', '~> 2.0.0'
   gem 'launchy'
-  gem 'ruby-debug19' #gem install ruby-debug19 -- --with-ruby-include=/Users/peterhaza/.rvm/src/ruby-1.9.2-p0
+  # gem 'ruby-debug19'
 
   gem 'mongoid-rspec'
   gem 'shoulda'
