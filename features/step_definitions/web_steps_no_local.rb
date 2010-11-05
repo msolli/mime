@@ -36,7 +36,7 @@ Så /^(?:skal )"([^"]*)" være redigerbar$/ do |selector|
 end
 
 Then /^I debug$/ do
-  breakpoint
+  debugger
   0 # necesary, else breakpoint will loose context
 end
 
