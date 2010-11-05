@@ -9,7 +9,7 @@ Egenskap: Artikkel med pen URL
   Abstrakt Scenario: routing til oppslagsord
     Gitt at artikkelen "<headword>" finnes
     Når jeg går til artikkelvisning for "<headword>"
-    Så skal jeg se "<headword>" under "h1"
+    Så skal jeg se "<headword>" under "article h1"
 
     Eksempler:
       | headword      |
