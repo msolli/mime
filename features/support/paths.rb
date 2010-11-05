@@ -13,13 +13,13 @@ module NavigationHelpers
     when /ny artikkel-siden/
       new_article_path
     when /artikkelvisning for "([^"]*)"$/
-      pretty_article_path Article.where(:headword => $1).first
+      pretty_article_path Article.where(:headword => /^#{Regexp.escape($1)}$/i).first
     when /artikkelredigering for "([^"]*)"$/
-      edit_article_path Article.where(:headword => $1).first
+      edit_article_path Article.where(:headword => /^#{Regexp.escape($1)}$/i).first
     when /alfabetisk-siden for "([^"]*)"$/
       alphabetic_path $1
     when /versjonsloggen for "([^"]*)"$/
-      article_versions_path Article.where(:headword => $1).first
+      article_versions_path Article.where(:headword => /^#{Regexp.escape($1)}$/i).first
     when /innloggingssiden$/
       new_user_session_path
 

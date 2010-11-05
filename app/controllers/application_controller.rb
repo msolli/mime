@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     else
       params[:id]
     end
-    @article = Article.where(:headword => deparameterize(slug)).first
+    @article = Article.where(:headword => /^#{Regexp.escape(deparameterize(slug))}$/i).first
   end
 
   def deparameterize(thing)
