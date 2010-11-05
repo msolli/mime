@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    redirect_to_unless_equal(@article, @req_headword)
+    redirect_to_unless_equal(@article, @slug)
   end
 
   def edit
@@ -35,9 +35,10 @@ class ArticlesController < ApplicationController
 
   private
 
-  def redirect_to_unless_equal(article, req_headword)
-    unless article.headword == req_headword
-      redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => req_headword }
+  def redirect_to_unless_equal(article, slug)
+    unless article.to_param == slug.gsub(/\//, '%2F')
+      from = article.headword == deparameterize(slug) ? '' : slug
+      redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
     end
   end
 end

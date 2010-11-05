@@ -47,10 +47,32 @@ describe ArticlesController do
       assigns(:article).should_not be_nil
     end
 
-    it "redirects to the canonical headword when slug has wrong case" do
-      a = Article.create!(:headword => "foo")
-      get :show, :slug => 'Foo'
+    it "redirects to canonical url when slug has wrong case" do
+      a = Article.create!(:headword => "Foo")
+      get :show, :slug => 'foo'
       response.should redirect_to(pretty_article_path(a))
+      flash[:redirected_from].should == 'foo'
+    end
+
+    it "redirects to canonical url when slug contains spaces" do
+      a = Article.create!(:headword => "foo bar")
+      get :show, :slug => 'foo bar'
+      response.should redirect_to(pretty_article_path(a))
+      flash[:redirected_from].should be_blank
+    end
+
+    it "redirects to canonical url when slug contains escaped slash" do
+      a = Article.create!(:headword => "foo / bar")
+      get :show, :slug => 'foo %2F bar'
+      response.should redirect_to(pretty_article_path(a))
+      flash[:redirected_from].should be_blank
+    end
+
+    it "does not redirect when slug contains non-escaped slash" do
+      a = Article.create!(:headword => "foo/bar")
+      get :show, :slug => 'foo/bar'
+      response.should be_success
+      assigns(:article).should_not be_nil
     end
   end
 

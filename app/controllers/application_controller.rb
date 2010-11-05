@@ -5,15 +5,14 @@ class ApplicationController < ActionController::Base
   private
 
   def find_article
-    slug = if !params[:slug].blank?
+    @slug = if !params[:slug].blank?
       params[:slug]
     elsif !params[:article_id].blank?
       params[:article_id]
     else
       params[:id]
     end
-    @req_headword = deparameterize(slug)
-    @article = Article.where(:headword => /^#{Regexp.escape(@req_headword)}$/i).first
+    @article = Article.where(:headword => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
   end
 
   def deparameterize(thing)
