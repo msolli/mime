@@ -29,7 +29,7 @@ Egenskap: Redigere artikler
       Og jeg fyller inn "article[text]" med "Anonym sin tekst om foo"
       Når jeg trykker "Lagre"
       Og jeg klikker "Versjonslogg"
-      Så skal jeg se "127.0.0.1"
+      Så skal jeg se "127.0.0.1" under "tr.current"
 
     @devise
     Scenario: innlogget bidragsyter

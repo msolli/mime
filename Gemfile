@@ -34,7 +34,7 @@ group :test do
   gem 'cucumber'
   gem 'rspec-rails', '~> 2.0.0'
   gem 'launchy'
-  # gem 'ruby-debug19'
+  gem 'ruby-debug19'
 
   gem 'mongoid-rspec'
   gem 'shoulda'
