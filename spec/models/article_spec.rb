@@ -110,6 +110,17 @@ describe Article do
     a.version.should == 2
   end
 
+  it "has versioning of ip attribute" do
+    a = Article.new(:headword => "foo")
+    a.ip = "127.0.0.1"
+    a.save!
+    a.text = "Yo"
+    a.ip = "127.0.0.1"
+    a.save!
+    a.ip.should == "127.0.0.1"
+    a.versions[0].ip.should == "127.0.0.1"
+  end
+
   context "with location" do
     before(:each) do
       @article = Article.new(:headword => 'foo')

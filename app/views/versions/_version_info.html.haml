@@ -1,4 +1,4 @@
-%tr{:class => "#{ current ? 'current' : '' }"}
+%tr{:class => [(current ? 'current' : nil ), "version-number-#{version.version}"].compact.join(' ')}
   %td.version_number
     = version.version
   %td.version_date

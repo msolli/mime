@@ -13,7 +13,7 @@ describe ArticlesController do
       assigns(:article).should_not be_nil
     end
   end
-  
+
   describe "#create" do
     context "with a valid article" do
       before :each do
@@ -28,6 +28,9 @@ describe ArticlesController do
       end
       it "sets a flash[:notice] message" do
         flash[:notice].should_not be_nil
+      end
+      it "has IP adresse" do
+        assigns(:article).authors_or_ip.should == "0.0.0.0"
       end
     end
 

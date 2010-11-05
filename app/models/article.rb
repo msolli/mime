@@ -26,8 +26,6 @@ class Article
   validates_uniqueness_of :headword
   validates :location, :location => true
 
-  attr_protected :ip
-
   def to_param
     self.headword.gsub(/ /, '_').gsub(/\//, '%2F')
   end
