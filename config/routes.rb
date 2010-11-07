@@ -10,6 +10,8 @@ Mime::Application.routes.draw do
       resources :versions, :only => [:index]
     end
   end
+  
+  resources :medias
 
   # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å, /1, /2, ...
   constraints(lambda { |req| req.params[:slug].size == 1 }) do

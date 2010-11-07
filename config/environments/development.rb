@@ -28,6 +28,10 @@ Mime::Application.configure do
   config.action_view.javascript_expansions[:aloha_plugins] = [
     '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.Format/plugin.js',
     '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.List/plugin.js',
-    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.Table/plugin.js'
+    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.Table/plugin.js',
+    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.DragAndDropFiles/plugin.js',
+    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.DragAndDropFiles/deps/Ext.ux.XHRUpload.js',
+    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.DragAndDropFiles/lib/uploader.js',
+    '/lib/aloha/debug/plugins/com.gentics.aloha.plugins.Image/plugin.js'
     ]
 end

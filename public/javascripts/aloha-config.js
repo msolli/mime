@@ -3,7 +3,24 @@ GENTICS.Aloha.settings = {
 	ribbon: false,
 	plugins: {
 		"com.gentics.aloha.plugins.Format": {
-			config: ['b','i','u','del','sub','sup','p','title','h1','h2','h3','h4','h5','h6', 'pre', 'removeFormat'],
+			config: ['b','i','u','del','sub','sup','p','title','h1','h2','h3','h4','h5','h6', 'pre', 'removeFormat']
+		},
+		'com.gentics.aloha.plugins.DragAndDropFiles': {
+			config: { drop: {
+					max_file_size: 10*1024*1024, // 10 MB,
+					upload: {
+						config: {
+							url: '/medias/',
+							extra_headers: {
+								'X-Requested-With': 'XMLHTTPRequest',
+								'X-Extuploader': true,
+								accept: 'application/json',
+								authenticity_token: $('meta[name=csrf-param]').attr('content') // Currently not working
+							} 
+						}
+					}					
+				}
+			}
 		}
 	}
 };
