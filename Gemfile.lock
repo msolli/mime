@@ -164,8 +164,6 @@ GEM
     orm_adapter (0.0.3)
     polyglot (0.3.1)
     rack (1.2.1)
-    rack-cache (0.5.3)
-      rack (>= 0.4)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-test (0.5.6)
@@ -261,7 +259,6 @@ DEPENDENCIES
   mongoid-rspec
   nokogiri
   oa-oauth
-  rack-cache
   rails (~> 3.0)
   rails3-generators
   rmagick

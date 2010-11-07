@@ -19,8 +19,3 @@ middleware = Rails.application.middleware
 
 middleware.insert_before 'Rack::Lock', 'Dragonfly::Middleware', :attachments, '/media'
 middleware.insert_after 'Rack::Lock', 'Dragonfly::Middleware', :images, app.url_path_prefix
-middleware.insert_before 'Dragonfly::Middleware', 'Rack::Cache', {
-  :verbose     => true,
-  :metastore   => URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/meta"), # URI encoded because Windows
-  :entitystore => URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/body")  # has problems with spaces
-}

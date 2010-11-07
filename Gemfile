@@ -20,7 +20,6 @@ gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly'
 
 group :development do
-  gem 'rack-cache', :require => 'rack/cache' # heroku/production uses varnish
   gem 'rails3-generators'
   gem 'haml-rails'
   gem 'wirble'
@@ -42,7 +41,6 @@ group :test do
   gem 'rspec-rails', '~> 2.0.0'
   gem 'launchy'
   gem 'ruby-debug19'
-  gem 'rack-cache', :require => 'rack/cache' # heroku/production uses varnish
 
   gem 'mongoid-rspec'
   gem 'shoulda'
