@@ -28,6 +28,7 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'heroku'
+  gem 'ruby-debug19'
 end
 
 group :test do
