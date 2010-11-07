@@ -14,7 +14,13 @@ gem 'devise', :git => "http://github.com/plataformatec/devise.git", :branch => '
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "escape_utils" # A way to silence stupid stupid stupid Rack::Utils::escape
 
+# attachment handling
+gem 'rmagick',  :require => 'RMagick'
+gem 'aws-s3', :require => 'aws/s3'
+gem 'dragonfly'
+
 group :development do
+  gem 'rack-cache', :require => 'rack/cache' # heroku/production uses varnish
   gem 'rails3-generators'
   gem 'haml-rails'
   gem 'wirble'

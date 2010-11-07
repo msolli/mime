@@ -63,6 +63,10 @@ GEM
     archive-tar-minitar (0.5.2)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     bcrypt-ruby (2.1.2)
     bson (1.1.2)
     bson_ext (1.1.2)
@@ -83,6 +87,8 @@ GEM
     culerity (0.2.12)
     database_cleaner (0.6.0)
     diff-lcs (1.1.2)
+    dragonfly (0.7.7)
+      rack
     erubis (2.6.6)
       abstract (>= 1.0.0)
     escape_utils (0.1.9)
@@ -158,6 +164,8 @@ GEM
     orm_adapter (0.0.3)
     polyglot (0.3.1)
     rack (1.2.1)
+    rack-cache (0.5.3)
+      rack (>= 0.4)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-test (0.5.6)
@@ -179,6 +187,7 @@ GEM
     rake (0.8.7)
     rest-client (1.6.1)
       mime-types (>= 1.16)
+    rmagick (2.13.1)
     rspec (2.0.1)
       rspec-core (~> 2.0.1)
       rspec-expectations (~> 2.0.1)
@@ -222,11 +231,13 @@ GEM
       rack (>= 1.0.0)
     will_paginate (3.0.pre2)
     wirble (0.1.3)
+    xml-simple (1.0.12)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-s3
   bson (~> 1.0)
   bson_ext
   capybara!
@@ -234,6 +245,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise!
+  dragonfly
   escape_utils
   factory_girl
   formtastic (~> 1.1)
@@ -249,8 +261,10 @@ DEPENDENCIES
   mongoid-rspec
   nokogiri
   oa-oauth
+  rack-cache
   rails (~> 3.0)
   rails3-generators
+  rmagick
   rspec-rails (~> 2.0.0)
   ruby-debug19
   ruby_parser
