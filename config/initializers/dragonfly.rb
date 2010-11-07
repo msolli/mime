@@ -11,7 +11,7 @@ end
 app.configure_with(:heroku, 'my_bucket_name') if Rails.env.production?
 
 ### Extend active record ###
-app.define_macro(Mongoid::Document, :attachment_accessor)
+app.define_macro_on_include(Mongoid::Document, :attachment_accessor)
 
 ### Insert the middleware ###
 # Where the middleware is depends on the version of Rails
