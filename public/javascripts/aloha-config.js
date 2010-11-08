@@ -25,6 +25,8 @@ GENTICS.Aloha.settings = {
 	}
 };
 
+var GENTICS_Aloha_base = GENTICS.Aloha.autobase;
+
 (function() {
 	
 	function save(event, eventProperties) {
