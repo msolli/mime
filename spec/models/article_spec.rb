@@ -14,6 +14,7 @@ describe Article do
   it { should have_field(:end_year).of_type(Date) }
   it { should have_field(:ambiguous).of_type(Boolean) }
   it { should have_field(:ip).of_type(String) }
+  it { should have_field(:tags_array).of_type(Array) }
 
   it { should validate_presence_of(:headword) }
   it { should validate_uniqueness_of(:headword) }
@@ -119,6 +120,19 @@ describe Article do
     a.save!
     a.ip.should == "127.0.0.1"
     a.versions[0].ip.should == "127.0.0.1"
+  end
+
+  it "has tags" do
+    a = Article.new(:headword => "foo")
+    a.tags = "bar, baz, xyzzy"
+    a.tags_array.sort.should == ['bar', 'baz', 'xyzzy']
+    a.tags.should == "bar, baz, xyzzy"
+  end
+
+  it "has empty tags array" do
+    a = Article.new(:headword => "foo")
+    a.tags_array.should == []
+    a.tags.should == ""
   end
 
   context "with location" do

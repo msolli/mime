@@ -63,6 +63,7 @@ no-NB:
         headword: Oppslagsord
         headword_presentation: Alternativ tittel
         text: Artikkeltekst
+        tags: Nøkkelord
         lng: Lengdegrad
         lat: Breddegrad
   words:

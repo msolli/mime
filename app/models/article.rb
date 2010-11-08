@@ -18,6 +18,7 @@ class Article
   field :ambiguous, :type => Boolean
   field :location, :type => Array
   field :ip
+  field :tags_array, :type => Array
 
   index :headword, :unique => true
   index [[ :location, Mongo::GEO2D ]]
@@ -44,6 +45,18 @@ class Article
 
   def authors_or_ip
     self.users.blank? ? ip : self.users.map(&:name_or_email).join(', ')
+  end
+
+  def tags=(tags)
+    self.tags_array = tags.split(',').map(&:strip)
+  end
+
+  def tags
+    (self.tags_array || []).join(', ')
+  end
+
+  def tags_array
+    (self[:tags_array] || [])
   end
 
   def lat

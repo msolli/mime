@@ -10,5 +10,5 @@
 %aside.tags
   %h3 Nøkkelord
   %ul
-    - %w[hus fly sjøfly landfly gressholmen fornebu flyrutenett flyplass småfly flyhistorie].each do |tag|
+    - @article.tags_array.each do |tag|
       %li>= link_to tag, "#TODO"
