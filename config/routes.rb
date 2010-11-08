@@ -5,13 +5,14 @@ Mime::Application.routes.draw do
   #   get "/users/sso_callback", :to => "sessions#sso_callback"
   # end
 
+  resources :medias
+  match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
+
   constraints :id => /.*/ do
     resources :articles, :only => [:new, :create, :show, :edit, :update] do
       resources :versions, :only => [:index]
     end
   end
-  
-  resources :medias
 
   # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å, /1, /2, ...
   constraints(lambda { |req| req.params[:slug].size == 1 }) do

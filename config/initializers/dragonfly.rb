@@ -16,6 +16,3 @@ app.define_macro_on_include(Mongoid::Document, :attachment_accessor)
 ### Insert the middleware ###
 # Where the middleware is depends on the version of Rails
 middleware = Rails.application.middleware
-
-middleware.insert_before 'Rack::Lock', 'Dragonfly::Middleware', :attachments, '/media'
-middleware.insert_after 'Rack::Lock', 'Dragonfly::Middleware', :images, app.url_path_prefix
