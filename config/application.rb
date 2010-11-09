@@ -53,17 +53,5 @@ module Mime
     config.filter_parameters += [:password]
 
     config.action_view.javascript_expansions[:defaults] = %w(rails typekit jquery.timeago jquery.timeago.no jquery.tools.tooltip)
-    
-    # Overridden in development.rb to load debug versions
-    config.action_view.javascript_expansions[:aloha] = %w(/lib/aloha/aloha/aloha aloha-config wysiwyg)
-    config.action_view.javascript_expansions[:aloha_plugins] = [
-      '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.Format/plugin.js',
-      '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.List/plugin.js',
-      '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.Table/plugin.js',
-      '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.DragAndDropFiles/plugin.js',
-      '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.DragAndDropFiles/deps/Ext.ux.XHRUpload.js',
-      '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.DragAndDropFiles/lib/uploader.js',
-      '/lib/aloha/aloha/plugins/com.gentics.aloha.plugins.Image/plugin.js'
-      ]
   end
 end

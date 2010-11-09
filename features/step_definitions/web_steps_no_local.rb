@@ -26,15 +26,6 @@ Så /^(?:skal )ikke "([^"]*)" være synlig$/ do |selector|
   Then %{"#{selector}" should not be visible}
 end
 
-Then /^"([^\"]*)" should be editable$/ do |selector|
-  node = find(:css, selector)
-  assert_equal node['contenteditable'], 'true'
-end
-
-Så /^(?:skal )"([^"]*)" være redigerbar$/ do |selector|
-  Then %{"#{selector}" should be editable}
-end
-
 Then /^I debug$/ do
   debugger
   0 # necesary, else breakpoint will loose context

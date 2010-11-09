@@ -50,8 +50,3 @@ Egenskap: Redigere artikler
       Når jeg står på artikkelredigering for "Foo"
       Og jeg fyller inn "" for "article[headword_presentation]"
       Så skal ".tooltip" være synlig
-      
-    @javascript
-    Scenario: Aloha editor skal gjøre tekstfeltet i artikkelredigering wysiwyg
-      Når jeg står på artikkelredigering for "Foo"
-      Så skal "div.articletext" være redigerbar
