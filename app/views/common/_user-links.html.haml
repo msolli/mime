@@ -4,4 +4,6 @@
     %li #{t('users.login.not_you')} #{link_to t('users.login.log_out'), destroy_user_session_path}
   - else
     %li= t('users.login.help_us')
-    %li #{link_to t('users.login.register'), '#TODO'} #{t('words.or')} #{link_to t('users.login.log_in'), new_user_session_path}
+    %li.fb-button
+      = link_to user_omniauth_authorize_path(:facebook) do
+        %span.fb-button-text= t('users.login.facebook.log_in')

@@ -8,6 +8,7 @@ FACEBOOK_INFO = {
   :website => 'http://navnesen.no',
   :first_name => 'Navn',
   :last_name => 'Navnesen',
+  :name  => "Navn Navnesen",
   :email => 'nn@example.com'
 }
 

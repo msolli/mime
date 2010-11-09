@@ -19,4 +19,7 @@ class ApplicationController < ActionController::Base
     thing.gsub(/%2F/, '/').gsub(/_/, ' ')
   end
 
+  def set_user_return_to(path)
+    session[:user_return_to] = path
+  end
 end

@@ -278,6 +278,25 @@ header {
     header aside.user-links ul li {
       display: inline;
       margin-left: 1em; }
+    header aside.user-links ul li.fb-button a {
+      font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
+      color: #3B5998;
+      background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
+      background-position: 0% -210px;
+      cursor: pointer;
+      display: inline-block;
+      padding: 0px 0px 0px 1px;
+      text-decoration: none; }
+      header aside.user-links ul li.fb-button a span.fb-button-text {
+        color: white;
+        display: block;
+        font-weight: bold;
+        margin: 0px 1px 0px 21px;
+        padding: 2px 6px 3px;
+        background: #4F6AA3;
+        border-bottom: 1px solid #29447E;
+        border-top: 1px solid #45619D;
+        text-shadow: none; }
   header aside.search {
     float: right;
     margin-top: 20px;
@@ -430,25 +449,29 @@ header {
       padding: 5px;
       margin: 20px 0 5px 0;
       background: white; }
-      #main .login .facebook a {
-        font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
-        color: #3B5998;
-        background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
-        background-position: 0% -210px;
-        cursor: pointer;
-        display: inline-block;
-        padding: 0px 0px 0px 1px;
-        text-decoration: none; }
-        #main .login .facebook a span.fb-button-text {
-          color: white;
-          display: block;
-          font-weight: bold;
-          margin: 0px 1px 0px 21px;
-          padding: 2px 6px 3px;
-          background: #4F6AA3;
-          border-bottom: 1px solid #29447E;
-          border-top: 1px solid #45619D;
-          text-shadow: none; }
+      #main .login .facebook p.fb-button {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-align: center; }
+        #main .login .facebook p.fb-button a {
+          font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
+          color: #3B5998;
+          background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
+          background-position: 0% -210px;
+          cursor: pointer;
+          display: inline-block;
+          padding: 0px 0px 0px 1px;
+          text-decoration: none; }
+          #main .login .facebook p.fb-button a span.fb-button-text {
+            color: white;
+            display: block;
+            font-weight: bold;
+            margin: 0px 1px 0px 21px;
+            padding: 2px 6px 3px;
+            background: #4F6AA3;
+            border-bottom: 1px solid #29447E;
+            border-top: 1px solid #45619D;
+            text-shadow: none; }
   #main table.versions {
     border: 1px solid #cccccc; }
     #main table.versions td, #main table.versions th {
@@ -561,10 +584,10 @@ form.formtastic .GENTICS_editable {
   height: 0;
   visibility: hidden; }
 
-/*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
-/*	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
-/*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
-/*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+/*  font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+/*  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+/*  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
+/*  font-family: Tahoma, Arial, Helvetica, sans-serif;*/
 body {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
   font-size: 100%; }
@@ -645,6 +668,7 @@ header nav {
     #main .alphabetic a:hover {
       text-decoration: underline; }
 #main .login {
+  font-family: "Lucida Grande", Tahoma, Arial;
   font-size: 75%; }
   #main .login dl dt {
     font-weight: bold;

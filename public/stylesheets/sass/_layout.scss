@@ -1,6 +1,6 @@
 article, aside, footer, header, hgroup, nav, section {
-	display: block;
-	margin: 0;
+  display: block;
+  margin: 0;
 }
 
 html, body {
@@ -8,310 +8,318 @@ html, body {
 }
 
 body {
-	.container {
-		margin: auto;
-		max-width: $container-width;
-		@include box-shadow;
-	}
+  .container {
+    margin: auto;
+    max-width: $container-width;
+    @include box-shadow;
+  }
 }
 
 header {
-	background: white;
+  background: white;
   @extend .clearfix;
-	
-	h1.title {
-		padding: 1em 0 0.3em $main-padding-left;
-		float: left;
-	}
-	aside.user-links {
-		float: right;
-		margin-top: 10px;
-		margin-right: 65px;
-		ul {
-			li {
-				display: inline;
-				margin-left: 1em;
-			}
-		}
-	}
-	aside.search {
-		float: right;
-		margin-top: 20px;
-		margin-right: 65px;
-	}
-	nav {
-		clear: both;
-	  ul.links {
-			padding: 8px $main-padding-left;
-			border-top: 2px solid #efeeeb;
-			border-bottom: 2px solid #efeeeb;
-			ul.letters {
-				padding: 0;
-				border: none;
-				display: inline;
-				li {
-					margin-right: 0.5em;
-				}
-			}
-			li {
-				display: inline;
-				margin-right: 1em;
-			}
-		}
-	}
+
+  h1.title {
+    padding: 1em 0 0.3em $main-padding-left;
+    float: left;
+  }
+  aside.user-links {
+    float: right;
+    margin-top: 10px;
+    margin-right: 65px;
+    ul {
+      li {
+        display: inline;
+        margin-left: 1em;
+      }
+      li.fb-button {
+        @include fb-button;
+      }
+    }
+  }
+  aside.search {
+    float: right;
+    margin-top: 20px;
+    margin-right: 65px;
+  }
+  nav {
+    clear: both;
+    ul.links {
+      padding: 8px $main-padding-left;
+      border-top: 2px solid #efeeeb;
+      border-bottom: 2px solid #efeeeb;
+      ul.letters {
+        padding: 0;
+        border: none;
+        display: inline;
+        li {
+          margin-right: 0.5em;
+        }
+      }
+      li {
+        display: inline;
+        margin-right: 1em;
+      }
+    }
+  }
 }
 
 #messages {
-	background: white;
-	padding: 5px 0;
-	#notice {
-		@include message-box($message-notice-color);
-	}
-	#alert {
-		@include message-box($message-alert-color);
-	}
+  background: white;
+  padding: 5px 0;
+  #notice {
+    @include message-box($message-notice-color);
+  }
+  #alert {
+    @include message-box($message-alert-color);
+  }
 }
 
 #main {
-	background: #efefef;
+  background: #efefef;
 
-	header {
-		@include padding-main;
-		background: $dark-grey-color;
-		h1 {
-			padding-top: 0.5em;
-			padding-bottom: 2px;
-		}
-	}
+  header {
+    @include padding-main;
+    background: $dark-grey-color;
+    h1 {
+      padding-top: 0.5em;
+      padding-bottom: 2px;
+    }
+  }
 
-	article {
-		aside.info {
-			@include padding-main;
-			padding-top: 2px;
-			ul {
-				li {
-					display: inline;
-					margin-right: 0.5em;
-					img {
-						vertical-align: bottom;
-					}
-				}
-				li.edit-link {
-					text-transform: uppercase;
-					background: #2f528f;
-					padding: 1px 0.4em 0px 0.4em;
-					border-radius: 3px;
-					-moz-border-radius: 3px;
-					a {
-						color: white;
-					}
-				}
-			}
-		}
-		aside.redirected {
-			@include padding-main;
-		}
-		.articletext {
-			@include padding-main;
-			max-width: $article-width;
-			padding-top: 1em;
-			overflow: visible;
-			p {
-				margin-bottom: 1em;
-			}
-			.image-wrap {
-				float: right;
-				position: relative;
-				width: 128px;
-				aside.image {
-					margin-top: 6px;
-					width: 228px;
-					border: 1px solid $box-border-color;
-					padding: 5px;
-					background: white;
-				}
-			}
-		}
-		aside.article-messages {
-			@include message-box($message-notice-color);
-		}
-		form.formtastic.article {
-			@include padding-main;
-			max-width: $article-width;
-			padding-top: 1em;
-		}
-		aside.tags {
-			background: white;
-			border: 1px solid $box-border-color;
-			margin: 1em 65px 2em 35px;
-			padding: 1em 14px;
-			ul {
-				li {
-					display: inline;
-					&:after {
-						content: ", ";
-					}
-					&:last-of-type:after {
-						content: "";
-					}
-				}
-			}
-		}
-	}
-	aside.intro {
-		@include intro-box;
-	}
-	.alphabetic {
-		@include padding-main;
-	}
-	.login {
-		@include padding-main;
-		.facebook {
-			width: $login-width;
-			border: 1px solid $box-border-color;
-			padding: 5px;
-			margin: 20px 0 5px 0;
-			background: white;
-			@include fb-button;
-		}
-	}
-	table.versions {
-		border: 1px solid $box-border-color;
-		td, th {
-			padding: 5px;
-		}
-		tr.current {
-			background: mix($message-notice-color, $main-background-color, 25%);
-		}
-	}
+  article {
+    aside.info {
+      @include padding-main;
+      padding-top: 2px;
+      ul {
+        li {
+          display: inline;
+          margin-right: 0.5em;
+          img {
+            vertical-align: bottom;
+          }
+        }
+        li.edit-link {
+          text-transform: uppercase;
+          background: #2f528f;
+          padding: 1px 0.4em 0px 0.4em;
+          border-radius: 3px;
+          -moz-border-radius: 3px;
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+    aside.redirected {
+      @include padding-main;
+    }
+    .articletext {
+      @include padding-main;
+      max-width: $article-width;
+      padding-top: 1em;
+      overflow: visible;
+      p {
+        margin-bottom: 1em;
+      }
+      .image-wrap {
+        float: right;
+        position: relative;
+        width: 128px;
+        aside.image {
+          margin-top: 6px;
+          width: 228px;
+          border: 1px solid $box-border-color;
+          padding: 5px;
+          background: white;
+        }
+      }
+    }
+    aside.article-messages {
+      @include message-box($message-notice-color);
+    }
+    form.formtastic.article {
+      @include padding-main;
+      max-width: $article-width;
+      padding-top: 1em;
+    }
+    aside.tags {
+      background: white;
+      border: 1px solid $box-border-color;
+      margin: 1em 65px 2em 35px;
+      padding: 1em 14px;
+      ul {
+        li {
+          display: inline;
+          &:after {
+            content: ", ";
+          }
+          &:last-of-type:after {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+  aside.intro {
+    @include intro-box;
+  }
+  .alphabetic {
+    @include padding-main;
+  }
+  .login {
+    @include padding-main;
+    .facebook {
+      width: $login-width;
+      border: 1px solid $box-border-color;
+      padding: 5px;
+      margin: 20px 0 5px 0;
+      background: white;
+      p.fb-button {
+        @include fb-button;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+    }
+  }
+  table.versions {
+    border: 1px solid $box-border-color;
+    td, th {
+      padding: 5px;
+    }
+    tr.current {
+      background: mix($message-notice-color, $main-background-color, 25%);
+    }
+  }
 
-	div.maincol {
-		@include padding-main;
-	}
+  div.maincol {
+    @include padding-main;
+  }
 
-	.col {
-		float: left;
-		display: inline;
-		width: #{(238/16)}em;
-		margin-right: 2px;
-		background-color: $dark-grey-color;
-	}
-	.col.left {
-		@include padding-main;
-	}
+  .col {
+    float: left;
+    display: inline;
+    width: #{(238/16)}em;
+    margin-right: 2px;
+    background-color: $dark-grey-color;
+  }
+  .col.left {
+    @include padding-main;
+  }
 
-	footer {
-		@include padding-main;
-		clear: both;
-		border-top: 2px solid $dark-grey-color;
-		background: white;
-		height: 5em;
-		p:first-child {
-			text-align: right;
-			position: relative;
-			margin: 2em 65px 0 0;
-			padding-right: 110px;
-			img {
-				position: absolute;
-				right: 0;
-				top: 50%;
-				height: 22px;
-				margin-top: -11px;
-			}
-		}
-	}
-	@extend .clearfix;
+  footer {
+    @include padding-main;
+    clear: both;
+    border-top: 2px solid $dark-grey-color;
+    background: white;
+    height: 5em;
+    p:first-child {
+      text-align: right;
+      position: relative;
+      margin: 2em 65px 0 0;
+      padding-right: 110px;
+      img {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: 22px;
+        margin-top: -11px;
+      }
+    }
+  }
+  @extend .clearfix;
 }
 
 form.formtastic {
-	fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
-		input[type="text"].headword {
-			padding: 0.1em 0.2em 0 0.2em;
-		}
-		input[type="text"] {
-			max-width: 100%;
-			width: 100%;
-			border: 1px solid $box-border-color;
-			padding: 0.5em 0.2em 0.5em 0.2em;
-		}
-		label {
-			display: block;
-			float: none;
-			width: 100%;
-			margin-bottom: 3px;
-			abbr {
-				padding-left: 1em;
-			}
-		}
-		textarea {
-			width: 100%;
-			border: 1px solid $box-border-color;
-			padding: 0.2em;
-		}
-		input[type="submit"] {
-			padding: 0.4em 2em 0.2em 2em;
-			background: $button-color;
-			@include rounded-corners(4px);
-			border: 1px solid $box-border-color;
-			border-top-color: darken($box-border-color, 10%);
-			border-left-color: darken($box-border-color, 10%);
-			&:hover {
-				background: $button-alt-color;
-			}
-			&:active {
-				border: 1px solid darken($box-border-color, 10%);
-				border-top-color: $box-border-color;
-				border-left-color: $box-border-color;
-			}
-		}
-	}
-	fieldset.buttons {
-		padding-left: 0;
-	}
+  fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
+    input[type="text"].headword {
+      padding: 0.1em 0.2em 0 0.2em;
+    }
+    input[type="text"] {
+      max-width: 100%;
+      width: 100%;
+      border: 1px solid $box-border-color;
+      padding: 0.5em 0.2em 0.5em 0.2em;
+    }
+    label {
+      display: block;
+      float: none;
+      width: 100%;
+      margin-bottom: 3px;
+      abbr {
+        padding-left: 1em;
+      }
+    }
+    textarea {
+      width: 100%;
+      border: 1px solid $box-border-color;
+      padding: 0.2em;
+    }
+    input[type="submit"] {
+      padding: 0.4em 2em 0.2em 2em;
+      background: $button-color;
+      @include rounded-corners(4px);
+      border: 1px solid $box-border-color;
+      border-top-color: darken($box-border-color, 10%);
+      border-left-color: darken($box-border-color, 10%);
+      &:hover {
+        background: $button-alt-color;
+      }
+      &:active {
+        border: 1px solid darken($box-border-color, 10%);
+        border-top-color: $box-border-color;
+        border-left-color: $box-border-color;
+      }
+    }
+  }
+  fieldset.buttons {
+    padding-left: 0;
+  }
 
-	.GENTICS_editable {
-		min-height: 2em;
-		&.articletext {
-			padding: 0 !important;
-			width: $article-width;
-		}
-	}
+  .GENTICS_editable {
+    min-height: 2em;
+    &.articletext {
+      padding: 0 !important;
+      width: $article-width;
+    }
+  }
 }
 
 .GENTICS_editable {
-	background-color: #fff;
-	outline: 1px solid #ccc;
+  background-color: #fff;
+  outline: 1px solid #ccc;
 }
 .tooltip {
-	
-	background-color: #fff;
-	padding: 20px;
-	width: 300px;
-	color: #F4B55E;
-	
-	@include box-shadow;
 
-	
-	span {
-		position: absolute;
-		height: 1px;
-		width: 1px;
-		display: block;
-		border-width: 20px;
-		border-style: solid;
-		border-color: transparent #D7D7D7 transparent transparent;
-		top: 5px;
-		left: -40px;
-		@include opacity(0.7);
-	}
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  color: #F4B55E;
+
+  @include box-shadow;
+
+
+  span {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    display: block;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent #D7D7D7 transparent transparent;
+    top: 5px;
+    left: -40px;
+    @include opacity(0.7);
+  }
 }
 
 .clearfix {
-	&:after {
-		clear: both;
-		content: ".";
-		display: block;
-		height: 0;
-		visibility: hidden;
-	}
+  &:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+  }
 }

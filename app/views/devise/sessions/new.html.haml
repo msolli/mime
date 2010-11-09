@@ -3,8 +3,8 @@
 
 .login
   .facebook
-    %p
-      = link_to user_omniauth_authorize_path(:facebook), :class => 'fb-button' do
+    %p.fb-button
+      = link_to user_omniauth_authorize_path(:facebook) do
         %span.fb-button-text= t('users.login.facebook.log_in')
 
     %p= t('users.login.facebook.info')

@@ -6,14 +6,9 @@ Egenskap: Logge inn med Facebook-konto
   Som en lokalinteressert person
   Vil jeg kunne logge inn med Facebook-kontoen min
 
-  Scenario: Gå til innloggingssiden
-    Gitt at jeg står på forsiden
-    Når jeg klikker "Logg inn"
-    Så skal jeg komme til innloggingssiden
-
   @devise
   Scenario: logge inn
-    Gitt at jeg står på innloggingssiden
+    Gitt at jeg står på forsiden
     Når jeg klikker "Logg inn med Facebook"
     Så skal jeg komme til forsiden
     Og jeg skal se "Logget inn som Navn Navnesen"
@@ -46,4 +41,12 @@ Egenskap: Logge inn med Facebook-konto
     Gitt at jeg står på ny artikkel-siden
     Når jeg klikker "logge inn"
     Så skal jeg komme til ny artikkel-siden
+    Og jeg skal se "logget inn"
+
+  @devise
+  Scenario: bli sendt til artikkelvisning når man logger inn fra artikkelvisning
+    Gitt at artikkelen "Foo" finnes
+    Og jeg står på artikkelvisning for "Foo"
+    Når jeg klikker "Logg inn"
+    Så skal jeg komme til artikkelvisning for "Foo"
     Og jeg skal se "logget inn"

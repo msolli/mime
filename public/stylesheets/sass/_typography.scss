@@ -1,187 +1,188 @@
 @mixin serif {
-	font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
 }
-/*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
-/*	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+/*  font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
+/*  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 
 @mixin large-sans {
-	font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
+  font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
 }
-/*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
+/*  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
 
 @mixin small-sans {
-	font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial;
 }
-/*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
+/*  font-family: Tahoma, Arial, Helvetica, sans-serif;*/
 
 body {
-	@include serif;
-	font-size: 100%;
+  @include serif;
+  font-size: 100%;
 }
 
 header {
-	h1.title {
-		@include large-sans;
-		@include no-underline;
-		font-size: $font30px;
-		color: $dark-grey-color;
-	}
-	aside.user-links {
-		@include small-sans;
-		font-size: $font12px;
-		color: $user-links-color;
-	}
-	nav {
-		font-weight: bold;
-		@include no-underline;
-	}
+  h1.title {
+    @include large-sans;
+    @include no-underline;
+    font-size: $font30px;
+    color: $dark-grey-color;
+  }
+  aside.user-links {
+    @include small-sans;
+    font-size: $font12px;
+    color: $user-links-color;
+  }
+  nav {
+    font-weight: bold;
+    @include no-underline;
+  }
 }
 
 #messages {
-	@include small-sans;
-	font-size: $font14px;
+  @include small-sans;
+  font-size: $font14px;
 }
 
 #main {
-	header {
-		h1 {
-			font-size: $font32px;
-			font-weight: bold;
-			color: white;
-		}
-	}
-	article {
-		color: $text-color;
+  header {
+    h1 {
+      font-size: $font32px;
+      font-weight: bold;
+      color: white;
+    }
+  }
+  article {
+    color: $text-color;
 
-		.articletext {
-			font-size: $font16px;
-			line-height: 1.5;
-		}
-		aside.info, aside.redirected {
-			@include small-sans;
-			font-size: $font12px;
-			color: $light-grey-color;
-			@include no-underline;
-		}
-		aside.redirected {
-			font-style: italic;
-		}
-		aside.article-messages {
-			@include small-sans;
-			font-size: $font14px;
-		}
-		h2 {
-			font-size: $font20px;
-			font-weight: bold;
-			color: darken($text-color, 5%);
-		}
-		h3 {
-			font-size: $font17px;
-			font-weight: bold;
-		}
-		aside.image {
-			p {
-				@include small-sans;
-				color: $dark-grey-color;
-				font-size: $font12px;
-				&:first-of-type {
-					margin-top: 5px;
-				}
-			}
-		}
-		aside.tags {
-			@include small-sans;
-			color: $dark-grey-color;
-			font-size: $font12px;
-			h3 {
-				text-transform: uppercase;
-				font-weight: bold;
-			}
-		}
-	}
-	aside.intro {
-		@include small-sans;
-	}
-	.alphabetic {
-		@include small-sans;
-		@include no-underline;
-		font-size: $font12px;
-		line-height: 1.67;
-	}
-	.login {
-		font-size: $font12px;
-		dl {
-			dt {
-				font-weight: bold;
-				line-height: 1.5;
-				margin-top: 5px;
-			}
-			dd {
-				
-			}
-		}
-	}
-	table.versions {
-		@include small-sans;
-	}
+    .articletext {
+      font-size: $font16px;
+      line-height: 1.5;
+    }
+    aside.info, aside.redirected {
+      @include small-sans;
+      font-size: $font12px;
+      color: $light-grey-color;
+      @include no-underline;
+    }
+    aside.redirected {
+      font-style: italic;
+    }
+    aside.article-messages {
+      @include small-sans;
+      font-size: $font14px;
+    }
+    h2 {
+      font-size: $font20px;
+      font-weight: bold;
+      color: darken($text-color, 5%);
+    }
+    h3 {
+      font-size: $font17px;
+      font-weight: bold;
+    }
+    aside.image {
+      p {
+        @include small-sans;
+        color: $dark-grey-color;
+        font-size: $font12px;
+        &:first-of-type {
+          margin-top: 5px;
+        }
+      }
+    }
+    aside.tags {
+      @include small-sans;
+      color: $dark-grey-color;
+      font-size: $font12px;
+      h3 {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+  aside.intro {
+    @include small-sans;
+  }
+  .alphabetic {
+    @include small-sans;
+    @include no-underline;
+    font-size: $font12px;
+    line-height: 1.67;
+  }
+  .login {
+    @include small-sans;
+    font-size: $font12px;
+    dl {
+      dt {
+        font-weight: bold;
+        line-height: 1.5;
+        margin-top: 5px;
+      }
+      dd {
+
+      }
+    }
+  }
+  table.versions {
+    @include small-sans;
+  }
 }
 
 form.formtastic {
-	fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
-		input[type="text"].headword {
-			@include serif;
-			font-size: $font32px;
-			font-weight: bold;
-			color: $dark-grey-color;
-		}
-		input[type="text"] {
-			@include small-sans;
-			font-size: $font12px;
-			color: $dark-grey-color;
-		}
-		label {
-			@include small-sans;
-			color: $dark-grey-color;
-			font-size: $font12px;
-			text-transform: uppercase;
-			font-weight: bold;
-			abbr {
-				text-transform: none;
-				color: $light-grey-color;
-				font-weight: normal;
-			}
-		}
-		textarea {
-			color: $text-color;
-			font-size: $font16px;
-			line-height: 1.5;
-		}
-		input[type="submit"] {
-			@include small-sans;
-			color: white;
-			font-size: $font18px;
-			font-weight: bold;
-			text-transform: uppercase;
-		}
-	}
+  fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
+    input[type="text"].headword {
+      @include serif;
+      font-size: $font32px;
+      font-weight: bold;
+      color: $dark-grey-color;
+    }
+    input[type="text"] {
+      @include small-sans;
+      font-size: $font12px;
+      color: $dark-grey-color;
+    }
+    label {
+      @include small-sans;
+      color: $dark-grey-color;
+      font-size: $font12px;
+      text-transform: uppercase;
+      font-weight: bold;
+      abbr {
+        text-transform: none;
+        color: $light-grey-color;
+        font-weight: normal;
+      }
+    }
+    textarea {
+      color: $text-color;
+      font-size: $font16px;
+      line-height: 1.5;
+    }
+    input[type="submit"] {
+      @include small-sans;
+      color: white;
+      font-size: $font18px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
 }
 
 footer {
-	@include small-sans;
-	font-size: $font11px;
-	color: #828589;
+  @include small-sans;
+  font-size: $font11px;
+  color: #828589;
 }
 
 a {
-	color: $link-color;
-	&:hover {
-		text-decoration: underline;
-	}
-	&:visited {
-		color: $link-visited-color;
-	}
+  color: $link-color;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: $link-visited-color;
+  }
 }
 
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
