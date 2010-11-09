@@ -7,8 +7,7 @@ app.configure_with(:rails) do |c|
   ) if Rails.env.development?
 end
 
-# TODO: insert correct bucket name
-app.configure_with(:heroku, 'my_bucket_name') if Rails.env.production?
+app.configure_with(:heroku, ENV['S3_BUCKET']) if Rails.env.production?
 
 ### Extend active record ###
 app.define_macro_on_include(Mongoid::Document, :attachment_accessor)
