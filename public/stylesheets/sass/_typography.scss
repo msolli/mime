@@ -1,18 +1,18 @@
 @mixin serif {
 	font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+}
 /*	font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 /*	font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
-}
 
 @mixin large-sans {
 	font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
-/*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
 }
+/*	font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
 
 @mixin small-sans {
 	font-family: "Lucida Grande", Tahoma, Arial;
-/*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
 }
+/*	font-family: Tahoma, Arial, Helvetica, sans-serif;*/
 
 body {
 	@include serif;
@@ -90,15 +90,12 @@ header {
 			}
 		}
 		aside.tags {
+			@include small-sans;
 			color: $dark-grey-color;
 			font-size: $font12px;
 			h3 {
-				@include small-sans;
 				text-transform: uppercase;
 				font-weight: bold;
-			}
-			li {
-				@include small-sans;
 			}
 		}
 	}
@@ -131,9 +128,15 @@ header {
 
 form.formtastic {
 	fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
-		input[type="text"] {
+		input[type="text"].headword {
+			@include serif;
 			font-size: $font32px;
 			font-weight: bold;
+			color: $dark-grey-color;
+		}
+		input[type="text"] {
+			@include small-sans;
+			font-size: $font12px;
 			color: $dark-grey-color;
 		}
 		label {

@@ -6,6 +6,11 @@ Egenskap: Nøkkelord på artikler
   Som en lokalinteressert person
   Vil jeg kunne legge inn nøkkelord på artikler
 
+  Scenario: ingen nøkkelord
+    Gitt at artikkelen "Foo" finnes
+    Når jeg står på artikkelvisning for "Foo"
+    Så skal jeg se "ingen nøkkelord" i nøkkelord-seksjonen
+
   Scenario: opprette nøkkelord på en artikkel
     Gitt at artikkelen "Foo" finnes
     Og jeg står på artikkelredigering for "Foo"

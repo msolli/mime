@@ -8,7 +8,10 @@
 = render :partial => 'redirected_from', :locals => { :from => flash[:redirected_from] }
 .articletext!= @article.text
 %aside.tags
-  %h3 Nøkkelord
-  %ul
-    - @article.tags_array.each do |tag|
-      %li>= link_to tag, "#TODO"
+  %h3= t('tags.tags')
+  - if @article.tags_array.empty?
+    %p!= t('tags.no_tags', :add_tags_link => link_to(t('tags.add_tags'), edit_article_path(@article)))
+  - else
+    %ul
+      - @article.tags_array.each do |tag|
+        %li>= link_to tag, "#TODO"

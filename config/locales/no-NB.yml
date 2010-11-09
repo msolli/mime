@@ -35,6 +35,10 @@ no-NB:
       count:
         one: "har bare én versjon."
         other: "har %{count} versjoner."
+  tags:
+    tags: Nøkkelord
+    no_tags: "Artikkelen har ingen nøkkelord. Bli med, bidra til leksikonet ved å %{add_tags_link}."
+    add_tags: "legge til nøkkelord"
   users:
     login:
       help_us: "Hjelp oss å oppdatere leksikonet:"
