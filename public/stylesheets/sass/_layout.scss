@@ -184,7 +184,6 @@ header {
     display: inline;
     width: #{(238/16)}em;
     margin-right: 2px;
-    background-color: $dark-grey-color;
   }
   .col.left {
     @include padding-main;

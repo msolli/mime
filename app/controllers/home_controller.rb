@@ -2,6 +2,7 @@
 
 class HomeController < ApplicationController
   def index
+    expires_in 5.minutes, :public => true
   end
 
   def alphabetic
@@ -15,5 +16,6 @@ class HomeController < ApplicationController
     @articles = Article.where(:headword => headword_re).all.sort do |a, b|
       a.headword_sorting <=> b.headword_sorting
     end
+    expires_in 5.minutes, :public => true
   end
 end
