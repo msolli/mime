@@ -2,6 +2,12 @@
 
 require 'spec_helper'
 
+describe "routing to medias" do
+  it 'routes /media/BAhbBlsHOgZmSSIdNGNkNzM0NGM4YmY5MjU3NTBhMDAwMDBkBjoGRVQ' do
+    { :get => '/media/BAhbBlsHOgZmSSIdNGNkNzM0NGM4YmY5MjU3NTBhMDAwMDBkBjoGRVQ' }.should be_routable
+  end
+end
+
 describe "routing to alphabetic listing" do
   it "routes /a to HomeController#alphabetic" do
     { :get => "/a" }.should route_to(
