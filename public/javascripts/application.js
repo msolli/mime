@@ -25,7 +25,6 @@ $(document).ready(function() {
         url: '/users/current',
         success: function(data) {
             $('#user-links-tmpl').tmpl(data).appendTo('#user-links');
-            $('#user-links').fadeIn('fast');
         }
     });
 
