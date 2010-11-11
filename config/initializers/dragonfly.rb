@@ -4,7 +4,7 @@ app.configure_with(:rmagick)
 app.configure_with(:rails) do |c|
   c.datastore = Dragonfly::DataStorage::MongoDataStore.new(
     :database => Mongoid.database.name
-  ) if Rails.env.development?
+  ) unless Rails.env.production?
 end
 
 app.configure_with(:heroku, ENV['S3_BUCKET']) if Rails.env.production?
