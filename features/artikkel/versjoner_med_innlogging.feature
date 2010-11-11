@@ -6,7 +6,7 @@ Egenskap: Versjonering av artikler med innlogget bruker
   Som en lokalinteressert person
   Vil jeg kunne versjonere artikler
 
-  @devise @logged_in
+  @devise @logged_in @javascript
   Scenario: innlogget og anonym versjon
     Gitt at jeg står på ny artikkel-siden
     Når jeg fyller inn "Oppslagsord" med "Foo"
@@ -24,7 +24,7 @@ Egenskap: Versjonering av artikler med innlogget bruker
     Gitt at jeg står på ny artikkel-siden
     Og jeg fyller inn "Oppslagsord" med "Foo"
     Og jeg trykker "Opprett"
-    Og at jeg er logget inn
+    Og jeg logger inn
     Når jeg står på artikkelredigering for "Foo"
     Og jeg trykker "Lagre"
     Og jeg klikker "Versjonslogg"

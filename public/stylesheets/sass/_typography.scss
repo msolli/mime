@@ -26,7 +26,7 @@ header {
     font-size: $font30px;
     color: $dark-grey-color;
   }
-  aside.user-links {
+  aside#user-links {
     @include small-sans;
     font-size: $font12px;
     color: $user-links-color;

@@ -45,7 +45,7 @@ no-NB:
       register: "Registrér deg"
       log_in: Logg inn
       log_out: Logg ut
-      logged_in_as: "Logget inn som %{username}"
+      logged_in_as: "Logget inn som ${name_or_email}"
       not_you: Ikke deg?
       facebook:
         log_in: Logg inn med Facebook

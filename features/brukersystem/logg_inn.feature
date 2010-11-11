@@ -6,16 +6,15 @@ Egenskap: Logge inn med Facebook-konto
   Som en lokalinteressert person
   Vil jeg kunne logge inn med Facebook-kontoen min
 
-  @devise
+  @devise @javascript
   Scenario: logge inn
     Gitt at jeg står på forsiden
     Når jeg klikker "Logg inn med Facebook"
     Så skal jeg komme til forsiden
     Og jeg skal se "Logget inn som Navn Navnesen"
 
-  @devise
+  @devise @logged_in @javascript
   Scenario: logge ut
-    Gitt at jeg er logget inn
     Og at jeg står på forsiden
     Når jeg klikker "Logg ut"
     Så skal jeg komme til forsiden
@@ -43,7 +42,7 @@ Egenskap: Logge inn med Facebook-konto
     Så skal jeg komme til ny artikkel-siden
     Og jeg skal se "logget inn"
 
-  @devise
+  @devise @javascript
   Scenario: bli sendt til artikkelvisning når man logger inn fra artikkelvisning
     Gitt at artikkelen "Foo" finnes
     Og jeg står på artikkelvisning for "Foo"

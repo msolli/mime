@@ -20,4 +20,15 @@ describe User do
     u = User.new(:email => 'yo@yo.com', :name => "Yoman")
     u.name_or_email.should == 'Yoman'
   end
+
+  it "has json format" do
+    u = User.new(:email => 'yo@yo.com', :name => "Yoman")
+    u.to_json.should =~ /"_id":/
+    u.to_json.should =~ /"email":"yo@yo.com"/
+    u.to_json.should =~ /"name":"Yoman"/
+    u.to_json.should =~ /"name_or_email":"Yoman"/
+    u.to_json.should_not =~ /encrypted_password/
+    u.to_json.should_not =~ /facebook_token/
+    u.to_json.should_not =~ /password/
+  end
 end

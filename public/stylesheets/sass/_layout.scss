@@ -23,7 +23,8 @@ header {
     padding: 1em 0 0.3em $main-padding-left;
     float: left;
   }
-  aside.user-links {
+  aside#user-links {
+    display: none;
     float: right;
     margin-top: 10px;
     margin-right: 65px;

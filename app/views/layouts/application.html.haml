@@ -14,6 +14,7 @@
       %script{:src => "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"}
       %script{:src => "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js"}
     %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"}
+    %script{:src => "http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js"}
     %script{:src => "http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js"}
     %script{:src => "http://www.google.com/jsapi?key=ABQIAAAA5Dv5TxV8lPXuM3G_ZxUKdBRzYoIzFCn6WH8ww2gK3BwzWZF03hTYnQj9-M47JSP4lbSEWBeHiVcSQQ"}
     %script{:src => "http://use.typekit.com/odc3uil.js"}
@@ -21,7 +22,7 @@
     / %script{:src => "http://github.com/Modernizr/Modernizr/raw/master/modernizr.js"}
     %script{:src => "http://github.com/Modernizr/Modernizr/raw/68a332b5da53cfdfb46194ab4d00601e3e05b335/modernizr.js"}
     = javascript_include_tag :ckeditor, :defaults
-    
+
     = csrf_meta_tag
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}
 
@@ -29,8 +30,8 @@
     .container
       %header
         %h1.title= link_to t('mime.title'), root_path
-        %aside.user-links
-          = render :partial => "common/user-links"
+        %aside#user-links
+          = render "common/user-links"
         %aside.search
           = render :partial => "common/search"
         %nav

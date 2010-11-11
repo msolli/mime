@@ -18,6 +18,17 @@ if (typeof(String.prototype.trim) === "undefined") {
 }
 
 $(document).ready(function() {
+    // Load user data for navigation links
+    $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: '/users/current',
+        success: function(data) {
+            $('#user-links-tmpl').tmpl(data).appendTo('#user-links');
+            $('#user-links').fadeIn('fast');
+        }
+    });
+
 	// Don't show presentation headword in edit article form if it's the same as
 	// headword
 	var e = $("article form #article_headword_presentation");
@@ -40,7 +51,7 @@ $(document).ready(function() {
 	$('form.formtastic label abbr').html(function() {
 		return '(' + $(this).attr('title') + ')';
 	});
-	
+
 	$('[data-tooltip-enable]').tooltip({
 		layout: '<div><span/></div>',
 		

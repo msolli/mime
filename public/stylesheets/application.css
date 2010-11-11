@@ -271,14 +271,15 @@ header {
   header h1.title {
     padding: 1em 0 0.3em 35px;
     float: left; }
-  header aside.user-links {
+  header aside#user-links {
+    display: none;
     float: right;
     margin-top: 10px;
     margin-right: 65px; }
-    header aside.user-links ul li {
+    header aside#user-links ul li {
       display: inline;
       margin-left: 1em; }
-    header aside.user-links ul li.fb-button a {
+    header aside#user-links ul li.fb-button a {
       font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
       color: #3B5998;
       background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
@@ -287,7 +288,7 @@ header {
       display: inline-block;
       padding: 0px 0px 0px 1px;
       text-decoration: none; }
-      header aside.user-links ul li.fb-button a span.fb-button-text {
+      header aside#user-links ul li.fb-button a span.fb-button-text {
         color: white;
         display: block;
         font-weight: bold;
@@ -590,7 +591,7 @@ header h1.title {
     text-decoration: none; }
     header h1.title a:hover {
       text-decoration: underline; }
-header aside.user-links {
+header aside#user-links {
   font-family: "Lucida Grande", Tahoma, Arial;
   font-size: 75%;
   color: #3362ba; }
