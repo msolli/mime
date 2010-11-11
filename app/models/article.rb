@@ -8,6 +8,8 @@ class Article
   references_many :users, :stored_as => :array, :inverse_of => :articles
   alias :authors :users
   alias :authors= :users=
+  
+  references_many :medias, :stored_as => :array, :inverse_of => :articles
 
   field :headword
   field :headword_presentation
