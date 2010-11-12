@@ -1,4 +1,4 @@
-- if controller_name == 'home' && ['index', 'alphabetic'].include?(action_name)
+- if cached_page?
   %aside#user-links
 - else
   %aside#user-links{:data => {:user => current_user.to_json}}

@@ -31,16 +31,10 @@
       %header
         %h1.title= link_to t('mime.title'), root_path
         = render "common/user-links"
-        %aside.search
-          = render :partial => "common/search"
-        %nav
-          = render :partial => "common/nav"
-      - if notice || alert
-        %section#messages
-          - if notice
-            #notice= notice
-          - if alert
-            #alert= alert
+        = render :partial => "common/search"
+        = render :partial => "common/nav"
+
+      = render :partial => "common/flash"
 
       %section#main
         - if controller_name == 'articles'
