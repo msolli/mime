@@ -30,8 +30,7 @@
     .container
       %header
         %h1.title= link_to t('mime.title'), root_path
-        %aside#user-links
-          = render "common/user-links"
+        = render "common/user-links"
         %aside.search
           = render :partial => "common/search"
         %nav

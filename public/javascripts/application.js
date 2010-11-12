@@ -18,15 +18,27 @@ if (typeof(String.prototype.trim) === "undefined") {
 }
 
 $(document).ready(function() {
-    // Load user data for navigation links
-    $.ajax({
-        type: 'GET',
-        dataType: 'json',
-        url: '/users/current',
-        success: function(data) {
+    // Load user data for navigation links.
+    // On cached pages the user data is retrieved by ajax.
+    // On dynamic pages the user data will be present as HTML5 data attributes
+    (function(){
+        // Parse template and append to #user-links
+        var addUserData = function(data) {
             $('#user-links-tmpl').tmpl(data).appendTo('#user-links');
+        };
+
+        var userData = $('#user-links').data('user');
+        if (userData === undefined) {
+            $.ajax({
+                type: 'GET',
+                dataType: 'json',
+                url: '/users/current',
+                success: addUserData
+            });
+        } else {
+            addUserData(userData);
         }
-    });
+    })();
 
 	// Don't show presentation headword in edit article form if it's the same as
 	// headword
