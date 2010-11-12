@@ -13,6 +13,14 @@ GIT
       xpath (~> 0.1.2)
 
 GIT
+  remote: http://github.com/budstikka/rails-ckeditor.git
+  revision: 89e1afcddecefe6d093bdb1f03c7a958a8493ef9
+  branch: rails3
+  specs:
+    ckeditor (3.4.3.pre)
+      mime-types (>= 1.16)
+
+GIT
   remote: http://github.com/budstikka/xpath.git
   revision: 2d399b6a4c5c73c945cbac6f1ece5275fa3adf0e
   specs:
@@ -239,6 +247,7 @@ DEPENDENCIES
   bson (~> 1.0)
   bson_ext
   capybara!
+  ckeditor!
   cucumber
   cucumber-rails
   database_cleaner

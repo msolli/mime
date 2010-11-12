@@ -9,7 +9,7 @@
   = f.inputs do
     - if @article.new_record?
       = f.input :headword, :input_html => {:class => 'headword'}
-    = f.input :text, :as => :text, :input_html => { :cols => '80', :class => 'articletext' }
+    = f.input :text, :as => :ckeditor, :input_html => { :cols => '80', :class => 'articletext' }
     = f.input :tags
     = f.input :headword_presentation, :input_html => { :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword_presentation')}
   = f.buttons do

@@ -13,6 +13,7 @@ gem 'sax-machine'
 gem 'devise', :git => "http://github.com/plataformatec/devise.git", :branch => 'omniauth'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "escape_utils" # A way to silence stupid stupid stupid Rack::Utils::escape
+gem 'ckeditor', :git => "http://github.com/budstikka/rails-ckeditor.git", :branch => 'rails3'
 
 # attachment handling
 gem 'rmagick',  :require => 'RMagick'
