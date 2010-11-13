@@ -4,6 +4,7 @@ CKEDITOR.editorConfig = function( config )
 	config.toolbarCanCollapse = false;
 	config.format_tags = 'p;h2;h3';
 	config.extraPlugins = 'MediaEmbed';
+	config.defaultLanguage = 'nb';
 	config.toolbar_mime = [
 		[	'Format',
 			'Bold', 'Italic', 'Underline', 'Link', 'Unlink', 'MediaEmbed', '-',
