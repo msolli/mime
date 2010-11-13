@@ -2,7 +2,7 @@ CKEDITOR.editorConfig = function( config )
 {
 	config.toolbar = 'mime';
 	config.format_tags = 'p;h2;h3';
-	config.extraPlugins = 'MediaEmbed'
+	config.extraPlugins = 'MediaEmbed';
 	config.toolbar_mime = [
 		[	'Format',
 			'Bold', 'Italic', 'Underline', 'Link', 'Unlink', 'MediaEmbed', '-',
