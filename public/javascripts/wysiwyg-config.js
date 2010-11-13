@@ -1,6 +1,7 @@
 CKEDITOR.editorConfig = function( config )
 {
 	config.toolbar = 'mime';
+	config.toolbarCanCollapse = false;
 	config.format_tags = 'p;h2;h3';
 	config.extraPlugins = 'MediaEmbed';
 	config.toolbar_mime = [
