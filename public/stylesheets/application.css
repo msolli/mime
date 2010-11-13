@@ -543,15 +543,6 @@ form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldse
     border-left-color: #cccccc; }
 form.formtastic fieldset.buttons {
   padding-left: 0; }
-form.formtastic .GENTICS_editable {
-  min-height: 2em; }
-  form.formtastic .GENTICS_editable.articletext {
-    padding: 0 !important;
-    width: 33.125em; }
-
-.GENTICS_editable {
-  background-color: #fff;
-  outline: 1px solid #ccc; }
 
 .tooltip {
   background-color: #fff;

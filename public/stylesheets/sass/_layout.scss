@@ -276,20 +276,8 @@ form.formtastic {
   fieldset.buttons {
     padding-left: 0;
   }
-
-  .GENTICS_editable {
-    min-height: 2em;
-    &.articletext {
-      padding: 0 !important;
-      width: $article-width;
-    }
-  }
 }
 
-.GENTICS_editable {
-  background-color: #fff;
-  outline: 1px solid #ccc;
-}
 .tooltip {
 
   background-color: #fff;
