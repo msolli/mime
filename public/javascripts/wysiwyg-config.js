@@ -5,6 +5,7 @@ CKEDITOR.editorConfig = function( config )
 	config.format_tags = 'p;h2;h3';
 	config.extraPlugins = 'MediaEmbed';
 	config.defaultLanguage = 'nb';
+	config.contentsCss = ['http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css', '/stylesheets/wysiwyg.css'];
 	config.toolbar_mime = [
 		[	'Format',
 			'Bold', 'Italic', 'Underline', 'Link', 'Unlink', 'MediaEmbed', '-',

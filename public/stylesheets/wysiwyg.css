@@ -1,0 +1,20 @@
+body {
+  font-size: 100%;
+  line-height: 1.5;
+  padding-left: 35px;
+  max-width: 33.125em;
+  padding-top: 1em;
+  overflow: visible;
+  padding: 2px; }
+  body p {
+    margin-bottom: 1em; }
+  body .image-wrap {
+    float: right;
+    position: relative;
+    width: 128px; }
+    body .image-wrap aside.image {
+      margin-top: 6px;
+      width: 228px;
+      border: 1px solid #cccccc;
+      padding: 5px;
+      background: white; }

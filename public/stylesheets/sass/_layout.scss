@@ -115,25 +115,7 @@ header {
       @include padding-main;
     }
     .articletext {
-      @include padding-main;
-      max-width: $article-width;
-      padding-top: 1em;
-      overflow: visible;
-      p {
-        margin-bottom: 1em;
-      }
-      .image-wrap {
-        float: right;
-        position: relative;
-        width: 128px;
-        aside.image {
-          margin-top: 6px;
-          width: 228px;
-          border: 1px solid $box-border-color;
-          padding: 5px;
-          background: white;
-        }
-      }
+      @include articletext-layout;
     }
     aside.article-messages {
       @include message-box($message-notice-color);
