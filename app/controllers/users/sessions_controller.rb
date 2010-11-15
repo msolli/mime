@@ -2,7 +2,7 @@ class Users::SessionsController < Devise::SessionsController
   respond_to :json, :only => :current
 
   def show
-    @user = User.where(:email => params[:id])
+    @user = User.where(:email => params[:id]).first
   end
 
   def current

@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  h1.title {
+  .title {
     @include large-sans;
     @include no-underline;
     font-size: $font30px;

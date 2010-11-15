@@ -268,7 +268,7 @@ body .container {
 
 header {
   background: white; }
-  header h1.title {
+  header .title {
     padding: 1em 0 0.3em 35px;
     float: left; }
   header aside#user-links {
@@ -582,13 +582,13 @@ body {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
   font-size: 100%; }
 
-header h1.title {
+header .title {
   font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
   font-size: 187.5%;
   color: #45494f; }
-  header h1.title a {
+  header .title a {
     text-decoration: none; }
-    header h1.title a:hover {
+    header .title a:hover {
       text-decoration: underline; }
 header aside#user-links {
   font-family: "Lucida Grande", Tahoma, Arial;

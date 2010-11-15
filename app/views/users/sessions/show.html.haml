@@ -1,1 +1,7 @@
-show.html.haml
+- content_for :header do
+  = @user.name_or_email
+
+%ul
+  - @user.articles.each do |article|
+    %li
+      = link_to article.headword, pretty_article_path(article)

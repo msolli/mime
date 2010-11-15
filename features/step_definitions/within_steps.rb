@@ -1,6 +1,7 @@
 # encoding: utf-8
 {
-  'i nøkkelord-seksjonen' => 'aside.tags'
+  'i nøkkelord-seksjonen' => 'aside.tags',
+  'i tittelen' => 'h1'
 }.
 each do |within, selector|
   Then /^(.+) #{within}$/ do |step|
