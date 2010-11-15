@@ -1,12 +1,10 @@
 Mime::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :sessions => 'users/sessions' } do
-    get "users/current", :to => "users/sessions#current"
+  devise_for :users, :module => 'users', do
+    constraints :id => /.*/ do
+      resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index]
+    end
+    get "users/current" => "users/sessions#current"
   end
-
-  ## Edda SSO
-  # devise_for :users, :controllers => { :sessions => "sessions" } do
-  #   get "/users/sso_callback", :to => "sessions#sso_callback"
-  # end
 
   resources :medias
   match '/media(/:dragonfly)', :to => Dragonfly[:attachments]

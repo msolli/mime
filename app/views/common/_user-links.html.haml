@@ -6,7 +6,7 @@
 %script{:id => 'user-links-tmpl', :type => 'text/x-jquery-tmpl'}
   %ul
     {{if name_or_email}}
-    %li!= t('users.login.logged_in_as', :user_href => link_to('${name_or_email}', '#TODO'))
+    %li!= t('users.login.logged_in_as', :user_href => link_to('${name_or_email}', [users_path, '${email}'].join('/')))
     %li #{t('users.login.not_you')} #{link_to t('users.login.log_out'), destroy_user_session_path}
     {{else}}
     %li= t('users.login.help_us')

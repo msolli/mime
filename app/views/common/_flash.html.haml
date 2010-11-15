@@ -1,0 +1,7 @@
+- unless cached_page?
+  - if notice || alert
+    %section#messages
+      - if notice
+        #notice= notice
+      - if alert
+        #alert= alert

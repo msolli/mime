@@ -1,6 +1,10 @@
 class Users::SessionsController < Devise::SessionsController
   respond_to :json, :only => :current
 
+  def show
+    @user = User.where(:email => params[:id])
+  end
+
   def current
     respond_with(user_signed_in? ? current_user : nil)
   end
