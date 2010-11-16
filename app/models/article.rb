@@ -32,6 +32,10 @@ class Article
   def to_param
     self.headword.gsub(/ /, '_').gsub(/\//, '%2F')
   end
+  
+  def slug_is?(slug)
+    to_param == slug.gsub(/\//, '%2F')
+  end
 
   def headword_presentation
     self[:headword_presentation].blank? ? headword : self[:headword_presentation]

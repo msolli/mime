@@ -20,8 +20,18 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    redirect_to_unless_equal(@article, @slug)
     set_user_return_to pretty_article_path(@article)
+    
+    unless @article.slug_is?(@slug)
+      from = @article.headword == deparameterize(@slug) ? '' : @slug
+      redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
+      return
+    end
+    
+    respond_to do |format|
+      format.html
+      format.json { render :json => {:url => pretty_article_path(@article)}}
+    end
   end
 
   def edit
@@ -50,13 +60,6 @@ class ArticlesController < ApplicationController
   def redirect_if_id
     if params[:id]
       redirect_to pretty_article_path(params[:id]), :status => :moved_permanently
-    end
-  end
-
-  def redirect_to_unless_equal(article, slug)
-    unless article.to_param == slug.gsub(/\//, '%2F')
-      from = article.headword == deparameterize(slug) ? '' : slug
-      redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
     end
   end
 
