@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:charset => "utf-8"}
-    %title<= content_for?(:title) ? yield(:title) : t('mime.title')
+    %title<= content_for?(:title) ? "#{yield(:title)} – #{t('mime.title')}" : t('mime.title')
     %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : 'TODO - generell meta description'}
     %meta{:'http-equiv' => "content-language", :content => "no"}
     = yield :canonical
