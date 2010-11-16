@@ -384,6 +384,13 @@ header {
     overflow: visible; }
     #main article .articletext p {
       margin-bottom: 1em; }
+    #main article .articletext ul {
+      padding-left: 2em;
+      margin-bottom: 1em; }
+      #main article .articletext ul li {
+        list-style-type: disc; }
+    #main article .articletext table {
+      border: 1px solid #383838; }
     #main article .articletext .image-wrap {
       float: right;
       position: relative;

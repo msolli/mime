@@ -8,6 +8,13 @@ body {
   padding: 2px; }
   body p {
     margin-bottom: 1em; }
+  body ul {
+    padding-left: 2em;
+    margin-bottom: 1em; }
+    body ul li {
+      list-style-type: disc; }
+  body table {
+    border: 1px solid #383838; }
   body .image-wrap {
     float: right;
     position: relative;

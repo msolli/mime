@@ -11,6 +11,17 @@
     p {
       margin-bottom: 1em;
     }
+    ul {
+      padding-left: 2em;
+      margin-bottom: 1em;
+      li {
+        list-style-type: disc;
+      }
+    }
+    table {
+      border: 1px solid $text-color;
+    }
+
     .image-wrap {
       float: right;
       position: relative;
