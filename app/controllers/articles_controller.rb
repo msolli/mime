@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
-    @article.authors << current_user if current_user
+    @article.authors << current_user if user_signed_in?
     if @article.save
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
     else
@@ -49,11 +49,7 @@ class ArticlesController < ApplicationController
     @article.attributes = params[:article]
     if @article.save
       Article.without_versioning do
-        if current_user
-          @article.authors = [current_user]
-        else
-          @article.update_attributes!(:user_ids => [])
-        end
+        @article.update_attributes!(:user_ids => user_signed_in? ? [current_user.id] : [])
       end
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
     else

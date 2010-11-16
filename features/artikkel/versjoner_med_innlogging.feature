@@ -16,8 +16,8 @@ Egenskap: Versjonering av artikler med innlogget bruker
     Og jeg trykker "Lagre"
     Og jeg klikker "Versjonslogg"
     Så skal jeg se "2 versjoner"
-    Og jeg skal se "127.0.0.1" under ".current"
-    Og jeg skal se "Navn Navnesen" under ".version-number-1"
+    Og jeg skal se "127.0.0.1" under nåværende versjon
+    Og jeg skal se "Navn Navnesen" under første versjon
 
   @devise
   Scenario: anonym og innlogget versjon
@@ -29,5 +29,19 @@ Egenskap: Versjonering av artikler med innlogget bruker
     Og jeg trykker "Lagre"
     Og jeg klikker "Versjonslogg"
     Så skal jeg se "2 versjoner"
-    Og jeg skal se "Navn Navnesen" under ".current"
-    Og jeg skal se "127.0.0.1" under ".version-number-1"
+    Og jeg skal se "Navn Navnesen" under nåværende versjon
+    Og jeg skal ikke se "127.0.0.1" under nåværende versjon
+    Og jeg skal se "127.0.0.1" under første versjon
+
+  @devise @logged_in @javascript
+  Scenario: to ulike brukere
+    Gitt at jeg oppretter artikkelen "Foo"
+    Og jeg logger ut
+    Og jeg logger inn som "Test Testesen"
+    Når jeg står på artikkelredigering for "Foo"
+    Og jeg trykker "Lagre"
+    Og jeg klikker "Versjonslogg"
+    Så skal jeg se "2 versjoner"
+    Og jeg skal se "Test Testesen" under nåværende versjon
+    Og jeg skal ikke se "Navn Navnesen" under nåværende versjon
+    Og jeg skal se "Navn Navnesen" under første versjon
