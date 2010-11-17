@@ -12,8 +12,13 @@ CKEDITOR.dialog.add('mimelink', function(editor) {
 		minHeight: 100,
 		minWidth: 400,
 		onOk: function() {
-			var element	= CKEDITOR.plugins.link.getSelectedLink(this.getParentEditor()),
+			var	selectedText	= CKEDITOR.plugins.mimelink.getSelectedText(this.getParentEditor()),
+					element	= CKEDITOR.plugins.link.getSelectedLink(this.getParentEditor()),
 					value		= this.getContentElement('page1', 'linkInput').getValue();
+			
+			if(!selectedText || selectedText.length == 0) {
+				selectedText = value;
+			}
 			
 			if(element && element.is('a')) {
 				element.setAttribute('href', value);
@@ -21,7 +26,7 @@ CKEDITOR.dialog.add('mimelink', function(editor) {
 			} else {
 				selection = this.getParentEditor().getSelection();
 				range 	= selection.getRanges()[0];
-				element = CKEDITOR.plugins.mimelink.createLink(value, value, range);
+				element = CKEDITOR.plugins.mimelink.createLink(value, selectedText, range);
 				
 				range.extractContents();
 				range.insertNode(element);
