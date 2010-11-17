@@ -45,24 +45,27 @@ CKEDITOR.dialog.add('mimelink', function(editor) {
 
 			var	selectedText	= CKEDITOR.plugins.mimelink.getSelectedText(this.getParentEditor()),
 					element				= this.getParentEditor().getSelection().getStartElement(),
-					infoElement		= that.getContentElement('page1', 'info').getElement();
+					infoElement		= that.getContentElement('page1', 'info').getElement(),
+					testLink			= selectedText;
 			
 			if(selectedText.length > 0) {
-				CKEDITOR.plugins.mimelink.checkArticleExistence(selectedText,
-					function(data) {
-						// onSuccess
-						infoElement.setHtml('<a target="_blank" style="text-decoration: underline; color: #00f" href="'+data.url+'">' + selectedText + '</a> finnes √');
-					},
-					function() {
-						// onError
-						infoElement.setHtml('<a target="_blank" style="text-decoration: underline; color: #f00" href="/'+encodeURIComponent(selectedText)+'">' + selectedText + '</a> finnes ikke (Og det er helt greit!)');
-					}
-				);
 				if(element && element.is('a')) {
-					this.setupContent(decodeURIComponent(element.getAttribute('href')));
+					testLink = decodeURIComponent(element.getAttribute('href'));
+					this.setupContent(testLink);
 				} else {
 					this.setupContent(selectedText);
 				}
+				
+				CKEDITOR.plugins.mimelink.checkArticleExistence(testLink,
+					function(data) {
+						// onSuccess
+						infoElement.setHtml('<a target="_blank" style="text-decoration: underline; color: #00f" href="'+data.url+'">' + testLink + '</a> finnes √');
+					},
+					function() {
+						// onError
+						infoElement.setHtml('<a target="_blank" style="text-decoration: underline; color: #f00" href="/'+testLink+'">' + testLink + '</a> finnes ikke (Og det er helt greit!)');
+					}
+				);
 			} else {
 				infoElement.setHtml('');
 			}
