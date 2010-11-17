@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
     end
     set_user_return_to pretty_article_path(@article)
     
-    unless @article.slug_is?(@slug)
+    unless @article.slug_is?(@slug) || request.xhr?
       from = @article.headword == deparameterize(@slug) ? '' : @slug
       redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
       return
@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
   private
 
   def redirect_if_id
-    if params[:id]
+    if params[:id] && !request.xhr?
       redirect_to pretty_article_path(params[:id]), :status => :moved_permanently
       return false
     end
