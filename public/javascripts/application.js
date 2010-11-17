@@ -42,17 +42,15 @@ $(document).ready(function() {
 
 	// Don't show presentation headword in edit article form if it's the same as
 	// headword
-	var e = $("article form #article_headword_presentation");
-	if (e.length) {
-		var value = e.val().trim();
-		var replaceChar = [[/&/g, "&amp;"], [/</g, "&lt;"], [/>/g, "&gt;"]];
-		for (var i in replaceChar) {
-			value = value.replace(replaceChar[i][0], replaceChar[i][1]);
-		}
-		if (value == $("article header h1").html().trim()) {
-			e.val('');
-		}
-	}
+    (function(){
+    	var headword_presentation = $("article form #article_headword_presentation");
+    	var headword = $("article form #article_headword");
+    	if (headword_presentation.length && headword.length) {
+    		if (headword_presentation.val().trim() == headword.val().trim()) {
+    			headword_presentation.val('');
+    		}
+    	}
+	})();
 
 	// jQuery.timeago() (http://timeago.yarp.com/)
 	$.timeago.settings.cutoff = 7*24*60*60*1000;
@@ -71,7 +69,7 @@ $(document).ready(function() {
 					conf	= this.getConf();
 			
 			conf.position = ['top right'];
-			conf.offset = [this.getTip().outerHeight() - 8, 25];
+			conf.offset = [this.getTip().outerHeight() - 20, 25];
 		}
 	});
 });

@@ -59,6 +59,16 @@ header {
       li {
         display: inline;
         margin-right: 1em;
+        padding: 6px 0px;
+      }
+      li.new {
+        background: $light-blue-color;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        @include rounded-corners;
+        &:hover {
+          background: $button-alt-color;
+        }
       }
     }
   }
@@ -119,11 +129,6 @@ header {
     }
     aside.article-messages {
       @include message-box($message-notice-color);
-    }
-    form.formtastic.article {
-      @include padding-main;
-      max-width: $article-width;
-      padding-top: 1em;
     }
     aside.tags {
       background: white;
@@ -212,21 +217,25 @@ header {
   @extend .clearfix;
 }
 
-form.formtastic {
+#main form.formtastic {
+  fieldset {
+    @include padding-main;
+  }
+  fieldset > ol > li {
+    width: $article-width;
+    overflow: visible;
+  }
   fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
     input[type="text"].headword {
       padding: 0.1em 0.2em 0 0.2em;
     }
     input[type="text"] {
-      max-width: 100%;
       width: 100%;
       border: 1px solid $box-border-color;
       padding: 0.5em 0.2em 0.5em 0.2em;
     }
     label {
-      display: block;
       float: none;
-      width: 100%;
       margin-bottom: 3px;
       abbr {
         padding-left: 1em;
@@ -254,9 +263,6 @@ form.formtastic {
       }
     }
   }
-  fieldset.buttons {
-    padding-left: 0;
-  }
 }
 
 .tooltip {
@@ -264,7 +270,6 @@ form.formtastic {
   background-color: #fff;
   padding: 20px;
   width: 300px;
-  color: #F4B55E;
 
   @include box-shadow;
 
@@ -274,12 +279,11 @@ form.formtastic {
     height: 1px;
     width: 1px;
     display: block;
-    border-width: 20px;
+    border-width: 15px;
     border-style: solid;
-    border-color: transparent #D7D7D7 transparent transparent;
-    top: 5px;
-    left: -40px;
-    @include opacity(0.7);
+    border-color: transparent #fff transparent transparent;
+    top: 20px;
+    left: -30px;
   }
 }
 

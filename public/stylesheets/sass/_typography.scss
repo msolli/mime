@@ -166,6 +166,12 @@ form.formtastic {
   }
 }
 
+.tooltip {
+  color: $button-alt-color;
+  font-style: italic;
+  font-weight: bold;
+}
+
 footer {
   @include small-sans;
   font-size: $font11px;

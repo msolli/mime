@@ -1,4 +1,7 @@
 - content_for :title do
-  #{t('articles.editing')} #{@article.headword_presentation}
+  ! #{t('articles.editing')} #{@article.headword_presentation}
+
+- content_for :header do
+  = t('articles.edit')
 
 = render :partial => 'new_edit', :locals => { :article => @article }

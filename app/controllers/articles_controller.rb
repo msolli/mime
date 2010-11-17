@@ -63,6 +63,7 @@ class ArticlesController < ApplicationController
   def redirect_if_id
     if params[:id]
       redirect_to pretty_article_path(params[:id]), :status => :moved_permanently
+      return false
     end
   end
 
