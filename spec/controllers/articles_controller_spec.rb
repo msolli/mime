@@ -83,6 +83,18 @@ describe ArticlesController do
       response.should be_success
       assigns(:article).should_not be_nil
     end
+    
+    it "sends a 404 response if the article doesn't exist" do
+      get :show, :slug => '12345'
+      response.should_not be_success
+      response.body.should =~ /The page you were looking for doesn't exist/
+    end
+
+    it "sends an empty 404 response if the request is JSON and the article doesn't exist" do
+      get :show, :slug => '12345', :format => :json
+      response.should_not be_success
+      response.body.should == ""
+    end
   end
 
   describe "#edit" do

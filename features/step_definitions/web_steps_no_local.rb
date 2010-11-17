@@ -2,6 +2,18 @@
 
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
+def assert_response_status(http_status)
+  page.status_code.should == http_status.to_i
+end
+
+Then /^I should get a "(\d+)" response$/ do |http_status|
+  assert_response_status(http_status)
+end
+
+Så /^(?:|skal )jeg få "(\d+)" som respons$/ do |http_status|
+  Then %{I should get a "#{http_status}" response}
+end
+
 Gitt /^at jeg går til (.*)$/ do |page_name|
   Given %{I go to #{page_name}}
 end

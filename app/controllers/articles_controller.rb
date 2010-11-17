@@ -20,6 +20,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    if @article.nil?
+      respond_to do |format|
+        format.html { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
+        format.json { render :status => :not_found, :text => ''}
+      end
+      return
+    end
     set_user_return_to pretty_article_path(@article)
     
     unless @article.slug_is?(@slug)
