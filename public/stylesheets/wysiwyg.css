@@ -15,6 +15,10 @@ body {
       list-style-type: disc; }
   body table {
     border: 1px solid #383838; }
+  body em {
+    font-style: italic; }
+  body strong {
+    font-weight: bold; }
   body .image-wrap {
     float: right;
     position: relative;

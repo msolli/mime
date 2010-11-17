@@ -399,6 +399,10 @@ header {
         list-style-type: disc; }
     #main article .articletext table {
       border: 1px solid #383838; }
+    #main article .articletext em {
+      font-style: italic; }
+    #main article .articletext strong {
+      font-weight: bold; }
     #main article .articletext .image-wrap {
       float: right;
       position: relative;

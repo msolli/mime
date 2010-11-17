@@ -21,6 +21,12 @@
     table {
       border: 1px solid $text-color;
     }
+    em {
+      font-style: italic;
+    }
+    strong {
+      font-weight: bold;
+    }
 
     .image-wrap {
       float: right;
