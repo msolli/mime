@@ -49,7 +49,7 @@ describe "Import::ArticleXml" do
     end
 
     it "has body text" do
-      @import.articles.first.text.should =~ /^<p>tidligere husmannsplass på Ostøya/
+      @import.articles.first.text.should =~ /^<p><strong>Headword<\/strong>, tidligere husmannsplass på Ostøya/
       @import.articles.first.text.should =~ /under <a class="crossref" href="sl14012479">Oust<\/a>.<\/p>$/
     end
 
