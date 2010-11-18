@@ -50,52 +50,50 @@ header {
       color: white;
     }
   }
-  article {
-    color: $text-color;
+  color: $text-color;
 
-    .articletext {
-      @include articletext-typography;
-    }
-    aside.info, aside.redirected {
-      @include small-sans;
-      font-size: $font12px;
-      color: $light-grey-color;
-      @include no-underline;
-    }
-    aside.redirected {
-      font-style: italic;
-    }
-    aside.article-messages {
-      @include small-sans;
-      font-size: $font14px;
-    }
-    h2 {
-      font-size: $font20px;
-      font-weight: bold;
-      color: darken($text-color, 5%);
-    }
-    h3 {
-      font-size: $font17px;
-      font-weight: bold;
-    }
-    aside.image {
-      p {
-        @include small-sans;
-        color: $dark-grey-color;
-        font-size: $font12px;
-        &:first-of-type {
-          margin-top: 5px;
-        }
-      }
-    }
-    aside.tags {
+  .articletext {
+    @include articletext-typography;
+  }
+  aside.info, aside.redirected {
+    @include small-sans;
+    font-size: $font12px;
+    color: $light-grey-color;
+    @include no-underline;
+  }
+  aside.redirected {
+    font-style: italic;
+  }
+  aside.article-messages {
+    @include small-sans;
+    font-size: $font14px;
+  }
+  h2 {
+    font-size: $font20px;
+    font-weight: bold;
+    color: darken($text-color, 5%);
+  }
+  h3 {
+    font-size: $font17px;
+    font-weight: bold;
+  }
+  aside.image {
+    p {
       @include small-sans;
       color: $dark-grey-color;
       font-size: $font12px;
-      h3 {
-        text-transform: uppercase;
-        font-weight: bold;
+      &:first-of-type {
+        margin-top: 5px;
       }
+    }
+  }
+  aside.tags {
+    @include small-sans;
+    color: $dark-grey-color;
+    font-size: $font12px;
+    h3 {
+      text-transform: uppercase;
+      font-weight: bold;
     }
   }
   aside.intro {
@@ -190,4 +188,7 @@ a {
 
 strong {
   font-weight: bold;
+}
+em {
+  font-style: italic;
 }

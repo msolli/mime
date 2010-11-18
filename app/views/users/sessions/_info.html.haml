@@ -1,0 +1,5 @@
+%aside.info
+  %ul
+    %li>!= t('users.profile.contributor', :since => timeago(user.created_at))
+    %li.edit-link>= link_to t('users.profile.edit'), edit_user_path(user)
+    %li>= image_tag('share-buttons.png')

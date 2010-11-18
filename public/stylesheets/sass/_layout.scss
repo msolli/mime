@@ -97,62 +97,60 @@ header {
     }
   }
 
-  article {
-    aside.info {
-      @include padding-main;
-      padding-top: 2px;
-      ul {
-        li {
-          display: inline;
-          margin-right: 0.5em;
-          img {
-            vertical-align: bottom;
-          }
+  aside.info {
+    @include padding-main;
+    padding-top: 2px;
+    ul {
+      li {
+        display: inline;
+        margin-right: 0.5em;
+        img {
+          vertical-align: bottom;
         }
-        li.edit-link {
-          text-transform: uppercase;
-          background: #2f528f;
-          padding: 1px 0.4em 0px 0.4em;
-          border-radius: 3px;
-          -moz-border-radius: 3px;
-          a {
-            color: white;
-          }
+      }
+      li.edit-link {
+        text-transform: uppercase;
+        background: #2f528f;
+        padding: 1px 0.4em 0px 0.4em;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        a {
+          color: white;
         }
       }
     }
-    aside.redirected {
-      @include padding-main;
-    }
-    .articletext {
-      @include articletext-layout;
-      float: left;
-      overflow: hidden;
-    }
-    aside.meta {
-      float: left;
-      padding-top: 1em;
-      margin-left: 5px;
-      width: 300px;
-    }
-    aside.article-messages {
-      @include message-box($message-notice-color);
-    }
-    aside.tags {
-      background: white;
-      border: 1px solid $box-border-color;
-      margin: 1em 65px 2em 35px;
-      padding: 1em 14px;
-      clear: both;
-      ul {
-        li {
-          display: inline;
-          &:after {
-            content: ", ";
-          }
-          &:last-of-type:after {
-            content: "";
-          }
+  }
+  aside.redirected {
+    @include padding-main;
+  }
+  .articletext {
+    @include articletext-layout;
+    float: left;
+    overflow: hidden;
+  }
+  aside.meta {
+    float: left;
+    padding-top: 1em;
+    margin-left: 5px;
+    width: 300px;
+  }
+  aside.article-messages {
+    @include message-box($message-notice-color);
+  }
+  aside.tags {
+    background: white;
+    border: 1px solid $box-border-color;
+    margin: 1em 65px 2em 35px;
+    padding: 1em 14px;
+    clear: both;
+    ul {
+      li {
+        display: inline;
+        &:after {
+          content: ", ";
+        }
+        &:last-of-type:after {
+          content: "";
         }
       }
     }

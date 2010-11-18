@@ -30,6 +30,7 @@ no-NB:
     versions:
       version: Versjon
       versions: Versjoner
+      version_log: "Versjonslogg for %{for}"
       summary: "Oversikt over versjoner av artikkelen."
       date: Tidspunkt
       author: Bidragsyter
@@ -42,6 +43,10 @@ no-NB:
     no_tags: "Artikkelen har ingen nøkkelord. Bli med, bidra til leksikonet ved å %{add_tags_link}."
     add_tags: "legge til nøkkelord"
   users:
+    profile:
+      profile: "Brukerprofil for %{for}"
+      contributor: "Bidragsyter siden %{since}"
+      edit: Rediger
     login:
       help_us: "Hjelp oss å oppdatere leksikonet:"
       register: "Registrér deg"

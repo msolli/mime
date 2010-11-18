@@ -24,6 +24,8 @@ module NavigationHelpers
       new_user_session_path
     when /brukerprofilen til "([^"]*)"$/
       user_path $1
+    when /brukerprofilen min$/
+      user_path("nn@example.com")
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

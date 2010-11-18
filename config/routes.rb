@@ -1,7 +1,7 @@
 Mime::Application.routes.draw do
   devise_for :users, :module => 'users', do
     constraints :id => /.*/ do
-      resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index]
+      resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit]
     end
     get "users/current" => "users/sessions#current"
   end

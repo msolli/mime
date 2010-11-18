@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
   references_many :articles, :stored_as => :array, :inverse_of => :users
 
   # Include default devise modules. Others available are:

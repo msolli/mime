@@ -51,7 +51,12 @@ class ArticlesController < ApplicationController
     @article.attributes = params[:article]
     if @article.save
       Article.without_versioning do
-        @article.update_attributes!(:user_ids => user_signed_in? ? [current_user.id] : [])
+        if user_signed_in?
+          @article.update_attributes!(:user_ids => [current_user.id])
+          current_user.articles << @article
+        else
+          @article.update_attributes!(:user_ids => [])
+        end
       end
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
     else

@@ -367,60 +367,60 @@ header {
     #main header h1 {
       padding-top: 0.5em;
       padding-bottom: 2px; }
-  #main article aside.info {
+  #main aside.info {
     padding-left: 35px;
     padding-top: 2px; }
-    #main article aside.info ul li {
+    #main aside.info ul li {
       display: inline;
       margin-right: 0.5em; }
-      #main article aside.info ul li img {
+      #main aside.info ul li img {
         vertical-align: bottom; }
-    #main article aside.info ul li.edit-link {
+    #main aside.info ul li.edit-link {
       text-transform: uppercase;
       background: #2f528f;
       padding: 1px 0.4em 0px 0.4em;
       border-radius: 3px;
       -moz-border-radius: 3px; }
-      #main article aside.info ul li.edit-link a {
+      #main aside.info ul li.edit-link a {
         color: white; }
-  #main article aside.redirected {
+  #main aside.redirected {
     padding-left: 35px; }
-  #main article .articletext {
+  #main .articletext {
     padding-left: 35px;
     max-width: 33.125em;
     padding-top: 1em;
     overflow: visible;
     float: left;
     overflow: hidden; }
-    #main article .articletext p {
+    #main .articletext p {
       margin-bottom: 1em; }
-    #main article .articletext ul {
+    #main .articletext ul {
       padding-left: 2em;
       margin-bottom: 1em; }
-      #main article .articletext ul li {
+      #main .articletext ul li {
         list-style-type: disc; }
-    #main article .articletext table {
+    #main .articletext table {
       border: 1px solid #383838; }
-    #main article .articletext em {
+    #main .articletext em {
       font-style: italic; }
-    #main article .articletext strong {
+    #main .articletext strong {
       font-weight: bold; }
-    #main article .articletext .image-wrap {
+    #main .articletext .image-wrap {
       float: right;
       position: relative;
       width: 128px; }
-      #main article .articletext .image-wrap aside.image {
+      #main .articletext .image-wrap aside.image {
         margin-top: 6px;
         width: 228px;
         border: 1px solid #cccccc;
         padding: 5px;
         background: white; }
-  #main article aside.meta {
+  #main aside.meta {
     float: left;
     padding-top: 1em;
     margin-left: 5px;
     width: 300px; }
-  #main article aside.article-messages {
+  #main aside.article-messages {
     margin: 5px 65px 5px 22px;
     padding: 10px;
     background: #e2e2e2;
@@ -435,17 +435,17 @@ header {
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
-  #main article aside.tags {
+  #main aside.tags {
     background: white;
     border: 1px solid #cccccc;
     margin: 1em 65px 2em 35px;
     padding: 1em 14px;
     clear: both; }
-    #main article aside.tags ul li {
+    #main aside.tags ul li {
       display: inline; }
-      #main article aside.tags ul li:after {
+      #main aside.tags ul li:after {
         content: ", "; }
-      #main article aside.tags ul li:last-of-type:after {
+      #main aside.tags ul li:last-of-type:after {
         content: ""; }
   #main aside.intro {
     margin: 5px 65px 5px 22px;
@@ -643,67 +643,67 @@ header nav {
   font-family: "Lucida Grande", Tahoma, Arial;
   font-size: 87.5%; }
 
-#main header h1 {
-  font-size: 200%;
-  font-weight: bold;
-  color: white; }
-#main article {
+#main {
   color: #383838; }
-  #main article .articletext {
+  #main header h1 {
+    font-size: 200%;
+    font-weight: bold;
+    color: white; }
+  #main .articletext {
     font-size: 100%;
     line-height: 1.5; }
-  #main article aside.info, #main article aside.redirected {
+  #main aside.info, #main aside.redirected {
     font-family: "Lucida Grande", Tahoma, Arial;
     font-size: 75%;
     color: #7a7a7a; }
-    #main article aside.info a, #main article aside.redirected a {
+    #main aside.info a, #main aside.redirected a {
       text-decoration: none; }
-      #main article aside.info a:hover, #main article aside.redirected a:hover {
+      #main aside.info a:hover, #main aside.redirected a:hover {
         text-decoration: underline; }
-  #main article aside.redirected {
+  #main aside.redirected {
     font-style: italic; }
-  #main article aside.article-messages {
+  #main aside.article-messages {
     font-family: "Lucida Grande", Tahoma, Arial;
     font-size: 87.5%; }
-  #main article h2 {
+  #main h2 {
     font-size: 125%;
     font-weight: bold;
     color: #2b2b2b; }
-  #main article h3 {
+  #main h3 {
     font-size: 106.25%;
     font-weight: bold; }
-  #main article aside.image p {
+  #main aside.image p {
     font-family: "Lucida Grande", Tahoma, Arial;
     color: #45494f;
     font-size: 75%; }
-    #main article aside.image p:first-of-type {
+    #main aside.image p:first-of-type {
       margin-top: 5px; }
-  #main article aside.tags {
+  #main aside.tags {
     font-family: "Lucida Grande", Tahoma, Arial;
     color: #45494f;
     font-size: 75%; }
-    #main article aside.tags h3 {
+    #main aside.tags h3 {
       text-transform: uppercase;
       font-weight: bold; }
-#main aside.intro {
-  font-family: "Lucida Grande", Tahoma, Arial; }
-#main .alphabetic {
-  font-family: "Lucida Grande", Tahoma, Arial;
-  font-size: 75%;
-  line-height: 1.67; }
-  #main .alphabetic a {
-    text-decoration: none; }
-    #main .alphabetic a:hover {
-      text-decoration: underline; }
-#main .login {
-  font-family: "Lucida Grande", Tahoma, Arial;
-  font-size: 75%; }
-  #main .login dl dt {
-    font-weight: bold;
-    line-height: 1.5;
-    margin-top: 5px; }
-#main table.versions {
-  font-family: "Lucida Grande", Tahoma, Arial; }
+  #main aside.intro {
+    font-family: "Lucida Grande", Tahoma, Arial; }
+  #main .alphabetic {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    font-size: 75%;
+    line-height: 1.67; }
+    #main .alphabetic a {
+      text-decoration: none; }
+      #main .alphabetic a:hover {
+        text-decoration: underline; }
+  #main .login {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    font-size: 75%; }
+    #main .login dl dt {
+      font-weight: bold;
+      line-height: 1.5;
+      margin-top: 5px; }
+  #main table.versions {
+    font-family: "Lucida Grande", Tahoma, Arial; }
 
 form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic fieldset > ol > li.string input[type="text"].headword, form.formtastic fieldset > ol > li.text input[type="text"].headword {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
@@ -754,3 +754,6 @@ a {
 
 strong {
   font-weight: bold; }
+
+em {
+  font-style: italic; }
