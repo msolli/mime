@@ -27,11 +27,11 @@ Så /^(?:|skal )feltet "([^"]*)" (?:|skal )ikke inneholde "([^"]*)"$/ do |field,
 end
 
 Then /^"([^\"]*)" should be visible$/ do |selector|
-  assert_not_nil page.has_css?(selector, :visible => true)
+  page.should have_css(selector, :visible => true)
 end
 
 Then /^"([^\"]*)" should be invisible$/ do |selector|
-  page.has_css?(selector, :visible => true).should be_false
+  page.should have_no_css(selector, :visible => true)
 end
 
 Så /^(?:skal )"([^"]*)" være synlig$/ do |selector|

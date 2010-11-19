@@ -44,6 +44,13 @@ Egenskap: Redigere artikler
       Når jeg står på artikkelredigering for "Foo"
       Så skal ".tooltip" være usynlig
     
+    # Impossible to test because of missing native events in webdriver on os x (should work on windows)
+    # @javascript
+    # Scenario: tooltip skal vises ved fokus på felt med attributet data-tooltip-enable => true
+    #   Når jeg står på artikkelredigering for "Foo"
+    #   Og jeg fyller inn "bar" for "article[headword_presentation]"
+    #   Så skal ".tooltip" være synlig
+      
     @javascript
     Scenario: tooltip skal vises ved fokus på felt med attributet data-tooltip-enable => true
       Når jeg står på artikkelredigering for "Foo"
