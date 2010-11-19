@@ -52,7 +52,7 @@ Egenskap: Redigere artikler
     #   Så skal ".tooltip" være synlig
       
     @javascript
-    Scenario: tooltip skal vises ved fokus på felt med attributet data-tooltip-enable => true
+    Scenario: Det skal være en lettfattelig måte å formatere artikler på
       Når jeg står på artikkelredigering for "Foo"
-      Og jeg fyller inn "" for "article[headword_presentation]"
-      Så skal ".tooltip" være synlig
+      Så skal "#article_text_editor" være usynlig
+      Og jeg skal se formatert tekst med en verktøylinje

@@ -60,3 +60,7 @@ Så /^skal feltet "([^"]*)" være tomt$/ do |field|
     assert_blank field_value
   end
 end
+
+Så /^jeg skal se formatert tekst med en verktøylinje$/ do
+  page.should have_xpath("//*[contains(@class, 'cke_editor')]")
+end
