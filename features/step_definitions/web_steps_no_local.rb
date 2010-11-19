@@ -30,7 +30,7 @@ Then /^"([^\"]*)" should be visible$/ do |selector|
   assert_not_nil page.has_css?(selector, :visible => true)
 end
 
-Then /^"([^\"]*)" should not be visible$/ do |selector|
+Then /^"([^\"]*)" should be invisible$/ do |selector|
   page.has_css?(selector, :visible => true).should be_false
 end
 
@@ -38,8 +38,8 @@ Så /^(?:skal )"([^"]*)" være synlig$/ do |selector|
   Then %{"#{selector}" should be visible}
 end
 
-Så /^(?:skal )ikke "([^"]*)" være synlig$/ do |selector|
-  Then %{"#{selector}" should not be visible}
+Så /^(?:skal )"([^"]*)" være usynlig$/ do |selector|
+  Then %{"#{selector}" should be invisible}
 end
 
 Then /^I debug$/ do

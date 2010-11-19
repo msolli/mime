@@ -42,7 +42,7 @@ Egenskap: Redigere artikler
     @javascript
     Scenario: tooltip skal vises ikke vises med mindre det fokuseres på et felt med data-tooltip-enable => true
       Når jeg står på artikkelredigering for "Foo"
-      Så skal ikke ".tooltip" være synlig
+      Så skal ".tooltip" være usynlig
     
     @javascript
     Scenario: tooltip skal vises ved fokus på felt med attributet data-tooltip-enable => true
