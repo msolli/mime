@@ -10,6 +10,7 @@ class Article
   alias :authors= :users=
   
   references_many :medias, :stored_as => :array, :inverse_of => :articles
+  embeds_one :location
 
   field :headword
   field :headword_presentation
@@ -18,16 +19,19 @@ class Article
   field :years, :type => Array
   field :end_year, :type => Date
   field :ambiguous, :type => Boolean
-  field :location, :type => Array
   field :ip
   field :tags_array, :type => Array
 
   index :headword, :unique => true
-  index [[ :location, Mongo::GEO2D ]]
+  index [[ 'location.lat_lng', Mongo::GEO2D ]]
 
   validates_presence_of :headword
   validates_uniqueness_of :headword
-  validates :location, :location => true
+  validates_associated :location
+  
+  accepts_nested_attributes_for :location
+  
+  set_callback :save, :before, lambda {|article| article.location = nil if article.location.blank?}
 
   def to_param
     self.headword.gsub(/ /, '_').gsub(/\//, '%2F')
@@ -63,26 +67,6 @@ class Article
 
   def tags_array
     (self[:tags_array] || [])
-  end
-
-  def lat
-    self.location ? self.location[0] : nil
-  end
-
-  def lat=(latitude)
-    return if latitude.blank?
-    self.location ||= []
-    self.location[0] = latitude
-  end
-
-  def lng
-    self.location && self.location[1]
-  end
-
-  def lng=(longitude)
-    return if longitude.blank?
-    self.location ||= []
-    self.location[1] = longitude
   end
 
   class << self

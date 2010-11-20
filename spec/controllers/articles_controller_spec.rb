@@ -35,8 +35,12 @@ describe ArticlesController do
     end
 
     context "with an article with errors" do
+      before :each do
+        post :create, :article => { :headword => "foo" }
+      end
       it "renders the #new template" do
-        post :create, :article => { :headword => "foo", :text => "bar", :lng => "60", :lat => "10" }
+        # Should fail on unique headword constraint
+        post :create, :article => { :headword => "foo"}
         response.should render_template(:new)
       end
     end
