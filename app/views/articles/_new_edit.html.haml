@@ -2,12 +2,15 @@
   = render :partial => 'info', :locals => { :article => @article }
 - unless user_signed_in?
   %aside.article-messages!= t('articles.login_teaser', :login_link => link_to(t('articles.login_link'), user_omniauth_authorize_path(:facebook)))
-= semantic_form_for @article do |f|
+= semantic_form_for setup_article(@article) do |f|
 
   = f.inputs do
     = f.input :headword, :input_html => {:class => 'headword', :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword')}
     = f.input :text, :as => :ckeditor, :label => false, :input_html => { :cols => '80', :class => 'articletext' }
     = f.input :tags
+    = f.semantic_fields_for :location, :builder => Maptastic::SemanticFormBuilder do |location_f|
+      = location_f.multi_input :latitude, :longitude, :as => :map, :label => :location
+      
     = f.input :headword_presentation, :input_html => { :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword_presentation')}
   = f.buttons do
     = f.commit_button

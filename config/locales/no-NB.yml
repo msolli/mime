@@ -70,8 +70,7 @@ no-NB:
         headword_presentation: Alternativ tittel
         text: Artikkeltekst
         tags: Nøkkelord
-        lng: Lengdegrad
-        lat: Breddegrad
+        location: Posisjon
   words:
     or: eller
     search: søk

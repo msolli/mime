@@ -540,6 +540,8 @@ header {
   width: 100%;
   border: 1px solid #cccccc;
   padding: 0.2em; }
+#main form.formtastic fieldset > ol > li .map, #main form.formtastic fieldset > ol > li.string .map, #main form.formtastic fieldset > ol > li.text .map {
+  height: 300px; }
 #main form.formtastic fieldset > ol > li input[type="submit"], #main form.formtastic fieldset > ol > li.string input[type="submit"], #main form.formtastic fieldset > ol > li.text input[type="submit"] {
   padding: 0.4em 2em 0.2em 2em;
   background: #2f528f;

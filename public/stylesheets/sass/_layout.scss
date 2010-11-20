@@ -246,6 +246,9 @@ header {
       border: 1px solid $box-border-color;
       padding: 0.2em;
     }
+    .map {
+      height: 300px;
+    }
     input[type="submit"] {
       padding: 0.4em 2em 0.2em 2em;
       background: $button-color;
