@@ -65,6 +65,24 @@ describe Article do
     @article.authors.first.email.should == 'yo1@yo.com'
     @article.authors.last.email.should == 'yo2@yo.com'
   end
+  
+  describe "location" do
+    before :each do
+      @article = Article.new :headword => 'foo', :location => Location.new(:lat => 23, :lng => 23)
+    end
+    
+    it 'should be valid' do
+      @article.should be_valid
+      lambda { @article.save }.should change(Article, :count).by(1)
+    end
+    
+    # mainly because mongodb doesn't support indices on null value fields
+    it 'should be nil if it has empty lat and long' do
+      @article.location = Location.new
+      @article.save.should be_true
+      @article.location.should be_nil
+    end
+  end
 
   describe "authors_or_ip" do
     before :each do

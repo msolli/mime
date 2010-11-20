@@ -31,6 +31,8 @@ class Article
   
   accepts_nested_attributes_for :location
   
+  # We do this because mongodb doesn't allow index fields to be null
+  # They can however be absent from the document…
   set_callback :save, :before, lambda {|article| article.location = nil if article.location.blank?}
 
   def to_param
