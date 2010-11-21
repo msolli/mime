@@ -1,13 +1,17 @@
 MaptasticMap = (function() {
-  var marker = null;
-  var map = null;
-  var geocoder = null;
+  var	marker = null,
+   		map = null,
+ 			geocoder = null,
+			zoomElement = null,
 
-  var init = function(options) {
+  init = function(options) {
     this.options = options;
     var zoom = null;
-    if (options.zoom && typeof(parseInt(options.zoom)) == 'number') {
-      zoom = parseInt(options.zoom);
+    if (options.zoomInput) {
+			this.zoomElement = document.getElementById(options.zoomInput);
+			if(this.zoomElement) {
+				zoom = parseInt(this.zoomElement.value);
+			}
     }
 		var map = new google.maps.Map(document.getElementById(this.options.mapId), {
 			zoom: zoom || 8,
@@ -26,18 +30,34 @@ MaptasticMap = (function() {
   			});
 		}
 		var clazz = this;
+		google.maps.event.addListener(map, 'zoom_changed', function(event) {
+			clazz.zoomElement.value = map.getZoom();
+		});
 		google.maps.event.addListener(map, 'click', function(event){
 			clazz.setMarker(map, event.latLng);
 			clazz.updateInputs(event.latLng);
 		});
-  };
+		var	search = document.getElementById('maptastic-search'),
+				timer = null;
+		if(search) {
+			search.onkeyup = function() {
+				if(timer) clearTimeout(timer);
+				
+				timer = setTimeout(function() {
+					clazz.findAddress(search.value);
+				}, 800);
+				
+			};
+		}
+		
+  },
 
-  var setMarker = function(map, location) {
+  setMarker = function(map, location) {
 		if (!this.marker) this.createMarker(map, location);
 		this.marker.setPosition(location);
-	};
+	},
 
-	var createMarker = function(map, location) {
+	createMarker = function(map, location) {
 		this.marker = new google.maps.Marker({
 			map: map,
 			title: 'Drag to reposition',
@@ -47,14 +67,14 @@ MaptasticMap = (function() {
 		google.maps.event.addListener(this.marker, 'dragend', function(event) {
 			clazz.updateInputs(event.latLng);
 		});
-	};
+	},
 
-	var updateInputs = function(location) {
+	updateInputs = function(location) {
 		document.getElementById(this.options.latInput).value = location.lat();
 		document.getElementById(this.options.lngInput).value = location.lng();
-	};
+	},
 
-	var findAddress = function(address) {
+	findAddress = function(address) {
 	  if (!this.geocoder) {
 	    this.geocoder = new google.maps.Geocoder();
 	  }
@@ -66,7 +86,7 @@ MaptasticMap = (function() {
         clazz.setMarker(clazz.map, location);
         clazz.updateInputs(location);
       } else {
-        alert("Geocode was not successful for the following reason: " + status);
+        // alert("Geocode was not successful for the following reason: " + status);
       }
     });
 	};

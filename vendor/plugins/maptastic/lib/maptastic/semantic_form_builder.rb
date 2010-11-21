@@ -32,19 +32,36 @@ module Maptastic
     mapId: '#{map_div_id(methods)}',
     latInput: '#{map_input_id(methods.first)}',
     lngInput: '#{map_input_id(methods.last)}',
-    zoom : '#{zoom}'
+    zoomInput: '#{zoom ? map_input_id(zoom) : "null"}'
   });
 "
+      end
+    end
+    
+    def map_search(options)
+      @template.content_tag('div') do
+        text = label_tag('maptastic-search', options.delete(:search_label) || 'Search:')
+        text << text_field_tag('maptastic-search')
+        text
       end
     end
     
     def map_input(methods, options = {})
       options[:hint] ||= "Click to select a location, then drag the marker to position"
       inputs_html = methods.inject('') {|html, method| html << input(method, :id => map_input_id(method), :as => :hidden)}
+      inputs_html << input(options[:zoom], :id => map_input_id(options[:zoom]), :as => :hidden) if options[:zoom]
       hint_html = inline_hints_for(methods.first, options)
       label_html = label(options[:label], :label => options[:label], :input_name => map_div_id_prefix(methods) + '_input') if options[:label]
       map_container = @template.content_tag(:div, nil, :class => 'map', :id => map_div_id(methods))
-      map_html = @template.content_tag(:li,  Formtastic::Util.html_safe("#{label_html}#{map_container} #{hint_html.to_s} #{options[:skip_js] == true ? '' : map_js(methods, options[:zoom]).to_s}"))
+      map_html = @template.content_tag(:li) do
+        text = [label_html]
+        text << map_container
+        text << map_search(options) if options.delete(:search)
+        text << hint_html
+        text << (options[:skip_js] ? '' : map_js(methods, options[:zoom]).to_s)
+        
+        Formtastic::Util.html_safe(text.join)
+      end
 
       Formtastic::Util.html_safe(inputs_html + map_html)
     end
