@@ -539,6 +539,8 @@ header {
   width: 100%;
   border: 1px solid #cccccc;
   padding: 0.5em 0.2em 0.5em 0.2em; }
+#main form.formtastic fieldset > ol > li p.inline-hints, #main form.formtastic fieldset > ol > li.string p.inline-hints, #main form.formtastic fieldset > ol > li.text p.inline-hints {
+  margin-left: 0; }
 #main form.formtastic fieldset > ol > li label, #main form.formtastic fieldset > ol > li.string label, #main form.formtastic fieldset > ol > li.text label {
   float: none;
   margin-bottom: 3px; }
@@ -550,6 +552,21 @@ header {
   padding: 0.2em; }
 #main form.formtastic fieldset > ol > li .map, #main form.formtastic fieldset > ol > li.string .map, #main form.formtastic fieldset > ol > li.text .map {
   height: 300px; }
+  #main form.formtastic fieldset > ol > li .map + div, #main form.formtastic fieldset > ol > li.string .map + div, #main form.formtastic fieldset > ol > li.text .map + div {
+    overflow: hidden;
+    padding: 2px 3px 5px;
+    background-color: #EBE6DC;
+    border: 1px #ccc solid;
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    behavior: url(/stylesheets/PIE.htc); }
+    #main form.formtastic fieldset > ol > li .map + div label, #main form.formtastic fieldset > ol > li.string .map + div label, #main form.formtastic fieldset > ol > li.text .map + div label {
+      display: inline; }
+    #main form.formtastic fieldset > ol > li .map + div input, #main form.formtastic fieldset > ol > li.string .map + div input, #main form.formtastic fieldset > ol > li.text .map + div input {
+      float: right;
+      width: 270px; }
 #main form.formtastic fieldset > ol > li input[type="submit"], #main form.formtastic fieldset > ol > li.string input[type="submit"], #main form.formtastic fieldset > ol > li.text input[type="submit"] {
   padding: 0.4em 2em 0.2em 2em;
   background: #2f528f;

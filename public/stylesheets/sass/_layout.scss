@@ -243,6 +243,9 @@ header {
       border: 1px solid $box-border-color;
       padding: 0.5em 0.2em 0.5em 0.2em;
     }
+    p.inline-hints {
+      margin-left: 0;
+    }
     label {
       float: none;
       margin-bottom: 3px;
@@ -257,6 +260,23 @@ header {
     }
     .map {
       height: 300px;
+      
+      & + div {
+        overflow: hidden;
+        padding: 2px 3px 5px;
+        background-color: #EBE6DC;
+        border: 1px #ccc solid;
+        
+        @include rounded-corners(0 0 5px 5px);
+        label {
+          display: inline;
+        }
+        
+        input {
+          float: right;
+          width: 270px;
+        }
+      }
     }
     input[type="submit"] {
       padding: 0.4em 2em 0.2em 2em;
