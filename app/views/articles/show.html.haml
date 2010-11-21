@@ -10,6 +10,9 @@
 = render :partial => 'info', :locals => { :article => @article }
 = render :partial => 'redirected_from', :locals => { :from => flash[:redirected_from] }
 .articletext!= @article.text
+%aside.meta
+  - unless @article.location.blank?
+    %img{:src => @article.location.static_map('300x150')}
 %aside.tags
   %h3= t('tags.tags')
   - if @article.tags_array.empty?

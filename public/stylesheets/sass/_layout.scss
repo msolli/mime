@@ -126,6 +126,14 @@ header {
     }
     .articletext {
       @include articletext-layout;
+      float: left;
+      overflow: hidden;
+    }
+    aside.meta {
+      float: left;
+      padding-top: 1em;
+      margin-left: 5px;
+      width: 300px;
     }
     aside.article-messages {
       @include message-box($message-notice-color);
@@ -135,6 +143,7 @@ header {
       border: 1px solid $box-border-color;
       margin: 1em 65px 2em 35px;
       padding: 1em 14px;
+      clear: both;
       ul {
         li {
           display: inline;

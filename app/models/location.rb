@@ -31,6 +31,16 @@ class Location
     longitude.blank? && latitude.blank?
   end
   
+  def static_map(size = '300x150')
+    params = ["size=#{size}"]
+    params << 'sensor=false'
+    params << "zoom=#{zoom}"
+    params << "markers=#{latitude},#{longitude}"
+    
+    
+    "http://maps.google.com/maps/api/staticmap?" + params.join('&')
+  end
+  
   alias :lat    :latitude
   alias :lng    :longitude
   alias :long   :longitude

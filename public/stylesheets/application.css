@@ -389,7 +389,9 @@ header {
     padding-left: 35px;
     max-width: 33.125em;
     padding-top: 1em;
-    overflow: visible; }
+    overflow: visible;
+    float: left;
+    overflow: hidden; }
     #main article .articletext p {
       margin-bottom: 1em; }
     #main article .articletext ul {
@@ -413,6 +415,11 @@ header {
         border: 1px solid #cccccc;
         padding: 5px;
         background: white; }
+  #main article aside.meta {
+    float: left;
+    padding-top: 1em;
+    margin-left: 5px;
+    width: 300px; }
   #main article aside.article-messages {
     margin: 5px 65px 5px 22px;
     padding: 10px;
@@ -432,7 +439,8 @@ header {
     background: white;
     border: 1px solid #cccccc;
     margin: 1em 65px 2em 35px;
-    padding: 1em 14px; }
+    padding: 1em 14px;
+    clear: both; }
     #main article aside.tags ul li {
       display: inline; }
       #main article aside.tags ul li:after {
