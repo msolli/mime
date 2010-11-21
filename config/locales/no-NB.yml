@@ -65,12 +65,15 @@ no-NB:
       create: Opprett
       update: Lagre og publiser
     labels:
+      other:
+        'maptastic-search': 'Søk etter by, sted eller adresse:'
+        'maptastic-hint': 'Klikk for å velge en posisjon, dra markøren rundt for å etterjustere.'
       article:
         headword: Oppslagsord
         headword_presentation: Alternativ tittel
         text: Artikkeltekst
         tags: Nøkkelord
-        location: Posisjon
+      location: Posisjon
   words:
     or: eller
     search: søk
