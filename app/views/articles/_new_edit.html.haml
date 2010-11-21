@@ -9,7 +9,8 @@
     = f.input :text, :as => :ckeditor, :label => false, :input_html => { :cols => '80', :class => 'articletext' }
     = f.input :tags
     = f.semantic_fields_for :location, :builder => Maptastic::SemanticFormBuilder do |location_f|
-      = location_f.multi_input :latitude, :longitude, :as => :map, :label => :location
+      = location_f.multi_input :latitude, :longitude, :as => :map, :label => :location, |
+        :zoom => :zoom, :search => true, :search_label => 'Søk etter by, sted eller adresse:'
       
     = f.input :headword_presentation, :input_html => { :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword_presentation')}
   = f.buttons do

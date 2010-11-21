@@ -7,6 +7,7 @@ class Location
   # because of a constraint in the way mongodb handles
   # 2d-indices and mongoid handles embedded documents.
   field :lat_lng, :type => Hash, :default => {}
+  field :zoom, :type => Integer, :default => 13
   
   # Limitation in mongoid requires this index to be set in article model
   # index [[ :lat_lng, Mongo::GEO2D ]]
