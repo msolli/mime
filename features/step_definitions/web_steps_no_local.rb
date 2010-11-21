@@ -42,6 +42,23 @@ Så /^(?:skal )"([^"]*)" være usynlig$/ do |selector|
   Then %{"#{selector}" should be invisible}
 end
 
+Then /^"([^\"]*)" should not exist$/ do |selector|
+  page.should have_no_css(selector)
+end
+
+Så /^(?:skal )ikke "([^"]*)" finnes$/ do |selector|
+  Then %{"#{selector}" should not exist}
+end
+
+Given /^I wait (\d+) seconds$/ do |count|
+  sleep count.to_i
+end
+
+Gitt /^jeg venter (\d+) sekunder$/ do |count|
+  Given %{I wait #{count} seconds}
+end
+
+
 Then /^I debug$/ do
   debugger
   0 # necesary, else breakpoint will loose context
