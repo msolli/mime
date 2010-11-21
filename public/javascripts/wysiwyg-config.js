@@ -2,6 +2,7 @@ CKEDITOR.editorConfig = function( config )
 {
 	config.toolbar = 'mime';
 	config.toolbarCanCollapse = false;
+	config.resize_dir = 'vertical';
 	config.format_tags = 'p;h2;h3';
 	config.extraPlugins = 'MediaEmbed,mimelink,autogrow';
 	config.removePlugins = 'link'; // Remove this to avoid the plugin registering for doubleclicks on links
