@@ -34,7 +34,7 @@ module Import
         @epoch_end = epoch_end_node.content
       end
       if clarification_node = node.at_xpath('metadata/field[@id="clarification"]')
-        @clarification = clarification_node.content
+        @clarification = clarification_node.content unless clarification_node.content =~ /^\d+$/
       end
       @oldid = node[:oldid]
       @definition = node[:id_def]
@@ -87,7 +87,7 @@ module Import
         :epoch_start => @epoch_start,
         :epoch_end => @epoch_end,
         :oldid => @oldid,
-        :definition => @definition,
+        :definition => @clarification || @definition,
         :ambiguous => @ambiguous
       }
     end
