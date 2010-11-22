@@ -45,5 +45,5 @@ group :test do
 
   gem 'mongoid-rspec'
   gem 'shoulda'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end

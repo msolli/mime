@@ -13,9 +13,7 @@ class HomeController < ApplicationController
       when 'a' then /^(\p{P})*a[^a]/i
       else /^(\p{P})*#{@letter}/i
     end
-    @articles = Article.where(:headword => headword_re).all.sort do |a, b|
-      a.headword_sorting <=> b.headword_sorting
-    end
+    @articles = Article.where(:headword => headword_re).all.sort
     expires_in 5.minutes, :public => true
   end
 end

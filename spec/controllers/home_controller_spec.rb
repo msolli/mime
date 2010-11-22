@@ -46,6 +46,16 @@ describe HomeController do
       assigns(:articles).first.headword.should == "Ab"
     end
 
+    it "sorts articles with norwegian letters alphabetically" do
+      Article.create!(:headword => "Arø")
+      Article.create!(:headword => "Arå")
+      Article.create!(:headword => "Aræ")
+      get :alphabetic, {:slug => 'a'}
+      assigns(:articles).first.headword.should == "Aræ"
+      assigns(:articles)[1].headword.should == "Arø"
+      assigns(:articles)[2].headword.should == "Arå"
+    end
+
     it "sorts articles with different case" do
       Article.create!(:headword => "Ax")
       Article.create!(:headword => "ab")

@@ -109,17 +109,22 @@ describe Article do
   describe "headword_sorting" do
     it "downcases headword" do
       @article = Article.new(:headword => 'Øy')
-      @article.headword_sorting.should == 'øy'
+      @article.headword_sorting.should == '|y'
     end
 
     it "removes leading non-letter chars" do
       @article = Article.new(:headword => '«"Foo"»')
-      @article.headword_sorting.should == 'foo"»'
+      @article.headword_sorting.should == 'foo'
     end
 
-    it "truncates aa til å" do
+    it "truncates aa to å at the start of the headword" do
       @article = Article.new(:headword => 'Aas pilsener')
-      @article.headword_sorting.should == 'ås pilsener'
+      @article.headword_sorting.should == '}spilsener'
+    end
+
+    it "truncates aa to å everywhere in the headword" do
+      @article = Article.new(:headword => 'Maasepaase')
+      @article.headword_sorting.should == 'm}sep}se'
     end
   end
 

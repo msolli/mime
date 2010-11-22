@@ -7,6 +7,12 @@
 = render :partial => 'info', :locals => { :user => @user }
 
 %table.articles
-  - @user.articles.each do |article|
+  %thead
     %tr
-      %td= link_to article.headword, pretty_article_path(article)
+      %th= sortable 'headword', t('articles.headword')
+      %th= sortable 'updated_at', t('articles.last_updated')
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= link_to article.headword, pretty_article_path(article)
+        %td= timeago(article.updated_at)

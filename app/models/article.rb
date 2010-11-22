@@ -35,6 +35,10 @@ class Article
   # They can however be absent from the document…
   set_callback :save, :before, lambda {|article| article.location = nil if article.location.blank?}
 
+  before_save :update_headword_sorting
+
+  NO_SORT = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z æ ø å)
+
   def to_param
     self.headword.gsub(/ /, '_').gsub(/\//, '%2F')
   end
@@ -52,7 +56,11 @@ class Article
   end
 
   def headword_sorting
-    self[:headword].sub(/^(\p{P})+/, '').mb_chars.downcase.sub(/aa/, 'å')
+    self[:headword_sorting] || update_headword_sorting
+  end
+
+  def <=>(other)
+    self.headword_sorting <=> other.headword_sorting
   end
 
   def authors_or_ip
@@ -75,5 +83,12 @@ class Article
     def without_versioning(&block)
       without_callback(:save, :before, :revise) { yield }
     end
+  end
+
+  private
+
+  def update_headword_sorting
+    array = self[:headword].mb_chars.downcase.gsub(/aa/, 'å').scan(/./)
+    self[:headword_sorting] = array.map {|c| NO_SORT.index(c)}.compact.map {|c| (c + 'a'.ord).chr}.join
   end
 end
