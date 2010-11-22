@@ -21,6 +21,12 @@ namespace :mime do
     Import::Crossref.run
   end
 
+  desc "Fjern indekser i MongoDB"
+  task :drop_indexes => :environment do
+    Article.collection.drop_indexes
+    User.collection.drop_indexes
+  end
+
   namespace :xml do
     task :a => :read do
       @doc.xpath('//a').each do |node|
