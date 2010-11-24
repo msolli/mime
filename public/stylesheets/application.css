@@ -496,7 +496,10 @@ header {
             border-top: 1px solid #45619D;
             text-shadow: none; }
   #main table.versions {
+    margin: 20px 0 20px 35px;
     border: 1px solid #cccccc; }
+    #main table.versions caption {
+      text-align: right; }
     #main table.versions td, #main table.versions th {
       padding: 5px; }
     #main table.versions tr.current {
@@ -649,6 +652,12 @@ header nav {
     font-size: 200%;
     font-weight: bold;
     color: white; }
+    #main header h1 a {
+      text-decoration: none; }
+      #main header h1 a:hover {
+        text-decoration: underline; }
+    #main header h1 a {
+      color: white; }
   #main .articletext {
     font-size: 100%;
     line-height: 1.5; }
@@ -704,6 +713,10 @@ header nav {
       margin-top: 5px; }
   #main table.versions {
     font-family: "Lucida Grande", Tahoma, Arial; }
+    #main table.versions caption {
+      font-size: 75%; }
+    #main table.versions th {
+      font-style: bold; }
 
 form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic fieldset > ol > li.string input[type="text"].headword, form.formtastic fieldset > ol > li.text input[type="text"].headword {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;

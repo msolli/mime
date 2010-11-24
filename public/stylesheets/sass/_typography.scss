@@ -48,6 +48,10 @@ header {
       font-size: $font32px;
       font-weight: bold;
       color: white;
+      @include no-underline;
+      a {
+        color: white;
+      }
     }
   }
   color: $text-color;
@@ -121,6 +125,12 @@ header {
   }
   table.versions {
     @include small-sans;
+    caption {
+      font-size: $font12px;
+    }
+    th {
+      font-style: bold;
+    }
   }
 }
 

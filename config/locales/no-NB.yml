@@ -21,6 +21,7 @@ no-NB:
     saved: Artikkelen er lagret
     redirected: "omdirigert fra %{from}"
     headword: Oppslagsord
+    back: "Tilbake til artikkelen"
     errors:
       save: Artikkelen ble ikke lagret
     login_teaser: "Du er ikke logget inn. Det er helt fint, for leksikonet er åpent for redigering av hvem som helst. Men hvis du ønsker navnet ditt under \"Bidragsytere\", så må du først %{login_link}."

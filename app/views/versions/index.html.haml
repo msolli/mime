@@ -2,9 +2,13 @@
   = t('articles.versions.version_log', :for => @article.headword_presentation)
 
 - content_for :header do
-  <em>#{t('articles.version_log')}</em> – #{@article.headword_presentation}
+  <em>#{t('articles.version_log')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
-- caption = link_to(@article.headword, pretty_article_path(@article)) + ' ' + t('articles.versions.count', :count => @versions.size + 1)
+%aside.info
+  %ul
+    %li>= link_to '« ' + t('articles.back'), pretty_article_path(@article)
+
+- caption = link_to(@article.headword_presentation, pretty_article_path(@article)) + ' ' + t('articles.versions.count', :count => @versions.size + 1)
 
 %table.versions{:caption => caption, :summary => t('articles.versions.summary')}
   %caption= caption

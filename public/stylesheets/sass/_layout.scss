@@ -178,7 +178,11 @@ header {
     }
   }
   table.versions {
+    margin: 20px 0 20px $main-padding-left;
     border: 1px solid $box-border-color;
+    caption {
+      text-align: right;
+    }
     td, th {
       padding: 5px;
     }
