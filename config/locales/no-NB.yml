@@ -85,6 +85,10 @@ no-NB:
     or: eller
     search: søk
     new: ny
+  import:
+    disambiguation:
+      link_back_to: "%{headword} har flere betydninger. For andre betydninger, se %{headword_link}."
+      multiple_articles_for: "%{headword} har flere betydninger:"
 
 # Norwegian, norsk bokmål, by irb.no
   support:

@@ -68,6 +68,10 @@ header {
   aside.redirected {
     font-style: italic;
   }
+  aside.disambiguation {
+    font-style: italic;
+    font-size: $font14px;
+  }
   aside.article-messages {
     @include small-sans;
     font-size: $font14px;

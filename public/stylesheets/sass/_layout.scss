@@ -123,6 +123,10 @@ header {
   aside.redirected {
     @include padding-main;
   }
+  aside.disambiguation {
+    @include margin-main;
+    padding: 1em 35px 0 35px;
+  }
   .articletext {
     @include articletext-layout;
     float: left;

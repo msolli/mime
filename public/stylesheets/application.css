@@ -385,6 +385,9 @@ header {
         color: white; }
   #main aside.redirected {
     padding-left: 35px; }
+  #main aside.disambiguation {
+    margin-left: 35px;
+    padding: 1em 35px 0.5em 35px; }
   #main .articletext {
     padding-left: 35px;
     max-width: 33.125em;
@@ -671,6 +674,9 @@ header nav {
         text-decoration: underline; }
   #main aside.redirected {
     font-style: italic; }
+  #main aside.disambiguation {
+    font-style: italic;
+    font-size: 87.5%; }
   #main aside.article-messages {
     font-family: "Lucida Grande", Tahoma, Arial;
     font-size: 87.5%; }

@@ -113,10 +113,12 @@ describe "Import::Main" do
 
     it "checks for duplicates" do
       Article.where(:headword => 'Foo').first.text.should be_blank
-      Article.where(:headword => 'Foo').first.ambiguous.should be_true
-      Article.where(:headword => 'Foo (gård i Asker)').first.ambiguous.should be_true
-      Article.where(:headword => 'Foo (gård i Bærum)').first.ambiguous.should be_true
-      Article.where(:headword => 'Foo (gård i Bærum - 2)').first.ambiguous.should be_true
+      Article.where(:headword => 'Foo').first.disambiguation.should =~ /Foo \(gård i Asker\)<\/a>/
+      Article.where(:headword => 'Foo').first.disambiguation.should =~ /Foo \(gård i Bærum\)<\/a>/
+      Article.where(:headword => 'Foo').first.disambiguation.should =~ /Foo \(gård i Bærum - 2\)<\/a>/
+      Article.where(:headword => 'Foo (gård i Asker)').first.disambiguation.should =~ /har flere betydninger/
+      Article.where(:headword => 'Foo (gård i Bærum)').first.disambiguation.should =~ /har flere betydninger/
+      Article.where(:headword => 'Foo (gård i Bærum - 2)').first.disambiguation.should =~ /har flere betydninger/
     end
 
     it "associates articles with users as authors" do

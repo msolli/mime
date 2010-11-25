@@ -12,7 +12,7 @@ describe Article do
   it { should embed_one(:location) }
   it { should have_field(:years).of_type(Array) }
   it { should have_field(:end_year).of_type(Date) }
-  it { should have_field(:ambiguous).of_type(Boolean) }
+  it { should have_field(:disambiguation).of_type(String) }
   it { should have_field(:ip).of_type(String) }
   it { should have_field(:tags_array).of_type(Array) }
 

@@ -9,7 +9,10 @@
 
 = render :partial => 'info', :locals => { :article => @article }
 = render :partial => 'redirected_from', :locals => { :from => flash[:redirected_from] }
+= render :partial => 'disambiguation', :locals => { :article => @article }
+
 .articletext!= @article.text
+
 %aside.meta
   - unless @article.location.blank?
     %img{:src => @article.location.static_map('300x150')}

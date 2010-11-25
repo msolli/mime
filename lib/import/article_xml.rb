@@ -2,13 +2,16 @@
 
 module Import
   class ArticleXml
+    include Rails.application.routes.url_helpers
+    include ActionView::Helpers::UrlHelper
+
     cattr_accessor :all_authors
     cattr_accessor :editor
 
     attr_reader :headword, :text
     attr_reader :subject, :authors, :user
     attr_reader :oldid, :definition, :epoch_start, :epoch_end, :clarification
-    attr_reader :ambiguous
+    attr_reader :disambiguation
 
     def initialize(node)
       if headword_node = node.at_xpath('metadata/field[@id="headword"]')
@@ -38,20 +41,17 @@ module Import
       end
       @oldid = node[:oldid]
       @definition = node[:id_def]
-      @ambiguous = false
     end
 
     # Oppretter artikkel. Dersom headword fins fra før skjer følgende:
-    # * Artikkelen får et nytt headword et følgende mønster:
+    # * Artikkelen får et nytt headword etter følgende mønster:
     #    - Foo (something)
     #    - Foo (something else)
     #    - Foo (something else - 2)
     #    - Foo (something else - 3)
-    # * En 'disambiguation page' uten tekst opprettes.
-    # * Alle disse får ambiguous-flagget satt.
+    # * En 'disambiguation page' med lenke til artikkel opprettes.
     def save!
       @users = @authors.map { |a| ArticleXml.get_user(a) }.compact
-
       begin
         Rails.logger.debug("  MIME: Prøver å opprette artikkel med standard headword")
         a = Article.new(self.attributes)
@@ -60,22 +60,23 @@ module Import
       rescue Mongoid::Errors::Validations => e
         first = Article.where(:headword => @headword).first
         Rails.logger.debug("  MIME: Artikkel '#{first.headword}' fantes fra før")
-        unless first.text.blank?  # not a disambiguation page - update it and create dis'n page
-          Article.without_versioning do
-            first.update_attributes!(:headword => ArticleXml.extended_headword(first), :ambiguous => true)
-          end
-          Rails.logger.debug("  MIME: Oppdaterte artikkel, nytt headword: '#{first.headword}'")
+        unless first.text.blank?  # not a disambiguation page - create dis'n page and update it
           Rails.logger.debug("  MIME: Oppretter disambiguation page")
-          a = Article.new(:headword => @headword, :ambiguous => true)
-          a.authors << ArticleXml.get_editor
-          a.save!
+          Rails.logger.debug("  MIME: Oppdaterte artikkel, nytt headword: '#{first.headword}'")
+          Article.without_versioning do
+            first.update_attributes!(:headword => ArticleXml.extended_headword(first))
+            first.update_attributes!(:disambiguation => disambiguation_text(create_or_update_disambiguation_for(first)))
+          end
         end
         this_article = Article.new(self.attributes)
-        this_article.ambiguous = true
         this_article.headword = ArticleXml.extended_headword(this_article)
         this_article.authors = @users
         Rails.logger.debug("  MIME: Oppretter endelig artikkel med headword '#{this_article.headword}'")
         this_article.save!
+        disamb_article = create_or_update_disambiguation_for(this_article)
+        Article.without_versioning do
+          this_article.update_attributes!(:disambiguation => disambiguation_text(disamb_article))
+        end
       end
     end
 
@@ -87,8 +88,7 @@ module Import
         :epoch_start => @epoch_start,
         :epoch_end => @epoch_end,
         :oldid => @oldid,
-        :definition => @clarification || @definition,
-        :ambiguous => @ambiguous
+        :definition => @clarification || @definition
       }
     end
 
@@ -130,6 +130,37 @@ module Import
       def get_editor
         get_user(ArticleXml.editor)
       end
+    end
+
+    private
+
+    def disambiguation_text(dis)
+      I18n.t('import.disambiguation.link_back_to', :headword => @headword, :headword_link => link_to(@headword, pretty_article_path(dis)))
+    end
+
+    def create_or_update_disambiguation_for(article)
+      a = Article.find_or_initialize_by(:headword => @headword)
+      if a.new_record?
+        a.authors << ArticleXml.get_editor
+      end
+      a.disambiguation = add_disambiguation_link(a.disambiguation, article)
+      Article.without_versioning do
+        a.save!
+      end
+      a
+    end
+
+    def add_disambiguation_link(text, article)
+      if text.blank?
+        "<p>" + I18n.t('import.disambiguation.multiple_articles_for', :headword => @headword) + '</p>' +
+          "<ul>\n<li>" + link_to(article.headword_presentation, pretty_article_path(article)) + "</li>\n</ul>"
+      else
+        text.sub(/<\/ul>/, "<li>" + link_to(article.headword_presentation, pretty_article_path(article)) + "</li>\n</ul>")
+      end
+    end
+
+    def controller
+      'articles'
     end
   end
 end

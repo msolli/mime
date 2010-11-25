@@ -2,6 +2,10 @@
 	padding-left: $main-padding-left;
 }
 
+@mixin margin-main {
+	margin-left: $main-padding-left;
+}
+
 @mixin fb-button {
 	a {
 		font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;

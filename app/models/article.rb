@@ -18,7 +18,7 @@ class Article
   field :definition
   field :years, :type => Array
   field :end_year, :type => Date
-  field :ambiguous, :type => Boolean
+  field :disambiguation
   field :ip
   field :tags_array, :type => Array
 
