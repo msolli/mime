@@ -32,8 +32,8 @@
 }
 
 @mixin intro-box {
-	margin: 5px 65px 5px ($main-margin-left - 13px);
-	padding: 10px;
+	margin: 5px;
+	padding: 10px 10px 10px 29px;
 	background: lighten($main-background-color, 5%);
 	border: 1px solid $box-border-color;
 	@include box-shadow($box-border-color);

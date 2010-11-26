@@ -24,7 +24,7 @@ header {
   @extend .clearfix;
 
   .title {
-    padding: 1em 0 0.3em $main-padding-left;
+    padding: 30px 0 10px $main-padding-left;
     float: left;
   }
   aside#user-links {
@@ -96,7 +96,7 @@ header {
     @include padding-main;
     background: $dark-grey-color;
     h1 {
-      padding-top: 0.5em;
+      padding-top: 16px;
       padding-bottom: 2px;
     }
   }
@@ -129,7 +129,7 @@ header {
   }
   aside.disambiguation {
     @include margin-main;
-    padding: 1em 35px 0 35px;
+    padding: 16px 35px 0 35px;
   }
   .articletext {
     @include articletext-layout;
@@ -138,7 +138,7 @@ header {
   }
   aside.meta {
     float: left;
-    padding-top: 1em;
+    padding-top: 16px;
     margin-left: 5px;
     width: 300px;
   }
@@ -148,8 +148,8 @@ header {
   aside.tags {
     background: white;
     border: 1px solid $box-border-color;
-    margin: 1em 65px 2em 35px;
-    padding: 1em 14px;
+    margin: 16px 65px 16px 33px;
+    padding: 12px 12px 8px 12px;
     clear: both;
     ul {
       li {

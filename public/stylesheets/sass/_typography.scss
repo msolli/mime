@@ -206,3 +206,12 @@ strong {
 em {
   font-style: italic;
 }
+
+/* Større tekst når Typekit ikke kan lastes (Firefox 3.0) */
+.wf-inactive {
+  #main {
+    .articletext {
+      font-size: 116%;
+    }
+  }
+}
