@@ -8,7 +8,7 @@ Egenskap: Artikkel med tilknyttet posisjon
   
   Bakgrunn:
     Gitt at jeg står på ny artikkel-siden
-    Og jeg fyller inn "Oppslagsord" med "Foo"
+    Og jeg fyller inn "article[headword]" med "Foo"
   
     @javascript
     Scenario: ikke tilegnet kart

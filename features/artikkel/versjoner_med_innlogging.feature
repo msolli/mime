@@ -9,7 +9,7 @@ Egenskap: Versjonering av artikler med innlogget bruker
   @devise @logged_in @javascript
   Scenario: innlogget og anonym versjon
     Gitt at jeg står på ny artikkel-siden
-    Når jeg fyller inn "Oppslagsord" med "Foo"
+    Når jeg fyller inn "article[headword]" med "Foo"
     Og jeg trykker "Opprett"
     Og jeg klikker "Logg ut"
     Og jeg står på artikkelredigering for "Foo"
@@ -22,7 +22,7 @@ Egenskap: Versjonering av artikler med innlogget bruker
   @devise
   Scenario: anonym og innlogget versjon
     Gitt at jeg står på ny artikkel-siden
-    Og jeg fyller inn "Oppslagsord" med "Foo"
+    Og jeg fyller inn "article[headword]" med "Foo"
     Og jeg trykker "Opprett"
     Og jeg logger inn
     Når jeg står på artikkelredigering for "Foo"

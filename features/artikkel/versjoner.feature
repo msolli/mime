@@ -8,7 +8,7 @@ Egenskap: Versjonering av artikler
 
   Bakgrunn:
     Gitt at jeg står på ny artikkel-siden
-    Og jeg fyller inn "Oppslagsord" med "Foo"
+    Og jeg fyller inn "article[headword]" med "Foo"
     Og jeg trykker "Opprett"
 
   Scenario: gå til versjonslogg
