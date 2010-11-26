@@ -554,6 +554,7 @@ header {
   margin-left: 0; }
 #main form.formtastic fieldset > ol > li label, #main form.formtastic fieldset > ol > li.string label, #main form.formtastic fieldset > ol > li.text label {
   float: none;
+  width: auto;
   margin-bottom: 3px; }
   #main form.formtastic fieldset > ol > li label abbr, #main form.formtastic fieldset > ol > li.string label abbr, #main form.formtastic fieldset > ol > li.text label abbr {
     padding-left: 1em; }

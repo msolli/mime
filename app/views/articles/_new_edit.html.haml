@@ -14,5 +14,6 @@
         :hint => t('formtastic.labels.other.maptastic-hint')
       
     = f.input :headword_presentation, :input_html => { :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword_presentation')}
+    = f.input :disambiguation, :as => :text, :input_html => { :rows => 4 }
   = f.buttons do
     = f.commit_button
