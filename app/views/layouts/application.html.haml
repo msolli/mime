@@ -16,20 +16,15 @@
     %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"}
     %script{:src => "http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js"}
     %script{:src => "http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js"}
-    %script{:src => "http://www.google.com/jsapi?key=ABQIAAAA5Dv5TxV8lPXuM3G_ZxUKdBRzYoIzFCn6WH8ww2gK3BwzWZF03hTYnQj9-M47JSP4lbSEWBeHiVcSQQ"}
-    %script{:type => 'text/javascript'}
-      :plain
-        google.load('maps', '3', {language: 'no', other_params: "sensor=false"});
+    %script{:src => "http://maps.google.com/maps/api/js?sensor=false&region=NO"}
     %script{:src => "http://use.typekit.com/odc3uil.js"}
-    / %script{:src => "http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"}
-    / %script{:src => "http://github.com/Modernizr/Modernizr/raw/master/modernizr.js"}
-    %script{:src => "http://github.com/Modernizr/Modernizr/raw/68a332b5da53cfdfb46194ab4d00601e3e05b335/modernizr.js"}
     = javascript_include_tag :ckeditor, :defaults
 
     = csrf_meta_tag
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}
 
   %body
+    #TODO
     .container
       %header
         .title= link_to t('mime.title'), root_path

@@ -8,7 +8,7 @@ no-NB:
   tooltips:
     articles:
       headword_presentation: 'Dersom tittelen på siden skal være en annen enn den som vises i oversikten, kan du skrive den inn her. F.eks. vil en person skrives som "Nordmann, Ola" i oversikten, mens i presentasjonen er "Ola Nordmann" ønskelig. Da skriver du inn "Ola Nordmann" i dette feltet.'
-      headword: Oppslagsord
+      headword: "Oppslagsord (påkrevet)"
   articles:
     new: Ny artikkel
     edit: Rediger
