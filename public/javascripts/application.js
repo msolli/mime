@@ -69,7 +69,8 @@ $(document).ready(function() {
 					conf	= this.getConf();
 			
 			conf.position = ['top right'];
-			conf.offset = [this.getTip().outerHeight() - 20, 25];
+			conf.offset = [this.getTip().outerHeight(), 10];
 		}
 	});
+	$('li.error [data-tooltip-enable]').focus();
 });

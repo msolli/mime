@@ -39,7 +39,6 @@ header {
 
 #messages {
   @include small-sans;
-  font-size: $font14px;
 }
 
 #main {
@@ -74,7 +73,12 @@ header {
   }
   aside.article-messages {
     @include small-sans;
-    font-size: $font14px;
+    a {
+      color: $link-color;
+      &:visited {
+        color: $link-color;
+      }
+    }
   }
   h2 {
     font-size: $font20px;
@@ -140,6 +144,11 @@ header {
 
 form.formtastic {
   fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
+    p.inline-errors {
+      @include small-sans;
+      font-size: $font12px;
+      color: $error-color;
+    }
     input[type="text"].headword {
       @include serif;
       font-size: $font32px;

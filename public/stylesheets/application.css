@@ -330,33 +330,22 @@ header {
           background: #fab45b; }
 
 #messages {
-  background: white;
   padding: 5px 0; }
   #messages #notice {
-    margin: 5px 65px 5px 22px;
-    padding: 10px;
-    background: #e2e2e2;
-    border: 3px solid #818f2f;
-    position: relative;
-    box-shadow: 0px 2px 10px #777777;
-    -moz-box-shadow: 0px 2px 10px #777777;
-    -webkit-box-shadow: 0px 2px 10px #777777;
-    behavior: url(/stylesheets/PIE.htc);
+    color: white;
+    margin: 5px;
+    padding: 10px 10px 10px 29px;
+    background: #79aba8;
     position: relative;
     border-radius: 8px;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
   #messages #alert {
-    margin: 5px 65px 5px 22px;
-    padding: 10px;
-    background: #e2e2e2;
-    border: 3px solid #8f3c2f;
-    position: relative;
-    box-shadow: 0px 2px 10px #777777;
-    -moz-box-shadow: 0px 2px 10px #777777;
-    -webkit-box-shadow: 0px 2px 10px #777777;
-    behavior: url(/stylesheets/PIE.htc);
+    color: white;
+    margin: 5px;
+    padding: 10px 10px 10px 29px;
+    background: #ec661d;
     position: relative;
     border-radius: 8px;
     -moz-border-radius: 8px;
@@ -428,15 +417,10 @@ header {
     margin-left: 5px;
     width: 300px; }
   #main aside.article-messages {
-    margin: 5px 65px 5px 22px;
-    padding: 10px;
-    background: #e2e2e2;
-    border: 3px solid #818f2f;
-    position: relative;
-    box-shadow: 0px 2px 10px #777777;
-    -moz-box-shadow: 0px 2px 10px #777777;
-    -webkit-box-shadow: 0px 2px 10px #777777;
-    behavior: url(/stylesheets/PIE.htc);
+    color: white;
+    margin: 5px;
+    padding: 10px 10px 10px 29px;
+    background: #79aba8;
     position: relative;
     border-radius: 8px;
     -moz-border-radius: 8px;
@@ -510,7 +494,7 @@ header {
     #main table.versions td, #main table.versions th {
       padding: 5px; }
     #main table.versions tr.current {
-      background: #d3d7bf; }
+      background: #d9e3e2; }
   #main div.maincol {
     padding-left: 35px; }
   #main .col {
@@ -543,6 +527,10 @@ header {
 #main form.formtastic fieldset > ol > li {
   width: 33.125em;
   overflow: visible; }
+#main form.formtastic fieldset > ol > li.error input[type="text"] {
+  border: 2px solid #b72727 !important; }
+#main form.formtastic fieldset > ol > li p.inline-errors {
+  margin: 0.5em 0 0 0; }
 #main form.formtastic fieldset > ol > li input[type="text"].headword, #main form.formtastic fieldset > ol > li.string input[type="text"].headword, #main form.formtastic fieldset > ol > li.text input[type="text"].headword {
   padding: 0.1em 0.2em 0 0.2em;
   margin-top: 0.5em; }
@@ -599,7 +587,7 @@ header {
 
 .tooltip {
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   width: 300px;
   position: relative;
   box-shadow: 0px 2px 10px #777777;
@@ -611,11 +599,11 @@ header {
     height: 1px;
     width: 1px;
     display: block;
-    border-width: 15px;
+    border-width: 10px;
     border-style: solid;
     border-color: transparent #fff transparent transparent;
-    top: 20px;
-    left: -30px; }
+    top: 10px;
+    left: -20px; }
 
 .clearfix:after, header:after, #main:after {
   clear: both;
@@ -652,8 +640,7 @@ header nav {
       text-decoration: underline; }
 
 #messages {
-  font-family: "Lucida Grande", Tahoma, Arial;
-  font-size: 87.5%; }
+  font-family: "Lucida Grande", Tahoma, Arial; }
 
 #main {
   color: #383838; }
@@ -684,8 +671,11 @@ header nav {
     font-style: italic;
     font-size: 87.5%; }
   #main aside.article-messages {
-    font-family: "Lucida Grande", Tahoma, Arial;
-    font-size: 87.5%; }
+    font-family: "Lucida Grande", Tahoma, Arial; }
+    #main aside.article-messages a {
+      color: #284d92; }
+      #main aside.article-messages a:visited {
+        color: #284d92; }
   #main h2 {
     font-size: 125%;
     font-weight: bold;
@@ -730,6 +720,10 @@ header nav {
     #main table.versions th {
       font-style: bold; }
 
+form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  font-size: 75%;
+  color: #b72727; }
 form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic fieldset > ol > li.string input[type="text"].headword, form.formtastic fieldset > ol > li.text input[type="text"].headword {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
   font-size: 200%;

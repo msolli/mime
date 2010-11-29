@@ -10,7 +10,7 @@ Mime::Application.routes.draw do
   match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
 
   constraints :id => /.*/ do
-    resources :articles, :only => [:new, :create, :show, :edit, :update] do
+    resources :articles do
       resources :versions, :only => [:index]
     end
   end
@@ -22,7 +22,7 @@ Mime::Application.routes.draw do
 
   # Oppslagsord
   constraints(lambda { |req| req.params[:slug].size >= 2 }) do
-    match '/:slug' => 'articles#show', :as => :pretty_article, :slug => /.*/
+    get '/:slug' => 'articles#show', :as => :pretty_article, :slug => /.*/
   end
 
   root :to => 'home#index'

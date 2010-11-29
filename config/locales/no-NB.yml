@@ -5,6 +5,10 @@ no-NB:
     messages:
       blank: kan ikke være tom
       invalid: er ugyldig
+    attributes:
+      headword:
+        blank: Artikkelen må nok ha et oppslagsord.
+        taken: Oppslagsordet du oppga fantes visst fra før. Vi har satt det tilbake til det det var.
   tooltips:
     articles:
       headword_presentation: 'Dersom tittelen på siden skal være en annen enn den som vises i oversikten, kan du skrive den inn her. F.eks. vil en person skrives som "Nordmann, Ola" i oversikten, mens i presentasjonen er "Ola Nordmann" ønskelig. Da skriver du inn "Ola Nordmann" i dette feltet.'
@@ -23,7 +27,7 @@ no-NB:
     headword: Oppslagsord
     back: "Tilbake til artikkelen"
     errors:
-      save: Artikkelen ble ikke lagret
+      save: "Artikkelen ble visst ikke lagret – sjekk feilene nedenfor:"
     login_teaser: "Du er ikke logget inn. Det er helt fint, for leksikonet er åpent for redigering av hvem som helst. Men hvis du ønsker navnet ditt under \"Bidragsytere\", så må du først %{login_link}."
     login_link: logge inn
     editable_defaults:

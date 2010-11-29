@@ -10,8 +10,9 @@ $box-border-color: #ccc;
 $link-color: #284D92;
 $link-visited-color: darken($link-color, 10%);
 $user-links-color: lighten($link-color, 10%);
-$message-notice-color: #818f2f;
-$message-alert-color: #8f3c2f;
+$message-notice-color: #98bfbc;
+$message-alert-color: #f0864c;
+$error-color: #b72727;
 
 $container-width: #{(1060/16)}em;
 $article-width: #{(530/16)}em;

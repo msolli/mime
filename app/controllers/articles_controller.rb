@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_filter :redirect_if_id, :only => [:show]
   before_filter :find_article, :only => [:show, :edit, :update]
   before_filter :add_ip_to_params, :only => [:create, :update]
+  before_filter :login_teaser, :only => [:new, :edit]
 
   def new
     @article = Article.new
@@ -61,6 +62,7 @@ class ArticlesController < ApplicationController
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
     else
       flash.alert = t('articles.errors.save')
+      @article.headword = @article.attribute_was('headword') unless @article.errors[:headword].blank?
       render :action => "edit"
     end
   end
@@ -76,5 +78,11 @@ class ArticlesController < ApplicationController
 
   def add_ip_to_params
     params[:article][:ip] = request.remote_ip
+  end
+
+  def login_teaser
+    unless user_signed_in?
+      flash.notice= t('articles.login_teaser', :login_link => self.class.helpers.link_to(t('articles.login_link'), user_omniauth_authorize_path(:facebook)))
+    end
   end
 end

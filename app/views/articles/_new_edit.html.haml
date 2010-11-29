@@ -1,7 +1,7 @@
 - unless @article.new_record?
   = render :partial => 'info', :locals => { :article => @article }
-- unless user_signed_in?
-  %aside.article-messages!= t('articles.login_teaser', :login_link => link_to(t('articles.login_link'), user_omniauth_authorize_path(:facebook)))
+= render :partial => "common/flash"
+
 = semantic_form_for setup_article(@article) do |f|
 
   = f.inputs do

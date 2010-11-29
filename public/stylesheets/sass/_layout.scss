@@ -79,7 +79,6 @@ header {
 }
 
 #messages {
-  background: white;
   padding: 5px 0;
   #notice {
     @include message-box($message-notice-color);
@@ -244,6 +243,16 @@ header {
     width: $article-width;
     overflow: visible;
   }
+  fieldset > ol > li.error {
+    input[type="text"] {
+      border: 2px solid $error-color !important;
+    }
+  }
+  fieldset > ol > li {
+    p.inline-errors {
+      margin: 0.5em 0 0 0;
+    }
+  }
   fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
     input[type="text"].headword {
       padding: 0.1em 0.2em 0 0.2em;
@@ -312,7 +321,7 @@ header {
 .tooltip {
 
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   width: 300px;
 
   @include box-shadow;
@@ -323,11 +332,11 @@ header {
     height: 1px;
     width: 1px;
     display: block;
-    border-width: 15px;
+    border-width: 10px;
     border-style: solid;
     border-color: transparent #fff transparent transparent;
-    top: 20px;
-    left: -30px;
+    top: 10px;
+    left: -20px;
   }
 }
 
