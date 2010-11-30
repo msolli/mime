@@ -349,3 +349,33 @@ header {
     visibility: hidden;
   }
 }
+
+.cke_skin_kama .cke_button .cke_button_mimeimage .cke_icon {
+	background-position: 0 -576px;
+}
+#dialog_file_uploadUploader {
+  width: 130px;
+  height: 40px;
+}
+
+.mimeimage-toolbar {
+  overflow: hidden;
+  position: absolute;
+  background-color: #ccc;
+  padding: 5px;
+  padding-left: 0;
+  
+  div {
+    border: 1px solid #ccc;
+    width: 8px;
+    height: 8px;
+    padding: 3px;
+    margin-left: 5px;
+    float: left;
+    cursor: pointer;
+    
+    &:hover {
+     border-color: #fff; 
+    }
+  }
+}

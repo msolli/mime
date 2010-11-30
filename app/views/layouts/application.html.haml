@@ -9,6 +9,10 @@
 
     = stylesheet_link_tag "http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css"
     = stylesheet_link_tag "application"
+    = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css"
+    = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/overcast/jquery-ui.css"
+    = stylesheet_link_tag "/lib/Jcrop/css/jquery.Jcrop.css"
+    = stylesheet_link_tag "/lib/jquery.uploadify-v2.1.4/uploadify.css"
 
     /[if lt IE 9]
       %script{:src => "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"}
@@ -20,6 +24,9 @@
     %script{:src => "http://maps.google.com/maps/api/js?sensor=false&region=NO"}
     %script{:src => "http://use.typekit.com/odc3uil.js"}
     = javascript_include_tag :ckeditor, :defaults
+    = javascript_include_tag '/lib/Jcrop/js/jquery.Jcrop.js'
+    = javascript_include_tag '/lib/jquery.uploadify-v2.1.4/swfobject.js'
+    = javascript_include_tag '/lib/jquery.uploadify-v2.1.4/jquery.uploadify.v2.1.4.js'
 
     = csrf_meta_tag
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}

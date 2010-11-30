@@ -15,7 +15,7 @@ CKEDITOR.plugins.add('mimelink', {
 		editor.on('doubleclick', function(evt) {
 			var element = CKEDITOR.plugins.link.getSelectedLink() || evt.data.element;
 			if(element && element.is('a')) {
-				evt.data.dialog = 'mimelink';
+				evt.data.dialog = pluginName;
 			}
 		});
 		
@@ -36,14 +36,14 @@ CKEDITOR.plugins.add('mimelink', {
 		});
 		
 		// From link plugin
-		editor.addCommand( 'unlink', new CKEDITOR.unlinkCommand() );		
+		// editor.addCommand( 'unlink', new CKEDITOR.unlinkCommand() );		
 		editor.ui.addButton( 'Unlink',
 		{
 			label : editor.lang.unlink,
 			command : 'unlink'
 		} );
 		
-		CKEDITOR.dialog.add(pluginName, this.path + '/dialogs/mimelink.js');
+		CKEDITOR.dialog.add(pluginName, this.path + 'dialogs/mimelink.js');
 	}
 });
 

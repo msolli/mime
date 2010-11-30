@@ -93,7 +93,7 @@ GEM
     culerity (0.2.12)
     database_cleaner (0.6.0)
     diff-lcs (1.1.2)
-    dragonfly (0.7.7)
+    dragonfly (0.8.1)
       rack
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -198,7 +198,6 @@ GEM
     rake (0.8.7)
     rest-client (1.6.1)
       mime-types (>= 1.16)
-    rmagick (2.13.1)
     rspec (2.0.1)
       rspec-core (~> 2.0.1)
       rspec-expectations (~> 2.0.1)
@@ -277,7 +276,6 @@ DEPENDENCIES
   oa-oauth
   rails (~> 3.0)
   rails3-generators
-  rmagick
   rspec-rails (~> 2.0.0)
   ruby-debug19
   ruby_parser

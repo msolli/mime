@@ -1,6 +1,6 @@
 ### The dragonfly app ###
 app = Dragonfly[:attachments]
-app.configure_with(:rmagick)
+app.configure_with(:imagemagick)
 app.configure_with(:rails) do |c|
   c.datastore = Dragonfly::DataStorage::MongoDataStore.new(
     :database => Mongoid.database.name

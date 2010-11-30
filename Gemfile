@@ -16,7 +16,6 @@ gem "escape_utils" # A way to silence stupid stupid stupid Rack::Utils::escape
 gem 'ckeditor', :git => "http://github.com/budstikka/rails-ckeditor.git", :branch => 'rails3'
 
 # attachment handling
-gem 'rmagick',  :require => 'RMagick'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly'
 

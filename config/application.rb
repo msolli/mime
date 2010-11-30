@@ -52,6 +52,6 @@ module Mime
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-    config.action_view.javascript_expansions[:defaults] = %w(rails typekit jquery.timeago jquery.timeago.no jquery.tools.tooltip maptastic)
+    config.action_view.javascript_expansions[:defaults] = %w(rails typekit jquery.imgload jquery.timeago jquery.timeago.no jquery.tools.tooltip maptastic)
   end
 end
