@@ -11,6 +11,7 @@ CKEDITOR.plugins.add('mimelink', {
 		var pluginName = 'mimelink';
 		
 		editor.addCommand(pluginName, new CKEDITOR.dialogCommand(pluginName));
+		editor.addCommand( 'mime_unlink', new CKEDITOR.unlinkCommand() );
 
 		editor.on('doubleclick', function(evt) {
 			var element = CKEDITOR.plugins.link.getSelectedLink() || evt.data.element;
@@ -22,7 +23,7 @@ CKEDITOR.plugins.add('mimelink', {
 		editor.on( 'selectionChange', function( evt )
 			{
 				// From link plugin
-				var command = editor.getCommand( 'unlink' ),
+				var command = editor.getCommand( 'mime_unlink' ),
 					element = evt.data.path.lastElement && evt.data.path.lastElement.getAscendant( 'a', true );
 				if ( element && element.getName() == 'a' && element.getAttribute( 'href' ) )
 					command.setState( CKEDITOR.TRISTATE_OFF );
@@ -31,8 +32,9 @@ CKEDITOR.plugins.add('mimelink', {
 			} );
 		
 		editor.ui.addButton('MimeLink', {
-			label: 'Internlink',
-			command: pluginName
+			label: 'Lag lenke',
+			command: pluginName,
+			icon: this.path + '/images/link.png'
 		});
 		
 		// From link plugin
@@ -40,7 +42,8 @@ CKEDITOR.plugins.add('mimelink', {
 		editor.ui.addButton( 'Unlink',
 		{
 			label : editor.lang.unlink,
-			command : 'unlink'
+			command : 'mime_unlink',
+			icon: this.path + '/images/unlink.png'
 		} );
 		
 		CKEDITOR.dialog.add(pluginName, this.path + 'dialogs/mimelink.js');
