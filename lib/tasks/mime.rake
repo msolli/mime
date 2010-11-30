@@ -123,6 +123,28 @@ namespace :mime do
       end
     end
 
+    task :emne_skole => :read do
+      @doc.xpath('//article[starts-with(@id_def, "skole")]').each do |node|
+        puts node.xpath('.//field[@id="headword"]').first.content
+      end
+    end
+
+    task :emne_idrettslag => :read do
+      @doc.xpath('//field[@id="subject"]').each do |node|
+        if node.content =~ /^570/
+          puts node.xpath('..//field[@id="headword"]').first.content
+        end
+      end
+    end
+
+    task :emne_kultur => :read do
+      @doc.xpath('//field[@id="subject"]').each do |node|
+        if node.content =~ /^010/
+          puts node.xpath('..//field[@id="headword"]').first.content
+        end
+      end
+    end
+
     task :read do
       @doc = Nokogiri::XML(File.open("#{Rails.root}/tmp/import/abl.xml"), nil, "utf-8") do |config|
         config.strict.noent
