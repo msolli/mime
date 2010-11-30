@@ -71,15 +71,6 @@ header {
     font-style: italic;
     font-size: $font14px;
   }
-  aside.article-messages {
-    @include small-sans;
-    a {
-      color: $link-color;
-      &:visited {
-        color: $link-color;
-      }
-    }
-  }
   h2 {
     font-size: $font20px;
     font-weight: bold;

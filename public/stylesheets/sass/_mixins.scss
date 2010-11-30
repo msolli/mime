@@ -32,11 +32,9 @@
 }
 
 @mixin intro-box {
-  margin: 5px;
-  padding: 10px 10px 10px 29px;
-  background: lighten($main-background-color, 5%);
+  @include message-box(lighten($main-background-color, 5%));
+  color: $text-color;
   border: 1px solid $box-border-color;
-  @include box-shadow($box-border-color);
   @include rounded-corners;
 }
 
@@ -44,7 +42,8 @@
   color: white;
   margin: 5px;
   padding: 10px 10px 10px 29px;
-  background: darken($background-color, 10%);
+  background: $background-color;
+  @include box-shadow($box-border-color);
   @include rounded-corners;
 }
 

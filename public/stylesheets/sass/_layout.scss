@@ -81,10 +81,10 @@ header {
 #messages {
   padding: 5px 0;
   #notice {
-    @include message-box($message-notice-color);
+    @include message-box(darken($message-notice-color, 10%));
   }
   #alert {
-    @include message-box($message-alert-color);
+    @include message-box(darken($message-alert-color, 10%));
   }
 }
 
@@ -141,15 +141,9 @@ header {
     margin-left: 5px;
     width: 300px;
   }
-  aside.article-messages {
-    @include message-box($message-notice-color);
-  }
-  aside.tags,
   aside.external-links {
     margin: 16px 65px 16px 33px;
     clear: both;
-  }
-  aside.external-links {
     ul {
       li {
         margin-left: 20px;
@@ -160,7 +154,9 @@ header {
   aside.tags {
     background: white;
     border: 1px solid $box-border-color;
+    margin: 16px 33px 16px 33px;
     padding: 12px 12px 8px 12px;
+    clear: both;
     ul {
       li {
         display: inline;

@@ -82,7 +82,7 @@ class ArticlesController < ApplicationController
 
   def login_teaser
     unless user_signed_in?
-      flash.notice= t('articles.login_teaser', :login_link => self.class.helpers.link_to(t('articles.login_link'), user_omniauth_authorize_path(:facebook)))
+      flash.notice= t('articles.login_teaser_html', :login_link => self.class.helpers.link_to(t('articles.login_link'), user_omniauth_authorize_path(:facebook)))
     end
   end
 end
