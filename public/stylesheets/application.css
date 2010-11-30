@@ -581,8 +581,13 @@ header {
   overflow: visible; }
 #main form.formtastic fieldset > ol > li.error input[type="text"] {
   border: 2px solid #b72727 !important; }
-#main form.formtastic fieldset > ol > li p.inline-errors {
+#main form.formtastic fieldset > ol > li .inline-errors {
   margin: 0.5em 0 0 0; }
+#main form.formtastic fieldset > ol > li ul {
+  padding-left: 2em;
+  margin-bottom: 1em; }
+  #main form.formtastic fieldset > ol > li ul li {
+    list-style-type: disc; }
 #main form.formtastic fieldset > ol > li input[type="text"].headword, #main form.formtastic fieldset > ol > li.string input[type="text"].headword, #main form.formtastic fieldset > ol > li.text input[type="text"].headword {
   padding: 0.1em 0.2em 0 0.2em;
   margin-top: 0.5em; }
@@ -802,10 +807,13 @@ header nav {
     #main table.versions th {
       font-style: bold; }
 
-form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors {
+form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li .inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.string .inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors, form.formtastic fieldset > ol > li.text .inline-errors {
   font-family: "Lucida Grande", Tahoma, Arial;
   font-size: 75%;
   color: #b72727; }
+  form.formtastic fieldset > ol > li p.inline-errors a, form.formtastic fieldset > ol > li .inline-errors a, form.formtastic fieldset > ol > li.string p.inline-errors a, form.formtastic fieldset > ol > li.string .inline-errors a, form.formtastic fieldset > ol > li.text p.inline-errors a, form.formtastic fieldset > ol > li.text .inline-errors a {
+    color: #b72727;
+    text-decoration-style: dashed; }
 form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic fieldset > ol > li.string input[type="text"].headword, form.formtastic fieldset > ol > li.text input[type="text"].headword {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
   font-size: 200%;

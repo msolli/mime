@@ -6,5 +6,4 @@ module ArticlesHelper
     
     article
   end
-  
 end

@@ -30,5 +30,11 @@
             
   = f.buttons do
     = f.commit_button
+    - unless @article.errors.empty?
+      %li
+        %p.inline-errors= t('articles.errors.list')
+        %ul
+          - @article.errors.each do |attr, message|
+            %li.inline-errors= link_to(t("articles.#{attr}"), "#article_#{attr}")
   - session_key_name = Rails.application.config.session_options[:key]
   = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'

@@ -12,3 +12,7 @@ Egenskap: Artikkel med feil
     Scenario: melding om at artikkel ikke ble lagret
       Når jeg trykker "Opprett"
       Så skal jeg se "ikke lagret" under "#alert"
+
+    Scenario: feilmeldinger ved lagre-knappen
+      Når jeg trykker "Opprett"
+      Så skal jeg se "Oppslagsord" under lagre-knappen

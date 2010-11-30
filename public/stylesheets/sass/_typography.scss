@@ -144,10 +144,14 @@ header {
 
 form.formtastic {
   fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
-    p.inline-errors {
+    p.inline-errors, .inline-errors {
       @include small-sans;
       font-size: $font12px;
       color: $error-color;
+      a {
+        color: $error-color;
+        text-decoration-style: dashed;
+      }
     }
     input[type="text"].headword {
       @include serif;

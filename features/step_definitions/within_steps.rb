@@ -5,7 +5,8 @@
   'under nåværende versjon' => '.current',
   'under første versjon' => '.version-number-1',
   'i artikkel-lista' => 'table.articles',
-  'eksternelenker-seksjonen' => '.external-links'
+  'eksternelenker-seksjonen' => '.external-links',
+  'under lagre-knappen' => 'fieldset.buttons'
 }.
 each do |within, selector|
   Then /^(.+) #{within}$/ do |step|

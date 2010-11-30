@@ -29,6 +29,7 @@ no-NB:
     external_links: Eksterne lenker
     errors:
       save: "Artikkelen ble visst ikke lagret – sjekk feilene nedenfor:"
+      list: "Feil i disse feltene forhindret at artikkelen ble lagret:"
     login_teaser: "Du er ikke logget inn. Det er helt fint, for leksikonet er åpent for redigering av hvem som helst. Men hvis du ønsker navnet ditt under \"Bidragsytere\", så må du først %{login_link}."
     login_link: logge inn
     editable_defaults:
