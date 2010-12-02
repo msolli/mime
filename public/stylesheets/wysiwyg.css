@@ -2,7 +2,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   padding-left: 35px;
-  max-width: 33.125em;
+  width: 33.125em;
   padding-top: 1em;
   overflow: visible;
   padding: 2px; }
@@ -34,4 +34,5 @@ body {
     body .image-wrap img {
       display: block; }
     body .image-wrap p {
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      line-height: 1em; }

@@ -10,7 +10,11 @@ class MediasController < ApplicationController
     respond_to do |format|
       format.json do
         obj = {:url => m.file.url, :media => m, :success => true, :size => "#{m.file.width}x#{m.file.height}"}
-        obj[:resized_url] = m.file.thumb("#{params[:size]}>").url if params[:size]
+        if params[:size]
+          t = m.file.thumb("#{params[:size]}>")
+          obj[:thumb] = t.url
+          obj[:thumb] = {:width => t.width, :height => t.height, :url => t.url}
+        end
         
         render :json => obj
       end 

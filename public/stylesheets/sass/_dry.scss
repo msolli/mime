@@ -5,7 +5,7 @@
 
 @mixin articletext-layout {
     @include padding-main;
-    max-width: $article-width;
+    width: $article-width;
     padding-top: 1em;
     overflow: visible;
     p {
@@ -42,6 +42,7 @@
       }
       p {
         margin-bottom: 0;
+        line-height: 1em;
       }
     }
 }

@@ -383,7 +383,7 @@ header {
     padding: 16px 35px 0 35px; }
   #main .articletext {
     padding-left: 35px;
-    max-width: 33.125em;
+    width: 33.125em;
     padding-top: 1em;
     overflow: visible;
     float: left;
@@ -416,7 +416,8 @@ header {
       #main .articletext .image-wrap img {
         display: block; }
       #main .articletext .image-wrap p {
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        line-height: 1em; }
   #main aside.meta {
     float: left;
     padding-top: 16px;

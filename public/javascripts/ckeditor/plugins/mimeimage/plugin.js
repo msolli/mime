@@ -93,6 +93,17 @@
 			var path = this.path;
 			
 				editor.on('dataReady', function(evt) {
+					// Disable image drag
+					editor.document.on('dragstart', function(evt) {
+						if(evt.data.$.target.nodeName.toLowerCase() == 'img') {
+							if(evt.data.$.preventDefault) {
+								evt.data.$.preventDefault();
+							} else {
+								evt.data.$.returnValue = false;
+							}
+						}
+					});
+					
 					var body = editor.document.getElementsByTag('body');
 
 					jQuery(body.$).delegate('img', 'hover', function(e) {
@@ -118,6 +129,7 @@
 					console.log(el);
 				}
 			});
+			
 			// editor.addCommand(pluginName, insertDummyImage);
 			editor.ui.addButton('MimeImage', {
 				label: 'Bilde',
