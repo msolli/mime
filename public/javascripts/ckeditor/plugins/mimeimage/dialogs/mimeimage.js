@@ -67,7 +67,7 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 				height: 100,
 				scriptData: {
 					// Double encode intended
-					authenticity_token: encodeURIComponent(encodeURIComponent(jQuery('meta[name="csrf-token"]').attr('content'))),
+					authenticity_token: encodeURI(encodeURIComponent(jQuery('meta[name="csrf-token"]').attr('content'))),
 					format: 'json',
 					size: '250x200'
 				},
@@ -76,7 +76,7 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 			},
 			session_key = jQuery('#session_key_name');
 			
-			settings.scriptData[session_key.attr('name')] = session_key.val();
+			settings.scriptData[session_key.attr('name')] = encodeURI(encodeURIComponent(session_key.val()));
 			jQuery('#dialog_file_upload').siblings().remove().end().uploadify(settings);
 		}
 	};
