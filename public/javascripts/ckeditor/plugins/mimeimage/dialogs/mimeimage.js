@@ -11,15 +11,23 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 	var	lang = editor.lang.mimeimage,
 			onUploadComplete = function(event, id, file, response, data) {
 				var	jRes = jQuery.parseJSON(response),
+						caption = editor.document.createElement('p'),
+						wrapper = editor.document.createElement('div', { attributes: {
+								'class': 'image-wrap',
+								style: 'float: right'
+							}
+						}),
 						img = editor.document.createElement('img', { attributes: {
 								src: jRes.resized_url,
 								'data-id': jRes.media._id,
 								'contenteditable': false,
-								'data-size': jRes.size,
-								style: 'float: right'
+								'data-size': jRes.size
 							}
 						});
-				editor.insertElement(img);
+				caption.appendText('Skriv bildetittel her');
+				wrapper.append(img);
+				wrapper.append(caption);
+				editor.insertElement(wrapper);
 				editor.fire('dataReady');
 			};
 	

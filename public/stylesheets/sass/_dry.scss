@@ -31,13 +31,17 @@
     .image-wrap {
       float: right;
       position: relative;
-      width: 128px;
-      aside.image {
-        margin-top: 6px;
-        width: 228px;
-        border: 1px solid $box-border-color;
-        padding: 5px;
-        background: white;
+      border: 1px solid $box-border-color;
+      padding: 5px;
+      background: white;
+      max-width: 228px;
+      @include rounded-corners(0 0 5px 5px);
+      
+      img {
+        display: block;
+      }
+      p {
+        margin-bottom: 0;
       }
     }
 }

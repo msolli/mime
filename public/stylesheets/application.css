@@ -404,13 +404,19 @@ header {
     #main .articletext .image-wrap {
       float: right;
       position: relative;
-      width: 128px; }
-      #main .articletext .image-wrap aside.image {
-        margin-top: 6px;
-        width: 228px;
-        border: 1px solid #cccccc;
-        padding: 5px;
-        background: white; }
+      border: 1px solid #cccccc;
+      padding: 5px;
+      background: white;
+      max-width: 228px;
+      position: relative;
+      border-radius: 0 0 5px 5px;
+      -moz-border-radius: 0 0 5px 5px;
+      -webkit-border-radius: 0 0 5px 5px;
+      behavior: url(/stylesheets/PIE.htc); }
+      #main .articletext .image-wrap img {
+        display: block; }
+      #main .articletext .image-wrap p {
+        margin-bottom: 0; }
   #main aside.meta {
     float: left;
     padding-top: 16px;

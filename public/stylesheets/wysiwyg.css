@@ -22,10 +22,16 @@ body {
   body .image-wrap {
     float: right;
     position: relative;
-    width: 128px; }
-    body .image-wrap aside.image {
-      margin-top: 6px;
-      width: 228px;
-      border: 1px solid #cccccc;
-      padding: 5px;
-      background: white; }
+    border: 1px solid #cccccc;
+    padding: 5px;
+    background: white;
+    max-width: 228px;
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    behavior: url(/stylesheets/PIE.htc); }
+    body .image-wrap img {
+      display: block; }
+    body .image-wrap p {
+      margin-bottom: 0; }
