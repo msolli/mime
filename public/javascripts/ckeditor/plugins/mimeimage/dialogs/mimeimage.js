@@ -15,7 +15,8 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 								src: jRes.resized_url,
 								'data-id': jRes.media._id,
 								'contenteditable': false,
-								'data-size': jRes.size
+								'data-size': jRes.size,
+								style: 'float: right'
 							}
 						});
 				editor.insertElement(img);
