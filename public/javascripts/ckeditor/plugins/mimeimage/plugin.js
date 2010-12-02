@@ -106,30 +106,18 @@
 					
 					var body = editor.document.getElementsByTag('body');
 
-					jQuery(body.$).delegate('img', 'hover', function(e) {
-						if(e.type == 'mouseenter') {
-							CKEDITOR.plugins[pluginName].onMouseOver(editor, this, path);
-						} else {
-							CKEDITOR.plugins[pluginName].onMouseOut(editor, this, path);
-						}
+					jQuery(body.$).delegate('div', 'hover', function(e) {
+						CKEDITOR.plugins[pluginName].addHover(editor, this, path);
 					});
 				// jQuery(imgs.$).each(function() {
 				// 	CKEDITOR.plugins[pluginName].createImageToolbar(editor, this, path);
 				// });
 			});
-			
+
 			editor.on('change', function() {
 				editor.fire('dataReady');
 			});
-			
-			editor.on('mouseover', function(evt) {
-				var el = evt.data.element;
-				console.log(evt);
-				if(el && element.is('img')) {
-					console.log(el);
-				}
-			});
-			
+
 			// editor.addCommand(pluginName, insertDummyImage);
 			editor.ui.addButton('MimeImage', {
 				label: 'Bilde',
@@ -139,30 +127,42 @@
 	});
 
 	CKEDITOR.plugins[pluginName] = {
-		onMouseOver: function(editor, element, path) {
-			var toolbar	= jQuery('<div class="mimeimage-toolbar"/>'),
-					el			= jQuery(element),
-					edo			= jQuery(editor.element.$).next().find('iframe').offset();
+		addHover: function(editor, element, path) {
+			var	el	= jQuery(element),
+					toolbar = this.getToolBar(editor, element, path),
+					edo	= jQuery(editor.element.$).next().find('iframe').offset(),
+					show = function() {
+						toolbar.css({
+							left: edo.left + el.offset().left,
+							top: edo.top + el.offset().top - toolbar.outerHeight()
+						}).show();
+					},
+					hide = function() {
+						toolbar.hide();
+					};
 			
-			
-			this.addDefaultButtons(editor.lang.mimeimage, toolbar, el, path);			
-
-			toolbar.appendTo('body');
-			el.bind('load', function() {
-				var tshow = function() {
-					toolbar.css({
-						left: edo.left + el.offset().left,
-						top: edo.top + el.offset().top - toolbar.outerHeight()
-					}).show();
-				};
-				
-				el.hover(tshow, function() { toolbar.hide(); });
-				toolbar.hover(tshow, function() { toolbar.hide(); });
-			});
+			el.hover(show, hide);
+			toolbar.hover(show, hide);
 			
 		},
-		onMouseOut: function(editor, element, path) {
+		createToolBar: function(editor, element, path) {
+			var toolbar	= jQuery('<div class="mimeimage-toolbar">'),
+					el			= jQuery(element);
+					
+			this.addDefaultButtons(editor.lang.mimeimage, toolbar, el, path);
+			toolbar.appendTo('body').hide();
 			
+			return toolbar;
+		},
+		getToolBar: function(editor, element, path) {
+			var key = 'mimeimage-toolbar',
+					t = jQuery(element).data(key);
+			if(!t) {
+				t = this.createToolBar(editor, element, path);
+				jQuery(element).data(key, t);
+			}
+			
+			return t;
 		},
 		addButton: function(toolbar, name, image, callback) {
 			jQuery('<div title="'+name+'"/>')
