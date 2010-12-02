@@ -85,7 +85,7 @@ CKEDITOR.dialog.add('mimelink', function(editor) {
 					{
 						type: 'text',
 						id: 'linkInput',
-						label: 'Lenke',
+						label: 'Oppslagsord',
 						labelLayout: 'vertical',
 						setup: function(value) {
 							this.setValue(value);
