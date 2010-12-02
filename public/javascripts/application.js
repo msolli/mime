@@ -73,4 +73,13 @@ $(document).ready(function() {
 		}
 	});
 	$('li.error [data-tooltip-enable]').focus();
+	
+	// Disable enter to submit for map search
+	$('#maptastic-search').keypress(function(e) {
+		if(e.keyCode == '13') {
+			e.preventDefault();
+			e.stopPropagation();
+			return false;
+		}
+	});
 });
