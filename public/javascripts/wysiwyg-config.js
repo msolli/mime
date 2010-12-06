@@ -7,6 +7,7 @@ CKEDITOR.editorConfig = function( config )
 	config.removePlugins = 'link,forms,image'; // Remove link and image to avoid doubleclick actions
 	config.height = 500;
 	config.defaultLanguage = 'nb';
+	config.docType = '<!DOCTYPE html>';
 	config.contentsCss = ['http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css', '/stylesheets/wysiwyg.css'];
 	config.toolbar_mime = [
 		[	'Format',
