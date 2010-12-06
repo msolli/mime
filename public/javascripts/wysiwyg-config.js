@@ -2,11 +2,10 @@ CKEDITOR.editorConfig = function( config )
 {
 	config.toolbar = 'mime';
 	config.toolbarCanCollapse = false;
-	config.resize_dir = 'vertical';
 	config.format_tags = 'p;h2;h3';
-	config.extraPlugins = 'mimeimage,mimelink,autogrow';
-	config.removePlugins = 'link,forms,image'; // Remove this to avoid the plugin registering for doubleclicks on links
-	config.autoGrow_minHeight = 500;
+	config.extraPlugins = 'mimeimage,mimelink';
+	config.removePlugins = 'link,forms,image'; // Remove link and image to avoid doubleclick actions
+	config.height = 500;
 	config.defaultLanguage = 'nb';
 	config.contentsCss = ['http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css', '/stylesheets/wysiwyg.css'];
 	config.toolbar_mime = [

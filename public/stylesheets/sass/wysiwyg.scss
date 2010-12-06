@@ -6,5 +6,6 @@ body {
   @include articletext-typography;
   @include articletext-layout;
   
+  width: auto;
   padding: 2px;
 }

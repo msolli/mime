@@ -5,6 +5,7 @@ body {
   width: 33.125em;
   padding-top: 1em;
   overflow: visible;
+  width: auto;
   padding: 2px; }
   body p {
     margin-bottom: 1em; }
