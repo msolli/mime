@@ -27,7 +27,8 @@
     strong {
       font-weight: bold;
     }
-
+    
+    figure,
     .image-wrap {
       float: right;
       position: relative;
@@ -40,7 +41,9 @@
       img {
         display: block;
       }
+      figurecaption,
       p {
+        display: block;
         margin-bottom: 0;
         line-height: 1em;
       }

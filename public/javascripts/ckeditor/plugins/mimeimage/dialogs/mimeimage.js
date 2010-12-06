@@ -11,10 +11,10 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 	var	lang = editor.lang.mimeimage,
 			onUploadComplete = function(event, id, file, response, data) {
 				var	jRes = jQuery.parseJSON(response),
-						newData = '<div class="image-wrap" style="float: right">' +
+						newData = '<figure contenteditable="true" style="float: right">' +
 						'<img src="'+jRes.thumb.url+'" data-id="'+jRes.media._id+'" contenteditable="false" data-size="'+jRes.size+'">' +
-						'<p style="width: '+jRes.thumb.width+'px">Skriv bildetittel her</p>' +
-						'</div>' +
+						'<figurecaption style="width: '+jRes.thumb.width+'px">Skriv bildetittel her</figurecaption>' +
+						'</figure>' +
 						'<p></p>';
 
 				editor.insertHtml(newData);

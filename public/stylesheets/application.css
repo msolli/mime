@@ -401,6 +401,7 @@ header {
       font-style: italic; }
     #main .articletext strong {
       font-weight: bold; }
+    #main .articletext figure,
     #main .articletext .image-wrap {
       float: right;
       position: relative;
@@ -413,9 +414,14 @@ header {
       -moz-border-radius: 0 0 5px 5px;
       -webkit-border-radius: 0 0 5px 5px;
       behavior: url(/stylesheets/PIE.htc); }
+      #main .articletext figure img,
       #main .articletext .image-wrap img {
         display: block; }
+      #main .articletext figure figurecaption,
+      #main .articletext figure p,
+      #main .articletext .image-wrap figurecaption,
       #main .articletext .image-wrap p {
+        display: block;
         margin-bottom: 0;
         line-height: 1em; }
   #main aside.meta {
