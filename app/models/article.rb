@@ -30,8 +30,7 @@ class Article
   validates_uniqueness_of :headword
   validates_associated :location, :external_links
   
-  accepts_nested_attributes_for :location, :external_links, 
-    :allow_destroy => true
+  accepts_nested_attributes_for :location, :external_links, :allow_destroy => true
   
   # We do this because mongodb doesn't allow index fields to be null
   # They can however be absent from the document…

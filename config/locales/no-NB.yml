@@ -92,6 +92,7 @@ no-NB:
       external_link:
         href: Adresse
         text: Lenketekst
+        _destroy: Slett
   words:
     or: eller
     search: søk

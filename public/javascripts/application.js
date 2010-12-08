@@ -51,6 +51,36 @@ $(document).ready(function() {
 			}
 		}
 	})();
+	
+	$('#external-links').find('button').click(function() {
+		var li = $(this).parents('ol.link').parent();
+		
+		if($(this).hasClass('add')) {
+			var new_li = li.clone(true);
+			
+			new_li.find('*[for],*[id]').andSelf().each(function() {
+				var that = this;
+				$.each(['for', 'id', 'name'], function(key, value) {
+					var att = $(that).attr(value);
+					if(att) {
+						att = att.replace(/(\d+)/, function(all, group_1) {
+							return (parseInt(group_1, 10) + 1);
+						});
+
+						$(that).attr(value, att);
+					}
+				});
+			});
+			
+			new_li.find('input').each(function() { $(this).val(""); } );
+					
+			li.parent().append(new_li);
+		} else if($(this).hasClass('remove')) {
+			if(!li.is(':last-child')) {
+				li.remove();
+			}
+		}
+	});
 
 	// jQuery.timeago() (http://timeago.yarp.com/)
 	$.timeago.settings.cutoff = 7*24*60*60*1000;

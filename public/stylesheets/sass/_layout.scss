@@ -258,16 +258,46 @@ header {
 
     &#external-links {
       
+      button {
+        padding: 0;
+        border: 0;
+        background-color: inherit;
+        cursor: pointer;
+        &.add {
+          display: none;
+        }
+        &.remove {
+          display: inline;
+        }
+      }
+      
       &> ol > li {
         padding: 5px 0;
+        
+        &:last-child > ol > li button {
+          &.add {
+            display: inline;
+          }
+          &.remove {
+            display: none;
+          }
+        }
       
         ol {        
           overflow: hidden;
           li {
             float: left;
-          
-            label {
-              margin-left: 10px;
+            
+            &.link-text {
+              label {
+                margin-left: 10px;
+              }
+              
+              & + li {
+                input {
+                  margin: 0 5px 0 10px;
+                }
+              }
             }
           }
         }
@@ -278,7 +308,7 @@ header {
         }
         input[type="text"] {
           float: left;
-          width: 155px;
+          width: 140px;
           margin-left: 10px;
         }
       }

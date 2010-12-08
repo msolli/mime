@@ -17,9 +17,16 @@
   = f.inputs :name => t('articles.external_links'), :id => 'external-links' do
     = f.semantic_fields_for :external_links do |external_links_f|
       %li
-        %ol
+        %ol.link
           = external_links_f.input :href
-          = external_links_f.input :text
+          = external_links_f.input :text, :wrapper_html => {:class => 'link-text'}
+          - unless external_links_f.object.new_record?
+            = external_links_f.input :_destroy, :as => :boolean
+          - else # There should only be one object getting in here, the one we built in #setup_company helper
+            %li
+              %button.add{:type => 'button'}= image_tag('icons/add.png')
+              %button.remove{:type => 'button'}= image_tag('icons/delete.png')
+            
             
   = f.buttons do
     = f.commit_button
