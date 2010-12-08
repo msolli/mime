@@ -10,6 +10,7 @@ describe Article do
   it { should have_field(:headword_presentation).of_type(String) }
   it { should have_field(:definition).of_type(String) }
   it { should embed_one(:location) }
+  it { should embed_many(:external_links) }
   it { should have_field(:years).of_type(Array) }
   it { should have_field(:end_year).of_type(Date) }
   it { should have_field(:disambiguation).of_type(String) }
@@ -19,6 +20,7 @@ describe Article do
   it { should validate_presence_of(:headword) }
   it { should validate_uniqueness_of(:headword) }
   it { should validate_associated(:location) }
+  it { should validate_associated(:external_links) }
 
   it "is valid with valid attributes" do
     article = Article.new(:headword => 'foo')
@@ -81,6 +83,18 @@ describe Article do
       @article.location = Location.new
       @article.save.should be_true
       @article.location.should be_nil
+    end
+  end
+  
+  describe "external_links" do
+    before :each do
+      @article = Article.new :headword => 'foo'
+      @article.external_links << ExternalLink.new(:href => 'http://budstikka.no', :text => 'Budstikka')
+    end
+    
+    it 'should be valid' do
+      @article.should be_valid
+      lambda { @article.save }.should change(Article, :count).by(1)
     end
   end
 

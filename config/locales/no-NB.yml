@@ -26,6 +26,7 @@ no-NB:
     redirected: "omdirigert fra %{from}"
     headword: Oppslagsord
     back: "Tilbake til artikkelen"
+    external_links: Eksterne lenker
     errors:
       save: "Artikkelen ble visst ikke lagret – sjekk feilene nedenfor:"
     login_teaser: "Du er ikke logget inn. Det er helt fint, for leksikonet er åpent for redigering av hvem som helst. Men hvis du ønsker navnet ditt under \"Bidragsytere\", så må du først %{login_link}."
@@ -48,6 +49,8 @@ no-NB:
     tags: Nøkkelord
     no_tags: "Artikkelen har ingen nøkkelord. Bli med, bidra til leksikonet ved å %{add_tags_link}."
     add_tags: "legge til nøkkelord"
+  external_links:
+    external_links: Eksterne lenker
   users:
     profile:
       profile: "Brukerprofil for %{for}"
@@ -86,6 +89,9 @@ no-NB:
         tags: Nøkkelord
         disambiguation: "Andre betydninger"
       location: Posisjon
+      external_link:
+        href: Adresse
+        text: Lenketekst
   words:
     or: eller
     search: søk

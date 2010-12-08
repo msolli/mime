@@ -11,6 +11,7 @@ class Article
   
   references_many :medias, :stored_as => :array, :inverse_of => :articles
   embeds_one :location
+  embeds_many :external_links
 
   field :headword
   field :headword_presentation
@@ -27,13 +28,17 @@ class Article
 
   validates_presence_of :headword
   validates_uniqueness_of :headword
-  validates_associated :location
+  validates_associated :location, :external_links
   
-  accepts_nested_attributes_for :location
+  accepts_nested_attributes_for :location, :external_links, 
+    :allow_destroy => true
   
   # We do this because mongodb doesn't allow index fields to be null
   # They can however be absent from the document…
   set_callback :save, :before, lambda {|article| article.location = nil if article.location.blank?}
+  
+  # Mongoid :reject_if is messed up, so we handle it here instead
+  set_callback :validation, :before, :remove_empty_external_links
 
   before_save :update_headword_sorting
 
@@ -86,6 +91,12 @@ class Article
   end
 
   private
+  
+  def remove_empty_external_links
+    external_links.delete_if do |ext_link|
+      ext_link.fields.keys.all?{|key| ext_link.attributes[key].blank?}
+    end
+  end
 
   def update_headword_sorting
     array = self[:headword].mb_chars.downcase.gsub(/aa/, 'å').scan(/./)

@@ -439,12 +439,17 @@ header {
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
+  #main aside.tags,
+  #main aside.external-links {
+    margin: 16px 65px 16px 33px;
+    clear: both; }
+  #main aside.external-links ul li {
+    margin-left: 20px;
+    list-style: disc; }
   #main aside.tags {
     background: white;
     border: 1px solid #cccccc;
-    margin: 16px 65px 16px 33px;
-    padding: 12px 12px 8px 12px;
-    clear: both; }
+    padding: 12px 12px 8px 12px; }
     #main aside.tags ul li {
       display: inline; }
       #main aside.tags ul li:after {
@@ -537,6 +542,25 @@ header {
 
 #main form.formtastic fieldset {
   padding-left: 35px; }
+  #main form.formtastic fieldset legend {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    font-weight: bold;
+    padding-bottom: 10px; }
+  #main form.formtastic fieldset#external-links > ol > li {
+    padding: 5px 0; }
+    #main form.formtastic fieldset#external-links > ol > li ol {
+      overflow: hidden; }
+      #main form.formtastic fieldset#external-links > ol > li ol li {
+        float: left; }
+        #main form.formtastic fieldset#external-links > ol > li ol li label {
+          margin-left: 10px; }
+    #main form.formtastic fieldset#external-links > ol > li label {
+      float: left;
+      clear: left; }
+    #main form.formtastic fieldset#external-links > ol > li input[type="text"] {
+      float: left;
+      width: 155px;
+      margin-left: 10px; }
 #main form.formtastic fieldset > ol > li {
   width: 33.125em;
   overflow: visible; }

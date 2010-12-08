@@ -144,12 +144,23 @@ header {
   aside.article-messages {
     @include message-box($message-notice-color);
   }
+  aside.tags,
+  aside.external-links {
+    margin: 16px 65px 16px 33px;
+    clear: both;
+  }
+  aside.external-links {
+    ul {
+      li {
+        margin-left: 20px;
+        list-style: disc;
+      }
+    }
+  }
   aside.tags {
     background: white;
     border: 1px solid $box-border-color;
-    margin: 16px 65px 16px 33px;
     padding: 12px 12px 8px 12px;
-    clear: both;
     ul {
       li {
         display: inline;
@@ -238,6 +249,40 @@ header {
 #main form.formtastic {
   fieldset {
     @include padding-main;
+
+    legend {
+      font-family: "Lucida Grande", Tahoma, Arial;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+
+    &#external-links {
+      
+      &> ol > li {
+        padding: 5px 0;
+      
+        ol {        
+          overflow: hidden;
+          li {
+            float: left;
+          
+            label {
+              margin-left: 10px;
+            }
+          }
+        }
+      
+        label {
+          float: left;
+          clear: left;
+        }
+        input[type="text"] {
+          float: left;
+          width: 155px;
+          margin-left: 10px;
+        }
+      }
+    }
   }
   fieldset > ol > li {
     width: $article-width;
