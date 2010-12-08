@@ -18,38 +18,38 @@ if (typeof(String.prototype.trim) === "undefined") {
 }
 
 $(document).ready(function() {
-    // Load user data for navigation links.
-    // On cached pages the user data is retrieved by ajax.
-    // On dynamic pages the user data will be present as HTML5 data attributes
-    (function(){
-        // Parse template and append to #user-links
-        var addUserData = function(data) {
-            $('#user-links-tmpl').tmpl(data).appendTo('#user-links');
-        };
+	// Load user data for navigation links.
+	// On cached pages the user data is retrieved by ajax.
+	// On dynamic pages the user data will be present as HTML5 data attributes
+	(function(){
+	    // Parse template and append to #user-links
+	    var addUserData = function(data) {
+	        $('#user-links-tmpl').tmpl(data).appendTo('#user-links');
+	    };
 
-        var userData = $('#user-links').data('user');
-        if (userData === undefined) {
-            $.ajax({
-                type: 'GET',
-                dataType: 'json',
-                url: '/users/current',
-                success: addUserData
-            });
-        } else {
-            addUserData(userData);
-        }
-    })();
+	    var userData = $('#user-links').data('user');
+	    if (userData === undefined) {
+	        $.ajax({
+	            type: 'GET',
+	            dataType: 'json',
+	            url: '/users/current',
+	            success: addUserData
+	        });
+	    } else {
+	        addUserData(userData);
+	    }
+	})();
 
 	// Don't show presentation headword in edit article form if it's the same as
 	// headword
-    (function(){
-    	var headword_presentation = $("article form #article_headword_presentation");
-    	var headword = $("article form #article_headword");
-    	if (headword_presentation.length && headword.length) {
-    		if (headword_presentation.val().trim() == headword.val().trim()) {
-    			headword_presentation.val('');
-    		}
-    	}
+	(function(){
+		var headword_presentation = $("article form #article_headword_presentation");
+		var headword = $("article form #article_headword");
+		if (headword_presentation.length && headword.length) {
+			if (headword_presentation.val().trim() == headword.val().trim()) {
+				headword_presentation.val('');
+			}
+		}
 	})();
 
 	// jQuery.timeago() (http://timeago.yarp.com/)
