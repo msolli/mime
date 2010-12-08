@@ -68,6 +68,10 @@ Så /^debugger jeg$/ do
   Then %{I debug}
 end
 
+Så /^skal det være (\d+) av "([^"]*)"$/ do |count, selector|
+  page.should have_selector(selector, :count => count.to_i)
+end
+
 Så /^skal feltet "([^"]*)" være tomt$/ do |field|
   field = find_field(field)
   field_value = (field.tag_name == 'textarea') ? field.text : field.value

@@ -19,3 +19,12 @@ Egenskap: Eksterne lenker i artikler
     Og jeg trykker "Lagre"
     Så skal jeg se "Dette er en ekstern lenke til Budstikka" under ".external-links"
 
+  @javascript
+  Scenario: legge til flere felter for eksterne lenker
+    Gitt at artikkelen "Foo" finnes
+    Og jeg står på artikkelredigering for "Foo"
+    Så skal det være 1 av "#external-links > ol > li"
+    Når jeg trykker "add-link"
+    Så skal det være 2 av "#external-links > ol > li"
+    Når jeg trykker "remove-link"
+    Så skal det være 1 av "#external-links > ol > li"

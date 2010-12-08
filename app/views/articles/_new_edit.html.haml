@@ -24,8 +24,8 @@
             = external_links_f.input :_destroy, :as => :boolean
           - else # There should only be one object getting in here, the one we built in #setup_company helper
             %li
-              %button.add{:type => 'button'}= image_tag('icons/add.png')
-              %button.remove{:type => 'button'}= image_tag('icons/delete.png')
+              %button.add{:type => 'button', :value => 'add-link'}= image_tag('icons/add.png')
+              %button.remove{:type => 'button', :value => 'remove-link'}= image_tag('icons/delete.png')
             
             
   = f.buttons do
