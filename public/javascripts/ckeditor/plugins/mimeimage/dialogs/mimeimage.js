@@ -47,10 +47,9 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 		resizable: CKEDITOR.DIALOG_RESIZE_NONE,
 		onOk: function() {
 		},
-		onCancel: function() {
-		},
 		onShow: function() {
-			var settings = {
+			var	that = this,
+					settings = {
 				uploader:				'/lib/jquery.uploadify-v2.1.4/uploadify.swf',
 				expressInstall:	'/lib/jquery.uploadify-v2.1.4/expressInstall.swf',
 				script:					'/medias',
@@ -70,7 +69,13 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 					size: '250x200'
 				},
 				sizeLimit: 1024 * 1024 * 10,
-				onComplete: onUploadComplete
+				onComplete: onUploadComplete,
+				onAllComplete: function() {
+					that.getButton('ok').getElement().show();
+				},
+				onSelect: function() {
+					that.getButton('ok').getElement().hide();
+				}
 			},
 			session_key = jQuery('#session_key_name');
 			
