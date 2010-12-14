@@ -1,5 +1,5 @@
 // 
-//  mimelink.js
+//  mimeimage.js
 //  mime
 //  
 //  Created by Peter Haza on 2010-11-16.
@@ -11,13 +11,17 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 	var	lang = editor.lang.mimeimage,
 			onUploadComplete = function(event, id, file, response, data) {
 				var	jRes = jQuery.parseJSON(response),
-						newData = '<figure contenteditable="true" style="float: right">' +
-						'<img src="'+jRes.thumb.url+'" data-id="'+jRes.media._id+'" contenteditable="false" data-size="'+jRes.size+'">' +
-						'<figurecaption style="width: '+jRes.thumb.width+'px">Skriv bildetittel her</figurecaption>' +
+						newData = '<figure>' +
+						'<img src="'+jRes.thumb.url+'" data-id="'+jRes.media._id+'" data-thumbsize="'+jRes.thumb.width+'x'+jRes.thumb.height+'" contenteditable="false" data-size="'+jRes.size+'">' +
+						'<figurecaption style="width: '+jRes.thumb.width+'px"></figurecaption>' +
 						'</figure>' +
-						'<p></p>';
-
-				editor.insertHtml(newData);
+						'<p></p>',
+						fakeElement = CKEDITOR.plugins.mimeimage.createFakeElement(
+							editor,
+							CKEDITOR.dom.element.createFromHtml(newData),
+							jRes.thumb.width + 'x' + jRes.thumb.height);
+				
+				editor.insertElement(fakeElement);
 				editor.fire('dataReady');
 			};
 

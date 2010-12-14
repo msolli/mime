@@ -671,6 +671,9 @@ header {
   width: 130px;
   height: 40px; }
 
+.uploadifyQueueItem {
+  clear: both; }
+
 .mimeimage-toolbar {
   overflow: hidden;
   position: absolute;
