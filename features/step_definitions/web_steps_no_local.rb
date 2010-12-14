@@ -54,7 +54,7 @@ Given /^I wait (\d+) seconds$/ do |count|
   sleep count.to_i
 end
 
-Gitt /^jeg venter (\d+) sekunder$/ do |count|
+Gitt /^jeg venter (\d+) sekund(?:er)$/ do |count|
   Given %{I wait #{count} seconds}
 end
 

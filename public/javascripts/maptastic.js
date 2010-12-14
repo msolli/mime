@@ -23,11 +23,6 @@ MaptasticMap = (function() {
 			var location = new google.maps.LatLng(document.getElementById(this.options.latInput).value, document.getElementById(this.options.lngInput).value);
 			map.setCenter(location);
 			this.setMarker(map, location);
-		} else if (navigator.geolocation) {
-  			navigator.geolocation.getCurrentPosition(function(position) {
-    			initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-    			map.setCenter(initialLocation);
-  			});
 		}
 		var clazz = this;
 		google.maps.event.addListener(map, 'zoom_changed', function(event) {

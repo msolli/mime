@@ -8,10 +8,15 @@
     = f.input :text, :as => :ckeditor, :label => false, :input_html => { :cols => '80', :class => 'articletext' }
     = f.input :tags
     = f.semantic_fields_for :location, :builder => Maptastic::SemanticFormBuilder do |location_f|
-      = location_f.multi_input :latitude, :longitude, :as => :map, :label => :location,
+      %li#position
+        %label{:for => 'article_location_attributes_latitude_longitude_map_input'}= t('formtastic.labels.location')
+        = link_to('#', :id => 'show-map-link', :'data-default-lat' => ENV["MAP_DEFAULT_LAT"], :'data-default-lng' => ENV["MAP_DEFAULT_LNG"], :'data-default-zoom' => ENV["MAP_DEFAULT_ZOOM"]) do
+          = image_tag('show-map.png') + content_tag(:span, t('articles.show_map'))
+        = link_to(image_tag('hide-map.png') + content_tag(:span, t('articles.hide_map')), '#', :id => 'hide-map-link')
+      = location_f.multi_input :latitude, :longitude, :as => :map, :label => false,
         :zoom => :zoom, :search => true, :search_label => t('formtastic.labels.other.maptastic-search'),
         :hint => t('formtastic.labels.other.maptastic-hint')
-      
+
     = f.input :headword_presentation, :input_html => { :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword_presentation')}
     = f.input :disambiguation, :as => :text, :input_html => { :rows => 4 }
   = f.inputs :name => t('articles.external_links'), :id => 'external-links' do

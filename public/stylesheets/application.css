@@ -596,6 +596,8 @@ header {
   margin-bottom: 1em; }
   #main form.formtastic fieldset > ol > li ul li {
     list-style-type: disc; }
+#main form.formtastic fieldset > ol > li + #article_location_attributes_map {
+  display: none; }
 #main form.formtastic fieldset > ol > li input[type="text"].headword, #main form.formtastic fieldset > ol > li.string input[type="text"].headword, #main form.formtastic fieldset > ol > li.text input[type="text"].headword {
   padding: 0.1em 0.2em 0 0.2em;
   margin-top: 0.5em; }

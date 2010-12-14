@@ -27,6 +27,8 @@ no-NB:
     headword: Oppslagsord
     back: "Tilbake til artikkelen"
     external_links: Eksterne lenker
+    show_map: "Vis kart…"
+    hide_map: "Ikke vis kart likevel…"
     errors:
       save: "Artikkelen ble visst ikke lagret – sjekk feilene nedenfor:"
       list: "Feil i disse feltene forhindret at artikkelen ble lagret:"

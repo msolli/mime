@@ -330,6 +330,9 @@ header {
         list-style-type: disc;
       }
     }
+    & + #article_location_attributes_map {
+      display: none;
+    }
   }
   fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
     input[type="text"].headword {

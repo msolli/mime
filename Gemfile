@@ -32,12 +32,12 @@ end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
-  gem 'xpath', :git => 'http://github.com/budstikka/xpath.git'
-  gem 'capybara', :git => 'http://github.com/budstikka/capybara.git'
+  gem 'xpath'
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'rspec-rails', '~> 2.0.0'
+  gem 'rspec-rails', '~> 2.3.0'
   gem 'fuubar'
   gem 'launchy'
   gem 'ruby-debug19'

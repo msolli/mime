@@ -2,6 +2,6 @@
   ! #{t('articles.editing')} #{@article.headword_presentation}
 
 - content_for :header do
-  = t('articles.edit')
+  <em>#{t('articles.edit')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
 = render :partial => 'new_edit', :locals => { :article => @article }

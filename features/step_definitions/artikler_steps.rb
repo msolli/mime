@@ -28,3 +28,19 @@ Gitt /^at artikkelen "([^"]*)" har følgende bidragsytere:$/ do |headword, autho
   end
   a.save!
 end
+
+Så /^skal jeg ikke se noe kart$/ do
+  Then %{"aside.meta img" should not exist}
+end
+
+Så /^skal kartet vises i artikkelen$/ do
+  Then %{"aside.meta img" should be visible}
+end
+
+Så /^skal kartet vises$/ do
+  Then %{"div.map" should be visible}
+end
+
+Så /^kartet skal være usynlig$/ do
+  Then %{"#article_location_attributes_map" should be invisible}
+end

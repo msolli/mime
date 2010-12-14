@@ -53,7 +53,7 @@ module Maptastic
       hint_html = inline_hints_for(methods.first, options)
       label_html = label(options[:label], :label => options[:label], :input_name => map_div_id_prefix(methods) + '_input') if options[:label]
       map_container = @template.content_tag(:div, nil, :class => 'map', :id => map_div_id(methods))
-      map_html = @template.content_tag(:li) do
+      map_html = @template.content_tag(:li, nil, :id => generate_html_id('map', nil)) do
         text = [label_html]
         text << map_container
         text << map_search(options) if options.delete(:search)
