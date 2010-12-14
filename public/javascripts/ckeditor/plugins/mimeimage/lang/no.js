@@ -18,6 +18,8 @@ CKEDITOR.plugins.setLang( 'mimeimage', 'no',
 		padding_decrease:	'Minsk polstring',
 		float_none:				'Skru av bildeflyt',
 		float_left:				'Flyt bilde til venstre',
-		float_right:			'Flyt bilde til høyre'
+		float_right:			'Flyt bilde til høyre',
+		
+		caption_label:		'Bildebeskrivelse'
 	}
 });

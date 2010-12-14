@@ -35,7 +35,6 @@
       border: 1px solid $box-border-color;
       padding: 5px;
       background: white;
-      max-width: 228px;
       @include rounded-corners(0 0 5px 5px);
       
       img {

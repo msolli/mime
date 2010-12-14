@@ -17,14 +17,14 @@
 
 			editor.addCommand(pluginName, new CKEDITOR.dialogCommand(pluginName));
 			CKEDITOR.dialog.add(pluginName, this.path + 'dialogs/mimeimage.js');
+			CKEDITOR.dialog.add(pluginName + 'caption', this.path + 'dialogs/mimeimagecaption.js');
 
-			// Disable crop for now
-			// editor.on('doubleclick', function(evt) {
-			// 	var element = evt.data.element;
-			// 	if(element && element.is('img')) {
-			// 		insertCropZoomEditor(editor, element, evt);
-			// 	}
-			// });
+			editor.on('doubleclick', function(evt) {
+				var element = evt.data.element;
+				if(element && element.is('img') && element.getAttribute( '_cke_real_element_type' ) == 'figure') {
+					evt.data.dialog = pluginName + 'caption';
+				}
+			});
 			
 			var path = this.path;
 			
