@@ -39,11 +39,6 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 						id:		'upload',
 						type: 'html',
 						html: '<div id="dialog_file_upload"></div>'
-					},
-					{
-						id:		'info',
-						type: 'html',
-						html: '<ul></ul>'
 					}
 				]
 			}
@@ -63,6 +58,7 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 				fileExt:				'*.jpg;*.jpeg;*.png;*.gif',
 				fileDesc:				lang.images_only,
 				fileDataName:		'media[file]',
+				removeCompleted: true,
 				wmode:					'transparent',
 				width: 150,
 				height: 100,
@@ -84,7 +80,9 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 			session_key = jQuery('#session_key_name');
 			
 			settings.scriptData[session_key.attr('name')] = encodeURI(encodeURIComponent(session_key.val()));
-			jQuery('#dialog_file_upload').siblings().remove().end().uploadify(settings);
+			if(jQuery('#dialog_file_upload').siblings('#dialog_file_uploadQueue').length == 0) {
+				jQuery('#dialog_file_upload').uploadify(settings);
+			}
 		}
 	};
 });
