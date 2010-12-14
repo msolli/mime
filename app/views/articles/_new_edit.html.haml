@@ -32,10 +32,3 @@
     = f.commit_button
   - session_key_name = Rails.application.config.session_options[:key]
   = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
-
-/ Not in use
-/#image-editor
-/  .container
-/  .actions
-/    %button{:name => 'crop'} Beskjær
-/    %button{:name => 'cancel'} Avbryt
