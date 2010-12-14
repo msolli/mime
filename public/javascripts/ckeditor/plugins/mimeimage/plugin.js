@@ -87,12 +87,32 @@
 	});
 
 	CKEDITOR.plugins[pluginName] = {
+		getRealImageSrcFromFakeParserElement: function(element) {
+			for (var i = element.children.length - 1; i >= 0; i--){
+				var e = element.children[i];
+				if(e.name == 'img') {
+					return e.attributes['src'];
+				}
+			}
+			
+			return null;
+		},
+		getRealImageSrcFromFakeElement: function(element) {
+			for (var i = element.getChildCount() - 1; i >= 0; i--){
+				var e = element.getChild(i);
+				if(e.getName() == 'img') {
+					return e.getAttribute('src');
+				}
+			}
+			
+			return null;
+		},
 		createFakeElement: function(editor, real_element, size) {
 			var el = editor.createFakeElement(real_element, 'cke_figure', 'figure', false),
 					asize = size.split('x');
 			
 			el.$.attributes['style'] = real_element.$.attributes['style'];
-			el.$.src = 'http://dummyimage.com/' + asize[0] + 'x' + asize[1];
+			el.$.src = this.getRealImageSrcFromFakeElement(real_element);
 			
 			return el;
 		},
@@ -101,7 +121,7 @@
 					asize = size.split('x');
 			
 			el.attributes.style = real_element.attributes['style'];
-			el.attributes.src = 'http://dummyimage.com/' + asize[0] + 'x' + asize[1];
+			el.attributes.src = this.getRealImageSrcFromFakeParserElement(real_element);
 			
 			return el;
 		},
