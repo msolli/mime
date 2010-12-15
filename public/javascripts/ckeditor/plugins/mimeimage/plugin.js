@@ -111,7 +111,7 @@
 			var el = editor.createFakeElement(real_element, 'cke_figure', 'figure', false),
 					asize = size.split('x');
 			
-			el.$.attributes['style'] = real_element.$.attributes['style'];
+			el.$.setAttribute('style', real_element.getAttribute('style'));
 			el.$.src = this.getRealImageSrcFromFakeElement(real_element);
 			
 			return el;

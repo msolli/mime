@@ -11,7 +11,7 @@ CKEDITOR.dialog.add('mimeimage', function(editor) {
 	var	lang = editor.lang.mimeimage,
 			onUploadComplete = function(event, id, file, response, data) {
 				var	jRes = jQuery.parseJSON(response),
-						newData = '<figure>' +
+						newData = '<figure style="float: right">' +
 						'<img src="'+jRes.thumb.url+'" data-id="'+jRes.media._id+'" data-thumbsize="'+jRes.thumb.width+'x'+jRes.thumb.height+'">' +
 						'<figurecaption style="width: '+jRes.thumb.width+'px"></figurecaption>' +
 						'</figure>' +

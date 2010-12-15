@@ -22,7 +22,6 @@ body {
     font-weight: bold; }
   body figure,
   body .image-wrap {
-    float: right;
     position: relative;
     border: 1px solid #cccccc;
     padding: 5px;

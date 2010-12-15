@@ -403,7 +403,6 @@ header {
       font-weight: bold; }
     #main .articletext figure,
     #main .articletext .image-wrap {
-      float: right;
       position: relative;
       border: 1px solid #cccccc;
       padding: 5px;
