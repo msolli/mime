@@ -112,7 +112,7 @@
 					asize = size.split('x');
 			
 			el.$.setAttribute('style', real_element.getAttribute('style'));
-			el.$.src = this.getRealImageSrcFromFakeElement(real_element);
+			el.$.setAttribute('src', this.getRealImageSrcFromFakeElement(real_element));
 			
 			return el;
 		},
