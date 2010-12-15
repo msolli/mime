@@ -700,26 +700,6 @@ header {
 #cke_contents_article_text_editor {
   height: 500px !important; }
 
-.uploadifyQueueItem {
-  clear: both; }
-
-.mimeimage-toolbar {
-  overflow: hidden;
-  position: absolute;
-  background-color: #ccc;
-  padding: 5px;
-  padding-left: 0; }
-  .mimeimage-toolbar div {
-    border: 1px solid #ccc;
-    width: 8px;
-    height: 8px;
-    padding: 3px;
-    margin-left: 5px;
-    float: left;
-    cursor: pointer; }
-    .mimeimage-toolbar div:hover {
-      border-color: #fff; }
-
 /*  font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 /*  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 /*  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/

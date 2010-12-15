@@ -454,32 +454,7 @@ header {
   width: 130px;
   height: 40px;
 }
+
 #cke_contents_article_text_editor {
   height: 500px !important;
-}
-
-.uploadifyQueueItem {
-  clear: both;
-}
-
-.mimeimage-toolbar {
-  overflow: hidden;
-  position: absolute;
-  background-color: #ccc;
-  padding: 5px;
-  padding-left: 0;
-  
-  div {
-    border: 1px solid #ccc;
-    width: 8px;
-    height: 8px;
-    padding: 3px;
-    margin-left: 5px;
-    float: left;
-    cursor: pointer;
-    
-    &:hover {
-     border-color: #fff; 
-    }
-  }
 }

@@ -4,15 +4,15 @@ CKEDITOR.editorConfig = function( config )
 	config.toolbarCanCollapse = false;
 	config.disableObjectResizing = true; // resize handles i FF
 	config.format_tags = 'p;h2;h3';
-	config.extraPlugins = 'mimeimage,mimelink';
-	config.removePlugins = 'link,forms,image'; // Remove link and image to avoid doubleclick actions
+	config.extraPlugins = 'mimelink';
+	config.removePlugins = 'link'; // Remove link and image to avoid doubleclick actions
 	config.height = 500;
 	config.defaultLanguage = 'nb';
 	config.docType = '<!DOCTYPE html>';
 	config.contentsCss = ['http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css', '/stylesheets/wysiwyg.css'];
 	config.toolbar_mime = [
 		[	'Format',
-			'Bold', 'Italic', 'Underline', 'MimeImage', 'MimeLink', 'Unlink', '-',
+			'Bold', 'Italic', 'Underline', 'MimeLink', 'Unlink', '-',
 			// Leave out image for now until the server side is ready
 			// 'NumberedList', 'BulletedList', 'Image', 'Table', '-', 
 			'NumberedList', 'BulletedList', 'Table', '-',
