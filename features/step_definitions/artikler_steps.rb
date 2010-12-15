@@ -21,6 +21,13 @@ Gitt /^(?:|at )original-artikkelen "([^"]*)" finnes$/ do |headword|
   Article.collection.update({"_id" => a["_id"]}, { "$set" => { :created_at => Time.parse("2008-10-16"), :updated_at => Time.parse("2008-10-16") } })
 end
 
+Gitt /^at artikkelen "([^"]*)" har lokasjon "([^"]*)"$/ do |headword, location|
+  lat, lng = location.split(/, */)
+  a = Article.where(:headword => headword).first
+  a.location = Location.new(:latitude => lat, :longitude => lng)
+  a.save!
+end
+
 Gitt /^at artikkelen "([^"]*)" har følgende bidragsytere:$/ do |headword, authors|
   a = Article.new(:headword => headword)
   authors.hashes.each do |hash|

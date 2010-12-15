@@ -76,7 +76,6 @@ $(document).ready(function() {
   (function(){
     // Callback for show map event
     var showMap = function(event){
-      console.log("showMap");
       event.preventDefault();
       $(this).hide();
       $('#hide-map-link').show();
@@ -113,15 +112,12 @@ $(document).ready(function() {
     var lat_input = $('#article_location_attributes_map_latitude_input');
     var lng_input = $('#article_location_attributes_map_longitude_input');
     if (lat_input.length && lng_input.length) {
-      console.log("lat_input.val(): '" + lat_input.val() + "'");
       if (lat_input.val() == '') {
         // Article does not have position
-        console.log("Article does not have position");
         $('#hide-map-link').hide();
       } else {
         // Article has position
-        console.log("Article has position");
-        $('#show-map-link').hide();
+        $('#show-map-link').click().hide();
       }
     }
   })();
