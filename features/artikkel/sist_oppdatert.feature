@@ -10,7 +10,6 @@ Egenskap: Sist oppdatert
   Scenario: sist oppdatert akkurat nå
     Gitt at jeg står på ny artikkel-siden
     Og jeg fyller inn "article[headword]" med "Xyzzy-tittel"
-    Og jeg fyller inn "article[text]" med "Xyzzy-artikkeltekst"
     Når jeg trykker "Opprett"
     Så skal jeg se "mindre enn et minutt"
 

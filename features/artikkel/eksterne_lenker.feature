@@ -6,10 +6,16 @@ Egenskap: Eksterne lenker i artikler
   Som en lokalinteressert person
   Vil jeg kunne legge inn eksterne lenker på artikler
 
-  Scenario: ingen eksterne lenker
+  Scenario: ingen eksterne lenker i eksisterende artikkel
     Gitt at artikkelen "Foo" finnes
     Når jeg står på artikkelvisning for "Foo"
-    Så skal ikke ".external-links" finnes
+    Så skal jeg ikke se eksterne lenker
+
+  Scenario: ingen eksterne lenker i ny artikkel
+    Gitt at jeg står på ny artikkel-siden
+    Og jeg fyller inn "article[headword]" med "Xyzzy-tittel"
+    Når jeg trykker "Opprett"
+    Så skal jeg ikke se eksterne lenker
 
   Scenario: opprette eksterne lenker i en artikkel
     Gitt at artikkelen "Foo" finnes

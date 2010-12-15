@@ -90,10 +90,12 @@ class Article
   end
 
   private
-  
+
   def remove_empty_external_links
-    external_links.delete_if do |ext_link|
-      ext_link.fields.keys.all?{|key| ext_link.attributes[key].blank?}
+    external_links.each do |ext_link|
+      if ext_link.fields.keys.all?{|key| ext_link.attributes[key].blank?}
+        self.remove(ext_link)
+      end
     end
   end
 

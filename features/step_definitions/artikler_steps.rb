@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 Gitt /^følgende artikler:$/ do |article_data|
   article_data.hashes.each do |hash|
     Article.create!(hash)
@@ -43,4 +44,8 @@ end
 
 Så /^kartet skal være usynlig$/ do
   Then %{"#article_location_attributes_map" should be invisible}
+end
+
+Så /^skal jeg ikke se eksterne lenker$/ do
+  Then %{".external-links" should not exist}
 end

@@ -27,7 +27,7 @@
           = external_links_f.input :text, :wrapper_html => {:class => 'link-text'}
           - unless external_links_f.object.new_record?
             = external_links_f.input :_destroy, :as => :boolean
-          - else # There should only be one object getting in here, the one we built in #setup_company helper
+          - else # There should only be one object getting in here, the one we built in #setup_article helper
             %li
               %button.add{:type => 'button', :value => 'add-link'}= image_tag('icons/add.png', :size => '16x16')
               %button.remove{:type => 'button', :value => 'remove-link'}= image_tag('icons/delete.png', :size => '16x16')
