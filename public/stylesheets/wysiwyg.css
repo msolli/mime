@@ -40,4 +40,6 @@ body {
     body .image-wrap p {
       display: block;
       margin-bottom: 0;
-      line-height: 1em; }
+      line-height: 1em;
+      font-size: 87.5%;
+      font-weight: normal; }
