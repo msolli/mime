@@ -2,6 +2,7 @@ CKEDITOR.editorConfig = function( config )
 {
 	config.toolbar = 'mime';
 	config.toolbarCanCollapse = false;
+	config.disableObjectResizing = true; // resize handles i FF
 	config.format_tags = 'p;h2;h3';
 	config.extraPlugins = 'mimeimage,mimelink';
 	config.removePlugins = 'link,forms,image'; // Remove link and image to avoid doubleclick actions
