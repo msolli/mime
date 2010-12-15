@@ -144,6 +144,14 @@ form.formtastic {
         text-decoration-style: dashed;
       }
     }
+    #show-map-link, #hide-map-link {
+      @include small-sans;
+      font-size: $font12px;
+      text-decoration: none;
+      span:hover {
+        text-decoration: underline;
+      }
+    }
     input[type="text"].headword {
       @include serif;
       font-size: $font32px;

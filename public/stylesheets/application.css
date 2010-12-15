@@ -634,6 +634,11 @@ header {
     #main form.formtastic fieldset > ol > li .map + div input, #main form.formtastic fieldset > ol > li.string .map + div input, #main form.formtastic fieldset > ol > li.text .map + div input {
       float: right;
       width: 270px; }
+#main form.formtastic fieldset > ol > li #show-map-link, #main form.formtastic fieldset > ol > li #hide-map-link, #main form.formtastic fieldset > ol > li.string #show-map-link, #main form.formtastic fieldset > ol > li.string #hide-map-link, #main form.formtastic fieldset > ol > li.text #show-map-link, #main form.formtastic fieldset > ol > li.text #hide-map-link {
+  line-height: 31px; }
+  #main form.formtastic fieldset > ol > li #show-map-link img, #main form.formtastic fieldset > ol > li #hide-map-link img, #main form.formtastic fieldset > ol > li.string #show-map-link img, #main form.formtastic fieldset > ol > li.string #hide-map-link img, #main form.formtastic fieldset > ol > li.text #show-map-link img, #main form.formtastic fieldset > ol > li.text #hide-map-link img {
+    margin-right: 5px;
+    vertical-align: text-bottom; }
 #main form.formtastic fieldset > ol > li input[type="submit"], #main form.formtastic fieldset > ol > li.string input[type="submit"], #main form.formtastic fieldset > ol > li.text input[type="submit"] {
   padding: 0.4em 2em 0.2em 2em;
   background: #2f528f;
@@ -642,15 +647,18 @@ header {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   behavior: url(/stylesheets/PIE.htc);
-  border: 1px solid #cccccc;
-  border-top-color: #b3b3b3;
-  border-left-color: #b3b3b3; }
+  border: 1px solid #355da2;
+  border-top-color: #29477c;
+  border-left-color: #29477c; }
   #main form.formtastic fieldset > ol > li input[type="submit"]:hover, #main form.formtastic fieldset > ol > li.string input[type="submit"]:hover, #main form.formtastic fieldset > ol > li.text input[type="submit"]:hover {
-    background: #fab45b; }
+    background: #fab45b;
+    border: 1px solid #fbbf74;
+    border-top-color: #f9a942;
+    border-left-color: #f9a942; }
   #main form.formtastic fieldset > ol > li input[type="submit"]:active, #main form.formtastic fieldset > ol > li.string input[type="submit"]:active, #main form.formtastic fieldset > ol > li.text input[type="submit"]:active {
-    border: 1px solid #b3b3b3;
-    border-top-color: #cccccc;
-    border-left-color: #cccccc; }
+    border: 1px solid #f9a942;
+    border-top-color: #fbbf74;
+    border-left-color: #fbbf74; }
 
 .tooltip {
   background-color: #fff;
@@ -818,6 +826,12 @@ form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > o
   form.formtastic fieldset > ol > li p.inline-errors a, form.formtastic fieldset > ol > li .inline-errors a, form.formtastic fieldset > ol > li.string p.inline-errors a, form.formtastic fieldset > ol > li.string .inline-errors a, form.formtastic fieldset > ol > li.text p.inline-errors a, form.formtastic fieldset > ol > li.text .inline-errors a {
     color: #b72727;
     text-decoration-style: dashed; }
+form.formtastic fieldset > ol > li #show-map-link, form.formtastic fieldset > ol > li #hide-map-link, form.formtastic fieldset > ol > li.string #show-map-link, form.formtastic fieldset > ol > li.string #hide-map-link, form.formtastic fieldset > ol > li.text #show-map-link, form.formtastic fieldset > ol > li.text #hide-map-link {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  font-size: 75%;
+  text-decoration: none; }
+  form.formtastic fieldset > ol > li #show-map-link span:hover, form.formtastic fieldset > ol > li #hide-map-link span:hover, form.formtastic fieldset > ol > li.string #show-map-link span:hover, form.formtastic fieldset > ol > li.string #hide-map-link span:hover, form.formtastic fieldset > ol > li.text #show-map-link span:hover, form.formtastic fieldset > ol > li.text #hide-map-link span:hover {
+    text-decoration: underline; }
 form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic fieldset > ol > li.string input[type="text"].headword, form.formtastic fieldset > ol > li.text input[type="text"].headword {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
   font-size: 200%;
