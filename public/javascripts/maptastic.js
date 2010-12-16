@@ -10,7 +10,7 @@ MaptasticMap = (function() {
     if (options.zoomInput) {
 			this.zoomElement = document.getElementById(options.zoomInput);
 			if(this.zoomElement) {
-				zoom = parseInt(this.zoomElement.value);
+				zoom = parseInt(this.zoomElement.value, 10);
 			}
     }
 		var map = new google.maps.Map(document.getElementById(this.options.mapId), {
@@ -76,9 +76,10 @@ MaptasticMap = (function() {
 	  var clazz = this;
     this.geocoder.geocode( { 'address': address }, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK && clazz.map) {
-        var location = results[0].geometry.location
+        var location = results[0].geometry.location;
         clazz.map.setCenter(location);
         clazz.setMarker(clazz.map, location);
+        clazz.map.setZoom(15);
         clazz.updateInputs(location);
       } else {
         // alert("Geocode was not successful for the following reason: " + status);

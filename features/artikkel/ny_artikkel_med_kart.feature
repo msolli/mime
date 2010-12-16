@@ -10,7 +10,7 @@ Egenskap: Ny artikkel med tilknyttet posisjon
   @javascript
   Scenario: kartet vises ikke før man klikker "vis kart"
     Når jeg står på ny artikkel-siden
-    Så skal jeg se "Vis kart"
+    Så skal jeg se "Angi sted for denne artikkelen"
     Og kartet skal være usynlig
 
   # @javascript
