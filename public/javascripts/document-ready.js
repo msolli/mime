@@ -79,16 +79,20 @@ $(document).ready(function() {
       event.preventDefault();
       $(this).hide();
       $('#hide-map-link').show();
-      var that = this
+      var that = this;
       $('#article_location_attributes_map').slideDown('fast', function() {
+        var location, zoom;
         google.maps.event.trigger(MaptasticMap.map, 'resize');
         // Center map on default location if no location
         if (lat_input.val() == '') {
-          var location = new google.maps.LatLng($(that).data('default-lat'), $(that).data('default-lng'));
-          var zoom = $(that).data('default-zoom');
-          MaptasticMap.map.setCenter(location);
-          MaptasticMap.map.setZoom(zoom);
+          location = new google.maps.LatLng($(that).data('default-lat'), $(that).data('default-lng'));
+          zoom = $(that).data('default-zoom');
+        } else {
+          location = new google.maps.LatLng(lat_input.val(), lng_input.val());
+          zoom = parseInt(zoom_input.val(), 10);
         }
+        MaptasticMap.map.setCenter(location);
+        MaptasticMap.map.setZoom(zoom);
       });
     };
     // Show map
@@ -111,6 +115,7 @@ $(document).ready(function() {
     // Initialize
     var lat_input = $('#article_location_attributes_map_latitude_input');
     var lng_input = $('#article_location_attributes_map_longitude_input');
+    var zoom_input = $('#article_location_attributes_map_zoom_input');
     if (lat_input.length && lng_input.length) {
       if (lat_input.val() == '') {
         // Article does not have position
