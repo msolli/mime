@@ -7,10 +7,14 @@
 = render :partial => 'info', :locals => { :user => @user }
 
 %table.articles
+  %caption= t('users.profile.last_articles')
   %thead
     %tr
-      %th= sortable 'headword', t('articles.headword')
-      %th= sortable 'updated_at', t('articles.last_updated')
+      %th= t('articles.headword')
+      %th= t('articles.last_updated')
+  %tfoot
+    %tr
+      %td{:colspan => 2}= link_to t('users.profile.all_articles') + " »", user_articles_path(@user)
   %tbody
     - @articles.each do |article|
       %tr

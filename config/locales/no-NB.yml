@@ -59,6 +59,11 @@ no-NB:
       profile: "Brukerprofil for %{for}"
       contributor: "Bidragsyter siden %{since}"
       edit: Rediger
+      all_articles: "Alle artiklene du har bidratt til"
+      user_articles: "%{user}: Artikler"
+      articles: Artikler
+      back: "Tilbake til brukerprofilen din"
+      last_articles: "Her er de siste artiklene du har redigert:"
     login:
       help_us: "Hjelp oss å oppdatere leksikonet:"
       register: "Registrér deg"

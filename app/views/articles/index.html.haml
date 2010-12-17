@@ -1,0 +1,23 @@
+- content_for :title do
+  = t('users.profile.user_articles', :user => @user.name_or_email)
+
+- content_for :header do
+  <em>#{t('users.profile.articles')}</em> – #{link_to @user.name_or_email, user_path(@user)}
+
+= render :partial => 'users/sessions/info', :locals => { :user => @user }
+%aside.back-link
+  = link_to '« ' + t('users.profile.back'), user_path(@user)
+
+%table.articles
+  %thead
+    %tr
+      %th= sortable 'headword_sorting', t('articles.headword')
+      %th= sortable 'updated_at', t('articles.last_updated'), "desc"
+  %tfoot
+    %tr
+      %td{:colspan => 2}
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= link_to article.headword, pretty_article_path(article)
+        %td= timeago(article.updated_at)

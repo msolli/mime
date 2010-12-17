@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe ArticlesController do
@@ -116,6 +118,50 @@ describe ArticlesController do
       put :update, :id => a.to_param, :article => { :text => "ny bar" }
       response.should redirect_to(pretty_article_path(assigns(:article)))
       assigns(:article).text.should == "ny bar"
+    end
+  end
+
+  describe "#index" do
+    it "shows a list of articles for a user" do
+      u = Factory(:user)
+      10.times do
+        a = Factory(:article)
+        a.authors << u
+      end
+      get :index, :user_id => u.to_param
+      response.should be_success
+      assigns(:articles).size.should == 10
+    end
+
+    it "shows 404 if the user does not exist" do
+      get :index, :user_id => "does_not_exist"
+      response.should_not be_success
+      response.body.should =~ /The page you were looking for doesn't exist/
+    end
+
+    describe "sorting" do
+      before :each do
+        @u = Factory(:user)
+        %w(snerk bukse åker føner samlebånd).each do |headword|
+          a = Article.new(:headword => headword)
+          a.authors = [@u]
+          a.save
+        end
+      end
+
+      it "sorts a user's articles by headword" do
+        get :index, :user_id => @u.to_param, :sort => 'headword_sorting', :direction => 'asc'
+        response.should be_success
+        assigns(:articles).first.headword.should == 'bukse'
+        assigns(:articles).last.headword.should == 'åker'
+      end
+
+      it "sorts a user's articles by headword, descending" do
+        get :index, :user_id => @u.to_param, :sort => 'headword_sorting', :direction => 'desc'
+        response.should be_success
+        assigns(:articles).first.headword.should == 'åker'
+        assigns(:articles).last.headword.should == 'bukse'
+      end
     end
   end
 end

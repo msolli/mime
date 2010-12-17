@@ -1,7 +1,9 @@
 Mime::Application.routes.draw do
   devise_for :users, :module => 'users', do
-    constraints :id => /.*/ do
-      resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit]
+    constraints :id => /[^\/]*/ do
+      resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit] do
+        resources :articles, :path => 'artikler', :only => [:index]
+      end
     end
     get "users/current" => "users/sessions#current"
   end
@@ -10,7 +12,7 @@ Mime::Application.routes.draw do
   match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
 
   constraints :id => /.*/ do
-    resources :articles do
+    resources :articles, :except => [:index] do
       resources :versions, :only => [:index]
     end
   end

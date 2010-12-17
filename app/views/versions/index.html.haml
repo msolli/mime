@@ -4,9 +4,8 @@
 - content_for :header do
   <em>#{t('articles.version_log')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
-%aside.info
-  %ul
-    %li>= link_to '« ' + t('articles.back'), pretty_article_path(@article)
+%aside.back-link
+  = link_to '« ' + t('articles.back'), pretty_article_path(@article)
 
 - caption = link_to(@article.headword_presentation, pretty_article_path(@article)) + ' ' + t('articles.versions.count', :count => @versions.size + 1)
 

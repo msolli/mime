@@ -100,7 +100,7 @@ header {
     }
   }
 
-  aside.info {
+  aside.info, aside.back-link {
     @include padding-main;
     padding-top: 2px;
     ul {
@@ -191,10 +191,10 @@ header {
       }
     }
   }
-  table.versions {
+  table.versions, table.articles {
     margin: 20px 0 20px $main-padding-left;
     border: 1px solid $box-border-color;
-    caption {
+    caption, tfoot {
       text-align: right;
     }
     td, th {

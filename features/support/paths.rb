@@ -26,6 +26,8 @@ module NavigationHelpers
       user_path $1
     when /brukerprofilen min$/
       user_path("nn@example.com")
+    when /artikkeloversikten min$/
+      user_articles_path("nn@example.com")
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

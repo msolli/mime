@@ -370,21 +370,21 @@ header {
     #main header h1 {
       padding-top: 16px;
       padding-bottom: 2px; }
-  #main aside.info {
+  #main aside.info, #main aside.back-link {
     padding-left: 35px;
     padding-top: 2px; }
-    #main aside.info ul li {
+    #main aside.info ul li, #main aside.back-link ul li {
       display: inline;
       margin-right: 0.5em; }
-      #main aside.info ul li img {
+      #main aside.info ul li img, #main aside.back-link ul li img {
         vertical-align: bottom; }
-    #main aside.info ul li.edit-link {
+    #main aside.info ul li.edit-link, #main aside.back-link ul li.edit-link {
       text-transform: uppercase;
       background: #2f528f;
       padding: 1px 0.4em 0px 0.4em;
       border-radius: 3px;
       -moz-border-radius: 3px; }
-      #main aside.info ul li.edit-link a {
+      #main aside.info ul li.edit-link a, #main aside.back-link ul li.edit-link a {
         color: white; }
   #main aside.redirected {
     padding-left: 35px; }
@@ -512,14 +512,14 @@ header {
             border-bottom: 1px solid #29447E;
             border-top: 1px solid #45619D;
             text-shadow: none; }
-  #main table.versions {
+  #main table.versions, #main table.articles {
     margin: 20px 0 20px 35px;
     border: 1px solid #cccccc; }
-    #main table.versions caption {
+    #main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
       text-align: right; }
-    #main table.versions td, #main table.versions th {
+    #main table.versions td, #main table.versions th, #main table.articles td, #main table.articles th {
       padding: 5px; }
-    #main table.versions tr.current {
+    #main table.versions tr.current, #main table.articles tr.current {
       background: #d9e3e2; }
   #main div.maincol {
     padding-left: 35px; }
@@ -765,13 +765,13 @@ header nav {
   #main .articletext {
     font-size: 100%;
     line-height: 1.5; }
-  #main aside.info, #main aside.redirected {
+  #main aside.info, #main aside.back-link, #main aside.redirected {
     font-family: "Lucida Grande", Tahoma, Arial;
     font-size: 75%;
     color: #7a7a7a; }
-    #main aside.info a, #main aside.redirected a {
+    #main aside.info a, #main aside.back-link a, #main aside.redirected a {
       text-decoration: none; }
-      #main aside.info a:hover, #main aside.redirected a:hover {
+      #main aside.info a:hover, #main aside.back-link a:hover, #main aside.redirected a:hover {
         text-decoration: underline; }
   #main aside.redirected {
     font-style: italic; }
@@ -815,12 +815,22 @@ header nav {
       font-weight: bold;
       line-height: 1.5;
       margin-top: 5px; }
-  #main table.versions {
+  #main table.versions, #main table.articles {
     font-family: "Lucida Grande", Tahoma, Arial; }
-    #main table.versions caption {
+    #main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
       font-size: 75%; }
-    #main table.versions th {
-      font-style: bold; }
+    #main table.versions tfoot a, #main table.articles tfoot a {
+      text-decoration: none; }
+      #main table.versions tfoot a:hover, #main table.articles tfoot a:hover {
+        text-decoration: underline; }
+    #main table.versions th, #main table.articles th {
+      font-size: 75%;
+      font-weight: bold;
+      text-transform: uppercase; }
+      #main table.versions th a, #main table.articles th a {
+        text-decoration: none; }
+        #main table.versions th a:hover, #main table.articles th a:hover {
+          text-decoration: underline; }
 
 form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li .inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.string .inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors, form.formtastic fieldset > ol > li.text .inline-errors {
   font-family: "Lucida Grande", Tahoma, Arial;

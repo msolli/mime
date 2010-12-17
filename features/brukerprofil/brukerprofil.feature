@@ -26,3 +26,15 @@ Egenskap: Brukerprofil
     Og jeg trykker "Lagre"
     Når jeg går til brukerprofilen min
     Så skal jeg se "Foo" i artikkel-lista
+
+  # @devise @logged_in
+  # Scenario: fem artikler vises på brukerprofil
+  #   Gitt at jeg har opprettet følgende artikler:
+  #     | headword |
+  #     | Foo en   |
+  #     | Foo to   |
+  #     | Foo tre  |
+  #     | Foo fire |
+  #     | Foo fem  |
+  #   Når jeg går til brukerprofilen min
+  #   Så skal jeg se 5 artikler i artikkel-lista

@@ -1,26 +1,15 @@
 class Users::SessionsController < Devise::SessionsController
   respond_to :json, :only => :current
-  helper_method :sort_column, :sort_direction
 
   def show
     @user = User.where(:email => params[:id]).first
-    @articles = @user.articles.sort_by {|a| a.send(sort_column)}
-    @articles.reverse! if sort_direction == "desc"
+    @articles = @user.articles.order_by(:updated_at.desc).limit(5)
   end
 
   def current
     respond_with(user_signed_in? ? current_user : nil)
   end
 
-  private
-
-  def sort_column
-    %w[headword_sorting updated_at].include?(params[:sort]) ? params[:sort] : "headword_sorting"
-  end
-
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
 end
 
 __END__

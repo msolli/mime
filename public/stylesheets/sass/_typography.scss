@@ -58,7 +58,7 @@ header {
   .articletext {
     @include articletext-typography;
   }
-  aside.info, aside.redirected {
+  aside.info, aside.back-link, aside.redirected {
     @include small-sans;
     font-size: $font12px;
     color: $light-grey-color;
@@ -122,13 +122,19 @@ header {
       }
     }
   }
-  table.versions {
+  table.versions, table.articles {
     @include small-sans;
-    caption {
+    caption, tfoot {
       font-size: $font12px;
     }
+    tfoot {
+      @include no-underline;
+    }
     th {
-      font-style: bold;
+      font-size: $font12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      @include no-underline;
     }
   }
 }
