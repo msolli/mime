@@ -360,25 +360,20 @@ header {
       border: 1px solid $box-border-color;
       padding: 0.2em;
     }
+    .map-search {
+      height: 32px;
+      label {
+        line-height: 32px;
+        display: inline;
+      }
+      
+      input {
+        float: right;
+        width: 270px;
+      }
+    }
     .map {
       height: 300px;
-      
-      & + div {
-        overflow: hidden;
-        padding: 2px 3px 5px;
-        background-color: #EBE6DC;
-        border: 1px #ccc solid;
-        
-        @include rounded-corners(0 0 5px 5px);
-        label {
-          display: inline;
-        }
-        
-        input {
-          float: right;
-          width: 270px;
-        }
-      }
     }
     #show-map-link, #hide-map-link {
       line-height: 31px;
@@ -405,6 +400,20 @@ header {
         border-top-color: lighten($button-alt-color, 5%);
         border-left-color: lighten($button-alt-color, 5%);
       }
+    }
+    &#article_location_attributes_map {
+      @include rounded-corners(5px);
+      padding: 5px;
+      margin-top: -1em;
+      border: 1px solid $box-border-color;
+    }
+  }
+  .ckeditor {
+    .cke_skin_kama .cke_button .cke_button_mimeimage .cke_icon {
+      background-position: 0 -576px;
+    }
+    span.cke_skin_kama {
+      border: 1px solid #ccc;
     }
   }
 }
@@ -441,9 +450,6 @@ header {
   }
 }
 
-.cke_skin_kama .cke_button .cke_button_mimeimage .cke_icon {
-	background-position: 0 -576px;
-}
 #dialog_file_uploadUploader {
   width: 130px;
   height: 40px;

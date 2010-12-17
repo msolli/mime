@@ -83,8 +83,8 @@ no-NB:
       update: Lagre og publiser
     labels:
       other:
-        'maptastic-search': 'Søk etter by, sted eller adresse:'
-        'maptastic-hint': 'Klikk for å velge en posisjon, dra markøren rundt for å etterjustere.'
+        'maptastic-search': 'Søk etter sted eller adresse:'
+        'maptastic-hint': 'Klikk for å velge en posisjon. Dra markøren rundt for å etterjustere.'
       article:
         headword: Oppslagsord
         headword_presentation: Alternativ tittel

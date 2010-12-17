@@ -617,23 +617,16 @@ header {
   width: 100%;
   border: 1px solid #cccccc;
   padding: 0.2em; }
+#main form.formtastic fieldset > ol > li .map-search, #main form.formtastic fieldset > ol > li.string .map-search, #main form.formtastic fieldset > ol > li.text .map-search {
+  height: 32px; }
+  #main form.formtastic fieldset > ol > li .map-search label, #main form.formtastic fieldset > ol > li.string .map-search label, #main form.formtastic fieldset > ol > li.text .map-search label {
+    line-height: 32px;
+    display: inline; }
+  #main form.formtastic fieldset > ol > li .map-search input, #main form.formtastic fieldset > ol > li.string .map-search input, #main form.formtastic fieldset > ol > li.text .map-search input {
+    float: right;
+    width: 270px; }
 #main form.formtastic fieldset > ol > li .map, #main form.formtastic fieldset > ol > li.string .map, #main form.formtastic fieldset > ol > li.text .map {
   height: 300px; }
-  #main form.formtastic fieldset > ol > li .map + div, #main form.formtastic fieldset > ol > li.string .map + div, #main form.formtastic fieldset > ol > li.text .map + div {
-    overflow: hidden;
-    padding: 2px 3px 5px;
-    background-color: #EBE6DC;
-    border: 1px #ccc solid;
-    position: relative;
-    border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
-    -webkit-border-radius: 0 0 5px 5px;
-    behavior: url(/stylesheets/PIE.htc); }
-    #main form.formtastic fieldset > ol > li .map + div label, #main form.formtastic fieldset > ol > li.string .map + div label, #main form.formtastic fieldset > ol > li.text .map + div label {
-      display: inline; }
-    #main form.formtastic fieldset > ol > li .map + div input, #main form.formtastic fieldset > ol > li.string .map + div input, #main form.formtastic fieldset > ol > li.text .map + div input {
-      float: right;
-      width: 270px; }
 #main form.formtastic fieldset > ol > li #show-map-link, #main form.formtastic fieldset > ol > li #hide-map-link, #main form.formtastic fieldset > ol > li.string #show-map-link, #main form.formtastic fieldset > ol > li.string #hide-map-link, #main form.formtastic fieldset > ol > li.text #show-map-link, #main form.formtastic fieldset > ol > li.text #hide-map-link {
   line-height: 31px; }
   #main form.formtastic fieldset > ol > li #show-map-link img, #main form.formtastic fieldset > ol > li #hide-map-link img, #main form.formtastic fieldset > ol > li.string #show-map-link img, #main form.formtastic fieldset > ol > li.string #hide-map-link img, #main form.formtastic fieldset > ol > li.text #show-map-link img, #main form.formtastic fieldset > ol > li.text #hide-map-link img {
@@ -659,6 +652,19 @@ header {
     border: 1px solid #f9a942;
     border-top-color: #fbbf74;
     border-left-color: #fbbf74; }
+#main form.formtastic fieldset > ol > li#article_location_attributes_map, #main form.formtastic fieldset > ol > li.string#article_location_attributes_map, #main form.formtastic fieldset > ol > li.text#article_location_attributes_map {
+  position: relative;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 5px;
+  margin-top: -1em;
+  border: 1px solid #cccccc; }
+#main form.formtastic .ckeditor .cke_skin_kama .cke_button .cke_button_mimeimage .cke_icon {
+  background-position: 0 -576px; }
+#main form.formtastic .ckeditor span.cke_skin_kama {
+  border: 1px solid #ccc; }
 
 .tooltip {
   background-color: #fff;
@@ -686,9 +692,6 @@ header {
   display: block;
   height: 0;
   visibility: hidden; }
-
-.cke_skin_kama .cke_button .cke_button_mimeimage .cke_icon {
-  background-position: 0 -576px; }
 
 #dialog_file_uploadUploader {
   width: 130px;
@@ -826,6 +829,10 @@ form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > o
   form.formtastic fieldset > ol > li p.inline-errors a, form.formtastic fieldset > ol > li .inline-errors a, form.formtastic fieldset > ol > li.string p.inline-errors a, form.formtastic fieldset > ol > li.string .inline-errors a, form.formtastic fieldset > ol > li.text p.inline-errors a, form.formtastic fieldset > ol > li.text .inline-errors a {
     color: #b72727;
     text-decoration-style: dashed; }
+form.formtastic fieldset > ol > li p.inline-hints, form.formtastic fieldset > ol > li.string p.inline-hints, form.formtastic fieldset > ol > li.text p.inline-hints {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  font-size: 75%;
+  color: #7a7a7a; }
 form.formtastic fieldset > ol > li #show-map-link, form.formtastic fieldset > ol > li #hide-map-link, form.formtastic fieldset > ol > li.string #show-map-link, form.formtastic fieldset > ol > li.string #hide-map-link, form.formtastic fieldset > ol > li.text #show-map-link, form.formtastic fieldset > ol > li.text #hide-map-link {
   font-family: "Lucida Grande", Tahoma, Arial;
   font-size: 75%;

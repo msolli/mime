@@ -144,6 +144,11 @@ form.formtastic {
         text-decoration-style: dashed;
       }
     }
+    p.inline-hints {
+      @include small-sans;
+      font-size: $font12px;
+      color: $light-grey-color;
+    }
     #show-map-link, #hide-map-link {
       @include small-sans;
       font-size: $font12px;

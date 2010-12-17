@@ -39,7 +39,7 @@ module Maptastic
     end
     
     def map_search(options)
-      @template.content_tag('div') do
+      @template.content_tag('div', :class => 'map-search') do
         text = label_tag('maptastic-search', options.delete(:search_label) || 'Search:')
         text << text_field_tag('maptastic-search')
         text
@@ -55,17 +55,14 @@ module Maptastic
       map_container = @template.content_tag(:div, nil, :class => 'map', :id => map_div_id(methods))
       map_html = @template.content_tag(:li, nil, :id => generate_html_id('map', nil)) do
         text = [label_html]
-        text << map_container
         text << map_search(options) if options.delete(:search)
+        text << map_container
         text << hint_html
         text << (options[:skip_js] ? '' : map_js(methods, options[:zoom]).to_s)
         
         Formtastic::Util.html_safe(text.join)
       end
-
       Formtastic::Util.html_safe(inputs_html + map_html)
     end
-
   end
-
 end
