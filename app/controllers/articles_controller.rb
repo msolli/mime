@@ -14,7 +14,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
-    # @article.add_async_uploads
     @article.authors << current_user if user_signed_in?
     if @article.save
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
@@ -51,10 +50,10 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    # Necessary because mongoid does some (stupid) magic with child relations
     Article.without_versioning do
       @article.attributes = params[:article]
     end
-    # @article.add_async_uploads
     if @article.save
       Article.without_versioning do
         if user_signed_in?
