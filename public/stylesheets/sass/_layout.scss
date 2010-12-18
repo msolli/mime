@@ -248,6 +248,22 @@ header {
     padding-left: 0;
     width: 450px;
     
+    li.commit {
+      position: relative;
+      
+      object {
+        z-index: 1000;
+        position: relative;
+      }
+      button {
+        z-index: 100;
+        position: absolute;
+        left: 0;
+        margin: 0 !important;
+      }
+    }
+    
+    
     &>ol {
       width: 450px;
       
@@ -432,6 +448,7 @@ header {
         vertical-align: text-bottom;
       }
     }
+    .file-upload-button,
     input[type="submit"] {
       padding: 0.4em 2em 0.2em 2em;
       background: $button-color;
@@ -439,12 +456,14 @@ header {
       border: 1px solid lighten($button-color, 5%);
       border-top-color: darken($button-color, 5%);
       border-left-color: darken($button-color, 5%);
+      &.hover,
       &:hover {
         background: $button-alt-color;
         border: 1px solid lighten($button-alt-color, 5%);
         border-top-color: darken($button-alt-color, 5%);
         border-left-color: darken($button-alt-color, 5%);
       }
+      &.active,
       &:active {
         border: 1px solid darken($button-alt-color, 5%);
         border-top-color: lighten($button-alt-color, 5%);

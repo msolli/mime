@@ -70,6 +70,7 @@ $(document).ready(function() {
 	  });
 	
 		var	file_element = $('.files input[type="file"]'),
+				commit_button = file_element.siblings('button'),
 				uploadify_settings = {
 					auto: true,
 					fileDataName: file_element.attr('name'),
@@ -77,6 +78,8 @@ $(document).ready(function() {
 					hideButton: true,
 					multi: true,
 					script: '/medias',
+					width: commit_button.outerWidth(),
+					height: commit_button.outerHeight(),
 					scriptData: {
 						// Double encode intended
 						authenticity_token: encodeURI(encodeURIComponent(jQuery('meta[name="csrf-token"]').attr('content'))),
@@ -102,6 +105,15 @@ $(document).ready(function() {
 					},
 					onProgress: function(event, id, fobj, data) {
 						console.log([event, id, fobj, data]);
+					},
+					onInit: function() {
+						file_element.parent().hover(function() {
+							commit_button.addClass('hover');
+						},
+						function() {
+							commit_button.removeClass('hover');
+						}).width(commit_button.outerWidth() + 5).height(commit_button.outerHeight()); // Deliberately adding some width slack
+						return true;
 					}
 				},
 

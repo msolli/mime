@@ -19,7 +19,9 @@
             = medias_f.input :_destroy, :as => :boolean
           = medias_f.input :id, :as => :hidden, :input_html => {:class => 'file-id'}
 
-    %li= file_field_tag :'media[file]'
+    %li.commit
+      = file_field_tag :'media[file]'
+      %button.file-upload-button{:type => 'button'} Last opp filer
     = f.input :media_ids_from_async_upload, :as => :hidden, :input_html => {:id => 'media-files'}
     - session_key_name = Rails.application.config.session_options[:key]
     = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
