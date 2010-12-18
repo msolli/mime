@@ -3,6 +3,29 @@
 = render :partial => "common/flash"
 
 = semantic_form_for setup_article(@article) do |f|
+  = f.inputs :class => 'files' do
+    = f.semantic_fields_for :medias do |medias_f|
+      %li
+        %ol
+          - unless medias_f.object.new_record?
+            %li.image= image_tag(medias_f.object.file.thumb('150x100').url, :alt => medias_f.object.description)
+          - else
+            %li.image.empty
+              %img
+          = medias_f.input :description, :as => :text, 
+            :input_html => { :cols => 25, :rows => 2},
+            :wrapper_html => { :class => 'description'}
+          - unless medias_f.object.new_record?
+            = medias_f.input :_destroy, :as => :boolean
+          = medias_f.input :id, :as => :hidden, :input_html => {:class => 'file-id'}
+
+    %li= file_field_tag :'media[file]'
+    = f.input :media_ids_from_async_upload, :as => :hidden, :input_html => {:id => 'media-files'}
+    - session_key_name = Rails.application.config.session_options[:key]
+    = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
+        
+      
+
   = f.inputs do
     = f.input :headword, :label => false, :input_html => {:class => 'headword', :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword')}
     = f.input :text, :as => :ckeditor, :label => false, :input_html => { :cols => '80', :class => 'articletext' }
@@ -41,5 +64,4 @@
         %ul
           - @article.errors.each do |attr, message|
             %li.inline-errors= link_to(t("articles.#{attr}"), "#article_#{attr}")
-  - session_key_name = Rails.application.config.session_options[:key]
-  = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
+

@@ -22,6 +22,8 @@ class Article
   field :disambiguation
   field :ip
   field :tags_array, :type => Array
+  
+  attr_accessor :media_ids_from_async_upload
 
   index :headword, :unique => true
   index [[ 'location.lat_lng', Mongo::GEO2D ]]
@@ -30,15 +32,16 @@ class Article
   validates_uniqueness_of :headword
   validates_associated :location, :external_links
   
-  accepts_nested_attributes_for :location, :external_links, :allow_destroy => true
+  accepts_nested_attributes_for :location, :external_links, :medias, :allow_destroy => true
   
   # We do this because mongodb doesn't allow index fields to be null
   # They can however be absent from the document…
-  set_callback :save, :before, lambda {|article| article.location = nil if article.location.blank?}
+  set_callback :validation, :before, lambda {|article| article.location = nil if article.new_record? && article.location.blank?}
   
   # Mongoid :reject_if is messed up, so we handle it here instead
-  set_callback :validation, :before, :remove_empty_external_links
-
+  set_callback :validation, :before, :remove_empty_associations
+  set_callback :validation, :before, :add_async_uploads
+  
   before_save :update_headword_sorting
 
   NO_SORT = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z æ ø å)
@@ -88,13 +91,27 @@ class Article
       without_callback(:save, :before, :revise) { yield }
     end
   end
-
+  
   private
+  
+  def add_async_uploads
+    _media_ids = media_ids_from_async_upload.to_s.strip.split.map{|__id| BSON::ObjectId.from_string(__id)}
+    unless _media_ids.blank?
+      new_medias = Media.any_in(:_id => _media_ids)
+      new_medias.each do |media|
+        media.article_ids << self.id
+        media.save
+        self.media_ids << media.id
+      end
+    end
+  end
 
-  def remove_empty_external_links
-    external_links.each do |ext_link|
-      if ext_link.fields.keys.all?{|key| ext_link.attributes[key].blank?}
-        self.remove(ext_link)
+  def remove_empty_associations
+    [:external_links, :medias].each do |method|
+      self.send(method).each do |item|
+        if item.fields.keys.all?{|key| item.attributes[key].blank?}
+          self.remove(item)
+        end
       end
     end
   end

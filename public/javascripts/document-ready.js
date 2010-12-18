@@ -32,12 +32,10 @@ $(document).ready(function() {
       }
     }
   })();
-
-  $('#external-links').find('button').click(function() {
-    var li = $(this).parents('ol.link').parent();
-
-    if($(this).hasClass('add')) {
-      var new_li = li.clone(true);
+	
+	(function() {
+		var input_cloner = function(li) {
+			var new_li = li.clone(true);
 
       new_li.find('*[for],*[id]').andSelf().each(function() {
         var that = this;
@@ -56,12 +54,62 @@ $(document).ready(function() {
       new_li.find('input').each(function() { $(this).val(""); } );
 
       li.parent().append(new_li);
-    } else if($(this).hasClass('remove')) {
-      if(!li.is(':last-child')) {
-        li.remove();
-      }
-    }
-  });
+			return new_li;
+		};
+	
+		$('#external-links').find('button').click(function() {
+	    var li = $(this).parents('ol.link').parent();
+
+	    if($(this).hasClass('add')) {
+	      input_cloner(li);
+	    } else if($(this).hasClass('remove')) {
+	      if(!li.is(':last-child')) {
+	        li.remove();
+	      }
+	    }
+	  });
+	
+		var	file_element = $('.files input[type="file"]'),
+				uploadify_settings = {
+					auto: true,
+					fileDataName: file_element.attr('name'),
+					fileExt: '*.jpg,*.jpeg,*.png,*.gif',
+					hideButton: true,
+					multi: true,
+					script: '/medias',
+					scriptData: {
+						// Double encode intended
+						authenticity_token: encodeURI(encodeURIComponent(jQuery('meta[name="csrf-token"]').attr('content'))),
+						size: '250x200',
+						format: 'json'
+				  },
+					queueID: 'file-upload-queue',
+					sizeLimit: 1024 * 1024 * 10,
+					expressInstall: '/lib/jquery.uploadify-v2.1.4/expressInstall.swf',
+					uploader: '/lib/jquery.uploadify-v2.1.4/uploadify.swf',
+					wmode: 'transparent',
+					onComplete: function(event, id, fobj, response, data) {
+						var	li = $('.files ol li:has(ol):last'),
+								resp = $.parseJSON(response);
+						if(li.find('.image img').attr('src')) {
+							li = input_cloner(li);
+						}
+						
+						li.find('.image img').attr('src', resp.url)
+							.parent().removeClass('empty')
+							.parent().find('.file-id').val(resp.obj._id);
+						$('#media-files').val($('#media-files').val() + ' ' + resp.obj._id);
+					},
+					onProgress: function(event, id, fobj, data) {
+						console.log([event, id, fobj, data]);
+					}
+				},
+
+		session_key = jQuery('#session_key_name');
+		uploadify_settings.scriptData[session_key.attr('name')] = encodeURI(encodeURIComponent(session_key.val()));
+
+		file_element.uploadify(uploadify_settings);
+	})();
 
   // jQuery.timeago() (http://timeago.yarp.com/)
   $.timeago.settings.cutoff = 7*24*60*60*1000;

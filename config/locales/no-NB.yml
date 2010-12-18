@@ -97,10 +97,11 @@ no-NB:
         tags: Nøkkelord
         disambiguation: "Andre betydninger"
       location: Posisjon
+      media:
       external_link:
         href: Adresse
         text: Lenketekst
-        _destroy: Slett
+      _destroy: Slett
   words:
     or: eller
     search: søk

@@ -548,6 +548,36 @@ header {
         height: 22px;
         margin-top: -11px; }
 
+#main form.formtastic fieldset.files {
+  float: right;
+  padding-left: 0;
+  width: 450px; }
+  #main form.formtastic fieldset.files > ol {
+    width: 450px; }
+    #main form.formtastic fieldset.files > ol > li {
+      width: 100%;
+      overflow: hidden; }
+      #main form.formtastic fieldset.files > ol > li ol li {
+        float: left;
+        /*            &.empty,
+                    &.empty + li {
+                      display: none;
+                    }
+        */ }
+        #main form.formtastic fieldset.files > ol > li ol li label, #main form.formtastic fieldset.files > ol > li ol li input {
+          width: 100%; }
+        #main form.formtastic fieldset.files > ol > li ol li input[type="checkbox"] {
+          width: auto;
+          margin-right: 5px; }
+        #main form.formtastic fieldset.files > ol > li ol li.image {
+          width: 150px; }
+          #main form.formtastic fieldset.files > ol > li ol li.image img {
+            max-width: 140px; }
+        #main form.formtastic fieldset.files > ol > li ol li.description {
+          width: 220px;
+          margin-right: 10px; }
+  #main form.formtastic fieldset.files textarea {
+    float: right; }
 #main form.formtastic fieldset {
   padding-left: 35px; }
   #main form.formtastic fieldset legend {

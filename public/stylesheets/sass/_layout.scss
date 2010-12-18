@@ -243,6 +243,56 @@ header {
 }
 
 #main form.formtastic {
+  fieldset.files {
+    float: right;
+    padding-left: 0;
+    width: 450px;
+    
+    &>ol {
+      width: 450px;
+      
+      &>li {
+        width: 100%;
+        
+        overflow: hidden;
+        
+        ol {
+          li {
+            float: left;
+
+            label, input {
+              width: 100%;
+            }
+            
+            input[type="checkbox"] {
+              width: auto;
+              margin-right: 5px;
+            }
+            
+            &.image {
+              width: 150px;
+              
+              img {
+                max-width: 140px;
+              };
+            }
+            &.description {
+              width: 220px;
+              margin-right: 10px;
+            }
+/*            &.empty,
+            &.empty + li {
+              display: none;
+            }
+*/          }
+        }
+      }
+    }
+    
+    textarea {
+      float: right;
+    }
+  }
   fieldset {
     @include padding-main;
 
