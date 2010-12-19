@@ -19,7 +19,7 @@ mime.tools = {
 
      new_li.find('input').each(function() { $(this).val(""); } );
 
-     li.parent().append(new_li);
+     new_li.insertAfter(li);
 		return new_li;
 	}
 };
