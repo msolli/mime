@@ -4,7 +4,12 @@ class MediasController < ApplicationController
   end
   
   def create
-    m = Media.new params[:media]
+    if request.headers['X_IS_PLUPLOAD']
+      m = Media.new :file => params[:file]
+    else
+      m = Media.new params[:media]
+    end
+    
     m.save
     
     respond_to do |format|

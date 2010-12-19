@@ -17,7 +17,7 @@ mime.tools = {
        });
      });
 
-     new_li.find('input').each(function() { $(this).val(""); } );
+     new_li.find('input, textarea').each(function() { $(this).val(""); } );
 
      new_li.insertAfter(li);
 		return new_li;

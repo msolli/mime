@@ -45,59 +45,6 @@ $(document).ready(function() {
 	      }
 	    }
 	  });
-	
-		var	file_element = $('.files input[type="file"]'),
-				commit_button = file_element.siblings('button'),
-				uploadify_settings = {
-					auto: true,
-					fileDataName: file_element.attr('name'),
-					fileExt: '*.jpg,*.jpeg,*.png,*.gif',
-					hideButton: true,
-					multi: true,
-					script: '/medias',
-					width: commit_button.outerWidth(),
-					height: commit_button.outerHeight(),
-					scriptData: {
-						// Double encode intended
-						authenticity_token: encodeURI(encodeURIComponent(jQuery('meta[name="csrf-token"]').attr('content'))),
-						size: '250x200',
-						format: 'json'
-				  },
-					queueID: 'file-upload-queue',
-					sizeLimit: 1024 * 1024 * 10,
-					expressInstall: '/lib/jquery.uploadify-v2.1.4/expressInstall.swf',
-					uploader: '/lib/jquery.uploadify-v2.1.4/uploadify.swf',
-					wmode: 'transparent',
-					onComplete: function(event, id, fobj, response, data) {
-						var	li = $('.files ol li:has(ol):last'),
-								resp = $.parseJSON(response);
-						if(li.find('.image img').attr('src')) {
-							li = input_cloner(li);
-						}
-						
-						li.find('.image img').attr('src', resp.url)
-							.parent().removeClass('empty')
-							.parent().find('.file-id').val(resp.obj._id);
-						$('#media-files').val($('#media-files').val() + ' ' + resp.obj._id);
-					},
-					onProgress: function(event, id, fobj, data) {
-						console.log([event, id, fobj, data]);
-					},
-					onInit: function() {
-						file_element.parent().hover(function() {
-							commit_button.addClass('hover');
-						},
-						function() {
-							commit_button.removeClass('hover');
-						}).width(commit_button.outerWidth() + 5).height(commit_button.outerHeight()); // Deliberately adding some width slack
-						return true;
-					}
-				},
-
-		session_key = jQuery('#session_key_name');
-		uploadify_settings.scriptData[session_key.attr('name')] = encodeURI(encodeURIComponent(session_key.val()));
-
-		file_element.uploadify(uploadify_settings);
 	})();
 
   // jQuery.timeago() (http://timeago.yarp.com/)

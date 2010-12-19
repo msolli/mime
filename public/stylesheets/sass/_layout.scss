@@ -248,7 +248,7 @@ header {
     padding-left: 0;
     width: 450px;
     
-    li.commit {
+    li#upload-container {
       position: relative;
       
       object {
@@ -448,7 +448,7 @@ header {
         vertical-align: text-bottom;
       }
     }
-    .file-upload-button,
+    #file-upload-button,
     input[type="submit"] {
       padding: 0.4em 2em 0.2em 2em;
       background: $button-color;

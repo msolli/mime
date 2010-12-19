@@ -552,12 +552,12 @@ header {
   float: right;
   padding-left: 0;
   width: 450px; }
-  #main form.formtastic fieldset.files li.commit {
+  #main form.formtastic fieldset.files li#upload-container {
     position: relative; }
-    #main form.formtastic fieldset.files li.commit object {
+    #main form.formtastic fieldset.files li#upload-container object {
       z-index: 1000;
       position: relative; }
-    #main form.formtastic fieldset.files li.commit button {
+    #main form.formtastic fieldset.files li#upload-container button {
       z-index: 100;
       position: absolute;
       left: 0;
@@ -672,8 +672,8 @@ header {
   #main form.formtastic fieldset > ol > li #show-map-link img, #main form.formtastic fieldset > ol > li #hide-map-link img, #main form.formtastic fieldset > ol > li.string #show-map-link img, #main form.formtastic fieldset > ol > li.string #hide-map-link img, #main form.formtastic fieldset > ol > li.text #show-map-link img, #main form.formtastic fieldset > ol > li.text #hide-map-link img {
     margin-right: 5px;
     vertical-align: text-bottom; }
-#main form.formtastic fieldset > ol > li .file-upload-button,
-#main form.formtastic fieldset > ol > li input[type="submit"], #main form.formtastic fieldset > ol > li.string .file-upload-button, #main form.formtastic fieldset > ol > li.string input[type="submit"], #main form.formtastic fieldset > ol > li.text .file-upload-button, #main form.formtastic fieldset > ol > li.text input[type="submit"] {
+#main form.formtastic fieldset > ol > li #file-upload-button,
+#main form.formtastic fieldset > ol > li input[type="submit"], #main form.formtastic fieldset > ol > li.string #file-upload-button, #main form.formtastic fieldset > ol > li.string input[type="submit"], #main form.formtastic fieldset > ol > li.text #file-upload-button, #main form.formtastic fieldset > ol > li.text input[type="submit"] {
   padding: 0.4em 2em 0.2em 2em;
   background: #2f528f;
   position: relative;
@@ -684,16 +684,16 @@ header {
   border: 1px solid #355da2;
   border-top-color: #29477c;
   border-left-color: #29477c; }
-  #main form.formtastic fieldset > ol > li .file-upload-button.hover, #main form.formtastic fieldset > ol > li .file-upload-button:hover,
+  #main form.formtastic fieldset > ol > li #file-upload-button.hover, #main form.formtastic fieldset > ol > li #file-upload-button:hover,
   #main form.formtastic fieldset > ol > li input[type="submit"].hover,
-  #main form.formtastic fieldset > ol > li input[type="submit"]:hover, #main form.formtastic fieldset > ol > li.string .file-upload-button.hover, #main form.formtastic fieldset > ol > li.string .file-upload-button:hover, #main form.formtastic fieldset > ol > li.string input[type="submit"].hover, #main form.formtastic fieldset > ol > li.string input[type="submit"]:hover, #main form.formtastic fieldset > ol > li.text .file-upload-button.hover, #main form.formtastic fieldset > ol > li.text .file-upload-button:hover, #main form.formtastic fieldset > ol > li.text input[type="submit"].hover, #main form.formtastic fieldset > ol > li.text input[type="submit"]:hover {
+  #main form.formtastic fieldset > ol > li input[type="submit"]:hover, #main form.formtastic fieldset > ol > li.string #file-upload-button.hover, #main form.formtastic fieldset > ol > li.string #file-upload-button:hover, #main form.formtastic fieldset > ol > li.string input[type="submit"].hover, #main form.formtastic fieldset > ol > li.string input[type="submit"]:hover, #main form.formtastic fieldset > ol > li.text #file-upload-button.hover, #main form.formtastic fieldset > ol > li.text #file-upload-button:hover, #main form.formtastic fieldset > ol > li.text input[type="submit"].hover, #main form.formtastic fieldset > ol > li.text input[type="submit"]:hover {
     background: #fab45b;
     border: 1px solid #fbbf74;
     border-top-color: #f9a942;
     border-left-color: #f9a942; }
-  #main form.formtastic fieldset > ol > li .file-upload-button.active, #main form.formtastic fieldset > ol > li .file-upload-button:active,
+  #main form.formtastic fieldset > ol > li #file-upload-button.active, #main form.formtastic fieldset > ol > li #file-upload-button:active,
   #main form.formtastic fieldset > ol > li input[type="submit"].active,
-  #main form.formtastic fieldset > ol > li input[type="submit"]:active, #main form.formtastic fieldset > ol > li.string .file-upload-button.active, #main form.formtastic fieldset > ol > li.string .file-upload-button:active, #main form.formtastic fieldset > ol > li.string input[type="submit"].active, #main form.formtastic fieldset > ol > li.string input[type="submit"]:active, #main form.formtastic fieldset > ol > li.text .file-upload-button.active, #main form.formtastic fieldset > ol > li.text .file-upload-button:active, #main form.formtastic fieldset > ol > li.text input[type="submit"].active, #main form.formtastic fieldset > ol > li.text input[type="submit"]:active {
+  #main form.formtastic fieldset > ol > li input[type="submit"]:active, #main form.formtastic fieldset > ol > li.string #file-upload-button.active, #main form.formtastic fieldset > ol > li.string #file-upload-button:active, #main form.formtastic fieldset > ol > li.string input[type="submit"].active, #main form.formtastic fieldset > ol > li.string input[type="submit"]:active, #main form.formtastic fieldset > ol > li.text #file-upload-button.active, #main form.formtastic fieldset > ol > li.text #file-upload-button:active, #main form.formtastic fieldset > ol > li.text input[type="submit"].active, #main form.formtastic fieldset > ol > li.text input[type="submit"]:active {
     border: 1px solid #f9a942;
     border-top-color: #fbbf74;
     border-left-color: #fbbf74; }
@@ -897,8 +897,8 @@ form.formtastic fieldset > ol > li textarea, form.formtastic fieldset > ol > li.
   color: #383838;
   font-size: 100%;
   line-height: 1.5; }
-form.formtastic fieldset > ol > li .file-upload-button,
-form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldset > ol > li.string .file-upload-button, form.formtastic fieldset > ol > li.string input[type="submit"], form.formtastic fieldset > ol > li.text .file-upload-button, form.formtastic fieldset > ol > li.text input[type="submit"] {
+form.formtastic fieldset > ol > li #file-upload-button,
+form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldset > ol > li.string #file-upload-button, form.formtastic fieldset > ol > li.string input[type="submit"], form.formtastic fieldset > ol > li.text #file-upload-button, form.formtastic fieldset > ol > li.text input[type="submit"] {
   font-family: "Lucida Grande", Tahoma, Arial;
   color: white;
   font-size: 112.5%;

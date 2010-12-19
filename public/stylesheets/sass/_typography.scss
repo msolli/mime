@@ -191,7 +191,7 @@ form.formtastic {
       font-size: $font16px;
       line-height: 1.5;
     }
-    .file-upload-button,
+    #file-upload-button,
     input[type="submit"] {
       @include small-sans;
       color: white;
