@@ -53,6 +53,6 @@ module Mime
     config.filter_parameters += [:password]
     
     config.action_view.javascript_expansions[:head] = %w(typekit jquery.imgload /lib/jquery.uploadify-v2.1.4/swfobject.js /lib/jquery.uploadify-v2.1.4/jquery.uploadify.v2.1.4.js maptastic application)
-    config.action_view.javascript_expansions[:bottom] = %w(rails jquery.timeago jquery.timeago.no jquery.tools.tooltip document-ready)
+    config.action_view.javascript_expansions[:bottom] = %w(rails jquery.timeago jquery.timeago.no jquery.tools.tooltip mime-tools document-ready)
   end
 end
