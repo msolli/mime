@@ -426,16 +426,19 @@ header {
       -moz-border-radius: 0 0 5px 5px;
       -webkit-border-radius: 0 0 5px 5px;
       behavior: url(/stylesheets/PIE.htc);
-      margin: 0; }
+      margin: 0;
+      display: block; }
       #main aside.meta figure img {
         display: block;
-        margin: 0 auto; }
+        margin: 0 auto;
+        border: 1px solid #ccc; }
       #main aside.meta figure figurecaption {
         display: block;
         margin-bottom: 0;
         line-height: 1em;
         font-size: 87.5%;
-        font-weight: normal; }
+        font-weight: normal;
+        margin-top: 5px; }
   #main aside.external-links {
     margin: 16px 65px 16px 33px;
     clear: both; }

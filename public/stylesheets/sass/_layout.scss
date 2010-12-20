@@ -148,10 +148,12 @@ header {
       background: white;
       @include rounded-corners(0 0 5px 5px);
       margin: 0;
+      display: block;
       
       img {
         display: block;
         margin: 0 auto;
+        border: 1px solid #ccc;
       }
       
       figurecaption {
@@ -160,6 +162,7 @@ header {
         line-height: 1em;
         font-size: $font14px;
         font-weight: normal;
+        margin-top: 5px;
       }
     }
   }
