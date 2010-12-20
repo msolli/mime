@@ -19,7 +19,8 @@
     %img{:src => @article.location.static_map('300x150')}
   - @article.medias.each do |m|
     %figure
-      %img{:src => m.file.thumb("250x250").url}
+      - i = m.file.thumb("288x>")
+      %img{:src => i.url, :width => i.width, :height => i.height}
       %figurecaption= m.description
     
 - unless @article.external_links.blank?

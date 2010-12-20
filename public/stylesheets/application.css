@@ -421,11 +421,6 @@ header {
       border: 1px solid #cccccc;
       padding: 5px;
       background: white;
-      position: relative;
-      border-radius: 0 0 5px 5px;
-      -moz-border-radius: 0 0 5px 5px;
-      -webkit-border-radius: 0 0 5px 5px;
-      behavior: url(/stylesheets/PIE.htc);
       margin: 0;
       display: block; }
       #main aside.meta figure img {
@@ -435,9 +430,6 @@ header {
       #main aside.meta figure figurecaption {
         display: block;
         margin-bottom: 0;
-        line-height: 1em;
-        font-size: 87.5%;
-        font-weight: normal;
         margin-top: 5px; }
   #main aside.external-links {
     margin: 16px 65px 16px 33px;
@@ -800,6 +792,11 @@ header nav {
       text-decoration: none; }
       #main aside.info a:hover, #main aside.back-link a:hover, #main aside.redirected a:hover {
         text-decoration: underline; }
+  #main aside.meta figurecaption {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    font-size: 75%;
+    line-height: 1.2em;
+    font-weight: normal; }
   #main aside.redirected {
     font-style: italic; }
   #main aside.disambiguation {

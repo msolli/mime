@@ -146,7 +146,6 @@ header {
       border: 1px solid $box-border-color;
       padding: 5px;
       background: white;
-      @include rounded-corners(0 0 5px 5px);
       margin: 0;
       display: block;
       
@@ -159,9 +158,6 @@ header {
       figurecaption {
         display: block;
         margin-bottom: 0;
-        line-height: 1em;
-        font-size: $font14px;
-        font-weight: normal;
         margin-top: 5px;
       }
     }

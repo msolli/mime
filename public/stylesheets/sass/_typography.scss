@@ -64,6 +64,14 @@ header {
     color: $light-grey-color;
     @include no-underline;
   }
+  aside.meta {
+    figurecaption {
+      @include small-sans;
+      font-size: $font12px;
+      line-height: 1.2em;
+      font-weight: normal;
+    }
+  }
   aside.redirected {
     font-style: italic;
   }
