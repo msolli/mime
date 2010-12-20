@@ -16,7 +16,8 @@
 
 %aside.meta
   - unless @article.location.blank?
-    %img{:src => @article.location.static_map('300x150')}
+    %figure
+      %img{:src => @article.location.static_map('288x150'), :width => 288, :height => 150}
   - @article.medias.each do |m|
     %figure
       - i = m.file.thumb("288x>")
