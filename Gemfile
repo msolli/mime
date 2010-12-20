@@ -14,6 +14,7 @@ gem 'devise', :git => "http://github.com/plataformatec/devise.git"
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "escape_utils" # A way to silence stupid stupid stupid Rack::Utils::escape
 gem 'ckeditor', :git => "http://github.com/budstikka/rails-ckeditor.git", :branch => 'rails3'
+gem "will_paginate", "~> 3.0.pre2"
 
 # attachment handling
 gem 'aws-s3', :require => 'aws/s3'

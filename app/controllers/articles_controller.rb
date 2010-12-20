@@ -80,8 +80,15 @@ class ArticlesController < ApplicationController
       end
       return
     end
-    @articles = @user.articles.sort_by {|a| a.send(sort_column)}
-    @articles.reverse! if sort_direction == "desc"
+    articles = @user.articles.sort_by {|a| a.send(sort_column)}
+    articles.reverse! if sort_direction == "desc"
+
+    current_page = params[:page].blank? ? 1 : params[:page].to_i
+    per_page = 10
+    @articles_pager = WillPaginate::Collection.create(current_page, per_page, articles.size) do |pager|
+      start = (current_page - 1) * per_page
+      pager.replace(articles[start, per_page])
+    end
   end
 
   private

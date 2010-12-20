@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   layout 'application'
 
+  WillPaginate::ViewHelpers.pagination_options[:previous_label] = I18n.t('will_paginate.previous')
+  WillPaginate::ViewHelpers.pagination_options[:next_label] = I18n.t('will_paginate.next')
+
   private
 
   def find_article

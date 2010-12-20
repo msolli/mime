@@ -54,5 +54,6 @@ module Mime
     
     config.action_view.javascript_expansions[:head] = %w(typekit jquery.imgload maptastic application)
     config.action_view.javascript_expansions[:bottom] = %w(rails jquery.timeago jquery.timeago.no jquery.tools.tooltip /lib/plupload/js/plupload.full.min.js mime-tools document-ready plupload-config)
+
   end
 end

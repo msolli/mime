@@ -273,5 +273,6 @@ DEPENDENCIES
   ruby_parser
   sax-machine
   shoulda
+  will_paginate (~> 3.0.pre2)
   wirble
   xpath

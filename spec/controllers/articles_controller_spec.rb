@@ -130,7 +130,7 @@ describe ArticlesController do
       end
       get :index, :user_id => u.to_param
       response.should be_success
-      assigns(:articles).size.should == 10
+      assigns(:articles_pager).size.should == 10
     end
 
     it "shows 404 if the user does not exist" do
@@ -152,15 +152,15 @@ describe ArticlesController do
       it "sorts a user's articles by headword" do
         get :index, :user_id => @u.to_param, :sort => 'headword_sorting', :direction => 'asc'
         response.should be_success
-        assigns(:articles).first.headword.should == 'bukse'
-        assigns(:articles).last.headword.should == 'åker'
+        assigns(:articles_pager).first.headword.should == 'bukse'
+        assigns(:articles_pager).last.headword.should == 'åker'
       end
 
       it "sorts a user's articles by headword, descending" do
         get :index, :user_id => @u.to_param, :sort => 'headword_sorting', :direction => 'desc'
         response.should be_success
-        assigns(:articles).first.headword.should == 'åker'
-        assigns(:articles).last.headword.should == 'bukse'
+        assigns(:articles_pager).first.headword.should == 'åker'
+        assigns(:articles_pager).last.headword.should == 'bukse'
       end
     end
   end

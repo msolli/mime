@@ -112,6 +112,10 @@ no-NB:
       link_back_to: "%{headword} har flere betydninger. For andre betydninger, se %{headword_link}."
       multiple_articles_for: "%{headword} har flere betydninger:"
 
+  will_paginate:
+    previous: "&#8592; Forrige"
+    next: "Neste &#8594;"
+
 # Norwegian, norsk bokmål, by irb.no
   support:
     array:

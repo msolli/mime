@@ -15,9 +15,9 @@
       %th= sortable 'updated_at', t('articles.last_updated'), "desc"
   %tfoot
     %tr
-      %td{:colspan => 2}
+      %td{:colspan => 2}= will_paginate @articles_pager
   %tbody
-    - @articles.each do |article|
+    - @articles_pager.each do |article|
       %tr
         %td= link_to article.headword, pretty_article_path(article)
         %td= timeago(article.updated_at)
