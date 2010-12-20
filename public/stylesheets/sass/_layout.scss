@@ -222,6 +222,17 @@ header {
     td, th {
       padding: 5px;
     }
+    th .current {
+      padding-right: 12px;  
+      background-repeat: no-repeat;  
+      background-position: right center;  
+    }
+    th .asc {
+      background-image: url(/images/icons/up_arrow.gif);   
+    }
+    th .desc {
+      background-image: url(/images/icons/down_arrow.gif);   
+    }
     tr.current {
       background: mix($message-notice-color, $main-background-color, 25%);
     }

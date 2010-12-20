@@ -516,6 +516,14 @@ header {
       text-align: right; }
     #main table.versions td, #main table.versions th, #main table.articles td, #main table.articles th {
       padding: 5px; }
+    #main table.versions th .current, #main table.articles th .current {
+      padding-right: 12px;
+      background-repeat: no-repeat;
+      background-position: right center; }
+    #main table.versions th .asc, #main table.articles th .asc {
+      background-image: url(/images/icons/up_arrow.gif); }
+    #main table.versions th .desc, #main table.articles th .desc {
+      background-image: url(/images/icons/down_arrow.gif); }
     #main table.versions tr.current, #main table.articles tr.current {
       background: #d9e3e2; }
   #main div.maincol {
