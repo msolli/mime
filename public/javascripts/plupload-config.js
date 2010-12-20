@@ -32,6 +32,10 @@ $(function() {
 		});
 	
 		uploader.init();
+		
+		upload_button.click(function() {
+			uploader.start();
+		});
 	
 		// Resize the li and make it fake hover on the button (don't know why we need to do this,
 		// but hover on the button isn't triggered)

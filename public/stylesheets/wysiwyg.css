@@ -20,26 +20,3 @@ body {
     font-style: italic; }
   body strong {
     font-weight: bold; }
-  body figure,
-  body .image-wrap {
-    position: relative;
-    border: 1px solid #cccccc;
-    padding: 5px;
-    background: white;
-    position: relative;
-    border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
-    -webkit-border-radius: 0 0 5px 5px;
-    behavior: url(/stylesheets/PIE.htc); }
-    body figure img,
-    body .image-wrap img {
-      display: block; }
-    body figure figurecaption,
-    body figure p,
-    body .image-wrap figurecaption,
-    body .image-wrap p {
-      display: block;
-      margin-bottom: 0;
-      line-height: 1em;
-      font-size: 87.5%;
-      font-weight: normal; }

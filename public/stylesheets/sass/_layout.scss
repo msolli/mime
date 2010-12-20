@@ -140,6 +140,28 @@ header {
     padding-top: 16px;
     margin-left: 5px;
     width: 300px;
+    
+    figure,
+    .image-wrap {
+      position: relative;
+      border: 1px solid $box-border-color;
+      padding: 5px;
+      background: white;
+      @include rounded-corners(0 0 5px 5px);
+      
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      figurecaption,
+      p {
+        display: block;
+        margin-bottom: 0;
+        line-height: 1em;
+        font-size: $font14px;
+        font-weight: normal;
+      }
+    }
   }
   aside.external-links {
     margin: 16px 65px 16px 33px;

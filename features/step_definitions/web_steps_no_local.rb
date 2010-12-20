@@ -85,3 +85,8 @@ end
 Så /^jeg skal se formatert tekst med en verktøylinje$/ do
   page.should have_xpath("//*[contains(@class, 'cke_editor')]")
 end
+
+Når /^jeg legger ved bildet "([^"]*)" til "([^"]*)"$/ do |path, selector|
+  Når %{jeg legger ved filen "#{Rails.root}/#{path}" til "#{selector}"}
+end
+

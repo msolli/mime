@@ -411,8 +411,13 @@ header {
       font-style: italic; }
     #main .articletext strong {
       font-weight: bold; }
-    #main .articletext figure,
-    #main .articletext .image-wrap {
+  #main aside.meta {
+    float: left;
+    padding-top: 16px;
+    margin-left: 5px;
+    width: 300px; }
+    #main aside.meta figure,
+    #main aside.meta .image-wrap {
       position: relative;
       border: 1px solid #cccccc;
       padding: 5px;
@@ -422,23 +427,19 @@ header {
       -moz-border-radius: 0 0 5px 5px;
       -webkit-border-radius: 0 0 5px 5px;
       behavior: url(/stylesheets/PIE.htc); }
-      #main .articletext figure img,
-      #main .articletext .image-wrap img {
-        display: block; }
-      #main .articletext figure figurecaption,
-      #main .articletext figure p,
-      #main .articletext .image-wrap figurecaption,
-      #main .articletext .image-wrap p {
+      #main aside.meta figure img,
+      #main aside.meta .image-wrap img {
+        display: block;
+        margin: 0 auto; }
+      #main aside.meta figure figurecaption,
+      #main aside.meta figure p,
+      #main aside.meta .image-wrap figurecaption,
+      #main aside.meta .image-wrap p {
         display: block;
         margin-bottom: 0;
         line-height: 1em;
         font-size: 87.5%;
         font-weight: normal; }
-  #main aside.meta {
-    float: left;
-    padding-top: 16px;
-    margin-left: 5px;
-    width: 300px; }
   #main aside.external-links {
     margin: 16px 65px 16px 33px;
     clear: both; }
