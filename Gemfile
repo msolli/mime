@@ -38,7 +38,7 @@ group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'rspec-rails', '~> 2.3.0'
+  gem 'rspec-rails'
   gem 'fuubar'
   gem 'launchy'
   gem 'ruby-debug19'
