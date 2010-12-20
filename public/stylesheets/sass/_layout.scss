@@ -280,8 +280,9 @@ header {
     padding-left: 0;
     width: 450px;
     
-    li#upload-container {
+    div#upload-container {
       position: relative;
+      clear: both;
     
       button {
         position: absolute;

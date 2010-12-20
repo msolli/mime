@@ -552,9 +552,10 @@ header {
   float: right;
   padding-left: 0;
   width: 450px; }
-  #main form.formtastic fieldset.files li#upload-container {
-    position: relative; }
-    #main form.formtastic fieldset.files li#upload-container button {
+  #main form.formtastic fieldset.files div#upload-container {
+    position: relative;
+    clear: both; }
+    #main form.formtastic fieldset.files div#upload-container button {
       position: absolute;
       left: 0;
       margin: 0 !important; }
