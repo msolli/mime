@@ -6,7 +6,10 @@
 
 = render :partial => 'users/sessions/info', :locals => { :user => @user }
 %aside.back-link
-  = link_to '« ' + t('users.profile.back'), user_path(@user)
+  - if current_user == @user
+    = link_to '« ' + t('users.profile.back_you'), user_path(@user)
+  - else
+    = link_to '« ' + t('users.profile.back_author', :for => possessivize(@user.name_or_email) ), user_path(@user)
 
 %table.articles
   %thead

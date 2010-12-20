@@ -19,4 +19,12 @@ module ApplicationHelper
   def cached_page?
     controller_name == 'home' && ['index', 'alphabetic'].include?(action_name)
   end
+
+  def author_or_you
+    current_user == @user ? t('words.you') : @user.name_or_email
+  end
+
+  def possessivize(word)
+    word =~ /s$/i ? word + "'" : word + "s"
+  end
 end

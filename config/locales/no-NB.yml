@@ -59,11 +59,12 @@ no-NB:
       profile: "Brukerprofil for %{for}"
       contributor: "Bidragsyter siden %{since}"
       edit: Rediger
-      all_articles: "Alle artiklene du har bidratt til"
+      all_articles: "Alle artiklene %{for} har bidratt til"
       user_articles: "%{user}: Artikler"
       articles: Artikler
-      back: "Tilbake til brukerprofilen din"
-      last_articles: "Her er de siste artiklene du har redigert:"
+      back_you: "Tilbake til brukerprofilen din"
+      back_author: "Tilbake til %{for} brukerprofil"
+      last_articles: "Her er de siste artiklene %{for} har redigert:"
     login:
       help_us: "Hjelp oss å oppdatere leksikonet:"
       register: "Registrér deg"
@@ -107,6 +108,8 @@ no-NB:
     or: eller
     search: søk
     new: ny
+    you: du
+    your: din
   import:
     disambiguation:
       link_back_to: "%{headword} har flere betydninger. For andre betydninger, se %{headword_link}."
