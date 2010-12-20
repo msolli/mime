@@ -416,8 +416,7 @@ header {
     padding-top: 16px;
     margin-left: 5px;
     width: 300px; }
-    #main aside.meta figure,
-    #main aside.meta .image-wrap {
+    #main aside.meta figure {
       position: relative;
       border: 1px solid #cccccc;
       padding: 5px;
@@ -426,15 +425,12 @@ header {
       border-radius: 0 0 5px 5px;
       -moz-border-radius: 0 0 5px 5px;
       -webkit-border-radius: 0 0 5px 5px;
-      behavior: url(/stylesheets/PIE.htc); }
-      #main aside.meta figure img,
-      #main aside.meta .image-wrap img {
+      behavior: url(/stylesheets/PIE.htc);
+      margin: 0; }
+      #main aside.meta figure img {
         display: block;
         margin: 0 auto; }
-      #main aside.meta figure figurecaption,
-      #main aside.meta figure p,
-      #main aside.meta .image-wrap figurecaption,
-      #main aside.meta .image-wrap p {
+      #main aside.meta figure figurecaption {
         display: block;
         margin-bottom: 0;
         line-height: 1em;
