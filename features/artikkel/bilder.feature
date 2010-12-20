@@ -15,3 +15,19 @@ Egenskap: Legge bilder til artikler
     Så skal det være 1 av ".files li img"
     Når jeg trykker "Lagre"
     Så skal det være 1 av ".meta figure"
+
+  Scenario: endre bildetekst
+    Gitt at artikkelen "Foo" finnes
+    Og at artikkelen "Foo" har bilde
+    Og jeg står på artikkelredigering for "Foo"
+    Når jeg fyller inn "Beskrivelse" med "baz"
+    Når jeg trykker "Lagre"
+    Så skal jeg se "baz" under ".meta figurecaption"
+    
+  Scenario: slette bilde
+    Gitt at artikkelen "Foo" finnes
+    Og at artikkelen "Foo" har bilde
+    Og jeg står på artikkelredigering for "Foo"
+    Når jeg krysser av "Slett"
+    Og jeg trykker "Lagre"
+    Så skal det være 0 av ".meta figure"
