@@ -565,12 +565,7 @@ header {
       width: 100%;
       overflow: hidden; }
       #main form.formtastic fieldset.files > ol > li ol li {
-        float: left;
-        /*            &.empty,
-                    &.empty + li {
-                      display: none;
-                    }
-        */ }
+        float: left; }
         #main form.formtastic fieldset.files > ol > li ol li label, #main form.formtastic fieldset.files > ol > li ol li input {
           width: 100%; }
         #main form.formtastic fieldset.files > ol > li ol li input[type="checkbox"] {
@@ -583,6 +578,8 @@ header {
         #main form.formtastic fieldset.files > ol > li ol li.description {
           width: 220px;
           margin-right: 10px; }
+        #main form.formtastic fieldset.files > ol > li ol li.empty, #main form.formtastic fieldset.files > ol > li ol li.empty + li {
+          display: none; }
   #main form.formtastic fieldset.files textarea {
     float: right; }
 #main form.formtastic fieldset {
