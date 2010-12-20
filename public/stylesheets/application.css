@@ -559,11 +559,7 @@ header {
   width: 450px; }
   #main form.formtastic fieldset.files li#upload-container {
     position: relative; }
-    #main form.formtastic fieldset.files li#upload-container object {
-      z-index: 1000;
-      position: relative; }
     #main form.formtastic fieldset.files li#upload-container button {
-      z-index: 100;
       position: absolute;
       left: 0;
       margin: 0 !important; }
