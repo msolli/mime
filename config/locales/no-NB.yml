@@ -102,6 +102,7 @@ no-NB:
         href: Adresse
         text: Lenketekst
       _destroy: Slett
+      description: Beskrivelse
   words:
     or: eller
     search: søk

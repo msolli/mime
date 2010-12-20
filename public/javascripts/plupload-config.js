@@ -26,6 +26,10 @@ $(function() {
 	
 	if(upload_button.length > 0) {
 		var	uploader = new plupload.Uploader(settings);
+		
+		uploader.bind('PostInit', function() { // This is added merely to allow testing :/
+			$('#upload-container').find('input[type="file"]').attr('name', 'file-uploader');
+		});
 	
 		uploader.init();
 	
@@ -51,7 +55,8 @@ $(function() {
 					li = mime.tools.input_cloner(li);
 				}
 				
-				li.attr('data-file_id', this.id)
+				li.css('opacity', 0)
+					.attr('data-file_id', this.id)
 					.find('ol')
 						.find('.boolean')
 							.remove()
@@ -78,9 +83,14 @@ $(function() {
 			
 			uploader.start();
 		});
+		
+		var find_file_li = function(file_id) {
+			return $('.files li[data-file_id="'+file_id+'"]');
+		};
+		
 		uploader.bind('FileUploaded', function(up, file, response) {
 			var	resp	= $.parseJSON(response.response),
-					li		= $('.files li[data-file_id="'+file.id+'"]');
+					li		= find_file_li(file.id);
 			
 			li.find('.progressbar')
 					.remove()
@@ -90,6 +100,9 @@ $(function() {
 					.end()
 				.find('.file-id').val(resp.obj._id);
 			$('#media-files').val($('#media-files').val() + ' ' + resp.obj._id);
+		});
+		uploader.bind('UploadProgress', function(up, file) {
+			find_file_li(file.id).css('opacity', file.percent / 100);
 		});
 	}
 });
