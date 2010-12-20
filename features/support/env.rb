@@ -70,3 +70,5 @@ DatabaseCleaner.strategy = :truncation
 
 # Shortcircuit Devise url helpers
 Devise::OmniAuth.test_mode!
+
+I18n.locale = :'no-NB'
