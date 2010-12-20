@@ -15,7 +15,11 @@
           = medias_f.input :description, :as => :text, 
             :input_html => { :cols => 25, :rows => 2},
             :wrapper_html => { :class => 'description'}
-          - unless medias_f.object.new_record?
+          - if medias_f.object.new_record?
+            %li
+              %button.remove{:type => 'button', :value => 'remove-image', :title => "Fjern bildet"}
+                = image_tag('icons/delete.png', :size => '16x16')
+          - else
             = medias_f.input :_destroy, :as => :boolean
           = medias_f.input :id, :as => :hidden, :input_html => {:class => 'file-id'}
 

@@ -586,7 +586,7 @@ header {
         #main form.formtastic fieldset.files > ol > li ol li.description {
           width: 220px;
           margin-right: 10px; }
-        #main form.formtastic fieldset.files > ol > li ol li.empty, #main form.formtastic fieldset.files > ol > li ol li.empty + li {
+        #main form.formtastic fieldset.files > ol > li ol li.empty, #main form.formtastic fieldset.files > ol > li ol li.empty + li, #main form.formtastic fieldset.files > ol > li ol li.empty + li + li {
           display: none; }
   #main form.formtastic fieldset.files textarea {
     float: right; }
@@ -596,33 +596,33 @@ header {
     font-family: "Lucida Grande", Tahoma, Arial;
     font-weight: bold;
     padding-bottom: 10px; }
-  #main form.formtastic fieldset#external-links button {
+  #main form.formtastic fieldset.files button, #main form.formtastic fieldset#external-links button {
     padding: 0;
     border: 0;
     background-color: inherit;
     cursor: pointer; }
-    #main form.formtastic fieldset#external-links button.add {
+    #main form.formtastic fieldset.files button.add, #main form.formtastic fieldset#external-links button.add {
       display: none; }
-    #main form.formtastic fieldset#external-links button.remove {
+    #main form.formtastic fieldset.files button.remove, #main form.formtastic fieldset#external-links button.remove {
       display: inline; }
-  #main form.formtastic fieldset#external-links > ol > li {
+  #main form.formtastic fieldset.files > ol > li, #main form.formtastic fieldset#external-links > ol > li {
     padding: 5px 0; }
-    #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.add {
+    #main form.formtastic fieldset.files > ol > li:last-child > ol > li button.add, #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.add {
       display: inline; }
-    #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.remove {
+    #main form.formtastic fieldset.files > ol > li:last-child > ol > li button.remove, #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.remove {
       display: none; }
-    #main form.formtastic fieldset#external-links > ol > li ol {
+    #main form.formtastic fieldset.files > ol > li ol, #main form.formtastic fieldset#external-links > ol > li ol {
       overflow: hidden; }
-      #main form.formtastic fieldset#external-links > ol > li ol li {
+      #main form.formtastic fieldset.files > ol > li ol li, #main form.formtastic fieldset#external-links > ol > li ol li {
         float: left; }
-        #main form.formtastic fieldset#external-links > ol > li ol li.link-text label {
+        #main form.formtastic fieldset.files > ol > li ol li.link-text label, #main form.formtastic fieldset#external-links > ol > li ol li.link-text label {
           margin-left: 10px; }
-        #main form.formtastic fieldset#external-links > ol > li ol li.link-text + li input {
+        #main form.formtastic fieldset.files > ol > li ol li.link-text + li input, #main form.formtastic fieldset#external-links > ol > li ol li.link-text + li input {
           margin: 0 5px 0 10px; }
-    #main form.formtastic fieldset#external-links > ol > li label {
+    #main form.formtastic fieldset.files > ol > li label, #main form.formtastic fieldset#external-links > ol > li label {
       float: left;
       clear: left; }
-    #main form.formtastic fieldset#external-links > ol > li input[type="text"] {
+    #main form.formtastic fieldset.files > ol > li input[type="text"], #main form.formtastic fieldset#external-links > ol > li input[type="text"] {
       float: left;
       width: 140px;
       margin-left: 10px; }

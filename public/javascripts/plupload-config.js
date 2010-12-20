@@ -49,7 +49,7 @@ $(function() {
 				upload_button.removeClass('hover');
 			}
 		);
-	
+
 		// Start uploading as soon as files are added
 		uploader.bind('FilesAdded', function(up, files) {
 			$.each(files, function(idx) {
@@ -99,7 +99,7 @@ $(function() {
 			li.find('.progressbar')
 					.remove()
 					.end()
-				.find('img')
+				.find('.image img')
 					.attr('src', resp.url)
 					.end()
 				.find('.file-id').val(resp.obj._id);
@@ -109,4 +109,14 @@ $(function() {
 			find_file_li(file.id).css('opacity', file.percent / 100);
 		});
 	}
+	
+	// Removal of image that haven't been saved into the article yet.
+	$('.files').delegate('button.remove', 'click', function() {
+		var	li = $(this).parents('li'),
+				file_id = li.find('.file-id').val();
+		
+		$('#media-files').val($('#media-files').val().replace(file_id, ''));
+		li.remove();
+	});
+	
 });

@@ -12,7 +12,7 @@ Egenskap: Legge bilder til artikler
     Og jeg står på artikkelredigering for "Foo"
     Når jeg legger ved bildet "spec/data/jpeg.jpeg" til "file-uploader"
     Og jeg trykker "Last opp filer"
-    Så skal det være 1 av ".files li img"
+    Så skal det være 1 av ".files li.image img"
     Når jeg trykker "Lagre"
     Så skal det være 1 av ".meta figure"
 
@@ -24,10 +24,20 @@ Egenskap: Legge bilder til artikler
     Når jeg trykker "Lagre"
     Så skal jeg se "baz" under ".meta figurecaption"
     
-  Scenario: slette bilde
+  Scenario: slette bilde fra artikkel etter at artikkelen er lagret
     Gitt at artikkelen "Foo" finnes
     Og at artikkelen "Foo" har bilde
     Og jeg står på artikkelredigering for "Foo"
     Når jeg krysser av "Slett"
     Og jeg trykker "Lagre"
     Så skal det være 0 av ".meta figure"
+
+  @javascript
+  Scenario: slette bilde fra artikkel før artikkelen er lagret
+     Gitt at artikkelen "Foo" finnes
+      Og jeg står på artikkelredigering for "Foo"
+      Når jeg legger ved bildet "spec/data/jpeg.jpeg" til "file-uploader"
+      Og jeg trykker "Last opp filer"
+      Så skal det være 1 av ".files li.image img"
+      Når jeg trykker "remove-image"
+      Så skal det være 0 av ".files li.image img"

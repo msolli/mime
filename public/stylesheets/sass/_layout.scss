@@ -330,7 +330,8 @@ header {
               margin-right: 10px;
             }
             &.empty,
-            &.empty + li {
+            &.empty + li,
+            &.empty + li + li {
               display: none;
             }
           }
@@ -350,7 +351,8 @@ header {
       font-weight: bold;
       padding-bottom: 10px;
     }
-
+    
+    &.files,
     &#external-links {
       
       button {
