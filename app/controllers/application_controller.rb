@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   layout 'application'
 
-  # WillPaginate::ViewHelpers.pagination_options[:previous_label] = I18n.t('will_paginate.previous')
-  # WillPaginate::ViewHelpers.pagination_options[:next_label] = I18n.t('will_paginate.next')
+  before_filter :set_locale
 
   private
 
@@ -24,5 +23,11 @@ class ApplicationController < ActionController::Base
 
   def set_user_return_to(path)
     session[:user_return_to] = path
+  end
+
+  def set_locale
+    I18n.locale = :'no-NB'
+    WillPaginate::ViewHelpers.pagination_options[:previous_label] = I18n.t('will_paginate.previous')
+    WillPaginate::ViewHelpers.pagination_options[:next_label] = I18n.t('will_paginate.next')
   end
 end

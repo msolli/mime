@@ -72,6 +72,9 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    Rails.logger.error("locale: #{I18n.locale}")
+    Rails.logger.error("default_locale: #{I18n.default_locale}")
+    
     @user = User.where(:email => params[:user_id]).first
     if @user.nil?
       respond_to do |format|
