@@ -5,6 +5,7 @@ describe User do
   it { should have_field(:password).of_type(String) }
   it { should have_field(:name).of_type(String) }
   it { should have_field(:facebook_token).of_type(String) }
+  it { should have_field(:admin).of_type(Boolean) }
 
   it { should validate_presence_of(:email) }
   it { should validate_uniqueness_of(:email) }
@@ -30,5 +31,12 @@ describe User do
     u.to_json.should_not =~ /encrypted_password/
     u.to_json.should_not =~ /facebook_token/
     u.to_json.should_not =~ /password/
+  end
+
+  describe "admin" do
+    it "is false by default" do
+      u = Factory(:user)
+      u.admin?.should be_false
+    end
   end
 end
