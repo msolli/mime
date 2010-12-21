@@ -266,6 +266,18 @@ body .container {
 #TODO {
   visibility: hidden; }
 
+a.TODO {
+  color: #7a7a7a; }
+  a.TODO:visited {
+    color: #7a7a7a; }
+  a.TODO span {
+    position: absolute;
+    vertical-align: text-top;
+    text-decoration: none;
+    font-size: 68.75%;
+    font-weight: bold;
+    color: #f00; }
+
 header {
   background: white; }
   header .title {

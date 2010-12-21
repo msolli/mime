@@ -134,4 +134,15 @@ $(document).ready(function() {
       return false;
     }
   });
+
+  // Disable click on TODO links
+  $('a.TODO').click(function(e) {
+    e.preventDefault();
+  }).hover(
+    function () {
+      $(this).append($("<span> TODO</span>"));
+    },
+    function () {
+      $(this).find("span:last").remove();
+    });
 });

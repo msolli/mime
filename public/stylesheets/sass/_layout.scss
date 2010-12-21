@@ -18,6 +18,20 @@ body {
 #TODO {
   visibility: hidden;
 }
+a.TODO {
+  color: $light-grey-color;
+  &:visited {
+    color: $light-grey-color;
+  };
+  span {
+    position: absolute;
+    vertical-align: text-top;
+    text-decoration: none;
+    font-size: $font11px;
+    font-weight: bold;
+    color: #f00;
+  }
+}
 
 header {
   background: white;

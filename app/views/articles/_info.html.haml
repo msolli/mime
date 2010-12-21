@@ -1,8 +1,8 @@
 %aside.info
   %ul
-    %li>= link_to t('articles.contributors'), "#TODO"
+    %li>= link_to t('articles.contributors'), "#TODO", :class => "TODO"
     %li> #{t('articles.last_updated')} #{timeago(article.updated_at)}
     %li>= link_to t('articles.version_log'), article_versions_path(article)
-    %li>= link_to t('articles.report_error'), "#TODO"
+    %li>= link_to t('articles.report_error'), "#TODO", :class => "TODO"
     %li.edit-link>= link_to t('articles.edit'), edit_article_path(article)
     %li>= image_tag('share-buttons.png', :size => '32x16')
