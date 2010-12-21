@@ -50,7 +50,7 @@ CKEDITOR.dialog.add('mimelink', function(editor) {
 			
 			if(selectedText.length > 0) {
 				if(element && element.is('a')) {
-					testLink = decodeURIComponent(element.getAttribute('href'));
+					testLink = decodeURIComponent(element.getAttribute('href')).replace(/^\/+/, '');
 					this.setupContent(testLink);
 				} else {
 					this.setupContent(selectedText);
@@ -59,7 +59,7 @@ CKEDITOR.dialog.add('mimelink', function(editor) {
 				CKEDITOR.plugins.mimelink.checkArticleExistence(testLink,
 					function(data) {
 						// onSuccess
-						infoElement.setHtml('<a target="_blank" style="text-decoration: underline; color: #00f" href="'+data.url+'">' + testLink + '</a> finnes √');
+						infoElement.setHtml('<a target="_blank" style="text-decoration: underline; color: #00f" href="/'+data.url+'">' + testLink + '</a> finnes √');
 					},
 					function() {
 						// onError
