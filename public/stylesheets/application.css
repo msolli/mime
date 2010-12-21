@@ -505,6 +505,7 @@ header {
             border-top: 1px solid #45619D;
             text-shadow: none; }
   #main table.versions, #main table.articles {
+    background-color: #fff;
     margin: 20px 0 20px 35px;
     border: 1px solid #cccccc; }
     #main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
