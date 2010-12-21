@@ -1,0 +1,8 @@
+%li
+  %ol
+    %li.image= image_tag(m.object.file.thumb('150x100').url, :alt => m.object.description)
+    = m.input :description, :as => :text, 
+      :input_html => { :cols => 25, :rows => 2},
+      :wrapper_html => { :class => 'description'}
+    = m.input :_destroy, :as => :boolean
+    = m.input :id, :as => :hidden, :input_html => {:class => 'file-id'}

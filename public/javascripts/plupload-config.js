@@ -53,36 +53,48 @@ $(function() {
 		// Start uploading as soon as files are added
 		uploader.bind('FilesAdded', function(up, files) {
 			$.each(files, function(idx) {
-				var	li = $('.files ol li:has(ol):last');
-						
-				if(li.find('.image.empty').length == 0) {
-					li = mime.tools.input_cloner(li);
-				}
+				var obj = {
+					media_id: '',
+					upload_id: this.id,
+					url: 'http://dummyimage.com/150x150&text=Bildet+laster...',
+					description: '',
+					id: ''
+				};
 				
-				li.css('opacity', 0)
-					.attr('data-file_id', this.id)
-					.find('ol')
-						.find('.boolean')
-							.remove()
-							.end()
-						.find('.progressbar')
-							.remove()
-							.end()
-						.append(
-							$('<li>', {
-								'class': 'progressbar',
-								css: {
-									'float': 'none',
-									clear: 'both'
-								}
-							}).append('<img src="/images/uploader/animert-loader.gif">')
-						)
-						.end()
-					.find('.image')
-						.removeClass('empty')
-						.find('img')
-							.attr('src', 'http://dummyimage.com/150x150&text=Bildet+laster...')
-							.attr('alt', this.name);
+				var html = $('#media-template').tmpl(obj).insertBefore('#upload-button-container');
+				
+				// .appendTo($('.files ol li:has(ol):last'));
+				
+				// var	li = mime.tools.input_cloner();
+				// 		
+				// if(li.find('.image.empty').length == 0) {
+				// 	li = mime.tools.input_cloner(li);
+				// }
+				// 
+				// li.css('opacity', 0)
+				// 	.attr('data-file_id', this.id)
+				// 	.find('ol')
+				// 		.find('.boolean')
+				// 			.remove()
+				// 			.end()
+				// 		.find('.progressbar')
+				// 			.remove()
+				// 			.end()
+				// 		.append(
+				// 			$('<li>', {
+				// 				'class': 'progressbar',
+				// 				css: {
+				// 					'float': 'none',
+				// 					clear: 'both'
+				// 				}
+				// 			}).append('<img src="/images/uploader/animert-loader.gif">')
+				// 		)
+				// 		.end()
+				// 	.find('.image')
+				// 		.removeClass('empty')
+				// 		.find('img')
+				// 			.attr('src', 'http://dummyimage.com/150x150&text=Bildet+laster...')
+				// 			.attr('alt', this.name);
 			});
 			
 			uploader.start();
