@@ -12,7 +12,7 @@ class User
   field :password
   field :name
   field :facebook_token
-  field :admin, :type => Boolean, :default => false
+  field :editor, :type => Boolean, :default => false
   validates_presence_of :email
   validates_uniqueness_of :email, :case_sensitive => false
   attr_accessible :email, :password, :name
