@@ -52,13 +52,19 @@ $(function() {
 
 		// Start uploading as soon as files are added
 		uploader.bind('FilesAdded', function(up, files) {
+			
+			var last_id = parseInt(($('.files li textarea:last').attr('id') || "0").match(/\d+/)[0]);
+			
 			$.each(files, function(idx) {
+				last_id = last_id + 1;
+				
 				var obj = {
 					media_id: '',
 					upload_id: this.id,
 					url: 'http://dummyimage.com/150x150&text=Bildet+laster...',
 					description: '',
-					id: ''
+					id: '',
+					last_id: last_id
 				};
 				
 				var html = $('#media-template').tmpl(obj).insertBefore('#upload-button-container');

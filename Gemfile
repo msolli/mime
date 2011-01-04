@@ -16,9 +16,9 @@ gem "escape_utils" # A way to silence stupid stupid stupid Rack::Utils::escape
 gem 'ckeditor', :git => "http://github.com/budstikka/rails-ckeditor.git", :branch => 'rails3'
 gem "will_paginate", "~> 3.0.pre2"
 
-gem 'sunspot',                :git => 'git://github.com/bewculture/sunspot.git'
-gem 'websolr-sunspot_rails',  :git => 'git://github.com/bewculture/websolr-sunspot_rails.git'
-gem 'sunspot_mongoid',        :git => 'git://github.com/bewculture/sunspot_mongoid.git'
+# gem 'sunspot',                :git => 'git://github.com/bewculture/sunspot.git'
+# gem 'websolr-sunspot_rails',  :git => 'git://github.com/bewculture/websolr-sunspot_rails.git'
+# gem 'sunspot_mongoid',        :git => 'git://github.com/bewculture/sunspot_mongoid.git'
 
 # attachment handling
 gem 'aws-s3', :require => 'aws/s3'

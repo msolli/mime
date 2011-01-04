@@ -4,7 +4,7 @@ class Article
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Versioning
-  include Sunspot::Mongoid
+  # include Sunspot::Mongoid
 
   references_many :users, :stored_as => :array, :inverse_of => :articles
   alias :authors :users
@@ -25,9 +25,9 @@ class Article
   field :tags_array, :type => Array
   
   # Websolr index
-  searchable do
-    text :headword
-  end
+  # searchable do
+  #   text :headword
+  # end
   
   attr_accessor :media_ids_from_async_upload
 

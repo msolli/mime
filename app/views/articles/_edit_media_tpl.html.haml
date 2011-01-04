@@ -4,11 +4,17 @@
       %li.image
         %img{:src => '${url}', :alt => '${description}'}
       = m.input :description, :as => :text,
-        :input_html => { :cols => 25, :rows => 2, :value => '${description}'},
-        :wrapper_html => { :class => 'description'}
+        :input_html => { :cols => 25,
+          :rows => 2,
+          :value => '${description}',
+          :id => 'article_medias_attributes_${last_id}_description',
+          :name => 'article[medias_attributes][${last_id}][description]'},
+        :wrapper_html => { :class => 'description', :id => 'article_medias_attributes_${last_id}_description_input'}
       %li
         %button.remove{:type => 'button', :value => 'remove-image', :title => "Fjern bildet"}
           = image_tag('icons/delete.png', :size => '16x16')
       %li.progressbar
         %img{:src => "/images/uploader/animert-loader.gif", :alt => 'Loading…'}
-      = m.input :id, :as => :hidden, :input_html => {:class => 'file-id', :value => '${media_id}'}
+      = m.input :id, :as => :hidden, 
+        :input_html => {:class => 'file-id', :value => '${media_id}', :id => 'article_medias_attributes_${last_id}_id', :name => 'article[medias_attributes][${last_id}][id]'},
+        :wrapper_html => {:id => 'article_medias_attributes_${last_id}_id_input'}
