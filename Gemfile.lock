@@ -6,18 +6,23 @@ GIT
       escape (= 0.0.4)
       pr_geohash (~> 1.0)
       rsolr (= 0.12.1)
-
-GIT
-  remote: git://github.com/bewculture/sunspot_mongoid.git
-  revision: e4ef8548a556981a7b53ac4c3da418c7aeb589ec
-  specs:
-    sunspot_mongoid (0.3.2)
+    sunspot_rails (1.2.rc4)
+      sunspot (= 1.2.rc4)
 
 GIT
   remote: git://github.com/bewculture/websolr-sunspot_rails.git
   revision: ec779b6d5e6cdc7fb09c8d2937e26ae6743622b3
   specs:
     websolr-sunspot_rails (1.1.0.6)
+
+GIT
+  remote: git://github.com/kabriel/sunspot_mongoid.git
+  revision: 7695fa299e7072ba41aab5197e53fbb3faffa47e
+  specs:
+    sunspot_mongoid (0.3.2)
+      mongoid
+      sunspot (>= 1.2.rc4)
+      sunspot_rails (>= 1.2.rc4)
 
 GIT
   remote: git://github.com/msolli/jammit-s3.git
@@ -147,7 +152,7 @@ GEM
     hassle (0.0.1)
       haml
       rack
-    heroku (1.15.1)
+    heroku (1.16.2)
       json_pure (>= 1.2.0, < 1.5.0)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
@@ -319,6 +324,7 @@ DEPENDENCIES
   shoulda
   sunspot!
   sunspot_mongoid!
+  sunspot_rails
   websolr-sunspot_rails!
   will_paginate (~> 3.0.pre2)
   wirble

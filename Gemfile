@@ -18,8 +18,9 @@ gem "will_paginate", "~> 3.0.pre2"
 gem 'jammit-s3', :git => 'git://github.com/msolli/jammit-s3.git'
 
 gem 'sunspot',                :git => 'git://github.com/bewculture/sunspot.git'
+gem 'sunspot_rails',          :require => 'sunspot/rails'
 gem 'websolr-sunspot_rails',  :git => 'git://github.com/bewculture/websolr-sunspot_rails.git'
-gem 'sunspot_mongoid',        :git => 'git://github.com/bewculture/sunspot_mongoid.git'
+gem 'sunspot_mongoid',        :git => 'git://github.com/kabriel/sunspot_mongoid.git'
 
 gem 'mongo_store'
 
