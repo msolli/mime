@@ -1,5 +1,6 @@
 CKEDITOR.editorConfig = function( config )
 {
+	config.entities = false;
 	config.toolbar = 'mime';
 	config.toolbarCanCollapse = false;
 	config.disableObjectResizing = true; // resize handles i FF
