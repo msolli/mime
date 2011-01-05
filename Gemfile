@@ -20,6 +20,8 @@ gem "will_paginate", "~> 3.0.pre2"
 # gem 'websolr-sunspot_rails',  :git => 'git://github.com/bewculture/websolr-sunspot_rails.git'
 # gem 'sunspot_mongoid',        :git => 'git://github.com/bewculture/sunspot_mongoid.git'
 
+gem 'mongo_store'
+
 # attachment handling
 gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly'

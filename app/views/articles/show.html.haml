@@ -19,10 +19,11 @@
     %figure
       %img{:src => @article.location.static_map('288x150'), :width => 288, :height => 150}
   - @article.medias.each do |m|
-    %figure
-      - i = m.file.thumb("288x>")
-      %img{:src => i.url, :width => i.width, :height => i.height}
-      %figurecaption= m.description
+    - cache("article-show-media-#{m.id}") do
+      %figure
+        - i = m.file.thumb("288x>")
+        %img{:src => i.url, :width => i.width, :height => i.height}
+        %figurecaption= m.description
     
 - unless @article.external_links.blank?
   %aside.external-links

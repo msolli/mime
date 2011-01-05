@@ -138,6 +138,9 @@ GEM
     mime-types (1.16)
     mongo (1.1.4)
       bson (>= 1.1.1)
+    mongo_store (0.3.0)
+      activesupport (>= 2.2)
+      mongo (>= 1.0)
     mongoid (2.0.0.beta.20)
       activemodel (~> 3.0)
       mongo (~> 1.1)
@@ -262,6 +265,7 @@ DEPENDENCIES
   hpricot
   launchy
   mongo (~> 1.0)
+  mongo_store
   mongoid (>= 2.0.0.beta.18)
   mongoid-rspec
   nokogiri
