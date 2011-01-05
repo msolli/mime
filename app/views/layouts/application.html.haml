@@ -9,9 +9,7 @@
       %meta{:'http-equiv' => "cache-control", :content => "no-cache"}
     = yield :canonical
 
-    = stylesheet_link_tag "reset"
-    = stylesheet_link_tag "application"
-    = stylesheet_link_tag "jquery-ui"
+    = include_stylesheets :all
 
     /[if lt IE 9]
       %script{:src => "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"}

@@ -1,3 +1,4 @@
+package_assets: on
 embed_assets: on
 
 javascripts:
@@ -20,4 +21,6 @@ javascripts:
 
 stylesheets:
   all:
-    - public/stylesheets/*.css
+    - public/stylesheets/reset.css
+    - public/stylesheets/application.css
+    - public/stylesheets/jquery-ui.css
