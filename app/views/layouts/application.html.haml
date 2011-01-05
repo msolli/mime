@@ -19,7 +19,7 @@
     %script{:src => "http://use.typekit.com/odc3uil.js"}
     =# javascript_include_tag :default
     = include_javascripts :all
-    = javascript_include_tag :ckeditor
+    = yield :javascripts
 
     = csrf_meta_tag
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}

@@ -1,3 +1,6 @@
+- content_for :javascripts do
+  = javascript_include_tag :ckeditor
+
 - unless @article.new_record?
   = render :partial => 'info', :locals => { :article => @article }
 = render :partial => "common/flash"
