@@ -7,7 +7,10 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def current
-    respond_with(user_signed_in? ? current_user : nil)
+    respond_with({
+      :user => (user_signed_in? ? current_user : nil),
+      :flash => (flash.empty? ? nil : flash)
+    })
   end
 
 end

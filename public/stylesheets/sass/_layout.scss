@@ -204,6 +204,9 @@ header {
       }
     }
   }
+  aside.actions {
+    @include padding-main;
+  }
   aside.intro {
     @include intro-box;
   }
@@ -441,7 +444,7 @@ header {
         list-style-type: disc;
       }
     }
-    & + #article_location_attributes_map {
+    &#article_location_attributes_map {
       display: none;
     }
   }

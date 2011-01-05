@@ -90,3 +90,19 @@ Når /^jeg legger ved bildet "([^"]*)" til "([^"]*)"$/ do |path, selector|
   Når %{jeg legger ved filen "#{Rails.root}/#{path}" til "#{selector}"}
 end
 
+Gitt /^at jeg forventer å velge "([^"]*)" når jeg ser "([^"]*)" i et bekreftelsesvindu$/ do |option, message|
+  retval = (option == "OK") ? "true" : "false"
+
+  page.evaluate_script("window.confirm = function (msg) {
+    $.cookie('confirm_message', msg, {path: '/'})
+    return #{retval}
+  }")
+
+  @expected_message = message
+end
+
+Så /^skal bekreftelsesvinduet ha blitt vist$/ do
+  page.evaluate_script("$.cookie('confirm_message')").should_not be_nil
+  page.evaluate_script("$.cookie('confirm_message')").should =~ /#{@expected_message}/i
+  page.evaluate_script("$.cookie('confirm_message', null)")
+end

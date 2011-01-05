@@ -107,6 +107,10 @@ header {
       font-weight: bold;
     }
   }
+  aside.actions {
+    @include small-sans;
+    font-size: $font12px
+  }
   aside.intro {
     @include small-sans;
   }

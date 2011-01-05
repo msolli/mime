@@ -29,6 +29,9 @@ no-NB:
     external_links: Eksterne lenker
     show_map: "Angi sted for denne artikkelen…"
     hide_map: "Fjern kartet"
+    delete: "Slett artikkelen"
+    confirm_delete: "Er du sikker på at du vil slette denne artikkelen?"
+    deleted_html: "Artikkelen <em>%{headword}</em> er slettet"
     errors:
       save: "Artikkelen ble visst ikke lagret – sjekk feilene nedenfor:"
       list: "Feil i disse feltene forhindret at artikkelen ble lagret:"
@@ -110,6 +113,7 @@ no-NB:
     new: ny
     you: du
     your: din
+    deleted: slettet
   import:
     disambiguation:
       link_back_to: "%{headword} har flere betydninger. For andre betydninger, se %{headword_link}."

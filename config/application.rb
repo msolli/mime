@@ -52,8 +52,7 @@ module Mime
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     
-    config.action_view.javascript_expansions[:head] = %w(typekit jquery.imgload maptastic application)
-    config.action_view.javascript_expansions[:bottom] = %w(rails jquery.timeago jquery.timeago.no jquery.tools.tooltip /lib/plupload/js/plupload.full.min.js mime-tools document-ready plupload-config)
+    config.action_view.javascript_expansions[:default] = %w(typekit jquery/jquery-1.4.4 jquery/jquery.templates/beta1/jquery.tmpl jquery.timeago jquery.timeago.no jquery.tools.tooltip jquery.cookie jquery.imgload ckeditor/ckeditor /lib/plupload/js/plupload.full.min.js plupload-config maptastic rails mime-tools application document-ready)
 
   end
 end

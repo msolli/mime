@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :redirect_if_id, :only => [:show]
-  before_filter :find_article, :only => [:show, :edit, :update]
+  before_filter :find_article, :only => [:show, :edit, :update, :destroy]
   before_filter :add_ip_to_params, :only => [:create, :update]
   before_filter :login_teaser, :only => [:new, :edit]
   helper_method :sort_column, :sort_direction
@@ -71,10 +71,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    old_headword = @article.headword_presentation
+    @article.delete
+    flash.notice = t('articles.deleted_html', :headword => old_headword)
+    redirect_to root_path
+  end
+
   def index
-    Rails.logger.error("locale: #{I18n.locale}")
-    Rails.logger.error("default_locale: #{I18n.default_locale}")
-    
     @user = User.where(:email => params[:user_id]).first
     if @user.nil?
       respond_to do |format|

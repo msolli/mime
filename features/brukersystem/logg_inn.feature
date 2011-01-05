@@ -20,6 +20,7 @@ Egenskap: Logge inn med Facebook-konto
     Så skal jeg komme til forsiden
     Og jeg skal se "Logg inn"
 
+  @javascript
   Scenario: få beskjed om at du kan logge inn når du redigerer en artikkel
     Gitt at artikkelen "Foo" finnes
     Og at jeg står på artikkelvisning for "Foo"
@@ -27,7 +28,7 @@ Egenskap: Logge inn med Facebook-konto
     Så skal jeg komme til artikkelredigering for "Foo"
     Og jeg skal se "logge inn"
 
-  @devise
+  @devise @javascript
   Scenario: bli sendt til artikkelredigering når man logger inn fra artikkelredigering
     Gitt at artikkelen "Foo" finnes
     Og at jeg står på artikkelredigering for "Foo"
@@ -35,7 +36,7 @@ Egenskap: Logge inn med Facebook-konto
     Så skal jeg komme til artikkelredigering for "Foo"
     Og jeg skal se "logget inn"
 
-  @devise
+  @devise @javascript
   Scenario: bli sendt til artikkelredigering når man logger inn fra ny artikkel-visning
     Gitt at jeg står på ny artikkel-siden
     Når jeg klikker "logge inn"

@@ -9,6 +9,7 @@ Egenskap: Artikkel med feil
   Bakgrunn: Skrevet ny artikkel med feil
     Gitt at jeg står på ny artikkel-siden
 
+    @javascript
     Scenario: melding om at artikkel ikke ble lagret
       Når jeg trykker "Opprett"
       Så skal jeg se "ikke lagret" under "#alert"

@@ -1,7 +1,15 @@
-- unless cached_page?
-  - if notice || alert
-    %aside#messages
-      - if alert
-        #alert!= alert
-      - if notice
-        #notice!= notice
+- if cached_page?
+  %aside#messages
+- else
+  %aside#messages{:data => {:alert => alert, :notice => notice}}
+
+%script{:id => 'messages-tmpl', :type => 'text/x-jquery-tmpl'}
+  {{if $item.data.alert || $item.data.notice}}
+  %ul
+    {{if $item.data.alert}}
+    %li#alert {{html alert}}
+    {{/if}}
+    {{if $item.data.notice}}
+    %li#notice {{html notice}}
+    {{/if}}
+  {{/if}}

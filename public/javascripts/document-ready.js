@@ -1,15 +1,19 @@
 $(document).ready(function() {
-  // Load user data for navigation links.
+  // Load user data for navigation links and flash messages.
   // On cached pages the user data is retrieved by ajax.
-  // On dynamic pages the user data will be present as HTML5 data attributes
+  // On dynamic pages the user data will be present as HTML5 data attributes.
   (function(){
-    // Parse template and append to #user-links
+    // Parse templates and append to #user-links and #messages
     var addUserData = function(data) {
-      $('#user-links-tmpl').tmpl(data).appendTo('#user-links');
+      $('#user-links-tmpl').tmpl(data.user).appendTo('#user-links');
+      if (data.flash) {
+        $('#messages-tmpl').tmpl(data.flash).appendTo('#messages');
+      }
     };
 
-    var userData = $('#user-links').data('user');
-    if (userData == null) {
+    var cache_meta = $('meta[http-equiv=cache-control]');
+    var is_cached = !(cache_meta.length && cache_meta.attr('content') == 'no-cache');
+    if (is_cached) {
       $.ajax({
         type: 'GET',
         dataType: 'json',
@@ -17,6 +21,13 @@ $(document).ready(function() {
         success: addUserData
       });
     } else {
+      var userData = {
+        user: $('#user-links').data('user'),
+        flash: {
+          notice: $('#messages').data('notice'),
+          alert: $('#messages').data('alert')
+        }
+      };
       addUserData(userData);
     }
   })();

@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: http://github.com/plataformatec/devise.git
-  revision: a23a52b2f7224d16f38d36a2f2848bb528d22616
+  revision: 7ff0231ab723df2d75f5300524708dc85126ddac
   specs:
     devise (1.2.rc)
       bcrypt-ruby (~> 2.1.2)
@@ -73,9 +73,9 @@ GEM
       builder
       mime-types
       xml-simple
-    bcrypt-ruby (2.1.2)
-    bson (1.1.4)
-    bson_ext (1.1.4)
+    bcrypt-ruby (2.1.3)
+    bson (1.1.5)
+    bson_ext (1.1.5)
     builder (2.1.2)
     capybara (0.4.0)
       celerity (>= 0.7.9)
@@ -86,9 +86,10 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
       xpath (~> 0.1.2)
-    celerity (0.8.5)
-    childprocess (0.1.4)
+    celerity (0.8.6)
+    childprocess (0.1.6)
       ffi (~> 0.6.3)
+    closure-compiler (0.3.3)
     columnize (0.3.2)
     configuration (1.2.0)
     cucumber (0.10.0)
@@ -99,7 +100,7 @@ GEM
       term-ansicolor (~> 1.0.5)
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
-    culerity (0.2.12)
+    culerity (0.2.14)
     database_cleaner (0.6.0)
     diff-lcs (1.1.2)
     dragonfly (0.8.1)
@@ -109,9 +110,9 @@ GEM
     escape (0.0.4)
     escape_utils (0.1.9)
     factory_girl (1.3.2)
-    factory_girl_rails (1.0)
+    factory_girl_rails (1.0.1)
       factory_girl (~> 1.3)
-      rails (>= 3.0.0.beta4)
+      railties (>= 3.0.0)
     faraday (0.5.3)
       addressable (~> 2.2.2)
       multipart-post (~> 1.0.1)
@@ -126,10 +127,9 @@ GEM
       rspec (~> 2.0)
       rspec-instafail (~> 0.1.4)
       ruby-progressbar (~> 0.0.9)
-    gherkin (2.3.2)
+    gherkin (2.3.3)
       json (~> 1.4.6)
-      term-ansicolor (~> 1.0.5)
-    haml (3.0.24)
+    haml (3.0.25)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
@@ -138,13 +138,16 @@ GEM
     hassle (0.0.1)
       haml
       rack
-    heroku (1.14.9)
+    heroku (1.15.1)
       json_pure (>= 1.2.0, < 1.5.0)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
     hirb (0.3.5)
     hpricot (0.8.3)
     i18n (0.5.0)
+    jammit (0.5.4)
+      closure-compiler (>= 0.1.0)
+      yui-compressor (>= 0.9.1)
     json (1.4.6)
     json_pure (1.4.6)
     launchy (0.3.7)
@@ -152,14 +155,14 @@ GEM
       rake (>= 0.8.1)
     linecache19 (0.5.11)
       ruby_core_source (>= 0.1.4)
-    mail (2.2.12)
+    mail (2.2.14)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mongo (1.1.4)
-      bson (>= 1.1.1)
+    mongo (1.1.5)
+      bson (>= 1.1.5)
     mongo_store (0.3.0)
       activesupport (>= 2.2)
       mongo (>= 1.0)
@@ -186,13 +189,13 @@ GEM
     oauth2 (0.1.0)
       faraday (~> 0.5.0)
       multi_json (~> 0.0.4)
-    orm_adapter (0.0.3)
+    orm_adapter (0.0.4)
     polyglot (0.3.1)
     pr_geohash (1.0.0)
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
-    rack-test (0.5.6)
+    rack-test (0.5.7)
       rack (>= 1.0)
     rails (3.0.3)
       actionmailer (= 3.0.3)
@@ -214,20 +217,20 @@ GEM
       mime-types (>= 1.16)
     rsolr (0.12.1)
       builder (>= 2.1.2)
-    rspec (2.3.0)
-      rspec-core (~> 2.3.0)
-      rspec-expectations (~> 2.3.0)
-      rspec-mocks (~> 2.3.0)
-    rspec-core (2.3.1)
-    rspec-expectations (2.3.0)
+    rspec (2.4.0)
+      rspec-core (~> 2.4.0)
+      rspec-expectations (~> 2.4.0)
+      rspec-mocks (~> 2.4.0)
+    rspec-core (2.4.0)
+    rspec-expectations (2.4.0)
       diff-lcs (~> 1.1.2)
     rspec-instafail (0.1.5)
-    rspec-mocks (2.3.0)
-    rspec-rails (2.3.1)
+    rspec-mocks (2.4.0)
+    rspec-rails (2.4.1)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
       railties (~> 3.0)
-      rspec (~> 2.3.0)
+      rspec (~> 2.4.0)
     ruby-debug-base19 (0.11.24)
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
@@ -244,8 +247,8 @@ GEM
     rubyzip (0.9.4)
     sax-machine (0.0.15)
       nokogiri (> 0.0.0)
-    selenium-webdriver (0.1.1)
-      childprocess (= 0.1.4)
+    selenium-webdriver (0.1.2)
+      childprocess (~> 0.1.5)
       ffi (~> 0.6.3)
       json_pure
       rubyzip
@@ -263,6 +266,7 @@ GEM
     xml-simple (1.0.12)
     xpath (0.1.2)
       nokogiri (~> 1.3)
+    yui-compressor (0.9.1)
 
 PLATFORMS
   ruby
@@ -288,6 +292,7 @@ DEPENDENCIES
   heroku
   hirb
   hpricot
+  jammit
   launchy
   mongo (~> 1.0)
   mongo_store

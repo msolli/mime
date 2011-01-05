@@ -5,6 +5,7 @@ class Article
   include Mongoid::Timestamps
   include Mongoid::Versioning
   # include Sunspot::Mongoid
+  include Mongoid::Paranoia
 
   references_many :users, :stored_as => :array, :inverse_of => :articles
   alias :authors :users
@@ -23,12 +24,12 @@ class Article
   field :disambiguation
   field :ip
   field :tags_array, :type => Array
-  
+
   # Websolr index
   # searchable do
   #   text :headword
   # end
-  
+
   attr_accessor :media_ids_from_async_upload
 
   index :headword, :unique => true
@@ -90,6 +91,13 @@ class Article
 
   def tags_array
     (self[:tags_array] || [])
+  end
+
+  alias_method :delete_paranoia, :delete
+
+  def delete
+    self.headword = self.headword + " (#{I18n.t('words.deleted')}: #{Time.now.getutc})"
+    delete_paranoia
   end
 
   class << self

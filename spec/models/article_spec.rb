@@ -67,7 +67,24 @@ describe Article do
     @article.authors.first.email.should == 'yo1@yo.com'
     @article.authors.last.email.should == 'yo2@yo.com'
   end
-  
+
+  describe "delete" do
+    it "changes the headword" do
+      a = Factory(:article)
+      old_headword = a.headword
+      a.delete
+      a.headword.should_not == old_headword
+      a.headword.should =~ /slettet:/
+    end
+  end
+
+  describe "deleted_at" do
+    it "is nil by default" do
+      a = Factory(:article)
+      a.deleted_at.should be_nil
+    end
+  end
+
   describe "location" do
     before :each do
       @article = Article.new :headword => 'foo', :location => Location.new(:lat => 23, :lng => 23)

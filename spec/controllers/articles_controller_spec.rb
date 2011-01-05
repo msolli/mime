@@ -121,6 +121,16 @@ describe ArticlesController do
     end
   end
 
+  describe "#delete" do
+    it "deletes an article" do
+      a = Factory(:article)
+      delete :destroy, :id => a.to_param
+      response.should redirect_to(root_path)
+      assigns(:article).deleted_at.should_not be_nil
+      assigns(:article).headword.should_not == a.headword
+    end
+  end
+
   describe "#index" do
     it "shows a list of articles for a user" do
       u = Factory(:user)

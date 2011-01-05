@@ -22,6 +22,11 @@ Egenskap: Redigere artikler
       Og jeg fyller inn "article[text]" med "Ny tekst om foo"
       Når jeg trykker "Lagre"
       Så skal jeg se "Ny tekst om foo"
+
+    @javascript
+    Scenario: beskjed om at artikkelen er lagret
+      Gitt at jeg står på artikkelredigering for "Foo"
+      Når jeg trykker "Lagre"
       Og jeg skal se "Artikkelen er lagret" under "#notice"
 
     Scenario: anonym bidragsyter

@@ -3,6 +3,7 @@
 class HomeController < ApplicationController
   def index
     expires_in 5.minutes, :public => true
+    flash.keep
   end
 
   def alphabetic
@@ -15,5 +16,6 @@ class HomeController < ApplicationController
     end
     @articles = Article.where(:headword => headword_re).all.sort
     expires_in 5.minutes, :public => true
+    flash.keep
   end
 end

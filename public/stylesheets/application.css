@@ -461,6 +461,8 @@ header {
         content: ", "; }
       #main aside.tags ul li:last-of-type:after {
         content: ""; }
+  #main aside.actions {
+    padding-left: 35px; }
   #main aside.intro {
     color: white;
     margin: 5px;
@@ -643,7 +645,7 @@ header {
   margin-bottom: 1em; }
   #main form.formtastic fieldset > ol > li ul li {
     list-style-type: disc; }
-#main form.formtastic fieldset > ol > li + #article_location_attributes_map {
+#main form.formtastic fieldset > ol > li#article_location_attributes_map {
   display: none; }
 #main form.formtastic fieldset > ol > li input[type="text"].headword, #main form.formtastic fieldset > ol > li.string input[type="text"].headword, #main form.formtastic fieldset > ol > li.text input[type="text"].headword {
   padding: 0.1em 0.2em 0 0.2em;
@@ -836,6 +838,9 @@ header nav {
     #main aside.tags h3 {
       text-transform: uppercase;
       font-weight: bold; }
+  #main aside.actions {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    font-size: 75%; }
   #main aside.intro {
     font-family: "Lucida Grande", Tahoma, Arial; }
   #main .alphabetic {
