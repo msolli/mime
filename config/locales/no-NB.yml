@@ -82,6 +82,9 @@ no-NB:
         name_and_picture_desc: "Vi viser navnet ditt under \"Bidragsytere\" og i versjonsloggen for artikler du redigerer, og profilbildet vises sammen med navnet ditt der det gir mening."
         email: Epostadresse
         email_desc: "Du kan be om å få beskjed fra oss på epost når en artikkel blir oppdatert, f.eks. Vi deler ikke epostadressen din med noen."
+  search:
+    hits_and_total: "Viser %{showing} av %{total} treff"
+    template: "%{previous_label} Viser %{from}-%{to} av %{total_entries} treff %{next_label}"
   alphabetic:
     description: "Artikler på %{letter}"
     intro: "Artikler på <strong>%{letter}</strong>"

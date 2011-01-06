@@ -10,6 +10,8 @@ Mime::Application.routes.draw do
 
   resources :medias
   match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
+  
+  match 'search', :to => 'search#new'
 
   constraints :id => /.*/ do
     resources :articles, :except => [:index] do

@@ -376,12 +376,60 @@ header {
 
 #main {
   background: #efefef; }
+  #main .search-pagination {
+    padding-left: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E1EAE9; }
+    #main .search-pagination .disabled {
+      visibility: hidden; }
+  #main .search-results {
+    padding-left: 35px;
+    padding-top: 5px;
+    background-color: #fff; }
+    #main .search-results + .search-pagination {
+      margin-top: 15px; }
+    #main .search-results h2 {
+      margin-bottom: 2px; }
+    #main .search-results .highlight {
+      background-color: #F0F591; }
+    #main .search-results li {
+      padding-top: 10px; }
   #main header {
     padding-left: 35px;
     background: #45494f; }
     #main header h1 {
       padding-top: 16px;
       padding-bottom: 2px; }
+    #main header form #q {
+      position: relative;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      behavior: url(/stylesheets/PIE.htc);
+      padding: 0 4px; }
+      #main header form #q:focus {
+        outline: 0; }
+    #main header form #q + button {
+      padding: 0.4em 2em 0.2em 2em;
+      background: #2f528f;
+      position: relative;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      behavior: url(/stylesheets/PIE.htc);
+      border: 1px solid #355da2;
+      border-top-color: #29477c;
+      border-left-color: #29477c; }
+      #main header form #q + button.hover, #main header form #q + button:hover {
+        background: #fab45b;
+        border: 1px solid #fbbf74;
+        border-top-color: #f9a942;
+        border-left-color: #f9a942; }
+      #main header form #q + button.active, #main header form #q + button:active {
+        border: 1px solid #f9a942;
+        border-top-color: #fbbf74;
+        border-left-color: #fbbf74; }
   #main aside.info, #main aside.back-link {
     padding-left: 35px;
     padding-top: 2px; }
@@ -781,6 +829,13 @@ header nav {
     text-decoration: none; }
     header nav a:hover {
       text-decoration: underline; }
+header #q + button {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  color: white;
+  font-size: 112.5%;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 75%; }
 
 #messages {
   font-family: "Lucida Grande", Tahoma, Arial; }
@@ -797,6 +852,17 @@ header nav {
         text-decoration: underline; }
     #main header h1 a {
       color: white; }
+  #main .search-pagination {
+    font-family: "Lucida Grande", Tahoma, Arial;
+    font-size: 75%; }
+  #main .search-results h2 {
+    font-size: 100%; }
+  #main .search-results p {
+    font-size: 75%; }
+  #main .search-results a.full-url {
+    text-decoration: none;
+    color: #63995d;
+    font-size: 68.75%; }
   #main .articletext {
     font-size: 100%;
     line-height: 1.5; }

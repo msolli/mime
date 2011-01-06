@@ -4,8 +4,9 @@ class Article
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Versioning
-  # include Sunspot::Mongoid
+  include Sunspot::Mongoid
   include Mongoid::Paranoia
+  include ActionView::Helpers::SanitizeHelper
 
   references_many :users, :stored_as => :array, :inverse_of => :articles
   alias :authors :users
@@ -26,10 +27,21 @@ class Article
   field :tags_array, :type => Array
 
   # Websolr index
-  # searchable do
-  #   text :headword
-  # end
-
+  searchable do
+    # text fields are used for full-text search, rest for faceting
+    text    :headword, :boost => 2.0
+    text    :headword_presentation, :boost => 1.5
+    text    :text, :stored => true do
+      strip_tags(text)
+    end
+    text    :tags, :using => :tags_array, :boost => 0.5
+    
+    string  :tags, :using => :tags_array, :multiple => true
+    
+    time    :years, :multiple => true
+    time    :end_year
+  end
+  
   attr_accessor :media_ids_from_async_upload
 
   index :headword, :unique => true

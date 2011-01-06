@@ -35,6 +35,11 @@ header {
     font-weight: bold;
     @include no-underline;
   }
+  
+  #q + button {
+    @include submit-button-typography;
+    font-size: $font12px;
+  }
 }
 
 #messages {
@@ -54,7 +59,23 @@ header {
     }
   }
   color: $text-color;
-
+  .search-pagination {
+    @include small-sans;
+    font-size: $font12px;
+  }
+  .search-results {    
+    h2 {
+      font-size: $font16px;
+    }
+    p {
+      font-size: $font12px;
+    }
+    a.full-url {
+      text-decoration: none;
+      color: $link-search-result-color;
+      font-size: $font11px;
+    }
+  }
   .articletext {
     @include articletext-typography;
   }
@@ -205,11 +226,7 @@ form.formtastic {
     }
     #file-upload-button,
     input[type="submit"] {
-      @include small-sans;
-      color: white;
-      font-size: $font18px;
-      font-weight: bold;
-      text-transform: uppercase;
+      @include submit-button-typography;
     }
   }
 }
