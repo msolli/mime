@@ -84,7 +84,9 @@ no-NB:
         email_desc: "Du kan be om å få beskjed fra oss på epost når en artikkel blir oppdatert, f.eks. Vi deler ikke epostadressen din med noen."
   search:
     hits_and_total: "Viser %{showing} av %{total} treff"
-    template: "%{previous_label} Viser %{from}-%{to} av %{total_entries} treff %{next_label}"
+    template:
+      several_hits: "%{previous_label} Viser %{from}-%{to} av %{total_entries} treff %{next_label}"
+      one_or_less_hits: "Viser %{count} av %{count} treff"
   alphabetic:
     description: "Artikler på %{letter}"
     intro: "Artikler på <strong>%{letter}</strong>"
