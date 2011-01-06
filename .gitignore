@@ -6,6 +6,7 @@ coverage/*
 .sass-cache
 config/facebook.yml
 config/map.yml
+config/s3-env.sh
 .DS_Store
 tmp/restart.txt
 public/assets/*

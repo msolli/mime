@@ -2,6 +2,7 @@
 
 class HomeController < ApplicationController
   def index
+    @featured = Article.any_in(:headword => ["ABB AS", "Vøyenenga skole", "Sandvikselva", "Sandvika stasjon"])
     expires_in 5.minutes, :public => true
     flash.keep
   end

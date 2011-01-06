@@ -307,6 +307,34 @@ header {
     display: inline;
     width: #{(238/16)}em;
     margin-right: 2px;
+
+    a.featured {
+      display: block;
+      height: 175px;
+      width: 238px;
+    }
+    figure {
+      margin: 0;
+      padding: 0;
+
+      img {
+        @include rounded-corners(4px);
+        height: 175px;
+        width: 238px;
+      }
+      figcaption {
+        @include bottom-rounded-corners(4px);
+        behavior: url(/stylesheets/PIE.htc);
+        background-color: rgba(76, 76, 76, 0.7);
+        -pie-background: rgba(76, 76, 76, 0.7);
+        display: block;
+        position: relative;
+        top: -41px;
+        height: 37px;
+        line-height: 37px;
+        padding-left: 10px;
+      }
+    }
   }
   .col.left {
     @include padding-main;

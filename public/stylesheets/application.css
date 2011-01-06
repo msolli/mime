@@ -596,6 +596,41 @@ header {
     display: inline;
     width: 14.875em;
     margin-right: 2px; }
+    #main .col a.featured {
+      display: block;
+      height: 175px;
+      width: 238px; }
+    #main .col figure {
+      margin: 0;
+      padding: 0; }
+      #main .col figure img {
+        position: relative;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        behavior: url(/stylesheets/PIE.htc);
+        height: 175px;
+        width: 238px; }
+      #main .col figure figcaption {
+        position: relative;
+        -webkit-border-bottom-left-radius: 4px;
+        -webkit-border-bottom-right-radius: 4px;
+        /*
+          Firefox og IE/PIE støtter ikke avrundede hjørner på img, derfor tar vi ikke med dette ennå.
+          border-radius: 0px 0px $radius $radius;
+          -moz-border-radius-bottomleft: $radius;
+          -moz-border-radius-bottomright: $radius;
+          behavior: url(/stylesheets/PIE.htc);
+        */
+        behavior: url(/stylesheets/PIE.htc);
+        background-color: rgba(76, 76, 76, 0.7);
+        -pie-background: rgba(76, 76, 76, 0.7);
+        display: block;
+        position: relative;
+        top: -41px;
+        height: 37px;
+        line-height: 37px;
+        padding-left: 10px; }
   #main .col.left {
     padding-left: 35px; }
   #main footer {
@@ -945,6 +980,11 @@ header #q + button {
         text-decoration: none; }
         #main table.versions th a:hover, #main table.articles th a:hover {
           text-decoration: underline; }
+  #main .col a.featured {
+    text-decoration: none;
+    color: white; }
+    #main .col a.featured:hover {
+      text-decoration: underline; }
 
 form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li .inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.string .inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors, form.formtastic fieldset > ol > li.text .inline-errors {
   font-family: "Lucida Grande", Tahoma, Arial;

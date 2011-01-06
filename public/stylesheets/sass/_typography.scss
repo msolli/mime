@@ -170,6 +170,15 @@ header {
       @include no-underline;
     }
   }
+  .col {
+    a.featured {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+      color: white;
+    }
+  }
 }
 
 form.formtastic {

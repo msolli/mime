@@ -87,10 +87,23 @@
 
 @mixin rounded-corners($radius: 8px) {
   position: relative;
-    border-radius: $radius;
+  border-radius: $radius;
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
   behavior: url(/stylesheets/PIE.htc);
+}
+
+@mixin bottom-rounded-corners($radius: 8px) {
+  position: relative;
+  -webkit-border-bottom-left-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+/*
+  Firefox og IE/PIE støtter ikke avrundede hjørner på img, derfor tar vi ikke med dette ennå.
+  border-radius: 0px 0px $radius $radius;
+  -moz-border-radius-bottomleft: $radius;
+  -moz-border-radius-bottomright: $radius;
+  behavior: url(/stylesheets/PIE.htc);
+*/
 }
 
 @mixin no-underline {
