@@ -110,6 +110,6 @@ Så /^(?:skal jeg|jeg skal) komme til (.+)$/ do |page_name|
   Then %{I should be on #{page_name}}
 end
 
-Så /^vil jeg se siden$/ do |page_name|
+Så /^vil jeg se siden$/ do
   Then %{show me the page}
 end
