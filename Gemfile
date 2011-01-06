@@ -3,18 +3,18 @@ source 'http://rubygems.org'
 gem 'rails', '~> 3.0'
 gem 'hassle', :require => false
 gem 'haml'
-gem 'mongoid', ">= 2.0.0.beta.18"
+gem 'mongoid', '>= 2.0.0.beta.18'
 gem 'bson', '~> 1.0'
 gem 'bson_ext'
 gem 'mongo', '~> 1.0'
 gem 'formtastic', '~> 1.1'
 gem 'nokogiri'
 gem 'sax-machine'
-gem 'devise', :git => "http://github.com/plataformatec/devise.git"
-gem "oa-oauth", :require => "omniauth/oauth"
-gem "escape_utils" # A way to silence stupid stupid stupid Rack::Utils::escape
-gem 'ckeditor', :git => "http://github.com/budstikka/rails-ckeditor.git", :branch => 'rails3'
-gem "will_paginate", "~> 3.0.pre2"
+gem 'devise', :git => 'http://github.com/plataformatec/devise.git'
+gem 'oa-oauth', :require => 'omniauth/oauth'
+gem 'escape_utils' # A way to silence stupid stupid stupid Rack::Utils::escape
+gem 'ckeditor', :git => 'http://github.com/budstikka/rails-ckeditor.git', :branch => 'rails3'
+gem 'will_paginate', '~> 3.0.pre2'
 gem 'jammit-s3', :git => 'git://github.com/msolli/jammit-s3.git'
 
 gem 'sunspot',                :git => 'git://github.com/bewculture/sunspot.git'
