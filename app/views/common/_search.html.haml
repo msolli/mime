@@ -1,1 +1,5 @@
 %aside.search
+  - unless controller_name == 'search'
+    = form_tag search_path, :method => 'get' do
+      = text_field_tag :q, params[:q]
+      %button Søk

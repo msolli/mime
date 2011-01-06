@@ -311,8 +311,7 @@ header {
         text-shadow: none; }
   header aside.search {
     float: right;
-    margin-top: 20px;
-    margin-right: 65px; }
+    margin: 20px 63px 10px 0; }
   header nav {
     clear: both; }
     header nav ul.links {
@@ -340,6 +339,42 @@ header {
         behavior: url(/stylesheets/PIE.htc); }
         header nav ul.links li.new:hover {
           background: #fab45b; }
+  header form #q {
+    position: relative;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    behavior: url(/stylesheets/PIE.htc);
+    padding: 0 4px; }
+    header form #q:focus {
+      outline: 0; }
+  header form #q + button {
+    padding: 0.4em 2em 0.2em 2em;
+    background: #2f528f;
+    position: relative;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    behavior: url(/stylesheets/PIE.htc);
+    border: 1px solid #355da2;
+    border-top-color: #29477c;
+    border-left-color: #29477c; }
+    header form #q + button.hover, header form #q + button:hover {
+      background: #fab45b;
+      border: 1px solid #fbbf74;
+      border-top-color: #f9a942;
+      border-left-color: #f9a942; }
+    header form #q + button.active, header form #q + button:active {
+      border: 1px solid #f9a942;
+      border-top-color: #fbbf74;
+      border-left-color: #fbbf74; }
+
+.container > header > .search #q {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc); }
 
 #messages {
   padding: 5px 0; }
@@ -401,35 +436,6 @@ header {
     #main header h1 {
       padding-top: 16px;
       padding-bottom: 2px; }
-    #main header form #q {
-      position: relative;
-      border-radius: 10px;
-      -moz-border-radius: 10px;
-      -webkit-border-radius: 10px;
-      behavior: url(/stylesheets/PIE.htc);
-      padding: 0 4px; }
-      #main header form #q:focus {
-        outline: 0; }
-    #main header form #q + button {
-      padding: 0.4em 2em 0.2em 2em;
-      background: #2f528f;
-      position: relative;
-      border-radius: 4px;
-      -moz-border-radius: 4px;
-      -webkit-border-radius: 4px;
-      behavior: url(/stylesheets/PIE.htc);
-      border: 1px solid #355da2;
-      border-top-color: #29477c;
-      border-left-color: #29477c; }
-      #main header form #q + button.hover, #main header form #q + button:hover {
-        background: #fab45b;
-        border: 1px solid #fbbf74;
-        border-top-color: #f9a942;
-        border-left-color: #f9a942; }
-      #main header form #q + button.active, #main header form #q + button:active {
-        border: 1px solid #f9a942;
-        border-top-color: #fbbf74;
-        border-left-color: #fbbf74; }
   #main aside.info, #main aside.back-link {
     padding-left: 35px;
     padding-top: 2px; }
