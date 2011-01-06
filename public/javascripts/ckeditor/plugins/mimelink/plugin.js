@@ -34,7 +34,7 @@ CKEDITOR.plugins.add('mimelink', {
 		editor.ui.addButton('MimeLink', {
 			label: 'Lag lenke',
 			command: pluginName,
-			icon: this.path + '/images/link.png'
+			icon: this.path + 'images/link.png'
 		});
 		
 		// From link plugin
@@ -43,7 +43,7 @@ CKEDITOR.plugins.add('mimelink', {
 		{
 			label : editor.lang.unlink,
 			command : 'mime_unlink',
-			icon: this.path + '/images/unlink.png'
+			icon: this.path + 'images/unlink.png'
 		} );
 		
 		CKEDITOR.dialog.add(pluginName, this.path + 'dialogs/mimelink.js');
