@@ -20,6 +20,15 @@ GIT
     websolr-sunspot_rails (1.1.0.6)
 
 GIT
+  remote: git://github.com/msolli/jammit-s3.git
+  revision: 006f027a7321d29bb440c663d9c533e14ac2aec4
+  specs:
+    jammit-s3 (0.5.4.3)
+      aws-s3 (>= 0.6.2)
+      jammit (>= 0.5.4)
+      mimemagic (>= 0.1.7)
+
+GIT
   remote: http://github.com/budstikka/rails-ckeditor.git
   revision: 89e1afcddecefe6d093bdb1f03c7a958a8493ef9
   branch: rails3
@@ -161,6 +170,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mimemagic (0.1.7)
     mongo (1.1.5)
       bson (>= 1.1.5)
     mongo_store (0.3.0)
@@ -292,7 +302,7 @@ DEPENDENCIES
   heroku
   hirb
   hpricot
-  jammit
+  jammit-s3!
   launchy
   mongo (~> 1.0)
   mongo_store

@@ -8,3 +8,4 @@ config/facebook.yml
 config/map.yml
 .DS_Store
 tmp/restart.txt
+public/assets/*
