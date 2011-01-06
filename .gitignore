@@ -9,4 +9,4 @@ config/map.yml
 .DS_Store
 tmp/restart.txt
 public/assets/*
-solr/data/*
+solr/data/**/*
