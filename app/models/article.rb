@@ -18,7 +18,7 @@ class Article
 
   field :headword
   field :headword_presentation
-  field :text
+  field :text, :default => ''
   field :definition
   field :years, :type => Array
   field :end_year, :type => Date
