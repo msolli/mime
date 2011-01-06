@@ -3,5 +3,5 @@
     = link_to a, :class => 'featured' do
       %figure
         - image = a.medias.first.file.thumb("238x175#nw")
-        = image_tag image.url
+        %img{:src => image.url}
         %figcaption= a.headword
