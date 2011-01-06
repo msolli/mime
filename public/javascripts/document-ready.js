@@ -43,7 +43,7 @@ $(document).ready(function() {
       }
     }
   })();
-	
+
 	(function() {
 		$('#external-links').find('button').click(function() {
 	    var li = $(this).parents('ol.link').parent();
