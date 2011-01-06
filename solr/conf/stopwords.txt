@@ -12,7 +12,6 @@
  | to nynorsk are marked *.
 
  | Revised by Jan Bruusgaard <Jan.Bruusgaard@ssb.no>, Jan 2005
-
 og             | and
 i              | in
 jeg            | I
@@ -189,4 +188,3 @@ verte          | become *
 vort           | become *
 varte          | became *
 vart           | became *
-
