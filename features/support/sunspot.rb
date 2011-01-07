@@ -6,32 +6,24 @@ end
 
 orig_session = Sunspot.session
 
-# Stub solr session for features not using solr searches
-Before('~@search') do
-  Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
+Before("~@search") do
+  Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
 end
 
-# start the Solr server when necessary and give it a few seconds to initialize
-Before('@search') do
-  pid = fork { 
-    orig_stdout = STDOUT
-    orig_stderr = STDERR
-    orig_stdin  = STDIN
-    
-    STDIN.reopen(File.new('/dev/null'))
-    STDOUT.reopen(File.new('/dev/null', 'a'))
-    STDERR.reopen(STDOUT)
-    
-    Sunspot::Rails::Server.new.run
-    
-    STDOUT = orig_stdout
-  }
-  sleep 5 # allow some time for the instance to spin up
+Before("@search") do
+  unless $sunspot
+    $sunspot = Sunspot::Rails::Server.new
+    pid = fork do
+      STDERR.reopen('/dev/null')
+      STDOUT.reopen('/dev/null')
+      $sunspot.run
+    end
+    # shut down the Solr server
+    at_exit { Process.kill('TERM', pid) }
+    # wait for solr to start
+    sleep 5
+  end
   Sunspot.session = orig_session
-end
 
-# clean out the Solr index after each scenario
-After('@search') do
-  Article.remove_all_from_index!  
-  `ps ax|egrep "solr.*test"|grep -v grep|awk '{print $1}'|xargs kill`
+  Article.remove_all_from_index!
 end
