@@ -148,6 +148,6 @@ class Article
   end
 
   def remove_duplicate_tags
-    self[:tags_array].uniq!
+    self[:tags_array].uniq! if self[:tags_array]
   end
 end
