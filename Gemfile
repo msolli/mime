@@ -22,6 +22,10 @@ gem 'sunspot_mongoid', :git => 'git://github.com/kabriel/sunspot_mongoid.git'
 
 gem 'mongo_store'
 
+# Async jobs
+gem 'delayed_job'
+gem 'delayed_job_mongoid'
+
 # attachment handling
 gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly'
