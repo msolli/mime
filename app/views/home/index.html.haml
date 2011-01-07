@@ -5,3 +5,11 @@
         - image = a.medias.first.file.thumb("238x175#nw")
         %img{:src => image.url}
         %figcaption= a.headword
+
+- @article_lists.each_with_index do |list, i|
+  .col{:class => ("left" if i == 0)}
+    %section
+      %h2= list[:title]
+      %ul
+        - list[:articles].each do |a|
+          %li= link_to a.headword_presentation, a

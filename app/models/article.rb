@@ -24,7 +24,7 @@ class Article
   field :end_year, :type => Date
   field :disambiguation
   field :ip
-  field :tags_array, :type => Array
+  field :tags_array, :type => Array, :default => []
 
   # Websolr index
   searchable do
@@ -61,7 +61,7 @@ class Article
   set_callback :validation, :before, :remove_empty_associations
   set_callback :validation, :before, :add_async_uploads
   
-  before_save :update_headword_sorting
+  before_save :update_headword_sorting, :remove_duplicate_tags
 
   NO_SORT = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z æ ø å)
 
@@ -102,7 +102,7 @@ class Article
   end
 
   def tags_array
-    (self[:tags_array] || [])
+    self[:tags_array] || self[:tags_array] = []
   end
 
   alias_method :delete_paranoia, :delete
@@ -145,5 +145,9 @@ class Article
   def update_headword_sorting
     array = self[:headword].mb_chars.downcase.gsub(/aa/, 'å').scan(/./)
     self[:headword_sorting] = array.map {|c| NO_SORT.index(c)}.compact.map {|c| (c + 'a'.ord).chr}.join
+  end
+
+  def remove_duplicate_tags
+    self[:tags_array].uniq!
   end
 end

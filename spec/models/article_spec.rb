@@ -190,4 +190,19 @@ describe Article do
     a.tags.should == ""
   end
 
+  it "can append to empty tags array" do
+    a = Factory(:article)
+    a.tags_array << 'bar'
+    a.save!
+    a.tags.should == 'bar'
+  end
+
+  it "removes duplicates from tag array" do
+    a = Factory(:article)
+    a.tags = "bar, xyzzy, bar"
+    a.save!
+    a.tags_array.size.should == 2
+    a.tags_array.include?('bar').should be_true
+    a.tags_array.include?('xyzzy').should be_true
+  end
 end
