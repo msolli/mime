@@ -6,6 +6,7 @@ Egenskap: Artikler skal indekseres
   Som en lokalinteressert person
   Vil jeg kunne søke etter artikler
 
+  @search
   Scenario: ny artikkel
     Gitt at artikkelen "Foo" finnes
     Og jeg står på forsiden
@@ -13,6 +14,7 @@ Egenskap: Artikler skal indekseres
     Og jeg trykker "Søk"
     Så skal jeg se "Foo"
 
+  @search
   Scenario: ikke finne urelevante artikler
     Gitt at artikkelen "Foo" finnes
     Og jeg står på forsiden
@@ -20,6 +22,7 @@ Egenskap: Artikler skal indekseres
     Og jeg trykker "Søk"
     Så skal jeg ikke se "Foo"
   
+  @search
   Scenario: endre artikkel
     Gitt at artikkelen "Foo" finnes
     Og jeg står på artikkelredigering for "Foo"

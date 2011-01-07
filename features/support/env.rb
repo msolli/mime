@@ -25,7 +25,8 @@ require 'capybara/session'
 # steps to use the XPath syntax.
 Capybara.default_selector = :css
 Capybara.register_driver :selenium do |app|
-  Capybara::Driver::Selenium.new(app, :browser => :firefox, :profile => "WebDriver")
+  Capybara::Driver::Selenium.new(app, :browser => :firefox)
+#  Capybara::Driver::Selenium.new(app, :browser => :firefox, :profile => "WebDriver")
   # Capybara::Driver::Selenium.new(app, :browser => :chrome)
 end
 
