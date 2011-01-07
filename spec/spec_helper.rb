@@ -10,6 +10,8 @@ I18n.locale = :'no-NB'
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
+Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
+
 RSpec.configure do |config|
   # == Mock Framework
   #
