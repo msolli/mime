@@ -39,7 +39,7 @@ no-NB:
     login_link: logge inn
     editable_defaults:
       default: "Trykk på meg for å redigere %{value}."
-      
+
     versions:
       version: Versjon
       versions: Versjoner

@@ -25,7 +25,7 @@
         - begin
           %img{:src => i.url, :width => i.width, :height => i.height}
         - rescue Dragonfly::DataStorage::DataNotFound
-          %img{:src => "http://dummyimage.com/288x200/bf/fff&text=Fant+visst+ikke+bildet.+Oops." }
+          %img{:src => "http://dummyimage.com/288x200/bf/fff&text=#{i.uid}" }
         %figurecaption= m.description
     
 - unless @article.external_links.blank?
