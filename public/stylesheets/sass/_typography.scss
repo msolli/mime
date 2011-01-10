@@ -86,7 +86,7 @@ header {
     @include no-underline;
   }
   aside.meta {
-    figurecaption {
+    figcaption {
       @include small-sans;
       font-size: $font12px;
       line-height: 1.2em;

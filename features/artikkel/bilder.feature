@@ -22,7 +22,7 @@ Egenskap: Legge bilder til artikler
     Og jeg står på artikkelredigering for "Foo"
     Når jeg fyller inn "Beskrivelse" med "baz"
     Når jeg trykker "Lagre"
-    Så skal jeg se "baz" under ".meta figurecaption"
+    Så skal jeg se "baz" under ".meta figcaption"
     
   Scenario: slette bilde fra artikkel etter at artikkelen er lagret
     Gitt at artikkelen "Foo" finnes

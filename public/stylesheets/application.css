@@ -492,7 +492,7 @@ header {
         display: block;
         margin: 0 auto;
         border: 1px solid #ccc; }
-      #main aside.meta figure figurecaption {
+      #main aside.meta figure figcaption {
         display: block;
         margin-bottom: 0;
         margin-top: 5px; }
@@ -914,7 +914,7 @@ header #q + button {
       text-decoration: none; }
       #main aside.info a:hover, #main aside.back-link a:hover, #main aside.redirected a:hover {
         text-decoration: underline; }
-  #main aside.meta figurecaption {
+  #main aside.meta figcaption {
     font-family: "Lucida Grande", Tahoma, Arial;
     font-size: 75%;
     line-height: 1.2em;
