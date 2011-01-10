@@ -1,0 +1,8 @@
+%figure
+  - cache("media-image-tag-288x>-#{image.id}") do
+    - i = image.file.thumb("288x>")
+    - begin
+      %img{:src => i.url, :width => i.width, :height => i.height}
+    - rescue Dragonfly::DataStorage::DataNotFound
+      %img{:src => "http://dummyimage.com/288x200/bf/fff&text=#{i.uid}" }
+  %figurecaption= image.description
