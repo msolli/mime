@@ -147,7 +147,7 @@ GEM
       json_pure (>= 1.2.0, < 1.5.0)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
-    heroku_delayed_job_autoscale (0.0.2)
+    heroku_delayed_job_autoscale (0.0.7)
       delayed_job (>= 2.1)
       heroku (>= 1)
       rush (>= 0.6)
