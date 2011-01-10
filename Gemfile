@@ -25,6 +25,7 @@ gem 'mongo_store'
 # Async jobs
 gem 'delayed_job'
 gem 'delayed_job_mongoid'
+gem 'heroku_delayed_job_autoscale'
 
 # attachment handling
 gem 'aws-s3', :require => 'aws/s3'
@@ -37,7 +38,6 @@ group :development do
   gem 'hirb'
   gem 'hpricot'
   gem 'ruby_parser'
-  gem 'heroku'
   gem 'ruby-debug19'
 end
 

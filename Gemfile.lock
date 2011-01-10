@@ -121,6 +121,7 @@ GEM
       addressable (~> 2.2.2)
       multipart-post (~> 1.0.1)
       rack (>= 1.1.0, < 2)
+    fattr (2.2.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
     formtastic (1.2.2)
@@ -146,6 +147,10 @@ GEM
       json_pure (>= 1.2.0, < 1.5.0)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
+    heroku_delayed_job_autoscale (0.0.2)
+      delayed_job (>= 2.1)
+      heroku (>= 1)
+      rush (>= 0.6)
     hirb (0.3.5)
     hpricot (0.8.3)
     i18n (0.5.0)
@@ -250,6 +255,8 @@ GEM
     ruby_parser (2.0.5)
       sexp_processor (~> 3.0)
     rubyzip (0.9.4)
+    rush (0.6.7)
+      session
     sax-machine (0.0.15)
       nokogiri (> 0.0.0)
     selenium-webdriver (0.1.2)
@@ -257,6 +264,8 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
+    session (3.1.0)
+      fattr
     sexp_processor (3.0.5)
     shoulda (2.11.3)
     sunspot (1.2.rc4)
@@ -302,7 +311,7 @@ DEPENDENCIES
   haml
   haml-rails
   hassle
-  heroku
+  heroku_delayed_job_autoscale
   hirb
   hpricot
   jammit-s3!
