@@ -601,6 +601,8 @@ header {
       background: #d9e3e2; }
   #main div.maincol {
     padding-left: 35px; }
+  #main section.featured-people {
+    clear: both; }
   #main .col {
     float: left;
     display: inline;

@@ -3,6 +3,7 @@
 class HomeController < ApplicationController
   def index
     @featured = Article.any_in(:headword => ["ABB AS", "Vøyenenga skole", "Sandvikselva", "Sandvika stasjon"])
+    @featured_people = Article.any_in(:headword => ["Benkow, Jo", "Sand, Lauritz", "Munch, Carsten E.", "Petersen, Carl Emil"])
 
     @article_lists = [
       { :title => "Veier",

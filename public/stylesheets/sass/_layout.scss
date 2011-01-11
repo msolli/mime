@@ -319,6 +319,10 @@ header {
     @include padding-main;
   }
 
+  section.featured-people {
+    clear: both;
+  }
+
   .col {
     float: left;
     display: inline;
