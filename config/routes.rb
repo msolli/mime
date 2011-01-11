@@ -1,4 +1,6 @@
 Mime::Application.routes.draw do
+  get "cache_trigger/partial"
+
   devise_for :users, :module => 'users', do
     constraints :id => /[^\/]*/ do
       resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit] do
@@ -7,6 +9,9 @@ Mime::Application.routes.draw do
     end
     get "users/current" => "users/sessions#current"
   end
+  
+  
+  match '/cache_trigger/heat_image_tag/:id', :to => 'cache_trigger#heat_image_tag', :as => :heat_image_tag
 
   resources :medias
   match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
