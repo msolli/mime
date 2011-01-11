@@ -29,6 +29,8 @@ no-NB:
     external_links: Eksterne lenker
     show_map: "Angi sted for denne artikkelen…"
     hide_map: "Fjern kartet"
+    bigger_map: "Klikk her for større kart"
+    smaller_map: "Klikk her for mindre kart"
     delete: "Slett artikkelen"
     confirm_delete: "Er du sikker på at du vil slette denne artikkelen?"
     deleted_html: "Artikkelen <em>%{headword}</em> er slettet"

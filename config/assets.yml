@@ -32,6 +32,7 @@ javascripts:
     - public/javascripts/mime-tools.js
     - public/javascripts/application.js
     - public/javascripts/document-ready.js
+    - public/javascripts/article-map.js
 
 stylesheets:
   all:

@@ -198,6 +198,17 @@ header {
     margin-left: 5px;
     width: 300px;
     
+    .map-wrapper {
+      .map {
+        height: 300px;
+        background-color: #fff;
+      }
+      a.smaller-map,
+      a.bigger-map {
+        display: none;
+      }
+    }
+    
     figure {
       position: relative;
       border: 1px solid $box-border-color;

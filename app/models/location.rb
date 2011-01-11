@@ -14,10 +14,15 @@ class Location
   
   def latitude
     self.lat_lng['latitude']
-  end  
+  end
+  
   def latitude=(val)
     self.lat_lng['latitude'] = val.blank? ? nil : val.to_f
   end
+  
+  alias :lat :latitude
+  alias :lat= :latitude=
+  
   
   def longitude
     self.lat_lng['longitude']
@@ -26,6 +31,11 @@ class Location
   def longitude=(val)
     self.lat_lng['longitude'] = val.blank? ? nil : val.to_f
   end
+  
+  alias :long :longitude
+  alias :long= :longitude=
+  alias :lng :longitude
+  alias :lng= :longitude=
   
   def blank?
     longitude.blank? && latitude.blank?
