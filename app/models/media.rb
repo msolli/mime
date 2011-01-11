@@ -20,7 +20,7 @@ class Media
   
   private
   def expire_caches
-    Rails.cache.delete("views/media-image-tag-288x>-#{self.id}") unless self.changes.dup.delete_if{|k,v| k == 'updated_at'}.blank?
+    Rails.cache.delete("views/article-show-media-#{self.id}") unless self.changes.dup.delete_if{|k,v| k == 'updated_at'}.blank?
   end
   
   def on_image_upload
