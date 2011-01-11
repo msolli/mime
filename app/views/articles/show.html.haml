@@ -15,10 +15,10 @@
 .articletext!= @article.text
 
 %aside.meta
+  = render :partial => 'medias/image_in_article', :collection => @article.medias, :as => :image
   - unless @article.location.blank?
     %figure
       %img{:src => @article.location.static_map('288x150'), :width => 288, :height => 150}
-  = render :partial => 'medias/image_in_article', :collection => @article.medias, :as => :image
     
 - unless @article.external_links.blank?
   %aside.external-links
