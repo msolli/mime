@@ -14,6 +14,7 @@ s3_upload_files:
   - public/javascripts/ckeditor/plugins/iframe/**/*
   - public/javascripts/ckeditor/plugins/mimelink/**/*
   - public/javascripts/ckeditor/plugins/styles/**/*
+  - public/javascripts/ckeditor/plugins/table/**/*
 
 javascripts:
   all:
