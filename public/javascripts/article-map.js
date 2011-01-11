@@ -20,6 +20,7 @@ $(document).ready(function() {
 			.find('a.bigger-map')
 				.click(function(e) {
 					e.stopPropagation();
+					e.preventDefault();
 
 					var map_c = $(this).siblings('.map'), old_width = map_c.width(),
 					old_height = map_c.height(),  old_left = map_c.offset().left, center = map.getCenter(),
@@ -48,6 +49,7 @@ $(document).ready(function() {
 
 					$('body').keyup(onKeyup).add(smaller_map_b).click(function(e) {
 						e.stopPropagation();
+						e.preventDefault();
 						smaller_map_b.hide();
 						bigger_map_b.show();
 						map_c.animate({
