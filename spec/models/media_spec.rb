@@ -25,9 +25,4 @@ describe Media do
     end
   end
   
-  it 'should create a new delayed job on create' do
-    Media.create :file => open("#{Rails.root}/spec/data/jpeg.jpeg")
-    Delayed::Job.count.should eql(1)
-  end
-  
 end

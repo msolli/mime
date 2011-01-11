@@ -98,7 +98,6 @@ GEM
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
     culerity (0.2.14)
-    curb (0.7.7.1)
     daemons (1.1.0)
     database_cleaner (0.6.0)
     delayed_job (2.1.2)
@@ -300,7 +299,6 @@ DEPENDENCIES
   ckeditor!
   cucumber
   cucumber-rails
-  curb
   database_cleaner
   delayed_job
   delayed_job_mongoid

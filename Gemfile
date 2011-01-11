@@ -27,9 +27,6 @@ gem 'delayed_job'
 gem 'delayed_job_mongoid'
 gem 'heroku_delayed_job_autoscale'
 
-# Cache heating
-gem 'curb'
-
 # attachment handling
 gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly'
