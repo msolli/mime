@@ -1,20 +1,23 @@
 class MediasController < ApplicationController
   
+  after_filter :prime_cache, :only => :create
+  
   def new
   end
   
   def create
     if request.headers['X_IS_PLUPLOAD']
-      m = Media.new :file => params[:file]
+      @media = Media.new :file => params[:file]
     else
-      m = Media.new params[:media]
+      @media = Media.new params[:media]
     end
     
-    m.save
+    @media.save
+    
     
     respond_to do |format|
       format.json do
-        obj = {:url => m.file.thumb(params[:size] || '250x150').url, :obj => m}
+        obj = {:url => @media.file.thumb(params[:size] || '250x150').url, :obj => @media}
         
         render :json => obj
       end 
@@ -33,6 +36,15 @@ class MediasController < ApplicationController
     #     render :json => {:media => @media, :url => @media.crop_zoom_url(params)}
     #   end
     # end
+  end
+  
+  private
+  def prime_cache
+    thumb = @media.file.thumb("288x>")
+    full_url = thumb.url(:host => "#{request.scheme}://#{request.host_with_port}")
+    Rails.logger.debug "Priming #{thumb.url}"
+    Rails.logger.debug "Fetching #{full_url}"
+    open(full_url)
   end
   
 end
