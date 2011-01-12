@@ -1,4 +1,17 @@
 module ApplicationHelper
+  
+  def scores_section
+    section = case controller_name
+    when 'articles'
+      'artikler'
+    else
+      ''
+    end
+    
+    section = "/#{section}" unless section.blank?
+    section
+  end
+  
   def sortable(column, title = nil, default = "asc")
     title ||= column.titleize
     direction =
