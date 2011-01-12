@@ -482,7 +482,7 @@ header {
     margin-left: 5px;
     width: 300px; }
     #main aside.meta .map-wrapper .map {
-      height: 300px;
+      height: 150px;
       background-color: #fff; }
     #main aside.meta .map-wrapper a.smaller-map,
     #main aside.meta .map-wrapper a.bigger-map {
