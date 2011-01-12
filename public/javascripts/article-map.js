@@ -13,8 +13,13 @@ $(document).ready(function() {
 							zoom: zoom,
 							mapTypeId: google.maps.MapTypeId.ROADMAP,
 							center: new google.maps.LatLng(lat, lng)
-						};
+						},
+						marker = new google.maps.Marker({
+							position: options.center,
+							clickable: false
+						});
 				map = new google.maps.Map($(this).get(0), options);
+				marker.setMap(map);
 
 			}).end()
 			.find('a.bigger-map')
