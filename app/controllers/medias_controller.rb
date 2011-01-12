@@ -1,6 +1,6 @@
 class MediasController < ApplicationController
   
-  after_filter :prime_cache, :only => :create
+  # after_filter :prime_cache, :only => :create
   
   def new
   end
