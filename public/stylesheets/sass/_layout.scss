@@ -207,6 +207,12 @@ header {
       a.bigger-map {
         display: none;
       }
+      &.maximized a.smaller-map {
+        display: inline;
+      }
+      &.minimized a.bigger-map {
+        display: inline;
+      }
     }
     
     figure {

@@ -20,7 +20,7 @@
 %aside.meta
   = render :partial => 'medias/image_in_article', :collection => @article.medias, :as => :image
   - unless @article.location.blank?
-    .map-wrapper
+    .map-wrapper.minimized
       .map{:data => {:'lat' => @article.location.lat, :lng => @article.location.lng, :zoom => @article.location.zoom}}
       = link_to t('articles.bigger_map'), '#', :class => 'bigger-map'
       = link_to t('articles.smaller_map'), '#', :class => 'smaller-map'

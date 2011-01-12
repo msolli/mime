@@ -12,7 +12,10 @@ $(document).ready(function() {
 						options = {
 							zoom: zoom,
 							mapTypeId: google.maps.MapTypeId.ROADMAP,
-							center: new google.maps.LatLng(lat, lng)
+							center: new google.maps.LatLng(lat, lng),
+							mapTypeControlOptions: {
+								style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+							}
 						},
 						marker = new google.maps.Marker({
 							position: options.center,
@@ -26,11 +29,14 @@ $(document).ready(function() {
 				.click(function(e) {
 					e.stopPropagation();
 					e.preventDefault();
+					
+					if($(this).parent().hasClass('maximized')) {
+						return;
+					}
 
 					var map_c = $(this).siblings('.map'), old_width = map_c.width(),
 					old_height = map_c.height(),  old_left = map_c.offset().left, center = map.getCenter(),
-					bigger_map_b = $(this).hide(),
-					smaller_map_b = $(this).siblings('.smaller-map').show(),
+					smaller_map_b = $(this).siblings('.smaller-map'),
 					onStep = function() {
 						google.maps.event.trigger(map, 'resize');
 						map.panTo(center);
@@ -42,8 +48,9 @@ $(document).ready(function() {
 						width: new_width,
 						height: new_height
 						}, {
-							duration: 2000,
-							step: onStep
+							duration: 1000,
+							step: onStep,
+							complete: function() { $(this).parent().addClass('maximized').removeClass('minimized');}
 					});
 
 					var onKeyup = function(e) {
@@ -55,22 +62,24 @@ $(document).ready(function() {
 					$('body').keyup(onKeyup).add(smaller_map_b).click(function(e) {
 						e.stopPropagation();
 						e.preventDefault();
-						smaller_map_b.hide();
-						bigger_map_b.show();
+						
+						if($(this).parent().hasClass('minimized')) {
+							return;
+						}
 						map_c.animate({
 								left: 0,
 								width: old_width,
 								height: old_height
 							}, {
-								duration: 2000,
-								step: onStep
+								duration: 1000,
+								step: onStep,
+								complete: function() { $(this).parent().addClass('minimized').removeClass('maximized');}
 						});
 
 						$('body').unbind('keyup', onKeyup);
 						$(this).unbind('click', arguments.callee);
 					});
 
-				})
-				.show();
+				});
 	})();
 });

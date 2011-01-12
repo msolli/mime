@@ -487,6 +487,10 @@ header {
     #main aside.meta .map-wrapper a.smaller-map,
     #main aside.meta .map-wrapper a.bigger-map {
       display: none; }
+    #main aside.meta .map-wrapper.maximized a.smaller-map {
+      display: inline; }
+    #main aside.meta .map-wrapper.minimized a.bigger-map {
+      display: inline; }
     #main aside.meta figure {
       position: relative;
       border: 1px solid #cccccc;
