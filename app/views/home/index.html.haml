@@ -3,7 +3,7 @@
     = link_to a, :class => 'featured' do
       %figure
         - image = a.medias.first.file.thumb("238x175#nw")
-        %img{:src => image.url}
+        = df_image_tag(image.url)
         %figcaption= a.headword
 
 - @article_lists.each_with_index do |list, i|

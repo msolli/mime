@@ -1,6 +1,6 @@
 %li
   %ol
-    %li.image= image_tag(m.object.file.thumb('150x100').url, :alt => m.object.description)
+    %li.image= df_image_tag(m.object.file.thumb('150x100').url, :alt => m.object.description)
     = m.input :description, :as => :text, 
       :input_html => { :cols => 25, :rows => 2},
       :wrapper_html => { :class => 'description'}
