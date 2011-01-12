@@ -67,40 +67,7 @@ $(function() {
 					last_id: last_id
 				};
 				
-				var html = $('#media-template').tmpl(obj).insertBefore('#upload-button-container');
-				
-				// .appendTo($('.files ol li:has(ol):last'));
-				
-				// var	li = mime.tools.input_cloner();
-				// 		
-				// if(li.find('.image.empty').length == 0) {
-				// 	li = mime.tools.input_cloner(li);
-				// }
-				// 
-				// li.css('opacity', 0)
-				// 	.attr('data-file_id', this.id)
-				// 	.find('ol')
-				// 		.find('.boolean')
-				// 			.remove()
-				// 			.end()
-				// 		.find('.progressbar')
-				// 			.remove()
-				// 			.end()
-				// 		.append(
-				// 			$('<li>', {
-				// 				'class': 'progressbar',
-				// 				css: {
-				// 					'float': 'none',
-				// 					clear: 'both'
-				// 				}
-				// 			}).append('<img src="/images/uploader/animert-loader.gif">')
-				// 		)
-				// 		.end()
-				// 	.find('.image')
-				// 		.removeClass('empty')
-				// 		.find('img')
-				// 			.attr('src', 'http://dummyimage.com/150x150&text=Bildet+laster...')
-				// 			.attr('alt', this.name);
+				$('#media-template').tmpl(obj).insertBefore('#upload-button-container');
 			});
 			
 			uploader.start();
@@ -109,6 +76,15 @@ $(function() {
 		var find_file_li = function(file_id) {
 			return $('.files li[data-file_id="'+file_id+'"]');
 		};
+		
+		uploader.bind('UploadProgress', function(up, file) {
+			var p_holder = find_file_li(file.id).find('.progressbar');
+			p_holder.find('.progress-text').html(file.percent + '%');
+			p_holder.find('.progress').css('width', file.percent + '%');
+			if(file.percent >= 100) {
+				p_holder.find('.progress-text').html('Prosesserer…');
+			}
+		});
 		
 		uploader.bind('FileUploaded', function(up, file, response) {
 			var	resp	= $.parseJSON(response.response),

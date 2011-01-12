@@ -14,7 +14,8 @@
         %button.remove{:type => 'button', :value => 'remove-image', :title => "Fjern bildet"}
           = image_tag('icons/delete.png', :size => '16x16')
       %li.progressbar
-        %img{:src => "/images/uploader/animert-loader.gif", :alt => 'Loading…'}
+        %span.progress
+        %span.progress-text
       = m.input :id, :as => :hidden, 
         :input_html => {:class => 'file-id', :value => '${media_id}', :id => 'article_medias_attributes_${last_id}_id', :name => 'article[medias_attributes][${last_id}][id]'},
         :wrapper_html => {:id => 'article_medias_attributes_${last_id}_id_input'}

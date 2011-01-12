@@ -426,9 +426,33 @@ header {
                 max-width: 140px;
               };
             }
+            &.progressbar {
+              position: relative;
+              width: 220px;
+              margin-right: 10px;
+              text-align: center;
+              
+              .progress {
+                position: absolute;
+                background-color: #31528C;
+                height: 20px;
+                z-index: 10;
+              }
+              .progress-text {
+                position: relative;
+                z-index: 100;
+                color: #fff;
+              }
+            }
+            
+            &.progressbar,
             &.description {
               width: 220px;
               margin-right: 10px;
+              
+              textarea {
+                width: 212px;
+              }
             }
             &.empty,
             &.empty + li,

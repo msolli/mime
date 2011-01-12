@@ -688,9 +688,25 @@ header {
           width: 150px; }
           #main form.formtastic fieldset.files > ol > li ol li.image img {
             max-width: 140px; }
-        #main form.formtastic fieldset.files > ol > li ol li.description {
+        #main form.formtastic fieldset.files > ol > li ol li.progressbar {
+          position: relative;
+          width: 220px;
+          margin-right: 10px;
+          text-align: center; }
+          #main form.formtastic fieldset.files > ol > li ol li.progressbar .progress {
+            position: absolute;
+            background-color: #31528C;
+            height: 20px;
+            z-index: 10; }
+          #main form.formtastic fieldset.files > ol > li ol li.progressbar .progress-text {
+            position: relative;
+            z-index: 100;
+            color: #fff; }
+        #main form.formtastic fieldset.files > ol > li ol li.progressbar, #main form.formtastic fieldset.files > ol > li ol li.description {
           width: 220px;
           margin-right: 10px; }
+          #main form.formtastic fieldset.files > ol > li ol li.progressbar textarea, #main form.formtastic fieldset.files > ol > li ol li.description textarea {
+            width: 212px; }
         #main form.formtastic fieldset.files > ol > li ol li.empty, #main form.formtastic fieldset.files > ol > li ol li.empty + li, #main form.formtastic fieldset.files > ol > li ol li.empty + li + li {
           display: none; }
   #main form.formtastic fieldset.files textarea {
