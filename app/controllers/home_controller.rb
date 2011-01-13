@@ -2,23 +2,25 @@
 
 class HomeController < ApplicationController
   def index
-    @featured = Article.any_in(:headword => ["ABB AS", "Vøyenenga skole", "Sandvikselva", "Sandvika stasjon"])
-    @featured_people = Article.any_in(:headword => ["Benkow, Jo", "Sand, Lauritz", "Munch, Carsten E.", "Petersen, Carl Emil"])
+    @page = Page.first(:conditions => {:name => ENV['FRONTPAGE'] || 'Forside'})
+    return unless @page
 
-    @article_lists = [
-      { :title => "Veier",
-        :articles => Article.where(:tags_array.in => ['gate', 'vei', 'plass']).limit(5)
-      },
-      { :title => "Steder",
-        :articles => Article.where(:tags_array.in => ['sted']).limit(5)
-      },
-      { :title => "Organisasjoner",
-        :articles => Article.where(:tags_array.in => ['organisasjon']).limit(5)
-      },
-      { :title => "Sist oppdatert",
-        :articles => Article.desc(:updated_at).limit(5)
-      }
-    ]
+    # @article_lists = [
+    #   { :title => "Veier",
+    #     :articles => Article.where(:tags_array.in => ['gate', 'vei', 'plass']).limit(5)
+    #   },
+    #   { :title => "Steder",
+    #     :articles => Article.where(:tags_array.in => ['sted']).limit(5)
+    #   },
+    #   { :title => "Organisasjoner",
+    #     :articles => Article.where(:tags_array.in => ['organisasjon']).limit(5)
+    #   },
+    #   { :title => "Sist oppdatert",
+    #     :articles => Article.desc(:updated_at).limit(5)
+    #   }
+    # ]
+
+    render :template => 'pages/show'
     expires_in 5.minutes, :public => true
     flash.keep
   end

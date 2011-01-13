@@ -411,6 +411,8 @@ header {
 
 #main {
   background: #efefef; }
+  #main > section {
+    padding-left: 35px; }
   #main .search-pagination {
     padding-left: 35px;
     padding-top: 10px;
@@ -601,7 +603,7 @@ header {
       background: #d9e3e2; }
   #main div.maincol {
     padding-left: 35px; }
-  #main section.featured-people {
+  #main section.featured-bottom {
     clear: both; }
   #main .col {
     float: left;

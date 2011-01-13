@@ -1,6 +1,7 @@
 no-NB:
   mime:
     title: "Leksikon for Asker og Bærum"
+    missing_frontpage: "Her mangler det visst en forside"
   errors:
     messages:
       blank: kan ikke være tom
