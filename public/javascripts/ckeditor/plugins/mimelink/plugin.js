@@ -63,6 +63,15 @@ CKEDITOR.plugins.mimelink = {
 		range.insertNode(element);
 		return element;
 	},
+	search: function(text, onResult) {
+		jQuery.getJSON('/fastsearch', {
+			model: 'article',
+			query: text,
+			num: 5,
+			qfields: 'headword',
+			rfields: 'headword'
+		}, onResult);
+	},
 	checkArticleExistence: function(text, onSuccessFn, onErrorFn) {
 		jQuery.ajax({
 			url: '/' + text,

@@ -670,3 +670,42 @@ header {
 #cke_contents_article_text_editor {
   height: 500px !important;
 }
+
+ul.search-completion {
+  position: absolute;
+  z-index: 12000;
+  background-color: #fff;
+  border-top: 1px solid #1A4A99;
+  font-size: $font12px;
+  width: 300px;
+  
+  span {
+    width: 16px;
+    height: 16px;
+    background-image: url(/images/icons/cross.png);
+    cursor: pointer;
+    float: right;
+    margin-top: 1px;
+    margin-right: 1px;
+    position: relative;
+    top: -3px;
+    
+    &:hover {
+     @include rounded-corners(2px);
+     border: 1px solid #ccc;
+     margin: 0;
+    }
+  }
+  
+  li {
+    padding: 4px 2px 2px;
+    border: 1px solid #1A4A99;
+    border-width: 0 1px 1px;
+    cursor: pointer;
+    
+    &:hover {
+     background-color: #ccc; 
+    }
+  }
+}
+
