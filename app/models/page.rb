@@ -1,8 +1,8 @@
 class Page
   include Mongoid::Document
-  include Mime::Helpers::AssociationsHelper
 
   embeds_many :sections
+  embeds_many :article_lists
 
   field :name
 

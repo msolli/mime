@@ -18,6 +18,7 @@ class Article
   embeds_many :external_links
 
   references_many :section_articles
+  references_many :list_articles
 
   field :headword
   field :headword_presentation

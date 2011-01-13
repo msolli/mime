@@ -606,7 +606,8 @@ header {
     float: left;
     display: inline;
     width: 14.875em;
-    margin-right: 2px; }
+    margin-right: 2px;
+    margin-bottom: 2px; }
     #main .col a.featured {
       display: block;
       height: 175px;
@@ -642,6 +643,42 @@ header {
         height: 37px;
         line-height: 37px;
         padding-left: 10px; }
+    #main .col section {
+      min-height: 158px;
+      position: relative;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      behavior: url(/stylesheets/PIE.htc);
+      padding: 16px 14px; }
+      #main .col section ul {
+        margin-top: 0.2em; }
+        #main .col section ul li {
+          margin-top: 0.8em; }
+    #main .col .article-list-0 {
+      background-color: #82a5df; }
+      #main .col .article-list-0 a {
+        border-bottom: 1px solid #abc2e9; }
+        #main .col .article-list-0 a:hover {
+          border-bottom: 1px solid #5988d5; }
+    #main .col .article-list-1 {
+      background-color: #c4b0dc; }
+      #main .col .article-list-1 a {
+        border-bottom: 1px solid #ded3ec; }
+        #main .col .article-list-1 a:hover {
+          border-bottom: 1px solid #aa8dcc; }
+    #main .col .article-list-2 {
+      background-color: #9ebdbb; }
+      #main .col .article-list-2 a {
+        border-bottom: 1px solid #bcd2d0; }
+        #main .col .article-list-2 a:hover {
+          border-bottom: 1px solid #80a8a6; }
+    #main .col .article-list-3 {
+      background-color: #e58b59; }
+      #main .col .article-list-3 a {
+        border-bottom: 1px solid #ecaa85; }
+        #main .col .article-list-3 a:hover {
+          border-bottom: 1px solid #de6c2d; }
   #main footer {
     padding-left: 35px;
     clear: both;
@@ -1052,6 +1089,20 @@ header #q + button {
     color: white; }
     #main .col a.featured:hover {
       text-decoration: underline; }
+  #main .article-lists h2 {
+    font-size: 100%;
+    color: #45494f; }
+  #main .article-lists li {
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+    font-size: 75%; }
+    #main .article-lists li a {
+      text-decoration: none; }
+      #main .article-lists li a:hover {
+        text-decoration: underline; }
+    #main .article-lists li a {
+      color: #383838; }
+      #main .article-lists li a:hover {
+        text-decoration: none; }
 
 form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li .inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.string .inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors, form.formtastic fieldset > ol > li.text .inline-errors {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;

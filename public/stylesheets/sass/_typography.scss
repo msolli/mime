@@ -175,6 +175,23 @@ header {
       color: white;
     }
   }
+  .article-lists {
+    h2 {
+      font-size: $font16px;
+      color: $dark-grey-color;
+    }
+    li {
+      @include small-sans;
+      @include no-underline;
+      font-size: $font12px;
+      a {
+        color: $text-color;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
 
 form.formtastic {
