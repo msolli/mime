@@ -2,7 +2,7 @@ class SectionArticle
   include Mongoid::Document
 
   embedded_in :section, :inverse_of => :article
-  references_one :article
+  referenced_in :article
 
   field :headword
   field :date, :type => Date

@@ -17,7 +17,7 @@ class Article
   embeds_one :location
   embeds_many :external_links
 
-  referenced_in :section_articles
+  references_many :section_articles
 
   field :headword
   field :headword_presentation
