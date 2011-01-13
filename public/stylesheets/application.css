@@ -913,6 +913,10 @@ ul.search-completion {
     width: 1280px;
     height: 30px; }
 
+.article-bottom-ad {
+  padding-left: 35px;
+  margin-bottom: 15px; }
+
 /*  font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 /*  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 /*  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/

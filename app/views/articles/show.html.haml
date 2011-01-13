@@ -40,3 +40,11 @@
     %ul
       - @article.tags_array.each do |tag|
         %li>= link_to tag, "#TODO", :class => "TODO"
+%div.article-bottom-ad
+  :javascript
+    google_ad_client = "ca-pub-0031389257411981";
+    /* Leksikon-artikkel-bunn */
+    google_ad_slot = "0385347003";
+    google_ad_width = 728;
+    google_ad_height = 90;
+  = javascript_include_tag 'http://pagead2.googlesyndication.com/pagead/show_ads.js'

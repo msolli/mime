@@ -728,3 +728,7 @@ ul.search-completion {
     height: 30px;
   }
 }
+.article-bottom-ad {
+  @include padding-main;
+  margin-bottom: 15px;
+}
