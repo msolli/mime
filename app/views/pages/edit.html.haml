@@ -1,0 +1,7 @@
+- content_for :title do
+  ! #{t('pages.editing')} – #{@page.name}
+
+- content_for :header do
+  <em>#{t('pages.editing')}</em> – #{link_to(@page.name, @page)}
+
+= render :partial => 'new_edit', :locals => { :page => @page }

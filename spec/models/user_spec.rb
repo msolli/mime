@@ -5,7 +5,6 @@ describe User do
   it { should have_field(:password).of_type(String) }
   it { should have_field(:name).of_type(String) }
   it { should have_field(:facebook_token).of_type(String) }
-  it { should have_field(:editor).of_type(Boolean) }
 
   it { should validate_presence_of(:email) }
   it { should validate_uniqueness_of(:email) }
@@ -33,10 +32,81 @@ describe User do
     u.to_json.should_not =~ /password/
   end
 
-  describe "editor" do
-    it "is false by default" do
-      u = Factory(:user)
-      u.editor?.should be_false
+  describe "roles" do
+    before :all do
+      @u = Factory(:user)
+    end
+
+    describe "no role" do
+      it "is nil by default" do
+        @u.role.should == nil
+      end
+
+      it "is not a user" do
+        @u.role?('user').should be_false
+      end
+
+      it "is not an editor" do
+        @u.role?('editor').should be_false
+      end
+
+      it "is not an admin" do
+        @u.role?('admin').should be_false
+      end
+    end
+
+    describe "user" do
+      before :all do
+        @u.role = 'user'
+      end
+
+      it "is a user" do
+        @u.role?('user').should be_true
+      end
+
+      it "is not an editor" do
+        @u.role?('editor').should be_false
+      end
+
+      it "is not an editor" do
+        @u.role?('admin').should be_false
+      end
+    end
+
+    describe "editor" do
+      before :all do
+        @u.role = 'editor'
+      end
+
+      it "has the role of 'user'" do
+        @u.role?('user').should be_true
+      end
+
+      it "is an editor" do
+        @u.role?('editor').should be_true
+      end
+
+      it "is not an editor" do
+        @u.role?('admin').should be_false
+      end
+    end
+
+    describe "admin" do
+      before :all do
+        @u.role = 'admin'
+      end
+
+      it "has the role of 'user'" do
+        @u.role?('user').should be_true
+      end
+
+      it "is has the role of 'editor'" do
+        @u.role?('editor').should be_true
+      end
+
+      it "is an editor" do
+        @u.role?('admin').should be_true
+      end
     end
   end
 end

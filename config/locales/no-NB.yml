@@ -89,6 +89,17 @@ no-NB:
     template:
       several_hits: "%{previous_label} Viser %{from}-%{to} av %{total_entries} treff %{next_label}"
       one_or_less_hits: "Viser %{count} av %{count} treff"
+  pages:
+    new: Ny side
+    edit: Rediger
+    editing: Desking
+    edit_this_page: Rediger denne siden
+    saved: Siden er lagret
+    sections:
+      sections: Seksjoner
+      articles: Artikler
+    errors:
+      save: "Siden ble visst ikke lagret – sjekk feilene nedenfor:"
   alphabetic:
     description: "Artikler på %{letter}"
     intro: "Artikler på <strong>%{letter}</strong>"
@@ -114,6 +125,10 @@ no-NB:
         text: Lenketekst
       _destroy: Slett
       description: Beskrivelse
+      page:
+        name: Navn
+      section:
+        name: Navn
   words:
     or: eller
     search: søk

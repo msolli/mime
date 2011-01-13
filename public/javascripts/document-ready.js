@@ -44,14 +44,15 @@ $(document).ready(function() {
     }
   })();
 
+  // Adding / removing nested objects in nested forms
 	(function() {
 		$('#external-links').find('button').click(function() {
-	    var li = $(this).parents('ol.link').parent();
+	    var li = $(this).closest('ol').parent();
 
-	    if($(this).hasClass('add')) {
+	    if ($(this).hasClass('add')) {
 	      mime.tools.input_cloner(li);
-	    } else if($(this).hasClass('remove')) {
-	      if(!li.is(':last-child')) {
+	    } else if ($(this).hasClass('remove')) {
+	      if (!li.is(':only-child')) {
 	        li.remove();
 	      }
 	    }

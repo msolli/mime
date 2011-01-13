@@ -20,6 +20,15 @@ FACEBOOK_INFO = {
     :last_name => 'Testesen',
     :name  => 'Test Testesen',
     :email => 'yo@testesen.no'
+  },
+  'Ronny Redaksjonsmedlem' => {
+    :id => '11111',
+    :link => 'http://facebook.com/redaksjonsmedlem',
+    :website => 'http://redaksjon.no',
+    :first_name => 'Ronny',
+    :last_name => 'Redaksjonsmedlem',
+    :name  => 'Ronny Redaksjonsmedlem',
+    :email => 'ronny@redaksjon.no'
   }
 }
 

@@ -7,6 +7,7 @@ class Article
   include Sunspot::Mongoid
   include Mongoid::Paranoia
   include ActionView::Helpers::SanitizeHelper
+  include Mime::Helpers::AssociationsHelper
 
   references_many :users, :stored_as => :array, :inverse_of => :articles
   alias :authors :users
@@ -15,6 +16,8 @@ class Article
   references_many :medias, :stored_as => :array, :inverse_of => :articles
   embeds_one :location
   embeds_many :external_links
+
+  referenced_in :section_articles
 
   field :headword
   field :headword_presentation
@@ -133,13 +136,7 @@ class Article
   end
 
   def remove_empty_associations
-    [:external_links, :medias].each do |method|
-      self.send(method).each do |item|
-        if item.fields.keys.all?{|key| item.attributes[key].blank?}
-          self.remove(item)
-        end
-      end
-    end
+    remove_empty_associations_for(:external_links, :medias)
   end
 
   def update_headword_sorting

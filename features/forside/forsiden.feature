@@ -6,5 +6,8 @@ Egenskap: Forside
   Som en lokalinteressert person
   Vil jeg ha en forside som lenker til en artikkel
 
-  Scenario: går til forsiden
-    Gitt at jeg står på forsiden
+  Scenario: går til forsideredigering
+    # Gitt at jeg er logget inn som "Ronny Redaksjonsmedlem"
+    # Gitt at jeg står på forsiden
+    # Når jeg klikker "Rediger"
+    # Så skal jeg komme til forsideredigering

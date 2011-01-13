@@ -1,0 +1,7 @@
+- content_for :title do
+  = t('pages.new')
+
+- content_for :header do
+  = t('pages.new')
+
+= render :partial => 'new_edit', :locals => { :page => @page }
