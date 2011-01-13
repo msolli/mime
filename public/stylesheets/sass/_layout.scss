@@ -717,4 +717,14 @@ ul.search-completion {
     }
   }
 }
-
+#bottom-ad {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+  div {
+    margin: 0 auto;
+    width: 1280px;
+    height: 30px;
+  }
+}

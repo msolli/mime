@@ -906,6 +906,15 @@ ul.search-completion {
     ul.search-completion li:hover {
       background-color: #ccc; }
 
+#bottom-ad {
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+  #bottom-ad div {
+    margin: 0 auto;
+    width: 1280px;
+    height: 30px; }
+
 /*  font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 /*  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 /*  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
