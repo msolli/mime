@@ -2,6 +2,8 @@
 
 class HomeController < ApplicationController
   def index
+    flash.keep
+
     @page = Page.first(:conditions => {:name => ENV['FRONTPAGE'] || 'Forside'})
     return unless @page
 
@@ -22,7 +24,6 @@ class HomeController < ApplicationController
 
     render :template => 'pages/show'
     expires_in 5.minutes, :public => true
-    flash.keep
   end
 
   def alphabetic
