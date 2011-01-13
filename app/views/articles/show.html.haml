@@ -39,7 +39,9 @@
   - else
     %ul
       - @article.tags_array.each do |tag|
-        %li>= link_to tag, "#TODO", :class => "TODO"
+        %li>= tag
+        -#%li>= link_to tag, "#TODO"
+
 %div.article-bottom-ad
   :javascript
     google_ad_client = "ca-pub-0031389257411981";

@@ -1,6 +1,8 @@
 no-NB:
   mime:
-    title: "Leksikon for Asker og Bærum"
+    title: "ableksikon.no"
+    description: "Budstikkas store Asker og Bærum-leksikon"
+    header: "Budstikkas store Asker og Bærum-leksikon"
     missing_frontpage: "Her mangler det visst en forside"
   errors:
     messages:

@@ -1,0 +1,6 @@
+= javascript_include_tag 'http://www.budstikka.no/js/spring.js'
+:javascript
+  var tns_site = { 's': 'budstikka', 'cp': 'budstikka/ableksikon.no#{scores_section}', 'url': document.location.href };
+  spring.c(tns_site);
+%noscript
+  %img{:src => "http://budstikka.tns-cs.net/j0=,,,+,cp=budstikka/ableksikon.no#{scores_section};;;"}

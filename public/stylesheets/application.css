@@ -263,9 +263,6 @@ body .container {
   -webkit-box-shadow: 0px 2px 10px #777777;
   behavior: url(/stylesheets/PIE.htc); }
 
-#TODO {
-  visibility: hidden; }
-
 a.TODO {
   color: #7a7a7a; }
   a.TODO:visited {
@@ -917,24 +914,20 @@ ul.search-completion {
   padding-left: 35px;
   margin-bottom: 15px; }
 
-/*  font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
-/*  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
-/*  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
-/*  font-family: Tahoma, Arial, Helvetica, sans-serif;*/
 body {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
   font-size: 100%; }
 
 header .title {
-  font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
-  font-size: 187.5%;
-  color: #45494f; }
+  font-family: Arial, sans-serif;
+  font-size: 118.75%;
+  color: #1d386a; }
   header .title a {
     text-decoration: none; }
     header .title a:hover {
       text-decoration: underline; }
 header aside#user-links {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
   color: #3362ba; }
 header nav {
@@ -944,7 +937,7 @@ header nav {
     header nav a:hover {
       text-decoration: underline; }
 header #q + button {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   color: white;
   font-size: 112.5%;
   font-weight: bold;
@@ -952,7 +945,7 @@ header #q + button {
   font-size: 75%; }
 
 #messages {
-  font-family: "Lucida Grande", Tahoma, Arial; }
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
 
 #main {
   color: #383838; }
@@ -967,7 +960,7 @@ header #q + button {
     #main header h1 a {
       color: white; }
   #main .search-pagination {
-    font-family: "Lucida Grande", Tahoma, Arial;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%; }
   #main .search-results h2 {
     font-size: 100%; }
@@ -981,7 +974,7 @@ header #q + button {
     font-size: 100%;
     line-height: 1.5; }
   #main aside.info, #main aside.back-link, #main aside.redirected {
-    font-family: "Lucida Grande", Tahoma, Arial;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%;
     color: #7a7a7a; }
     #main aside.info a, #main aside.back-link a, #main aside.redirected a {
@@ -989,7 +982,7 @@ header #q + button {
       #main aside.info a:hover, #main aside.back-link a:hover, #main aside.redirected a:hover {
         text-decoration: underline; }
   #main aside.meta figcaption {
-    font-family: "Lucida Grande", Tahoma, Arial;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%;
     line-height: 1.2em;
     font-weight: normal; }
@@ -1006,25 +999,25 @@ header #q + button {
     font-size: 106.25%;
     font-weight: bold; }
   #main aside.image p {
-    font-family: "Lucida Grande", Tahoma, Arial;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     color: #45494f;
     font-size: 75%; }
     #main aside.image p:first-of-type {
       margin-top: 5px; }
   #main aside.tags {
-    font-family: "Lucida Grande", Tahoma, Arial;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     color: #45494f;
     font-size: 75%; }
     #main aside.tags h3 {
       text-transform: uppercase;
       font-weight: bold; }
   #main aside.actions {
-    font-family: "Lucida Grande", Tahoma, Arial;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%; }
   #main aside.intro {
-    font-family: "Lucida Grande", Tahoma, Arial; }
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
   #main .alphabetic {
-    font-family: "Lucida Grande", Tahoma, Arial;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%;
     line-height: 1.67; }
     #main .alphabetic a {
@@ -1032,14 +1025,14 @@ header #q + button {
       #main .alphabetic a:hover {
         text-decoration: underline; }
   #main .login {
-    font-family: "Lucida Grande", Tahoma, Arial;
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%; }
     #main .login dl dt {
       font-weight: bold;
       line-height: 1.5;
       margin-top: 5px; }
   #main table.versions, #main table.articles {
-    font-family: "Lucida Grande", Tahoma, Arial; }
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
     #main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
       font-size: 75%; }
     #main table.versions tfoot a, #main table.articles tfoot a {
@@ -1061,18 +1054,18 @@ header #q + button {
       text-decoration: underline; }
 
 form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li .inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.string .inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors, form.formtastic fieldset > ol > li.text .inline-errors {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
   color: #b72727; }
   form.formtastic fieldset > ol > li p.inline-errors a, form.formtastic fieldset > ol > li .inline-errors a, form.formtastic fieldset > ol > li.string p.inline-errors a, form.formtastic fieldset > ol > li.string .inline-errors a, form.formtastic fieldset > ol > li.text p.inline-errors a, form.formtastic fieldset > ol > li.text .inline-errors a {
     color: #b72727;
     text-decoration-style: dashed; }
 form.formtastic fieldset > ol > li p.inline-hints, form.formtastic fieldset > ol > li.string p.inline-hints, form.formtastic fieldset > ol > li.text p.inline-hints {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
   color: #7a7a7a; }
 form.formtastic fieldset > ol > li #show-map-link, form.formtastic fieldset > ol > li #hide-map-link, form.formtastic fieldset > ol > li.string #show-map-link, form.formtastic fieldset > ol > li.string #hide-map-link, form.formtastic fieldset > ol > li.text #show-map-link, form.formtastic fieldset > ol > li.text #hide-map-link {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
   text-decoration: none; }
   form.formtastic fieldset > ol > li #show-map-link span:hover, form.formtastic fieldset > ol > li #hide-map-link span:hover, form.formtastic fieldset > ol > li.string #show-map-link span:hover, form.formtastic fieldset > ol > li.string #hide-map-link span:hover, form.formtastic fieldset > ol > li.text #show-map-link span:hover, form.formtastic fieldset > ol > li.text #hide-map-link span:hover {
@@ -1083,11 +1076,11 @@ form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic 
   font-weight: bold;
   color: #45494f; }
 form.formtastic fieldset > ol > li input[type="text"], form.formtastic fieldset > ol > li.string input[type="text"], form.formtastic fieldset > ol > li.text input[type="text"] {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
   color: #45494f; }
 form.formtastic fieldset > ol > li label, form.formtastic fieldset > ol > li.string label, form.formtastic fieldset > ol > li.text label {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   color: #45494f;
   font-size: 75%;
   text-transform: uppercase;
@@ -1102,7 +1095,7 @@ form.formtastic fieldset > ol > li textarea, form.formtastic fieldset > ol > li.
   line-height: 1.5; }
 form.formtastic fieldset > ol > li #file-upload-button,
 form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldset > ol > li.string #file-upload-button, form.formtastic fieldset > ol > li.string input[type="submit"], form.formtastic fieldset > ol > li.text #file-upload-button, form.formtastic fieldset > ol > li.text input[type="submit"] {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   color: white;
   font-size: 112.5%;
   font-weight: bold;
@@ -1114,7 +1107,7 @@ form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldse
   /*  font-weight: bold;*/ }
 
 footer {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 68.75%;
   color: #828589; }
 

@@ -1,18 +1,14 @@
 @mixin serif {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
 }
-/*  font-family: "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
-/*  font-family: "ff-meta-serif-web-pro-1", "ff-meta-serif-web-pro-2", "Trebuchet MS", Utopia, "Palatino", "Palatino Linotype", serif;*/
 
 @mixin large-sans {
-  font-family: "coolvetica-1", "coolvetica-2", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
-/*  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", Tahoma, Arial, Helvetica, sans-serif;*/
 
 @mixin small-sans {
-  font-family: "Lucida Grande", Tahoma, Arial;
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
 }
-/*  font-family: Tahoma, Arial, Helvetica, sans-serif;*/
 
 body {
   @include serif;
@@ -23,8 +19,8 @@ header {
   .title {
     @include large-sans;
     @include no-underline;
-    font-size: $font30px;
-    color: $dark-grey-color;
+    font-size: $font19px;
+    color: $link-visited-color;
   }
   aside#user-links {
     @include small-sans;
