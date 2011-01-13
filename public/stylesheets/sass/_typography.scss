@@ -290,3 +290,11 @@ em {
     }
   }
 }
+
+.map-wrapper > a {
+  font-size: $font14px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline; 
+  }
+}

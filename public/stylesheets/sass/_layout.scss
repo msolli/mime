@@ -201,6 +201,8 @@ header {
     width: 300px;
     
     .map-wrapper {
+      text-align: center;
+      
       .map {
         height: 150px;
         background-color: #fff;
@@ -216,7 +218,7 @@ header {
         display: inline;
       }
     }
-    
+    .map-wrapper.minimized,
     figure {
       position: relative;
       border: 1px solid $box-border-color;

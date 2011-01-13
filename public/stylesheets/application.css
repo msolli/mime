@@ -480,16 +480,19 @@ header {
     padding-top: 16px;
     margin-left: 5px;
     width: 300px; }
-    #main aside.meta .map-wrapper .map {
-      height: 150px;
-      background-color: #fff; }
-    #main aside.meta .map-wrapper a.smaller-map,
-    #main aside.meta .map-wrapper a.bigger-map {
-      display: none; }
-    #main aside.meta .map-wrapper.maximized a.smaller-map {
-      display: inline; }
-    #main aside.meta .map-wrapper.minimized a.bigger-map {
-      display: inline; }
+    #main aside.meta .map-wrapper {
+      text-align: center; }
+      #main aside.meta .map-wrapper .map {
+        height: 150px;
+        background-color: #fff; }
+      #main aside.meta .map-wrapper a.smaller-map,
+      #main aside.meta .map-wrapper a.bigger-map {
+        display: none; }
+      #main aside.meta .map-wrapper.maximized a.smaller-map {
+        display: inline; }
+      #main aside.meta .map-wrapper.minimized a.bigger-map {
+        display: inline; }
+    #main aside.meta .map-wrapper.minimized,
     #main aside.meta figure {
       position: relative;
       border: 1px solid #cccccc;
@@ -497,10 +500,12 @@ header {
       background: white;
       margin: 0 0 10px 0;
       display: block; }
+      #main aside.meta .map-wrapper.minimized img,
       #main aside.meta figure img {
         display: block;
         margin: 0 auto;
         border: 1px solid #ccc; }
+      #main aside.meta .map-wrapper.minimized figcaption,
       #main aside.meta figure figcaption {
         display: block;
         margin-bottom: 0;
@@ -1178,3 +1183,9 @@ em {
 /* Større tekst når Typekit ikke kan lastes (Firefox 3.0) */
 .wf-inactive #main .articletext {
   font-size: 116%; }
+
+.map-wrapper > a {
+  font-size: 87.5%;
+  text-decoration: none; }
+  .map-wrapper > a:hover {
+    text-decoration: underline; }
