@@ -49,21 +49,27 @@ CKEDITOR.dialog.add('mimelink', function(editor) {
 					infoElement		= jQuery(that.getContentElement('page1', 'info').getElement().$),
 					linkInputElement = that.getContentElement('page1', 'linkInput'),
 					searchTimer		= null,
-					ul = jQuery('<ul class="search-completion">').css({
-						left: infoElement.offset().left,
-						top: infoElement.offset().top + infoElement.height() + 2,
-						width: infoElement.width()
-					}).appendTo('body').hide(),
 					tmpl = '<li data-url="${url}">${headword}</li>';
 			
 			
-			infoElement.find('input').focus(function() { ul.show(); });
+			infoElement.find('input').focus(function() { jQuery('.search-completion').show(); });
 			
 			infoElement.keyup(function() {
 				if(searchTimer != null) {
 					clearTimeout(searchTimer);
 				}
 				searchTimer = setTimeout(function() {
+					
+					if(jQuery('.search-completion').length == 0) {
+						jQuery('<ul class="search-completion">').css({
+							left: infoElement.position().left,
+							top: infoElement.position().top + infoElement.height() + 2,
+							width: infoElement.width()
+						}).appendTo('table.cke_dialog').hide();
+					}
+					
+					var ul = jQuery('.search-completion');
+					
 					ul.empty().append('<li>Søker…</a>');
 					CKEDITOR.plugins.mimelink.search(infoElement.find('input').val(), function(res) {
 						ul.empty().show();
@@ -107,6 +113,7 @@ CKEDITOR.dialog.add('mimelink', function(editor) {
 					{
 						id:		'info',
 						type: 'text',
+						label: 'Lenketekst',
 						setup: function(value) {
 							this.setValue(value);
 						}
