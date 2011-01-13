@@ -32,6 +32,9 @@ gem 'heroku_delayed_job_autoscale'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly'
 
+# Canonical urls
+gem 'rack-rewrite', :require => 'rack/rewrite'
+
 group :development do
   gem 'rails3-generators'
   gem 'haml-rails'
