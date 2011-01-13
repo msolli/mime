@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe MediasHelper do
+describe PagesHelper do
 
 end

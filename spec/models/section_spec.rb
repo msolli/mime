@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe MediasHelper do
+describe Section do
 
 end

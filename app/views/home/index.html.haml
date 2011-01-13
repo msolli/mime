@@ -1,15 +1,2 @@
-- @featured.each_with_index do |a, i|
-  .col{:class => ("left" if i == 0)}
-    = link_to a, :class => 'featured' do
-      %figure
-        - image = a.medias.first.file.thumb("238x175#nw")
-        = df_image_tag(image.url)
-        %figcaption= a.headword
-
-- @article_lists.each_with_index do |list, i|
-  .col{:class => ("left" if i == 0)}
-    %section
-      %h2= list[:title]
-      %ul
-        - list[:articles].each do |a|
-          %li= link_to a.headword_presentation, a
+%section
+  %p= t('mime.missing_frontpage')

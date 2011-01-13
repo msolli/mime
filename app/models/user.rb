@@ -12,7 +12,8 @@ class User
   field :password
   field :name
   field :facebook_token
-  field :editor, :type => Boolean, :default => false
+  field :role
+
   validates_presence_of :email
   validates_uniqueness_of :email, :case_sensitive => false
   attr_accessible :email, :password, :name
@@ -28,6 +29,16 @@ class User
   def name_or_email
     self.name.blank? ? email : self.name
   end
+
+  ROLES = %w[user editor admin]
+
+  def role?(base_role)
+    ROLES.index(base_role.to_s) <= (ROLES.index(role) || -1)
+  end
+
+  def user?; role? "user"; end
+  def editor?; role? "editor"; end
+  def admin?; role? "admin"; end
 
   class << self
     def find_for_facebook_oauth(auth_info, signed_in_resource = nil)

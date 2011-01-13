@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:charset => "utf-8"}
-    %title<= content_for?(:title) ? "#{yield(:title)} – #{t('mime.title')}" : t('mime.title')
+    %title<= content_for?(:title) ? "#{yield(:title).strip} – #{t('mime.title')}" : t('mime.title')
     %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : 'TODO - generell meta description'}
     %meta{:'http-equiv' => "content-language", :content => "no"}
     - unless cached_page?
@@ -39,12 +39,14 @@
               %h1<= yield :header
             = yield
         - else
-          %header
-            %h1<= yield :header
+          - if content_for? :header
+            %header
+              %h1<= yield :header
           = render :partial => "common/flash"
           = yield
 
         %footer
+          = yield :footer
           %p Leksikonet er en tjeneste fra Budstikka.Media #{image_tag 'budstikka-logo-bw.png'}
     = javascript_include_tag 'http://www.budstikka.no/js/spring.js'
     :javascript

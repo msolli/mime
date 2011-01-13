@@ -121,6 +121,11 @@ header {
 
 #main {
   background: #efefef;
+
+  & > section {
+    @include padding-main;
+  }
+
   .search-pagination {
     @include padding-main;
     padding-top: 10px;
@@ -317,6 +322,10 @@ header {
 
   div.maincol {
     @include padding-main;
+  }
+
+  section.featured-bottom {
+    clear: both;
   }
 
   .col {
