@@ -10,6 +10,10 @@ class TagsArticleList < ArticleList
     todays_articles
   end
 
+  def invalidate_articles!
+    randomize_articles!
+  end
+
   private
 
   def todays_articles
