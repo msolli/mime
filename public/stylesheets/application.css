@@ -585,6 +585,9 @@ header {
             border-bottom: 1px solid #29447E;
             border-top: 1px solid #45619D;
             text-shadow: none; }
+  #main table.versions + input[name="commit"] {
+    margin: 35px;
+    margin-top: 0; }
   #main table.versions, #main table.articles {
     background-color: #fff;
     margin: 20px 0 20px 35px;
@@ -684,6 +687,10 @@ header {
         border-bottom: 1px solid #ecaa85; }
         #main .col .article-list-3 a:hover {
           border-bottom: 1px solid #de6c2d; }
+  #main .diff del {
+    background-color: #FF9098; }
+  #main .diff ins {
+    background-color: #ABEEBE; }
   #main footer {
     padding-left: 35px;
     clear: both;
@@ -956,6 +963,27 @@ ul.search-completion {
   padding-left: 35px;
   margin-bottom: 15px; }
 
+input[name="commit"] {
+  padding: 0.4em 2em 0.2em 2em;
+  background: #2f528f;
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  border: 1px solid #355da2;
+  border-top-color: #29477c;
+  border-left-color: #29477c; }
+  input[name="commit"].hover, input[name="commit"]:hover {
+    background: #fab45b;
+    border: 1px solid #fbbf74;
+    border-top-color: #f9a942;
+    border-left-color: #f9a942; }
+  input[name="commit"].active, input[name="commit"]:active {
+    border: 1px solid #f9a942;
+    border-top-color: #fbbf74;
+    border-left-color: #fbbf74; }
+
 body {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
   font-size: 100%; }
@@ -1073,6 +1101,12 @@ header #q + button {
       font-weight: bold;
       line-height: 1.5;
       margin-top: 5px; }
+  #main table.versions + input[name="commit"] {
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+    color: white;
+    font-size: 112.5%;
+    font-weight: bold;
+    text-transform: uppercase; }
   #main table.versions, #main table.articles {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
     #main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {

@@ -151,6 +151,9 @@ header {
       }
     }
   }
+  table.versions + input[name="commit"] {
+    @include submit-button-typography;
+  }
   table.versions, table.articles {
     @include small-sans;
     caption, tfoot {

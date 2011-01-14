@@ -36,7 +36,7 @@ gem 'dragonfly'
 gem 'rack-rewrite', :require => 'rack/rewrite'
 
 # Diff view
-gem 'differ'
+gem 'htmldiff'
 
 group :development do
   gem 'rails3-generators'

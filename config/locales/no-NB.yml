@@ -49,6 +49,12 @@ no-NB:
       first: Første versjon
       active: "Aktiv version"
       print: 'V %{version}'
+      compare: Sammenlign
+      back: "Tilbake til versjonsloggen for %{for}"
+      can_only_compare_two_versions: Du kan kun sammenligne to versjoner inntil videre
+      need_two_versions_to_compare: Du må velge to versjoner å sammenligne
+      one_or_more_invalid_version: Én eller begge versjonene var ugyldig
+      comparing: "Forskjell mellom versjon %{from} og %{to} av %{for}"
       version: Versjon
       versions: Versjoner
       version_log: "Versjonslogg for %{for}"

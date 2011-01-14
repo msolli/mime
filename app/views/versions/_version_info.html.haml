@@ -1,6 +1,7 @@
 %tr{:class => [(version_counter == 0 ? 'current' : nil ), "version-number-#{version.version}"].compact.join(' ')}
   %td.version_number
-    = version_number_or_text(version, version_counter)
+    = check_box_tag :'cmp_versions[]', version.version, false, :id => "cmp-version-#{version.version}"
+    = label_tag "cmp-version-#{version.version}", version_number_or_text(version, version_counter)
   %td.version_date
     = l(version.updated_at)
   %td.author

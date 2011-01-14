@@ -122,7 +122,17 @@ $(document).ready(function() {
       }
     }
   })();
-
+	
+	// Only allow selecting two checkboxes at the time in version log
+	(function() {
+		var selector = 'table.versions input[type="checkbox"]';		
+		$(selector).click(function() {
+			if($(selector + ':checked').length > 2) {
+				alert('åhnånå. Du kan bare sammenligne to versjoner!');
+				return false;
+			}
+		});
+	})();
   // Tooltips (http://docs.jquery.com/Plugins/tooltip)
   $('[data-tooltip-enable]').tooltip({
     layout: '<div><span/></div>',

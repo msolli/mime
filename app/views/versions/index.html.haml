@@ -9,12 +9,18 @@
 
 - caption = link_to(@article.headword_presentation, pretty_article_path(@article)) + ' ' + t('articles.versions.count', :count => @versions.size + 1)
 
-%table.versions{:caption => caption, :summary => t('articles.versions.summary')}
-  %caption= caption
-  %thead
-    %tr
-      %th= t('articles.versions.version')
-      %th= t('articles.versions.date')
-      %th= t('articles.versions.author')
-  %tbody
-    = render :partial => 'version_info', :collection => [@article, @versions.reverse].flatten, :as => :version, :locals => { :current => false }
+
+= form_tag article_diff_path, :method => :get do
+  %table.versions{:caption => caption, :summary => t('articles.versions.summary')}
+    %caption= caption
+    %thead
+      %tr
+        %th= t('articles.versions.version')
+        %th= t('articles.versions.date')
+        %th= t('articles.versions.author')
+    %tbody
+      = render :partial => 'version_info',
+        :collection => [@article, @versions.reverse].flatten, 
+        :as => :version,
+        :locals => { :current => false }
+  = submit_tag t('articles.versions.compare')

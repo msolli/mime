@@ -293,6 +293,10 @@ header {
       }
     }
   }
+  table.versions + input[name="commit"] {
+    margin: $main-margin-left;
+    margin-top: 0;
+  }
   table.versions, table.articles {
     background-color: #fff;
     margin: 20px 0 20px $main-padding-left;
@@ -413,7 +417,14 @@ header {
   .col.left {
 
   }
-
+  .diff {
+    del {
+      background-color: #FF9098;
+    }
+    ins {
+      background-color: #ABEEBE;
+    }
+  }
   footer {
     @include padding-main;
     clear: both;
@@ -779,4 +790,9 @@ ul.search-completion {
 .article-bottom-ad {
   @include padding-main;
   margin-bottom: 15px;
+}
+
+
+input[name="commit"] {
+  @include submit-button;
 }

@@ -1,0 +1,10 @@
+- content_for :title do
+  = title_and_header(@v2, @v1, @article)
+
+- content_for :header do
+  = title_and_header(@v2, @v1, @article)
+  
+%aside.back-link
+  = link_to '« ' + t('articles.versions.back', :for => @article.headword), article_versions_path(@article)
+
+.articletext.diff!= diff(@v2.text, @v1.text).html_safe
