@@ -35,6 +35,9 @@ gem 'dragonfly'
 # Canonical urls
 gem 'rack-rewrite', :require => 'rack/rewrite'
 
+# Diff view
+gem 'differ'
+
 group :development do
   gem 'rails3-generators'
   gem 'haml-rails'

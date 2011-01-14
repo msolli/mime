@@ -108,6 +108,7 @@ GEM
       delayed_job (~> 2.1.1)
       mongoid (~> 2.0)
     diff-lcs (1.1.2)
+    differ (0.1.1)
     dragonfly (0.8.1)
       rack
     erubis (2.6.6)
@@ -306,6 +307,7 @@ DEPENDENCIES
   delayed_job
   delayed_job_mongoid
   devise!
+  differ
   dragonfly
   escape_utils
   factory_girl_rails
