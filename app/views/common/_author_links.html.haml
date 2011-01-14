@@ -1,0 +1,4 @@
+- if article.authors.blank?
+  = article.ip
+- else
+  != article.authors.map {|a| link_to a.name_or_email, user_path(a.email)}.join(', ')

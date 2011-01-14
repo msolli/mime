@@ -4,7 +4,4 @@
   %td.version_date
     = l(version.updated_at)
   %td.author
-    - if version.authors.blank?
-      = version.ip
-    - else
-      != version.authors.map {|a| link_to a.name_or_email, user_path(a.email)}.join(', ')
+    = render :partial => 'common/author_links', :locals => {:article => version}

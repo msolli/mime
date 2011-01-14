@@ -16,6 +16,9 @@ Mime::Application.routes.draw do
 
   resources :pages, :path => 'p'
 
+  # TODO - flyttes inn i admin
+  get 'home/last_updated'
+
   constraints :id => /.*/ do
     resources :articles, :except => [:index] do
       resources :versions, :only => [:index]

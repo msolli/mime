@@ -23,4 +23,15 @@ class HomeController < ApplicationController
     expires_in 5.minutes, :public => true
     flash.keep
   end
+
+  def last_updated
+    articles = Article.desc(:updated_at).only(:_id, :headword, :user_ids, :updated_at, :ip)
+
+    current_page = params[:page].blank? ? 1 : params[:page].to_i
+    per_page = 10
+    @articles_pager = WillPaginate::Collection.create(current_page, per_page, articles.size) do |pager|
+      start = (current_page - 1) * per_page
+      pager.replace(articles[start, per_page])
+    end
+  end
 end

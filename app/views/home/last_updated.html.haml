@@ -1,0 +1,15 @@
+%table.articles
+  %thead
+    %tr
+      %th= t('articles.headword')
+      %th= t('articles.last_updated')
+      %th= t('articles.contributors')
+  %tfoot
+    %tr
+      %td{:colspan => 3}= will_paginate @articles_pager
+  %tbody
+    - @articles_pager.each do |article|
+      %tr
+        %td= link_to article.headword, pretty_article_path(article)
+        %td= timeago(article.updated_at)
+        %td= render :partial => 'common/author_links', :locals => {:article => article}
