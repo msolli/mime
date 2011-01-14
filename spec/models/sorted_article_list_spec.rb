@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe SortedArticleList do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_field(:sort_direction).of_type(Symbol) }
+  it { should have_field(:sort_field).of_type(Symbol) }
 end
