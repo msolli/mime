@@ -17,6 +17,4 @@
       %th= t('articles.versions.date')
       %th= t('articles.versions.author')
   %tbody
-    = render :partial => 'version_info', :locals => { :version => @article, :current => true }
-    - @versions.reverse.each do |version|
-      = render :partial => 'version_info', :locals => { :version => version, :current => false }
+    = render :partial => 'version_info', :collection => [@article, @versions.reverse].flatten, :as => :version, :locals => { :current => false }

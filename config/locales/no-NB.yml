@@ -46,6 +46,9 @@ no-NB:
       default: "Trykk på meg for å redigere %{value}."
 
     versions:
+      first: Første versjon
+      active: "Aktiv version"
+      print: 'V %{version}'
       version: Versjon
       versions: Versjoner
       version_log: "Versjonslogg for %{for}"
