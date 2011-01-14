@@ -45,7 +45,7 @@ header {
     ul {
       li {
         display: inline;
-        margin-left: 1em;
+        margin-left: 0.3em;
       }
       li.fb-button {
         @include fb-button;
@@ -351,14 +351,14 @@ header {
       figcaption {
         @include bottom-rounded-corners(4px);
         behavior: url(/stylesheets/PIE.htc);
-        background-color: rgba(76, 76, 76, 0.7);
-        -pie-background: rgba(76, 76, 76, 0.7);
+        background-color: rgba(0, 0, 0, 0.6);
+        -pie-background: rgba(0, 0, 0, 0.6);
         display: block;
         position: relative;
         top: -41px;
         height: 37px;
         line-height: 37px;
-        padding-left: 10px;
+        padding-left: 14px;
       }
     }
 

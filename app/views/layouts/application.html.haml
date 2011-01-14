@@ -51,4 +51,5 @@
           %p Leksikonet er en tjeneste fra Budstikka.Media #{image_tag 'budstikka-logo-bw.png'}
     = render :partial => 'common/scores'
     = render :partial => 'common/google_analytics'
-    = render :partial => 'common/bottom-ad'
+    - unless %w(edit new create update).include?(action_name)
+      = render :partial => 'common/bottom-ad'

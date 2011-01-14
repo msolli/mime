@@ -25,7 +25,7 @@ header {
   aside#user-links {
     @include small-sans;
     font-size: $font12px;
-    color: $user-links-color;
+    color: $text-color;
   }
   nav {
     font-weight: bold;
@@ -174,11 +174,16 @@ header {
       }
       color: white;
     }
+    figure {
+      figcaption {
+        font-weight: bold;
+      }
+    }
   }
   .article-lists {
     h2 {
       font-size: $font16px;
-      color: $dark-grey-color;
+      color: #222;
     }
     li {
       @include small-sans;

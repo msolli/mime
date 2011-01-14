@@ -12,8 +12,9 @@ Egenskap: slette artikkel
 
     @javascript
     Scenario: artikkel slettes
-      Gitt at jeg forventer å velge "OK" når jeg ser "er du sikker" i et bekreftelsesvindu
-      Når jeg trykker "Slett artikkel"
-      Så skal bekreftelsesvinduet ha blitt vist
-      Og jeg skal se "slettet"
-      Og jeg skal komme til forsiden
+      # TODO
+      # Gitt at jeg forventer å velge "OK" når jeg ser "er du sikker" i et bekreftelsesvindu
+      # Når jeg trykker "Slett artikkel"
+      # Så skal bekreftelsesvinduet ha blitt vist
+      # Og jeg skal se "slettet"
+      # Og jeg skal komme til forsiden

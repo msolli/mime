@@ -286,7 +286,7 @@ header {
     margin-right: 65px; }
     header aside#user-links ul li {
       display: inline;
-      margin-left: 1em; }
+      margin-left: 0.3em; }
     header aside#user-links ul li.fb-button a {
       font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
       color: #3B5998;
@@ -640,14 +640,14 @@ header {
           behavior: url(/stylesheets/PIE.htc);
         */
         behavior: url(/stylesheets/PIE.htc);
-        background-color: rgba(76, 76, 76, 0.7);
-        -pie-background: rgba(76, 76, 76, 0.7);
+        background-color: rgba(0, 0, 0, 0.6);
+        -pie-background: rgba(0, 0, 0, 0.6);
         display: block;
         position: relative;
         top: -41px;
         height: 37px;
         line-height: 37px;
-        padding-left: 10px; }
+        padding-left: 14px; }
     #main .col section {
       min-height: 158px;
       position: relative;
@@ -971,7 +971,7 @@ header .title {
 header aside#user-links {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
-  color: #3362ba; }
+  color: #383838; }
 header nav {
   font-weight: bold; }
   header nav a {
@@ -1094,9 +1094,11 @@ header #q + button {
     color: white; }
     #main .col a.featured:hover {
       text-decoration: underline; }
+  #main .col figure figcaption {
+    font-weight: bold; }
   #main .article-lists h2 {
     font-size: 100%;
-    color: #45494f; }
+    color: #222; }
   #main .article-lists li {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%; }
