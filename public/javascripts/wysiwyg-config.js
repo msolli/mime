@@ -4,6 +4,7 @@ CKEDITOR.editorConfig = function( config )
 	config.toolbar = 'mime';
 	config.toolbarCanCollapse = false;
 	config.disableObjectResizing = true; // resize handles i FF
+	config.forcePasteAsPlainText = true; // Remove all nasty formatting
 	config.format_tags = 'p;h2;h3';
 	config.extraPlugins = 'mimelink';
 	config.removePlugins = 'link'; // Remove link and image to avoid doubleclick actions
