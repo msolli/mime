@@ -10,8 +10,8 @@
         %section{:class => "article-list-#{i}"}
           %h2= list.name
           %ul
-            - list.todays_articles.each do |a|
-              %li= link_to a.headword, a.article
+            - list.current_articles.each do |a|
+              %li= link_to a.headword, pretty_article_path(a.article)
 
 - unless @page.sections.blank? || @page.sections[1].blank?
   %section.featured-bottom
