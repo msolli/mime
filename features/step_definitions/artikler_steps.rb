@@ -28,6 +28,10 @@ Gitt /^at artikkelen "([^"]*)" har lokasjon "([^"]*)"$/ do |headword, location|
   a.save!
 end
 
+Gitt /^at artikkelen "([^"]*)" får teksten$/ do |headword, text|
+  Article.where(:headword => headword).first.update_attributes(:text => text)
+end
+
 Gitt /^at artikkelen "([^"]*)" har bilde$/ do |headword|
   a = Article.where(:headword => headword).first
   a.medias << (Media.new :file => open("#{Rails.root}/spec/data/png.png"), :description => 'bar')
