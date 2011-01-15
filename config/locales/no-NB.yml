@@ -47,7 +47,7 @@ no-NB:
 
     versions:
       first: Første versjon
-      active: "Aktiv version"
+      active: Aktiv versjon
       print: 'V %{version}'
       compare: Sammenlign
       back: "Tilbake til versjonsloggen for %{for}"
