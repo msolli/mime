@@ -18,6 +18,8 @@ class DiffsController < ApplicationController
     unless @v1 && @v2
       redirect_to article_versions_path(@article),  :alert => t('articles.versions.one_or_more_invalid_version')
       return
+    else
+      @imgdiff = {:removed => @v2.medias - @v1.medias, :added => @v1.medias - @v2.medias, :intersect => @v1.medias & @v2.medias}
     end
   end
   

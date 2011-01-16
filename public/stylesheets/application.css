@@ -492,6 +492,10 @@ header {
         display: inline; }
       #main aside.meta .map-wrapper.minimized a.bigger-map {
         display: inline; }
+    #main aside.meta .added figure {
+      background-color: #abeebe; }
+    #main aside.meta .removed figure {
+      background-color: #ff9098; }
     #main aside.meta .map-wrapper.minimized,
     #main aside.meta figure {
       position: relative;
@@ -688,9 +692,9 @@ header {
         #main .col .article-list-3 a:hover {
           border-bottom: 1px solid #de6c2d; }
   #main .diff del {
-    background-color: #FF9098; }
+    background-color: #ff9098; }
   #main .diff ins {
-    background-color: #ABEEBE; }
+    background-color: #abeebe; }
   #main footer {
     padding-left: 35px;
     clear: both;

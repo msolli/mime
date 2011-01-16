@@ -218,6 +218,14 @@ header {
         display: inline;
       }
     }
+    
+    .added figure {
+      background-color: $diff-added-color;
+    }
+    .removed figure {
+      background-color: $diff-removed-color;
+    }
+    
     .map-wrapper.minimized,
     figure {
       position: relative;
@@ -419,10 +427,10 @@ header {
   }
   .diff {
     del {
-      background-color: #FF9098;
+      background-color: $diff-removed-color;
     }
     ins {
-      background-color: #ABEEBE;
+      background-color: $diff-added-color;
     }
   }
   footer {
