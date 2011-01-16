@@ -33,8 +33,7 @@ Gitt /^at artikkelen "([^"]*)" får teksten$/ do |headword, text|
 end
 
 Gitt /^at artikkelen "([^"]*)" har bilde$/ do |headword|
-  a = Article.where(:headword => headword).first
-  a.medias << (Media.new :file => open("#{Rails.root}/spec/data/png.png"), :description => 'bar')
+  Gitt %{at jeg legger til bildet "/spec/data/png.png" til artikkelen "#{headword}"}
 end
 
 Gitt /^at jeg legger til bildet "([^"]*)" til artikkelen "([^"]*)"$/ do |img_path, headword|
