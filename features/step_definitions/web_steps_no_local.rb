@@ -50,6 +50,14 @@ Så /^(?:skal )ikke "([^"]*)" finnes$/ do |selector|
   Then %{"#{selector}" should not exist}
 end
 
+Then /^"([^\"]*)" should exist$/ do |selector|
+  page.should have_css(selector)
+end
+
+Så /^(?:skal )"([^"]*)" finnes$/ do |selector|
+  Then %{"#{selector}" should exist}
+end
+
 Given /^I wait (\d+) seconds$/ do |count|
   sleep count.to_i
 end

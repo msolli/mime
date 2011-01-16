@@ -19,7 +19,14 @@ class DiffsController < ApplicationController
       redirect_to article_versions_path(@article),  :alert => t('articles.versions.one_or_more_invalid_version')
       return
     else
-      @imgdiff = {:removed => @v2.medias - @v1.medias, :added => @v1.medias - @v2.medias, :intersect => @v1.medias & @v2.medias}
+      
+      {:@imgdiff => :medias, :@external_links_diff => :external_links}.each do |key, value|
+        instance_variable_set(key, {
+          :removed  => @v2.send(value) - @v1.send(value),
+          :added    => @v1.send(value) - @v2.send(value),
+          :intersect=> @v1.send(value) & @v2.send(value),
+        })
+      end
     end
   end
   

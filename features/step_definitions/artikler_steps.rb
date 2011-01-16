@@ -37,6 +37,11 @@ Gitt /^at artikkelen "([^"]*)" har bilde$/ do |headword|
   a.medias << (Media.new :file => open("#{Rails.root}/spec/data/png.png"), :description => 'bar')
 end
 
+Gitt /^at jeg legger til bildet "([^"]*)" til artikkelen "([^"]*)"$/ do |img_path, headword|
+  a = Article.where(:headword => headword).first
+  a.medias << (Media.new :file => open(File.exists?(img_path) ? img_path : File.join(Rails.root, img_path)))
+end
+
 Gitt /^at artikkelen "([^"]*)" har følgende bidragsytere:$/ do |headword, authors|
   a = Article.new(:headword => headword)
   authors.hashes.each do |hash|
