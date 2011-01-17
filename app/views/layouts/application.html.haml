@@ -24,31 +24,35 @@
     %link{:rel => "shortcut icon", :href => "/favicon.ico"}
 
   %body
-    .container
-      %header
+    %header
+      #wrapper
         .title
           = link_to(image_tag('logo-title.png', :size => '373x50', :alt => t('mime.title')), root_path)
           %p= t('mime.header')
         = render "common/user-links"
         = render :partial => "common/search"
-        = render :partial => "common/nav"
+      = render :partial => "common/nav"
 
-      %section#main
-        - if controller_name == 'articles'
-          %article
-            %header
-              %h1<= yield :header
+    #main{:class => "#{controller_name} #{action_name}"}
+      - if controller_name == 'articles'
+        %article
+          %header
+            %h1<= yield :header
+          #wrapper
             = yield
-        - else
-          - if content_for? :header
-            %header
-              %h1<= yield :header
+      - else
+        - if content_for? :header
+          %header
+            %h1<= yield :header
+        #wrapper
           = render :partial => "common/flash"
           = yield
 
-        %footer
-          = yield :footer
-          %p Leksikonet er en tjeneste fra Budstikka.Media #{image_tag 'budstikka-logo-bw.png'}
+    %footer
+      #wrapper
+        = yield :footer
+        = image_tag 'budstikka-logo-bw.png', :size => '237x50'
+
     = render :partial => 'common/scores'
     = render :partial => 'common/google_analytics'
     - unless %w(edit new create update).include?(action_name)

@@ -131,7 +131,7 @@ header {
   aside.intro {
     @include small-sans;
   }
-  .alphabetic {
+  .alphabetic li {
     @include small-sans;
     @include no-underline;
     font-size: $font12px;

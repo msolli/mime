@@ -4,44 +4,20 @@ article, aside, footer, header, hgroup, nav, section {
 }
 
 html, body {
-  background: $background-color;
-}
-
-body {
-  .container {
-    margin: auto;
-    max-width: $container-width;
-    @include box-shadow;
-  }
-}
-
-a.TODO {
-  color: $light-grey-color;
-  &:visited {
-    color: $light-grey-color;
-  };
-  span {
-    position: absolute;
-    vertical-align: text-top;
-    text-decoration: none;
-    font-size: $font11px;
-    font-weight: bold;
-    color: #f00;
-  }
+  background: white;
 }
 
 header {
-  background: white;
+  background: url(/images/bg-top.png) center top repeat-x white;
   @extend .clearfix;
 
   .title {
-    padding: 30px 0 10px $main-padding-left;
+    padding: 30px 0 10px 0;
     float: left;
   }
   aside#user-links {
     float: right;
     margin-top: 10px;
-    margin-right: 65px;
     ul {
       li {
         display: inline;
@@ -54,14 +30,20 @@ header {
   }
   aside.search {
     float: right;
-    margin: 20px 63px 10px 0;
+    clear: right;
+    margin: 20px 0 10px 0;
+    #q {
+      @include rounded-corners(4px);
+    }
   }
   nav {
     clear: both;
+    border-top: 2px solid #efeeeb;
+    border-bottom: 2px solid #efeeeb;
+
     ul.links {
-      padding: 8px $main-padding-left;
-      border-top: 2px solid #efeeeb;
-      border-bottom: 2px solid #efeeeb;
+      @include content-box;
+      padding: 8px 0;
       ul.letters {
         padding: 0;
         border: none;
@@ -100,11 +82,6 @@ header {
     }
   }
 }
-.container > header > .search {
-  #q {
-    @include rounded-corners(4px);
-  }
-}
 
 #messages {
   padding: 5px 0;
@@ -116,15 +93,18 @@ header {
   }
 }
 
-#main {
-  background: #efefef;
+#wrapper {
+  @include content-box;
+}
 
-  & > section {
-    @include padding-main;
+#main {
+  background: $main-background-color;
+
+  &.home.index, &.search {
+    background: white;
   }
 
   .search-pagination {
-    @include padding-main;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #E1EAE9;
@@ -134,7 +114,6 @@ header {
     }
   }
   .search-results {
-    @include padding-main;
     padding-top: 5px;
     background-color: #fff;
     padding-bottom: 10px;
@@ -151,16 +130,15 @@ header {
   }
 
   header {
-    @include padding-main;
     background: $dark-grey-color;
     h1 {
+      @include content-box;
       padding-top: 16px;
       padding-bottom: 2px;
     }
   }
 
   aside.info, aside.back-link {
-    @include padding-main;
     padding-top: 2px;
     ul {
       li {
@@ -183,10 +161,8 @@ header {
     }
   }
   aside.redirected {
-    @include padding-main;
   }
   aside.disambiguation {
-    @include margin-main;
     padding: 16px 35px 0 35px;
   }
   .articletext {
@@ -249,7 +225,7 @@ header {
     }
   }
   aside.external-links {
-    margin: 16px 65px 16px 33px;
+    margin: 16px 0 16px 0;
     clear: both;
     ul {
       li {
@@ -261,7 +237,7 @@ header {
   aside.tags {
     background: white;
     border: 1px solid $box-border-color;
-    margin: 16px 33px 16px 33px;
+    margin: 16px 0 16px 0;
     padding: 12px 12px 8px 12px;
     clear: both;
     ul {
@@ -279,20 +255,19 @@ header {
   div.article-bottom-ad {
     background: white;
     border: 1px solid $box-border-color;
-    margin: 16px 33px 16px 33px;
+    margin: 16px 0 16px 0;
     padding: 12px 12px 0 6px;
   }
   aside.actions {
-    @include padding-main;
   }
   aside.intro {
     @include intro-box;
   }
   .alphabetic {
-    @include padding-main;
+    @include content-box;
+    background: $main-background-color;
   }
   .login {
-    @include padding-main;
     .facebook {
       width: $login-width;
       border: 1px solid $box-border-color;
@@ -308,12 +283,11 @@ header {
     }
   }
   table.versions + input[name="commit"] {
-    margin: $main-margin-left;
     margin-top: 0;
   }
   table.versions, table.articles {
     background-color: #fff;
-    margin: 20px 0 20px $main-padding-left;
+    margin: 20px 0 20px 0;
     border: 1px solid $box-border-color;
     caption, tfoot {
       text-align: right;
@@ -327,7 +301,7 @@ header {
       background-position: right center;  
     }
     th .asc {
-      background-image: url(/images/icons/up_arrow.gif);   
+      background-image: url(/images/icons/up_arrow.gif);
     }
     th .desc {
       background-image: url(/images/icons/down_arrow.gif);   
@@ -338,7 +312,6 @@ header {
   }
 
   div.maincol {
-    @include padding-main;
   }
 
   section.featured-bottom {
@@ -382,7 +355,7 @@ header {
 
     section {
       min-height: 158px;
-      @include rounded-corners(4px);
+      @include rounded-corners-only-webkit(4px);
       padding: 16px 14px;
       ul {
         margin-top: 0.2em;
@@ -392,20 +365,20 @@ header {
       }
     }
     .article-list-0 {
-      background-color: #82a5df;
+      background-color: #98a8c8;
       a {
-        border-bottom: 1px solid lighten(#82a5df, 10%);
+        border-bottom: 1px solid lighten(#98a8c8, 10%);
         &:hover {
-          border-bottom: 1px solid darken(#82a5df, 10%);
+          border-bottom: 1px solid darken(#98a8c8, 10%);
         }
       }
     }
     .article-list-1 {
-      background-color: #c4b0dc;
+      background-color: #b9bdd2;
       a {
-        border-bottom: 1px solid lighten(#c4b0dc, 10%);
+        border-bottom: 1px solid lighten(#b9bdd2, 10%);
         &:hover {
-          border-bottom: 1px solid darken(#c4b0dc, 10%);
+          border-bottom: 1px solid darken(#b9bdd2, 10%);
         }
       }
     }
@@ -419,11 +392,11 @@ header {
       }
     }
     .article-list-3 {
-      background-color: #e58b59;
+      background-color: #e7a76a;
       a {
-        border-bottom: 1px solid lighten(#e58b59, 10%);
+        border-bottom: 1px solid lighten(#e7a76a, 10%);
         &:hover {
-          border-bottom: 1px solid darken(#e58b59, 10%);
+          border-bottom: 1px solid darken(#e7a76a, 10%);
         }
       }
     }
@@ -439,34 +412,24 @@ header {
       background-color: $diff-added-color;
     }
   }
-  footer {
-    @include padding-main;
-    clear: both;
-    border-top: 2px solid $dark-grey-color;
-    background: white;
-    height: 5em;
-    p:first-child {
-      text-align: right;
-      position: relative;
-      margin: 2em 65px 0 0;
-      padding-right: 110px;
-      img {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        height: 22px;
-        margin-top: -11px;
-      }
-    }
-  }
   @extend .clearfix;
+}
+
+footer {
+  clear: both;
+  border-top: 2px solid $dark-grey-color;
+  min-height: 100px;
+  img {
+    float: right;
+    margin-top: 10px;
+  }
 }
 
 #main form.formtastic {
   fieldset.files {
     float: right;
     padding-left: 0;
-    width: 450px;
+    width: 400px;
     
     div#upload-container {
       position: relative;
@@ -481,7 +444,7 @@ header {
     
     
     &>ol {
-      width: 450px;
+      width: 400px;
       
       &>li {
         width: 100%;
@@ -551,7 +514,6 @@ header {
     }
   }
   fieldset {
-    @include padding-main;
 
     legend {
       font-family: "Lucida Grande", Tahoma, Arial;
@@ -802,7 +764,6 @@ ul.search-completion {
   }
 }
 .article-bottom-ad {
-  @include padding-main;
   margin-bottom: 15px;
 }
 

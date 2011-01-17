@@ -252,38 +252,16 @@ article, aside, footer, header, hgroup, nav, section {
   margin: 0; }
 
 html, body {
-  background: #bfbfbf; }
-
-body .container {
-  margin: auto;
-  max-width: 66.25em;
-  position: relative;
-  box-shadow: 0px 2px 10px #777777;
-  -moz-box-shadow: 0px 2px 10px #777777;
-  -webkit-box-shadow: 0px 2px 10px #777777;
-  behavior: url(/stylesheets/PIE.htc); }
-
-a.TODO {
-  color: #7a7a7a; }
-  a.TODO:visited {
-    color: #7a7a7a; }
-  a.TODO span {
-    position: absolute;
-    vertical-align: text-top;
-    text-decoration: none;
-    font-size: 68.75%;
-    font-weight: bold;
-    color: #f00; }
+  background: white; }
 
 header {
-  background: white; }
+  background: url(/images/bg-top.png) center top repeat-x white; }
   header .title {
-    padding: 30px 0 10px 35px;
+    padding: 30px 0 10px 0;
     float: left; }
   header aside#user-links {
     float: right;
-    margin-top: 10px;
-    margin-right: 65px; }
+    margin-top: 10px; }
     header aside#user-links ul li {
       display: inline;
       margin-left: 0.3em; }
@@ -308,13 +286,23 @@ header {
         text-shadow: none; }
   header aside.search {
     float: right;
-    margin: 20px 63px 10px 0; }
+    clear: right;
+    margin: 20px 0 10px 0; }
+    header aside.search #q {
+      position: relative;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      behavior: url(/stylesheets/PIE.htc); }
   header nav {
-    clear: both; }
+    clear: both;
+    border-top: 2px solid #efeeeb;
+    border-bottom: 2px solid #efeeeb; }
     header nav ul.links {
-      padding: 8px 35px;
-      border-top: 2px solid #efeeeb;
-      border-bottom: 2px solid #efeeeb; }
+      width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 8px 0; }
       header nav ul.links ul.letters {
         padding: 0;
         border: none;
@@ -366,18 +354,11 @@ header {
       border-top-color: #fbbf74;
       border-left-color: #fbbf74; }
 
-.container > header > .search #q {
-  position: relative;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  behavior: url(/stylesheets/PIE.htc); }
-
 #messages {
   padding: 5px 0; }
   #messages #notice {
     color: white;
-    margin: 5px;
+    margin: 5px 0;
     padding: 10px 10px 10px 29px;
     background: #79aba8;
     position: relative;
@@ -392,7 +373,7 @@ header {
     behavior: url(/stylesheets/PIE.htc); }
   #messages #alert {
     color: white;
-    margin: 5px;
+    margin: 5px 0;
     padding: 10px 10px 10px 29px;
     background: #ec661d;
     position: relative;
@@ -406,19 +387,22 @@ header {
     -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
 
+#wrapper {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto; }
+
 #main {
   background: #efefef; }
-  #main > section {
-    padding-left: 35px; }
+  #main.home.index, #main.search {
+    background: white; }
   #main .search-pagination {
-    padding-left: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #E1EAE9; }
     #main .search-pagination .disabled {
       visibility: hidden; }
   #main .search-results {
-    padding-left: 35px;
     padding-top: 5px;
     background-color: #fff;
     padding-bottom: 10px; }
@@ -429,13 +413,14 @@ header {
     #main .search-results li {
       padding-top: 10px; }
   #main header {
-    padding-left: 35px;
     background: #45494f; }
     #main header h1 {
+      width: 960px;
+      margin-left: auto;
+      margin-right: auto;
       padding-top: 16px;
       padding-bottom: 2px; }
   #main aside.info, #main aside.back-link {
-    padding-left: 35px;
     padding-top: 2px; }
     #main aside.info ul li, #main aside.back-link ul li {
       display: inline;
@@ -450,13 +435,9 @@ header {
       -moz-border-radius: 3px; }
       #main aside.info ul li.edit-link a, #main aside.back-link ul li.edit-link a {
         color: white; }
-  #main aside.redirected {
-    padding-left: 35px; }
   #main aside.disambiguation {
-    margin-left: 35px;
     padding: 16px 35px 0 35px; }
   #main .articletext {
-    padding-left: 35px;
     width: 33.125em;
     padding-top: 1em;
     overflow: visible;
@@ -515,7 +496,7 @@ header {
         margin-bottom: 0;
         margin-top: 5px; }
   #main aside.external-links {
-    margin: 16px 65px 16px 33px;
+    margin: 16px 0 16px 0;
     clear: both; }
     #main aside.external-links ul li {
       margin-left: 20px;
@@ -523,7 +504,7 @@ header {
   #main aside.tags {
     background: white;
     border: 1px solid #cccccc;
-    margin: 16px 33px 16px 33px;
+    margin: 16px 0 16px 0;
     padding: 12px 12px 8px 12px;
     clear: both; }
     #main aside.tags ul li {
@@ -535,13 +516,11 @@ header {
   #main div.article-bottom-ad {
     background: white;
     border: 1px solid #cccccc;
-    margin: 16px 33px 16px 33px;
+    margin: 16px 0 16px 0;
     padding: 12px 12px 0 6px; }
-  #main aside.actions {
-    padding-left: 35px; }
   #main aside.intro {
     color: white;
-    margin: 5px;
+    margin: 5px 0;
     padding: 10px 10px 10px 29px;
     background: #fcfcfc;
     position: relative;
@@ -562,44 +541,44 @@ header {
     -webkit-border-radius: 8px;
     behavior: url(/stylesheets/PIE.htc); }
   #main .alphabetic {
-    padding-left: 35px; }
-  #main .login {
-    padding-left: 35px; }
-    #main .login .facebook {
-      width: 30em;
-      border: 1px solid #cccccc;
-      padding: 5px;
-      margin: 20px 0 5px 0;
-      background: white; }
-      #main .login .facebook p.fb-button {
-        margin-top: 15px;
-        margin-bottom: 10px;
-        text-align: center; }
-        #main .login .facebook p.fb-button a {
-          font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
-          color: #3B5998;
-          background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
-          background-position: 0% -210px;
-          cursor: pointer;
-          display: inline-block;
-          padding: 0px 0px 0px 1px;
-          text-decoration: none; }
-          #main .login .facebook p.fb-button a span.fb-button-text {
-            color: white;
-            display: block;
-            font-weight: bold;
-            margin: 0px 1px 0px 21px;
-            padding: 2px 6px 3px;
-            background: #4F6AA3;
-            border-bottom: 1px solid #29447E;
-            border-top: 1px solid #45619D;
-            text-shadow: none; }
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #efefef; }
+  #main .login .facebook {
+    width: 30em;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    margin: 20px 0 5px 0;
+    background: white; }
+    #main .login .facebook p.fb-button {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      text-align: center; }
+      #main .login .facebook p.fb-button a {
+        font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
+        color: #3B5998;
+        background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
+        background-position: 0% -210px;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0px 0px 0px 1px;
+        text-decoration: none; }
+        #main .login .facebook p.fb-button a span.fb-button-text {
+          color: white;
+          display: block;
+          font-weight: bold;
+          margin: 0px 1px 0px 21px;
+          padding: 2px 6px 3px;
+          background: #4F6AA3;
+          border-bottom: 1px solid #29447E;
+          border-top: 1px solid #45619D;
+          text-shadow: none; }
   #main table.versions + input[name="commit"] {
-    margin: 35px;
     margin-top: 0; }
   #main table.versions, #main table.articles {
     background-color: #fff;
-    margin: 20px 0 20px 35px;
+    margin: 20px 0 20px 0;
     border: 1px solid #cccccc; }
     #main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
       text-align: right; }
@@ -615,8 +594,6 @@ header {
       background-image: url(/images/icons/down_arrow.gif); }
     #main table.versions tr.current, #main table.articles tr.current {
       background: #d9e3e2; }
-  #main div.maincol {
-    padding-left: 35px; }
   #main section.featured-bottom {
     clear: both; }
   #main .col {
@@ -662,28 +639,25 @@ header {
         padding-left: 14px; }
     #main .col section {
       min-height: 158px;
-      position: relative;
       border-radius: 4px;
-      -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
-      behavior: url(/stylesheets/PIE.htc);
       padding: 16px 14px; }
       #main .col section ul {
         margin-top: 0.2em; }
         #main .col section ul li {
           margin-top: 0.8em; }
     #main .col .article-list-0 {
-      background-color: #82a5df; }
+      background-color: #98a8c8; }
       #main .col .article-list-0 a {
-        border-bottom: 1px solid #abc2e9; }
+        border-bottom: 1px solid #b9c4da; }
         #main .col .article-list-0 a:hover {
-          border-bottom: 1px solid #5988d5; }
+          border-bottom: 1px solid #778cb6; }
     #main .col .article-list-1 {
-      background-color: #c4b0dc; }
+      background-color: #b9bdd2; }
       #main .col .article-list-1 a {
-        border-bottom: 1px solid #ded3ec; }
+        border-bottom: 1px solid #d8dae6; }
         #main .col .article-list-1 a:hover {
-          border-bottom: 1px solid #aa8dcc; }
+          border-bottom: 1px solid #9aa0be; }
     #main .col .article-list-2 {
       background-color: #9ebdbb; }
       #main .col .article-list-2 a {
@@ -691,37 +665,28 @@ header {
         #main .col .article-list-2 a:hover {
           border-bottom: 1px solid #80a8a6; }
     #main .col .article-list-3 {
-      background-color: #e58b59; }
+      background-color: #e7a76a; }
       #main .col .article-list-3 a {
-        border-bottom: 1px solid #ecaa85; }
+        border-bottom: 1px solid #eec196; }
         #main .col .article-list-3 a:hover {
-          border-bottom: 1px solid #de6c2d; }
+          border-bottom: 1px solid #e08d3e; }
   #main .diff del {
     background-color: #ff9098; }
   #main .diff ins {
     background-color: #abeebe; }
-  #main footer {
-    padding-left: 35px;
-    clear: both;
-    border-top: 2px solid #45494f;
-    background: white;
-    height: 5em; }
-    #main footer p:first-child {
-      text-align: right;
-      position: relative;
-      margin: 2em 65px 0 0;
-      padding-right: 110px; }
-      #main footer p:first-child img {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        height: 22px;
-        margin-top: -11px; }
+
+footer {
+  clear: both;
+  border-top: 2px solid #45494f;
+  min-height: 100px; }
+  footer img {
+    float: right;
+    margin-top: 10px; }
 
 #main form.formtastic fieldset.files {
   float: right;
   padding-left: 0;
-  width: 450px; }
+  width: 400px; }
   #main form.formtastic fieldset.files div#upload-container {
     position: relative;
     clear: both; }
@@ -730,7 +695,7 @@ header {
       left: 0;
       margin: 0 !important; }
   #main form.formtastic fieldset.files > ol {
-    width: 450px; }
+    width: 400px; }
     #main form.formtastic fieldset.files > ol > li {
       width: 100%;
       overflow: hidden; }
@@ -768,42 +733,40 @@ header {
           display: none; }
   #main form.formtastic fieldset.files textarea {
     float: right; }
-#main form.formtastic fieldset {
-  padding-left: 35px; }
-  #main form.formtastic fieldset legend {
-    font-family: "Lucida Grande", Tahoma, Arial;
-    font-weight: bold;
-    padding-bottom: 10px; }
-  #main form.formtastic fieldset.files button, #main form.formtastic fieldset#external-links button {
-    padding: 0;
-    border: 0;
-    background-color: inherit;
-    cursor: pointer; }
-    #main form.formtastic fieldset.files button.add, #main form.formtastic fieldset#external-links button.add {
-      display: none; }
-    #main form.formtastic fieldset.files button.remove, #main form.formtastic fieldset#external-links button.remove {
-      display: inline; }
-  #main form.formtastic fieldset.files > ol > li, #main form.formtastic fieldset#external-links > ol > li {
-    padding: 5px 0; }
-    #main form.formtastic fieldset.files > ol > li:last-child > ol > li button.add, #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.add {
-      display: inline; }
-    #main form.formtastic fieldset.files > ol > li:last-child > ol > li button.remove, #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.remove {
-      display: none; }
-    #main form.formtastic fieldset.files > ol > li ol, #main form.formtastic fieldset#external-links > ol > li ol {
-      overflow: hidden; }
-      #main form.formtastic fieldset.files > ol > li ol li, #main form.formtastic fieldset#external-links > ol > li ol li {
-        float: left; }
-        #main form.formtastic fieldset.files > ol > li ol li.link-text label, #main form.formtastic fieldset#external-links > ol > li ol li.link-text label {
-          margin-left: 10px; }
-        #main form.formtastic fieldset.files > ol > li ol li.link-text + li input, #main form.formtastic fieldset#external-links > ol > li ol li.link-text + li input {
-          margin: 0 5px 0 10px; }
-    #main form.formtastic fieldset.files > ol > li label, #main form.formtastic fieldset#external-links > ol > li label {
-      float: left;
-      clear: left; }
-    #main form.formtastic fieldset.files > ol > li input[type="text"], #main form.formtastic fieldset#external-links > ol > li input[type="text"] {
-      float: left;
-      width: 140px;
-      margin-left: 10px; }
+#main form.formtastic fieldset legend {
+  font-family: "Lucida Grande", Tahoma, Arial;
+  font-weight: bold;
+  padding-bottom: 10px; }
+#main form.formtastic fieldset.files button, #main form.formtastic fieldset#external-links button {
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+  cursor: pointer; }
+  #main form.formtastic fieldset.files button.add, #main form.formtastic fieldset#external-links button.add {
+    display: none; }
+  #main form.formtastic fieldset.files button.remove, #main form.formtastic fieldset#external-links button.remove {
+    display: inline; }
+#main form.formtastic fieldset.files > ol > li, #main form.formtastic fieldset#external-links > ol > li {
+  padding: 5px 0; }
+  #main form.formtastic fieldset.files > ol > li:last-child > ol > li button.add, #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.add {
+    display: inline; }
+  #main form.formtastic fieldset.files > ol > li:last-child > ol > li button.remove, #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.remove {
+    display: none; }
+  #main form.formtastic fieldset.files > ol > li ol, #main form.formtastic fieldset#external-links > ol > li ol {
+    overflow: hidden; }
+    #main form.formtastic fieldset.files > ol > li ol li, #main form.formtastic fieldset#external-links > ol > li ol li {
+      float: left; }
+      #main form.formtastic fieldset.files > ol > li ol li.link-text label, #main form.formtastic fieldset#external-links > ol > li ol li.link-text label {
+        margin-left: 10px; }
+      #main form.formtastic fieldset.files > ol > li ol li.link-text + li input, #main form.formtastic fieldset#external-links > ol > li ol li.link-text + li input {
+        margin: 0 5px 0 10px; }
+  #main form.formtastic fieldset.files > ol > li label, #main form.formtastic fieldset#external-links > ol > li label {
+    float: left;
+    clear: left; }
+  #main form.formtastic fieldset.files > ol > li input[type="text"], #main form.formtastic fieldset#external-links > ol > li input[type="text"] {
+    float: left;
+    width: 140px;
+    margin-left: 10px; }
 #main form.formtastic fieldset > ol > li {
   width: 33.125em;
   overflow: visible; }
@@ -969,7 +932,6 @@ ul.search-completion {
     height: 30px; }
 
 .article-bottom-ad {
-  padding-left: 35px;
   margin-bottom: 15px; }
 
 input[name="commit"] {
@@ -1095,13 +1057,13 @@ header #q + button {
     font-size: 75%; }
   #main aside.intro {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
-  #main .alphabetic {
+  #main .alphabetic li {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%;
     line-height: 1.67; }
-    #main .alphabetic a {
+    #main .alphabetic li a {
       text-decoration: none; }
-      #main .alphabetic a:hover {
+      #main .alphabetic li a:hover {
         text-decoration: underline; }
   #main .login {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;

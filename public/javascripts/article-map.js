@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	(function() {
 		var map = null,
-				new_width = 980,
+				new_width = 820,
 				new_height = 500;
 
 		$('article .meta .map-wrapper')
@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 
 					map_c.animate({
-						left: old_left - (new_width + old_width),
+						left: -530,
 						width: new_width,
 						height: new_height
 						}, {

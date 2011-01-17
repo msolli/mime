@@ -4,7 +4,6 @@
 }
 
 @mixin articletext-layout {
-    @include padding-main;
     width: $article-width;
     padding-top: 1em;
     overflow: visible;
