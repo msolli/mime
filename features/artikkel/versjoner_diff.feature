@@ -38,3 +38,16 @@ Egenskap: Se forskjellen på to versjoner av en artikkel
     Og jeg krysser av "V 3"
     Og jeg trykker "Sammenlign"
     Så skal ".meta .added figure" finnes
+    
+  @javascript
+  Scenario: Ikke valgt noen versjoner
+    Når jeg står på versjonsloggen for "Foo"
+    Og jeg trykker "Sammenlign"
+    Så skal jeg se "velge to versjoner"
+  
+  @javascript
+  Scenario: Bare valgt én versjon
+    Når jeg står på versjonsloggen for "Foo"
+    Og jeg krysser av "Aktiv versjon"
+    Og jeg trykker "Sammenlign"
+    Så skal jeg se "velge to versjoner"
