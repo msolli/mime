@@ -458,10 +458,9 @@ header {
     #main .articletext strong {
       font-weight: bold; }
   #main aside.meta {
-    float: left;
+    float: right;
     padding-top: 16px;
-    margin-left: 5px;
-    width: 300px; }
+    width: 400px; }
     #main aside.meta .map-wrapper {
       text-align: center; }
       #main aside.meta .map-wrapper .map {
