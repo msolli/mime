@@ -6,6 +6,7 @@
 
 @mixin submit-button {
   padding: 0.4em 2em 0.2em 2em;
+  margin: 0;
   background: $button-color;
   @include rounded-corners(4px);
   border: 1px solid lighten($button-color, 5%);
