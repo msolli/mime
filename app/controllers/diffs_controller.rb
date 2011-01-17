@@ -2,11 +2,11 @@ class DiffsController < ApplicationController
   before_filter :find_article
   
   def show
-    if params[:cmp_versions].length > 2
-      redirect_to article_versions_path(@article), :alert => t('articles.versions.can_only_compare_two_versions')
-      return
-    elsif params[:cmp_versions].length < 2
+    if !params[:cmp_versions] || params[:cmp_versions].length < 2
       redirect_to article_versions_path(@article), :alert => t('articles.versions.need_two_versions_to_compare')
+      return
+    elsif params[:cmp_versions].length > 2
+      redirect_to article_versions_path(@article), :alert => t('articles.versions.can_only_compare_two_versions')
       return
     end
     
