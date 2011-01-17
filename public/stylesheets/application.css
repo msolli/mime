@@ -532,6 +532,11 @@ header {
         content: ", "; }
       #main aside.tags ul li:last-of-type:after {
         content: ""; }
+  #main div.article-bottom-ad {
+    background: white;
+    border: 1px solid #cccccc;
+    margin: 16px 33px 16px 33px;
+    padding: 12px 12px 0 6px; }
   #main aside.actions {
     padding-left: 35px; }
   #main aside.intro {

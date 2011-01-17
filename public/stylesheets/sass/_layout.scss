@@ -276,6 +276,12 @@ header {
       }
     }
   }
+  div.article-bottom-ad {
+    background: white;
+    border: 1px solid $box-border-color;
+    margin: 16px 33px 16px 33px;
+    padding: 12px 12px 0 6px;
+  }
   aside.actions {
     @include padding-main;
   }
