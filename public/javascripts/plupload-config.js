@@ -103,12 +103,15 @@ $(function() {
 	}
 	
 	// Removal of image that haven't been saved into the article yet.
-	$('.files').delegate('button.remove', 'click', function() {
+	$('.files').delegate('button.remove', 'click', function(e) {
 		var	li = $(this).parents('li'),
 				file_id = li.find('.file-id').val();
 		
 		$('#media-files').val($('#media-files').val().replace(file_id, ''));
 		li.remove();
+		e.stopPropagation();
+		e.preventDefault();
+		return false;
 	});
 	
 });
