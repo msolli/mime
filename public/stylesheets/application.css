@@ -717,7 +717,8 @@ footer {
             position: absolute;
             background-color: #31528C;
             height: 20px;
-            z-index: 10; }
+            z-index: 10;
+            left: 0; }
           #main form.formtastic fieldset.files > ol > li ol li.progressbar .progress-text {
             position: relative;
             z-index: 100;
