@@ -6,14 +6,12 @@ $(function() {
 					{title: 'Bilder', extensions: 'jpg,jpeg,gif,png'}
 				],
 				flash_swf_url:				'/lib/plupload/js/plupload.flash.swf',
-				headers:							{
-					'X-IS-PLUPLOAD': true
-				},
 				max_file_size:				'10mb',
 				multipart_params:			{
 					authenticity_token: jQuery('meta[name="csrf-token"]').attr('content'),
 					size: '250x200',
-					format: 'json'
+					format: 'json',
+					is_plupload: true
 				},
 				runtimes:							'html5,flash,silverlight,html4',
 				silverlight_xap_url:	'/lib/plupload/js/plupload.silverlight.xap',

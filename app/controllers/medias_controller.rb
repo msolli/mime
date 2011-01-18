@@ -6,14 +6,13 @@ class MediasController < ApplicationController
   end
   
   def create
-    if request.headers['X_IS_PLUPLOAD']
+    if params[:is_plupload]
       @media = Media.new :file => params[:file]
     else
       @media = Media.new params[:media]
     end
     
     @media.save
-    
     
     respond_to do |format|
       format.json do
