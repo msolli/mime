@@ -35,7 +35,7 @@
 %aside.tags
   %h3= t('tags.tags')
   - if @article.tags_array.empty?
-    %p!= t('tags.no_tags', :add_tags_link => link_to(t('tags.add_tags'), edit_article_path(@article)))
+    %p!= t('tags.no_tags', :add_tags_link => link_to(t('tags.add_tags'), edit_article_path(@article), :rel => 'nofollow'))
   - else
     %ul
       - @article.tags_array.each do |tag|
