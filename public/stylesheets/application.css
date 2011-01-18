@@ -355,38 +355,36 @@ header {
       border-top-color: #fbbf74;
       border-left-color: #fbbf74; }
 
-#messages {
-  padding: 5px 0; }
-  #messages #notice {
-    color: white;
-    margin: 5px 0;
-    padding: 10px 10px 10px 29px;
-    background: #79aba8;
-    position: relative;
-    box-shadow: 0px 2px 10px #cccccc;
-    -moz-box-shadow: 0px 2px 10px #cccccc;
-    -webkit-box-shadow: 0px 2px 10px #cccccc;
-    behavior: url(/stylesheets/PIE.htc);
-    position: relative;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    behavior: url(/stylesheets/PIE.htc); }
-  #messages #alert {
-    color: white;
-    margin: 5px 0;
-    padding: 10px 10px 10px 29px;
-    background: #ec661d;
-    position: relative;
-    box-shadow: 0px 2px 10px #cccccc;
-    -moz-box-shadow: 0px 2px 10px #cccccc;
-    -webkit-box-shadow: 0px 2px 10px #cccccc;
-    behavior: url(/stylesheets/PIE.htc);
-    position: relative;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    behavior: url(/stylesheets/PIE.htc); }
+#messages #notice {
+  color: white;
+  margin: 5px 0;
+  padding: 10px 10px 10px 29px;
+  background: #79aba8;
+  position: relative;
+  box-shadow: 0px 2px 10px #cccccc;
+  -moz-box-shadow: 0px 2px 10px #cccccc;
+  -webkit-box-shadow: 0px 2px 10px #cccccc;
+  behavior: url(/stylesheets/PIE.htc);
+  position: relative;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  behavior: url(/stylesheets/PIE.htc); }
+#messages #alert {
+  color: white;
+  margin: 5px 0;
+  padding: 10px 10px 10px 29px;
+  background: #ec661d;
+  position: relative;
+  box-shadow: 0px 2px 10px #cccccc;
+  -moz-box-shadow: 0px 2px 10px #cccccc;
+  -webkit-box-shadow: 0px 2px 10px #cccccc;
+  behavior: url(/stylesheets/PIE.htc);
+  position: relative;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  behavior: url(/stylesheets/PIE.htc); }
 
 #wrapper {
   width: 960px;
@@ -439,7 +437,7 @@ header {
   #main aside.disambiguation {
     padding: 16px 35px 0 35px; }
   #main .articletext {
-    width: 33.125em;
+    width: 530px;
     padding-top: 1em;
     overflow: visible;
     float: left;
@@ -546,7 +544,7 @@ header {
     margin-right: auto;
     background: #efefef; }
   #main .login .facebook {
-    width: 30em;
+    width: 480px;
     border: 1px solid #cccccc;
     padding: 5px;
     margin: 20px 0 5px 0;
@@ -768,7 +766,7 @@ footer {
     width: 140px;
     margin-left: 10px; }
 #main form.formtastic fieldset > ol > li {
-  width: 33.125em;
+  width: 530px;
   overflow: visible; }
 #main form.formtastic fieldset > ol > li.error input[type="text"] {
   border: 2px solid #b72727 !important; }

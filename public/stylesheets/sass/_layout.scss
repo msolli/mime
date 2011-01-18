@@ -84,7 +84,6 @@ header {
 }
 
 #messages {
-  padding: 5px 0;
   #notice {
     @include message-box(darken($message-notice-color, 10%));
   }
@@ -173,7 +172,7 @@ header {
   aside.meta {
     float: right;
     padding-top: 16px;
-    width: 400px;
+    width: $right-col-width;
     
     .map-wrapper {
       text-align: center;
@@ -428,7 +427,7 @@ footer {
   fieldset.files {
     float: right;
     padding-left: 0;
-    width: 400px;
+    width: $right-col-width;
     
     div#upload-container {
       position: relative;
@@ -443,7 +442,7 @@ footer {
     
     
     &>ol {
-      width: 400px;
+      width: $right-col-width;
       
       &>li {
         width: 100%;

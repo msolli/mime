@@ -13,12 +13,13 @@ $user-links-color: lighten($link-color, 10%);
 $message-notice-color: #98bfbc;
 $message-alert-color: #f0864c;
 $error-color: #b72727;
-
 $diff-removed-color: #FF9098;
 $diff-added-color: #ABEEBE;
-$article-width: #{(530/16)}em;
+
+$article-width: 530px;
+$right-col-width: 400px;
 $grid-width: 960px;
-$login-width: #{(480/16)}em;
+$login-width: 480px;
 
 $font11px: percentage(11/16);
 $font12px: percentage(12/16);
