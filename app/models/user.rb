@@ -1,7 +1,8 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
-  references_many :articles, :stored_as => :array, :inverse_of => :users
+
+  references_and_referenced_in_many :articles
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable and :timeoutable

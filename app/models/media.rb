@@ -2,7 +2,7 @@ class Media
   include Mongoid::Document
   include Mongoid::Timestamps
   
-  references_many :articles, :stored_as => :array, :inverse_of => :medias
+  references_and_referenced_in_many :articles
   
   field :description, :type => String
   field :date, :type => DateTime

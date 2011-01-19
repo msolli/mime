@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '~> 3.0'
 gem 'hassle', :require => false
 gem 'haml'
-gem 'mongoid', '>= 2.0.0.beta.18'
+gem 'mongoid', :git => 'git://github.com/mongoid/mongoid.git'
 gem 'bson', '~> 1.0'
 gem 'bson_ext'
 gem 'mongo', '~> 1.0'
@@ -60,7 +60,6 @@ group :test do
   gem 'launchy'
   gem 'ruby-debug19'
 
-  gem 'mongoid-rspec'
   gem 'shoulda'
   gem 'factory_girl_rails'
 end
