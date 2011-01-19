@@ -44,11 +44,13 @@ end
 
 Gitt /^at artikkelen "([^"]*)" har følgende bidragsytere:$/ do |headword, authors|
   a = Article.new(:headword => headword)
-  authors.hashes.each do |hash|
-    hash['password'] = Devise.friendly_token
-    a.authors << User.create!(hash)
+  Article.without_versioning do
+    authors.hashes.each do |hash|
+      hash['password'] = Devise.friendly_token
+      a.authors << User.create!(hash)
+    end
+    a.save!
   end
-  a.save!
 end
 
 Så /^skal jeg ikke se noe kart$/ do
