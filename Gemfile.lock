@@ -8,16 +8,6 @@ GIT
       sunspot_rails (>= 1.2.rc4)
 
 GIT
-  remote: git://github.com/mongoid/mongoid.git
-  revision: b5b9bdb87ee44fd9ac5f5030bcfed38df7effe86
-  specs:
-    mongoid (2.0.0.rc.5)
-      activemodel (~> 3.0)
-      mongo (~> 1.2)
-      tzinfo (~> 0.3.22)
-      will_paginate (~> 3.0.pre)
-
-GIT
   remote: git://github.com/msolli/jammit-s3.git
   revision: 006f027a7321d29bb440c663d9c533e14ac2aec4
   specs:
@@ -188,6 +178,11 @@ GEM
     mongo_store (0.3.0)
       activesupport (>= 2.2)
       mongo (>= 1.0)
+    mongoid (2.0.0.rc.6)
+      activemodel (~> 3.0)
+      mongo (~> 1.2)
+      tzinfo (~> 0.3.22)
+      will_paginate (~> 3.0.pre)
     multi_json (0.0.5)
     multipart-post (1.1.0)
     nokogiri (1.4.4)
@@ -326,7 +321,7 @@ DEPENDENCIES
   launchy
   mongo (~> 1.0)
   mongo_store
-  mongoid!
+  mongoid (= 2.0.0.rc.6)
   nokogiri
   oa-oauth
   rack-rewrite
