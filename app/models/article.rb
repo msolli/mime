@@ -126,13 +126,10 @@ class Article
   
   def add_async_uploads
     _media_ids = media_ids_from_async_upload.to_s.strip.split.map{|__id| BSON::ObjectId.from_string(__id)}
+    self.media_ids_from_async_upload = "" # Important. Stops infinite loop
     unless _media_ids.blank?
       new_medias = Media.any_in(:_id => _media_ids)
-      new_medias.each do |media|
-        media.article_ids << self.id
-        media.save
-        self.media_ids << media.id
-      end
+      self.medias << new_medias
     end
   end
 
