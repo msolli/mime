@@ -14,12 +14,14 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
-    @article.authors << current_user if user_signed_in?
-    if @article.save
-      redirect_to pretty_article_path(@article), :notice => t('articles.saved')
-    else
-      flash.alert = t('articles.errors.save')
-      render :action => "new"
+    Article.without_versioning do
+      @article.authors << current_user if user_signed_in?
+      if @article.save
+        redirect_to pretty_article_path(@article), :notice => t('articles.saved')
+      else
+        flash.alert = t('articles.errors.save')
+        render :action => "new"
+      end
     end
   end
 

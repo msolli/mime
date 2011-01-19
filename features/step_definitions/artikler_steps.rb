@@ -11,9 +11,12 @@ Gitt /^(?:|at )artikkelen "([^"]*)" finnes$/ do |headword|
 end
 
 Gitt /^(?:|at )jeg oppretter artikkelen "([^"]*)"$/ do |headword|
-  a = Article.new(:headword => headword)
-  a.authors << User.where(:email => 'nn@example.com').first
-  a.save!
+  # Will create 1 version
+  Article.without_versioning do
+    a = Article.new(:headword => headword)
+    a.authors << User.where(:email => 'nn@example.com').first
+    a.save!
+  end
 end
 
 Gitt /^(?:|at )original-artikkelen "([^"]*)" finnes$/ do |headword|
@@ -44,7 +47,7 @@ end
 
 Gitt /^at artikkelen "([^"]*)" har følgende bidragsytere:$/ do |headword, authors|
   a = Article.new(:headword => headword)
-  Article.without_versioning do
+  Article.without_versioning do # will create 1 version
     authors.hashes.each do |hash|
       hash['password'] = Devise.friendly_token
       a.authors << User.create!(hash)
