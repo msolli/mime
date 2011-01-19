@@ -9,7 +9,6 @@ describe Article do
   it { should reference_many(:list_articles) }
 
   it { should have_fields(:headword, :text).of_type(String) }
-  it { should have_field(:headword_presentation).of_type(String) }
   it { should have_field(:definition).of_type(String) }
   it { should embed_one(:location) }
   it { should embed_many(:external_links) }
@@ -36,20 +35,21 @@ describe Article do
     }.should raise_error(Mongoid::Errors::Validations)
   end
 
-  it "uses headword when presentation headword is blank" do
-    @article = Article.new(:headword => 'foo')
-    @article.headword_presentation.should == 'foo'
+  it "uses headword for non-person article" do
+    @article = Factory(:article)
+    @article.headword_presentation.should == @article.headword
   end
 
-  it "has presentation headword with presentation headword" do
-    @article = Article.new(:headword => 'foo', :headword_presentation => 'Foobar')
-    @article.headword_presentation.should == 'Foobar'
+  it "has presentation headword for person article" do
+    @article = Factory(:article, :headword => 'Bar, Foo')
+    @article.tags = 'person'
+    @article.headword_presentation.should == 'Foo Bar'
   end
 
-  it "does not set presentation headword when it's the same as headword" do
-    @article = Article.new(:headword => 'foo')
-    @article.headword_presentation = 'foo'
-    @article['headword_presentation'].should be_nil
+  it "has presentation headword for person article with headword without a comma" do
+    @article = Factory(:article, :headword => 'Foo Bar')
+    @article.tags = 'person'
+    @article.headword_presentation.should == 'Foo Bar'
   end
 
   it "saves the author" do

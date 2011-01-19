@@ -7,7 +7,7 @@ module ArticlesHelper
     # No idea why we need to call without versioning here, but it works,
     # else we end up with a new version every time someone goes to #edit
     Article.without_versioning do
-      article.medias.build
+      # article.medias.build
       article.external_links.build
     end
     article.build_location if article.location.nil?

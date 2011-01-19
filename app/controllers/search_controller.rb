@@ -4,7 +4,7 @@ class SearchController < ApplicationController
     if params[:q]
       @search_result = Article.search do
         keywords params[:q] do
-          highlight :text
+          highlight :text, :headword_presentation
         end
         
         paginate :page => params[:page], :per_page => 20
