@@ -14,7 +14,6 @@ no-NB:
         taken: Oppslagsordet du oppga fantes visst fra før. Vi har satt det tilbake til det det var.
   tooltips:
     articles:
-      headword_presentation: 'Dersom tittelen på siden skal være en annen enn den som vises i oversikten, kan du skrive den inn her. F.eks. vil en person skrives som "Nordmann, Ola" i oversikten, mens i presentasjonen er "Ola Nordmann" ønskelig. Da skriver du inn "Ola Nordmann" i dette feltet.'
       headword: "Oppslagsord (må fylles ut)"
   articles:
     new: Ny artikkel
@@ -126,7 +125,6 @@ no-NB:
         'maptastic-hint': 'Klikk for å velge en posisjon. Dra markøren rundt for å etterjustere.'
       article:
         headword: Oppslagsord
-        headword_presentation: Alternativ tittel
         text: Artikkeltekst
         tags: Nøkkelord
         disambiguation: "Andre betydninger"

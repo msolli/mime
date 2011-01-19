@@ -32,18 +32,18 @@ Egenskap: Alfabetisk
 
   Scenario: navn på personer skal sorteres på etternavn I
     Gitt følgende artikler:
-      | headword        | headword_presentation |
-      | Oskarsen, Anton | Anton Oskarsen        |
-      | Anton Sport     |                       |
+      | headword        |
+      | Oskarsen, Anton |
+      | Anton Sport     |
     Når jeg står på alfabetisk-siden for "a"
     Så skal jeg se "Anton Sport"
     Og jeg skal ikke se "Oskarsen"
 
   Scenario: navn på personer skal sorteres på etternavn II
     Gitt følgende artikler:
-      | headword        | headword_presentation |
-      | Oskarsen, Anton | Anton Oskarsen        |
-      | Anton Sport     |                       |
+      | headword        |
+      | Oskarsen, Anton |
+      | Anton Sport     |
     Når jeg står på alfabetisk-siden for "o"
     Så skal jeg se "Oskarsen, Anton"
     Og jeg skal ikke se "Anton Sport"

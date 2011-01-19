@@ -32,18 +32,6 @@ $(document).ready(function() {
     }
   })();
 
-  // Don't show presentation headword in edit article form if it's the same as
-  // headword
-  (function(){
-    var headword_presentation = $("article form #article_headword_presentation");
-    var headword = $("article form #article_headword");
-    if (headword_presentation.length && headword.length) {
-      if (headword_presentation.val().trim() == headword.val().trim()) {
-        headword_presentation.val('');
-      }
-    }
-  })();
-
   // Adding / removing nested objects in nested forms
 	(function() {
 		$('#external-links').find('button').click(function() {

@@ -36,7 +36,6 @@
         :zoom => :zoom, :search => true, :search_label => t('formtastic.labels.other.maptastic-search'),
         :hint => t('formtastic.labels.other.maptastic-hint')
 
-    = f.input :headword_presentation, :input_html => { :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword_presentation')}
     = f.input :disambiguation, :as => :text, :input_html => { :rows => 4 }
   = f.inputs :name => t('articles.external_links'), :id => 'external-links' do
     = f.semantic_fields_for :external_links do |external_links_f|

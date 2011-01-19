@@ -9,7 +9,6 @@ describe Article do
   # it { should reference_many(:list_articles) }
   # 
   # it { should have_fields(:headword, :text).of_type(String) }
-  # it { should have_field(:headword_presentation).of_type(String) }
   # it { should have_field(:definition).of_type(String) }
   # it { should embed_one(:location) }
   # it { should embed_many(:external_links) }

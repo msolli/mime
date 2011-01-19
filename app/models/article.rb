@@ -32,7 +32,7 @@ class Article
   searchable do
     # text fields are used for full-text search, rest for faceting
     text    :headword, :boost => 2.0
-    text    :headword_presentation, :boost => 1.5
+    text    :headword_presentation, :boost => 2.0
     text    :text, :stored => true do
       strip_tags(text)
     end
@@ -82,10 +82,6 @@ class Article
       headword
     end
   end
-
-  # def headword_presentation=(new_value)
-  #   self[:headword_presentation] = (new_value == self[:headword] ? nil : new_value)
-  # end
 
   def headword_sorting
     self[:headword_sorting] || update_headword_sorting
