@@ -20,7 +20,6 @@ class Article
   references_many :list_articles
 
   field :headword
-  field :headword_presentation
   field :text, :default => ''
   field :definition
   field :years, :type => Array
@@ -76,12 +75,17 @@ class Article
   end
 
   def headword_presentation
-    self[:headword_presentation].blank? ? headword : self[:headword_presentation]
+    if tags_array.include?('person') && headword.include?(',')
+      # 'last, first' --> 'first last'
+      headword.scan(/^([^,]*),\s*(.*)/).first.reverse.join(' ')
+    else
+      headword
+    end
   end
 
-  def headword_presentation=(new_value)
-    self[:headword_presentation] = (new_value == self[:headword] ? nil : new_value)
-  end
+  # def headword_presentation=(new_value)
+  #   self[:headword_presentation] = (new_value == self[:headword] ? nil : new_value)
+  # end
 
   def headword_sorting
     self[:headword_sorting] || update_headword_sorting

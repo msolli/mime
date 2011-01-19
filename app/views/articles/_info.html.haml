@@ -2,7 +2,7 @@
   %ul
     -#%li>= link_to t('articles.contributors'), "#TODO"
     - if action_name == 'show'
-      %li.edit-link>= link_to t('articles.edit'), edit_article_path(article)
+      %li.edit-link>= link_to t('articles.edit'), edit_article_path(article), :rel => 'nofollow'
     %li> #{t('articles.last_updated')} #{timeago(article.updated_at)}
     %li>= link_to t('articles.version_log'), article_versions_path(article)
     -#%li>= link_to t('articles.report_error'), "#TODO"

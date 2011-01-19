@@ -13,10 +13,7 @@
       - @search_result.each_hit_with_result do |hit, result|
         %li
           %h2
-            - if result.headword_presentation?
-              = link_to highlights_for(hit, :headword_presentation) || result.headword_presentation, pretty_article_path(result)
-            - else
-              = link_to highlights_for(hit, :headword) || result.headword, pretty_article_path(result)
+            = link_to highlights_for(hit, :headword) || result.headword_presentation, pretty_article_path(result)
           %p= highlights_for(hit, :text) || (strip_tags(result.text) || "").slice(0, 101) + '…'
           = link_to pretty_article_url(result), pretty_article_url(result), :class => 'full-url'
 .search-pagination= paginate(@search_result.hits)
