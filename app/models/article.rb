@@ -7,7 +7,6 @@ class Article
   include Sunspot::Mongoid
   include Mongoid::Paranoia
   include ActionView::Helpers::SanitizeHelper
-  include Mime::Helpers::AssociationsHelper
   
   references_and_referenced_in_many :users
   alias :authors :users
@@ -55,14 +54,13 @@ class Article
   validates_uniqueness_of :headword
   validates_associated :location, :external_links
   
-  accepts_nested_attributes_for :location, :external_links, :medias, :allow_destroy => true
+  accepts_nested_attributes_for :location, :external_links, :medias, :allow_destroy => true, :reject_if => :all_blank
   
   # We do this because mongodb doesn't allow index fields to be null
   # They can however be absent from the document…
   set_callback :validation, :before, lambda {|article| article.location = nil if article.new_record? && article.location.blank?}
   
   # Mongoid :reject_if is messed up, so we handle it here instead
-  set_callback :validation, :before, :remove_empty_associations
   set_callback :validation, :before, :add_async_uploads
   
   before_save :update_headword_sorting, :remove_duplicate_tags
@@ -131,10 +129,6 @@ class Article
       new_medias = Media.any_in(:_id => _media_ids)
       self.medias << new_medias
     end
-  end
-
-  def remove_empty_associations
-    remove_empty_associations_for(:external_links, :medias)
   end
 
   def update_headword_sorting
