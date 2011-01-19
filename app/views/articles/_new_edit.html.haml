@@ -8,10 +8,8 @@
 
 = semantic_form_for setup_article(@article) do |f|
   = f.inputs :class => 'files' do
-    = f.semantic_fields_for :medias, Media.new do |medias_f|
-      = render :partial => "edit_media_tpl", :locals => {:m => medias_f}
     = f.semantic_fields_for :medias do |medias_f|
-      = render :partial => "edit_media", :locals => {:m => medias_f}
+      = render :partial => "edit_media#{'_tpl' if medias_f.object.new_record?}", :locals => {:m => medias_f}
     %li#upload-button-container
       %label
         Her kan du legge til bilder
