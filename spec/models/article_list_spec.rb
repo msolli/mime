@@ -9,4 +9,15 @@ describe ArticleList do
   # 
   # it { should validate_presence_of(:name) }
 
+  it "validates presence of name" do
+    list = ArticleList.new
+    list.should_not be_valid
+    list.errors[:name].should_not be_blank
+  end
+
+  it "is valid with name" do
+    list = Factory.build(:article_list)
+    list.should be_valid
+    list.errors.should be_blank
+  end
 end

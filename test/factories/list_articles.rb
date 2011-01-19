@@ -1,4 +1,3 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
 Factory.define :list_article do |f|
+  f.headword 'Artikkel i liste'
 end

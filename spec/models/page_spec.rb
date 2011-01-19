@@ -5,7 +5,14 @@ describe Page do
     @page = Factory.build(:page)
     @page.sections << Factory.build(:section)
     @page.sections << Factory.build(:section)
-    @page.save
+    @page.save!
     @page.sections.length.should == 2
+  end
+
+  it "has article lists" do
+    @page = Factory.build(:page)
+    @page.article_lists.build(Factory.attributes_for(:article_list))
+    @page.save!
+    @page.article_lists.length.should == 1
   end
 end
