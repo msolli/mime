@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
   before_filter :add_ip_to_params, :only => [:create, :update]
   before_filter :login_teaser, :only => [:new, :edit]
+  after_filter :clear_flash, :only => [:new, :edit]
   helper_method :sort_column, :sort_direction
 
   def new
@@ -115,8 +116,12 @@ class ArticlesController < ApplicationController
 
   def login_teaser
     unless user_signed_in?
-      flash.notice= t('articles.login_teaser_html', :login_link => self.class.helpers.link_to(t('articles.login_link'), user_omniauth_authorize_path(:facebook)))
+      flash.notice = t('articles.login_teaser_html', :login_link => self.class.helpers.link_to(t('articles.login_link'), user_omniauth_authorize_path(:facebook)))
     end
+  end
+
+  def clear_flash
+    flash.clear
   end
 
   def sort_column
