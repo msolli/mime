@@ -1,10 +1,15 @@
 # encoding: utf-8
 
 Gitt /^at jeg har opprettet følgende artikler:$/ do |article_data|
-  article_data.hashes.each do |hash|
-    a = Article.create!(hash)
-    a.authors << User.where(:email => 'nn@example.com').first
-    Article.collection.update({"_id" => a["_id"]}, { "$set" => { :created_at => Time.parse(hash[:updated_at]), :updated_at => Time.parse(hash[:updated_at]) } })
+  Article.without_versioning do
+    Article.skip_callback :save, :before, :set_updated_at
+    article_data.hashes.each do |hash|
+      a = Article.create!(hash)
+      a.authors << User.where(:email => 'nn@example.com').first
+      t = Time.parse(hash[:updated_at])
+      a.update_attributes(:created_at => t, :updated_at => t)
+    end
+    Article.set_callback :save, :before, :set_updated_at
   end
 end
 
