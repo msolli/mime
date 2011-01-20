@@ -7,13 +7,14 @@ describe TagsArticleList do
   # 
   # it { should validate_presence_of(:date) }
 
-  describe "#current_articles" do
-    before :each do
-      5.times do
-        Factory.create(:article, :tags => 'foo')
-      end
-      @list = Factory.create(:tags_article_list, :tags => ['foo'])
+  before :each do
+    5.times do
+      Factory.create(:article, :tags => 'foo')
     end
+    @list = Factory.create(:tags_article_list, :tags => ['foo'])
+  end
+
+  describe "#current_articles" do
 
     it "has 5 items" do
       @list.current_articles.size.should == 5
@@ -23,6 +24,15 @@ describe TagsArticleList do
       @list.current_articles.each do |a|
         a.class.should == ListArticle
       end
+    end
+  end
+
+  describe "#invalidate_articles!" do
+    it "updates the article list on the next day" do
+      @list.date = Date.today - 1
+      @list.save!
+      @list.invalidate_articles!
+      @list.current_articles.size.should == 5
     end
   end
 end

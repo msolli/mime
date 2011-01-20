@@ -1,7 +1,8 @@
 class ArticleList
   include Mongoid::Document
 
-  embeds_many :articles, :class_name => 'ListArticle'
+  embeds_many :list_articles
+  # embeds_many :articles, :class_name => 'ListArticle'
   embedded_in :page, :inverse_of => :article_list
 
   field :name
@@ -10,6 +11,6 @@ class ArticleList
   validates_presence_of :name
 
   def current_articles
-    articles
+    list_articles
   end
 end

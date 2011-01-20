@@ -18,14 +18,14 @@ class TagsArticleList < ArticleList
 
   def todays_articles
     if self.date == Date.today
-      (self.articles.blank? ? randomize_articles! : self.articles)
+      (self.list_articles.blank? ? randomize_articles! : self.list_articles)
     else
       randomize_articles!
     end
   end
 
   def randomize_articles!
-    self.articles.destroy_all
+    self.list_articles.destroy_all
     if self.tags.blank?
       candidates = Article.only(:_id, :headword).all
     else
@@ -34,11 +34,11 @@ class TagsArticleList < ArticleList
     self.number_of_articles.times do
       begin
         article = candidates[rand(candidates.length)]
-      end while self.articles.include?(article)
-      self.articles.create(:headword => article.headword_presentation, :article => article)
+      end while self.list_articles.include?(article)
+      self.list_articles.create(:headword => article.headword_presentation, :article => article)
     end
     self.date = Date.today
     self.save
-    self.articles
+    self.list_articles
   end
 end
