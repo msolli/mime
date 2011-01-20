@@ -36,7 +36,7 @@ class HomeController < ApplicationController
   end
 
   def missing
-    puts "MISSING #{request.referrer} | #{request.user_agent} | #{request.ip}"
+    puts "MISSING #{params[:slug]} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
     render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false
   end
 end
