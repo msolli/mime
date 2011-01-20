@@ -35,8 +35,8 @@ class HomeController < ApplicationController
     end
   end
 
-  def typekitfail
-    puts "TYPEKIT #{request.referrer} | #{request.user_agent} | #{request.ip}"
+  def missing
+    puts "MISSING #{request.referrer} | #{request.user_agent} | #{request.ip}"
     render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false
   end
 end

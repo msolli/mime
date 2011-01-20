@@ -26,9 +26,12 @@ Mime::Application.routes.draw do
     end
   end
 
-  # Typekit FAIL
-  constraints(lambda { |req| req.params[:slug] =~ /^k\/odc3uil/ }) do 
-    match '/:slug' => 'home#typekitfail', :as => :typekitfail, :slug => /.*/
+  # Logg info om ting som det ikke skal komme requests for
+  constraints(lambda { |req|
+      req.params[:slug] =~ /^k\/odc3uil/ ||
+      req.params[:slug] =~ /\/icons.png/
+    }) do
+    match '/:slug' => 'home#missing', :as => :missing, :slug => /.*/
   end
 
   # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å, /1, /2, ...
