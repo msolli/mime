@@ -34,9 +34,4 @@ class HomeController < ApplicationController
       pager.replace(articles[start, per_page])
     end
   end
-
-  def missing
-    puts "MISSING #{params[:slug]} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
-    render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false
-  end
 end

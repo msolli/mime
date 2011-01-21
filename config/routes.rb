@@ -26,14 +26,6 @@ Mime::Application.routes.draw do
     end
   end
 
-  # Logg info om ting som det ikke skal komme requests for
-  constraints(lambda { |req|
-      req.params[:slug] =~ /^k\/odc3uil/ ||
-      req.params[:slug] =~ /\/icons.png/
-    }) do
-    match '/:slug' => 'home#missing', :as => :missing, :slug => /.*/
-  end
-
   # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å, /1, /2, ...
   constraints(lambda { |req| req.params[:slug].size == 1 }) do
     match '/:slug' => 'home#alphabetic', :as => :alphabetic, :slug => /.*/

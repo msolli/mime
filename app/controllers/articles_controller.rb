@@ -32,6 +32,7 @@ class ArticlesController < ApplicationController
         format.html { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
         format.json { render :status => :not_found, :text => ''}
       end
+      puts "404 NOT FOUND #{params[:slug]} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
       return
     end
     set_user_return_to pretty_article_path(@article)
