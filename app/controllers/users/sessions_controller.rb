@@ -11,13 +11,10 @@ class Users::SessionsController < Devise::SessionsController
       :user => (user_signed_in? ? current_user : nil),
       :flash => (flash.empty? ? nil : flash)
     }
-    if is_ie6?
-      # Handle evil IE6 Accept header
-      respond_with(resp) do |format|
-        format.html { render :text => resp.to_json, :content_type => 'application/json' }
-      end
-    else
+    begin
       respond_with resp
+    rescue ActionView::MissingTemplate => e
+      log "#{e.to_s.split[0..2].join(' ')} | #{request.referrer} | #{request.user_agent} | #{request.ip} | #{request.accept}"
     end
   end
 end

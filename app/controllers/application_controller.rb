@@ -34,8 +34,4 @@ class ApplicationController < ActionController::Base
   def log(message)
     Rails.env.production? ? puts(message) : Rails.logger.debug(message)
   end
-
-  def is_ie6?
-    request.env["HTTP_USER_AGENT"] =~ /MSIE 6+?/
-  end
 end
