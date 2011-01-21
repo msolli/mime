@@ -7,26 +7,17 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def current
-    respond_with({
+    resp = {
       :user => (user_signed_in? ? current_user : nil),
       :flash => (flash.empty? ? nil : flash)
-    })
+    }
+    if is_ie6?
+      # Handle evil IE6 Accept header
+      respond_with(resp) do |format|
+        format.html { render :text => resp.to_json, :content_type => 'application/json' }
+      end
+    else
+      respond_with resp
+    end
   end
-
 end
-
-__END__
-
-== EDDA SSO ==
-
-  Bruker som har vært logget på Edda:
-Forside: Vanlig, med Devise-lenker (bra for caching)
-
-Logg inn:
-  1. finn authId i cookies
-  2. verification mot tek.no
-      - dersom ok, fyll inn brukerinfo med data fra tek.no (der dette ikke finnes fra før) og logg inn og avslutt
-      - dersom ikke ok, gå videre
-  3. Vis innloggingsskjema
-  4. redirect til tek.no signin
-  5. I callback, sjekk om authId ble satt, eller error ble satt
