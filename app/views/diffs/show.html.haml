@@ -7,7 +7,7 @@
 %aside.back-link
   = link_to '« ' + t('articles.versions.back', :for => @article.headword), article_versions_path(@article)
 
-.articletext.diff!= diff(@v2.text, @v1.text).html_safe
+.articletext.diff!= diff(@v2.text || '', @v1.text || '').html_safe
 
 %aside.meta
   .added= render :partial => 'medias/image_in_article', :collection => @imgdiff[:added], :as => :image

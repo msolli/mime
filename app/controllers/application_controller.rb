@@ -30,4 +30,8 @@ class ApplicationController < ActionController::Base
     WillPaginate::ViewHelpers.pagination_options[:previous_label] = I18n.t('will_paginate.previous')
     WillPaginate::ViewHelpers.pagination_options[:next_label] = I18n.t('will_paginate.next')
   end
+
+  def log(message)
+    Rails.env.production? ? puts(message) : Rails.logger.debug(message)
+  end
 end
