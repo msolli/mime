@@ -46,6 +46,9 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'ruby-debug19'
+  gem 'thin'
+  gem 'newrelic_rpm'
+  gem 'rack-perftools_profiler', :require => 'rack/perftools_profiler'
 end
 
 group :test do

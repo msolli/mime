@@ -1,3 +1,7 @@
+require 'new_relic/collection_helper'
+require 'new_relic/rack/developer_mode'
+
+
 Mime::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
@@ -23,5 +27,9 @@ Mime::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.active_support.deprecation = :log
+  
+  
+  config.middleware.insert_before ActionDispatch::Static, NewRelic::Rack::DeveloperMode
+  config.middleware.use ::Rack::PerftoolsProfiler, :default_printer => :gif, :bundler => true, :mode => :walltime
 
 end

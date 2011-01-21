@@ -11,3 +11,4 @@ config/s3-env.sh
 tmp/restart.txt
 public/assets/*
 solr/data/**/*
+config/newrelic.yml
