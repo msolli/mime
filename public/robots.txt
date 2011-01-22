@@ -4,3 +4,4 @@
 # User-Agent: *
 # Disallow: /
 Disallow: /users/current
+Disallow: /bidragsytere/${email}
