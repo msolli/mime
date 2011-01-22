@@ -14,6 +14,12 @@ describe ::Users::SessionsController do
       response.should be_success
       assigns(:user).should_not be_nil
     end
+
+    it "returns 404 if user is not found" do
+      get :show, :id => 'nobody'
+      response.status.should == 404
+      response.body.should =~ /The page you were looking for doesn't exist/
+    end
   end
 
   describe "#current" do
