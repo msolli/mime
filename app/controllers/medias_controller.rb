@@ -1,7 +1,8 @@
 class MediasController < ApplicationController
-  
   # after_filter :prime_cache, :only => :create
-  
+
+  def index; action_not_found; end
+
   def new
   end
   
@@ -45,5 +46,4 @@ class MediasController < ApplicationController
     Rails.logger.debug "Fetching #{full_url}"
     open(full_url)
   end
-  
 end
