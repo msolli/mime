@@ -5,7 +5,7 @@ Mime::Application.routes.draw do
         resources :articles, :path => 'artikler', :only => [:index]
       end
     end
-    get "users/current" => "users/sessions#current"
+    get "users/current" => "users/sessions#current", :defaults => {:format => 'json'}
   end
 
   resources :medias
