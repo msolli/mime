@@ -1,20 +1,5 @@
-package_assets: on
-embed_assets: on
-
-s3_bucket: assets.ableksikon.no
-s3_permission: public_read
-s3_cache_control: public
-s3_expires: <%= Time.new(Time.now.year+10).httpdate %>
-s3_access_key_id: <%= ENV['S3_KEY'] %>
-s3_secret_access_key: <%= ENV['S3_SECRET'] %>
-s3_upload_files:
-  - public/javascripts/ckeditor/ckeditor.js
-  - public/javascripts/ckeditor/skins/kama/**/*
-  - public/javascripts/ckeditor/lang/no.js
-  - public/javascripts/ckeditor/plugins/iframe/**/*
-  - public/javascripts/ckeditor/plugins/mimelink/**/*
-  - public/javascripts/ckeditor/plugins/styles/**/*
-  - public/javascripts/ckeditor/plugins/table/**/*
+package_assets: always
+embed_assets: datauri
 
 javascripts:
   all:

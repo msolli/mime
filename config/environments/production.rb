@@ -60,4 +60,18 @@ Mime::Application.configure do
   config.i18n.fallbacks = true
 
   config.active_support.deprecation = :notify
+
+  # asset_id
+  config.action_controller.asset_host = Proc.new do |source|
+    unless source.starts_with?('/javascripts')
+      'http://assets0.ableksikon.no'
+    end
+  end
+  config.action_controller.asset_path = Proc.new do |source|
+    unless source.starts_with?('/javascripts')
+      AssetID::S3.fingerprint(source)
+    else
+      source
+    end
+  end
 end

@@ -16,7 +16,8 @@ gem 'oa-oauth', :require => 'omniauth/oauth'
 gem 'escape_utils' # A way to silence stupid stupid stupid Rack::Utils::escape
 gem 'ckeditor', :git => 'http://github.com/budstikka/rails-ckeditor.git', :branch => 'rails3'
 gem 'will_paginate', '~> 3.0.pre2'
-gem 'jammit-s3', :git => 'git://github.com/msolli/jammit-s3.git'
+gem 'jammit'
+gem 'asset_id', :git => 'git://github.com/msolli/asset_id.git'
 
 gem 'sunspot_rails'
 gem 'sunspot_mongoid', :git => 'git://github.com/kabriel/sunspot_mongoid.git'

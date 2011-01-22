@@ -255,7 +255,7 @@ html, body {
   background: white; }
 
 header {
-  background: url(/images/bg-top.png) center top repeat-x white; }
+  /*  background: url(/images/bg-top.png) center top repeat-x white;*/ }
   header .title {
     padding: 32px 0 10px 0;
     float: left; }

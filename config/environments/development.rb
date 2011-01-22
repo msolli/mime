@@ -23,8 +23,7 @@ Mime::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.active_support.deprecation = :log
-  
-  
+
   config.middleware.use ::Rack::PerftoolsProfiler, :default_printer => :gif, :bundler => true, :mode => :walltime
 
 end

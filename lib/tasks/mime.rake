@@ -1,6 +1,23 @@
 # encoding: utf-8
 
 namespace :mime do
+
+  namespace :assets do
+    AWS::S3::DEFAULT_HOST.replace "s3-eu-west-1.amazonaws.com"
+    AssetID::Base.asset_paths = %w(assets images lib favicon.ico)
+    AssetID::S3.gzip_types = []
+
+    desc "Simulér opplasting av assets til Amazon Cloudfront"
+    task :dryrun => :environment do
+      AssetID::S3.upload(:dry_run => true, :debug => true)
+    end
+
+    desc "Last opp assets til Amazon Cloudfront"
+    task :upload => :environment do
+      AssetID::S3.upload(:debug => true)
+    end
+  end
+
   require 'import'
   desc "Import av XML-data fra Kunnskapsforlaget"
   task :import => [:environment, "mime:xml:read"] do

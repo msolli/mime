@@ -12,3 +12,4 @@ tmp/restart.txt
 public/assets/*
 solr/data/**/*
 config/newrelic.yml
+config/asset_id.yml
