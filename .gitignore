@@ -9,7 +9,6 @@ config/map.yml
 config/s3-env.sh
 .DS_Store
 tmp/restart.txt
-public/assets/*
 solr/data/**/*
 config/newrelic.yml
 config/asset_id.yml
