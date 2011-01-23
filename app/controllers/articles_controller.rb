@@ -5,7 +5,9 @@ class ArticlesController < ApplicationController
   before_filter :login_teaser, :only => [:new, :edit]
   after_filter :clear_flash, :only => [:new, :edit]
   helper_method :sort_column, :sort_direction
-
+  
+  caches_action :show
+  
   def new
     @article = Article.new
     @article.build_location
@@ -18,6 +20,7 @@ class ArticlesController < ApplicationController
     Article.without_versioning do
       @article.authors << current_user if user_signed_in?
       if @article.save
+        expire_article_cache(@article)
         redirect_to pretty_article_path(@article), :notice => t('articles.saved')
       else
         flash.alert = t('articles.errors.save')
@@ -67,6 +70,7 @@ class ArticlesController < ApplicationController
           @article.update_attributes!(:user_ids => [])
         end
       end
+      expire_article_cache(@article)
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
     else
       flash.alert = t('articles.errors.save')
@@ -77,6 +81,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     old_headword = @article.headword_presentation
+    expire_article_cache(@article)
     @article.delete
     flash.notice = t('articles.deleted_html', :headword => old_headword)
     redirect_to root_path
@@ -103,6 +108,11 @@ class ArticlesController < ApplicationController
   end
 
   private
+  # Necessary because we use pretty_article_path
+  def expire_article_cache(article)
+    path = ActionController::Caching::Actions::ActionCachePath.new(self, pretty_article_url(article))
+    expire_fragment path.path
+  end
 
   def redirect_if_id
     if params[:id] && !request.xhr?
