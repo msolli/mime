@@ -1,6 +1,6 @@
 .col{:class => ("left" if i == 0)}
   - unless a.article.blank?
-    = link_to a.article, :class => 'featured' do
+    = link_to pretty_article_path(a.article), :class => 'featured' do
       %figure
         - if a.article.medias.first
           %img{:src => a.article.medias.first.file.thumb("238x175#nw").url}
