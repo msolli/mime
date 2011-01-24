@@ -22,7 +22,7 @@ gem 'asset_id', :git => 'git://github.com/msolli/asset_id.git'
 gem 'sunspot_rails'
 gem 'sunspot_mongoid', :git => 'git://github.com/kabriel/sunspot_mongoid.git'
 
-gem 'mongo_store'
+gem 'mongo_store', :git => 'git://github.com/budstikka/mongo_store.git'
 
 # Async jobs
 gem 'delayed_job'

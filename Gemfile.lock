@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/budstikka/mongo_store.git
+  revision: 239c6afba8e78672aad00895d1dc97efc8eabb1f
+  specs:
+    mongo_store (0.3.0)
+      activesupport (>= 2.2)
+      mongo (>= 1.0)
+
+GIT
   remote: git://github.com/kabriel/sunspot_mongoid.git
   revision: 7695fa299e7072ba41aab5197e53fbb3faffa47e
   specs:
@@ -174,9 +182,6 @@ GEM
     mime-types (1.16)
     mongo (1.2.0)
       bson (>= 1.2.0)
-    mongo_store (0.3.0)
-      activesupport (>= 2.2)
-      mongo (>= 1.0)
     mongoid (2.0.0.rc.6)
       activemodel (~> 3.0)
       mongo (~> 1.2)
@@ -332,7 +337,7 @@ DEPENDENCIES
   jammit
   launchy
   mongo (~> 1.0)
-  mongo_store
+  mongo_store!
   mongoid (= 2.0.0.rc.6)
   newrelic_rpm
   nokogiri

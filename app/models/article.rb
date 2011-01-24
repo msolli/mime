@@ -7,6 +7,7 @@ class Article
   include Sunspot::Mongoid
   include Mongoid::Paranoia
   include ActionView::Helpers::SanitizeHelper
+  include Mongoid::Observing
   
   references_and_referenced_in_many :users
   alias :authors :users
