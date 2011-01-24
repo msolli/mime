@@ -10,5 +10,4 @@ config/s3-env.sh
 .DS_Store
 tmp/restart.txt
 solr/data/**/*
-config/newrelic.yml
 config/asset_id.yml

@@ -24,8 +24,6 @@ Mime::Application.configure do
 
   config.active_support.deprecation = :log
 
-  config.middleware.use ::Rack::PerftoolsProfiler, :default_printer => :gif, :bundler => true, :mode => :walltime
-
   # asset_id - production only, uncomment to test
   # config.action_controller.asset_host = Proc.new do |source|
   #   unless source.starts_with?('/javascripts')
