@@ -45,3 +45,16 @@ Egenskap: Versjonering av artikler med innlogget bruker
     Og jeg skal se "Test Testesen" under nåværende versjon
     Og jeg skal ikke se "Navn Navnesen" under nåværende versjon
     Og jeg skal se "Navn Navnesen" under første versjon
+
+  @devise @logged_in
+  Scenario: innlogget bidragsyter med flere artikler
+    Gitt at jeg har opprettet følgende artikler:
+      | headword  | updated_at |
+      | snerk     | 2011-01-01 |
+      | bukse     | 2011-01-01 |
+    Og jeg står på artikkelredigering for "snerk"
+    Og jeg fyller inn "article[text]" med "Ny tekst om snerk"
+    Når jeg trykker "Lagre"
+    Så skal "snerk" være sist oppdatert "i dag"
+    Og så skal "bukse" være sist oppdatert "2011-01-01"
+    Og så skal jeg være bidragsyter for 2 artikler

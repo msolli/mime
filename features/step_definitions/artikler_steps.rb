@@ -75,3 +75,13 @@ end
 Så /^skal jeg ikke se eksterne lenker$/ do
   Then %{".external-links" should not exist}
 end
+
+Så /^(?:|så )skal "([^"]*)" være sist oppdatert "([^"]*)"$/ do |headword, timestamp|
+  a = Article.where(:headword => headword).first
+  updated_at = (timestamp == 'i dag' ? Date.today : Time.parse(timestamp)).strftime('%Y-%m-%d')
+  a.updated_at.strftime('%Y-%m-%d').should == updated_at
+end
+
+Så /^så skal jeg være bidragsyter for (\d+) artikler$/ do |n|
+  User.where(:email => 'nn@example.com').first.articles.count.should == n.to_i
+end

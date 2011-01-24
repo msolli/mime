@@ -65,8 +65,12 @@ class ArticlesController < ApplicationController
     if @article.save
       Article.without_versioning do
         if user_signed_in?
+          # TODO - sjonglering av id-er er et hack for å unngå at alle brukerens artikler
+          # også blir oppdatert. Ideelt skulle vi kunne gjøre:
+          # @article.users.clear
+          # @article.users << current_user
           @article.update_attributes!(:user_ids => [current_user.id])
-          current_user.articles << @article
+          current_user.update_attributes!(:article_ids => current_user.article_ids << @article.id)
         else
           @article.update_attributes!(:user_ids => [])
         end
