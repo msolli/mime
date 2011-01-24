@@ -12,14 +12,9 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def current
-    resp = {
+    respond_with({
       :user => (user_signed_in? ? current_user : nil),
       :flash => (flash.empty? ? nil : flash)
-    }
-    begin
-      respond_with resp
-    rescue ActionView::MissingTemplate => e
-      log "#{e.to_s.split[0..2].join(' ')} | #{request.referrer} | #{request.user_agent} | #{request.ip} | #{request.accept}"
-    end
+    })
   end
 end
