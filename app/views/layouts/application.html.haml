@@ -5,8 +5,6 @@
     %title<!= content_for?(:title) ? "#{yield(:title).strip} – #{t('mime.title')}" : t('mime.title')
     %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : t('mime.description')}
     %meta{:'http-equiv' => "content-language", :content => "no"}
-    - unless cached_page?
-      %meta{:'http-equiv' => "cache-control", :content => "no-cache"}
     - if %w(edit new create update).include? action_name
       %meta{:name => 'robots', :content => 'noindex, nofollow'}
     = yield :canonical

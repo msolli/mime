@@ -29,10 +29,6 @@ module ApplicationHelper
     content_tag(:time, l(time.to_date, :format => :long), options.merge(:datetime => time.getutc.iso8601)) if time
   end
 
-  def cached_page?
-    controller_name == 'home' && ['index', 'alphabetic'].include?(action_name)
-  end
-
   def author_or_you
     current_user == @user ? t('words.you') : @user.name_or_email
   end

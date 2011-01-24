@@ -1,7 +1,4 @@
-- if cached_page?
-  %aside#user-links
-- else
-  %aside#user-links{:data => {:user => current_user.to_json}}
+%aside#user-links
 
 %script{:id => 'user-links-tmpl', :type => 'text/x-jquery-tmpl'}
   %ul

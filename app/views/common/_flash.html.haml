@@ -1,7 +1,4 @@
-- if cached_page?
-  %aside#messages
-- else
-  %aside#messages{:data => {:alert => alert, :notice => notice}}
+%aside#messages
 
 %script{:id => 'messages-tmpl', :type => 'text/x-jquery-tmpl'}
   {{if $item.data.alert || $item.data.notice}}

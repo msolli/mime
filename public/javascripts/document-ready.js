@@ -10,26 +10,12 @@ $(document).ready(function() {
         $('#messages-tmpl').tmpl(data.flash).appendTo('#messages');
       }
     };
-
-    var cache_meta = $('meta[http-equiv=cache-control]');
-    var is_cached = !(cache_meta.length && cache_meta.attr('content') == 'no-cache');
-    if (is_cached) {
-      $.ajax({
-        type: 'GET',
-        dataType: 'json',
-        url: '/users/current',
-        success: addUserData
-      });
-    } else {
-      var userData = {
-        user: $('#user-links').data('user'),
-        flash: {
-          notice: $('#messages').data('notice'),
-          alert: $('#messages').data('alert')
-        }
-      };
-      addUserData(userData);
-    }
+		$.ajax({
+		  type: 'GET',
+		  dataType: 'json',
+		  url: '/users/current',
+		  success: addUserData
+		});
   })();
 
   // Adding / removing nested objects in nested forms
