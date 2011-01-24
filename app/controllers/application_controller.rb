@@ -2,9 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   layout 'application'
 
-  before_filter :set_locale
-
+  before_filter :set_locale, :keep_flash
+  
   private
+  
+  def keep_flash
+    flash.keep
+  end
 
   def find_article
     @slug = if !params[:slug].blank?

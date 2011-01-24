@@ -7,7 +7,7 @@ $(document).ready(function() {
     var addUserData = function(data) {
       $('#user-links-tmpl').tmpl(data.user).appendTo('#user-links');
       if (data.flash) {
-        $('#messages-tmpl').tmpl(data.flash).appendTo('#messages');
+        $('#messages-tmpl').tmpl(data.flash).appendTo('#messages').hide().slideDown();
       }
     };
 		$.ajax({

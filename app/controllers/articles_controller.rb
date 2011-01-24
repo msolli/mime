@@ -6,8 +6,7 @@ class ArticlesController < ApplicationController
   before_filter :redirect_if_id, :only => [:show]
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
   before_filter :add_ip_to_params, :only => [:create, :update]
-  before_filter :login_teaser, :only => [:new, :edit]
-  after_filter :clear_flash, :only => [:new, :edit]
+  after_filter :login_teaser, :only => [:new, :edit]
   helper_method :sort_column, :sort_direction
 
   def new
