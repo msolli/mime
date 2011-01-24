@@ -1,0 +1,24 @@
+/* TEAM */
+	Developer: Martin Solli
+	Contact: ms [at] budstikka.no
+	Twitter: @msolli
+	From: Oslo, Norway
+
+	Developer: Peter Haza
+	Contact: ph [at] budstikka.no
+	Twitter: @phaza
+	From: Asker, Norway
+
+  Design: Janne Flusund
+  Contact: janne.flusund [at] eddamedia.no
+  Twitter: @jflusund
+  From: Oslo, Norway
+
+	Editor: Tor Christian Bakken
+	Contact: torchristian.bakken [at] budstikka.no
+	From: Sandvika, Norway
+
+/* SITE */
+	Language: Norwegian
+	Doctype: HTML5 with CSS3
+	Tools: Ruby on Rails
