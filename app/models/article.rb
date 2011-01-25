@@ -124,11 +124,23 @@ class Article
   private
   
   def add_async_uploads
+    # TODO - sjonglering av id-er er et hack for å unngå at artikkelen lagres for hver enkelt
+    # bilde vi legger til også lagrer artikkelen.
+    # Ideelt skulle vi kunne gjøre:
+    # @article.medias << new_medias
     _media_ids = media_ids_from_async_upload.to_s.strip.split.map{|__id| BSON::ObjectId.from_string(__id)}
-    self.media_ids_from_async_upload = "" # Important. Stops infinite loop
     unless _media_ids.blank?
-      new_medias = Media.any_in(:_id => _media_ids)
-      self.medias << new_medias
+      self.class.without_callback :validation, :before, :add_async_uploads do
+        new_medias = Media.any_in(:_id => _media_ids)
+        new_medias.each do |media|
+          media.article_ids << self.id
+          media.article_ids.uniq!
+          media.save
+        end
+        
+        self.media_ids += _media_ids
+        self.media_ids.uniq!
+      end
     end
   end
 
