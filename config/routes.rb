@@ -1,7 +1,7 @@
 Mime::Application.routes.draw do
 
   # IE7.js/Typekit workaround
-  match 'k/:something' => redirect("http://use.redirect.com/k/%{something}")
+  match 'k/:something' => redirect("http://use.typekit.com/k/%{something}")
 
   devise_for :users, :module => 'users', do
     constraints :id => /[^\/]*/ do
