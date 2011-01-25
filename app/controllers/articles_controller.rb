@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
     end
     set_user_return_to pretty_article_path(@article)
 
-    log "MAYBE REDIRECT"
+    log "MAYBE REDIRECT (slug: #{@slug.to_json} @article.to_param: #{@article.to_param.to_json})"
     unless @article.slug_is?(@slug) || request.xhr?
       log "REDIRECT TO #{pretty_article_path(@article)}"
       from = @article.headword == deparameterize(@slug) ? '' : @slug
