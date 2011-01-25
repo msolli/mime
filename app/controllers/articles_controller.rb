@@ -40,12 +40,15 @@ class ArticlesController < ApplicationController
     end
     set_user_return_to pretty_article_path(@article)
 
+    log "MAYBE REDIRECT"
     unless @article.slug_is?(@slug) || request.xhr?
+      log "REDIRECT TO #{pretty_article_path(@article)}"
       from = @article.headword == deparameterize(@slug) ? '' : @slug
       redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
       return
     end
 
+    log "NO REDIRECT"
     respond_to do |format|
       format.html
       format.json { render :json => {:url => pretty_article_path(@article)}}
