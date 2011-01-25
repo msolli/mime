@@ -31,18 +31,18 @@ class ArticlesController < ApplicationController
 
   def show
     if @article.nil?
+      log "404 NOT FOUND #{params[:slug]} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
       respond_to do |format|
         format.html { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
         format.json { render :status => :not_found, :text => ''}
       end
-      log "404 NOT FOUND #{params[:slug]} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
     else
       set_user_return_to pretty_article_path(@article)
 
       unless @article.slug_is?(@slug)
+        log "REDIRECT #{@slug} -> #{pretty_article_path(@article)} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
         from = @article.headword == deparameterize(@slug) ? '' : @slug
         redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
-        log "REDIRECT #{from} -> #{pretty_article_path(@article)} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
       else
         respond_to do |format|
           format.html
