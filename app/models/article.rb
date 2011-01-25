@@ -72,7 +72,7 @@ class Article
   end
   
   def slug_is?(slug)
-    to_param == slug.gsub(/\//, '%2F')
+    to_param == slug.gsub(/ /, '_').gsub(/\//, '%2F')
   end
 
   def headword_presentation
