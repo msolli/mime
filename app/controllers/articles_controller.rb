@@ -42,9 +42,10 @@ class ArticlesController < ApplicationController
 
     log "MAYBE REDIRECT (slug: #{@slug.to_json} @article.to_param: #{@article.to_param.to_json})"
     unless @slug == @article.to_param
-      log "REDIRECT TO #{pretty_article_path(@article)}"
       from = @article.headword == deparameterize(@slug) ? '' : @slug
+      log "REDIRECT TO #{pretty_article_path(@article)}"
       redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
+      log "FINISH"
       return
     end
 
