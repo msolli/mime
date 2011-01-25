@@ -1,6 +1,6 @@
 - unless @page.sections.blank?
   %section.featured-top
-    - @page.sections.first.articles.each_with_index do |a, i|
+    - @page.sections.first.current_articles.each_with_index do |a, i|
       = render :partial => 'featured_article', :locals => { :a => a, :i => i}
 
 - unless @page.article_lists.blank?
@@ -15,5 +15,5 @@
 
 - unless @page.sections.blank? || @page.sections[1].blank?
   %section.featured-bottom
-    - @page.sections[1].articles.each_with_index do |a, i|
+    - @page.sections[1].current_articles.each_with_index do |a, i|
       = render :partial => 'featured_article', :locals => { :a => a, :i => i}

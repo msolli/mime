@@ -125,3 +125,11 @@
   filter: alpha(opacity=#{$value * 100}); // IE 7@
   opacity: $value;
 }
+
+@mixin overflow-ellipsis {
+  overflow-x: hidden;
+  overflow-y: visible;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+}

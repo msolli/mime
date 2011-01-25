@@ -634,7 +634,12 @@ header {
         top: -41px;
         height: 37px;
         line-height: 37px;
-        padding-left: 14px; }
+        padding-left: 14px;
+        overflow-x: hidden;
+        overflow-y: visible;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        white-space: nowrap; }
     #main .col section {
       min-height: 146px;
       border-radius: 4px;

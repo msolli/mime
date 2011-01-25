@@ -1,7 +1,7 @@
 class SectionArticle
   include Mongoid::Document
 
-  embedded_in :section, :inverse_of => :article
+  embedded_in :section, :inverse_of => :articles
   referenced_in :article
 
   field :headword
