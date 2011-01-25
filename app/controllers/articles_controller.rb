@@ -40,16 +40,12 @@ class ArticlesController < ApplicationController
     end
     set_user_return_to pretty_article_path(@article)
 
-    log "MAYBE REDIRECT (slug: #{@slug.to_json} @article.to_param: #{@article.to_param.to_json})"
     unless @slug == @article.to_param
       from = @article.headword == deparameterize(@slug) ? '' : @slug
-      log "REDIRECT TO #{pretty_article_path(@article)}"
       redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
-      log "FINISH"
       return
     end
 
-    log "NO REDIRECT"
     respond_to do |format|
       format.html
       format.json { render :json => {:url => pretty_article_path(@article)}}

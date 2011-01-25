@@ -210,7 +210,6 @@ GEM
     rack-rewrite (1.0.2)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rack-timeout (0.0.1)
     rails (3.0.3)
       actionmailer (= 3.0.3)
       actionpack (= 3.0.3)
@@ -330,7 +329,6 @@ DEPENDENCIES
   nokogiri
   oa-oauth
   rack-rewrite
-  rack-timeout
   rails (~> 3.0)
   rails3-generators
   rspec-rails
