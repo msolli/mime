@@ -25,11 +25,11 @@ Mime::Application.configure do
   # config.log_level = :debug
   
   # Fix canonical urls
-  # config.middleware.insert_before(ActionDispatch::Static, Rack::Rewrite) do
-  #   r301 %r{.*}, 'http://www.ableksikon.no$&', :if => Proc.new {|rack_env|
-  #     rack_env['SERVER_NAME'] !~ /^www/
-  #   }
-  # end
+  config.middleware.insert_before(ActionDispatch::Static, Rack::Rewrite) do
+    r301 %r{.*}, 'http://www.ableksikon.no$&', :if => Proc.new {|rack_env|
+      rack_env['SERVER_NAME'] !~ /^www/
+    }
+  end
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new

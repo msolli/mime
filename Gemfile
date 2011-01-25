@@ -34,10 +34,10 @@ gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly'
 
 # Canonical urls
-# gem 'rack-rewrite', :require => 'rack/rewrite'
+gem 'rack-rewrite', :require => 'rack/rewrite'
 
 # Time out before 30s (on heroku) to get exceptional to trigger
-# gem 'rack-timeout'
+gem 'rack-timeout'
 
 # Diff view
 gem 'htmldiff'
