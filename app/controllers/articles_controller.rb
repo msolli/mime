@@ -36,19 +36,19 @@ class ArticlesController < ApplicationController
         format.json { render :status => :not_found, :text => ''}
       end
       log "404 NOT FOUND #{params[:slug]} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
-      return
-    end
-    set_user_return_to pretty_article_path(@article)
+    else
+      set_user_return_to pretty_article_path(@article)
 
-    unless @article.slug_is?(@slug)
-      from = @article.headword == deparameterize(@slug) ? '' : @slug
-      redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
-      return
-    end
-
-    respond_to do |format|
-      format.html
-      format.json { render :json => {:url => pretty_article_path(@article)}}
+      unless @article.slug_is?(@slug)
+        from = @article.headword == deparameterize(@slug) ? '' : @slug
+        redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
+        log "REDIRECT #{from} -> #{pretty_article_path(@article)} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
+      else
+        respond_to do |format|
+          format.html
+          format.json { render :json => {:url => pretty_article_path(@article)}}
+        end
+      end
     end
   end
 
