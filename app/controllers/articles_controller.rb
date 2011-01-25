@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
     end
     set_user_return_to pretty_article_path(@article)
 
-    unless @slug == @article.to_param
+    unless @article.slug_is?(@slug)
       from = @article.headword == deparameterize(@slug) ? '' : @slug
       redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
       return
