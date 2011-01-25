@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  rescue_from NoMethodError, :with => :log_no_method_error
+
   protect_from_forgery
   layout 'application'
 
@@ -42,5 +44,11 @@ class ApplicationController < ActionController::Base
   def action_not_found
     render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false
     log "ACTION NOT FOUND #{controller_name}##{action_name} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
+  end
+
+  def log_no_method_error(e)
+    log "EXCEPTION NoMethodError"
+    log e.backtrace.join('\n')
+    render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false
   end
 end
