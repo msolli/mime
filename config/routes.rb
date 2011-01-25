@@ -17,6 +17,8 @@ Mime::Application.routes.draw do
   
   match 'search', :to => 'search#new'
   match 'fastsearch', :to => 'json_search#new'
+  
+  resource :js, :only => :show
 
   resources :pages, :path => 'p', :except => [:index]
 

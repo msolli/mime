@@ -15,6 +15,10 @@ no-NB:
   tooltips:
     articles:
       headword: "Oppslagsord (må fylles ut)"
+  javascript_translations:
+    media:
+      _destroy: Slett
+      un_destroy: Behold
   articles:
     new: Ny artikkel
     edit: Rediger
