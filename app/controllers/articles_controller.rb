@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   include Mongoid::Observing::Sweeping
   cache_sweeper :article_sweeper
-  caches_action :show
+  # caches_action :show
 
   before_filter :redirect_if_id, :only => [:show]
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
