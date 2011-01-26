@@ -37,7 +37,7 @@ class Location
   alias :lng :longitude
   alias :lng= :longitude=
   
-  def blank?
+  def unwanted?
     longitude.blank? && latitude.blank?
   end
   

@@ -58,10 +58,7 @@ class Article
   
   # We do this because mongodb doesn't allow index fields to be null
   # They can however be absent from the document…
-  set_callback :validation, :before, lambda {|article| article.location = nil if article.new_record? && article.location.blank?}
-  
-  # Mongoid :reject_if is messed up, so we handle it here instead
-  set_callback :validation, :before, :add_async_uploads
+  before_validation :add_async_uploads, :remove_empty_location
   
   before_save :update_headword_sorting, :remove_duplicate_tags
 
@@ -122,6 +119,10 @@ class Article
   end
   
   private
+  
+  def remove_empty_location
+    self.location = nil if !self.location.blank? && self.location.unwanted?
+  end
   
   def add_async_uploads
     # TODO - sjonglering av id-er er et hack for å unngå at artikkelen lagres for hver enkelt
