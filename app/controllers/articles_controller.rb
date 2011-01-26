@@ -1,13 +1,16 @@
 class ArticlesController < ApplicationController
   include Mongoid::Observing::Sweeping
-  cache_sweeper :article_sweeper
-  # caches_action :show
 
   before_filter :redirect_if_id, :only => [:show]
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
+  before_filter :not_found, :only => [:show]
+  before_filter :redirect_to_canonical_url, :only => [:show]
   before_filter :add_ip_to_params, :only => [:create, :update]
   after_filter :login_teaser, :only => [:new, :edit]
   helper_method :sort_column, :sort_direction
+
+  cache_sweeper :article_sweeper
+  caches_action :show  # Må defineres _etter_ :before_filter
 
   def new
     @article = Article.new
@@ -30,25 +33,11 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    if @article.nil?
-      log "404 NOT FOUND #{params[:slug]} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
-      respond_to do |format|
-        format.html { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
-        format.json { render :status => :not_found, :text => ''}
-      end
-    else
-      set_user_return_to pretty_article_path(@article)
+    set_user_return_to pretty_article_path(@article)
 
-      unless @article.slug_is?(@slug)
-        log "REDIRECT #{@slug} -> #{pretty_article_path(@article)} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
-        from = @article.headword == deparameterize(@slug) ? '' : @slug
-        redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
-      else
-        respond_to do |format|
-          format.html
-          format.json { render :json => {:url => pretty_article_path(@article)}}
-        end
-      end
+    respond_to do |format|
+      format.html
+      format.json { render :json => {:url => pretty_article_path(@article)}}
     end
   end
 
@@ -114,6 +103,27 @@ class ArticlesController < ApplicationController
   def redirect_if_id
     if params[:id] && !request.xhr?
       redirect_to pretty_article_path(params[:id]), :status => :moved_permanently
+      log "REDIRECT ID: #{params[:id] }"
+      return false
+    end
+  end
+
+  def not_found
+    if @article.nil?
+      respond_to do |format|
+        format.html { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
+        format.json { render :status => :not_found, :text => ''}
+      end
+      log "404 NOT FOUND #{params[:slug]}"
+      return false
+    end
+  end
+
+  def redirect_to_canonical_url
+    unless @article.slug_is?(@slug)
+      from = @article.headword == deparameterize(@slug) ? '' : @slug
+      redirect_to pretty_article_path(@article), :status => :moved_permanently, :flash => { :redirected_from => from }
+      log "REDIRECT #{@slug} -> #{pretty_article_path(@article)}"
       return false
     end
   end

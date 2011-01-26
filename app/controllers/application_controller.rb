@@ -36,12 +36,17 @@ class ApplicationController < ActionController::Base
     WillPaginate::ViewHelpers.pagination_options[:next_label] = I18n.t('will_paginate.next')
   end
 
+  def request_info
+    " | #{request.referrer} | #{request.user_agent} | #{request.ip}"
+  end
+
   def log(message)
+    message += request_info if request
     Rails.env.production? ? puts(message) : Rails.logger.debug(message)
   end
 
   def action_not_found
     render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false
-    log "ACTION NOT FOUND #{controller_name}##{action_name} | #{request.referrer} | #{request.user_agent} | #{request.ip}"
+    log "ACTION NOT FOUND #{controller_name}##{action_name}"
   end
 end
