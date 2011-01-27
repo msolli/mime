@@ -313,17 +313,20 @@ header {
         display: inline;
         margin-right: 1em;
         padding: 6px 0px; }
-      header nav ul.links li.new {
-        background: #98cdfa;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+      header nav ul.links li.new a {
         position: relative;
-        border-radius: 8px;
-        -moz-border-radius: 8px;
-        -webkit-border-radius: 8px;
-        behavior: url(/stylesheets/PIE.htc); }
-        header nav ul.links li.new:hover {
-          background: #fab45b; }
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        behavior: url(/stylesheets/PIE.htc);
+        padding: 5px 10px;
+        color: white;
+        background-color: #2f528f;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase; }
+        header nav ul.links li.new a:hover {
+          background-color: #fab45b; }
   header form #q {
     position: relative;
     border-radius: 10px;
@@ -395,6 +398,25 @@ header {
   background: #efefef; }
   #main.home.index, #main.search {
     background: white; }
+  #main .join-us-teaser {
+    margin: 30px auto 30px auto;
+    width: 720px; }
+    #main .join-us-teaser a.button {
+      position: relative;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      behavior: url(/stylesheets/PIE.htc);
+      padding: 5px 10px;
+      color: white;
+      background-color: #2f528f;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      float: right;
+      margin: 5px 0; }
+      #main .join-us-teaser a.button:hover {
+        background-color: #fab45b; }
   #main .search-pagination {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1013,6 +1035,9 @@ header #q + button {
         text-decoration: underline; }
     #main header h1 a {
       color: white; }
+  #main .join-us-teaser span.teaser {
+    font-style: italic;
+    font-size: 200%; }
   #main .search-pagination {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%; }

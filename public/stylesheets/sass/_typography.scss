@@ -54,7 +54,16 @@ header {
       }
     }
   }
+
   color: $text-color;
+
+  .join-us-teaser {
+    span.teaser {
+      font-style: italic;
+      font-size: $font32px;
+    }
+  }
+
   .search-pagination {
     @include small-sans;
     font-size: $font12px;

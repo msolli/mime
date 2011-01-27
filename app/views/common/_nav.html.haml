@@ -6,4 +6,5 @@
           %li>= link_to item, alphabetic_path(item)
     -# %w[bilder kart årstall personer tema].each do |item|
       -#%li>= link_to item, "#TODO", :class => "TODO"
-    %li.new>= link_to t('words.new').mb_chars.upcase, new_article_path, :rel => 'nofollow'
+    - unless request.path == '/'
+      %li.new>= link_to t('articles.new').mb_chars.upcase, new_article_path, :rel => 'nofollow'

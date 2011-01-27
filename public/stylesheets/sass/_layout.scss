@@ -57,14 +57,8 @@ header {
         margin-right: 1em;
         padding: 6px 0px;
       }
-      li.new {
-        background: $light-blue-color;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        @include rounded-corners;
-        &:hover {
-          background: $button-alt-color;
-        }
+      li.new a {
+        @include a-button;
       }
     }
   }
@@ -101,6 +95,16 @@ header {
 
   &.home.index, &.search {
     background: white;
+  }
+
+  .join-us-teaser {
+    margin: 30px auto 30px auto;
+    width: 720px;
+    a.button {
+      @include a-button;
+      float: right;
+      margin: 5px 0;
+    }
   }
 
   .search-pagination {

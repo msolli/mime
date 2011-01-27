@@ -4,6 +4,9 @@ no-NB:
     description: "Budstikkas store Asker og Bærum-leksikon"
     header: "Budstikkas store Asker og Bærum-leksikon"
     missing_frontpage: "Her mangler det visst en forside"
+    join_us:
+      teaser: "Bli med å oppdatere leksikonet"
+      new_article: "Start en ny oppføring"
   errors:
     messages:
       blank: kan ikke være tom

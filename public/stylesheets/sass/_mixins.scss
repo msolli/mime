@@ -4,6 +4,22 @@
   margin-right: auto;
 }
 
+@mixin a-button {
+  @include rounded-corners(4px);
+  padding: 5px 10px;
+
+  color: white;
+  background-color: $button-color;
+
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $button-alt-color;
+  }
+}
+
 @mixin submit-button {
   padding: 0.4em 2em 0.2em 2em;
   margin: 0;
