@@ -17,9 +17,6 @@ class Article
   embeds_one :location
   embeds_many :external_links
 
-  references_many :section_articles
-  references_many :list_articles
-
   field :headword
   field :text, :default => ''
   field :definition

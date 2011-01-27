@@ -14,8 +14,9 @@ class SortedArticleList < ArticleList
   private
 
   def sorted_articles
+    self.list_articles.destroy_all
     Article.only(:_id, :headword, self.sort_field).send(self.sort_direction, self.sort_field).limit(self.number_of_articles).each do |article|
-      self.list_articles.create(:headword => article.headword_presentation, :article => article)
+      self.list_articles.push(ListArticle.new_from_article(article))
     end
     self.list_articles
   end

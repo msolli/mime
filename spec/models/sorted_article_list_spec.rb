@@ -7,18 +7,21 @@ describe SortedArticleList do
 
   describe "#current_articles" do
     before :each do
-      5.times do
+      10.times do
         Factory.create(:article)
       end
-      @list = Factory.create(:sorted_article_list)
+    end
+
+    let(:list) do
+      Factory.build(:sorted_article_list)
     end
 
     it "has 5 items" do
-      @list.current_articles.size.should == 5
+      list.current_articles.size.should == 5
     end
 
     it "has ListArticles as items" do
-      @list.current_articles.each do |a|
+      list.current_articles.each do |a|
         a.class.should == ListArticle
       end
     end

@@ -35,10 +35,10 @@ class TagsArticleList < ArticleList
       begin
         article = candidates[rand(candidates.length)]
       end while self.list_articles.include?(article)
-      self.list_articles.create(:headword => article.headword_presentation, :article => article)
+      self.list_articles.push(ListArticle.new_from_article(article))
     end
     self.date = Date.today
-    self.save
+    self.page.save if self.page
     self.list_articles
   end
 end
