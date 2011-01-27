@@ -1,15 +1,3 @@
-@mixin serif {
-  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
-}
-
-@mixin large-sans {
-  font-family: Arial, sans-serif;
-}
-
-@mixin small-sans {
-  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
-}
-
 body {
   @include serif;
   font-size: 100%;
@@ -34,7 +22,6 @@ header {
   
   #q + button {
     @include submit-button-typography;
-    font-size: $font12px;
   }
 }
 

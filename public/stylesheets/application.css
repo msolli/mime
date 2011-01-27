@@ -319,7 +319,7 @@ header {
         -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
         behavior: url(/stylesheets/PIE.htc);
-        padding: 5px 10px;
+        padding: 4px 12px;
         color: white;
         background-color: #2f528f;
         font-weight: bold;
@@ -337,14 +337,20 @@ header {
     header form #q:focus {
       outline: 0; }
   header form #q + button {
-    padding: 0.4em 2em 0.2em 2em;
-    margin: 0;
-    background: #2f528f;
+    /*  padding: 0.4em 2em 0.2em 2em;*/
     position: relative;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     behavior: url(/stylesheets/PIE.htc);
+    padding: 3px 12px;
+    color: white;
+    background: #2f528f;
+    font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
     border: 1px solid #355da2;
     border-top-color: #29477c;
     border-left-color: #29477c; }
@@ -407,7 +413,7 @@ header {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       behavior: url(/stylesheets/PIE.htc);
-      padding: 5px 10px;
+      padding: 4px 12px;
       color: white;
       background-color: #2f528f;
       font-weight: bold;
@@ -850,14 +856,20 @@ footer {
     vertical-align: text-bottom; }
 #main form.formtastic fieldset > ol > li #file-upload-button,
 #main form.formtastic fieldset > ol > li input[type="submit"], #main form.formtastic fieldset > ol > li.string #file-upload-button, #main form.formtastic fieldset > ol > li.string input[type="submit"], #main form.formtastic fieldset > ol > li.text #file-upload-button, #main form.formtastic fieldset > ol > li.text input[type="submit"] {
-  padding: 0.4em 2em 0.2em 2em;
-  margin: 0;
-  background: #2f528f;
+  /*  padding: 0.4em 2em 0.2em 2em;*/
   position: relative;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   behavior: url(/stylesheets/PIE.htc);
+  padding: 3px 12px;
+  color: white;
+  background: #2f528f;
+  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  font-size: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
   border: 1px solid #355da2;
   border-top-color: #29477c;
   border-left-color: #29477c; }
@@ -969,14 +981,20 @@ ul.search-completion {
   margin-bottom: 15px; }
 
 input[name="commit"] {
-  padding: 0.4em 2em 0.2em 2em;
-  margin: 0;
-  background: #2f528f;
+  /*  padding: 0.4em 2em 0.2em 2em;*/
   position: relative;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   behavior: url(/stylesheets/PIE.htc);
+  padding: 3px 12px;
+  color: white;
+  background: #2f528f;
+  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  font-size: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
   border: 1px solid #355da2;
   border-top-color: #29477c;
   border-left-color: #29477c; }
@@ -1012,13 +1030,6 @@ header nav {
     text-decoration: none; }
     header nav a:hover {
       text-decoration: underline; }
-header #q + button {
-  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
-  color: white;
-  font-size: 112.5%;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 75%; }
 
 #messages {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
@@ -1110,12 +1121,6 @@ header #q + button {
       font-weight: bold;
       line-height: 1.5;
       margin-top: 5px; }
-  #main table.versions + input[name="commit"] {
-    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
-    color: white;
-    font-size: 112.5%;
-    font-weight: bold;
-    text-transform: uppercase; }
   #main table.versions, #main table.articles {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
     #main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
@@ -1194,13 +1199,6 @@ form.formtastic fieldset > ol > li textarea, form.formtastic fieldset > ol > li.
   color: #383838;
   font-size: 100%;
   line-height: 1.5; }
-form.formtastic fieldset > ol > li #file-upload-button,
-form.formtastic fieldset > ol > li input[type="submit"], form.formtastic fieldset > ol > li.string #file-upload-button, form.formtastic fieldset > ol > li.string input[type="submit"], form.formtastic fieldset > ol > li.text #file-upload-button, form.formtastic fieldset > ol > li.text input[type="submit"] {
-  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
-  color: white;
-  font-size: 112.5%;
-  font-weight: bold;
-  text-transform: uppercase; }
 
 .tooltip {
   color: #fab45b;
