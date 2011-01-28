@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   before_filter :redirect_if_id, :only => [:show]
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
-  before_filter :not_found, :only => [:show]
+  before_filter :not_found, :only => [:show, :edit, :update, :destroy]
   before_filter :redirect_to_canonical_url, :only => [:show]
   before_filter :add_ip_to_params, :only => [:create, :update]
   after_filter :login_teaser, :only => [:new, :edit]
