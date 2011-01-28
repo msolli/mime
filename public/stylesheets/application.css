@@ -337,7 +337,6 @@ header {
     header form #q:focus {
       outline: 0; }
   header form #q + button {
-    /*  padding: 0.4em 2em 0.2em 2em;*/
     position: relative;
     border-radius: 4px;
     -moz-border-radius: 4px;
@@ -490,7 +489,7 @@ header {
     #main aside.meta .map-wrapper {
       text-align: center; }
       #main aside.meta .map-wrapper .map {
-        height: 150px;
+        height: 218px;
         background-color: #fff; }
       #main aside.meta .map-wrapper a.smaller-map,
       #main aside.meta .map-wrapper a.bigger-map {
@@ -856,7 +855,6 @@ footer {
     vertical-align: text-bottom; }
 #main form.formtastic fieldset > ol > li #file-upload-button,
 #main form.formtastic fieldset > ol > li input[type="submit"], #main form.formtastic fieldset > ol > li.string #file-upload-button, #main form.formtastic fieldset > ol > li.string input[type="submit"], #main form.formtastic fieldset > ol > li.text #file-upload-button, #main form.formtastic fieldset > ol > li.text input[type="submit"] {
-  /*  padding: 0.4em 2em 0.2em 2em;*/
   position: relative;
   border-radius: 4px;
   -moz-border-radius: 4px;
@@ -981,7 +979,6 @@ ul.search-completion {
   margin-bottom: 15px; }
 
 input[name="commit"] {
-  /*  padding: 0.4em 2em 0.2em 2em;*/
   position: relative;
   border-radius: 4px;
   -moz-border-radius: 4px;
