@@ -1,20 +1,17 @@
 class ListArticle
   include Mongoid::Document
 
-  embedded_in :article_list, :inverse_of => :list_articles
+  embedded_in :listable, polymorphic: true
   referenced_in :article
 
   field :headword
+  field :date, :type => Date
 
   validates_presence_of :headword
 
-  class << self
-    def new_from_article(article, date = Date.today)
-      return nil unless article.is_a? Article
-      ListArticle.new.tap do |s|
-        s.headword = article.headword_presentation
-        s.article = article
-      end
-    end
+  def initialize(article, date = Date.today)
+    @date = date
+    @headword = article.headword_presentation
+    @article = article
   end
 end
