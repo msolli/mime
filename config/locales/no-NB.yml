@@ -107,6 +107,7 @@ no-NB:
     template:
       several_hits: "%{previous_label} Viser %{from}-%{to} av %{total_entries} treff %{next_label}"
       one_or_less_hits: "Viser %{count} av %{count} treff"
+    error: "Vi har visst problemer med å få gjort søket ditt akkurat nå. Du kan alltids prøve igjen ved å laste siden på nytt."
   pages:
     new: Ny side
     edit: Rediger

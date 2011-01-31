@@ -18,6 +18,7 @@ gem 'ckeditor', :git => 'http://github.com/budstikka/rails-ckeditor.git', :branc
 gem 'will_paginate', '~> 3.0.pre2'
 gem 'jammit'
 gem 'asset_id', :git => 'git://github.com/msolli/asset_id.git'
+gem 'exceptional'
 
 gem 'sunspot_rails'
 gem 'sunspot_mongoid', :git => 'git://github.com/kabriel/sunspot_mongoid.git'

@@ -59,7 +59,7 @@ class ApplicationController < ActionController::Base
   end
 
   def action_not_found
-    render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false
+    render :file => "#{Rails.public_path}/404.html", :status => :not_found, :layout => false
     log "ACTION NOT FOUND #{controller_name}##{action_name}"
   end
 
