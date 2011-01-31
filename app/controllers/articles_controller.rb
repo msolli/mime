@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   before_filter :redirect_if_id, :only => [:show]
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
-  before_filter :not_found, :only => [:show, :edit, :update, :destroy]
+  before_filter :article_not_found, :only => [:show, :edit, :update, :destroy]
   before_filter :redirect_to_canonical_url, :only => [:show]
   before_filter :add_ip_to_params, :only => [:create, :update]
   after_filter :login_teaser, :only => [:new, :edit]
@@ -104,17 +104,6 @@ class ArticlesController < ApplicationController
     if params[:id] && !request.xhr?
       redirect_to pretty_article_path(params[:id]), :status => :moved_permanently
       log "REDIRECT ID: #{params[:id] }"
-      return false
-    end
-  end
-
-  def not_found
-    if @article.nil?
-      respond_to do |format|
-        format.html { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
-        format.json { render :status => :not_found, :text => ''}
-      end
-      log "404 NOT FOUND #{params[:slug]}"
       return false
     end
   end

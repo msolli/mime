@@ -22,6 +22,17 @@ class ApplicationController < ActionController::Base
     @article = Article.where(:headword => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
   end
 
+  def article_not_found
+    if @article.nil?
+      respond_to do |format|
+        format.html { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
+        format.json { render :status => :not_found, :text => ''}
+      end
+      log "404 NOT FOUND #{params[:slug]}"
+      return false
+    end
+  end
+
   def deparameterize(thing)
     thing.gsub(/%2F/, '/').gsub(/_/, ' ')
   end
