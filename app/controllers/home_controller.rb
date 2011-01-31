@@ -4,7 +4,9 @@ class HomeController < ApplicationController
   def index
     flash.keep
 
-    @page = Page.first(:conditions => {:name => ENV['FRONTPAGE'] || 'Forside'})
+    rescue_connection_failure do
+      @page = Page.first(:conditions => {:name => ENV['FRONTPAGE'] || 'Forside'})
+    end
     return unless @page
 
     render :template => 'pages/show'
