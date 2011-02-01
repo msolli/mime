@@ -98,6 +98,10 @@ Når /^jeg legger ved bildet "([^"]*)" til "([^"]*)"$/ do |path, selector|
   Når %{jeg legger ved filen "#{Rails.root}/#{path}" til "#{selector}"}
 end
 
+Når /^jeg sletter det første bildet$/ do
+  find('.files li:first-child a').click
+end
+
 Gitt /^at jeg forventer å velge "([^"]*)" når jeg ser "([^"]*)" i et bekreftelsesvindu$/ do |option, message|
   retval = (option == "OK") ? "true" : "false"
 

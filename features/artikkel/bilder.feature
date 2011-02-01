@@ -24,11 +24,20 @@ Egenskap: Legge bilder til artikler
     Når jeg trykker "Lagre"
     Så skal jeg se "baz" under ".meta figcaption"
     
-  Scenario: slette bilde fra artikkel etter at artikkelen er lagret
+  Scenario: slette bilde fra artikkel etter at artikkelen er lagret (uten javascript)
     Gitt at artikkelen "Foo" finnes
     Og at artikkelen "Foo" har bilde
     Og jeg står på artikkelredigering for "Foo"
     Når jeg krysser av "Slett"
+    Og jeg trykker "Lagre"
+    Så skal det være 0 av ".meta figure"
+
+  @javascript
+  Scenario: slette bilde fra artikkel etter at artikkelen er lagret (med javascript)
+    Gitt at artikkelen "Foo" finnes
+    Og at artikkelen "Foo" har bilde
+    Og jeg står på artikkelredigering for "Foo"
+    Når jeg sletter det første bildet
     Og jeg trykker "Lagre"
     Så skal det være 0 av ".meta figure"
 

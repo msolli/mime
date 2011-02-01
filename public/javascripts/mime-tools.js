@@ -1,4 +1,18 @@
 var mime = mime || {};
+mime.t = function(scope) {
+	var scopes = scope.split('.'),
+			current = mime.translations,
+			fail = false;
+	if(current) {
+		for (var i=0; i < scopes.length; i++) {
+			var s = scopes[i];
+			if(current[s]) current = current[s];
+			else { fail = true; break; }
+		}
+	}
+	return !fail ? current :  'Translation missing: ' + scope;	
+};
+
 mime.tools = {
 	input_cloner: function(li) {
 		var new_li = li.clone(true);
