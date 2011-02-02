@@ -714,9 +714,7 @@ header {
 
 footer {
   clear: both;
-  /*  border-top: 2px solid $dark-grey-color;*/
-  margin-top: 20px;
-  min-height: 100px; }
+  /*  border-top: 2px solid $dark-grey-color;*/ }
 
 #main form.formtastic fieldset.files {
   float: right;
