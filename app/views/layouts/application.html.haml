@@ -27,11 +27,13 @@
 
   %body
     %header
+      = render :partial => "common/branding-header"
+
       #wrapper
         .title
           = link_to(image_tag('logo-title.png', :size => '373x50', :alt => t('mime.title')), root_path)
           %p= t('mime.header')
-        = render "common/user-links"
+        = render :partial => "common/user-links"
         = render :partial => "common/search"
       = render :partial => "common/nav"
 
@@ -51,11 +53,11 @@
           = yield
 
     %footer
+      = render :partial => 'common/scores'
+      = render :partial => 'common/google_analytics'
       #wrapper
         = yield :footer
-        = image_tag 'budstikka-logo-bw.png', :size => '237x50'
+      = render :partial => "common/branding-footer"
 
-    = render :partial => 'common/scores'
-    = render :partial => 'common/google_analytics'
     - unless %w(edit new create update).include?(action_name)
       = render :partial => 'common/bottom-ad'

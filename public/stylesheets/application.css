@@ -714,11 +714,9 @@ header {
 
 footer {
   clear: both;
-  border-top: 2px solid #45494f;
+  /*  border-top: 2px solid $dark-grey-color;*/
+  margin-top: 20px;
   min-height: 100px; }
-  footer img {
-    float: right;
-    margin-top: 10px; }
 
 #main form.formtastic fieldset.files {
   float: right;
@@ -1004,6 +1002,39 @@ input[name="commit"] {
     border: 1px solid #f9a942;
     border-top-color: #fbbf74;
     border-left-color: #fbbf74; }
+
+#budstikka-header-wrapper {
+  background-color: #b4b4b4;
+  height: 36px;
+  padding-top: 4px; }
+  #budstikka-header-wrapper #budstikka-header {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto; }
+
+#budstikka-footer-wrapper {
+  background-color: #b4b4b4;
+  height: 120px;
+  padding-bottom: 30px; }
+  #budstikka-footer-wrapper .logo {
+    height: 36px;
+    padding-top: 4px; }
+  #budstikka-footer-wrapper #budstikka-footer {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto; }
+    #budstikka-footer-wrapper #budstikka-footer .info {
+      float: left;
+      margin: 0 25px 10px 0;
+      padding-left: 5px;
+      border-left: 1px dotted #616161;
+      color: #616161; }
+      #budstikka-footer-wrapper #budstikka-footer .info a {
+        text-decoration: none; }
+        #budstikka-footer-wrapper #budstikka-footer .info a:hover {
+          text-decoration: underline; }
+      #budstikka-footer-wrapper #budstikka-footer .info a {
+        color: white; }
 
 body {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;

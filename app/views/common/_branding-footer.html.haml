@@ -1,0 +1,39 @@
+#budstikka-footer-wrapper
+  #budstikka-footer
+
+    %p.logo
+      = link_to image_tag('budstikka-grey.png', :alt => 'budstikka.no', :title => 'budstikka.no', :size => '153x32'), "http://www.budstikka.no"
+
+    .info
+      %p#copynote
+        &copy; Asker og Bærums Budstikke #{Date.today.year}
+      %p
+        Ansvarlig redaktør: #{mail_to "andreas.gjolme@budstikka.no", "Andreas Gjølme"}
+      %p
+        Nettredaktør: #{mail_to "dagotter.johansen@budstikka.no", "Dag Otter Johansen"}
+      %p
+        = link_to "Redaktørplakaten", "http://presse.no/Pressens_Faglige_Utvalg_PFU/Redaktorplakaten/", :target => '_blank'
+        |
+        = link_to "PFU", "http://www.pfu.no/simple.php", :target => '_blank'
+
+    %ul.info
+      %li= link_to "Kundesenter", "http://minside.budstikka.no/"
+      %li= link_to "Abonnement", "http://abonnement.budstikka.no"
+      %li= link_to "Kontakt oss", "http://minside.budstikka.no/kontakt"
+      %li= mail_to "tips@budstikka.no", "Tips oss"
+
+    .info
+      %p
+        = link_to "Privatannonsering", "http://minside.budstikka.no/annonse/bestill"
+
+    .info
+      %p
+        Nettredaksjon: #{mail_to "nett@budstikka.no"}
+      %p
+        Telefon: 66 77 00 00
+      %p
+        Tipstelefon: 99 59 00 00
+      %p
+        Postadresse: Postboks 133, 1376 Billingstad
+      %p
+        Besøksadresse: Billingstadsletta 17, Billingstad | #{link_to "Kart", "http://goo.gl/maps/flmN"}
