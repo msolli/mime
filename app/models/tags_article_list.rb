@@ -18,23 +18,31 @@ class TagsArticleList < ArticleList
 
   def todays_articles
     if self.date == Date.today
-      (self.list_articles.blank? ? randomize_articles! : self.list_articles)
+      (self.list_articles.any? ? self.list_articles : randomize_articles!)
     else
       randomize_articles!
     end
   end
 
   def randomize_articles!
-    self.list_articles.destroy_all
+    # If self is embedded in page, destroy collection.
+    # Otherwise just make an empty array to facilitate testing.
+    if self.page
+      self.list_articles.destroy_all
+    else
+      self.list_articles = []
+    end
+
     if self.tags.blank?
       candidates = Article.only(:_id, :headword).all
     else
       candidates = Article.only(:_id, :headword).where(:tags_array.in => self.tags).all
     end
+
     self.number_of_articles.times do
       begin
         article = candidates[rand(candidates.length)]
-      end while self.list_articles.include?(article)
+      end while self.list_articles.map(&:article).include?(article)
       self.list_articles.push(ListArticle.new_from_article(article))
     end
     self.date = Date.today

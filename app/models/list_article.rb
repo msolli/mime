@@ -9,9 +9,13 @@ class ListArticle
 
   validates_presence_of :headword
 
-  def initialize(article, date = Date.today)
-    @date = date
-    @headword = article.headword_presentation
-    @article = article
+  class << self
+    def new_from_article(article, date = Date.today)
+      self.new.tap do |obj|
+        obj.headword = article.headword_presentation
+        obj.date = date
+        obj.article = article
+      end
+    end
   end
 end

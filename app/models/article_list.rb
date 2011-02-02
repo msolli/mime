@@ -10,6 +10,6 @@ class ArticleList
   validates_presence_of :name
 
   def current_articles
-    list_articles
+    list_articles.pop number_of_articles
   end
 end
