@@ -89,7 +89,7 @@ describe ArticlesController do
       response.should be_success
       assigns(:article).should_not be_nil
     end
-    
+
     it "sends a 404 response if the article doesn't exist" do
       get :show, :slug => '12345'
       response.should_not be_success
@@ -100,6 +100,14 @@ describe ArticlesController do
       get :show, :slug => '12345', :format => :json
       response.should_not be_success
       response.body.should == ""
+    end
+
+    it "redirects to canonical url if slug matches a version" do
+      a = Article.create!(:headword => "foo")
+      a.headword = "bar"
+      a.save!
+      get :show, :slug => "foo"
+      response.should redirect_to(pretty_article_path(a))
     end
   end
 

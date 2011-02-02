@@ -22,6 +22,12 @@ class ApplicationController < ActionController::Base
     rescue_connection_failure do
       @article = Article.where(:headword => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
     end
+    # Try to find an earlier version with the slug as headword
+    unless @article
+      rescue_connection_failure do
+        @article = Article.where(:'versions.headword' => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
+      end
+    end
   end
 
   def article_not_found

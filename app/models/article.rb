@@ -45,6 +45,7 @@ class Article
   attr_accessor :media_ids_from_async_upload
 
   index :headword, :unique => true
+  index "versions.headword"
   index [[ 'location.lat_lng', Mongo::GEO2D ]]
 
   validates_presence_of :headword

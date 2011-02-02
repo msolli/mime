@@ -50,6 +50,7 @@ no-NB:
     login_link: logge inn
     editable_defaults:
       default: "Trykk på meg for å redigere %{value}."
+    description_html: "Artikkel om %{headword} i Budstikkas store Asker og Bærum-leksikon"
 
     versions:
       first: Første versjon
@@ -120,7 +121,8 @@ no-NB:
     errors:
       save: "Siden ble visst ikke lagret – sjekk feilene nedenfor:"
   alphabetic:
-    description: "Artikler på %{letter}"
+    title: "Artikler på %{letter}"
+    description_html: "Artikler på %{letter} i Budstikkas store Asker og Bærum-leksikon"
     intro: "Artikler på <strong>%{letter}</strong>"
   formtastic:
     required: påkrevet
