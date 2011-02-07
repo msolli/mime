@@ -19,29 +19,7 @@
     = csrf_meta_tag
 
   %body
-    %header
-      .title
-        = link_to(image_tag('logo-title.png', :alt => t('mime.title')), root_path)
-        %p= t('mime.header')
-    #main{:class => "#{controller_name} #{action_name}"}
-      - if controller_name == 'articles'
-        %article
-          %header
-            %h1<= yield :header
-          .wrapper
-            = yield
-      - else
-        - if content_for? :header
-          %header
-            %h1<= yield :header
-        .wrapper
-          - with_format :html do
-            = render :partial => "common/flash"
-          = yield
-
-    %footer
-      - with_format :html do
-        = render :partial => 'common/scores'
-        = render :partial => 'common/google_analytics'
-      .wrapper
-        = yield :footer
+    = yield
+    - with_format :html do
+      = render :partial => 'common/scores'
+      = render :partial => 'common/google_analytics'
