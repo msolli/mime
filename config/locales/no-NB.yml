@@ -65,7 +65,7 @@ no-NB:
     login_link: logge inn
     editable_defaults:
       default: "Trykk på meg for å redigere %{value}."
-    description_html: "Artikkel om %{headword} i Budstikkas store Asker og Bærum-leksikon"
+    description_html: "%{headword} (artikkel i Budstikkas store Asker og Bærum-leksikon)"
 
     versions:
       first: Første versjon
@@ -135,6 +135,9 @@ no-NB:
       articles: Artikler
     errors:
       save: "Siden ble visst ikke lagret – sjekk feilene nedenfor:"
+  manual_article_lists:
+    errors:
+      article_needs_date: "Artikkelen %{headword} må ha en dato"
   alphabetic:
     title: "Artikler på %{letter}"
     description_html: "Artikler på %{letter} i Budstikkas store Asker og Bærum-leksikon"

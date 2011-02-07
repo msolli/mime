@@ -38,13 +38,13 @@ describe User do
       @u = Factory(:user)
     end
 
-    describe "no role" do
-      it "is nil by default" do
-        @u.role.should == nil
+    describe "new user" do
+      it "is 'user' by default" do
+        @u.role.should == 'user'
       end
 
-      it "is not a user" do
-        @u.role?('user').should be_false
+      it "is a user" do
+        @u.role?('user').should be_true
       end
 
       it "is not an editor" do

@@ -2,22 +2,24 @@
   %span.teaser= t('mime.join_us.teaser')
   = link_to t('mime.join_us.new_article'), new_article_path, :class => 'button'
 
-- unless @page.sections.blank?
-  %section.featured-top
-    - @page.sections.first.current_articles.each_with_index do |a, i|
-      = render :partial => 'featured_article', :locals => { :a => a, :i => i}
+- @page.article_lists.each_with_index do |list, i|
+  = render :partial => "pages/#{list._type.underscore}", :locals => {:list => list, :i => i}
 
-- unless @page.article_lists.blank?
-  %section.article-lists
-    - @page.article_lists[0..3].each_with_index do |list, i|
-      .col{:class => ("left" if i == 0)}
-        %section{:class => "article-list-#{i}"}
-          %h2= list.name
-          %ul
-            - list.current_articles.each do |a|
-              %li= link_to a.headword, pretty_article_path(a.article), :title => a.headword
-
-- unless @page.sections.blank? || @page.sections[1].blank?
-  %section.featured-bottom
-    - @page.sections[1].current_articles.each_with_index do |a, i|
-      = render :partial => 'featured_article', :locals => { :a => a, :i => i}
+/   %section.featured-top
+/     - @page.sections.first.current_articles.each_with_index do |a, i|
+/       = render :partial => 'featured_article', :locals => { :a => a, :i => i}
+/ 
+/ - unless @page.article_lists.blank?
+/   %section.article-lists
+/     - @page.article_lists[0..3].each_with_index do |list, i|
+/       .col{:class => ("left" if i == 0)}
+/         %section{:class => "article-list-#{i}"}
+/           %h2= list.name
+/           %ul
+/             - list.current_articles.each do |a|
+/               %li= link_to a.headword, pretty_article_path(a.article), :title => a.headword
+/ 
+/ - unless @page.sections.blank? || @page.sections[1].blank?
+/   %section.featured-bottom
+/     - @page.sections[1].current_articles.each_with_index do |a, i|
+/       = render :partial => 'featured_article', :locals => { :a => a, :i => i}

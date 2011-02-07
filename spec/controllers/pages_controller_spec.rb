@@ -4,15 +4,15 @@ describe PagesController do
 
   describe "#show" do
     before :each do
-      @page = Factory.build(:page)
-      2.times do |i|
-        @page.sections << Factory.build(:section)
-      end
-      @page.sections.each do |s|
-        4.times do |i|
-          s.articles << Factory.build(:section_article, :date => Date.today + i)
-        end
-      end
+      @page = Factory.build(:front_page)
+      # 2.times do |i|
+      #   @page.sections << Factory.build(:section)
+      # end
+      # @page.sections.each do |s|
+      #   4.times do |i|
+      #     s.articles << Factory.build(:section_article, :date => Date.today + i)
+      #   end
+      # end
       @page.save
       get :show, :id => @page.to_param
     end
@@ -23,12 +23,12 @@ describe PagesController do
 
     it "has articles in first section" do
       response.should be_success
-      assigns(:page).sections.first.articles.length.should == 4
+      assigns(:page).article_lists.where(:_type => "ManualArticleList").first.current_articles.length.should == 4
     end
 
     it "has articles in last section" do
       response.should be_success
-      assigns(:page).sections.last.articles.length.should == 4
+      assigns(:page).article_lists.where(:_type => "ManualArticleList").last.current_articles.length.should == 4
     end
   end
 
