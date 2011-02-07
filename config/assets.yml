@@ -2,6 +2,10 @@ package_assets: on
 embed_assets: datauri
 
 javascripts:
+  mobile:
+    - public/javascripts/typekit.js
+    - public/javascripts/spring.js
+    - public/javascripts/jquery/jquery-1.4.4.js
   all:
     - public/javascripts/typekit.js
     - public/javascripts/spring.js
@@ -23,6 +27,8 @@ javascripts:
     - public/javascripts/article-map.js
 
 stylesheets:
+  mobile:
+    - public/stylesheets/jquery.mobile-1.0a3.css
   all:
     - public/stylesheets/reset.css
     - public/stylesheets/application.css

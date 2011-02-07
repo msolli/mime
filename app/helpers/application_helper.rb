@@ -1,5 +1,13 @@
 module ApplicationHelper
   
+  def with_format(format, &block)
+    old_formats = self.formats
+    self.formats = [format]
+    block.call
+    self.formats = old_formats
+    nil
+  end
+  
   def scores_section
     section = case controller_name
     when 'articles'

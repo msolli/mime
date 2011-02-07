@@ -3,9 +3,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   layout 'application'
 
-  before_filter :set_locale, :keep_flash
+  before_filter :set_locale, :keep_flash, :handle_mobile
+  
+  protected
+  def enable_mobile_view
+    cookies.permanent[:mobile_view] = true
+  end
+  
+  def disable_mobile_view
+    cookies.permanent[:mobile_view] = false
+  end
   
   private
+  
+  def handle_mobile
+    if (!cookies[:mobile_view].present? && request.subdomain.to_s == 'mobil') || cookies[:mobile_view] == true
+      request.format = :mobile unless request.xhr?
+    end
+  end
   
   def keep_flash
     flash.keep
