@@ -1,6 +1,6 @@
 module ApplicationHelper
   
-  def mobile_page(header, content, footer, id = nil)
+  def mobile_page(content, header = nil, footer = nil, id = nil)
     render :partial => 'mobile/page', :locals => {
       :header => header,
       :footer => footer,

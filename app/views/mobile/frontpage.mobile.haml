@@ -1,9 +1,6 @@
 - header = capture do
   = render :partial => 'mobile/header', :locals => {:title => t('mime.mobile.title')}
   
-- footer = capture do
-  = render :partial => 'mobile/footer', :locals => {:footer => t('mime.mobile.footer')}
-  
 - content = capture do
   %ul{:data => {:role => 'listview', :inset => 'true'}}
     %li
@@ -15,7 +12,6 @@
     %li
       = link_to t('mime.mobile.menu.random_article'), '#' # random_article_path
 
-= mobile_page(header, content, footer)
+= mobile_page(content, header)
 
 = render :partial => 'mobile/recommended', :locals => {:page => @page}
-

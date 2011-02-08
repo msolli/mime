@@ -1,11 +1,13 @@
 %div{:id => id, :data => {:role => 'page'}}
-  %div{:data => {:role => 'header'}}
-    = header
+  -if header
+    %div{:data => {:role => 'header'}}
+      = header
     
   %div{:data => {:role => 'content'}}
     - with_format :html do
       = render :partial => "common/flash"
     = content
   
-  %div{:data => {:role => 'footer'}}
-    = footer
+  - if footer
+    %div{:data => {:role => 'footer'}}
+      = footer
