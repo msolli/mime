@@ -5,6 +5,17 @@
   = render :partial => 'mobile/footer', :locals => {:footer => t('mime.mobile.footer')}
   
 - content = capture do
-  %div hepp
+  %ul{:data => {:role => 'listview', :inset => 'true'}}
+    %li
+      %a{:href => '#recommended'}= t('mime.mobile.menu.recommended_articles')
+    %li
+      = link_to t('mime.mobile.menu.search'), search_path
+    %li
+      = link_to t('mime.mobile.menu.nearby_articles'), '#' # nearby_search_path
+    %li
+      = link_to t('mime.mobile.menu.random_article'), '#' # random_article_path
 
-= render :partial => 'mobile/page', :locals => {:header => header, :footer => footer, :content => content}
+= mobile_page(header, content, footer)
+
+= render :partial => 'mobile/recommended', :locals => {:page => @page}
+

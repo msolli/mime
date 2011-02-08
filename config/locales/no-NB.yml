@@ -7,6 +7,17 @@ no-NB:
     join_us:
       teaser: "Bli med å oppdatere leksikonet"
       new_article: "Start en ny oppføring"
+      
+    mobile:
+      title: ableksikon.no
+      footer: Føtter
+      menu:
+        recommended_articles: Anbefalte artikler
+        search: Søk
+        nearby_articles: Finn artikler i nærheten
+        random_article: Tilfeldig artikkel
+      
+      
   errors:
     messages:
       blank: kan ikke være tom

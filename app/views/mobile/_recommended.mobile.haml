@@ -1,0 +1,15 @@
+- header = capture do
+  = render :partial => 'mobile/header', :locals => {:title => t('mime.mobile.title')}
+  
+- footer = capture do
+  = render :partial => 'mobile/footer', :locals => {:footer => t('mime.mobile.footer')}
+  
+- content = capture do
+  %ul{:data => {:role => 'listview'}}
+    - @page.sections.first.current_articles.each do |article|
+      - a = article.article
+      %li
+        %img{:src => a.medias.first.file.thumb("480x320#nw").url}
+        = link_to a.headword, pretty_article_path(a)
+
+= mobile_page(header, content, footer, 'recommended')

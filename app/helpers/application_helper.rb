@@ -1,4 +1,14 @@
-module ApplicationHelper  
+module ApplicationHelper
+  
+  def mobile_page(header, content, footer, id = nil)
+    render :partial => 'mobile/page', :locals => {
+      :header => header,
+      :footer => footer,
+      :content => content,
+      :id => id
+    }
+  end
+    
   def with_format(format, &block)
     old_formats = self.formats
     self.formats = [format]
