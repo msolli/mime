@@ -16,6 +16,9 @@ no-NB:
         search: Søk
         nearby_articles: Finn artikler i nærheten
         random_article: Tilfeldig artikkel
+      search:
+        label: Søk
+        perform: Søk
       
       
   errors:
