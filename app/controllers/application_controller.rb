@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   
   def handle_mobile
     if (!cookies[:mobile_view].present? && request.subdomain.to_s == 'mobil') || cookies[:mobile_view] == true
-      request.format = :mobile unless request.xhr?
+      request.format = :mobile
     end
   end
   
