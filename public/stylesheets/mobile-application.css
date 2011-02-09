@@ -1,2 +1,37 @@
+.typekit-badge {
+  display: none !important; }
+
+article figure {
+  margin: 0; }
+  article figure figcaption {
+    font-size: 75%; }
+article .image-flicker figure {
+  display: none; }
+  article .image-flicker figure figcaption {
+    display: block; }
+  article .image-flicker figure:first-child {
+    display: block; }
+article .image-flicker .pagination {
+  font-size: 200%;
+  text-align: center; }
+  article .image-flicker .pagination .current {
+    color: #F3F3F3; }
+article aside.info {
+  font-size: 75%; }
+  article aside.info ul {
+    margin: 0 0 5px;
+    padding: 0; }
+  article aside.info li {
+    display: inline;
+    margin-right: 10px; }
+    article aside.info li:last-child {
+      margin-right: 0; }
+
 .search-result span.highlight {
   background-color: #F6FFD7; }
+
+.max-width-768px article img {
+  width: 620px; }
+
+.max-width-480px article img {
+  width: 355px; }

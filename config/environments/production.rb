@@ -33,9 +33,9 @@ Mime::Application.configure do
   
   # Fix canonical urls
   config.middleware.insert_before(ActionDispatch::Static, Rack::Rewrite) do
-    r302 %r{.*}, 'http://mobil.ableksikon.no$&', :if => Proc.new {|rack_env|
-      rack_env['HTTP_USER_AGENT'] =~ Regexp.new(MOBILE_USER_AGENTS)
-    }
+    # r302 %r{.*}, 'http://mobil.ableksikon.no$&', :if => Proc.new {|rack_env|
+    #   rack_env['HTTP_USER_AGENT'] =~ Regexp.new(MOBILE_USER_AGENTS)
+    # }
     r301 %r{.*}, 'http://www.ableksikon.no$&', :if => Proc.new {|rack_env|
       rack_env['SERVER_NAME'] !~ /^www/
     }

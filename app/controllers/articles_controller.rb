@@ -38,6 +38,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render :json => {:url => pretty_article_path(@article)}}
+      format.mobile { render :layout => !request.xhr? }
     end
   end
 

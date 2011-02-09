@@ -1,5 +1,73 @@
+@import "variables";
+
+.typekit-badge {display:none !important;}
+
+article {
+  figure {
+    margin: 0;
+    figcaption {
+      font-size: $font12px;
+    }
+  }
+  
+  .image-flicker {
+    figure {
+      display: none;
+      figcaption {
+        display: block;
+      }
+      
+      &:first-child {
+       display: block; 
+      }
+    }
+    
+    .pagination {
+      font-size: $font32px;
+      text-align: center;
+      
+      .current {
+        color: #F3F3F3;
+      }
+    }
+  }
+  
+  aside {
+    &.info {
+      font-size: $font12px;
+      ul {
+        margin: 0 0 5px;
+        padding: 0;
+      }
+      li {
+        display: inline;
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
 .search-result {
   span.highlight {
     background-color: #F6FFD7;
+  }
+}
+
+.max-width-768px {
+  article {
+    img {
+      width: 620px;
+    }
+  }
+}
+
+.max-width-480px {
+  article {
+    img {
+      width: 355px;
+    }
   }
 }

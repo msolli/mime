@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
-
   protect_from_forgery
   layout 'application'
 
   before_filter :set_locale, :keep_flash, :handle_mobile
+
+  helper_method :is_mobile_view?
+  
+  def is_mobile_view?
+    (!cookies[:mobile_view].present? && request.subdomain.to_s == 'mobil') || cookies[:mobile_view] == true
+  end
   
   protected
   def enable_mobile_view
@@ -17,7 +22,7 @@ class ApplicationController < ActionController::Base
   private
   
   def handle_mobile
-    if (!cookies[:mobile_view].present? && request.subdomain.to_s == 'mobil') || cookies[:mobile_view] == true
+    if is_mobile_view?
       request.format = :mobile
     end
   end
