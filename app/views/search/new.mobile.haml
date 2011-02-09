@@ -9,7 +9,7 @@
     %ul.search-result{:data => {:role => 'listview'}}
       - @search_result.each_hit_with_result do |hit, result|
         %li
-          %h3= link_to highlights_for(hit, :headword) || result.headword_presentation, pretty_article_path(result)
+          %h3= link_to highlights_for(hit, :headword) || result.headword_presentation, pretty_article_path(result), :rel => 'external'
           %p= highlights_for(hit, :text) || (strip_tags(result.text) || "").slice(0, 101) + '…'
 
 = mobile_page(content, header)
