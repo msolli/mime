@@ -1,5 +1,9 @@
 module ApplicationHelper
   
+  def maps_app_url(location)
+    "http://maps.google.no/maps?q=#{location}"
+  end
+  
   def mobile_page(content, header = nil, footer = nil, id = nil)
     render :partial => 'mobile/page', :locals => {
       :header => header,

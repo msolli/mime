@@ -19,6 +19,7 @@ no-NB:
       search:
         label: Søk
         perform: Søk
+      open_in_maps_app: Åpne i Maps
       
       
   errors:

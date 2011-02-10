@@ -1,6 +1,8 @@
 .typekit-badge {
   display: none !important; }
 
+article img {
+  width: 100%; }
 article figure {
   margin: 0; }
   article figure figcaption {
@@ -16,6 +18,8 @@ article .image-flicker .pagination {
   text-align: center; }
   article .image-flicker .pagination .current {
     color: #F3F3F3; }
+article .map > p {
+  margin-top: 3px; }
 article aside.info {
   font-size: 75%; }
   article aside.info ul {
@@ -29,9 +33,3 @@ article aside.info {
 
 .search-result span.highlight {
   background-color: #F6FFD7; }
-
-.max-width-768px article img {
-  width: 620px; }
-
-.max-width-480px article img {
-  width: 355px; }

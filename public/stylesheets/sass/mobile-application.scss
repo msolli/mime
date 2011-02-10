@@ -3,6 +3,9 @@
 .typekit-badge {display:none !important;}
 
 article {
+  img {
+    width: 100%;
+  }
   figure {
     margin: 0;
     figcaption {
@@ -31,7 +34,9 @@ article {
       }
     }
   }
-  
+  .map > p {
+    margin-top: 3px;
+  }
   aside {
     &.info {
       font-size: $font12px;
@@ -53,21 +58,5 @@ article {
 .search-result {
   span.highlight {
     background-color: #F6FFD7;
-  }
-}
-
-.max-width-768px {
-  article {
-    img {
-      width: 620px;
-    }
-  }
-}
-
-.max-width-480px {
-  article {
-    img {
-      width: 355px;
-    }
   }
 }
