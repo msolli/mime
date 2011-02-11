@@ -3,6 +3,19 @@
 require 'spec_helper'
 
 describe ArticlesController do
+  
+  describe "mobile" do
+    before :each do
+      post :create, :article => {:headword => 'foo', :text => 'bar'}
+      @request.host = 'mobil.example.com'
+    end
+    
+    it 'should have mobile format' do
+      get :show, :slug => 'foo'
+      @request.format.should == 'mobile'
+    end
+    
+  end
 
   describe "#new" do
     before :each do
