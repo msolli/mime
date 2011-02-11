@@ -22,3 +22,23 @@
 		updatePage(this, next.show().index());
 	});
 })();
+
+$(document).bind('pageshow', function() {
+	// Load user data for navigation links and flash messages.
+  // On cached pages the user data is retrieved by ajax.
+  // On dynamic pages the user data will be present as HTML5 data attributes.
+
+	// Parse templates and append to #user-links and #messages
+	var addUserData = function(data) {
+    $('#user-links-tmpl').tmpl(data.user).appendTo('#user-links');
+    if (data.flash) {
+      $('#messages-tmpl').tmpl(data.flash).appendTo('#messages').hide().slideDown();
+    }
+  };
+	$.ajax({
+	  type: 'GET',
+	  dataType: 'json',
+	  url: '/users/current',
+	  success: addUserData
+	});
+});
