@@ -30,9 +30,9 @@ $(document).bind('pageshow', function() {
 
 	// Parse templates and append to #user-links and #messages
 	var addUserData = function(data) {
-    $('#user-links-tmpl').tmpl(data.user).appendTo('#user-links');
+    // $('#user-links-tmpl').tmpl(data.user).appendTo('#user-links');
     if (data.flash) {
-      $('#messages-tmpl').tmpl(data.flash).appendTo('#messages').hide().slideDown();
+      $('.messages-tmpl:first').tmpl(data.flash).appendTo('.ui-page-active aside.messages').hide().slideDown();
     }
   };
 	$.ajax({

@@ -1,6 +1,15 @@
 .typekit-badge {
   display: none !important; }
 
+.messages ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; }
+  .messages ul li {
+    list-style-type: none; }
+.messages .redirected {
+  font-size: 75%; }
+
 article img {
   width: 100%; }
 article figure {

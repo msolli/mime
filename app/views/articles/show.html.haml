@@ -14,7 +14,6 @@
   = t('mime.article_description_html', :headword => @article.headword_presentation)
 
 = render :partial => 'info', :locals => { :article => @article }
-= render :partial => 'redirected_from', :locals => { :from => flash[:redirected_from] }
 = render :partial => 'common/flash'
 = render :partial => 'disambiguation', :locals => { :article => @article }
 

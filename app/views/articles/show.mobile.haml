@@ -11,8 +11,6 @@
   %article
     - with_format :html do
       = render :partial => 'info', :locals => { :article => @article }
-      = render :partial => 'redirected_from', :locals => { :from => flash[:redirected_from] }
-      = render :partial => 'common/flash'
       = render :partial => 'disambiguation', :locals => { :article => @article }
 
     .image-flicker

@@ -47,7 +47,7 @@ no-NB:
     version_log: Versjonslogg
     report_error: Tips om feil
     saved: Artikkelen er lagret
-    redirected: "omdirigert fra %{from}"
+    redirected: "→ omdirigert fra %{from}"
     headword: Oppslagsord
     back: "Tilbake til artikkelen"
     external_links: Eksterne lenker

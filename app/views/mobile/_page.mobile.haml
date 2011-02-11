@@ -4,8 +4,7 @@
       = header
     
   %div{:data => {:role => 'content'}}
-    - with_format :html do
-      = render :partial => "common/flash"
+    = render :partial => "common/flash"
     = content
   
   - if footer

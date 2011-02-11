@@ -2,6 +2,20 @@
 
 .typekit-badge {display:none !important;}
 
+.messages {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+      list-style-type: none;
+    }
+  }
+  .redirected {
+    font-size: $font12px;
+  }
+}
+
 article {
   img {
     width: 100%;
