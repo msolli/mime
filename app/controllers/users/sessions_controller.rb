@@ -13,6 +13,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def current
+    request.format = :json # force for mobile apps too. Hack/TODO
     respond_with({
       :user => (user_signed_in? ? current_user : nil),
       :flash => (flash.empty? ? nil : flash)
