@@ -2,7 +2,7 @@
   ! <link href="#{pretty_article_url(@article, :host => 'www.ableksikon.no')}" rel="canonical" />
 
 - content_for :description do
-  = t('mime.article_description_html', :headword => @article.headword_presentation)
+  = t('articles.description_html', :headword => @article.headword_presentation)
 
 - header = capture do
   = render :partial => 'mobile/header', :locals => {:title => @article.headword_presentation}
