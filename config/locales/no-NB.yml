@@ -99,7 +99,7 @@ no-NB:
       contributor: "Bidragsyter siden %{since}"
       edit: Rediger
       all_articles: "Alle artiklene %{for} har bidratt til"
-      user_articles: "%{user}: Artikler"
+      user_articles: "%{user}: Artikler - Side %{page}"
       articles: Artikler
       back_you: "Tilbake til brukerprofilen din"
       back_author: "Tilbake til %{for} brukerprofil"
