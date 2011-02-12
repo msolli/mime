@@ -35,7 +35,6 @@ javascripts:
 
 stylesheets:
   mobile:
-    - public/lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.css
     - public/stylesheets/mobile-application.css
   all:
     - public/stylesheets/reset.css
