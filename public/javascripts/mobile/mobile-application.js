@@ -7,19 +7,23 @@
 	};
 	
 	$('.image-flicker figure').live('swipeleft', function(e) {
-		var next = $(this).hide().next('figure');
-		if(next.length == 0) {
-			next = $(this).siblings('figure:first');
+		if($(this).siblings('figure').length > 0) {
+			var next = $(this).hide().next('figure');
+			if(next.length == 0) {
+				next = $(this).siblings('figure:first');
+			}
+			updatePage(this, next.show().index());
 		}
-		updatePage(this, next.show().index());
 	});
 
 	$('.image-flicker figure').live('swiperight', function(e) {
-		var next = $(this).hide().prev('figure');
-		if(next.length == 0) {
-			next = $(this).siblings('figure:last');
+		if($(this).siblings('figure').length > 0) {
+			var next = $(this).hide().prev('figure');
+			if(next.length == 0) {
+				next = $(this).siblings('figure:last');
+			}
+			updatePage(this, next.show().index());
 		}
-		updatePage(this, next.show().index());
 	});
 })();
 
