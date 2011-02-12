@@ -2,16 +2,12 @@
   = render :partial => 'mobile/header', :locals => {:title => t('mime.mobile.title')}
   
 - content = capture do
-  %ul{:data => {:role => 'listview', :inset => 'true'}}
-    %li
-      %a{:href => '#recommended'}= t('mime.mobile.menu.recommended_articles')
-    %li
-      = link_to t('mime.mobile.menu.search'), search_path
-    %li
-      = link_to t('mime.mobile.menu.nearby_articles'), '#' # nearby_search_path
-    %li
-      = link_to t('mime.mobile.menu.random_article'), '#' # random_article_path
+  %ul{:data => {:role => 'listview'}}
+    - @page.sections.first.current_articles.each do |article|
+      - a = article.article
+      %li
+        - unless a.medias.empty?
+          = df_image_tag(a.medias.first.file.thumb("320x320#nw").url)
+        = link_to a.headword, pretty_article_path(a)
 
-= mobile_page(content, header)
-
-= render :partial => 'mobile/recommended', :locals => {:page => @page}
+= mobile_page(content, header, nil, 'home')
