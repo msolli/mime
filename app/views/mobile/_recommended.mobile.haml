@@ -6,7 +6,8 @@
     - @page.sections.first.current_articles.each do |article|
       - a = article.article
       %li
-        %img{:src => a.medias.first.file.thumb("480x320#nw").url}
+        - unless a.medias.empty?
+          = df_image_tag(a.medias.first.file.thumb("320x320#nw").url)
         = link_to a.headword, pretty_article_path(a)
 
 = mobile_page(content, header, nil, 'recommended')
