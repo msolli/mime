@@ -22,9 +22,7 @@ class ApplicationController < ActionController::Base
   private
   
   def handle_mobile
-    if is_mobile_view?
-      request.format = :mobile
-    end
+    request.format = :mobile if is_mobile_view?
   end
   
   def keep_flash
