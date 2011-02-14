@@ -98,6 +98,10 @@ class ArticlesController < ApplicationController
       pager.replace(articles[start, per_page])
     end
   end
+  
+  def random
+    redirect_to pretty_article_url( Article.skip( rand(Article.count) ).limit(1).first )
+  end
 
   private
 
