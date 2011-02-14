@@ -28,6 +28,12 @@
 })();
 
 $(document).bind('pageshow', function() {
+	// Google analytics, do NOT remove :)
+	// This will fail intentionally on first load, since the google analytics code wont be in place yet.
+	// That is good, or else we would have double tracking
+	try { _gat._getTracker('UA-1729705-6')._trackPageview(); }
+	catch(err) {}
+	
 	// Load user data for navigation links and flash messages.
   // On cached pages the user data is retrieved by ajax.
   // On dynamic pages the user data will be present as HTML5 data attributes.
