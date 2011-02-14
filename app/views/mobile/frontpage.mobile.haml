@@ -8,6 +8,6 @@
       %li
         - unless a.medias.empty?
           = df_image_tag(a.medias.first.file.thumb("320x320#nw").url)
-        = link_to a.headword, pretty_article_path(a), :rel => 'external'
+        = link_to a.headword, pretty_article_path(a)
 
 = mobile_page(content, header, nil, 'home')

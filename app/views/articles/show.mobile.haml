@@ -43,14 +43,5 @@
             %li>= tag
             -#%li>= link_to tag, "#TODO"
 
-  %div.article-bottom-ad
-    :javascript
-      window.googleAfmcRequest = {
-        client: 'ca-mb-pub-0031389257411981',
-        format: '320x50_mb',
-        output: 'html',
-        slotname: '2579489116',
-      };
-    = javascript_include_tag "http://pagead2.googlesyndication.com/pagead/show_afmc_ads.js"
 
 = mobile_page(content, header)
