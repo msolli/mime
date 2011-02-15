@@ -87,7 +87,7 @@ class ApplicationController < ActionController::Base
     log "ACTION NOT FOUND #{controller_name}##{action_name}"
   end
 
-  def rescue_connection_failure(max_retries = 3)
+  def rescue_connection_failure(max_retries = 10)
     retries = 0
     begin
       yield
