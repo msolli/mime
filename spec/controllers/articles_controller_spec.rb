@@ -5,7 +5,7 @@ require 'spec_helper'
 describe ArticlesController do
   
   describe "mobile" do
-    integrate_views
+    render_views
     before :each do
       Article.create!(:headword => 'foo', :text => 'bar')
       @request.host = 'mobil.example.com'
