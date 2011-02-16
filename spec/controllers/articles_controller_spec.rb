@@ -5,14 +5,25 @@ require 'spec_helper'
 describe ArticlesController do
   
   describe "mobile" do
+    render_views
     before :each do
-      post :create, :article => {:headword => 'foo', :text => 'bar'}
+      Article.create!(:headword => 'foo', :text => 'bar')
       @request.host = 'mobil.example.com'
     end
     
     it 'should have mobile format' do
       get :show, :slug => 'foo'
       @request.format.should == 'mobile'
+    end
+    
+    it "should serve layout if the request is not xhr" do
+      get :show, :slug => 'foo'
+      response.body.should match /^<!DOCTYPE html>/
+    end
+    
+    it "should not serve layout if request is xhr" do
+      xhr :get, :show, :slug => 'foo'
+      response.body.should match /^<div.*data-role=["']page["']/
     end
     
   end

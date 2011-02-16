@@ -29,6 +29,7 @@ Mime::Application.routes.draw do
     resources :articles, :except => [:index] do
       resources :versions, :only => [:index]
       resource :diff, :only => :show
+      get :random, :on => :collection
     end
   end
 
