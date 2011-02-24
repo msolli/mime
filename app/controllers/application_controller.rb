@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
 
   def find_page
     id = params[:page_id].present? ? params[:page_id] : params[:id]
-    @page = Page.criteria.id(id).first
+    @page = Page.find(id)
   end
 
   def find_article

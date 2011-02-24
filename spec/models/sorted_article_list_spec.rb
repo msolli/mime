@@ -9,7 +9,7 @@ describe SortedArticleList do
         a = Factory.create(:article)
         timestamp = Time.parse("2011-01-%02d" % (i + 1))
         Article.collection.update({"_id" => a["_id"]}, { "$set" => { :created_at => timestamp, :updated_at => timestamp } })
-        @articles << Article.criteria.id(a.id).first
+        @articles << Article.find(a.id)
       end
     end
 

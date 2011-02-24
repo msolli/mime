@@ -49,7 +49,7 @@ describe TagsArticleList do
     
     it "has only items with the correct tags" do
       list.current_articles.each do |a|
-        Article.criteria.id(a.article_id).first.tags_array.include?('foo').should be_true
+        Article.find(a.article_id).tags_array.include?('foo').should be_true
       end
     end
     
