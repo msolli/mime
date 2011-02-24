@@ -65,8 +65,10 @@ describe TagsArticleList do
     end
 
     context "when embedded in a page" do
-      let(:p) do
-        Factory(:page, :article_lists => [list])
+      let(:p) { Factory :page }
+
+      before do
+        p.tags_article_lists << list
       end
 
       it "does not update article list the same day" do

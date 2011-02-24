@@ -129,7 +129,21 @@ no-NB:
     edit: Rediger
     editing: Desking
     edit_this_page: Rediger denne siden
-    saved: Siden er lagret
+    delete: Slett
+    deleted: Slettet
+    undo: Angre
+    saved: Siden er lagret – husk at den må publiseres også.
+    published: Siden er publisert – det kan ta opp til fem minutter før endringene vises.
+    cancel: Avbryt
+    manual_article_list:
+      new: "Ny manuell liste"
+      edit: "Rediger manuell liste"
+    sorted_article_list:
+      new: "Ny sortert liste"
+    tags_article_list:
+      new: "Ny liste basert på nøkkelord"
+    list_article:
+      new: "Legg til artikkel"
     sections:
       sections: Seksjoner
       articles: Artikler
@@ -137,7 +151,7 @@ no-NB:
       save: "Siden ble visst ikke lagret – sjekk feilene nedenfor:"
   manual_article_lists:
     errors:
-      article_needs_date: "Artikkelen %{headword} må ha en dato"
+      save: "Lista ble visst ikke opprettet – sjekk feilene nedenfor:"
   alphabetic:
     title: "Artikler på %{letter}"
     description_html: "Artikler på %{letter} i Budstikkas store Asker og Bærum-leksikon"
@@ -146,7 +160,9 @@ no-NB:
     required: påkrevet
     actions:
       create: Opprett
-      update: Lagre og publiser
+      update: Lagre
+      page:
+        publish: Publiser
     labels:
       other:
         'maptastic-search': 'Søk etter sted eller adresse:'
@@ -165,6 +181,12 @@ no-NB:
       description: Beskrivelse
       page:
         name: Navn
+      manual_article_list:
+        name: Navn
+        number_of_articles: Antall artikler
+      list_article:
+        headword: Oppslagsord
+        published_on: Dato
       section:
         name: Navn
   words:
@@ -182,6 +204,11 @@ no-NB:
   will_paginate:
     previous: "&#8592; Forrige"
     next: "Neste &#8594;"
+
+  unauthorized:
+    manage:
+      page: "Bare redaksjonsmedlemmer kan redigere forsiden."
+      manual_article_list: "Bare redaksjonsmedlemmer kan redigere forsiden."
 
 # Norwegian, norsk bokmål, by irb.no
   support:
@@ -294,7 +321,7 @@ no-NB:
           other: "Kunne ikke lagre {$model} på grunn av {$count} feil."
         body: "Det oppstod problemer i følgende felt:"
 
-  activerecord:
+  mongoid:
     errors:
       messages:
         inclusion: "er ikke inkludert i listen"
@@ -317,5 +344,17 @@ no-NB:
         odd: "må være oddetall"
         even: "må være partall"
         record_invalid: "Det oppstod feil: {$errors}"
-      # models:
-      # attributes:
+      models:
+        manual_article_list:
+          attributes:
+            name:
+              blank: "Lista må nok ha et navn"
+        list_article:
+          attributes:
+            headword:
+              blank: "Du må velge en artikkel"
+              no_article: "Denne artikkelen finnes ikke"
+            published_on:
+              blank: "Du må velge en dato"
+    models:
+      manual_article_list: manuell liste

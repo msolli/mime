@@ -199,6 +199,11 @@ header {
 }
 
 form.formtastic {
+  fieldset > legend {
+    @include small-sans;
+    font-weight: bold;
+    color: $dark-grey-color;
+  }
   fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
     p.inline-errors, .inline-errors {
       @include small-sans;
@@ -254,6 +259,22 @@ form.formtastic {
     input[type="submit"] {
       @include submit-button-typography;
     }
+    a {
+      @include small-sans;
+      font-size: $font12px;
+    }
+  }
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-weight: bold;
+  }
+  h2 span {
+    @include small-sans;
+    font-size: 12px;
+    font-weight: normal;
+    color: $light-grey-color;
   }
 }
 
@@ -301,4 +322,9 @@ em {
   &:hover {
     text-decoration: underline; 
   }
+}
+
+.action-links {
+  @include small-sans;
+  font-size: $font12px;
 }

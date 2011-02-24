@@ -1,3 +1,4 @@
 Factory.define :list_article do |f|
-  f.headword 'Artikkel i liste'
+  f.sequence(:headword) {|n| "Artikkel #{n} i liste"}
+  f.after_build { |u| Factory(:article, headword: u.headword) }
 end

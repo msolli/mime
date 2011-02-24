@@ -3,7 +3,11 @@
   = link_to t('mime.join_us.new_article'), new_article_path, :class => 'button'
 
 - @page.article_lists.each_with_index do |list, i|
-  = render :partial => "pages/#{list._type.underscore}", :locals => {:list => list, :i => i}
+  = render "pages/#{list._type.underscore}", list: list, i: i
+
+.action-links
+  #edit_page_link{data: {page_id: @page.id}}
+    = link_to t('pages.edit'), edit_page_path(@page), rel: 'nofollow'
 
 /   %section.featured-top
 /     - @page.sections.first.current_articles.each_with_index do |a, i|

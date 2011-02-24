@@ -1,5 +1,5 @@
 class SortedArticleList < ArticleList
-  include Mongoid::Document
+  embedded_in :page, inverse_of: :sorted_article_lists
 
   field :sort_direction, :type => Symbol
   field :sort_field, :type => Symbol

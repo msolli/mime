@@ -1,17 +1,40 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe ListArticle do
+
+  context "with headword" do
+    let(:article) { Factory :article }
+    let(:la) { described_class.new(headword: article.headword) }
+
+    it "finds article before validation" do
+      la.should be_valid
+      la.article.should == article
+    end
+  end
+
+  context "with headword that has no corresponding article" do
+    let(:la) { described_class.new(headword: 'bogus') }
+
+    it "is not valid" do
+      la.should_not be_valid
+      la.article.should be_nil
+      la.errors[:headword].first.should == "Denne artikkelen finnes ikke"
+    end
+  end
 
   context "without headword" do
     it "is not valid" do
       la = described_class.new
       la.should_not be_valid
+      la.errors[:headword].first.should == "Du må velge en artikkel"
     end
   end
 
   describe "self.new_from_article" do
     let(:article) do
-      Factory.build(:article)
+      Factory(:article)
     end
 
     context "with an article" do
@@ -25,7 +48,7 @@ describe ListArticle do
       end
 
       it "has today's date" do
-        la.date.should == Date.today
+        la.published_on.should == Date.today
       end
 
       it "is valid" do
@@ -39,7 +62,7 @@ describe ListArticle do
       end
 
       it "has the correct date" do
-        la.date.should == (Date.today - 1)
+        la.published_on.should == (Date.today - 1)
       end
     end
   end

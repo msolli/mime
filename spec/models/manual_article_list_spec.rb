@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ManualArticleList do
 
-  context "when articles don't have date" do
+  context "when articles don't have a date" do
     let(:list) do
       Factory.build(:manual_article_list)
     end
@@ -16,18 +16,18 @@ describe ManualArticleList do
       list.should_not be_valid
     end
     
-    it "has two errors" do
-      list.errors[:base].size.should == 2
+    it "has one error" do
+      list.errors[:base].size.should == 1
     end
   end
 
-  context "when articles have date" do
+  context "when articles have a date" do
     let(:list) do
       Factory.build(:manual_article_list)
     end
 
     before do
-      list.list_articles << Factory.build(:list_article, :date => Date.today)
+      list.list_articles << Factory.build(:list_article, :published_on => Date.today)
       list.valid?
     end
 
@@ -46,8 +46,8 @@ describe ManualArticleList do
     end
 
     it "has articles sorted by date" do
-      list.current_articles.first.date.should == Date.today
-      list.current_articles.last.date.should == Date.today - 3
+      list.current_articles.first.published_on.should == Date.today
+      list.current_articles.last.published_on.should == Date.today - 3
     end
   end
 end

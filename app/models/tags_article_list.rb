@@ -1,5 +1,5 @@
 class TagsArticleList < ArticleList
-  include Mongoid::Document
+  embedded_in :page, inverse_of: :tags_article_lists
 
   field :date, :type => Date
   field :tags, :type => Array

@@ -394,14 +394,14 @@ header {
   -webkit-border-radius: 8px;
   behavior: url(/stylesheets/PIE.htc); }
 
-#wrapper {
+.wrapper {
   width: 960px;
   margin-left: auto;
   margin-right: auto; }
 
 #main {
   background: #efefef; }
-  #main.home.index, #main.search {
+  #main.home.index, #main.search, #main.pages.show {
     background: white; }
   #main .join-us-teaser {
     margin: 30px auto 30px auto;
@@ -767,9 +767,18 @@ footer {
           display: none; }
   #main form.formtastic fieldset.files textarea {
     float: right; }
+#main form.formtastic fieldset > ol > li.list-article > ol {
+  padding-left: 20px; }
+  #main form.formtastic fieldset > ol > li.list-article > ol > li {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%; }
+    #main form.formtastic fieldset > ol > li.list-article > ol > li.list-article-date {
+      width: 25%;
+      margin-left: 3%; }
+#main form.formtastic fieldset > ol > li > a.add_child {
+  margin-left: 20px; }
 #main form.formtastic fieldset legend {
-  font-family: "Lucida Grande", Tahoma, Arial;
-  font-weight: bold;
   padding-bottom: 10px; }
 #main form.formtastic fieldset.files button, #main form.formtastic fieldset#external-links button {
   padding: 0;
@@ -889,10 +898,21 @@ footer {
   padding: 5px;
   margin-top: -1em;
   border: 1px solid #cccccc; }
+#main form.formtastic fieldset.buttons {
+  padding-left: 0;
+  clear: both; }
+  #main form.formtastic fieldset.buttons > ol > li {
+    width: auto; }
 #main form.formtastic .ckeditor .cke_skin_kama .cke_button .cke_button_mimeimage .cke_icon {
   background-position: 0 -576px; }
 #main form.formtastic .ckeditor span.cke_skin_kama {
   border: 1px solid #ccc; }
+#main form.formtastic hr {
+  height: 1px;
+  border: 0;
+  background-color: #7a7a7a; }
+#main form.formtastic .deleted {
+  display: none; }
 
 .tooltip {
   background-color: #fff;
@@ -915,7 +935,7 @@ footer {
     top: 10px;
     left: -20px; }
 
-.clearfix:after, header:after, #main:after {
+.clearfix:after, header:after, #main section.manual_article_list:after, #main:after, #budstikka-footer-wrapper #budstikka-footer:after {
   clear: both;
   content: ".";
   display: block;
@@ -1033,6 +1053,14 @@ input[name="commit"] {
           text-decoration: underline; }
       #budstikka-footer-wrapper #budstikka-footer .info a {
         color: white; }
+
+.action-links {
+  height: 30px; }
+  .action-links #edit_page_link {
+    display: none; }
+
+.ui-autocomplete-loading {
+  background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat; }
 
 body {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
@@ -1185,6 +1213,10 @@ header nav {
       #main .article-lists li a:hover {
         text-decoration: none; }
 
+form.formtastic fieldset > legend {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  color: #45494f; }
 form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li .inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.string .inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors, form.formtastic fieldset > ol > li.text .inline-errors {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
@@ -1225,6 +1257,18 @@ form.formtastic fieldset > ol > li textarea, form.formtastic fieldset > ol > li.
   color: #383838;
   font-size: 100%;
   line-height: 1.5; }
+form.formtastic fieldset > ol > li a, form.formtastic fieldset > ol > li.string a, form.formtastic fieldset > ol > li.text a {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%; }
+form.formtastic em {
+  font-style: italic; }
+form.formtastic strong {
+  font-weight: bold; }
+form.formtastic h2 span {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #7a7a7a; }
 
 .tooltip {
   color: #fab45b;
@@ -1258,3 +1302,7 @@ em {
   text-decoration: none; }
   .map-wrapper > a:hover {
     text-decoration: underline; }
+
+.action-links {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%; }

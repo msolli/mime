@@ -16,33 +16,33 @@ Egenskap: Artikkelliste i brukerprofil
       | samlebånd | 2010-10-05 |
     Når jeg går til artikkeloversikten min
 
-  @devise @logged_in
+  @log_in_user
   Scenario: artikkeloversikt
     Så skal jeg se "samlebånd" først i artikkeloversikten
 
-  @devise @logged_in
+  @log_in_user
   Scenario: sortering på dato oppdatert, eldste først
     Når jeg klikker "Sist oppdatert"
     Så skal jeg se "åker" først i artikkeloversikten
 
-  @devise @logged_in
+  @log_in_user
   Scenario: sortering på oppslagsord, alfabetisk
     Når jeg klikker "Oppslagsord"
     Så skal jeg se "bukse" først i artikkeloversikten
 
-  @devise @logged_in
+  @log_in_user
   Scenario: sortering på oppslagsord, omvendt alfabetisk
     Når jeg klikker "Oppslagsord"
     Og jeg klikker "Oppslagsord"
     Så skal jeg se "åker" først i artikkeloversikten
 
-  @devise @logged_in
+  @log_in_user
   Scenario: sortering på dato publisert etter at det er sortert på oppslagsord
     Når jeg klikker "Oppslagsord"
     Og jeg klikker "Sist oppdatert"
     Så skal jeg se "samlebånd" først i artikkeloversikten
 
-  @devise @logged_in
+  @log_in_user
   Scenario: sortering på oppslagsord etter at det er sortert på dato oppdatert, eldste først
     Når jeg klikker "Sist oppdatert"
     Og jeg klikker "Oppslagsord"

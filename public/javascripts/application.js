@@ -16,3 +16,11 @@ if (typeof(String.prototype.trim) === "undefined") {
         return String(this).replace(/^\s+|\s+$/g, '');
     };
 }
+
+function supportsSessionStorage() {
+  try {
+    return 'sessionStorage' in window && window['sessionStorage'] !== null;
+  } catch (e) {
+    return false;
+  }
+}

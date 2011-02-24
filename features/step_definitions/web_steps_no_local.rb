@@ -22,6 +22,10 @@ Gitt /^(?:|at )jeg står på (.*)$/ do |page_name|
   Given %{I am on #{page_name}}
 end
 
+Gitt /^(?:|at )jeg fyller inn "([^"]*)" (?: under "([^"]*)")med "([^"]*)"$/ do |field, selector, value|
+  When %{I fill in "#{field}" with "#{value}" within "#{selector}"}
+end
+
 Så /^(?:|skal )feltet "([^"]*)" (?:|skal )ikke inneholde "([^"]*)"$/ do |field, value|
   Then %{the "#{field}" field should not contain "#{value}"}
 end

@@ -1,10 +1,8 @@
 !!! 5
-%html
+%html{lang: 'no'}
   %head
-    %meta{:charset => "utf-8"}
     %title<!= content_for?(:title) ? "#{yield(:title).strip} – #{t('mime.title')}" : t('mime.title')
     %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : t('mime.description')}
-    %meta{:'http-equiv' => "content-language", :content => "no"}
     - if %w(edit new create update).include? action_name
       %meta{:name => 'robots', :content => 'noindex, nofollow'}
     = yield :canonical
@@ -29,7 +27,7 @@
     %header
       = render :partial => "common/branding-header"
 
-      #wrapper
+      .wrapper
         .title
           = link_to(image_tag('logo-title.png', :size => '373x50', :alt => t('mime.title')), root_path)
           %p= t('mime.header')
@@ -42,22 +40,26 @@
         %article
           %header
             %h1<= yield :header
-          #wrapper
+          .wrapper
             = yield
       - else
         - if content_for? :header
           %header
             %h1<= yield :header
-        #wrapper
+        .wrapper
           = render :partial => "common/flash"
           = yield
 
     %footer
       = render :partial => 'common/scores'
       = render :partial => 'common/google_analytics'
-      #wrapper
-        = yield :footer
+      - if content_for? :footer
+        .wrapper
+          = yield :footer
       = render :partial => "common/branding-footer"
 
     - unless %w(edit new create update).include?(action_name)
       = render :partial => 'common/bottom-ad'
+
+    #jstemplates
+      = yield :jstemplates
