@@ -21,14 +21,13 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
-    Article.without_versioning do
-      @article.authors << current_user if user_signed_in?
-      if @article.save
-        redirect_to pretty_article_path(@article), :notice => t('articles.saved')
-      else
-        flash.alert = t('articles.errors.save')
-        render :action => "new"
-      end
+    if @article.save
+      add_author!
+      # @article.authors << current_user if user_signed_in?
+      redirect_to pretty_article_path(@article), :notice => t('articles.saved')
+    else
+      flash.alert = t('articles.errors.save')
+      render :action => "new"
     end
   end
 
@@ -51,18 +50,7 @@ class ArticlesController < ApplicationController
       @article.attributes = params[:article]
     end
     if @article.save
-      Article.without_versioning do
-        if user_signed_in?
-          # TODO - sjonglering av id-er er et hack for å unngå at alle brukerens artikler
-          # også blir oppdatert. Ideelt skulle vi kunne gjøre:
-          # @article.users.clear
-          # @article.users << current_user
-          @article.update_attributes!(:user_ids => [current_user.id])
-          current_user.update_attributes!(:article_ids => current_user.article_ids << @article.id)
-        else
-          @article.update_attributes!(:user_ids => [])
-        end
-      end
+      add_author!
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
     else
       flash.alert = t('articles.errors.save')
@@ -87,6 +75,7 @@ class ArticlesController < ApplicationController
       end
       return
     end
+
     articles = @user.articles.sort_by {|a| a.send(sort_column)}
     articles.reverse! if sort_direction == "desc"
 
@@ -137,5 +126,20 @@ class ArticlesController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
+
+  def add_author!
+    Article.without_versioning do
+      if user_signed_in?
+        # TODO - sjonglering av id-er er et hack for å unngå at alle brukerens artikler
+        # også blir oppdatert. Ideelt skulle vi kunne gjøre:
+        # @article.users.clear
+        # @article.users << current_user
+        @article.update_attributes!(:user_ids => [current_user.id])
+        current_user.update_attributes!(:article_ids => current_user.article_ids << @article.id)
+      else
+        @article.update_attributes!(:user_ids => [])
+      end
+    end
   end
 end
