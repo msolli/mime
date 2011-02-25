@@ -9,7 +9,7 @@ class Users::SessionsController < Devise::SessionsController
       log "USER NOT FOUND #{params[:id]}"
       return
     end
-    @articles = @user.articles.order_by(:updated_at.desc).limit(5)
+    @articles = @user.articles.order_by(:updated_at.desc).limit(5).all
   end
 
   def current
