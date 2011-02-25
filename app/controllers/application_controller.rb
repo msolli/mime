@@ -1,11 +1,29 @@
 class ApplicationController < ActionController::Base
-
   protect_from_forgery
   layout 'application'
 
-  before_filter :set_locale, :keep_flash
+  before_filter :set_locale, :keep_flash, :handle_mobile
+
+  helper_method :is_mobile_view?
+  
+  def is_mobile_view?
+    (!cookies[:mobile_view].present? && request.subdomain.to_s == 'mobil') || cookies[:mobile_view] == true
+  end
+  
+  protected
+  def enable_mobile_view
+    cookies.permanent[:mobile_view] = true
+  end
+  
+  def disable_mobile_view
+    cookies.permanent[:mobile_view] = false
+  end
   
   private
+  
+  def handle_mobile
+    request.format = :mobile if is_mobile_view?
+  end
   
   def keep_flash
     flash.keep
@@ -33,7 +51,7 @@ class ApplicationController < ActionController::Base
   def article_not_found
     if @article.nil?
       respond_to do |format|
-        format.html { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
+        format.any(:html, :mobile) { render :file => "#{Rails.public_path}/404.html" , :status => :not_found, :layout => false }
         format.json { render :status => :not_found, :text => ''}
       end
       log "404 NOT FOUND #{params[:slug]}"
@@ -69,7 +87,7 @@ class ApplicationController < ActionController::Base
     log "ACTION NOT FOUND #{controller_name}##{action_name}"
   end
 
-  def rescue_connection_failure(max_retries = 3)
+  def rescue_connection_failure(max_retries = 10)
     retries = 0
     begin
       yield

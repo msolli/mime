@@ -1,0 +1,15 @@
+%aside.messages
+
+%script{:class => 'messages-tmpl', :type => 'text/x-jquery-tmpl'}
+  {{if $item.data.alert || $item.data.notice || $item.data.redirected_from}}
+  %ul
+    {{if $item.data.alert}}
+    %li.alert {{html alert}}
+    {{/if}}
+    {{if $item.data.notice}}
+    %li.notice {{html notice}}
+    {{/if}}
+    {{if $item.data.redirected_from}}
+    %li.redirected= "#{t('articles.redirected', :from => "{{html redirected_from}}")}"
+    {{/if}}
+  {{/if}}

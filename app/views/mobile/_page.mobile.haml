@@ -1,0 +1,19 @@
+%div{:id => id, :data => {:role => 'page'}}
+  - if header
+    %div{:data => {:role => 'header'}}
+      = header
+    
+  %div{:data => {:role => 'content'}}
+    = render :partial => "common/flash"
+    = content
+  
+  %div#footer-nav{:data => {:role => 'footer', :position => 'fixed'}}
+    - if footer
+      = footer
+    %div{:data => {:role => 'navbar'}}
+      %ul
+        %li= link_to image_tag('/lib/GlyphishPro/icons/53-house-invert-upscale.png'), '/', :rel => 'external'
+        %li= link_to image_tag('/lib/GlyphishPro/icons/06-magnify-invert-upscale.png'), search_path
+        -# %li= link_to image_tag('/lib/GlyphishPro/icons/73-radar-invert.png'), '#'
+        %li= link_to image_tag('/lib/GlyphishPro/icons/05-shuffle-invert-upscale.png'), random_articles_path, :rel => 'external'
+        

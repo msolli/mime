@@ -10,8 +10,11 @@ class SearchController < ApplicationController
         
         paginate :page => params[:page], :per_page => 20
       end
-    else
-      redirect_to root_url
+    end
+    
+    respond_to do |format|
+      format.html
+      format.mobile { render :layout => false }
     end
   end
 

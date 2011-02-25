@@ -2,18 +2,18 @@
   = form_tag nil, :method => 'get' do
     = text_field_tag :q, params[:q]
     %button Søk
+- if @search_result
+  .search-pagination= paginate(@search_result.hits)
 
-.search-pagination= paginate(@search_result.hits)
-
-.search-results
-  - if @search_result.total == 0
+  .search-results
+    - if @search_result.total == 0
     
-  - else
-    %ol
-      - @search_result.each_hit_with_result do |hit, result|
-        %li
-          %h2
-            = link_to highlights_for(hit, :headword) || result.headword_presentation, pretty_article_path(result)
-          %p= highlights_for(hit, :text) || (strip_tags(result.text) || "").slice(0, 101) + '…'
-          = link_to pretty_article_url(result), pretty_article_url(result), :class => 'full-url'
-.search-pagination= paginate(@search_result.hits)
+    - else
+      %ol
+        - @search_result.each_hit_with_result do |hit, result|
+          %li
+            %h2
+              = link_to highlights_for(hit, :headword) || result.headword_presentation, pretty_article_path(result)
+            %p= highlights_for(hit, :text) || (strip_tags(result.text) || "").slice(0, 101) + '…'
+            = link_to pretty_article_url(result), pretty_article_url(result), :class => 'full-url'
+  .search-pagination= paginate(@search_result.hits)

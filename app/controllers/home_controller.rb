@@ -8,9 +8,12 @@ class HomeController < ApplicationController
       @page = Page.first(:conditions => {:name => ENV['FRONTPAGE'] || 'Forside'})
     end
     return unless @page
-
-    render :template => 'pages/show'
+    
     expires_in 5.minutes, :public => true
+    respond_to do |format|
+      format.html { render :template => 'pages/show' }
+      format.mobile { render :template => 'mobile/frontpage'}
+    end
   end
 
   def alphabetic

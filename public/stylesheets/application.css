@@ -1089,20 +1089,20 @@ header nav {
   #main .articletext {
     font-size: 100%;
     line-height: 1.5; }
-  #main aside.info, #main aside.back-link, #main aside.redirected {
+  #main aside.info, #main aside.back-link, #main #redirected {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%;
     color: #7a7a7a; }
-    #main aside.info a, #main aside.back-link a, #main aside.redirected a {
+    #main aside.info a, #main aside.back-link a, #main #redirected a {
       text-decoration: none; }
-      #main aside.info a:hover, #main aside.back-link a:hover, #main aside.redirected a:hover {
+      #main aside.info a:hover, #main aside.back-link a:hover, #main #redirected a:hover {
         text-decoration: underline; }
   #main aside.meta figcaption {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%;
     line-height: 1.2em;
     font-weight: normal; }
-  #main aside.redirected {
+  #main #redirected {
     font-style: italic; }
   #main aside.disambiguation {
     font-style: italic;

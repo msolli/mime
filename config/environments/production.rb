@@ -1,3 +1,10 @@
+# from mobile_fu plugin
+MOBILE_USER_AGENTS = 'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericsson|minimo|' +
+  'audiovox|motorola|samsung|telit|upg1|windows ce|ucweb|astel|plucker|' +
+  'x320|x240|j2me|sgh|portable|sprint|docomo|kddi|softbank|android|mmp|' +
+  'pdxgw|netfront|xiino|vodafone|portalmmm|sagem|mot-|sie-|ipod|up\\.b|' +
+  'webos|amoi|novarra|cdm|alcatel|pocket|ipad|iphone|mobileexplorer|mobile'
+
 Mime::Application.configure do
   # This must be required here (and not in Gemfile) for Rails.root to be set, which it needs.
   require 'hassle'
@@ -26,8 +33,11 @@ Mime::Application.configure do
   
   # Fix canonical urls
   config.middleware.insert_before(ActionDispatch::Static, Rack::Rewrite) do
+    # r302 %r{.*}, 'http://mobil.ableksikon.no$&', :if => Proc.new {|rack_env|
+    #   rack_env['HTTP_USER_AGENT'] =~ Regexp.new(MOBILE_USER_AGENTS)
+    # }
     r301 %r{.*}, 'http://www.ableksikon.no$&', :if => Proc.new {|rack_env|
-      rack_env['SERVER_NAME'] !~ /^www/
+      rack_env['SERVER_NAME'] !~ /^(www|mobil)/
     }
   end
 

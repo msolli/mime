@@ -7,6 +7,21 @@ no-NB:
     join_us:
       teaser: "Bli med å oppdatere leksikonet"
       new_article: "Start en ny oppføring"
+      
+    mobile:
+      title: ableksikon.no
+      footer: Føtter
+      menu:
+        recommended_articles: Anbefalte artikler
+        search: Søk
+        nearby_articles: Finn artikler i nærheten
+        random_article: Tilfeldig artikkel
+      search:
+        label: Søk
+        perform: Søk
+      open_in_maps_app: Åpne i Maps
+      
+      
   errors:
     messages:
       blank: kan ikke være tom
@@ -32,7 +47,7 @@ no-NB:
     version_log: Versjonslogg
     report_error: Tips om feil
     saved: Artikkelen er lagret
-    redirected: "omdirigert fra %{from}"
+    redirected: "→ omdirigert fra %{from}"
     headword: Oppslagsord
     back: "Tilbake til artikkelen"
     external_links: Eksterne lenker
@@ -84,7 +99,7 @@ no-NB:
       contributor: "Bidragsyter siden %{since}"
       edit: Rediger
       all_articles: "Alle artiklene %{for} har bidratt til"
-      user_articles: "%{user}: Artikler"
+      user_articles: "%{user}: Artikler - Side %{page}"
       articles: Artikler
       back_you: "Tilbake til brukerprofilen din"
       back_author: "Tilbake til %{for} brukerprofil"

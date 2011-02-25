@@ -1,5 +1,26 @@
 module ApplicationHelper
   
+  def maps_app_url(location)
+    "http://maps.google.no/maps?q=#{location}"
+  end
+  
+  def mobile_page(content, header = nil, footer = nil, id = nil)
+    render :partial => 'mobile/page', :locals => {
+      :header => header,
+      :footer => footer,
+      :content => content,
+      :id => id
+    }
+  end
+    
+  def with_format(format, &block)
+    old_formats = self.formats
+    self.formats = [format]
+    block.call
+    self.formats = old_formats
+    nil
+  end
+  
   def scores_section
     section = case controller_name
     when 'articles'

@@ -10,7 +10,12 @@ class ArticlesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   cache_sweeper :article_sweeper
-  caches_action :show  # Må defineres _etter_ :before_filter
+  # Mobil kan spørre om artikkel både over xhr(uten layout), og via vanlig request(med layout). Derfor må vi skille i cache-stien også
+  caches_action :show, :cache_path => Proc.new{ |c| # Må defineres _etter_ :before_filter
+    opts = {:host => 'ableksikon.no'};
+    opts[:format] = 'xhr' if is_mobile_view? && request.xhr?
+    opts
+  }
 
   def new
     @article = Article.new
@@ -37,6 +42,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render :json => {:url => pretty_article_path(@article)}}
+      format.mobile { render :layout => !request.xhr? }
     end
   end
 
@@ -85,6 +91,10 @@ class ArticlesController < ApplicationController
       start = (current_page - 1) * per_page
       pager.replace(articles[start, per_page])
     end
+  end
+  
+  def random
+    redirect_to pretty_article_url( Article.skip( rand(Article.count) ).limit(1).first )
   end
 
   private
