@@ -71,7 +71,7 @@ header {
   .articletext {
     @include articletext-typography;
   }
-  aside.info, aside.back-link, aside.redirected {
+  aside.info, aside.back-link, #redirected {
     @include small-sans;
     font-size: $font12px;
     color: $light-grey-color;
@@ -85,7 +85,7 @@ header {
       font-weight: normal;
     }
   }
-  aside.redirected {
+  #redirected {
     font-style: italic;
   }
   aside.disambiguation {

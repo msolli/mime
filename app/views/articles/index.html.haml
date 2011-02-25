@@ -1,5 +1,5 @@
 - content_for :title do
-  = t('users.profile.user_articles', :user => @user.name_or_email)
+  = t('users.profile.user_articles', :user => @user.name_or_email, :page => params[:page] || 1)
 
 - content_for :header do
   <em>#{t('users.profile.articles')}</em> – #{link_to @user.name_or_email, user_path(@user)}
