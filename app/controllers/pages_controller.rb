@@ -36,6 +36,6 @@ class PagesController < ApplicationController
   private
 
   def find_page
-    @page = Page.criteria.id(params[:id]).first
+    @page = Page.find(params[:id])
   end
 end
