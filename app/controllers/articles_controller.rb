@@ -25,10 +25,13 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    media_ids_from_async_upload = params[:article].delete(:media_ids_from_async_upload)
+    medias_attributes = params[:article].delete(:medias_attributes)
     @article = Article.new(params[:article])
+    @article.add_async_uploads(media_ids_from_async_upload)
+    add_medias!(medias_attributes)
     if @article.save
       add_author!
-      # @article.authors << current_user if user_signed_in?
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
     else
       flash.alert = t('articles.errors.save')
@@ -51,10 +54,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    # Necessary because mongoid does some (stupid) magic with child relations
-    Article.without_versioning do
-      @article.attributes = params[:article]
-    end
+    @article.add_async_uploads(params[:article].delete(:media_ids_from_async_upload))
+    @article.attributes = params[:article]
     if @article.save
       add_author!
       redirect_to pretty_article_path(@article), :notice => t('articles.saved')
@@ -150,6 +151,14 @@ class ArticlesController < ApplicationController
       else
         @article.update_attributes!(:user_ids => [])
       end
+    end
+  end
+
+  def add_medias!(medias_attributes)
+    medias_attributes && medias_attributes.each_value do |m_attr|
+      m = Media.find(m_attr[:id])
+      m.update_attributes!(m_attr)
+      @article.medias << m unless @article.medias.include?(m)
     end
   end
 end
