@@ -101,8 +101,8 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
       xpath (~> 0.1.2)
-    celerity (0.8.7)
-    childprocess (0.1.6)
+    celerity (0.8.8)
+    childprocess (0.1.7)
       ffi (~> 0.6.3)
     closure-compiler (1.0.0)
     columnize (0.3.2)
@@ -115,7 +115,7 @@ GEM
       term-ansicolor (~> 1.0.5)
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
-    culerity (0.2.14)
+    culerity (0.2.15)
     daemons (1.1.0)
     database_cleaner (0.6.0)
     delayed_job (2.1.2)
@@ -179,7 +179,7 @@ GEM
       closure-compiler (>= 0.1.0)
       yui-compressor (>= 0.9.1)
     json (1.4.6)
-    json_pure (1.4.6)
+    json_pure (1.5.1)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -278,7 +278,6 @@ GEM
     session (3.1.0)
       fattr
     sexp_processor (3.0.5)
-    shoulda (2.11.3)
     sunspot (1.2.1)
       escape (= 0.0.4)
       pr_geohash (~> 1.0)
@@ -309,7 +308,7 @@ DEPENDENCIES
   bson (~> 1.0)
   bson_ext
   cancan
-  capybara
+  capybara (= 0.4.0)
   ckeditor!
   cucumber
   cucumber-rails
@@ -345,9 +344,8 @@ DEPENDENCIES
   ruby-debug19
   ruby_parser
   sax-machine
-  shoulda
+  selenium-webdriver (= 0.1.2)
   sunspot_mongoid!
   sunspot_rails
   will_paginate (~> 3.0.pre2)
   wirble
-  xpath
