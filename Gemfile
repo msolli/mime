@@ -55,8 +55,8 @@ end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
-  gem 'xpath'
-  gem 'capybara'
+  gem 'capybara', '0.4.0'
+  gem 'selenium-webdriver', '0.1.2'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
