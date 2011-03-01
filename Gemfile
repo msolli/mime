@@ -65,6 +65,5 @@ group :test do
   gem 'launchy'
   gem 'ruby-debug19'
 
-  gem 'shoulda'
   gem 'factory_girl_rails'
 end
