@@ -278,6 +278,7 @@ GEM
     session (3.1.0)
       fattr
     sexp_processor (3.0.5)
+    spork (0.9.0.rc4)
     sunspot (1.2.1)
       escape (= 0.0.4)
       pr_geohash (~> 1.0)
@@ -345,6 +346,7 @@ DEPENDENCIES
   ruby_parser
   sax-machine
   selenium-webdriver (= 0.1.2)
+  spork (~> 0.9.0.rc)
   sunspot_mongoid!
   sunspot_rails
   will_paginate (~> 3.0.pre2)

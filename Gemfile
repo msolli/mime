@@ -64,6 +64,7 @@ group :test do
   gem 'fuubar'
   gem 'launchy'
   gem 'ruby-debug19'
+  gem 'spork', '~> 0.9.0.rc'
 
   gem 'factory_girl_rails'
 end
