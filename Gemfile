@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.0'
+gem 'rails', '= 3.0.5'
 gem 'hassle', :require => false
 gem 'haml'
 gem 'mongoid', :git => 'http://github.com/mongoid/mongoid.git'
@@ -51,6 +51,7 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'ruby-debug19'
+  gem 'passenger'
 end
 
 group :test do
