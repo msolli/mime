@@ -6,7 +6,7 @@ class ArticleList
 
   field :name
   field :number_of_articles, type: Integer, default: 5
-  field :position, type: Integer
+  field :position, type: Integer, default: 0
 
   validates_presence_of :name
 

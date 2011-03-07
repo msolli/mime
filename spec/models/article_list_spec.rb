@@ -12,13 +12,17 @@ describe ArticleList do
     end
   end
 
-  context "with number_of_articles" do
+  context "with default values" do
     let(:list) do
       Factory.build(:article_list)
     end
 
-    it "is 5 by default" do
+    it "has number of articles == 5" do
       list.number_of_articles.should == 5
+    end
+
+    it "has position == 0" do
+      list.position.should == 0
     end
   end
 

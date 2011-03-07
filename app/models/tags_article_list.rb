@@ -1,10 +1,24 @@
 class TagsArticleList < ArticleList
   embedded_in :page, inverse_of: :tags_article_lists
 
-  field :date, :type => Date
-  field :tags, :type => Array
+  field :date, type: Date, default: Date.today
+  field :tags_array, type: Array, default: []
 
-  validates_presence_of :date
+  before_validation :remove_duplicate_tags
+
+  validates :date, presence: true
+
+  def tags=(tags)
+    self.tags_array = tags.split(',').map(&:strip)
+  end
+
+  def tags
+    (self.tags_array || []).join(', ')
+  end
+
+  def tags_array
+    self[:tags_array] || self[:tags_array] = []
+  end
 
   def current_articles
     todays_articles
@@ -33,22 +47,32 @@ class TagsArticleList < ArticleList
       self.list_articles = []
     end
 
-    if self.tags.blank?
-      candidates = Article.only(:_id, :headword).all
+    if self.tags_array.blank?
+      candidates = []
     else
-      candidates = Article.only(:_id, :headword).where(:tags_array.in => self.tags).all
+      candidates = Article.only(:_id, :headword).where(:tags_array.in => self.tags_array).all
     end
 
-    self.number_of_articles.times do
-      begin
-        article = candidates[rand(candidates.length)]
-      end while self.list_articles.map(&:article).include?(article)
-      la = ListArticle.new(headword: article.headword)
-      la.valid?
-      self.list_articles.push(la)
+    if candidates.length > 0
+      self.number_of_articles.times do
+        i = 0
+        begin
+          article = candidates[rand(candidates.length)]
+          i += 1
+        end while self.list_articles.map(&:article).include?(article) && i < (self.number_of_articles * 10)
+        unless self.list_articles.map(&:article).include?(article)
+          la = ListArticle.new(headword: article.headword)
+          la.valid?
+          self.list_articles.push(la)
+        end
+      end
     end
     self.date = Date.today
     self.page.save if self.page
     self.list_articles
+  end
+
+  def remove_duplicate_tags
+    self[:tags_array].uniq! if self[:tags_array]
   end
 end

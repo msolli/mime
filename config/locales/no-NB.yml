@@ -140,8 +140,10 @@ no-NB:
       edit: "Rediger manuell liste"
     sorted_article_list:
       new: "Ny sortert liste"
+      edit: "Rediger sortert liste"
     tags_article_list:
       new: "Ny liste basert på nøkkelord"
+      edit: "Rediger liste basert på nøkkelord"
     list_article:
       new: "Legg til artikkel"
     sections:
@@ -151,7 +153,7 @@ no-NB:
       save: "Siden ble visst ikke lagret – sjekk feilene nedenfor:"
   article_lists:
     errors:
-      save: "Lista ble visst ikke opprettet – sjekk feilene nedenfor:"
+      save: "Lista ble visst ikke lagret – sjekk feilene nedenfor:"
   alphabetic:
     title: "Artikler på %{letter}"
     description_html: "Artikler på %{letter} i Budstikkas store Asker og Bærum-leksikon"
@@ -189,6 +191,10 @@ no-NB:
         number_of_articles: Antall artikler
         sort_field: Sorteringsfelt
         sort_direction: Retning
+      tags_article_list:
+        name: Navn
+        number_of_articles: Antall artikler
+        tags: Nøkkelord
       list_article:
         headword: Oppslagsord
         published_on: Dato
@@ -362,6 +368,10 @@ no-NB:
               inclusion: Du må velge en sorteringsretning
             sort_field:
               inclusion: Du må velge et sorteringsfelt
+        tags_article_list:
+          attributes:
+            name:
+              blank: "Lista må nok ha et navn"
         list_article:
           attributes:
             headword:
@@ -373,3 +383,4 @@ no-NB:
     models:
       manual_article_list: manuell liste
       sorted_article_list: sortert liste
+      tags_article_list: nøkkelord-liste
