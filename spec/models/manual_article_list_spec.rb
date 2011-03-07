@@ -8,7 +8,10 @@ describe ManualArticleList do
     end
 
     before do
-      2.times { list.list_articles << Factory.build(:list_article) }
+      2.times do
+        a = Factory(:article)
+        list.list_articles << Factory.build(:list_article, headword: a.headword)
+      end
       list.valid?
     end
 
@@ -27,7 +30,8 @@ describe ManualArticleList do
     end
 
     before do
-      list.list_articles << Factory.build(:list_article, :published_on => Date.today)
+      a = Factory(:article)
+      list.list_articles << Factory.build(:list_article, published_on: Date.today, headword: a.headword)
       list.valid?
     end
 

@@ -11,7 +11,7 @@ $(document).ready(function() {
 
       mime.tools.addDatepicker('.date-field');
       $('.headword-autocomplete').autocomplete(mime.headwordAutocomplete).focus();
-      
+
       return false;
     });
 
@@ -25,14 +25,14 @@ $(document).ready(function() {
     });
 
     $('form a.remove_list').live('click', function() {
-      var parentDiv = $(this).parents('.article_list');
-      var hiddenField = parentDiv.find('input[type=hidden]')[0];
+      var parent = $(this).parents('.article_list');
+      var hiddenField = parent.find('input[type=hidden]')[0];
       if (hiddenField) {
         hiddenField.value = '1';
       }
-      parentDiv.find('section').css('visibility', 'hidden').slideUp('fast');
-      parentDiv.find('.actions').hide();
-      parentDiv.find('.deleted').show();
+      parent.find('ul').css('visibility', 'hidden').slideUp('fast');
+      parent.find('.actions').hide();
+      parent.find('.deleted').show();
 
       // If we remove an item, we want it to remain gone after a page reload. This is
       // accomplished by storing the link id, and triggering these links again
@@ -50,14 +50,14 @@ $(document).ready(function() {
     });
 
     $('form a.undo_remove_list').live('click', function() {
-      var parentDiv = $(this).parents('.article_list');
-      var hiddenField = parentDiv.find('input[type=hidden]')[0];
+      var parent = $(this).parents('.article_list');
+      var hiddenField = parent.find('input[type=hidden]')[0];
       if (hiddenField) {
         hiddenField.value = '0';
       }
-      parentDiv.find('section').css('visibility', 'visible').slideDown();
-      parentDiv.find('.actions').show();
-      parentDiv.find('.deleted').hide();
+      parent.find('ul').css('visibility', 'visible').slideDown();
+      parent.find('.actions').show();
+      parent.find('.deleted').hide();
 
       // Remove this item from the list of links to be triggered after page reload.
       if (supportsSessionStorage()) {
@@ -66,10 +66,10 @@ $(document).ready(function() {
         removeLists.splice($.inArray(id, removeLists), 1);
         sessionStorage['removeLists'] = JSON.stringify(removeLists);
       }
-      
+
       return false;
     });
-    
+
     // Trigger links for removing items
     if (supportsSessionStorage()) {
       var removeLists = JSON.parse(sessionStorage['removeLists'] || "[]");

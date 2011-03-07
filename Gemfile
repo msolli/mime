@@ -66,6 +66,8 @@ group :test do
   gem 'launchy'
   gem 'ruby-debug19'
   gem 'spork', '~> 0.9.0.rc'
+  gem 'ZenTest', '~> 4.4.2'
+  gem 'autotest-rails'
 
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
 end

@@ -6,6 +6,8 @@ class Page
   embeds_many :tags_article_lists
 
   accepts_nested_attributes_for :manual_article_lists, :allow_destroy => true
+  accepts_nested_attributes_for :sorted_article_lists, :allow_destroy => true
+  accepts_nested_attributes_for :tags_article_lists, :allow_destroy => true
 
   field :name
   validates_presence_of :name

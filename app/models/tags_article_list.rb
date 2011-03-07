@@ -43,7 +43,9 @@ class TagsArticleList < ArticleList
       begin
         article = candidates[rand(candidates.length)]
       end while self.list_articles.map(&:article).include?(article)
-      self.list_articles.push(ListArticle.new_from_article(article))
+      la = ListArticle.new(headword: article.headword)
+      la.valid?
+      self.list_articles.push(la)
     end
     self.date = Date.today
     self.page.save if self.page

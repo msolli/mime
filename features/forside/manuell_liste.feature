@@ -1,10 +1,10 @@
 # encoding: utf-8
 # language: no
-Egenskap: Forsideredigering
+Egenskap: Manuell liste
 
   For at leksikonet skal fremstå som interessant og med mye innhold
   Som et redaksjonsmedlem
-  Vil jeg kunne redigere forsiden
+  Vil jeg kunne legge en manuell artikkelliste til forside
 
   Bakgrunn:
     Gitt at det fins en tom forside

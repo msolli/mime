@@ -165,21 +165,21 @@ header {
       @include no-underline;
     }
   }
-  .col {
-    a.featured {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-      color: white;
+
+  .manual_article_list {
+    h2 {
+      font-size: $font16px;
+      color: #222;
     }
-    figure {
-      figcaption {
-        font-weight: bold;
-      }
+
+    @include no-underline;
+    a.featured {
+      color: white;
+      font-weight: bold;
     }
   }
-  .article-lists {
+
+  .sorted_article_list {
     h2 {
       font-size: $font16px;
       color: #222;

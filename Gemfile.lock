@@ -53,6 +53,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    ZenTest (4.4.2)
     abstract (1.0.0)
     actionmailer (3.0.5)
       actionpack (= 3.0.5)
@@ -83,6 +84,8 @@ GEM
     addressable (2.2.2)
     archive-tar-minitar (0.5.2)
     arel (2.0.9)
+    autotest-rails (4.1.0)
+      ZenTest
     aws-s3 (0.6.2)
       builder
       mime-types
@@ -315,7 +318,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ZenTest (~> 4.4.2)
   asset_id!
+  autotest-rails
   aws-s3
   bson (~> 1.0)
   bson_ext

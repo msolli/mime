@@ -75,5 +75,9 @@ end
 
 Spork.each_run do
   require 'cucumber/rails/world'
+  require 'factory_girl'
+  Dir[Rails.root.join('spec/factories/**/*.rb')].each {|f| require f}
+
+  Mime::Application.reload_routes!
 
 end

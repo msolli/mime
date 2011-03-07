@@ -1,4 +1,4 @@
-.col{:class => ("left" if i == 0)}
+%li.featured-article
   - unless a.article.blank?
     = link_to pretty_article_path(a.article), :class => 'featured' do
       %figure

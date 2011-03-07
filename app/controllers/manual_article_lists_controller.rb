@@ -13,7 +13,7 @@ class ManualArticleListsController < ArticleListsController
       @page.manual_article_lists << @article_list
       redirect_to edit_page_path(@page)
     else
-      flash.alert = t('manual_article_lists.errors.save')
+      flash.alert = t('article_lists.errors.save')
       @article_list.list_articles.build if @article_list.list_articles.empty?
       render :action => :new
     end

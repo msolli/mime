@@ -149,7 +149,7 @@ no-NB:
       articles: Artikler
     errors:
       save: "Siden ble visst ikke lagret – sjekk feilene nedenfor:"
-  manual_article_lists:
+  article_lists:
     errors:
       save: "Lista ble visst ikke opprettet – sjekk feilene nedenfor:"
   alphabetic:
@@ -184,6 +184,11 @@ no-NB:
       manual_article_list:
         name: Navn
         number_of_articles: Antall artikler
+      sorted_article_list:
+        name: Navn
+        number_of_articles: Antall artikler
+        sort_field: Sorteringsfelt
+        sort_direction: Retning
       list_article:
         headword: Oppslagsord
         published_on: Dato
@@ -349,12 +354,22 @@ no-NB:
           attributes:
             name:
               blank: "Lista må nok ha et navn"
+        sorted_article_list:
+          attributes:
+            name:
+              blank: "Lista må nok ha et navn"
+            sort_direction:
+              inclusion: Du må velge en sorteringsretning
+            sort_field:
+              inclusion: Du må velge et sorteringsfelt
         list_article:
           attributes:
             headword:
               blank: "Du må velge en artikkel"
-              no_article: "Denne artikkelen finnes ikke"
             published_on:
               blank: "Du må velge en dato"
+            article:
+              blank: "Denne artikkelen finnes ikke"
     models:
       manual_article_list: manuell liste
+      sorted_article_list: sortert liste

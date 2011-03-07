@@ -621,92 +621,98 @@ header {
       background: #d9e3e2; }
   #main section.featured-bottom {
     clear: both; }
-  #main .col {
+  #main .manual_article_list .featured-article {
     float: left;
     display: inline;
-    width: 14.875em;
     margin-right: 2px;
-    margin-bottom: 2px; }
-    #main .col a.featured {
-      display: block;
+    margin-bottom: 2px;
+    width: 238px; }
+  #main .manual_article_list a.featured {
+    display: block;
+    height: 175px;
+    width: 238px; }
+  #main .manual_article_list figure {
+    margin: 0;
+    padding: 0;
+    height: 175px; }
+    #main .manual_article_list figure img {
+      position: relative;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      behavior: url(/stylesheets/PIE.htc);
       height: 175px;
       width: 238px; }
-    #main .col figure {
-      margin: 0;
-      padding: 0; }
-      #main .col figure img {
-        position: relative;
-        border-radius: 4px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
+    #main .manual_article_list figure figcaption {
+      position: relative;
+      -webkit-border-bottom-left-radius: 4px;
+      -webkit-border-bottom-right-radius: 4px;
+      /*
+        Firefox og IE/PIE støtter ikke avrundede hjørner på img, derfor tar vi ikke med dette ennå.
+        border-radius: 0px 0px $radius $radius;
+        -moz-border-radius-bottomleft: $radius;
+        -moz-border-radius-bottomright: $radius;
         behavior: url(/stylesheets/PIE.htc);
-        height: 175px;
-        width: 238px; }
-      #main .col figure figcaption {
-        position: relative;
-        -webkit-border-bottom-left-radius: 4px;
-        -webkit-border-bottom-right-radius: 4px;
-        /*
-          Firefox og IE/PIE støtter ikke avrundede hjørner på img, derfor tar vi ikke med dette ennå.
-          border-radius: 0px 0px $radius $radius;
-          -moz-border-radius-bottomleft: $radius;
-          -moz-border-radius-bottomright: $radius;
-          behavior: url(/stylesheets/PIE.htc);
-        */
-        behavior: url(/stylesheets/PIE.htc);
-        background-color: rgba(0, 0, 0, 0.6);
-        -pie-background: rgba(0, 0, 0, 0.6);
-        display: block;
-        position: relative;
-        top: -41px;
-        height: 37px;
-        line-height: 37px;
-        padding-left: 14px;
+      */
+      behavior: url(/stylesheets/PIE.htc);
+      background-color: rgba(0, 0, 0, 0.6);
+      -pie-background: rgba(0, 0, 0, 0.6);
+      display: block;
+      position: relative;
+      top: -41px;
+      height: 37px;
+      line-height: 37px;
+      padding-left: 14px;
+      overflow-x: hidden;
+      overflow-y: visible;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      white-space: nowrap; }
+  #main .sorted_article_list {
+    float: left;
+    display: inline;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    width: 210px;
+    padding: 16px 14px 13px 14px;
+    min-height: 146px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px; }
+    #main .sorted_article_list ul {
+      margin-top: 0.2em; }
+      #main .sorted_article_list ul li {
+        margin-top: 0.8em;
+        width: 100%;
+        height: 16px;
         overflow-x: hidden;
         overflow-y: visible;
         text-overflow: ellipsis;
         -o-text-overflow: ellipsis;
         white-space: nowrap; }
-    #main .col section {
-      min-height: 146px;
-      border-radius: 4px;
-      -webkit-border-radius: 4px;
-      padding: 16px 14px 13px 14px; }
-      #main .col section ul {
-        margin-top: 0.2em; }
-        #main .col section ul li {
-          margin-top: 0.8em;
-          width: 100%;
-          height: 16px;
-          overflow-x: hidden;
-          overflow-y: visible;
-          text-overflow: ellipsis;
-          -o-text-overflow: ellipsis;
-          white-space: nowrap; }
-    #main .col .article-list-0 {
-      background-color: #98a8c8; }
-      #main .col .article-list-0 a {
-        border-bottom: 1px solid #b9c4da; }
-        #main .col .article-list-0 a:hover {
-          border-bottom: 1px solid #778cb6; }
-    #main .col .article-list-1 {
-      background-color: #b9bdd2; }
-      #main .col .article-list-1 a {
-        border-bottom: 1px solid #d8dae6; }
-        #main .col .article-list-1 a:hover {
-          border-bottom: 1px solid #9aa0be; }
-    #main .col .article-list-2 {
-      background-color: #9ebdbb; }
-      #main .col .article-list-2 a {
-        border-bottom: 1px solid #bcd2d0; }
-        #main .col .article-list-2 a:hover {
-          border-bottom: 1px solid #80a8a6; }
-    #main .col .article-list-3 {
-      background-color: #e7a76a; }
-      #main .col .article-list-3 a {
-        border-bottom: 1px solid #eec196; }
-        #main .col .article-list-3 a:hover {
-          border-bottom: 1px solid #e08d3e; }
+  #main .article-list-1 {
+    background-color: #98a8c8; }
+    #main .article-list-1 li a {
+      border-bottom: 1px solid #b9c4da; }
+      #main .article-list-1 li a:hover {
+        border-bottom: 1px solid #778cb6; }
+  #main .article-list-2 {
+    background-color: #b9bdd2; }
+    #main .article-list-2 li a {
+      border-bottom: 1px solid #d8dae6; }
+      #main .article-list-2 li a:hover {
+        border-bottom: 1px solid #9aa0be; }
+  #main .article-list-3 {
+    background-color: #9ebdbb; }
+    #main .article-list-3 li a {
+      border-bottom: 1px solid #bcd2d0; }
+      #main .article-list-3 li a:hover {
+        border-bottom: 1px solid #80a8a6; }
+  #main .article-list-4 {
+    background-color: #e7a76a; }
+    #main .article-list-4 li a {
+      border-bottom: 1px solid #eec196; }
+      #main .article-list-4 li a:hover {
+        border-bottom: 1px solid #e08d3e; }
   #main .diff del {
     background-color: #ff9098; }
   #main .diff ins {
@@ -778,6 +784,9 @@ footer {
       margin-left: 3%; }
 #main form.formtastic fieldset > ol > li > a.add_child {
   margin-left: 20px; }
+#main form.formtastic fieldset > ol > li fieldset ol {
+  width: 66%;
+  padding-left: 33%; }
 #main form.formtastic fieldset legend {
   padding-bottom: 10px; }
 #main form.formtastic fieldset.files button, #main form.formtastic fieldset#external-links button {
@@ -908,6 +917,7 @@ footer {
 #main form.formtastic .ckeditor span.cke_skin_kama {
   border: 1px solid #ccc; }
 #main form.formtastic hr {
+  clear: both;
   height: 1px;
   border: 0;
   background-color: #7a7a7a; }
@@ -935,7 +945,7 @@ footer {
     top: 10px;
     left: -20px; }
 
-.clearfix:after, header:after, #main section.manual_article_list:after, #main:after, #budstikka-footer-wrapper #budstikka-footer:after {
+.clearfix:after, header:after, #main .manual_article_list ul:after, #main:after, #budstikka-footer-wrapper #budstikka-footer:after {
   clear: both;
   content: ".";
   display: block;
@@ -1055,6 +1065,7 @@ input[name="commit"] {
         color: white; }
 
 .action-links {
+  clear: both;
   height: 30px; }
   .action-links #edit_page_link {
     display: none; }
@@ -1191,26 +1202,29 @@ header nav {
         text-decoration: none; }
         #main table.versions th a:hover, #main table.articles th a:hover {
           text-decoration: underline; }
-  #main .col a.featured {
-    text-decoration: none;
-    color: white; }
-    #main .col a.featured:hover {
-      text-decoration: underline; }
-  #main .col figure figcaption {
-    font-weight: bold; }
-  #main .article-lists h2 {
+  #main .manual_article_list h2 {
     font-size: 100%;
     color: #222; }
-  #main .article-lists li {
+  #main .manual_article_list a {
+    text-decoration: none; }
+    #main .manual_article_list a:hover {
+      text-decoration: underline; }
+  #main .manual_article_list a.featured {
+    color: white;
+    font-weight: bold; }
+  #main .sorted_article_list h2 {
+    font-size: 100%;
+    color: #222; }
+  #main .sorted_article_list li {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%; }
-    #main .article-lists li a {
+    #main .sorted_article_list li a {
       text-decoration: none; }
-      #main .article-lists li a:hover {
+      #main .sorted_article_list li a:hover {
         text-decoration: underline; }
-    #main .article-lists li a {
+    #main .sorted_article_list li a {
       color: #383838; }
-      #main .article-lists li a:hover {
+      #main .sorted_article_list li a:hover {
         text-decoration: none; }
 
 form.formtastic fieldset > legend {

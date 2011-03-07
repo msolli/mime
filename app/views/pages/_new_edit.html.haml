@@ -4,23 +4,9 @@
 
   - page.article_lists.each_with_index do |list, i|
     = f.semantic_fields_for list.class.to_s.pluralize.underscore.to_sym, list do |builder|
+      = render "article_list", page: page, builder: builder, list: list, i: i
 
-      %div{class: [list._type.underscore, :article_list]}
-        %h2
-          = list.name
-          %span.actions
-            = list.class.model_name.human
-            |
-            = link_to t('pages.edit').downcase, send("edit_page_#{list._type.underscore}_path", page._id, list._id)
-            |
-            = builder.hidden_field(:_destroy)
-            = link_to(t('pages.delete').downcase, "#", class: "remove_list", id: "remove_list_#{list._id}")
-          %span.deleted
-            = t('pages.deleted').downcase
-            |
-            = link_to(t('pages.undo').downcase, "#", class: "undo_remove_list", id: "remove_list_#{list._id}")
-        = render "pages/#{list._type.underscore}", list: list
-        %hr
+      %hr
       = builder.hidden_field(:id) unless builder.emitted_hidden_id?
 
   %li.action-links
