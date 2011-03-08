@@ -40,6 +40,6 @@ mime.tools = {
   addDatepicker: function(element) {
     $(element).not(function(){
       return ($(this).parents('#jstemplates').length > 0);
-    }).datepicker();
+    }).datepicker({ dateFormat: 'yy-mm-dd' });
   }
 };
