@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_filter :find_page, :only => [:show, :edit, :update, :destroy]
+  authorize_resource
 
   def new
     @page = Page.new
@@ -16,17 +17,23 @@ class PagesController < ApplicationController
   end
 
   def show
-    
+    if @page.frontpage?
+      redirect_to root_url
+      return
+    end
   end
 
   def edit
-
   end
 
   def update
-    @page.attributes = params[:page]
-    if @page.save
-      redirect_to @page, :notice => t('pages.saved')
+    if @page.update_attributes(params[:page])
+      if params[:publish]
+        expire_page_cache(@page)
+        redirect_to root_path, :notice => t('pages.published')
+      else
+        redirect_to edit_page_path(@page), :notice => t('pages.saved')
+      end
     else
       flash.alert = t('pages.errors.save')
       render :action => 'edit'
@@ -35,7 +42,12 @@ class PagesController < ApplicationController
 
   private
 
-  def find_page
-    @page = Page.find(params[:id])
+  def expire_page_cache(page)
+    path = ActionController::Caching::Actions::ActionCachePath.new(self, page)
+    expire_fragment path.path
+    if page.frontpage?
+      path = ActionController::Caching::Actions::ActionCachePath.new(self, root_url)
+      expire_fragment path.path
+    end
   end
 end

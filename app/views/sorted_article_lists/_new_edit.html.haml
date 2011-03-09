@@ -1,0 +1,11 @@
+= semantic_form_for [page, article_list] do |f|
+
+  = f.inputs do
+    = f.input :name
+    = f.input :number_of_articles
+    = f.input :sort_field, as: :radio, collection: { 'Opprettet' => :created_at, 'Sist endret' => :updated_at, 'Oppslagsord' => :headword }
+    = f.input :sort_direction, as: :radio, collection: { 'Stigende' => :asc, 'Synkende' => :desc }
+
+  = f.buttons do
+    = f.commit_button
+    %li= link_to t('pages.cancel'), edit_page_path(page)

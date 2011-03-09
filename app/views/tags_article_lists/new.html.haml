@@ -1,0 +1,8 @@
+- content_for :title do
+  ! #{t('pages.tags_article_list.new')} – #{@page.name}
+
+- content_for :header do
+  %em #{t('pages.tags_article_list.new')}
+  – #{link_to(@page.name, @page)}
+
+= render 'new_edit', article_list: @article_list, page: @page

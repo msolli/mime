@@ -165,21 +165,21 @@ header {
       @include no-underline;
     }
   }
-  .col {
-    a.featured {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-      color: white;
+
+  .manual_article_list {
+    h2 {
+      font-size: $font16px;
+      color: #222;
     }
-    figure {
-      figcaption {
-        font-weight: bold;
-      }
+
+    @include no-underline;
+    a.featured {
+      color: white;
+      font-weight: bold;
     }
   }
-  .article-lists {
+
+  .sorted_article_list, .tags_article_list {
     h2 {
       font-size: $font16px;
       color: #222;
@@ -199,6 +199,11 @@ header {
 }
 
 form.formtastic {
+  fieldset > legend {
+    @include small-sans;
+    font-weight: bold;
+    color: $dark-grey-color;
+  }
   fieldset > ol > li, fieldset > ol > li.string, fieldset > ol > li.text {
     p.inline-errors, .inline-errors {
       @include small-sans;
@@ -254,6 +259,22 @@ form.formtastic {
     input[type="submit"] {
       @include submit-button-typography;
     }
+    a {
+      @include small-sans;
+      font-size: $font12px;
+    }
+  }
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-weight: bold;
+  }
+  span.actions, span.deleted {
+    @include small-sans;
+    font-size: 12px;
+    font-weight: normal;
+    color: $light-grey-color;
   }
 }
 
@@ -301,4 +322,9 @@ em {
   &:hover {
     text-decoration: underline; 
   }
+}
+
+.action-links {
+  @include small-sans;
+  font-size: $font12px;
 }

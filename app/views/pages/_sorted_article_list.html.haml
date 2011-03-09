@@ -1,0 +1,5 @@
+%section.sorted-article-list{class: "article-list-#{i}"}
+  %h2= list.name
+  %ul
+    - list.current_articles.each do |a|
+      %li= link_to a.headword, pretty_article_path(a.article), :title => a.headword

@@ -1,0 +1,9 @@
+%li.featured-article
+  - unless a.article.blank?
+    = link_to pretty_article_path(a.article), :class => 'featured' do
+      %figure
+        - if a.article.medias.first
+          %img{:src => a.article.medias.first.file.thumb("238x175#nw").url}
+        - else
+          %img{:src => "http://dummyimage.com/238x175/bf/fff&text=#{a.headword}"}
+        %figcaption= a.headword

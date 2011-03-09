@@ -1,0 +1,10 @@
+= semantic_form_for [page, article_list] do |f|
+
+  = f.inputs do
+    = f.input :name
+    = f.input :number_of_articles
+    = f.input :tags
+
+  = f.buttons do
+    = f.commit_button
+    %li= link_to t('pages.cancel'), edit_page_path(page)

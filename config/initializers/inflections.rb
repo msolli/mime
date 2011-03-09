@@ -8,3 +8,7 @@
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
 # end
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.plural 'media', 'medias'
+  inflect.singular 'medias', 'media'
+end

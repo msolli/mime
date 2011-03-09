@@ -17,7 +17,7 @@ Egenskap: Flere bidragsytere
       Så skal jeg se "Yoman Yo, Fooman Foo"
       Og jeg skal se "bare én versjon"
 
-    @devise @logged_in
+    @log_in_user
     Scenario: ny versjon, ny forfatter
       Og jeg står på artikkelredigering for "Foo"
       Og jeg fyller inn "article[text]" med "Ny tekst om foo"

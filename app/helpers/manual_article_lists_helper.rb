@@ -1,0 +1,2 @@
+module ManualArticleListsHelper
+end

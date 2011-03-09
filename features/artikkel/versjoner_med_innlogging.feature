@@ -6,7 +6,7 @@ Egenskap: Versjonering av artikler med innlogget bruker
   Som en lokalinteressert person
   Vil jeg kunne versjonere artikler
 
-  @devise @logged_in @javascript
+  @log_in_user @javascript
   Scenario: innlogget og anonym versjon
     Gitt at jeg står på ny artikkel-siden
     Når jeg fyller inn "article[headword]" med "Foo"
@@ -19,7 +19,7 @@ Egenskap: Versjonering av artikler med innlogget bruker
     Og jeg skal se "127.0.0.1" under nåværende versjon
     Og jeg skal se "Navn Navnesen" under første versjon
 
-  @devise
+  @stub_user
   Scenario: anonym og innlogget versjon
     Gitt at jeg står på ny artikkel-siden
     Og jeg fyller inn "article[headword]" med "Foo"
@@ -33,11 +33,11 @@ Egenskap: Versjonering av artikler med innlogget bruker
     Og jeg skal ikke se "127.0.0.1" under nåværende versjon
     Og jeg skal se "127.0.0.1" under første versjon
 
-  @devise @logged_in @javascript
+  @log_in_user @javascript
   Scenario: to ulike brukere
     Gitt at jeg oppretter artikkelen "Foo"
     Og jeg logger ut
-    Og jeg logger inn som "Test Testesen"
+    Og jeg logger inn som en annen bruker
     Når jeg står på artikkelredigering for "Foo"
     Og jeg trykker "Lagre"
     Og jeg klikker "Versjonslogg"
@@ -46,7 +46,7 @@ Egenskap: Versjonering av artikler med innlogget bruker
     Og jeg skal ikke se "Navn Navnesen" under nåværende versjon
     Og jeg skal se "Navn Navnesen" under første versjon
 
-  @devise @logged_in
+  @log_in_user
   Scenario: innlogget bidragsyter med flere artikler
     Gitt at jeg har opprettet følgende artikler:
       | headword  | updated_at |

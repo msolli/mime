@@ -13,7 +13,7 @@ Når /^jeg logger ut$/ do
   Og %{jeg klikker "Logg ut"}
 end
 
-Gitt /^(?:|at )jeg (?:logger|er logget) inn som "([^"]*)"$/ do |user|
-  facebook_stub user
+Gitt /^(?:|at )jeg (?:logger|er logget) inn som en annen bruker$/ do
+  facebook_stub 'user_2'
   Gitt %{at jeg er logget inn}
 end

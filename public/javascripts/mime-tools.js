@@ -35,5 +35,11 @@ mime.tools = {
 
      new_li.insertAfter(li);
 		return new_li;
-	}
+	},
+
+  addDatepicker: function(element) {
+    $(element).not(function(){
+      return ($(this).parents('#jstemplates').length > 0);
+    }).datepicker({ dateFormat: 'yy-mm-dd' });
+  }
 };
