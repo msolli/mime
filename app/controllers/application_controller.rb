@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale, :keep_flash, :handle_mobile
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, :alert => exception.message
+    respond_to do |format|
+      format.html { redirect_to root_url, :alert => exception.message }
+      format.json { render nothing: true, status: :forbidden }
+    end
   end
 
   helper_method :is_mobile_view?

@@ -25,8 +25,8 @@ $(document).ready(function() {
     });
 
     $('form a.remove_list').live('click', function() {
-      var parent = $(this).parents('.article_list');
-      var hiddenField = parent.find('input[type=hidden]')[0];
+      var parent = $(this).closest('.article_list');
+      var hiddenField = parent.find('input[type=hidden].destroy')[0];
       if (hiddenField) {
         hiddenField.value = '1';
       }
@@ -50,8 +50,8 @@ $(document).ready(function() {
     });
 
     $('form a.undo_remove_list').live('click', function() {
-      var parent = $(this).parents('.article_list');
-      var hiddenField = parent.find('input[type=hidden]')[0];
+      var parent = $(this).closest('.article_list');
+      var hiddenField = parent.find('input[type=hidden].destroy')[0];
       if (hiddenField) {
         hiddenField.value = '0';
       }

@@ -2,12 +2,10 @@
   = f.inputs do
     = f.input :name
 
-  - page.article_lists.each_with_index do |list, i|
-    = f.semantic_fields_for list.class.to_s.pluralize.underscore.to_sym, list do |builder|
-      = render "article_list", page: page, builder: builder, list: list, i: i
-
-      %hr
-      = builder.hidden_field(:id) unless builder.emitted_hidden_id?
+    %ul#article-lists
+      - page.article_lists.each_with_index do |list, i|
+        = f.semantic_fields_for list.class.to_s.pluralize.underscore.to_sym, list do |builder|
+          = render "article_list", page: page, builder: builder, list: list, i: i
 
   %li.action-links
     = add_list_link :manual_article_list, page

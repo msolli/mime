@@ -316,10 +316,6 @@ header {
   div.maincol {
   }
 
-  section.featured-bottom {
-    clear: both;
-  }
-
   .manual_article_list {
 
     ul {
@@ -361,7 +357,7 @@ header {
     }
   }
 
-  .sorted_article_list {
+  .sorted_article_list, .tags_article_list {
     @include page-box;
     width: 210px;
     padding: 16px 14px 13px 14px;
@@ -551,6 +547,7 @@ footer {
   }
 
   fieldset {
+    overflow: visible;
 
     legend {
       padding-bottom: 10px;
@@ -712,12 +709,6 @@ footer {
     span.cke_skin_kama {
       border: 1px solid #ccc;
     }
-  }
-  hr {
-    clear: both;
-    height: 1px;
-    border: 0;
-    background-color: $light-grey-color;
   }
   .deleted {
     display: none;

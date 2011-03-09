@@ -9,7 +9,6 @@ $(document).ready(function() {
         num: 5
       },
       function(data) {
-        console.log(data);
         response($.map(data, function(item) {
           return item.headword;
         }));

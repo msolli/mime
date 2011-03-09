@@ -39,6 +39,7 @@ javascripts:
     - public/javascripts/application.js
     - public/javascripts/document-ready.js
     - public/javascripts/edit-files-ready.js
+    - public/javascripts/sortable.js
     - public/javascripts/nested_forms.js
     - public/javascripts/autocomplete.js
     - public/javascripts/article-map.js

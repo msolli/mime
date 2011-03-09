@@ -1,4 +1,4 @@
-%section{class: "#{list.type.underscore} article-list-#{i} article_list"}
+%li{class: "#{list.type.underscore} article-list-#{i} article_list"}
   %h2
     = list.name
 
@@ -9,7 +9,7 @@
         |
         = link_to t('pages.edit').downcase, send("edit_page_#{list._type.underscore}_path", page._id, list._id)
         |
-        = builder.hidden_field(:_destroy)
+        = builder.hidden_field(:_destroy, class: "destroy")
         = link_to(t('pages.delete').downcase, "#", class: "remove_list", id: "remove_list_#{list._id}")
       %span.deleted
         = t('pages.deleted').downcase
@@ -19,3 +19,7 @@
   %ul
     - list.current_articles.each do |a|
       = render "#{list.type.underscore.pluralize}/show_in_page", a: a, i: i
+
+  - unless %w{show index}.include? action_name
+    = builder.hidden_field(:id) unless builder.emitted_hidden_id?
+    = builder.hidden_field(:position, class: "position")

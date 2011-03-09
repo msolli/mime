@@ -24,20 +24,6 @@ Gitt /^at det fins en tom forside$/ do
   p = Factory(:page, :name => 'Forside')
 end
 
-Så /^skal jeg se (\d+) dagens artikler$/ do |count|
-  page.should have_selector('section.featured-top > div.col > a', :count => count.to_i)
-end
-
-Så /^jeg skal se (\d+) ukens personer$/ do |count|
-  page.should have_selector('section.featured-bottom > div.col > a', :count => count.to_i)
-end
-
-Så /^jeg skal se (\d+) artikler i hver av boksene$/ do |count|
-  page.all('section.article-lists section').each do |section|
-    section.should have_selector('li', :count => count.to_i)
-  end
-end
-
 Når /^jeg legger til følgende artikler:$/ do |table|
   list_article_css = 'form .list-article'
   table.hashes.each do |hash|
