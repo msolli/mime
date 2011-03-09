@@ -1,6 +1,20 @@
 = semantic_form_for page do |f|
   = f.inputs do
     = f.input :name
-    %li= link_to "Seksjoner", page_sections_path(page)
+
+    %ul#article-lists
+      - page.article_lists.each_with_index do |list, i|
+        = f.semantic_fields_for list.class.to_s.pluralize.underscore.to_sym, list do |builder|
+          = render "article_list", page: page, builder: builder, list: list, i: i
+
+  %li.action-links
+    = add_list_link :manual_article_list, page
+    |
+    = add_list_link :sorted_article_list, page
+    |
+    = add_list_link :tags_article_list, page
+
   = f.buttons do
     = f.commit_button
+    = f.commit_button button_html: { name: 'publish' }, label: :publish
+    %li= link_to t('pages.cancel'), page_path(page)

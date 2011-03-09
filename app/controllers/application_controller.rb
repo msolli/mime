@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale, :keep_flash, :handle_mobile
 
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.html { redirect_to root_url, :alert => exception.message }
+      format.json { render nothing: true, status: :forbidden }
+    end
+  end
+
   helper_method :is_mobile_view?
   
   def is_mobile_view?
@@ -11,6 +18,7 @@ class ApplicationController < ActionController::Base
   end
   
   protected
+
   def enable_mobile_view
     cookies.permanent[:mobile_view] = true
   end
@@ -27,6 +35,11 @@ class ApplicationController < ActionController::Base
   
   def keep_flash
     flash.keep
+  end
+
+  def find_page
+    id = params[:page_id].present? ? params[:page_id] : params[:id]
+    @page = Page.find(id)
   end
 
   def find_article

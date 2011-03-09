@@ -1,0 +1,3 @@
+%section.manual-article-list
+  - list.current_articles.each_with_index do |a, i|
+    = render 'pages/featured_article', a: a, i: i

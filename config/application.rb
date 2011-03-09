@@ -11,7 +11,6 @@ require "rails/test_unit/railtie"
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 require 'rails/generators'
-Rails::Generators.fallbacks[:shoulda] = :test_unit
 
 module Mime
   class Application < Rails::Application
@@ -42,7 +41,7 @@ module Mime
       g.stylesheets false
       g.orm :mongoid
       g.template_engine :haml
-      g.test_framework :shoulda
+      g.test_framework :rspec
       g.fixture_replacement :factory_girl
     end
 

@@ -16,6 +16,27 @@ Egenskap: Legge bilder til artikler
     Når jeg trykker "Lagre"
     Så skal det være 1 av ".meta figure"
 
+  @javascript
+  Scenario: legge bilder til ny artikkel
+    Gitt at jeg står på ny artikkel-siden
+    Og jeg fyller inn "article[headword]" med "Foo"
+    Når jeg legger ved bildet "spec/data/jpeg.jpeg" til "file-uploader"
+    Og jeg trykker "Last opp filer"
+    Så skal det være 1 av ".files li.image img"
+    Når jeg trykker "Opprett"
+    Så skal det være 1 av ".meta figure"
+
+  @javascript
+  Scenario: legge bilder til ny artikkel som først får valideringsfeil
+    Gitt at artikkelen "Foo" finnes
+    Og jeg står på ny artikkel-siden
+    Og jeg fyller inn "article[headword]" med "Foo"
+    Og jeg legger ved bildet "spec/data/jpeg.jpeg" til "file-uploader"
+    Når jeg trykker "Opprett"
+    Og jeg fyller inn "article[headword]" med "Bar"
+    Og jeg trykker "Opprett"
+    Så skal det være 1 av ".meta figure"
+
   Scenario: endre bildetekst
     Gitt at artikkelen "Foo" finnes
     Og at artikkelen "Foo" har bilde

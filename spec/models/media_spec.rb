@@ -17,7 +17,8 @@ describe Media do
       media2 = Media.create :file => open("#{Rails.root}/spec/data/jpeg.jpeg")
       media3 = Media.create :file => open("#{Rails.root}/spec/data/png.png")
     
-      article.media_ids_from_async_upload = "#{media1.id} #{media2.id} #{media3.id}"
+      media_ids_from_async_upload = "#{media1.id} #{media2.id} #{media3.id}"
+      article.add_async_uploads(media_ids_from_async_upload)
     
       article.save
     

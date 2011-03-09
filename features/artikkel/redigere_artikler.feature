@@ -36,7 +36,7 @@ Egenskap: Redigere artikler
       Og jeg klikker "Versjonslogg"
       Så skal jeg se "127.0.0.1" under "tr.current"
 
-    @devise @logged_in
+    @log_in_user
     Scenario: innlogget bidragsyter
       Og jeg står på artikkelredigering for "Foo"
       Og jeg fyller inn "article[text]" med "Ny tekst om foo"

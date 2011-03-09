@@ -13,8 +13,8 @@ class User
   field :password
   field :name
   field :facebook_token
-  field :role
-  
+  field :role, :default => "user"
+
   index :email, :unique => true
 
   validates_presence_of :email
@@ -26,7 +26,7 @@ class User
   end
 
   def as_json(options = {})
-    serializable_hash(:only => [:_id, :email, :name, :current_sign_in_at, :current_sign_in_ip, :last_sign_in_at, :last_sign_in_ip], :methods => :name_or_email)
+    serializable_hash(:only => [:_id, :email, :name, :role, :current_sign_in_at, :current_sign_in_ip, :last_sign_in_at, :last_sign_in_ip], :methods => :name_or_email)
   end
 
   def name_or_email

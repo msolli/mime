@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class HomeController < ApplicationController
+  caches_action :index
+
   def index
     flash.keep
 
@@ -8,8 +10,8 @@ class HomeController < ApplicationController
       @page = Page.first(:conditions => {:name => ENV['FRONTPAGE'] || 'Forside'})
     end
     return unless @page
-    
-    expires_in 5.minutes, :public => true
+
+    expires_in 5.minutes, :public => true if Rails.env.production?
     respond_to do |format|
       format.html { render :template => 'pages/show' }
       format.mobile { render :template => 'mobile/frontpage'}
@@ -25,7 +27,7 @@ class HomeController < ApplicationController
       else /^(\p{P})*#{@letter}/i
     end
     @articles = Article.where(:headword => headword_re).all.sort
-    expires_in 5.minutes, :public => true
+    expires_in 5.minutes, :public => true if Rails.env.production?
     flash.keep
   end
 

@@ -1,0 +1,2 @@
+module TagsArticleListsHelper
+end

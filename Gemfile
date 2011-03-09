@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.0'
+gem 'rails', '= 3.0.5'
 gem 'hassle', :require => false
 gem 'haml'
-gem 'mongoid', '2.0.0.rc.6'
+gem 'mongoid', :git => 'http://github.com/mongoid/mongoid.git'
 gem 'bson', '~> 1.0'
 gem 'bson_ext'
 gem 'mongo', '~> 1.0'
@@ -51,12 +51,13 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'ruby-debug19'
+  gem 'passenger'
 end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
-  gem 'xpath'
-  gem 'capybara'
+  gem 'capybara', '0.4.0'
+  gem 'selenium-webdriver', '0.1.2'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
@@ -64,7 +65,9 @@ group :test do
   gem 'fuubar'
   gem 'launchy'
   gem 'ruby-debug19'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'ZenTest', '~> 4.4.2'
+  gem 'autotest-rails'
 
-  gem 'shoulda'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
 end

@@ -17,6 +17,14 @@ javascripts:
     - public/javascripts/typekit.js
     - public/javascripts/spring.js
     - public/javascripts/jquery/jquery-1.4.4.js
+    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.core.js
+    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.widget.js
+    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.mouse.js
+    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.position.js
+    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.sortable.js
+    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.autocomplete.js
+    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.datepicker.js
+    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.datepicker-no.js
     - public/javascripts/jquery/jquery.templates/beta1/jquery.tmpl.js
     - public/javascripts/jquery/jquery.timeago/0.9.2/jquery.timeago.js
     - public/javascripts/jquery/jquery.timeago/common/jquery.timeago.no.js
@@ -31,6 +39,9 @@ javascripts:
     - public/javascripts/application.js
     - public/javascripts/document-ready.js
     - public/javascripts/edit-files-ready.js
+    - public/javascripts/sortable.js
+    - public/javascripts/nested_forms.js
+    - public/javascripts/autocomplete.js
     - public/javascripts/article-map.js
 
 stylesheets:
@@ -39,4 +50,4 @@ stylesheets:
   all:
     - public/stylesheets/reset.css
     - public/stylesheets/application.css
-    - public/stylesheets/jquery-ui.css
+    - public/stylesheets/jquery-ui-overcast.css

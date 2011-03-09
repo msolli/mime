@@ -62,7 +62,7 @@ header {
       }
     }
   }
-  
+
   form {
     #q {
       @include rounded-corners(10px);
@@ -86,14 +86,14 @@ header {
   }
 }
 
-#wrapper {
+.wrapper {
   @include content-box;
 }
 
 #main {
   background: $main-background-color;
 
-  &.home.index, &.search {
+  &.home.index, &.search, &.pages.show {
     background: white;
   }
 
@@ -111,7 +111,7 @@ header {
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #E1EAE9;
-    
+
     .disabled {
       visibility: hidden;
     }
@@ -177,10 +177,10 @@ header {
     float: right;
     padding-top: 16px;
     width: $right-col-width;
-    
+
     .map-wrapper {
       text-align: center;
-      
+
       .map {
         height: 218px;
         background-color: #fff;
@@ -196,14 +196,14 @@ header {
         display: inline;
       }
     }
-    
+
     .added figure {
       background-color: $diff-added-color;
     }
     .removed figure {
       background-color: $diff-removed-color;
     }
-    
+
     .map-wrapper.minimized,
     figure {
       position: relative;
@@ -212,13 +212,13 @@ header {
       background: white;
       margin: 0 0 10px 0;
       display: block;
-      
+
       img {
         display: block;
         margin: 0 auto;
         border: 1px solid #ccc;
       }
-      
+
       figcaption {
         display: block;
         margin-bottom: 0;
@@ -298,15 +298,15 @@ header {
       padding: 5px;
     }
     th .current {
-      padding-right: 12px;  
-      background-repeat: no-repeat;  
-      background-position: right center;  
+      padding-right: 12px;
+      background-repeat: no-repeat;
+      background-position: right center;
     }
     th .asc {
       background-image: url(/images/icons/up_arrow.gif);
     }
     th .desc {
-      background-image: url(/images/icons/down_arrow.gif);   
+      background-image: url(/images/icons/down_arrow.gif);
     }
     tr.current {
       background: mix($message-notice-color, $main-background-color, 25%);
@@ -316,16 +316,18 @@ header {
   div.maincol {
   }
 
-  section.featured-bottom {
-    clear: both;
-  }
-
-  .col {
+  .manual_article_list {
     float: left;
     display: inline;
-    width: #{(238/16)}em;
-    margin-right: 2px;
-    margin-bottom: 2px;
+    width: 960px;
+
+    ul {
+      @extend .clearfix;
+    }
+    .featured-article {
+      @include page-box;
+      width: 238px;
+    }
 
     a.featured {
       display: block;
@@ -335,6 +337,7 @@ header {
     figure {
       margin: 0;
       padding: 0;
+      height: 175px;
 
       img {
         @include rounded-corners(4px);
@@ -355,61 +358,69 @@ header {
         @include overflow-ellipsis;
       }
     }
+  }
 
-    section {
-      min-height: 146px;
-      @include rounded-corners-only-webkit(4px);
-      padding: 16px 14px 13px 14px;
-      ul {
-        margin-top: 0.2em;
-        li {
-          margin-top: 0.8em;
-          width: 100%;
-          height: 16px;
-          @include overflow-ellipsis;
-        }
-      }
-    }
-    .article-list-0 {
-      background-color: #98a8c8;
-      a {
-        border-bottom: 1px solid lighten(#98a8c8, 10%);
-        &:hover {
-          border-bottom: 1px solid darken(#98a8c8, 10%);
-        }
-      }
-    }
-    .article-list-1 {
-      background-color: #b9bdd2;
-      a {
-        border-bottom: 1px solid lighten(#b9bdd2, 10%);
-        &:hover {
-          border-bottom: 1px solid darken(#b9bdd2, 10%);
-        }
-      }
-    }
-    .article-list-2 {
-      background-color: #9ebdbb;
-      a {
-        border-bottom: 1px solid lighten(#9ebdbb, 10%);
-        &:hover {
-          border-bottom: 1px solid darken(#9ebdbb, 10%);
-        }
-      }
-    }
-    .article-list-3 {
-      background-color: #e7a76a;
-      a {
-        border-bottom: 1px solid lighten(#e7a76a, 10%);
-        &:hover {
-          border-bottom: 1px solid darken(#e7a76a, 10%);
-        }
+  .sorted_article_list, .tags_article_list {
+    @include page-box;
+    width: 210px;
+    padding: 16px 14px 13px 14px;
+    min-height: 146px;
+    @include rounded-corners-only-webkit(4px);
+    ul {
+      margin-top: 0.2em;
+      li {
+        margin-top: 0.8em;
+        width: 100%;
+        height: 16px;
+        @include overflow-ellipsis;
       }
     }
   }
-  .col.left {
 
+  .article_list_placeholder {
+    float: left;
+    display: inline;
+    width: 238px;
+    height: 192px;
   }
+
+  .article-list-1 {
+    background-color: #98a8c8;
+    li a {
+      border-bottom: 1px solid lighten(#98a8c8, 10%);
+      &:hover {
+        border-bottom: 1px solid darken(#98a8c8, 10%);
+      }
+    }
+  }
+  .article-list-2 {
+    background-color: #b9bdd2;
+    li a {
+      border-bottom: 1px solid lighten(#b9bdd2, 10%);
+      &:hover {
+        border-bottom: 1px solid darken(#b9bdd2, 10%);
+      }
+    }
+  }
+  .article-list-3 {
+    background-color: #9ebdbb;
+    li a {
+      border-bottom: 1px solid lighten(#9ebdbb, 10%);
+      &:hover {
+        border-bottom: 1px solid darken(#9ebdbb, 10%);
+      }
+    }
+  }
+  .article-list-4 {
+    background-color: #e7a76a;
+    li a {
+      border-bottom: 1px solid lighten(#e7a76a, 10%);
+      &:hover {
+        border-bottom: 1px solid darken(#e7a76a, 10%);
+      }
+    }
+  }
+
   .diff {
     del {
       background-color: $diff-removed-color;
@@ -431,27 +442,27 @@ footer {
     float: right;
     padding-left: 0;
     width: $right-col-width;
-    
+
     div#upload-container {
       position: relative;
       clear: both;
-    
+
       button {
         position: absolute;
         left: 0;
         margin: 0 !important;
       }
     }
-    
-    
+
+
     &>ol {
       width: $right-col-width;
-      
+
       &>li {
         width: 100%;
-        
+
         overflow: hidden;
-        
+
         ol {
           li {
             float: left;
@@ -459,15 +470,15 @@ footer {
             label, input {
               width: 100%;
             }
-            
+
             input[type="checkbox"] {
               width: auto;
               margin-right: 5px;
             }
-            
+
             &.image {
               width: 150px;
-              
+
               img {
                 max-width: 140px;
               };
@@ -477,7 +488,7 @@ footer {
               width: 220px;
               margin-right: 10px;
               text-align: center;
-              
+
               .progress {
                 position: absolute;
                 background-color: #31528C;
@@ -491,12 +502,12 @@ footer {
                 color: #fff;
               }
             }
-            
+
             &.progressbar,
             &.description {
               width: 220px;
               margin-right: 10px;
-              
+
               textarea {
                 width: 212px;
               }
@@ -510,22 +521,51 @@ footer {
         }
       }
     }
-    
+
     textarea {
       float: right;
     }
   }
+
+  // Forsideredigering
   fieldset {
+    &>ol {
+      &>li {
+        &.list-article {
+          &>ol {
+            padding-left: 20px;
+            &>li {
+              display: inline-block;
+              vertical-align: top;
+              width: 70%;
+              &.list-article-date {
+                width: 25%;
+                margin-left: 3%;
+              }
+            }
+          }
+        }
+        &>a.add_child {
+          margin-left: 20px;
+        }
+        fieldset ol {
+          width: 66%;
+          padding-left: 33%;
+        }
+      }
+    }
+  }
+
+  fieldset {
+    overflow: visible;
 
     legend {
-      font-family: "Lucida Grande", Tahoma, Arial;
-      font-weight: bold;
       padding-bottom: 10px;
     }
-    
+
     &.files,
     &#external-links {
-      
+
       button {
         padding: 0;
         border: 0;
@@ -538,10 +578,10 @@ footer {
           display: inline;
         }
       }
-      
+
       &> ol > li {
         padding: 5px 0;
-        
+
         &:last-child > ol > li button {
           &.add {
             display: inline;
@@ -550,17 +590,17 @@ footer {
             display: none;
           }
         }
-      
-        ol {        
+
+        ol {
           overflow: hidden;
           li {
             float: left;
-            
+
             &.link-text {
               label {
                 margin-left: 10px;
               }
-              
+
               & + li {
                 input {
                   margin: 0 5px 0 10px;
@@ -569,7 +609,7 @@ footer {
             }
           }
         }
-      
+
         label {
           float: left;
           clear: left;
@@ -638,7 +678,7 @@ footer {
         line-height: 32px;
         display: inline;
       }
-      
+
       input {
         float: right;
         width: 270px;
@@ -665,6 +705,13 @@ footer {
       border: 1px solid $box-border-color;
     }
   }
+  fieldset.buttons {
+    padding-left: 0;
+    clear: both;
+    &> ol > li {
+      width: auto;
+    }
+  }
   .ckeditor {
     .cke_skin_kama .cke_button .cke_button_mimeimage .cke_icon {
       background-position: 0 -576px;
@@ -672,6 +719,9 @@ footer {
     span.cke_skin_kama {
       border: 1px solid #ccc;
     }
+  }
+  .deleted {
+    display: none;
   }
 }
 
@@ -724,7 +774,7 @@ ul.search-completion {
   border-top: 1px solid #1A4A99;
   font-size: $font12px;
   width: 300px;
-  
+
   span {
     width: 16px;
     height: 16px;
@@ -735,22 +785,22 @@ ul.search-completion {
     margin-right: 1px;
     position: relative;
     top: -3px;
-    
+
     &:hover {
      @include rounded-corners(2px);
      border: 1px solid #ccc;
      margin: 0;
     }
   }
-  
+
   li {
     padding: 4px 2px 2px;
     border: 1px solid #1A4A99;
     border-width: 0 1px 1px;
     cursor: pointer;
-    
+
     &:hover {
-     background-color: #ccc; 
+     background-color: #ccc;
     }
   }
 }
@@ -758,7 +808,7 @@ ul.search-completion {
   position: fixed;
   bottom: 0;
   width: 100%;
-  
+
   div {
     margin: 0 auto;
     width: 1280px;
@@ -780,7 +830,7 @@ input[name="commit"] {
   padding-top: 4px;
   #budstikka-header {
     @include content-box;
-    
+
   }
 }
 
@@ -793,6 +843,7 @@ input[name="commit"] {
     padding-top: 4px;
   }
   #budstikka-footer {
+    @extend .clearfix;
     @include content-box;
     .info {
       float: left;
@@ -806,4 +857,17 @@ input[name="commit"] {
       }
     }
   }
+}
+
+.action-links {
+  clear: both;
+  height: 30px;
+
+  #edit_page_link {
+    display: none;
+  }
+}
+
+.ui-autocomplete-loading {
+  background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;
 }

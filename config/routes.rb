@@ -14,13 +14,17 @@ Mime::Application.routes.draw do
 
   resources :medias
   match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
-  
+
   match 'search', :to => 'search#new'
   match 'fastsearch', :to => 'json_search#new'
   
   resource :js, :only => :show
 
-  resources :pages, :path => 'p', :except => [:index]
+  resources :pages, :path => 'p', :except => [:index] do
+    resources :manual_article_lists, :path => 'manuelle_lister'
+    resources :sorted_article_lists, :path => 'sorterte_lister'
+    resources :tags_article_lists, :path => 'nokkelord_lister'
+  end
 
   # TODO - flyttes inn i admin
   get 'home/last_updated'

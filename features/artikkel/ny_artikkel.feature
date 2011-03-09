@@ -27,7 +27,7 @@ Egenskap: Ny artikkel
       Og jeg klikker "Versjonslogg"
       Så skal jeg se "127.0.0.1" under "table.versions"
 
-    @devise @logged_in
+    @log_in_user
     Scenario: innlogget bruker
       Når jeg trykker "Opprett"
       Og jeg klikker "Versjonslogg"

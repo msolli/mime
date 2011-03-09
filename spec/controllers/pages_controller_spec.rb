@@ -3,58 +3,76 @@ require 'spec_helper'
 describe PagesController do
 
   describe "#show" do
-    before :each do
-      @page = Factory.build(:page)
-      2.times do |i|
-        @page.sections << Factory.build(:section)
+    context "front page as anonymous" do
+      let(:page) { Factory :front_page }
+
+      before do
+        get :show, :id => page.to_param
       end
-      @page.sections.each do |s|
-        4.times do |i|
-          s.articles << Factory.build(:section_article, :date => Date.today + i)
-        end
+
+      it "redirects to root url" do
+        response.should redirect_to(root_url)
       end
-      @page.save
-      get :show, :id => @page.to_param
-    end
 
-    it "shows a page" do
-      response.should be_success
-    end
+      it "has articles in first section" do
+        assigns(:page).article_lists.first.current_articles.length.should == 4
+      end
 
-    it "has articles in first section" do
-      response.should be_success
-      assigns(:page).sections.first.articles.length.should == 4
-    end
-
-    it "has articles in last section" do
-      response.should be_success
-      assigns(:page).sections.last.articles.length.should == 4
+      it "has articles in last section" do
+        assigns(:page).article_lists.last.current_articles.length.should == 4
+      end
     end
   end
 
   describe "#edit" do
-    it "shows the edit form" do
-      @page = Factory(:page)
-      get :edit, :id => @page.to_param
-      response.should be_success
-      assigns(:page).should == @page
+    context "as a user" do
+      user_redirects_to_home
     end
+
+    context "as an editor" do
+      login_editor
+
+      let(:page) { Factory :page }
+
+      it "shows the edit form" do
+        get :edit, :id => page.to_param
+        response.should be_success
+        assigns(:page).should == page
+      end
+    end
+    
   end
 
   describe "#new" do
-    it "shows the new form" do
-      get :new
-      response.should be_success
-      assigns(:page).should_not be_nil
+    context "as a user" do
+      user_redirects_to_home
+    end
+
+    context "as an editor" do
+      login_editor
+
+      it "shows the new form" do
+        get :new
+        response.should be_success
+        assigns(:page).should_not be_nil
+      end
     end
   end
 
   describe "#update" do
-    it "updates a page" do
-      @page = Factory(:page)
-      put :update, :id => @page.to_param, :page => {:name => 'Foo'}
-      response.should redirect_to(page_path(assigns(:page)))
-      assigns(:page).name.should == 'Foo'
+    context "as a user" do
+      user_redirects_to_home
+    end
+
+    context "as an editor" do
+      login_editor
+
+      it "updates a page" do
+        @page = Factory(:page)
+        put :update, :id => @page.to_param, :page => {:name => 'Foo'}
+        response.should redirect_to(edit_page_path(assigns(:page)))
+        assigns(:page).name.should == 'Foo'
+      end
     end
   end
 end

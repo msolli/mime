@@ -5,40 +5,31 @@ $(document).ready(function() {
   (function(){
     // Parse templates and append to #user-links and #messages
     var addUserData = function(data) {
-      $('#user-links-tmpl').tmpl(data.user).appendTo('#user-links');
+      $('#user-links-tmpl').tmpl(data.user).appendTo('#user-links').hide().fadeIn('fast');
       if (data.flash) {
-        $('#messages-tmpl').tmpl(data.flash).appendTo('#messages').hide().slideDown();
+        $('#messages-tmpl').tmpl(data.flash).appendTo('#messages').hide().fadeIn('fast');
+      }
+      for (var item in data.show) {
+        $(data.show[item]).fadeIn('fast');
       }
     };
 		$.ajax({
 		  type: 'GET',
 		  dataType: 'json',
 		  url: '/users/current',
+		  data: {
+		    page_id: $('#edit_page_link').data('page_id')
+		  },
 		  success: addUserData
 		});
   })();
-
-  // Adding / removing nested objects in nested forms
-	(function() {
-		$('#external-links').find('button').click(function() {
-	    var li = $(this).closest('ol').parent();
-
-	    if ($(this).hasClass('add')) {
-	      mime.tools.input_cloner(li);
-	    } else if ($(this).hasClass('remove')) {
-	      if (!li.is(':only-child')) {
-	        li.remove();
-	      }
-	    }
-	  });
-	})();
 
   // jQuery.timeago() (http://timeago.yarp.com/)
   $.timeago.settings.cutoff = 7*24*60*60*1000;
   $("time.timeago").timeago();
 
   // Formtastic
-  $('form.formtastic label abbr').html(function() {
+  $('form.formtastic label abbr, #jstemplates label abbr').html(function() {
     return '(' + $(this).attr('title') + ')';
   });
 
@@ -96,10 +87,10 @@ $(document).ready(function() {
       }
     }
   })();
-	
+
 	// Only allow selecting two checkboxes at the time in version log
 	(function() {
-		var selector = 'table.versions input[type="checkbox"]';		
+		var selector = 'table.versions input[type="checkbox"]';
 		$(selector).click(function() {
 			if($(selector + ':checked').length > 2) {
 				alert('åhnånå. Du kan bare sammenligne to versjoner!');
@@ -130,6 +121,9 @@ $(document).ready(function() {
       return false;
     }
   });
+
+  // Datepicker
+  mime.tools.addDatepicker('.date-field');
 
   // Disable click on TODO links
   $('a.TODO').click(function(e) {

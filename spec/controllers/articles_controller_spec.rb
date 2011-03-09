@@ -182,24 +182,25 @@ describe ArticlesController do
     end
 
     describe "sorting" do
+      let(:u) { Factory :user }
       before :each do
-        @u = Factory(:user)
         %w(snerk bukse åker føner samlebånd).each do |headword|
           a = Article.new(:headword => headword)
-          a.authors = [@u]
+          a.authors = [ u ]
           a.save
+          u.save
         end
       end
 
       it "sorts a user's articles by headword" do
-        get :index, :user_id => @u.to_param, :sort => 'headword_sorting', :direction => 'asc'
+        get :index, :user_id => u.to_param, :sort => 'headword_sorting', :direction => 'asc'
         response.should be_success
         assigns(:articles_pager).first.headword.should == 'bukse'
         assigns(:articles_pager).last.headword.should == 'åker'
       end
 
       it "sorts a user's articles by headword, descending" do
-        get :index, :user_id => @u.to_param, :sort => 'headword_sorting', :direction => 'desc'
+        get :index, :user_id => u.to_param, :sort => 'headword_sorting', :direction => 'desc'
         response.should be_success
         assigns(:articles_pager).first.headword.should == 'åker'
         assigns(:articles_pager).last.headword.should == 'bukse'

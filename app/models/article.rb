@@ -42,11 +42,11 @@ class Article
     time    :end_year
   end
   
-  attr_accessor :media_ids_from_async_upload
-
   index :headword, :unique => true
   index "versions.headword"
   index [[ 'location.lat_lng', Mongo::GEO2D ]]
+
+  attr_accessor :media_ids_from_async_upload
 
   validates_presence_of :headword
   validates_uniqueness_of :headword
@@ -56,7 +56,7 @@ class Article
   
   # We do this because mongodb doesn't allow index fields to be null
   # They can however be absent from the document…
-  before_validation :add_async_uploads, :remove_empty_location
+  before_validation :remove_empty_location
   
   before_save :update_headword_sorting, :remove_duplicate_tags
 
@@ -110,6 +110,17 @@ class Article
     delete_paranoia
   end
 
+  def add_async_uploads(media_ids_from_async_upload)
+    _media_ids = media_ids_from_async_upload.to_s.strip.split.map{|__id| BSON::ObjectId.from_string(__id)}
+    unless _media_ids.blank?
+      versionless do
+        Media.any_in(:_id => _media_ids).each do |media|
+          self.medias << media
+        end
+      end
+    end
+  end
+
   class << self
     def without_versioning(&block)
       without_callback(:save, :before, :revise) { yield }
@@ -122,27 +133,6 @@ class Article
     self.location = nil if !self.location.blank? && self.location.unwanted?
   end
   
-  def add_async_uploads
-    # TODO - sjonglering av id-er er et hack for å unngå at artikkelen lagres for hver enkelt
-    # bilde vi legger til også lagrer artikkelen.
-    # Ideelt skulle vi kunne gjøre:
-    # @article.medias << new_medias
-    _media_ids = media_ids_from_async_upload.to_s.strip.split.map{|__id| BSON::ObjectId.from_string(__id)}
-    unless _media_ids.blank?
-      self.class.without_callback :validation, :before, :add_async_uploads do
-        new_medias = Media.any_in(:_id => _media_ids)
-        new_medias.each do |media|
-          media.article_ids << self.id
-          media.article_ids.uniq!
-          media.save
-        end
-        
-        self.media_ids += _media_ids
-        self.media_ids.uniq!
-      end
-    end
-  end
-
   def update_headword_sorting
     array = self[:headword].mb_chars.downcase.gsub(/aa/, 'å').scan(/./)
     self[:headword_sorting] = array.map {|c| NO_SORT.index(c)}.compact.map {|c| (c + 'a'.ord).chr}.join

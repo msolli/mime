@@ -15,8 +15,11 @@ class Users::SessionsController < Devise::SessionsController
   def current
     request.format = :json # force for mobile apps too. Hack/TODO
     respond_with({
-      :user => (user_signed_in? ? current_user : nil),
-      :flash => (flash.empty? ? nil : flash)
+      user: (user_signed_in? ? current_user : nil),
+      flash: (flash.empty? ? nil : flash),
+      show: [
+        can?(:manage, Page.first(conditions: {id: params[:page_id]})) ? '#edit_page_link' : nil
+      ].compact
     })
   end
 end

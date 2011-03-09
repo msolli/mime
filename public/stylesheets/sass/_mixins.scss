@@ -91,6 +91,13 @@
   }
 }
 
+@mixin page-box {
+  float: left;
+  display: inline;
+  margin-right: 2px;
+  margin-bottom: 2px;
+}
+
 @mixin intro-box {
   @include message-box(lighten($main-background-color, 5%));
   color: $text-color;

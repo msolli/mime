@@ -1,0 +1,16 @@
+= semantic_form_for [page, article_list] do |f|
+
+  = f.inputs do
+    = f.input :name
+    = f.input :number_of_articles
+
+  = f.inputs name: 'Artikler', class: "nested-form" do
+    = f.semantic_fields_for :list_articles do |builder|
+      = render 'list_article_fields', :f => builder
+    %li= add_child_link t('pages.list_article.new'), :list_articles
+
+  = new_child_fields_template f, :list_articles
+
+  = f.buttons do
+    = f.commit_button
+    %li= link_to t('pages.cancel'), edit_page_path(page)
