@@ -1,9 +1,9 @@
-%li{class: "#{list.type.underscore} article-list-#{i} article_list"}
+%li{class: [list.type.underscore, 'article_list', ("article-list-#{i}" unless list.type == 'ManualArticleList')]}
   %h2
     = list.name
 
-    - unless %w{show index}.include? action_name
-      %br
+  - unless %w{show index}.include? action_name
+    %p
       %span.actions
         = list.class.model_name.human
         |
@@ -18,7 +18,7 @@
 
   %ul
     - list.current_articles.each do |a|
-      = render "#{list.type.underscore.pluralize}/show_in_page", a: a, i: i
+      = render "#{list.type.underscore.pluralize}/show_in_page", a: a
 
   - unless %w{show index}.include? action_name
     = builder.hidden_field(:id) unless builder.emitted_hidden_id?

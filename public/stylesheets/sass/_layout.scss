@@ -317,6 +317,9 @@ header {
   }
 
   .manual_article_list {
+    float: left;
+    display: inline;
+    width: 960px;
 
     ul {
       @extend .clearfix;
@@ -372,6 +375,13 @@ header {
         @include overflow-ellipsis;
       }
     }
+  }
+
+  .article_list_placeholder {
+    float: left;
+    display: inline;
+    width: 238px;
+    height: 192px;
   }
 
   .article-list-1 {

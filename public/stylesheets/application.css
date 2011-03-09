@@ -619,53 +619,57 @@ header {
       background-image: url(/images/icons/down_arrow.gif); }
     #main table.versions tr.current, #main table.articles tr.current {
       background: #d9e3e2; }
-  #main .manual_article_list .featured-article {
+  #main .manual_article_list {
     float: left;
     display: inline;
-    margin-right: 2px;
-    margin-bottom: 2px;
-    width: 238px; }
-  #main .manual_article_list a.featured {
-    display: block;
-    height: 175px;
-    width: 238px; }
-  #main .manual_article_list figure {
-    margin: 0;
-    padding: 0;
-    height: 175px; }
-    #main .manual_article_list figure img {
-      position: relative;
-      border-radius: 4px;
-      -moz-border-radius: 4px;
-      -webkit-border-radius: 4px;
-      behavior: url(/stylesheets/PIE.htc);
+    width: 960px; }
+    #main .manual_article_list .featured-article {
+      float: left;
+      display: inline;
+      margin-right: 2px;
+      margin-bottom: 2px;
+      width: 238px; }
+    #main .manual_article_list a.featured {
+      display: block;
       height: 175px;
       width: 238px; }
-    #main .manual_article_list figure figcaption {
-      position: relative;
-      -webkit-border-bottom-left-radius: 4px;
-      -webkit-border-bottom-right-radius: 4px;
-      /*
-        Firefox og IE/PIE støtter ikke avrundede hjørner på img, derfor tar vi ikke med dette ennå.
-        border-radius: 0px 0px $radius $radius;
-        -moz-border-radius-bottomleft: $radius;
-        -moz-border-radius-bottomright: $radius;
+    #main .manual_article_list figure {
+      margin: 0;
+      padding: 0;
+      height: 175px; }
+      #main .manual_article_list figure img {
+        position: relative;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
         behavior: url(/stylesheets/PIE.htc);
-      */
-      behavior: url(/stylesheets/PIE.htc);
-      background-color: rgba(0, 0, 0, 0.6);
-      -pie-background: rgba(0, 0, 0, 0.6);
-      display: block;
-      position: relative;
-      top: -41px;
-      height: 37px;
-      line-height: 37px;
-      padding-left: 14px;
-      overflow-x: hidden;
-      overflow-y: visible;
-      text-overflow: ellipsis;
-      -o-text-overflow: ellipsis;
-      white-space: nowrap; }
+        height: 175px;
+        width: 238px; }
+      #main .manual_article_list figure figcaption {
+        position: relative;
+        -webkit-border-bottom-left-radius: 4px;
+        -webkit-border-bottom-right-radius: 4px;
+        /*
+          Firefox og IE/PIE støtter ikke avrundede hjørner på img, derfor tar vi ikke med dette ennå.
+          border-radius: 0px 0px $radius $radius;
+          -moz-border-radius-bottomleft: $radius;
+          -moz-border-radius-bottomright: $radius;
+          behavior: url(/stylesheets/PIE.htc);
+        */
+        behavior: url(/stylesheets/PIE.htc);
+        background-color: rgba(0, 0, 0, 0.6);
+        -pie-background: rgba(0, 0, 0, 0.6);
+        display: block;
+        position: relative;
+        top: -41px;
+        height: 37px;
+        line-height: 37px;
+        padding-left: 14px;
+        overflow-x: hidden;
+        overflow-y: visible;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        white-space: nowrap; }
   #main .sorted_article_list, #main .tags_article_list {
     float: left;
     display: inline;
@@ -687,6 +691,11 @@ header {
         text-overflow: ellipsis;
         -o-text-overflow: ellipsis;
         white-space: nowrap; }
+  #main .article_list_placeholder {
+    float: left;
+    display: inline;
+    width: 238px;
+    height: 192px; }
   #main .article-list-1 {
     background-color: #98a8c8; }
     #main .article-list-1 li a {
@@ -1273,7 +1282,7 @@ form.formtastic em {
   font-style: italic; }
 form.formtastic strong {
   font-weight: bold; }
-form.formtastic h2 span {
+form.formtastic span.actions, form.formtastic span.deleted {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;

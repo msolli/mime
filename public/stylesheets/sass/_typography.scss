@@ -270,7 +270,7 @@ form.formtastic {
   strong {
     font-weight: bold;
   }
-  h2 span {
+  span.actions, span.deleted {
     @include small-sans;
     font-size: 12px;
     font-weight: normal;
