@@ -9,5 +9,9 @@ Factory.define :todays_articles, :parent => :manual_article_list do |f|
       a = Factory :article
       Factory.build(:list_article, headword: a.headword, published_on: Date.today - i, listable: list)
     end
+    4.times do |i|
+      a = Factory :article
+      Factory.build(:list_article, headword: a.headword, published_on: Date.today + i + 1, listable: list)
+    end
   end
 end
