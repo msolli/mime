@@ -8,6 +8,6 @@ class ManualArticleList < ArticleList
   end
 
   def current_articles
-    list_articles.desc(:published_on).limit(number_of_articles)
+    list_articles.where(:published_on.lte => Date.today).desc(:published_on).limit(number_of_articles)
   end
 end
