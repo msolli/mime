@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class HomeController < ApplicationController
-  caches_action :index
+  caches_action :index, expires_in: 5.minutes
 
   def index
     flash.keep
