@@ -85,3 +85,13 @@ end
 Så /^så skal jeg være bidragsyter for (\d+) artikler$/ do |n|
   User.where(:email => 'nn@example.com').first.articles.count.should == n.to_i
 end
+
+Så /^artikkelen "([^"]*)" skal ha (\d+) versjoner$/ do |headword, versions|
+  a = Article.where(:headword => headword).first
+  a.version.should == versions.to_i
+end
+
+Så /^versjon (\d+) av "([^"]*)" skal være sist oppdatert "([^"]*)"$/ do |version, headword, timestamp|
+  a = Article.where(:headword => headword).first
+  a.versions.select { |v| v.version == version.to_i }.first.updated_at.strftime('%Y-%m-%d').should == timestamp
+end
