@@ -8,13 +8,15 @@ Egenskap: Legge bilder til artikler
 
   @javascript
   Scenario: legge til bilder
-    Gitt at artikkelen "Foo" finnes
+    Gitt at original-artikkelen "Foo" finnes
     Og jeg står på artikkelredigering for "Foo"
     Når jeg legger ved bildet "spec/data/jpeg.jpeg" til "file-uploader"
     Og jeg trykker "Last opp filer"
     Så skal det være 1 av ".files li.image img"
     Når jeg trykker "Lagre"
     Så skal det være 1 av ".meta figure"
+    Og artikkelen "Foo" skal ha 2 versjoner
+    Og versjon 1 av "Foo" skal være sist oppdatert "2008-10-16"
 
   @javascript
   Scenario: legge bilder til ny artikkel

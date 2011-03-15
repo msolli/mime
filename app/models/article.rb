@@ -113,9 +113,11 @@ class Article
   def add_async_uploads(media_ids_from_async_upload)
     _media_ids = media_ids_from_async_upload.to_s.strip.split.map{|__id| BSON::ObjectId.from_string(__id)}
     unless _media_ids.blank?
-      versionless do
-        Media.any_in(:_id => _media_ids).each do |media|
-          self.medias << media
+      Article.without_timestamps do
+        versionless do
+          Media.any_in(:_id => _media_ids).each do |media|
+            self.medias << media
+          end
         end
       end
     end
@@ -125,8 +127,12 @@ class Article
     def without_versioning(&block)
       without_callback(:save, :before, :revise) { yield }
     end
+
+    def without_timestamps(&block)
+      without_callback(:save, :before, :set_updated_at) { yield }
+    end
   end
-  
+
   private
   
   def remove_empty_location
