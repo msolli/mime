@@ -14,7 +14,7 @@ class ArticleSweeper < Mongoid::Observing::Sweeper
   def expire_article_cache(article)
     if self.controller
       path = ActionController::Caching::Actions::ActionCachePath.new(self, pretty_article_url(article, :host => 'ableksikon.no'), false)
-      expire_fragment Regexp.new("#{path.path}.*")
+      expire_fragment Regexp.new("#{Regexp.escape(path.path)}.*")
     end
   end
 end
