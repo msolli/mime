@@ -51,7 +51,7 @@ module Import
     #    - Foo (something else - 3)
     # * En 'disambiguation page' med lenke til artikkel opprettes.
     def save!
-      @users = @authors.map { |a| ArticleXml.get_user(a) }.compact
+      @users = @authors.map { |a| ArticleXml.get_user(a) }.compact.map(&:_id)
       begin
         Rails.logger.debug("  MIME: Prøver å opprette artikkel med standard headword")
         a = Article.new(self.attributes)
