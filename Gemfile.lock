@@ -33,7 +33,7 @@ GIT
 
 GIT
   remote: http://github.com/mongoid/mongoid.git
-  revision: 3186f6ff643da876ce2358334834285cd6a4ebad
+  revision: 4a40af7272da83893d8fb1c3bf430121473b921e
   specs:
     mongoid (2.0.0.rc.7)
       activemodel (~> 3.0)
@@ -304,7 +304,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tzinfo (0.3.24)
+    tzinfo (0.3.25)
     warden (1.0.3)
       rack (>= 1.0.0)
     will_paginate (3.0.pre2)

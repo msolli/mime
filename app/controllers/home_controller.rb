@@ -6,9 +6,7 @@ class HomeController < ApplicationController
   def index
     flash.keep
 
-    rescue_connection_failure do
-      @page = Page.first(:conditions => {:name => ENV['FRONTPAGE'] || 'Forside'})
-    end
+    @page = Page.first(:conditions => {:name => ENV['FRONTPAGE'] || 'Forside'})
     return unless @page
 
     expires_in 5.minutes, :public => true if Rails.env.production?

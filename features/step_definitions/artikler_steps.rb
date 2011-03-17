@@ -42,7 +42,6 @@ end
 Gitt /^at jeg legger til bildet "([^"]*)" til artikkelen "([^"]*)"$/ do |img_path, headword|
   a = Article.where(:headword => headword).first
   a.medias << (Media.new :file => open(File.exists?(img_path) ? img_path : File.join(Rails.root, img_path)))
-  a.save
 end
 
 Gitt /^at artikkelen "([^"]*)" har følgende bidragsytere:$/ do |headword, authors|

@@ -35,7 +35,7 @@ Egenskap: Se forskjellen på to versjoner av en artikkel
     Og at jeg legger til bildet "/spec/data/jpeg.jpeg" til artikkelen "Foo"
     Når jeg står på versjonsloggen for "Foo"
     Og jeg krysser av "Aktiv versjon"
-    Og jeg krysser av "V 3"
+    Og jeg krysser av "Første versjon"
     Og jeg trykker "Sammenlign"
     Så skal ".meta .added figure" finnes
     

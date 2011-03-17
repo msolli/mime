@@ -5,6 +5,7 @@ defaults: &defaults
   #     port: 27018
   #   - host: slave2.local
   #     port: 27019
+  max_retries_on_connection_failure: 10
 
 development:
   <<: *defaults
