@@ -1,4 +1,4 @@
-%aside#messages
+%aside#messages.grid_12
 
 %script{:id => 'messages-tmpl', :type => 'text/x-jquery-tmpl'}
   {{if $item.data.alert || $item.data.notice || $item.data.redirected_from}}
@@ -10,6 +10,6 @@
     %li#notice {{html notice}}
     {{/if}}
     {{if $item.data.redirected_from}}
-    %li#redirected= "#{t('articles.redirected', :from => "{{html redirected_from}}")}"
+    %li.redirected= "#{t('articles.redirected', :from => "{{html redirected_from}}")}"
     {{/if}}
   {{/if}}

@@ -10,7 +10,9 @@ module NavigationHelpers
 
     when /forsiden/
       root_path
-    when /ny artikkel-siden/
+    when /ny artikkel-siden for "([^"]*)"$/
+      new_article_path(headword: $1)
+    when /ny artikkel-siden$/
       new_article_path
     when /artikkelvisning for "([^"]*)"$/
       pretty_article_path $1

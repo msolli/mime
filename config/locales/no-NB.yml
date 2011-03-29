@@ -5,7 +5,7 @@ no-NB:
     header: "Budstikkas store Asker og Bærum-leksikon"
     missing_frontpage: "Her mangler det visst en forside"
     join_us:
-      teaser: "Bli med å oppdatere leksikonet"
+      teaser: "Bli med å oppdatere leksikonet:"
       new_article: "Start en ny oppføring"
       
     mobile:
@@ -119,11 +119,16 @@ no-NB:
         email: Epostadresse
         email_desc: "Du kan be om å få beskjed fra oss på epost når en artikkel blir oppdatert, f.eks. Vi deler ikke epostadressen din med noen."
   search:
+    search_result: Søkeresultat
     hits_and_total: "Viser %{showing} av %{total} treff"
     template:
       several_hits: "%{previous_label} Viser %{from}-%{to} av %{total_entries} treff %{next_label}"
       one_or_less_hits: "Viser %{count} av %{count} treff"
     error: "Vi har visst problemer med å få gjort søket ditt akkurat nå. Du kan alltids prøve igjen ved å laste siden på nytt."
+    no_hits: Søket ditt ga ingen treff på ableksikon.no.
+    contribute: "Har du kunnskap om det du søkte etter? Vi vil veldig gjerne ha ditt bidrag til leksikonet."
+    new_article_html: "Her kan du opprette en artikkel om <span>%{headword}</span>."
+    wikipedia_html: "Søk etter <span>%{q}</span> på norske Wikipedia."
   pages:
     new: Ny side
     edit: Rediger
@@ -163,8 +168,6 @@ no-NB:
     actions:
       create: Opprett
       update: Lagre
-      page:
-        publish: Publiser
     labels:
       other:
         'maptastic-search': 'Søk etter sted eller adresse:'
@@ -207,6 +210,8 @@ no-NB:
     you: du
     your: din
     deleted: slettet
+    articles: artikler
+    required: påkrevet
   import:
     disambiguation:
       link_back_to: "%{headword} har flere betydninger. For andre betydninger, se %{headword_link}."
@@ -323,6 +328,13 @@ no-NB:
     percentage:
       format:
         delimiter: ""
+
+  helpers:
+    submit:
+      create: Opprett
+      update: Lagre
+      page:
+        publish: Publiser
 
   activemodel:
     errors:

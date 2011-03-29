@@ -8,6 +8,7 @@ class TagsArticleListsController < ApplicationController
 
   def create
     @article_list = TagsArticleList.new(params[:tags_article_list])
+
     if @article_list.valid?
       @page.tags_article_lists << @article_list
       redirect_to edit_page_path(@page)

@@ -17,38 +17,42 @@
 = render :partial => 'common/flash'
 = render :partial => 'disambiguation', :locals => { :article => @article }
 
-.articletext!= @article.text
+.articletext.grid_7!= @article.text
 
-%aside.meta
+%aside.meta.grid_5
   = render :partial => 'medias/image_in_article', :collection => @article.medias, :as => :image
   - unless @article.location.blank?
     .map-wrapper.minimized
       .map{:data => {:'lat' => @article.location.lat, :lng => @article.location.lng, :zoom => @article.location.zoom}}
       = link_to t('articles.bigger_map'), '#', :class => 'bigger-map'
       = link_to t('articles.smaller_map'), '#', :class => 'smaller-map'
-    
-- unless @article.external_links.blank?
-  %aside.external-links
-    %h3= t('external_links.external_links')
-    %ul
-      - @article.external_links.each do |link|
-        %li
-          %a{:href => link.href, :rel => 'nofollow'}=link.text
-%aside.tags
-  %h3= t('tags.tags')
-  - if @article.tags_array.empty?
-    %p!= t('tags.no_tags', :add_tags_link => link_to(t('tags.add_tags'), edit_article_path(@article), :rel => 'nofollow'))
-  - else
-    %ul
-      - @article.tags_array.each do |tag|
-        %li>= tag
-        -#%li>= link_to tag, "#TODO"
 
-%div.article-bottom-ad
-  :javascript
-    google_ad_client = "ca-pub-0031389257411981";
-    /* Leksikon-artikkel-bunn */
-    google_ad_slot = "0385347003";
-    google_ad_width = 728;
-    google_ad_height = 90;
-  = javascript_include_tag 'http://pagead2.googlesyndication.com/pagead/show_ads.js'
+- unless @article.external_links.blank?
+  .box-wrapper.grid_12
+    %aside.external-links
+      %h3= t('external_links.external_links')
+      %ul
+        - @article.external_links.each do |link|
+          %li
+            %a{:href => link.href, :rel => 'nofollow'}=link.text
+
+.box-wrapper.grid_12
+  %aside.tags
+    %h3= t('tags.tags')
+    - if @article.tags_array.empty?
+      %p!= t('tags.no_tags', :add_tags_link => link_to(t('tags.add_tags'), edit_article_path(@article), :rel => 'nofollow'))
+    - else
+      %ul
+        - @article.tags_array.each do |tag|
+          %li>= tag
+          -#%li>= link_to tag, "#TODO"
+
+.box-wrapper.grid_12
+  %div.article-bottom-ad
+    :javascript
+      google_ad_client = "ca-pub-0031389257411981";
+      /* Leksikon-artikkel-bunn */
+      google_ad_slot = "0385347003";
+      google_ad_width = 728;
+      google_ad_height = 90;
+    = javascript_include_tag 'http://pagead2.googlesyndication.com/pagead/show_ads.js'

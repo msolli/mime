@@ -91,6 +91,12 @@
   }
 }
 
+@mixin border-box {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 @mixin page-box {
   float: left;
   display: inline;

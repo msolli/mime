@@ -1,11 +1,22 @@
-= semantic_form_for [page, article_list] do |f|
+= simple_form_for [page, article_list] do |f|
 
-  = f.inputs do
-    = f.input :name
-    = f.input :number_of_articles
-    = f.input :sort_field, as: :radio, collection: { 'Opprettet' => :created_at, 'Sist endret' => :updated_at, 'Oppslagsord' => :headword }
-    = f.input :sort_direction, as: :radio, collection: { 'Stigende' => :asc, 'Synkende' => :desc }
+  = f.input :name, wrapper_html: { class: 'grid_6 suffix_6' }
+  = f.input :number_of_articles, wrapper_html: { class: 'grid_6 suffix_6' }
 
-  = f.buttons do
-    = f.commit_button
-    %li= link_to t('pages.cancel'), edit_page_path(page)
+  %fieldset.grid_6
+    %legend
+      %label
+        = t('simple_form.labels.sort_field')
+        %abbr{title: t('words.required')}
+    = f.input :sort_field, label: false, as: :radio, collection: [:created_at, :updated_at, :headword], label_method: proc { |word| t(word, scope: 'simple_form.labels') }
+
+  %fieldset.grid_6
+    %legend
+      %label
+        = t('simple_form.labels.sort_direction')
+        %abbr{title: t('words.required')}
+    = f.input :sort_direction, label: false, as: :radio, collection: [:asc, :desc], label_method: proc { |word| t(word, scope: 'simple_form.labels') }
+
+  .action-buttons.grid_12
+    = f.button :submit
+    = link_to t('pages.cancel'), edit_page_path(page)

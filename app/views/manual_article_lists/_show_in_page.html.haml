@@ -1,9 +1,11 @@
-%li.featured-article
+%li.grid_3{class: alpha_omega(a_counter, list_size)}
   - unless a.article.blank?
     = link_to pretty_article_path(a.article), :class => 'featured' do
-      %figure
-        - if a.article.medias.first
-          %img{:src => a.article.medias.first.file.thumb("238x175#nw").url}
-        - else
-          %img{:src => "http://dummyimage.com/238x175/bf/fff&text=#{a.headword}"}
-        %figcaption= a.headword
+
+      - if a.article.medias.first
+        - imgurl = a.article.medias.first.file.thumb("220x175#nw").url
+      - else
+        - imgurl = "http://dummyimage.com/220x175/bf/fff&text=#{a.headword}"
+
+      %img{src: imgurl, alt: a.headword}
+      %p.caption= a.headword

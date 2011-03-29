@@ -94,3 +94,7 @@ Så /^versjon (\d+) av "([^"]*)" skal være sist oppdatert "([^"]*)"$/ do |versi
   a = Article.where(:headword => headword).first
   a.versions.select { |v| v.version == version.to_i }.first.updated_at.strftime('%Y-%m-%d').should == timestamp
 end
+
+Så /^skal jeg se "([^"]*)" i oppslagsord\-feltet$/ do |headword|
+  find_field('article_headword').value.should == headword
+end

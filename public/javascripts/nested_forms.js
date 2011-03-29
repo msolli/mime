@@ -20,7 +20,7 @@ $(document).ready(function() {
       if (hiddenField) {
         hiddenField.value = '1';
       }
-      $(this).parents('.fields').css('visibility', 'hidden').slideUp('fast');
+      $(this).closest('.article-fields').css('visibility', 'hidden').slideUp('fast');
       return false;
     });
 

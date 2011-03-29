@@ -29,7 +29,7 @@ $(document).ready(function() {
   $("time.timeago").timeago();
 
   // Formtastic
-  $('form.formtastic label abbr, #jstemplates label abbr').html(function() {
+  $('form label abbr, #jstemplates label abbr').html(function() {
     return '(' + $(this).attr('title') + ')';
   });
 
