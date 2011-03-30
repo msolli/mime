@@ -15,6 +15,7 @@ javascripts:
     - public/javascripts/mobile/mobile-application.js
   all:
     - public/javascripts/typekit.js
+    - public/javascripts/modernizr-1.7.min.js
     - public/javascripts/spring.js
     - public/javascripts/jquery/jquery-1.4.4.js
     - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.core.js
