@@ -1,65 +1,71 @@
 !!! 5
-%html{lang: 'no'}
-  %head
-    %title<!= content_for?(:title) ? "#{yield(:title).strip} – #{t('mime.title')}" : t('mime.title')
-    %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : t('mime.description')}
-    - if %w(edit new create update).include? action_name
-      %meta{:name => 'robots', :content => 'noindex, nofollow'}
-    = yield :canonical
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
-    = include_stylesheets :all
-    = favicon_link_tag
+%head
+  %meta{charset: 'utf-8'}
+  %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge,chrome=1'}
 
-    /[if lt IE 9]
-      %script{:src => "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"}
-      %script{:src => "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js"}
-      %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+  %title<!= content_for?(:title) ? "#{yield(:title).strip} – #{t('mime.title')}" : t('mime.title')
+  %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : t('mime.description')}
+  - if %w(edit new create update).include? action_name
+    %meta{:name => 'robots', :content => 'noindex, nofollow'}
+  %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
 
-    %script{:src => "http://use.typekit.com/odc3uil.js"}
-    %script{:src => "/js/"}
+  = yield :canonical
 
-    = yield :javascripts
-    = include_javascripts :all
+  = include_stylesheets :all
+  = favicon_link_tag
 
-    = csrf_meta_tag
+  %script{:src => "http://use.typekit.com/odc3uil.js"}
+  %script{:src => "/js/"}
 
-  %body
-    %header
-      = render :partial => "common/branding-header"
+  = yield :javascripts
+  = include_javascripts :all
 
-      .wrapper
-        .title
-          = link_to(image_tag('logo-title.png', :size => '373x50', :alt => t('mime.title')), root_path)
-          %p= t('mime.header')
-        = render :partial => "common/user-links"
-        = render :partial => "common/search"
-      = render :partial => "common/nav"
+  = csrf_meta_tag
 
-    #main{:class => "#{controller_name} #{action_name}"}
-      - if controller_name == 'articles'
-        %article
-          %header
-            %h1<= yield :header
-          .wrapper
-            = yield
-      - else
-        - if content_for? :header
-          %header
-            %h1<= yield :header
+%body
+  %header
+    = render :partial => "common/branding-header"
+
+    .wrapper
+      .title
+        = link_to(image_tag('logo-title.png', :size => '373x50', :alt => t('mime.title')), root_path)
+        %p= t('mime.header')
+      = render :partial => "common/user-links"
+      = render :partial => "common/search"
+    = render :partial => "common/nav"
+
+  #main{class: "#{controller_name} #{action_name}", role: 'main'}
+    - if controller_name == 'articles'
+      %article
+        %header
+          %h1<= yield :header
         .wrapper
-          = render :partial => "common/flash"
           = yield
+    - else
+      - if content_for? :header
+        %header
+          %h1<= yield :header
+      .wrapper
+        = render :partial => "common/flash"
+        = yield
 
-    %footer
-      = render :partial => 'common/scores'
-      = render :partial => 'common/google_analytics'
-      - if content_for? :footer
-        .wrapper
-          = yield :footer
-      = render :partial => "common/branding-footer"
+  %footer
+    = render :partial => 'common/scores'
+    = render :partial => 'common/google_analytics'
+    - if content_for? :footer
+      .wrapper
+        = yield :footer
+    = render :partial => "common/branding-footer"
 
-    - unless %w(edit new create update).include?(action_name)
-      = render :partial => 'common/bottom-ad'
+  - unless %w(edit new create update).include?(action_name)
+    = render :partial => 'common/bottom-ad'
 
-    #jstemplates
-      = yield :jstemplates
+  #jstemplates
+    = yield :jstemplates
+
+</html>
