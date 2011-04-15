@@ -16,13 +16,21 @@ no-NB:
       headword: Oppslagsord
       published_on: Dato
       tags: Nøkkelord
+      location: Kart
+      geocoding: 'Søk etter sted eller adresse:'
+      disambiguation: 'Andre betydninger'
+      external_links: 'Eksterne lenker'
+      href: Adresse
+      text: Lenketekst
       sort_field: Sorteringsfelt
       sort_direction: Retning
       created_at: Opprettet
       updated_at: Sist endret
-      headword: Oppslagsord
       asc: Stigende
       desc: Synkende
+
+    hints:
+      map: 'Klikk for å velge en posisjon. Dra markøren rundt for å etterjustere.'
     # Labels and hints examples
     # labels:
     #   password: 'Password'
@@ -34,4 +42,3 @@ no-NB:
     # hints:
     #   username: 'User name to sign in.'
     #   password: 'No special characters, please.'
-

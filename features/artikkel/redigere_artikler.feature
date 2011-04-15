@@ -45,11 +45,6 @@ Egenskap: Redigere artikler
       Så skal jeg se "Navn Navnesen" under "table.versions"
 
     @javascript
-    Scenario: tooltip skal vises ikke vises med mindre det fokuseres på et felt med data-tooltip-enable => true
-      Når jeg står på artikkelredigering for "Foo"
-      Så skal ".tooltip" være usynlig
-
-    @javascript
     Scenario: Det skal være en lettfattelig måte å formatere artikler på
       Når jeg står på artikkelredigering for "Foo"
       Så skal "#article_text_editor" være usynlig

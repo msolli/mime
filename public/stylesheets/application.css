@@ -630,9 +630,7 @@ nav {
     margin-top: 16px; }
   #main .articletext {
     margin-top: 1em;
-    overflow: visible;
-    float: left;
-    overflow: hidden; }
+    overflow: visible; }
     #main .articletext p {
       margin-bottom: 1em; }
     #main .articletext ul {
@@ -1111,27 +1109,6 @@ footer {
 #main form.formtastic .ckeditor span.cke_skin_kama {
   border: 1px solid #ccc; }
 
-.tooltip {
-  background-color: #fff;
-  padding: 10px;
-  width: 300px;
-  z-index: 99999;
-  position: relative;
-  box-shadow: 0px 2px 10px #777777;
-  -moz-box-shadow: 0px 2px 10px #777777;
-  -webkit-box-shadow: 0px 2px 10px #777777;
-  behavior: url(/stylesheets/PIE.htc); }
-  .tooltip span {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    display: block;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent #fff transparent transparent;
-    top: 10px;
-    left: -20px; }
-
 #dialog_file_uploadUploader {
   width: 130px;
   height: 40px; }
@@ -1255,9 +1232,6 @@ nav {
   #main .join-us-teaser span {
     font-style: italic;
     font-size: 200%; }
-  #main aside.actions {
-    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
-    font-size: 75%; }
   #main aside.intro {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
   #main .alphabetic li {
@@ -1405,12 +1379,6 @@ form.formtastic fieldset > ol > li p.inline-hints, form.formtastic fieldset > ol
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
   color: #7a7a7a; }
-form.formtastic fieldset > ol > li #show-map-link, form.formtastic fieldset > ol > li #hide-map-link, form.formtastic fieldset > ol > li.string #show-map-link, form.formtastic fieldset > ol > li.string #hide-map-link, form.formtastic fieldset > ol > li.text #show-map-link, form.formtastic fieldset > ol > li.text #hide-map-link {
-  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
-  font-size: 75%;
-  text-decoration: none; }
-  form.formtastic fieldset > ol > li #show-map-link span:hover, form.formtastic fieldset > ol > li #hide-map-link span:hover, form.formtastic fieldset > ol > li.string #show-map-link span:hover, form.formtastic fieldset > ol > li.string #hide-map-link span:hover, form.formtastic fieldset > ol > li.text #show-map-link span:hover, form.formtastic fieldset > ol > li.text #hide-map-link span:hover {
-    text-decoration: underline; }
 form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic fieldset > ol > li.string input[type="text"].headword, form.formtastic fieldset > ol > li.text input[type="text"].headword {
   font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
   font-size: 200%;
@@ -1441,11 +1409,6 @@ form.formtastic em {
   font-style: italic; }
 form.formtastic strong {
   font-weight: bold; }
-
-.tooltip {
-  color: #fab45b;
-  font-style: italic;
-  /*  font-weight: bold;*/ }
 
 footer {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
@@ -1505,11 +1468,30 @@ em {
     padding: 8px 4px 4px 4px; }
   .simple_form input[type="radio"] {
     margin-right: 5px; }
+  .simple_form .cke_editor_article_text_editor, .simple_form .cke_editor_article_disambiguation_editor {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-bottom: 32px; }
+  .simple_form #article_location {
+    position: relative;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    behavior: url(/stylesheets/PIE.htc);
+    border: 1px solid #cccccc;
+    height: 312px;
+    margin-bottom: 16px; }
   .simple_form label {
     display: block;
     margin-bottom: 3px; }
     .simple_form label abbr {
       padding-left: 1em; }
+  .simple_form .hint {
+    display: block; }
+  .simple_form #show-map-link, .simple_form #hide-map-link {
+    margin-bottom: 32px;
+    display: block; }
   .simple_form .collection_radio {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -1549,6 +1531,11 @@ em {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%;
     color: #45494f; }
+    .simple_form input.headword, .simple_form textarea.headword, .simple_form select.headword {
+      font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+      font-size: 200%;
+      font-weight: bold;
+      color: #45494f; }
   .simple_form label {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     color: #45494f;
@@ -1559,17 +1546,35 @@ em {
       text-transform: none;
       color: #7a7a7a;
       font-weight: normal; }
+  .simple_form .hint {
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+    color: #7a7a7a;
+    font-size: 75%;
+    font-style: italic; }
+  .simple_form .error {
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+    color: red;
+    font-size: 75%; }
   .simple_form legend, .simple_form legend label {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     color: #45494f;
     font-weight: bold;
     text-transform: none; }
+  .simple_form #show-map-link, .simple_form #hide-map-link {
+    font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+    font-size: 75%;
+    text-decoration: none; }
+    .simple_form #show-map-link span:hover, .simple_form #hide-map-link span:hover {
+      text-decoration: underline; }
   .simple_form .add_child, .simple_form .remove_child {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%; }
-  .simple_form .article-fields {
+  .simple_form .nested-fields {
     margin-bottom: 32px; }
 
+/* ----------------------------------------------------- */
+/* Søk                                                   */
+/* ----------------------------------------------------- */
 .article-search {
   /* ----------------------------------------------------- */
   /* Typography                                            */ }

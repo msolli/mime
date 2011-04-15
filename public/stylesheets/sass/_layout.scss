@@ -117,8 +117,6 @@ nav {
   }
   .articletext {
     @include articletext-layout;
-    float: left;
-    overflow: hidden;
   }
   aside.meta {
 
@@ -207,8 +205,6 @@ nav {
     border: 1px solid $box-border-color;
     margin-bottom: 16px;
     padding: 12px 12px 0 6px;
-  }
-  aside.actions {
   }
   aside.intro {
     @include intro-box;
@@ -676,29 +672,6 @@ footer {
     span.cke_skin_kama {
       border: 1px solid #ccc;
     }
-  }
-}
-
-.tooltip {
-
-  background-color: #fff;
-  padding: 10px;
-  width: 300px;
-  z-index: 99999;
-
-  @include box-shadow;
-
-
-  span {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    display: block;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent #fff transparent transparent;
-    top: 10px;
-    left: -20px;
   }
 }
 

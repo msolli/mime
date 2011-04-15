@@ -28,7 +28,6 @@ javascripts:
     - public/javascripts/jquery/jquery.templates/beta1/jquery.tmpl.js
     - public/javascripts/jquery/jquery.timeago/0.9.2/jquery.timeago.js
     - public/javascripts/jquery/jquery.timeago/common/jquery.timeago.no.js
-    - public/javascripts/jquery/jquery.tools/1.2.5/tooltip.js
     - public/javascripts/jquery/jquery.cookie/2010-01-08/jquery.cookie.js
     - public/javascripts/jquery/jquery.imgloaded/2010-08-23/ahpi.imgload.js
     - public/lib/plupload/js/plupload.full.min.js

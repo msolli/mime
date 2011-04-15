@@ -19,8 +19,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new(headword: params[:headword])
-    @article.build_location
-
     set_user_return_to new_article_path
   end
 

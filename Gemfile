@@ -52,7 +52,6 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'ruby-debug19'
-  gem 'passenger'
 end
 
 group :test do

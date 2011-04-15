@@ -34,12 +34,33 @@
     margin-right: 5px;
   }
 
+  .cke_editor_article_text_editor, .cke_editor_article_disambiguation_editor {
+    @include border-box;
+    margin-bottom: 32px;
+  }
+
+  #article_location {
+    @include rounded-corners(5px);
+    border: 1px solid $box-border-color;
+    height: 312px;
+    margin-bottom: 16px;
+  }
+
   label {
     display: block;
     margin-bottom: 3px;
     abbr {
       padding-left: 1em;
     }
+  }
+
+  .hint {
+    display: block;
+  }
+
+  #show-map-link, #hide-map-link {
+    margin-bottom: 32px;
+    display: block;
   }
 
   .collection_radio {
@@ -63,6 +84,12 @@
     @include small-sans;
     font-size: $font12px;
     color: $dark-grey-color;
+    &.headword {
+      @include serif;
+      font-size: $font32px;
+      font-weight: bold;
+      color: $dark-grey-color;
+    }
   }
 
   label {
@@ -78,11 +105,33 @@
     }  
   }
 
+  .hint {
+    @include small-sans;
+    color: $light-grey-color;
+    font-size: $font12px;
+    font-style: italic;
+  }
+  
+  .error {
+    @include small-sans;
+    color: red;
+    font-size: $font12px;
+  }
+
   legend, legend label {
     @include small-sans;
     color: $dark-grey-color;
     font-weight: bold;
     text-transform: none;
+  }
+
+  #show-map-link, #hide-map-link {
+    @include small-sans;
+    font-size: $font12px;
+    text-decoration: none;
+    span:hover {
+      text-decoration: underline;
+    }
   }
 
   /* ----------------------------------------------------- */
@@ -92,11 +141,15 @@
     font-size: $font12px;
   }
   
-  .article-fields {
+  .nested-fields {
     margin-bottom: 32px;
   }
 }
 
+
+/* ----------------------------------------------------- */
+/* Søk                                                   */
+/* ----------------------------------------------------- */
 .article-search {
   
   input[type="text"] {

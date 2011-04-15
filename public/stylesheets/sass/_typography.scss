@@ -52,10 +52,6 @@ nav {
     }
   }
 
-  aside.actions {
-    @include small-sans;
-    font-size: $font12px
-  }
   aside.intro {
     @include small-sans;
   }
@@ -244,14 +240,6 @@ form.formtastic {
       font-size: $font12px;
       color: $light-grey-color;
     }
-    #show-map-link, #hide-map-link {
-      @include small-sans;
-      font-size: $font12px;
-      text-decoration: none;
-      span:hover {
-        text-decoration: underline;
-      }
-    }
     input[type="text"].headword {
       @include serif;
       font-size: $font32px;
@@ -295,13 +283,6 @@ form.formtastic {
   strong {
     font-weight: bold;
   }
-}
-
-
-.tooltip {
-  color: $button-alt-color;
-  font-style: italic;
-/*  font-weight: bold;*/
 }
 
 footer {

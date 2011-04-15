@@ -6,60 +6,85 @@
   = render :partial => 'info', :locals => { :article => @article }
 = render :partial => "common/flash"
 
-= semantic_form_for setup_article(@article) do |f|
-  = f.inputs :class => 'files' do
-    = f.semantic_fields_for :medias do |medias_f|
-      = render :partial => "edit_media#{'_tpl' if medias_f.object.new_record?}", :locals => {:m => medias_f}
-    %li#upload-button-container
-      %label
-        Her kan du legge til bilder
-        #upload-container
-          %button#file-upload-button{:type => 'button'} Last opp filer
-    = f.input :media_ids_from_async_upload, :as => :hidden,
-      :input_html => {:id => 'media-files'}
-    - session_key_name = Rails.application.config.session_options[:key]
-    = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
+= simple_form_for setup_article(@article), html: {novalidate: true} do |f|
+
+  -#= f.inputs :class => 'files' do
+  -#  = f.semantic_fields_for :medias do |medias_f|
+  -#    = render :partial => "edit_media#{'_tpl' if medias_f.object.new_record?}", :locals => {:m => medias_f}
+  -#  %li#upload-button-container
+  -#    %label
+  -#      Her kan du legge til bilder
+  -#      #upload-container
+  -#        %button#file-upload-button{:type => 'button'} Last opp filer
+  -#  = f.input :media_ids_from_async_upload, :as => :hidden,
+  -#    :input_html => {:id => 'media-files'}
+  -#  - session_key_name = Rails.application.config.session_options[:key]
+  -#  = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
+
+  = f.input :headword, required: false, input_html: { class: 'headword' }, wrapper_html: { class: 'grid_7 suffix_5' }
+  .grid_7
+    = f.cktext_area :text, label: false
+  = f.input :tags, wrapper_html: { class: 'grid_7 suffix_5' }
+
+  .grid_7.clearfix
+    = f.label :location
+    = f.simple_fields_for :location do |location_f|
+      = location_f.hidden_field :latitude
+      = location_f.hidden_field :longitude
+      = location_f.hidden_field :zoom
+
+    .map-wrapper
+      #article_location{data: { :lat => @article.location.lat,
+        :lng => @article.location.lng,
+        :zoom => @article.location.zoom,
+        :'default-lat' => ENV["MAP_DEFAULT_LAT"],
+        :'default-lng' => ENV["MAP_DEFAULT_LNG"],
+        :'default-zoom' => ENV["MAP_DEFAULT_ZOOM"] }}
+      .grid_3.alpha
+        = f.hint t('simple_form.hints.map')
+      .grid_4.omega
+        = f.label :geocoding
+        = text_field_tag('geocoding')
+
+    .grid_7.alpha.omega
+      = link_to('#', id: 'show-map-link') do
+        = image_tag('show-map.png') + content_tag(:span, t('articles.show_map'))
+
+      = link_to('#', id: 'hide-map-link') do
+        = image_tag('hide-map.png') + content_tag(:span, t('articles.hide_map'))
+
+  .grid_7
+    = f.label :disambiguation
+    = f.cktext_area :disambiguation
+
+  %fieldset.grid_7
+    %legend
+      = f.label :external_links
+    = f.simple_fields_for :external_links do |builder|
+      = render 'external_link_fields', :f => builder
+    .grid_6= add_child_link t('external_links.new'), :external_links
+  = new_child_fields_template f, :external_links
+
+  .action-buttons.grid_12
+    = f.button :submit
+    - if @article.new?
+      = link_to t('articles.cancel'), :back
+    - else
+      = link_to t('articles.cancel'), pretty_article_path(@article)
 
 
-
-  = f.inputs do
-    = f.input :headword, :label => false, :input_html => {:class => 'headword', :'data-tooltip-enable' => true, :title => t('tooltips.articles.headword')}
-    = f.input :text, :as => :ckeditor, :label => false, :input_html => { :cols => '80', :class => 'articletext' }
-    = f.input :tags
-    = f.semantic_fields_for :location, :builder => Maptastic::SemanticFormBuilder do |location_f|
-      %li#position
-        %label{:for => 'article_location_attributes_latitude_longitude_map_input'}= t('formtastic.labels.location')
-        = link_to('#', :id => 'show-map-link', :'data-default-lat' => ENV["MAP_DEFAULT_LAT"], :'data-default-lng' => ENV["MAP_DEFAULT_LNG"], :'data-default-zoom' => ENV["MAP_DEFAULT_ZOOM"]) do
-          = image_tag('show-map.png') + content_tag(:span, t('articles.show_map'))
-        = link_to(image_tag('hide-map.png') + content_tag(:span, t('articles.hide_map')), '#', :id => 'hide-map-link')
-      = location_f.multi_input :latitude, :longitude, :as => :map, :label => false,
-        :zoom => :zoom, :search => true, :search_label => t('formtastic.labels.other.maptastic-search'),
-        :hint => t('formtastic.labels.other.maptastic-hint')
-
-    = f.input :disambiguation, :as => :text, :input_html => { :rows => 4 }
-  = f.inputs :name => t('articles.external_links'), :id => 'external-links' do
-    = f.semantic_fields_for :external_links do |external_links_f|
-      %li
-        %ol.link
-          = external_links_f.input :href
-          = external_links_f.input :text, :wrapper_html => {:class => 'link-text'}
-          - unless external_links_f.object.new_record?
-            = external_links_f.input :_destroy, :as => :boolean
-          - else # There should only be one object getting in here, the one we built in #setup_article helper
-            %li
-              %button.add{:type => 'button', :value => 'add-link'}= image_tag('icons/add.png', :size => '16x16')
-              %button.remove{:type => 'button', :value => 'remove-link'}= image_tag('icons/delete.png', :size => '16x16')
+-#= f.inputs :name => t('articles.external_links'), :id => 'external-links' do
+-#  = f.semantic_fields_for :external_links do |external_links_f|
+-#    %li
+-#      %ol.link
+-#        = external_links_f.input :href
+-#        = external_links_f.input :text, :wrapper_html => {:class => 'link-text'}
+-#        - unless external_links_f.object.new_record?
+-#          = external_links_f.input :_destroy, :as => :boolean
+-#        - else # There should only be one object getting in here, the one we built in #setup_article helper
+-#          %li
+-#            %button.add{:type => 'button', :value => 'add-link'}= image_tag('icons/add.png', :size => '16x16')
+-#            %button.remove{:type => 'button', :value => 'remove-link'}= image_tag('icons/delete.png', :size => '16x16')
 
 
-  = f.buttons do
-    = f.commit_button
-    - unless @article.errors.empty?
-      %li
-        %p.inline-errors= t('articles.errors.list')
-        %ul
-          - @article.errors.each do |attr, message|
-            %li.inline-errors= link_to(t("articles.#{attr}"), "#article_#{attr}")
-
-%aside.actions
-  %ul
-    -#%li= button_to t('articles.delete'), @article, :method => :delete, :confirm => t('articles.confirm_delete')
+-#%li= button_to t('articles.delete'), @article, :method => :delete, :confirm => t('articles.confirm_delete')

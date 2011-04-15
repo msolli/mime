@@ -52,8 +52,11 @@ class Article
   validates_uniqueness_of :headword
   validates_associated :location, :external_links
   
-  accepts_nested_attributes_for :location, :external_links, :medias, :allow_destroy => true, :reject_if => :all_blank
-  
+  accepts_nested_attributes_for :location, :medias, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :external_links,
+    :allow_destroy => true,
+    :reject_if => proc { |attributes| attributes.reject {|i| i.to_s == '_destroy'}.all? {|k,v| v.blank?} }
+
   # We do this because mongodb doesn't allow index fields to be null
   # They can however be absent from the document…
   before_validation :remove_empty_location

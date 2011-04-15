@@ -30,13 +30,15 @@ no-NB:
       headword:
         blank: Artikkelen må nok ha et oppslagsord.
         taken: Oppslagsordet du oppga fantes visst fra før. Vi har satt det tilbake til det det var.
-  tooltips:
-    articles:
-      headword: "Oppslagsord (må fylles ut)"
-  javascript_translations:
+
+  javascript:
     media:
       _destroy: Slett
       un_destroy: Behold
+    article:
+      map:
+        drag: Flytt for å angi ny plassering
+
   articles:
     new: Ny artikkel
     edit: Rediger
@@ -58,6 +60,7 @@ no-NB:
     delete: "Slett artikkelen"
     confirm_delete: "Er du sikker på at du vil slette denne artikkelen?"
     deleted_html: "Artikkelen <em>%{headword}</em> er slettet"
+    cancel: Avbryt
     errors:
       save: "Artikkelen ble visst ikke lagret – sjekk feilene nedenfor:"
       list: "Feil i disse feltene forhindret at artikkelen ble lagret:"
@@ -91,8 +94,11 @@ no-NB:
     tags: Nøkkelord
     no_tags: "Artikkelen har ingen nøkkelord. Bli med, bidra til leksikonet ved å %{add_tags_link}."
     add_tags: "legge til nøkkelord"
+
   external_links:
     external_links: Eksterne lenker
+    destroy: Slett
+    new: Ny ekstern lenke
   users:
     profile:
       profile: "Brukerprofil for %{for}"
@@ -368,6 +374,10 @@ no-NB:
         even: "må være partall"
         record_invalid: "Det oppstod feil: {$errors}"
       models:
+        article:
+          attributes:
+            headword:
+              blank: "Artikkelen må nok ha oppslagsord"
         manual_article_list:
           attributes:
             name:

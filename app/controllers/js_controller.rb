@@ -5,7 +5,7 @@ class JsController < ApplicationController
   before_filter :never_expire
   
   def show
-    render :js => "var mime = mime || {}; mime.translations = #{t('javascript_translations').to_json}"
+    render :js => "var mime = mime || {}; mime.translations = #{t('javascript').to_json}"
   end
   
   private
