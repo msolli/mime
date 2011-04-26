@@ -16,4 +16,4 @@ Egenskap: Artikkel med feil
 
     Scenario: feilmeldinger ved lagre-knappen
       Når jeg trykker "Opprett"
-      Så skal jeg se "Oppslagsord" under lagre-knappen
+      Så skal jeg se "Artikkelen må nok ha oppslagsord"

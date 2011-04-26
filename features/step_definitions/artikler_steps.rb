@@ -98,3 +98,11 @@ end
 Så /^skal jeg se "([^"]*)" i oppslagsord\-feltet$/ do |headword|
   find_field('article_headword').value.should == headword
 end
+
+Så /^skal det være (\d+) eksterne lenker\-felt$/ do |count|
+  all('form .external-link').select { |e| e.visible? }.count.should == count.to_i
+end
+
+Når /^jeg klikker "([^"]*)" under den siste eksterne lenken$/ do |link|
+  all('form .external-link').last.click_link(link)
+end
