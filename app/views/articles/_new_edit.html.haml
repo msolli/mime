@@ -23,7 +23,12 @@
 
   = f.input :headword, required: false, input_html: { class: 'headword' }, wrapper_html: { class: 'grid_7 suffix_5' }
   .grid_7
-    = f.cktext_area :text, label: false
+    = f.cktext_area :text
+
+  .grid_7
+    = f.label :disambiguation
+    = f.cktext_area :disambiguation
+
   = f.input :tags, wrapper_html: { class: 'grid_7 suffix_5' }
 
   .grid_7.clearfix
@@ -53,10 +58,6 @@
       = link_to('#', id: 'hide-map-link') do
         = image_tag('hide-map.png') + content_tag(:span, t('articles.hide_map'))
 
-  .grid_7
-    = f.label :disambiguation
-    = f.cktext_area :disambiguation
-
   %fieldset.grid_7
     %legend
       = f.label :external_links
@@ -71,20 +72,4 @@
       = link_to t('articles.cancel'), :back
     - else
       = link_to t('articles.cancel'), pretty_article_path(@article)
-
-
--#= f.inputs :name => t('articles.external_links'), :id => 'external-links' do
--#  = f.semantic_fields_for :external_links do |external_links_f|
--#    %li
--#      %ol.link
--#        = external_links_f.input :href
--#        = external_links_f.input :text, :wrapper_html => {:class => 'link-text'}
--#        - unless external_links_f.object.new_record?
--#          = external_links_f.input :_destroy, :as => :boolean
--#        - else # There should only be one object getting in here, the one we built in #setup_article helper
--#          %li
--#            %button.add{:type => 'button', :value => 'add-link'}= image_tag('icons/add.png', :size => '16x16')
--#            %button.remove{:type => 'button', :value => 'remove-link'}= image_tag('icons/delete.png', :size => '16x16')
-
-
--#%li= button_to t('articles.delete'), @article, :method => :delete, :confirm => t('articles.confirm_delete')
+      -# = button_to t('articles.delete'), @article, :method => :delete, :confirm => t('articles.confirm_delete')
