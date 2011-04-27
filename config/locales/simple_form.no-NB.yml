@@ -28,6 +28,7 @@ no-NB:
       updated_at: Sist endret
       asc: Stigende
       desc: Synkende
+      images: Bilder
 
     hints:
       map: 'Klikk for å velge en posisjon. Dra markøren rundt for å etterjustere.'

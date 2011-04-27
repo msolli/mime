@@ -8,30 +8,17 @@
 
 = simple_form_for setup_article(@article), html: {novalidate: true} do |f|
 
-  -#= f.inputs :class => 'files' do
-  -#  = f.semantic_fields_for :medias do |medias_f|
-  -#    = render :partial => "edit_media#{'_tpl' if medias_f.object.new_record?}", :locals => {:m => medias_f}
-  -#  %li#upload-button-container
-  -#    %label
-  -#      Her kan du legge til bilder
-  -#      #upload-container
-  -#        %button#file-upload-button{:type => 'button'} Last opp filer
-  -#  = f.input :media_ids_from_async_upload, :as => :hidden,
-  -#    :input_html => {:id => 'media-files'}
-  -#  - session_key_name = Rails.application.config.session_options[:key]
-  -#  = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
-
-  = f.input :headword, required: false, input_html: { class: 'headword' }, wrapper_html: { class: 'grid_7 suffix_5' }
   .grid_7
+
+    = f.input :headword, required: false, input_html: { class: 'headword' }
+
     = f.cktext_area :text
 
-  .grid_7
     = f.label :disambiguation
     = f.cktext_area :disambiguation
 
-  = f.input :tags, wrapper_html: { class: 'grid_7 suffix_5' }
+    = f.input :tags
 
-  .grid_7.clearfix
     = f.label :location
     = f.simple_fields_for :location do |location_f|
       = location_f.hidden_field :latitude
@@ -51,20 +38,37 @@
         = f.label :geocoding
         = text_field_tag('geocoding')
 
-    .grid_7.alpha.omega
-      = link_to('#', id: 'show-map-link') do
-        = image_tag('show-map.png') + content_tag(:span, t('articles.show_map'))
+    = link_to('#', id: 'show-map-link') do
+      = image_tag('show-map.png') + content_tag(:span, t('articles.show_map'))
 
-      = link_to('#', id: 'hide-map-link') do
-        = image_tag('hide-map.png') + content_tag(:span, t('articles.hide_map'))
+    = link_to('#', id: 'hide-map-link') do
+      = image_tag('hide-map.png') + content_tag(:span, t('articles.hide_map'))
 
-  %fieldset.grid_7
-    %legend
-      = f.label :external_links
-    = f.simple_fields_for :external_links do |builder|
-      = render 'external_link_fields', :f => builder
-    .grid_6= add_child_link t('external_links.new'), :external_links
-  = new_child_fields_template f, :external_links
+    %fieldset
+      %legend
+        = f.label :external_links
+      = f.simple_fields_for :external_links do |builder|
+        = render 'external_link_fields', :f => builder
+      .grid_6= add_child_link t('external_links.new'), :external_links
+    = new_child_fields_template f, :external_links
+
+  .grid_5
+    = f.label :images
+
+    -#= f.inputs :class => 'files' do
+    -#  = f.semantic_fields_for :medias do |medias_f|
+    -#    = render :partial => "edit_media#{'_tpl' if medias_f.object.new_record?}", :locals => {:m => medias_f}
+    -#  %li#upload-button-container
+    -#    %label
+    -#      Her kan du legge til bilder
+    -#      #upload-container
+    -#        %button#file-upload-button{:type => 'button'} Last opp filer
+    -#  = f.input :media_ids_from_async_upload, :as => :hidden,
+    -#    :input_html => {:id => 'media-files'}
+    -#  - session_key_name = Rails.application.config.session_options[:key]
+    -#  = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
+
+
 
   .action-buttons.grid_12
     = f.button :submit

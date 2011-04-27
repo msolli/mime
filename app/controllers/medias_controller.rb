@@ -1,7 +1,10 @@
 class MediasController < ApplicationController
   # after_filter :prime_cache, :only => :create
 
-  def index; action_not_found; end
+  def index
+    # TODO
+    action_not_found
+  end
 
   def new
   end
