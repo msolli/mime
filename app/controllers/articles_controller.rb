@@ -23,16 +23,15 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    media_ids_from_async_upload = params[:article].delete(:media_ids_from_async_upload)
-    medias_attributes = params[:article].delete(:medias_attributes)
     @article = Article.new(params[:article])
-    @article.add_async_uploads(media_ids_from_async_upload)
-    add_medias!(medias_attributes)
     if @article.save
       add_author!
-      redirect_to pretty_article_path(@article), :notice => t('articles.saved')
+      redirect_to edit_article_path(@article), :notice => t('articles.created')
     else
-      flash.alert = t('articles.errors.save')
+      if @article.errors['headword'].first == t('mongoid.errors.models.article.attributes.headword.taken')
+        @existing_article = Article.where(:headword => /^#{Regexp.escape(deparameterize(params[:article][:headword]))}$/i).first
+      end
+      flash.alert = t('articles.errors.create')
       render :action => "new"
     end
   end

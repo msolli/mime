@@ -10,12 +10,6 @@
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
 }
 
-@mixin content-box {
-  width: $grid-width;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @mixin a-button {
   @include rounded-corners(4px);
   padding: 4px 12px;

@@ -64,11 +64,15 @@ Så /^skal kartet vises i artikkelen$/ do
 end
 
 Så /^skal kartet vises$/ do
-  Then %{"div.map" should be visible}
+  Then %{"div.map-wrapper" should be visible}
 end
 
 Så /^kartet skal være usynlig$/ do
   Then %{"#article_location_attributes_map" should be invisible}
+end
+
+Gitt /^(?:|at )jeg velger første element i autofullfør\-listen$/ do
+  find('.ui-autocomplete .ui-menu-item a').click
 end
 
 Så /^skal jeg ikke se eksterne lenker$/ do

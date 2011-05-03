@@ -51,6 +51,7 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'ruby-debug19'
+  gem 'rails-footnotes'
 end
 
 group :test do

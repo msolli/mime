@@ -9,29 +9,31 @@ Egenskap: Ny artikkel med tilknyttet posisjon
   
   @javascript
   Scenario: kartet vises ikke før man klikker "vis kart"
-    Når jeg står på ny artikkel-siden
+    Gitt at artikkelen "Foo" finnes
+    Og jeg står på artikkelredigering for "Foo"
     Så skal jeg se "Angi sted for denne artikkelen"
     Og kartet skal være usynlig
 
-  # @javascript
-  # Scenario: kartet vises når man klikker "vis kart"
-  #   Gitt at jeg står på ny artikkel-siden
-  #   Når jeg klikker "Vis kart"
-  #   Så skal kartet vises
+  @javascript
+  Scenario: kartet vises når man klikker "vis kart"
+    Gitt at artikkelen "Foo" finnes
+    Og jeg står på artikkelredigering for "Foo"
+    Når jeg klikker "Angi sted for denne artikkelen"
+    Så skal kartet vises
 
   @javascript
   Scenario: ikke tilegnet kart
-    Gitt at jeg står på ny artikkel-siden
-    Og jeg fyller inn "article[headword]" med "Foo"
-    Når jeg trykker "Opprett"
+    Gitt at artikkelen "Foo" finnes
+    Og jeg står på artikkelredigering for "Foo"
+    Når jeg trykker "Lagre"
     Så skal jeg ikke se noe kart
 
-  # @javascript
-  # Scenario: tilegnet kart
-  #   Gitt at jeg står på ny artikkel-siden
-  #   Og jeg fyller inn "article[headword]" med "Foo"
-  #   Og jeg klikker "Vis kart"
-  #   Og jeg fyller inn "maptastic-search" med "Billingstadsletta 17"
-  #   Og jeg venter 5 sekunder
-  #   Når jeg trykker "Opprett"
-  #   Så skal kartet vises i artikkelen
+  @javascript
+  Scenario: tilegnet kart
+    Gitt at artikkelen "Foo" finnes
+    Og jeg står på artikkelredigering for "Foo"
+    Og jeg klikker "Angi sted for denne artikkelen"
+    Og jeg fyller inn "geocoding" med "Billingstadsletta 17"
+    Og jeg velger første element i autofullfør-listen
+    Når jeg trykker "Lagre"
+    Så skal kartet vises i artikkelen

@@ -282,6 +282,45 @@ header {
   margin-bottom: 32px;
 }
 
+.new-article-buttons {
+  margin-top: 28px;
+}
+
+.new-article-wizard {
+  border-top: 1px solid $box-border-color;
+  padding-top: 8px;
+  margin-bottom: 32px;
+
+  .step {
+    @include border-box;
+    background-color: $main-background-color;
+    padding-top: 5px;
+    border-top: none;
+    height: 78px;
+  }
+  .active {
+    @include box-shadow;
+  }
+  .arrow, p {
+    text-align: center;
+  }
+}
+
+.existing-article {
+  @include border-box;
+  border: 1px solid $box-border-color;
+  h2.title {
+    background-color: $text-color;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 2px;
+    @include no-underline;
+    a {
+      color: white;
+    }
+  }
+}
+
 .article_list {
   margin-bottom: 32px;
   .deleted {

@@ -49,7 +49,7 @@ class Article
   attr_accessor :media_ids_from_async_upload
 
   validates_presence_of :headword
-  validates_uniqueness_of :headword
+  validates_uniqueness_of :headword, case_sensitive: false
   validates_associated :location, :external_links
   
   accepts_nested_attributes_for :location, :medias, :allow_destroy => true, :reject_if => :all_blank

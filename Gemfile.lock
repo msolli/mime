@@ -228,6 +228,8 @@ GEM
       activesupport (= 3.0.5)
       bundler (~> 1.0)
       railties (= 3.0.5)
+    rails-footnotes (3.7.1)
+      rails (>= 3.0.0)
     rails3-generators (0.17.2)
       railties (>= 3.0.0)
     railties (3.0.5)
@@ -344,6 +346,7 @@ DEPENDENCIES
   rack-rewrite
   rack-timeout
   rails (= 3.0.5)
+  rails-footnotes
   rails3-generators
   rspec-rails
   ruby-debug19

@@ -4,15 +4,24 @@ var ArticleMap = (function() {
       map = null,
 
   init = function(options) {
-    if (! $(options.map).length) return;
-    this.options = options;
     var zoom = null,
         map = null,
-        zoomInput = $(this.options.map + '_attributes_zoom'),
-        latInput = $(this.options.map + '_attributes_latitude'),
-        lngInput = $(this.options.map + '_attributes_longitude'),
-        locationId = $(this.options.map + '_attributes_id'),
         clazz = this;
+
+    if (! $(options.map).length) return;
+    this.options = options;
+    if (this.options.zoomInput == undefined) {
+      this.options.zoomInput = $(this.options.map + '_attributes_zoom');
+    }
+    if (this.options.latInput == undefined) {
+      this.options.latInput = $(this.options.map + '_attributes_latitude');
+    }
+    if (this.options.lngInput == undefined) {
+      this.options.lngInput = $(this.options.map + '_attributes_longitude');
+    }
+    if (this.options.locationId == undefined) {
+      this.options.locationId = $(this.options.map + '_attributes_id');
+    }
 
     /*
      * Set up the map.
@@ -25,9 +34,9 @@ var ArticleMap = (function() {
 			}
 		});
 		this.map = map;
-    if (locationId.length) {
-      this.location = new google.maps.LatLng(latInput.val(), lngInput.val());
-      zoom = parseInt(zoomInput.val(), 10);
+    if (this.options.locationId.length) {
+      this.location = new google.maps.LatLng(this.options.latInput.val(), this.options.lngInput.val());
+      zoom = parseInt(this.options.zoomInput.val(), 10);
 			this.setMarker(map, this.location);
     } else {
       var lat = $(this.options.map).data('default-lat');
@@ -63,10 +72,22 @@ var ArticleMap = (function() {
     });
 
     /*
+     * Enter in search field will not submit form
+     *
+     */
+    $(this.options.geocodingInput).keypress(function(e) {
+      if (e.which == '13') {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    });
+
+    /*
      * Initial state
      *
      */
-    if (locationId.length) {
+    if (this.options.locationId.length) {
       $(this.options.showMapLink).click();
     } else {
       $(this.options.hideMapLink).click();
@@ -91,6 +112,11 @@ var ArticleMap = (function() {
 	},
 
   updateInputs = function(location) {
+    log("updateInputs", location);
+    log(this.options.latInput);
+    log(this.options.lngInput);
+    log($(this.options.latInput));
+    log($(this.options.lngInput));
 		$(this.options.latInput).val(location.lat());
 		$(this.options.lngInput).val(location.lng());
 	},
@@ -123,6 +149,7 @@ var ArticleMap = (function() {
   selectAddress = function(event, ui) {
     log('select', ui.item.location);
     this.setMarker(this.map, ui.item.location);
+    this.updateInputs(ui.item.location);
     this.map.fitBounds(ui.item.viewport);
   },
 
@@ -148,17 +175,14 @@ var ArticleMap = (function() {
     var clazz = this;
     $(this.options.map).parent().slideUp('fast');
     // Clear attribute values and remove marker
-    var zoomInput = $(this.options.map + '_attributes_zoom'),
-        latInput = $(this.options.map + '_attributes_latitude'),
-        lngInput = $(this.options.map + '_attributes_longitude');
-    if (zoomInput.length) {
-      zoomInput.val('');
+    if (this.options.zoomInput.length) {
+      this.options.zoomInput.val('');
     }
-    if (latInput.length) {
-      latInput.val('');
+    if (this.options.latInput.length) {
+      this.options.latInput.val('');
     }
-    if (lngInput.length) {
-      lngInput.val('');
+    if (this.options.lngInput.length) {
+      this.options.lngInput.val('');
     }
   };
 

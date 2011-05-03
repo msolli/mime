@@ -49,6 +49,7 @@ no-NB:
     version_log: Versjonslogg
     report_error: Tips om feil
     saved: Artikkelen er lagret
+    created: Artikkelen er opprettet. Nå gjenstår det bare å skrive den.
     redirected: "→ omdirigert fra %{from}"
     headword: Oppslagsord
     back: "Tilbake til artikkelen"
@@ -63,12 +64,18 @@ no-NB:
     cancel: Avbryt
     errors:
       save: "Artikkelen ble visst ikke lagret – sjekk feilene nedenfor:"
+      create: "Artikkelen ble ikke opprettet – sjekk feilene nedenfor."
       list: "Feil i disse feltene forhindret at artikkelen ble lagret:"
     login_teaser_html: "Du er ikke logget inn. Det er helt fint, for leksikonet er åpent for redigering av hvem som helst. Men hvis du ønsker navnet ditt under <em>Bidragsytere</em> eller i versjonsloggen, så må du først %{login_link}."
     login_link: logge inn
     editable_defaults:
       default: "Trykk på meg for å redigere %{value}."
     description_html: "%{headword} (artikkel i Budstikkas store Asker og Bærum-leksikon)"
+    new_wizard:
+      headword: "Velg et oppslagsord"
+      headword_desc: "Oppslagsordet er overskriften på artikkelen din. Det er også ordet artikkelen din vil finnes under i den alfabetiske oversikten."
+      write: "Skriv artikkelen"
+      write_desc: "Rediger artikkelen, og legg til bilder, kart, nøkkelord med mer."
 
     versions:
       first: Første versjon
@@ -218,6 +225,8 @@ no-NB:
     deleted: slettet
     articles: artikler
     required: påkrevet
+    step: skritt
+    of: av %{number}
   import:
     disambiguation:
       link_back_to: "%{headword} har flere betydninger. For andre betydninger, se %{headword_link}."
@@ -339,6 +348,8 @@ no-NB:
     submit:
       create: Opprett
       update: Lagre
+      article:
+        create: Opprett →
       page:
         publish: Publiser
 
@@ -378,6 +389,7 @@ no-NB:
           attributes:
             headword:
               blank: "Artikkelen må nok ha oppslagsord"
+              taken: "Denne artikkelen finnes allerede:"
         manual_article_list:
           attributes:
             name:

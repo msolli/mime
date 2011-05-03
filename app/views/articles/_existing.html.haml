@@ -1,0 +1,18 @@
+- if article
+
+  .grid_7.existing-article
+    %h2.title.clearfix
+      .grid_6
+        = link_to article.headword_presentation, pretty_article_path(article)
+
+    %aside.info.grid_6
+      %ul
+        %li.edit-link>= link_to t('articles.edit'), edit_article_path(article), :rel => 'nofollow'
+        %li> #{t('articles.last_updated')} #{timeago(article.updated_at)}
+        %li>= link_to t('articles.version_log'), article_versions_path(article)
+
+    - unless article.disambiguation.blank?
+      %aside.disambiguation.grid_6
+        != article.disambiguation
+
+    .articletext.grid_6!= article.text

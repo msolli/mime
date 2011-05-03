@@ -57,14 +57,13 @@ describe ArticlesController do
   describe "#create" do
     context "with a valid article" do
       before :each do
-        post :create, :article => { :headword => "foo", :text => "bar" }
+        post :create, article: Factory.attributes_for(:article)
       end
       it "creates a new article" do
         assigns(:article).should_not be_nil
-        assigns(:article).headword.should == "foo"
       end
-      it "redirects to the article page" do
-        response.should redirect_to pretty_article_path(assigns(:article))
+      it "redirects to the edit article page" do
+        response.should redirect_to edit_article_path(assigns(:article))
       end
       it "sets a flash[:notice] message" do
         flash[:notice].should_not be_nil
