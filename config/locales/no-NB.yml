@@ -76,6 +76,9 @@ no-NB:
       headword_desc: "Oppslagsordet er overskriften på artikkelen din. Det er også ordet artikkelen din vil finnes under i den alfabetiske oversikten."
       write: "Skriv artikkelen"
       write_desc: "Rediger artikkelen, og legg til bilder, kart, nøkkelord med mer."
+    media:
+      upload: Last opp bilder
+      add: Legg til bilder
 
     versions:
       first: Første versjon
@@ -106,6 +109,7 @@ no-NB:
     external_links: Eksterne lenker
     destroy: Slett
     new: Ny ekstern lenke
+
   users:
     profile:
       profile: "Brukerprofil for %{for}"
@@ -131,6 +135,7 @@ no-NB:
         name_and_picture_desc: "Vi viser navnet ditt under \"Bidragsytere\" og i versjonsloggen for artikler du redigerer, og profilbildet vises sammen med navnet ditt der det gir mening."
         email: Epostadresse
         email_desc: "Du kan be om å få beskjed fra oss på epost når en artikkel blir oppdatert, f.eks. Vi deler ikke epostadressen din med noen."
+
   search:
     search_result: Søkeresultat
     hits_and_total: "Viser %{showing} av %{total} treff"
@@ -142,6 +147,7 @@ no-NB:
     contribute: "Har du kunnskap om det du søkte etter? Vi vil veldig gjerne ha ditt bidrag til leksikonet."
     new_article_html: "Her kan du opprette en artikkel om <span>%{headword}</span>."
     wikipedia_html: "Søk etter <span>%{q}</span> på norske Wikipedia."
+
   pages:
     new: Ny side
     edit: Rediger
@@ -169,13 +175,16 @@ no-NB:
       articles: Artikler
     errors:
       save: "Siden ble visst ikke lagret – sjekk feilene nedenfor:"
+
   article_lists:
     errors:
       save: "Lista ble visst ikke lagret – sjekk feilene nedenfor:"
+
   alphabetic:
     title: "Artikler på %{letter}"
     description_html: "Artikler på %{letter} i Budstikkas store Asker og Bærum-leksikon"
     intro: "Artikler på <strong>%{letter}</strong>"
+
   formtastic:
     required: påkrevet
     actions:
@@ -216,6 +225,7 @@ no-NB:
         published_on: Dato
       section:
         name: Navn
+
   words:
     or: eller
     search: søk
@@ -227,6 +237,7 @@ no-NB:
     required: påkrevet
     step: skritt
     of: av %{number}
+
   import:
     disambiguation:
       link_back_to: "%{headword} har flere betydninger. For andre betydninger, se %{headword_link}."

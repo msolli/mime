@@ -1,0 +1,13 @@
+- content_for :title do
+  ! #{t('articles.media.add')} #{@article.headword_presentation}
+
+- content_for :header do
+  <em>#{t('articles.media.add')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
+
+= render :partial => 'articles/info', :locals => { :article => @article }
+
+= render :partial => "common/flash"
+
+- @media.each do |image|
+  .grid_3
+    = df_image_tag(image.file.thumb("220x175#nw").url, size: "220x175")

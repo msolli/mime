@@ -1,9 +1,10 @@
 class MediasController < ApplicationController
   # after_filter :prime_cache, :only => :create
+  before_filter :find_article, :only => [:index]
+  before_filter :article_not_found, :only => [:index]
 
   def index
-    # TODO
-    action_not_found
+    @media = Media.order_by(:updated_at).limit(12)
   end
 
   def new

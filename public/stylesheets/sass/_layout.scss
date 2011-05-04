@@ -321,6 +321,13 @@ header {
   }
 }
 
+.upload-button {
+  text-align: right;
+  margin-top: 12px;
+}
+a.button {
+  @include a-button;
+}
 .article_list {
   margin-bottom: 32px;
   .deleted {

@@ -846,6 +846,25 @@ header h1 {
     .existing-article h2.title a {
       color: white; }
 
+.upload-button {
+  text-align: right;
+  margin-top: 12px; }
+
+a.button {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 4px 12px;
+  color: white;
+  background-color: #2f528f;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase; }
+  a.button:hover {
+    background-color: #fab45b; }
+
 .article_list {
   margin-bottom: 32px; }
   .article_list .deleted {

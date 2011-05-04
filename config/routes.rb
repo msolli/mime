@@ -32,6 +32,7 @@ Mime::Application.routes.draw do
   constraints :id => /.*/ do
     resources :articles, :except => [:index] do
       resources :versions, :only => [:index]
+      resources :medias, :only => [:index]
       resource :diff, :only => :show
       get :random, :on => :collection
     end
