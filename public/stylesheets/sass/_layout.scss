@@ -291,18 +291,9 @@ header {
   padding-top: 8px;
   margin-bottom: 32px;
 
-  .step {
-    @include border-box;
-    background-color: $main-background-color;
-    padding-top: 5px;
-    border-top: none;
-    height: 78px;
-  }
+  @include wizard;
   .active {
     @include box-shadow;
-  }
-  .arrow, p {
-    text-align: center;
   }
 }
 
@@ -325,9 +316,15 @@ header {
   text-align: right;
   margin-top: 12px;
 }
+
 a.button {
   @include a-button;
 }
+
+.upload-wizard {
+  @include wizard;
+}
+
 .article_list {
   margin-bottom: 32px;
   .deleted {

@@ -79,6 +79,9 @@ no-NB:
     media:
       upload: Last opp bilder
       add: Legg til bilder
+      upload_wizard:
+        choose_files: "Velg filer"
+        edit_info: "Rediger bildeinfo"
 
     versions:
       first: Første versjon

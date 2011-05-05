@@ -11,5 +11,5 @@ class Media
   
   attachment_accessor :file  
   
-  validates_presence_of :file
+  validates_presence_of :file, :author
 end

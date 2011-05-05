@@ -158,33 +158,6 @@ aside.info, aside.back-link, .redirected {
   font-size: $font12px;
 }
 
-.new-article-wizard {
-  .step {
-    @include small-sans;
-    font-size: $font12px;
-    color: $light-grey-color;
-    h2 {
-      color: $light-grey-color;
-    }
-  }
-  .active {
-    color: $text-color;
-    h2 {
-      color: darken($text-color, 5%);
-    }
-  }
-  .arrow {
-    @include serif;
-    font-size: 32px;
-    line-height: 78px;
-  }
-  .number {
-    @include serif;
-    font-size: 32px;
-    font-weight: bold;
-  }
-}
-
 .article_list {
   h2 {
     font-size: $font16px;

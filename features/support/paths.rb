@@ -22,6 +22,8 @@ module NavigationHelpers
       alphabetic_path $1
     when /versjonsloggen for "([^"]*)"$/
       article_versions_path $1
+    when /siden for bildeopplasting for "([^"]*)"$/
+      article_medias_path $1
     when /innloggingssiden$/
       new_user_session_path
     when /brukerprofilen til "([^"]*)"$/

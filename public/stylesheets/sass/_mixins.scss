@@ -171,3 +171,44 @@
   -o-text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin wizard {
+  .step {
+    @include border-box;
+    background-color: $main-background-color;
+    padding-top: 5px;
+    border-top: none;
+    height: 78px;
+    /* Typography */
+    @include small-sans;
+    font-size: $font12px;
+    color: $light-grey-color;
+    h2 {
+      color: $light-grey-color;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+  .active {
+    /* Typography */
+    color: $text-color;
+    h2 {
+      color: darken($text-color, 5%);
+    }
+  }
+  .arrow, p {
+    text-align: center;
+  }
+  .arrow {
+    /* Typography */
+    @include serif;
+    font-size: 32px;
+    line-height: 78px;
+  }
+  .number {
+    /* Typography */
+    @include serif;
+    font-size: 32px;
+    font-weight: bold;
+  }
+}

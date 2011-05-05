@@ -9,5 +9,26 @@
 = render :partial => "common/flash"
 
 - @media.each do |image|
-  .grid_3
-    = df_image_tag(image.file.thumb("220x175#nw").url, size: "220x175")
+  / .grid_3
+  /   = df_image_tag(image.file.thumb("220x175#nw").url, size: "220x175")
+
+.grid_7
+  %h2 Last opp
+  .upload-wizard
+    .step.active
+      .grid_1.alpha
+        %p= t('words.step').capitalize
+        %p.number 1
+        %p= t('words.of', number: '2')
+      .grid_6.omega
+        %h2= t('articles.media.upload_wizard.choose_files')
+        #uploader
+    .arrow.grid_1.suffix_6.alpha
+      &#8595;
+    .step
+      .grid_1.alpha
+        %p= t('words.step').capitalize
+        %p.number 2
+        %p= t('words.of', number: '2')
+      .grid_6.omega
+        %h2= t('articles.media.upload_wizard.edit_info')
