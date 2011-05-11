@@ -61,7 +61,6 @@ group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'rspec-rails', '~> 2.6.0.rc6'
   gem 'fuubar'
   gem 'launchy'
   gem 'ruby-debug19'
@@ -70,4 +69,8 @@ group :test do
   gem 'autotest-rails'
 
   gem 'factory_girl_rails', :require => false
+end
+
+group :test, :development do
+  gem 'rspec-rails', '~> 2.6.0.rc6'
 end
