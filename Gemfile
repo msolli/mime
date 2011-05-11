@@ -56,12 +56,12 @@ end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
-  gem 'capybara', '0.4.0'
+  gem 'capybara', '~> 1.0.0.beta1'
   gem 'selenium-webdriver', '0.1.2'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.6.0.rc6'
   gem 'fuubar'
   gem 'launchy'
   gem 'ruby-debug19'
