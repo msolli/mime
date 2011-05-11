@@ -1,14 +1,14 @@
 - content_for :title do
-  ! #{t('articles.media.add')} #{@article.headword_presentation}
+  ! #{t('articles.images.add')} #{@article.headword_presentation}
 
 - content_for :header do
-  <em>#{t('articles.media.add')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
+  <em>#{t('articles.images.add')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
 = render :partial => 'articles/info', :locals => { :article => @article }
 
 = render :partial => "common/flash"
 
-- @media.each do |image|
+- @images.each do |image|
   / .grid_3
   /   = df_image_tag(image.file.thumb("220x175#nw").url, size: "220x175")
 
@@ -21,8 +21,7 @@
         %p.number 1
         %p= t('words.of', number: '2')
       .grid_6.omega
-        %h2= t('articles.media.upload_wizard.choose_files')
-        #uploader
+        #uploader{ data: { url: article_images_path }}
     .arrow.grid_1.suffix_6.alpha
       &#8595;
     .step
@@ -31,4 +30,4 @@
         %p.number 2
         %p= t('words.of', number: '2')
       .grid_6.omega
-        %h2= t('articles.media.upload_wizard.edit_info')
+        %h2= t('articles.images.upload_wizard.edit_info')

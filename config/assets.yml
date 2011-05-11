@@ -17,27 +17,32 @@ javascripts:
     - public/javascripts/typekit.js
     - public/javascripts/spring.js
     - public/javascripts/jquery/jquery-1.4.4.js
-    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.core.js
-    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.widget.js
-    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.mouse.js
-    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.position.js
-    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.sortable.js
-    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.autocomplete.js
-    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.datepicker.js
-    - public/javascripts/jquery/jquery.ui/1.8.10/jquery.ui.datepicker-no.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.core.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.widget.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.mouse.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.position.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.sortable.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.autocomplete.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.button.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.datepicker.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.datepicker-no.js
+    - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.progressbar.js
     - public/javascripts/jquery/jquery.templates/beta1/jquery.tmpl.js
     - public/javascripts/jquery/jquery.timeago/0.9.2/jquery.timeago.js
     - public/javascripts/jquery/jquery.timeago/common/jquery.timeago.no.js
     - public/javascripts/jquery/jquery.cookie/2010-01-08/jquery.cookie.js
     - public/javascripts/jquery/jquery.imgloaded/2010-08-23/ahpi.imgload.js
-    - public/lib/plupload/js/plupload.full.min.js
-    - public/javascripts/plupload-config.js
+    - public/lib/plupload/plupload.js
+    - public/lib/plupload/plupload.html4.js
+    - public/lib/plupload/plupload.html5.js
+    - public/lib/plupload/jquery.ui.plupload/jquery.ui.plupload.js
+    - public/lib/plupload/i18n/no.js
+    - public/javascripts/image-upload.js
     - public/javascripts/maptastic.js
     - public/javascripts/rails.js
     - public/javascripts/mime-tools.js
     - public/javascripts/application.js
     - public/javascripts/document-ready.js
-    - public/javascripts/edit-files-ready.js
     - public/javascripts/sortable.js
     - public/javascripts/nested_forms.js
     - public/javascripts/autocomplete.js

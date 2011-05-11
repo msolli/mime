@@ -76,11 +76,10 @@ no-NB:
       headword_desc: "Oppslagsordet er overskriften på artikkelen din. Det er også ordet artikkelen din vil finnes under i den alfabetiske oversikten."
       write: "Skriv artikkelen"
       write_desc: "Rediger artikkelen, og legg til bilder, kart, nøkkelord med mer."
-    media:
+    images:
       upload: Last opp bilder
       add: Legg til bilder
       upload_wizard:
-        choose_files: "Velg filer"
         edit_info: "Rediger bildeinfo"
 
     versions:
@@ -203,7 +202,6 @@ no-NB:
         tags: Nøkkelord
         disambiguation: "Andre betydninger"
       location: Posisjon
-      media:
       external_link:
         href: Adresse
         text: Lenketekst

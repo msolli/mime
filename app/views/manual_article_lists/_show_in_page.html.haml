@@ -2,8 +2,8 @@
   - unless a.article.blank?
     = link_to pretty_article_path(a.article), :class => 'featured' do
 
-      - if a.article.medias.first
-        - imgurl = a.article.medias.first.file.thumb("220x175#nw").url
+      - if a.article.images.first
+        - imgurl = a.article.images.first.file.thumb("220x175#nw").url
       - else
         - imgurl = "http://dummyimage.com/220x175/bf/fff&text=#{a.headword}"
 

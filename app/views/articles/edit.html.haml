@@ -61,7 +61,7 @@
   .grid_5
     = f.label :images
     .grid_5.alpha.omega.upload-button
-      = link_to t('articles.media.upload'), article_medias_path(@article), rel: 'nofollow', class: 'button'
+      = link_to t('articles.images.upload'), article_images_path(@article), rel: 'nofollow', class: 'button'
     -#= f.inputs :class => 'files' do
     -#  = f.semantic_fields_for :medias do |medias_f|
     -#    = render :partial => "edit_media#{'_tpl' if medias_f.object.new_record?}", :locals => {:m => medias_f}

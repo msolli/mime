@@ -32,7 +32,7 @@ gem 'heroku_delayed_job_autoscale'
 
 # attachment handling
 gem 'aws-s3', :require => 'aws/s3'
-gem 'dragonfly'
+gem 'dragonfly', '~> 0.9.0'
 
 # Canonical urls
 gem 'rack-rewrite', :require => 'rack/rewrite'

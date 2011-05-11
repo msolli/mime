@@ -127,7 +127,8 @@ GEM
       delayed_job (~> 2.1.1)
       mongoid (~> 2.0.0.rc)
     diff-lcs (1.1.2)
-    dragonfly (0.8.2)
+    dragonfly (0.9.0)
+      rack
       rack
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -213,7 +214,7 @@ GEM
     orm_adapter (0.0.4)
     polyglot (0.3.1)
     pr_geohash (1.0.0)
-    rack (1.2.1)
+    rack (1.2.2)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-rewrite (1.0.2)
@@ -324,7 +325,7 @@ DEPENDENCIES
   delayed_job
   delayed_job_mongoid
   devise!
-  dragonfly
+  dragonfly (~> 0.9.0)
   escape_utils
   exceptional
   factory_girl_rails

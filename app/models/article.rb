@@ -12,8 +12,9 @@ class Article
   references_and_referenced_in_many :users
   alias :authors :users
   alias :authors= :users=
-  
-  references_and_referenced_in_many :medias
+
+  # references_and_referenced_in_many :medias
+  has_and_belongs_to_many :images
   embeds_one :location
   embeds_many :external_links
 
