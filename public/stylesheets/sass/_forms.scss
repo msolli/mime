@@ -23,7 +23,7 @@
     }
   }
 
-  input[type="text"] {
+  input[type="text"], textarea {
     @include border-box;
     width: 100%;
     border: 1px solid $box-border-color;
@@ -63,7 +63,7 @@
     display: block;
   }
 
-  .collection_radio {
+  &.sorted_article_list .collection_radio {
     @include border-box;
     @extend .grid_5;
     @extend .alpha;
@@ -102,7 +102,7 @@
       text-transform: none;
       color: $light-grey-color;
       font-weight: normal;
-    }  
+    }
   }
 
   .hint {
@@ -111,7 +111,7 @@
     font-size: $font12px;
     font-style: italic;
   }
-  
+
   .error {
     @include small-sans;
     color: red;
@@ -134,15 +134,41 @@
     }
   }
 
+  .disabled {
+     label, button, input, optgroup, option, select, textarea {
+       color: $light-grey-color;
+     }
+  }
+
   /* ----------------------------------------------------- */
   /* Sideredigering                                        */
   .add_child, .remove_child {
     @include small-sans;
     font-size: $font12px;
   }
-  
+
   .nested-fields {
     margin-bottom: 32px;
+  }
+
+  /* ----------------------------------------------------- */
+  /* Bildeopplasting og -redigering                        */
+  &.image {
+    padding-top: 0;
+
+    // Ikke luft under tekstfelt
+    .input.string {
+      margin-bottom: 0;
+    }
+
+    .license {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      a {
+        @include small-sans;
+        font-size: $font12px;
+      }
+    }
   }
 }
 
@@ -151,12 +177,12 @@
 /* Søk                                                   */
 /* ----------------------------------------------------- */
 .article-search {
-  
+
   input[type="text"] {
     width: 200px;
     border: 1px solid $box-border-color;
     padding: 8px 4px 4px 4px;
-    
+
     &:focus {
       outline: 0;
     }
@@ -175,5 +201,5 @@
     font-size: $font12px;
     color: $dark-grey-color;
   }
-  
+
 }

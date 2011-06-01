@@ -1,0 +1,16 @@
+(function() {
+  var showImage,
+      imageForm;
+
+  showImage = $("<%= escape_javascript(render partial: 'show', locals: { image: @image }) %>");
+  showImage.css('display', 'none');
+  showImage.prependTo($('#article-images')).fadeIn('fast');
+  $('.no-images').fadeOut('fast').remove();
+  
+  imageForm = $("<%= escape_javascript(render partial: 'new', locals: { image: Image.new }) %>");
+  $('#edit_image').fadeOut('fast', function() {
+    $(this).html(imageForm);
+    $(this).fadeIn('fast');
+  });
+
+})();

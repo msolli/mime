@@ -62,20 +62,6 @@
     = f.label :images
     .grid_5.alpha.omega.upload-button
       = link_to t('articles.images.upload'), article_images_path(@article), rel: 'nofollow', class: 'button'
-    -#= f.inputs :class => 'files' do
-    -#  = f.semantic_fields_for :medias do |medias_f|
-    -#    = render :partial => "edit_media#{'_tpl' if medias_f.object.new_record?}", :locals => {:m => medias_f}
-    -#  %li#upload-button-container
-    -#    %label
-    -#      Her kan du legge til bilder
-    -#      #upload-container
-    -#        %button#file-upload-button{:type => 'button'} Last opp filer
-    -#  = f.input :media_ids_from_async_upload, :as => :hidden,
-    -#    :input_html => {:id => 'media-files'}
-    -#  - session_key_name = Rails.application.config.session_options[:key]
-    -#  = hidden_field_tag session_key_name, cookies[session_key_name], :id => 'session_key_name'
-
-
 
   .action-buttons.grid_12
     = f.button :submit

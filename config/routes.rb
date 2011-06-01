@@ -9,6 +9,7 @@ Mime::Application.routes.draw do
     get "users/current" => "users/sessions#current", :defaults => {:format => 'json'}
   end
 
+  resources :images, :only => [:show]
   # resources :medias
   # match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
 
@@ -29,7 +30,7 @@ Mime::Application.routes.draw do
   constraints :id => /.*/ do
     resources :articles, :except => [:index] do
       resources :versions, :only => [:index]
-      resources :images, :only => [:index]
+      resources :images, :only => [:index, :create, :update]
       resource :diff, :only => :show
       get :random, :on => :collection
     end

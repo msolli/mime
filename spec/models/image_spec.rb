@@ -3,23 +3,29 @@ require 'spec_helper'
 describe Image do
   context "with valid attributes" do
     let(:image) { Factory(:image) }
-    
+
     it "is valid" do
       image.should be_valid
     end
   end
 
   context "without author" do
-    let(:image) { Factory.build(:image, author: nil) }
+    let(:image) { Factory(:image, author: nil) }
     before do
       image.valid?
     end
-    
-    it "is not valid" do
+
+    it "is valid when it is created" do
+      image.should be_persisted
+    end
+
+    it "is not valid when it is updated" do
+      image.save
       image.should_not be_valid
     end
-    
+
     it "has error message" do
+      image.save
       image.errors[:author].should_not be_empty
     end
   end

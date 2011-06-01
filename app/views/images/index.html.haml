@@ -8,26 +8,16 @@
 
 = render :partial => "common/flash"
 
-- @images.each do |image|
-  / .grid_3
-  /   = df_image_tag(image.file.thumb("220x175#nw").url, size: "220x175")
+.grid_7.clearfix#edit_image
+  = render partial: 'new', locals: { image: @image }
 
-.grid_7
-  %h2 Last opp
-  .upload-wizard
-    .step.active
-      .grid_1.alpha
-        %p= t('words.step').capitalize
-        %p.number 1
-        %p= t('words.of', number: '2')
-      .grid_6.omega
-        #uploader{ data: { url: article_images_path }}
-    .arrow.grid_1.suffix_6.alpha
-      &#8595;
-    .step
-      .grid_1.alpha
-        %p= t('words.step').capitalize
-        %p.number 2
-        %p= t('words.of', number: '2')
-      .grid_6.omega
-        %h2= t('articles.images.upload_wizard.edit_info')
+.grid_5
+  %h2= t('articles.images.in_article')
+  %aside.meta#article-images
+    = render partial: 'show', :collection => @article.images, as: :image
+    - if @article.images.empty?
+      %p.no-images= t('articles.images.no_images')
+
+  #license-info
+    %h2= t('articles.images.license_info_header')
+    %p= t('articles.images.license_info_html', url: "http://creativecommons.org/licenses/by-sa/3.0/no/")

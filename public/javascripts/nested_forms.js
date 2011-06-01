@@ -78,19 +78,4 @@ $(document).ready(function() {
       }
     }
   })();
-
-  // Adding / removing external links
-	(function() {
-		$('#external-links').find('button').click(function() {
-	    var li = $(this).closest('ol').parent();
-
-	    if ($(this).hasClass('add')) {
-	      mime.tools.input_cloner(li);
-	    } else if ($(this).hasClass('remove')) {
-	      if (!li.is(':only-child')) {
-	        li.remove();
-	      }
-	    }
-	  });
-	})();
 });

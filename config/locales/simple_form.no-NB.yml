@@ -29,6 +29,9 @@ no-NB:
       asc: Stigende
       desc: Synkende
       images: Bilder
+      image:
+        description: Bildetekst
+        author: Fotograf
 
     hints:
       map: 'Klikk for å velge en posisjon. Dra markøren rundt for å etterjustere.'

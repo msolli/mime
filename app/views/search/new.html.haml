@@ -7,7 +7,7 @@
   .search-results.grid_12
     %ol
       - @search_result.each_hit_with_result do |hit, result|
-        - i = result.medias.first
+        - i = result.images.first
         %li.clearfix
           .grid_7.alpha
             %h2

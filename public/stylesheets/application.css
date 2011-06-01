@@ -268,7 +268,7 @@ form.formtastic fieldset > ol > li.datetime fieldset ol li label input {
 .grid_3,
 .grid_4,
 .grid_5,
-.simple_form .collection_radio, .simple_form
+.simple_form.sorted_article_list .collection_radio, .simple_form.sorted_article_list
 .collection_radio,
 .grid_6,
 .grid_7,
@@ -285,10 +285,10 @@ form.formtastic fieldset > ol > li.datetime fieldset ol li label input {
 
 /* Grid >> Children (Alpha ~ First, Omega ~ Last)
 ----------------------------------------------------------------------------------------------------*/
-.alpha, .simple_form .collection_radio {
+.alpha, .simple_form.sorted_article_list .collection_radio {
   margin-left: 0; }
 
-.omega, .simple_form .collection_radio {
+.omega, .simple_form.sorted_article_list .collection_radio {
   margin-right: 0; }
 
 /* Grid >> 12 Columns
@@ -305,7 +305,7 @@ form.formtastic fieldset > ol > li.datetime fieldset ol li label input {
 .container_12 .grid_4 {
   width: 300px; }
 
-.container_12 .grid_5, .container_12 .simple_form .collection_radio, .simple_form .container_12 .collection_radio {
+.container_12 .grid_5, .container_12 .simple_form.sorted_article_list .collection_radio, .simple_form.sorted_article_list .container_12 .collection_radio {
   width: 380px; }
 
 .container_12 .grid_6 {
@@ -500,7 +500,7 @@ form.formtastic fieldset > ol > li.datetime fieldset ol li label input {
 .clearfix, header, nav, #main .info, #main .back-link, #main {
   display: block; }
 
-article, aside, footer, header, hgroup, nav, section {
+article, aside, footer, header, hgroup, nav, section, figure {
   display: block;
   margin: 0; }
 
@@ -668,8 +668,8 @@ nav {
     background: white;
     margin: 0 0 10px 0;
     display: block; }
-    #main aside.meta .map-wrapper.minimized img,
-    #main aside.meta figure img {
+    #main aside.meta .map-wrapper.minimized img.article-image,
+    #main aside.meta figure img.article-image {
       display: block;
       margin: 0 auto;
       border: 1px solid #ccc;
@@ -679,6 +679,10 @@ nav {
       display: block;
       margin-bottom: 0;
       margin-top: 5px; }
+      #main aside.meta .map-wrapper.minimized figcaption .license,
+      #main aside.meta figure figcaption .license {
+        text-align: right;
+        line-height: 18px; }
   #main .external-links {
     background: white;
     border: 1px solid #cccccc;
@@ -922,6 +926,17 @@ a.button {
   font-size: 32px;
   font-weight: bold; }
 
+.edit-image {
+  background: #efefef; }
+
+#thumb-placeholder {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 140px;
+  height: 105px;
+  border: 1px solid #cccccc; }
+
 .article_list {
   margin-bottom: 32px; }
   .article_list .deleted {
@@ -1043,6 +1058,9 @@ a.button {
   margin-bottom: 16px; }
   .search-no-hits p {
     margin-bottom: 16px; }
+
+#license-info {
+  margin-top: 32px; }
 
 footer {
   clear: both;
@@ -1304,6 +1322,10 @@ ul.search-completion {
 .ui-autocomplete-loading {
   background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat; }
 
+.ui-effects-transfer {
+  background: #efefef;
+  border: 2px dotted #cccccc; }
+
 #jstemplates {
   display: none; }
 
@@ -1386,11 +1408,6 @@ nav {
 article .articletext {
   font-size: 100%;
   line-height: 1.5; }
-article aside.meta figcaption {
-  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
-  font-size: 75%;
-  line-height: 1.2em;
-  font-weight: normal; }
 article aside.disambiguation {
   font-style: italic;
   font-size: 87.5%; }
@@ -1423,6 +1440,12 @@ aside.info, aside.back-link, .redirected {
     text-decoration: none; }
     aside.info a:hover, aside.back-link a:hover, .redirected a:hover {
       text-decoration: underline; }
+
+aside.meta figcaption {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  line-height: 1.2em;
+  font-weight: normal; }
 
 .redirected {
   font-style: italic; }
@@ -1480,6 +1503,10 @@ aside.info, aside.back-link, .redirected {
   .search-no-hits span {
     font-style: italic;
     font-weight: bold; }
+
+#license-info, .no-images {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%; }
 
 form.formtastic fieldset > legend {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
@@ -1545,6 +1572,14 @@ strong {
 em {
   font-style: italic; }
 
+h2 {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: #2b2b2b;
+  font-size: 16px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-weight: bold; }
+
 /* Større tekst når Typekit ikke kan lastes (Firefox 3.0) */
 .wf-inactive #main .articletext {
   font-size: 116%; }
@@ -1561,7 +1596,9 @@ em {
   /* ----------------------------------------------------- */
   /* Typografi                                            */
   /* ----------------------------------------------------- */
-  /* Sideredigering                                        */ }
+  /* Sideredigering                                        */
+  /* ----------------------------------------------------- */
+  /* Bildeopplasting og -redigering                        */ }
   .simple_form .input.string {
     margin-bottom: 32px; }
   .simple_form fieldset .input.string {
@@ -1576,7 +1613,7 @@ em {
     .simple_form fieldset legend {
       margin: 0 10px;
       padding: 0 5px; }
-  .simple_form input[type="text"] {
+  .simple_form input[type="text"], .simple_form textarea {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1609,7 +1646,7 @@ em {
   .simple_form #show-map-link, .simple_form #hide-map-link {
     margin-bottom: 32px;
     display: block; }
-  .simple_form .collection_radio {
+  .simple_form.sorted_article_list .collection_radio {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -1683,11 +1720,23 @@ em {
     text-decoration: none; }
     .simple_form #show-map-link span:hover, .simple_form #hide-map-link span:hover {
       text-decoration: underline; }
+  .simple_form .disabled label, .simple_form .disabled button, .simple_form .disabled input, .simple_form .disabled optgroup, .simple_form .disabled option, .simple_form .disabled select, .simple_form .disabled textarea {
+    color: #7a7a7a; }
   .simple_form .add_child, .simple_form .remove_child {
     font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
     font-size: 75%; }
   .simple_form .nested-fields {
     margin-bottom: 32px; }
+  .simple_form.image {
+    padding-top: 0; }
+    .simple_form.image .input.string {
+      margin-bottom: 0; }
+    .simple_form.image .license {
+      margin-top: 8px;
+      margin-bottom: 4px; }
+      .simple_form.image .license a {
+        font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+        font-size: 75%; }
 
 /* ----------------------------------------------------- */
 /* Søk                                                   */
@@ -1765,7 +1814,7 @@ div.plupload div.plupload_header {
   padding: 8px 10px; }
 
 .plupload_header_title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
   padding: 6px 0 3px; }
 

@@ -1,0 +1,8 @@
+%h2= t('articles.images.upload')
+
+.grid_2.alpha
+  #upload-container{ data: { url: article_images_path }}
+    #thumb-placeholder
+    = link_to("Last inn fil…", '#', id: 'upload-image')
+.grid_5.omega
+  = render partial: 'new_edit', locals: { image: image }

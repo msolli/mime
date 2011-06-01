@@ -81,6 +81,12 @@ no-NB:
       add: Legg til bilder
       upload_wizard:
         edit_info: "Rediger bildeinfo"
+      in_article: Bilder i artikkelen
+      photographer: "Foto: %{author}"
+      no_images: "Det er ingen i bilder i denne artikkelen ennå."
+      license: Lisens
+      license_info_header: "Om lisensen på bilder du laster opp"
+      license_info_html: 'Bilder på ableksikon.no skal publiseres med Creative Commons-lisens. Denne lisensen gjør det mulig for oss, deg og alle brukerne våre å dele innholdet fritt og vederlagsfritt. Vilkårene er at opphavspersonen navngis, og at innholdet bare kan deles videre under samme lisens. Les mer om vilkår og rettigheter på <a href="%{url}" target="_blank">Creative Commons'' nettsider</a>.'
 
     versions:
       first: Første versjon
@@ -364,6 +370,8 @@ no-NB:
         create: Opprett →
       page:
         publish: Publiser
+      image:
+        update: Legg til →
 
   activemodel:
     errors:

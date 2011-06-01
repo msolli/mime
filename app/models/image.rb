@@ -9,8 +9,10 @@ class Image
 
   field :description, type: String
   field :author, type: String
+  field :license, type: Symbol, default: :cc_by_sa
   field :file_uid, type: String
 
   validates :file, presence: true
-  validates :author, presence: true
+  validates :author, presence: true, on: :update
+
 end

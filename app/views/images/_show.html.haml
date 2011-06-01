@@ -1,0 +1,15 @@
+%figure
+  - i = image.file.thumb("366x>")
+  - begin
+    = image_tag(i.url, class: 'article-image')
+  - rescue Dragonfly::DataStorage::DataNotFound
+    %img{:src => "http://dummyimage.com/388x291/bf/fff&text=#{i.uid}" }
+  %figcaption
+    = image.description
+    %p.license
+      = t('articles.images.photographer', author: image.author)
+      %br
+      - if image.license == :cc_by_sa
+        = link_to image_tag("cc_by_sa.png", alt: "Creative Commons-lisens"), "http://creativecommons.org/licenses/by-sa/3.0/no/", target: '_blank'
+      - else
+        © #{image.created_at.year}

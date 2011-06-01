@@ -10,6 +10,9 @@ else
   end
 end
 
+app.configure do |c|
+  c.url_format = '/images/:job/:basename.:format'
+end
 app.define_macro_on_include(Mongoid::Document, :image_accessor)
 
 ### Old stuff ###

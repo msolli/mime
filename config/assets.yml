@@ -35,8 +35,6 @@ javascripts:
     - public/lib/plupload/plupload.js
     - public/lib/plupload/plupload.html4.js
     - public/lib/plupload/plupload.html5.js
-    - public/lib/plupload/jquery.ui.plupload/jquery.ui.plupload.js
-    - public/lib/plupload/i18n/no.js
     - public/javascripts/image-upload.js
     - public/javascripts/maptastic.js
     - public/javascripts/rails.js

@@ -10,6 +10,6 @@
 .articletext.diff!= diff(@v2.text || '', @v1.text || '').html_safe
 
 %aside.meta
-  .added= render :partial => 'medias/image_in_article', :collection => @imgdiff[:added], :as => :image
-  .removed= render :partial => 'medias/image_in_article', :collection => @imgdiff[:removed], :as => :image
-  .unchanged= render :partial => 'medias/image_in_article', :collection => @imgdiff[:intersect], :as => :image
+  .added= render partial: 'images/show', collection: @imgdiff[:added], as: :image
+  .removed= render partial: 'images/show', collection: @imgdiff[:removed], as: :image
+  .unchanged= render partial: 'images/show', collection: @imgdiff[:intersect], as: :image

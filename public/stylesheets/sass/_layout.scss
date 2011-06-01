@@ -1,4 +1,4 @@
-article, aside, footer, header, hgroup, nav, section {
+article, aside, footer, header, hgroup, nav, section, figure {
   display: block;
   margin: 0;
 }
@@ -155,7 +155,7 @@ nav {
       margin: 0 0 10px 0;
       display: block;
 
-      img {
+      img.article-image {
         display: block;
         margin: 0 auto;
         border: 1px solid #ccc;
@@ -166,6 +166,11 @@ nav {
         display: block;
         margin-bottom: 0;
         margin-top: 5px;
+
+        .license {
+          text-align: right;
+          line-height: 18px;
+        }
       }
     }
   }
@@ -325,6 +330,17 @@ a.button {
   @include wizard;
 }
 
+.edit-image {
+  background: $main-background-color;
+}
+
+#thumb-placeholder {
+  @include border-box;
+  width: 140px;
+  height: 105px;
+  border: 1px solid $box-border-color;
+}
+
 .article_list {
   margin-bottom: 32px;
   .deleted {
@@ -456,6 +472,10 @@ a.button {
   p {
     margin-bottom: 16px;
   }
+}
+
+#license-info {
+  margin-top: 32px;
 }
 
 footer {
@@ -808,6 +828,11 @@ ul.search-completion {
 
 .ui-autocomplete-loading {
   background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+
+.ui-effects-transfer {
+  background: $main-background-color;
+  border: 2px dotted $box-border-color;
 }
 
 #jstemplates {

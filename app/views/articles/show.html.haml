@@ -20,7 +20,7 @@
 .articletext.grid_7!= @article.text
 
 %aside.meta.grid_5
-  =# render :partial => 'medias/image_in_article', :collection => @article.medias, :as => :image
+  = render partial: 'images/show', :collection => @article.images, as: :image
   - unless @article.location.blank?
     .map-wrapper.minimized
       .map{:data => {:'lat' => @article.location.lat, :lng => @article.location.lng, :zoom => @article.location.zoom}}
