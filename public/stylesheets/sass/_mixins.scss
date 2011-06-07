@@ -24,6 +24,9 @@
   &:hover {
     background-color: $button-alt-color;
   }
+  &:visited {
+    color: white;
+  }
 }
 
 @mixin submit-button {

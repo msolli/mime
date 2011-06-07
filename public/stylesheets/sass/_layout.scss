@@ -326,6 +326,10 @@ a.button {
   @include a-button;
 }
 
+.add-image {
+  text-align: right;
+}
+
 .upload-wizard {
   @include wizard;
 }

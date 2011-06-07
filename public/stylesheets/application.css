@@ -572,6 +572,8 @@ nav {
       text-transform: uppercase; }
       nav ul li.new a:hover {
         background-color: #fab45b; }
+      nav ul li.new a:visited {
+        color: white; }
 
 #messages #notice {
   color: white;
@@ -805,6 +807,8 @@ header h1 {
     margin: 5px 0; }
     .join-us-teaser a.button:hover {
       background-color: #fab45b; }
+    .join-us-teaser a.button:visited {
+      color: white; }
 
 .action-links, .action-buttons {
   margin-bottom: 32px; }
@@ -891,6 +895,11 @@ a.button {
   text-transform: uppercase; }
   a.button:hover {
     background-color: #fab45b; }
+  a.button:visited {
+    color: white; }
+
+.add-image {
+  text-align: right; }
 
 .upload-wizard .step {
   box-sizing: border-box;
