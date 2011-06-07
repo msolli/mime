@@ -53,6 +53,7 @@ no-NB:
     redirected: "→ omdirigert fra %{from}"
     headword: Oppslagsord
     back: "Tilbake til artikkelen"
+    back_edit: "Tilbake til artikkelredigering"
     external_links: Eksterne lenker
     show_map: "Angi sted for denne artikkelen…"
     hide_map: "Fjern kartet"

@@ -14,5 +14,6 @@ class Image
 
   validates :file, presence: true
   validates :author, presence: true, on: :update
+  validates :license, presence: true, inclusion: { in: [:cc_by_sa, :copyright] }
 
 end

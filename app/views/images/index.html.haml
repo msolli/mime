@@ -4,7 +4,8 @@
 - content_for :header do
   <em>#{t('articles.images.add')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
-= render :partial => 'articles/info', :locals => { :article => @article }
+%aside.back-link.grid_12
+  = link_to '« ' + t('articles.back_edit'), pretty_article_path(@article)
 
 = render :partial => "common/flash"
 

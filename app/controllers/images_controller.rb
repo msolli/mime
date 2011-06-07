@@ -23,6 +23,7 @@ class ImagesController < ApplicationController
   def update
     @image = Image.find(params[:id])
     @image.attributes = params[:image]
+    @image.license = :cc_by_sa unless can? :manage, Image
     @image.save!
     @image.articles << @article
   end

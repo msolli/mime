@@ -9,6 +9,29 @@ describe Image do
     end
   end
 
+  describe "license attribute" do
+    let(:image) { Factory(:image) }
+
+    it "has :cc_by_sa as default value" do
+      image.license.should == :cc_by_sa
+    end
+
+    it "is required" do
+      image.license = nil
+      image.should_not be_valid
+    end
+
+    it "can have :copyright as value" do
+      image.license = :copyright
+      image.should be_valid
+    end
+
+    it "can have no other value than :cc_by_sa or :copyright" do
+      image.license = :foo
+      image.should_not be_valid
+    end
+  end
+
   context "without author" do
     let(:image) { Factory(:image, author: nil) }
     before do

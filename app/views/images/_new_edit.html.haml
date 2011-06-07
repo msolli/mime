@@ -9,7 +9,10 @@
 
   .license.grid_5.alpha.omega{class: (image.new? ? 'disabled' : '' )}
     = label_tag t('articles.images.license')
-    = f.collection_radio :license, [[:cc_by_sa, "CC BY-SA 3.0"]], :first, :last, disabled: :cc_by_sa
+    - if can? :manage, Image
+      = f.collection_radio :license, [[:cc_by_sa, "CC BY-SA 3.0"], [:copyright, "Copyright"]], :first, :last, {}, disabled: image.new?
+    - else
+      = f.collection_radio :license, [[:cc_by_sa, "CC BY-SA 3.0"]], :first, :last, disabled: :cc_by_sa
     = link_to("Hva er dette?", '#license-info', class: 'license')
 
   .grid_5.alpha.omega.add-image

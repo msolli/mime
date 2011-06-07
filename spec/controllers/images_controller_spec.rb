@@ -87,15 +87,37 @@ describe ImagesController do
     end
   end
 
+  context "as an editor" do
+    login_editor
+
+    describe "#update" do
+      let(:image) { Factory(:image) }
+
+      before do
+        image.license = :copyright
+        put :update, id: image.to_param, image: image.attributes, article_id: article.to_param, format: :js
+      end
+
+      it "sets the license to :copyright" do
+        assigns(:image).license.should == :copyright
+      end
+    end
+  end
+
   describe "#update" do
     let(:image) { Factory(:image) }
 
     before do
+      image.license = :copyright
       put :update, id: image.to_param, image: image.attributes, article_id: article.to_param, format: :js
     end
 
     it "adds the image to the article" do
       assigns(:image).articles.include?(article).should be_true
+    end
+
+    it "sets the license to :cc_by_sa" do
+      assigns(:image).license.should == :cc_by_sa
     end
 
     it "renders the update template" do
