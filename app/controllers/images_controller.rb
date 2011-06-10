@@ -1,6 +1,10 @@
 class ImagesController < ApplicationController
+  include Mongoid::Observing::Sweeping
+
   before_filter :find_article, only: [:index, :create, :update]
   before_filter :article_not_found, only: [:index]
+
+  cache_sweeper :article_sweeper, only: [:update]
 
   respond_to :js, only: [:update]
 
@@ -17,7 +21,7 @@ class ImagesController < ApplicationController
       @image.author = current_user.name
     end
     @image.save!
-    render action: "edit", layout: false
+    render action: "edit", layout: false, status: :created
   end
 
   def update

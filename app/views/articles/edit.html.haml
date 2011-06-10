@@ -58,10 +58,13 @@
       .grid_6= add_child_link t('external_links.new'), :external_links
     = new_child_fields_template f, :external_links
 
-  .grid_5
-    = f.label :images
-    .grid_5.alpha.omega.upload-button
+  %aside.meta.grid_5
+    %h2= t('articles.images.in_article')
+    .upload-button
       = link_to t('articles.images.upload'), article_images_path(@article), rel: 'nofollow', class: 'button'
+    = render partial: 'images/show', :collection => @article.images, as: :image
+    - if @article.images.empty?
+      %p.no-images= t('articles.images.no_images')
 
   .action-buttons.grid_12
     = f.button :submit

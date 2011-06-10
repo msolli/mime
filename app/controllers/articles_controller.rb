@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   cache_sweeper :article_sweeper
+
   # Mobil kan spørre om artikkel både over xhr(uten layout), og via vanlig request(med layout). Derfor må vi skille i cache-stien også
   caches_action :show, :cache_path => Proc.new{ |c| # Må defineres _etter_ :before_filter
     opts = {:host => 'ableksikon.no'};

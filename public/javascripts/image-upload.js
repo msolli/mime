@@ -3,7 +3,7 @@ $(function() {
     return;
   }
 
-  $('input:submit, a#upload-image').button();
+  $('input:submit, #upload-image').button();
 
   var uploader = new plupload.Uploader({
     runtimes: 'html5,html4',
@@ -22,6 +22,8 @@ $(function() {
     init: {
 
       FilesAdded: function(up, files) {
+        $('#thumb-loader').show();
+        $('#upload-image').button('disable');
         uploader.start();
       },
 
@@ -40,4 +42,13 @@ $(function() {
 
   uploader.init();
 
+  $('form.image')
+    .live('ajax:beforeSend', function(evt, xhr, settings) {
+      $('#image-loader').show();
+    })
+    .live('ajax:success', function(evt, data, status, xhr) {
+    })
+    .live('ajax:complete', function(evt, xhr, status) {
+      $('#image-loader').hide();
+    });
 });

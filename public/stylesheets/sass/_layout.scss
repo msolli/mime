@@ -153,7 +153,6 @@ nav {
       padding: 5px;
       background: white;
       margin: 0 0 10px 0;
-      display: block;
 
       img.article-image {
         display: block;
@@ -319,7 +318,7 @@ header {
 
 .upload-button {
   text-align: right;
-  margin-top: 12px;
+  margin: 12px 0;
 }
 
 a.button {
@@ -343,6 +342,19 @@ a.button {
   width: 140px;
   height: 105px;
   border: 1px solid $box-border-color;
+  img {
+    height: 32px;
+    width: 32px;
+    margin: 36px 54px;
+    display: none;
+  }
+}
+
+#image-loader {
+  img {
+    margin: 0 168px;
+  }
+  display: none;
 }
 
 .article_list {

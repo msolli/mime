@@ -16,4 +16,4 @@
     = link_to("Hva er dette?", '#license-info', class: 'license')
 
   .grid_5.alpha.omega.add-image
-    = f.button :submit, id: "image_submit_#{image.id}", disabled: image.new?
+    = f.button :submit, id: "image_submit_#{image.id}", disabled: image.new?, disable_with: t("helpers.submit.image.updating")

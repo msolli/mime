@@ -668,8 +668,7 @@ nav {
     border: 1px solid #cccccc;
     padding: 5px;
     background: white;
-    margin: 0 0 10px 0;
-    display: block; }
+    margin: 0 0 10px 0; }
     #main aside.meta .map-wrapper.minimized img.article-image,
     #main aside.meta figure img.article-image {
       display: block;
@@ -879,7 +878,7 @@ header h1 {
 
 .upload-button {
   text-align: right;
-  margin-top: 12px; }
+  margin: 12px 0; }
 
 a.button {
   position: relative;
@@ -945,6 +944,16 @@ a.button {
   width: 140px;
   height: 105px;
   border: 1px solid #cccccc; }
+  #thumb-placeholder img {
+    height: 32px;
+    width: 32px;
+    margin: 36px 54px;
+    display: none; }
+
+#image-loader {
+  display: none; }
+  #image-loader img {
+    margin: 0 168px; }
 
 .article_list {
   margin-bottom: 32px; }

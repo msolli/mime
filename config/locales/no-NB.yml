@@ -374,6 +374,7 @@ no-NB:
       image:
         create: Legg til →
         update: Legg til →
+        updating: Legger til…
 
   activemodel:
     errors:

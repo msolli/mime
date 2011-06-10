@@ -5,16 +5,18 @@
   <em>#{t('articles.images.add')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
 %aside.back-link.grid_12
-  = link_to '« ' + t('articles.back_edit'), pretty_article_path(@article)
+  = link_to '« ' + t('articles.back_edit'), edit_article_path(@article)
 
 = render :partial => "common/flash"
 
 .grid_7.clearfix#edit_image
   = render partial: 'new', locals: { image: @image }
 
-.grid_5
+%aside.meta.grid_5
   %h2= t('articles.images.in_article')
-  %aside.meta#article-images
+  %figure#image-loader
+    = image_tag("ajax-loader.gif")
+  #article-images
     = render partial: 'show', :collection => @article.images, as: :image
     - if @article.images.empty?
       %p.no-images= t('articles.images.no_images')
