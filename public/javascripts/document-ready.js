@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   // Load user data for navigation links and flash messages.
   // On cached pages the user data is retrieved by ajax.
   // On dynamic pages the user data will be present as HTML5 data attributes.

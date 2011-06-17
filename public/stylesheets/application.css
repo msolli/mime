@@ -844,12 +844,12 @@ header h1 {
     text-align: center; }
   .new-article-wizard .arrow {
     /* Typography */
-    font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+    font-family: "Droid Serif", "Cambria", Georgia, serif;
     font-size: 32px;
     line-height: 78px; }
   .new-article-wizard .number {
     /* Typography */
-    font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+    font-family: "Droid Serif", "Cambria", Georgia, serif;
     font-size: 32px;
     font-weight: bold; }
   .new-article-wizard .active {
@@ -925,12 +925,12 @@ a.button {
   text-align: center; }
 .upload-wizard .arrow {
   /* Typography */
-  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
   font-size: 32px;
   line-height: 78px; }
 .upload-wizard .number {
   /* Typography */
-  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
   font-size: 32px;
   font-weight: bold; }
 
@@ -1229,7 +1229,7 @@ footer {
   padding: 3px 12px;
   color: white;
   background: #2f528f;
-  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
   font-size: 100%;
   font-weight: bold;
   text-decoration: none;
@@ -1351,7 +1351,7 @@ ul.search-completion {
   display: none; }
 
 body {
-  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
   font-size: 100%; }
 
 header .title {
@@ -1554,7 +1554,7 @@ form.formtastic fieldset > ol > li p.inline-hints, form.formtastic fieldset > ol
   font-size: 75%;
   color: #7a7a7a; }
 form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic fieldset > ol > li.string input[type="text"].headword, form.formtastic fieldset > ol > li.text input[type="text"].headword {
-  font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
   font-size: 200%;
   font-weight: bold;
   color: #45494f; }
@@ -1609,10 +1609,6 @@ h2 {
   margin-top: 12px;
   margin-bottom: 4px;
   font-weight: bold; }
-
-/* Større tekst når Typekit ikke kan lastes (Firefox 3.0) */
-.wf-inactive #main .articletext {
-  font-size: 116%; }
 
 .map-wrapper > a {
   font-size: 87.5%;
@@ -1690,7 +1686,7 @@ h2 {
     padding: 3px 12px;
     color: white;
     background: #2f528f;
-    font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+    font-family: "Droid Serif", "Cambria", Georgia, serif;
     font-size: 100%;
     font-weight: bold;
     text-decoration: none;
@@ -1716,7 +1712,7 @@ h2 {
     font-size: 75%;
     color: #45494f; }
     .simple_form input.headword, .simple_form textarea.headword, .simple_form select.headword {
-      font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+      font-family: "Droid Serif", "Cambria", Georgia, serif;
       font-size: 200%;
       font-weight: bold;
       color: #45494f; }
@@ -1789,7 +1785,7 @@ h2 {
     padding: 3px 12px;
     color: white;
     background: #2f528f;
-    font-family: "droid-serif-1", "droid-serif-2", "Cambria", Georgia, serif;
+    font-family: "Droid Serif", "Cambria", Georgia, serif;
     font-size: 100%;
     font-weight: bold;
     text-decoration: none;
