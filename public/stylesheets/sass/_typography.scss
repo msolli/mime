@@ -225,6 +225,17 @@ aside.meta {
   font-size: $font12px;
 }
 
+#upload-error {
+  @include small-sans;
+  font-size: $font12px;
+  color: $error-color;
+}
+
+#upload-error-message {
+  @include monospace;
+  color: $light-grey-color;
+}
+
 form.formtastic {
   fieldset > legend {
     @include small-sans;

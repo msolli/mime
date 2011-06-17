@@ -10,6 +10,10 @@
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
 }
 
+@mixin monospace {
+  font-family: "Courier New", "Courier", monospace;
+}
+
 @mixin a-button {
   @include rounded-corners(4px);
   padding: 4px 12px;

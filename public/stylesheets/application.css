@@ -955,6 +955,9 @@ a.button {
   #image-loader img {
     margin: 0 168px; }
 
+#upload-error {
+  display: none; }
+
 .article_list {
   margin-bottom: 32px; }
   .article_list .deleted {
@@ -1525,6 +1528,15 @@ aside.meta figcaption {
 #license-info, .no-images {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%; }
+
+#upload-error {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #b72727; }
+
+#upload-error-message {
+  font-family: "Courier New", "Courier", monospace;
+  color: #7a7a7a; }
 
 form.formtastic fieldset > legend {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;

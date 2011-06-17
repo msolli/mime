@@ -22,6 +22,7 @@ var ImageUpload = (function() {
 
         FilesAdded: function(up, files) {
           $('#thumb-loader').show();
+          $('#upload-error').hide();
           $('#upload-image').button('disable');
           uploader.start();
         },
@@ -33,8 +34,11 @@ var ImageUpload = (function() {
           });
         },
 
-        Error: function(up, args) {
-          log(args);
+        Error: function(up, error) {
+          $('#thumb-loader').hide();
+          $('#upload-error-message').html(error.message);
+          $('#upload-error').show();
+          $('#upload-image').button('enable');
         }
       }
     });
@@ -43,11 +47,35 @@ var ImageUpload = (function() {
     $('form.image')
       .live('ajax:beforeSend', function(evt, xhr, settings) {
         $('#image-loader').show();
+        $('span.error').remove();
       })
       .live('ajax:success', function(evt, data, status, xhr) {
       })
       .live('ajax:complete', function(evt, xhr, status) {
         $('#image-loader').hide();
+      })
+      .live('ajax:error', function(evt, xhr, status, error) {
+        var errors,
+            model;
+
+        try {
+          errors = $.parseJSON(xhr.responseText);
+        } catch (err) {
+          errors = { base: $('#base-errors').data('status_500') };
+        }
+
+        model = $(this).attr('id').split('_')[1];
+
+        for (error in errors) {
+          inputElement = $('#' + model + '_' + error);
+          if (inputElement.length) {
+              inputElement.after('<span class="error">' + errors[error] + '</span>');
+          }
+        }
+
+        if (errors['base']) {
+          $('#base-errors').html('<span class="error">' + errors['base'] + '</span>');
+        }
       });
   };
 

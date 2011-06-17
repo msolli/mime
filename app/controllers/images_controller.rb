@@ -20,15 +20,21 @@ class ImagesController < ApplicationController
       @image.user = current_user
       @image.author = current_user.name
     end
-    @image.save!
-    render action: "edit", layout: false, status: :created
+    if @image.save
+      render action: "edit", layout: false, status: :created
+    else
+      render :json => @image.errors, :status => :unprocessable_entity
+    end
   end
 
   def update
     @image = Image.find(params[:id])
     @image.attributes = params[:image]
     @image.license = :cc_by_sa unless can? :manage, Image
-    @image.save!
-    @image.articles << @article
+    if @image.save
+      @image.articles << @article
+    else
+      render :json => @image.errors, :status => :unprocessable_entity
+    end
   end
 end

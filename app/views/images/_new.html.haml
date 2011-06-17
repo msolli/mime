@@ -5,5 +5,8 @@
     #thumb-placeholder
       = image_tag("ajax-loader.gif", id: 'thumb-loader')
     = link_to("Last inn fil…", '#', id: 'upload-image')
+    #upload-error
+      = t('articles.images.upload_error')
+      #upload-error-message
 .grid_5.omega
   = render partial: 'new_edit', locals: { image: image }

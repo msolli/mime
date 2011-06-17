@@ -26,6 +26,7 @@ no-NB:
     messages:
       blank: kan ikke være tom
       invalid: er ugyldig
+      status_500: "Det er visst problemer med serveren. Vi har fått beskjed, og vil se på det så snart vi kan."
     attributes:
       headword:
         blank: Artikkelen må nok ha et oppslagsord.
@@ -80,6 +81,7 @@ no-NB:
     images:
       upload: Last opp bilder
       add: Legg til bilder
+      upload_error: Det skjedde en feil under opplastingen. Prøv igjen.
       upload_wizard:
         edit_info: "Rediger bildeinfo"
       in_article: Bilder i artikkelen
