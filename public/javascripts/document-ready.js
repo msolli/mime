@@ -29,7 +29,7 @@ $(document).ready(function() {
   $("time.timeago").timeago();
 
   // Formtastic
-  $('form.formtastic label abbr, #jstemplates label abbr').html(function() {
+  $('form label abbr, #jstemplates label abbr').html(function() {
     return '(' + $(this).attr('title') + ')';
   });
 
@@ -86,7 +86,7 @@ $(document).ready(function() {
         $('#show-map-link').click().hide();
       }
     }
-  })();
+  });
 
 	// Only allow selecting two checkboxes at the time in version log
 	(function() {
@@ -98,29 +98,6 @@ $(document).ready(function() {
 			}
 		});
 	})();
-  // Tooltips (http://docs.jquery.com/Plugins/tooltip)
-  $('[data-tooltip-enable]').tooltip({
-    layout: '<div><span/></div>',
-
-    onBeforeShow: function() {
-      var el    = this.getTrigger(),
-          conf  = this.getConf();
-
-      conf.position = ['top right'];
-      conf.offset = [this.getTip().outerHeight(), 10];
-    }
-  });
-  // Show tooltip for error fields on page load
-  $('li.error [data-tooltip-enable]').focus();
-
-  // Disable enter to submit for map search
-  $('#maptastic-search').keypress(function(e) {
-    if(e.which == '13') {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
-  });
 
   // Datepicker
   mime.tools.addDatepicker('.date-field');

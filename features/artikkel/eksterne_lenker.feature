@@ -29,8 +29,8 @@ Egenskap: Eksterne lenker i artikler
   Scenario: legge til flere felter for eksterne lenker
     Gitt at artikkelen "Foo" finnes
     Og jeg står på artikkelredigering for "Foo"
-    Så skal det være 1 av "#external-links > ol > li"
-    Når jeg trykker "add-link"
-    Så skal det være 2 av "#external-links > ol > li"
-    Når jeg trykker "remove-link"
-    Så skal det være 1 av "#external-links > ol > li"
+    Så skal det være 1 eksterne lenker-felt
+    Når jeg klikker "Ny ekstern lenke"
+    Så skal det være 2 eksterne lenker-felt
+    Når jeg klikker "slett" under den siste eksterne lenken
+    Så skal det være 1 eksterne lenker-felt

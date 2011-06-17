@@ -50,6 +50,7 @@ class ApplicationController < ActionController::Base
     else
       params[:id]
     end
+    return unless @slug
     @article = Article.where(:headword => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
     # Try to find an earlier version with the slug as headword
     unless @article
@@ -87,6 +88,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log(message)
+    message = message.to_s
     message += request_info if request
     Rails.env.production? ? puts(message) : Rails.logger.debug(message)
   end

@@ -97,6 +97,12 @@ describe TagsArticleList do
         list.current_articles
       end
 
+      it "has the right number of articles on the next day" do
+        list.current_articles
+        list.date = Date.today - 1
+        list.current_articles.size.should == 5
+      end
+
       it "does not have duplicate elements" do
         list.current_articles.map(&:article).uniq.size.should == 5
         list.current_articles.map(&:article).uniq.should == list.current_articles.map(&:article)

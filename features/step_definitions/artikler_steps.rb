@@ -41,7 +41,7 @@ end
 
 Gitt /^at jeg legger til bildet "([^"]*)" til artikkelen "([^"]*)"$/ do |img_path, headword|
   a = Article.where(:headword => headword).first
-  a.medias << (Media.new :file => open(File.exists?(img_path) ? img_path : File.join(Rails.root, img_path)))
+  a.images << (Image.new :file => open(File.exists?(img_path) ? img_path : File.join(Rails.root, img_path)))
 end
 
 Gitt /^at artikkelen "([^"]*)" har følgende bidragsytere:$/ do |headword, authors|
@@ -64,11 +64,15 @@ Så /^skal kartet vises i artikkelen$/ do
 end
 
 Så /^skal kartet vises$/ do
-  Then %{"div.map" should be visible}
+  Then %{"div.map-wrapper" should be visible}
 end
 
 Så /^kartet skal være usynlig$/ do
   Then %{"#article_location_attributes_map" should be invisible}
+end
+
+Gitt /^(?:|at )jeg velger første element i autofullfør\-listen$/ do
+  find('.ui-autocomplete .ui-menu-item a').click
 end
 
 Så /^skal jeg ikke se eksterne lenker$/ do
@@ -93,4 +97,16 @@ end
 Så /^versjon (\d+) av "([^"]*)" skal være sist oppdatert "([^"]*)"$/ do |version, headword, timestamp|
   a = Article.where(:headword => headword).first
   a.versions.select { |v| v.version == version.to_i }.first.updated_at.strftime('%Y-%m-%d').should == timestamp
+end
+
+Så /^skal jeg se "([^"]*)" i oppslagsord\-feltet$/ do |headword|
+  find_field('article_headword').value.should == headword
+end
+
+Så /^skal det være (\d+) eksterne lenker\-felt$/ do |count|
+  all('form .external-link').select { |e| e.visible? }.count.should == count.to_i
+end
+
+Når /^jeg klikker "([^"]*)" under den siste eksterne lenken$/ do |link|
+  all('form .external-link').last.click_link(link)
 end

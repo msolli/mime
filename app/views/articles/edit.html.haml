@@ -4,4 +4,69 @@
 - content_for :header do
   <em>#{t('articles.edit')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
-= render :partial => 'new_edit', :locals => { :article => @article }
+- content_for :javascripts do
+  = javascript_include_tag :ckeditor
+  = render :partial => "common/googlemaps"
+
+= render :partial => 'info', :locals => { :article => @article }
+
+= render :partial => "common/flash"
+
+= simple_form_for setup_article(@article), html: { novalidate: true } do |f|
+
+  .grid_7
+
+    = f.input :headword, required: false, input_html: { class: 'headword' }
+
+    = f.cktext_area :text
+
+    = f.label :disambiguation
+    = f.cktext_area :disambiguation
+
+    = f.input :tags
+
+    = f.label :location
+    = f.simple_fields_for :location do |location_f|
+      = location_f.hidden_field :latitude
+      = location_f.hidden_field :longitude
+      = location_f.hidden_field :zoom
+
+    .map-wrapper
+      #article_location{data: { :lat => @article.location.lat,
+        :lng => @article.location.lng,
+        :zoom => @article.location.zoom,
+        :'default-lat' => ENV["MAP_DEFAULT_LAT"],
+        :'default-lng' => ENV["MAP_DEFAULT_LNG"],
+        :'default-zoom' => ENV["MAP_DEFAULT_ZOOM"] }}
+      .grid_3.alpha
+        = f.hint t('simple_form.hints.map')
+      .grid_4.omega
+        = f.label :geocoding
+        = text_field_tag('geocoding')
+
+    = link_to('#', id: 'show-map-link') do
+      = image_tag('show-map.png') + content_tag(:span, t('articles.show_map'))
+
+    = link_to('#', id: 'hide-map-link') do
+      = image_tag('hide-map.png') + content_tag(:span, t('articles.hide_map'))
+
+    %fieldset
+      %legend
+        = f.label :external_links
+      = f.simple_fields_for :external_links do |builder|
+        = render 'external_link_fields', :f => builder
+      .grid_6= add_child_link t('external_links.new'), :external_links
+    = new_child_fields_template f, :external_links
+
+  %aside.meta.grid_5
+    %h2= t('articles.images.in_article')
+    .upload-button
+      = link_to t('articles.images.upload'), article_images_path(@article), rel: 'nofollow', class: 'button'
+    = render partial: 'images/show', :collection => @article.images, as: :image
+    - if @article.images.empty?
+      %p.no-images= t('articles.images.no_images')
+
+  .action-buttons.grid_12
+    = f.button :submit
+    = link_to t('articles.cancel'), pretty_article_path(@article)
+    -# = button_to t('articles.delete'), @article, :method => :delete, :confirm => t('articles.confirm_delete')

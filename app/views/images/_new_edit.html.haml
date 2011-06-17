@@ -1,0 +1,21 @@
+= simple_form_for([@article, image], remote: true) do |f|
+
+  - if image.persisted?
+    #image-in-article{style: "display: none;"}
+      = image_tag image.file.thumb("366x>").url
+
+  = f.input :description, as: :text, disabled: image.new?, input_html: { rows: 3 }
+  = f.input :author, disabled: image.new?, required: false
+
+  .license.grid_5.alpha.omega{class: (image.new? ? 'disabled' : '' )}
+    = label_tag t('articles.images.license')
+    - if can? :manage, Image
+      = f.collection_radio :license, [[:cc_by_sa, "CC BY-SA 3.0"], [:copyright, "Copyright"]], :first, :last, {}, disabled: image.new?
+    - else
+      = f.collection_radio :license, [[:cc_by_sa, "CC BY-SA 3.0"]], :first, :last, disabled: :cc_by_sa
+    = link_to("Hva er dette?", '#license-info', class: 'license')
+
+  .grid_5.alpha.omega
+    #base-errors{data: {status_500: t('errors.messages.status_500')}}
+    .add-image
+      = f.button :submit, id: "image_submit_#{image.id}", disabled: image.new?, disable_with: t("helpers.submit.image.updating")

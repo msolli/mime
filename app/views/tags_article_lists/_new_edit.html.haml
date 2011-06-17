@@ -1,10 +1,9 @@
-= semantic_form_for [page, article_list] do |f|
+= simple_form_for [page, article_list] do |f|
 
-  = f.inputs do
-    = f.input :name
-    = f.input :number_of_articles
-    = f.input :tags
+  = f.input :name, wrapper_html: { class: 'grid_6 suffix_6' }
+  = f.input :number_of_articles, wrapper_html: { class: 'grid_6 suffix_6' }
+  = f.input :tags, wrapper_html: { class: 'grid_6 suffix_6' }
 
-  = f.buttons do
-    = f.commit_button
-    %li= link_to t('pages.cancel'), edit_page_path(page)
+  .action-buttons.grid_12
+    = f.button :submit
+    = link_to t('pages.cancel'), edit_page_path(page)

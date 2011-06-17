@@ -1,19 +1,31 @@
 = content_for :header do
-  = form_tag nil, :method => 'get' do
-    = text_field_tag :q, params[:q]
-    %button Søk
-- if @search_result
-  .search-pagination= paginate(@search_result.hits)
+  #{t('search.search_result')} – <em>#{params[:q]}</em>
 
-  .search-results
-    - if @search_result.total == 0
-    
-    - else
-      %ol
-        - @search_result.each_hit_with_result do |hit, result|
-          %li
+- if @search_result.total > 0
+  .search-pagination.prefix_4.grid_4.suffix_4= paginate(@search_result.hits)
+
+  .search-results.grid_12
+    %ol
+      - @search_result.each_hit_with_result do |hit, result|
+        - i = result.images.first
+        %li.clearfix
+          .grid_7.alpha
             %h2
               = link_to highlights_for(hit, :headword) || result.headword_presentation, pretty_article_path(result)
             %p= highlights_for(hit, :text) || (strip_tags(result.text) || "").slice(0, 101) + '…'
             = link_to pretty_article_url(result), pretty_article_url(result), :class => 'full-url'
-  .search-pagination= paginate(@search_result.hits)
+          .grid_2.suffix_3.omega
+            - if i
+              %figure
+                = df_image_tag(i.file.thumb("126x>").url, width: 126)
+
+  .search-pagination.prefix_4.grid_4.suffix_4= paginate(@search_result.hits)
+
+- else
+  %section.search-no-hits.grid_7.suffix_5
+    %p= t('search.no_hits')
+    %p
+      = t('search.contribute')
+      %br
+      = link_to t('search.new_article_html', headword: h(params[:q])), new_article_path(headword: params[:q])
+    %p= link_to t('search.wikipedia_html', q: h(params[:q])), "http://no.wikipedia.org/w/index.php?search=#{h(params[:q])}"

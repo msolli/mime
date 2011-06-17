@@ -25,7 +25,7 @@ Gitt /^at det fins en tom forside$/ do
 end
 
 Når /^jeg legger til følgende artikler:$/ do |table|
-  list_article_css = 'form .list-article'
+  list_article_css = 'form .nested-fields'
   table.hashes.each do |hash|
     hash['Dato'] = parse_date(hash['Dato'])
     last = all(list_article_css).last

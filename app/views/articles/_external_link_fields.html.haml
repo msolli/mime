@@ -1,0 +1,4 @@
+.nested-fields.clearfix.external-link
+  = f.input :href, wrapper_html: { class: 'grid_4' }
+  = f.input :text, wrapper_html: { class: 'grid_2' }
+  .grid_6= remove_child_link(t('external_links.destroy').downcase, f)

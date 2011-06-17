@@ -10,10 +10,8 @@
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
 }
 
-@mixin content-box {
-  width: $grid-width;
-  margin-left: auto;
-  margin-right: auto;
+@mixin monospace {
+  font-family: "Courier New", "Courier", monospace;
 }
 
 @mixin a-button {
@@ -29,6 +27,9 @@
 
   &:hover {
     background-color: $button-alt-color;
+  }
+  &:visited {
+    color: white;
   }
 }
 
@@ -89,6 +90,12 @@
       text-shadow: none;
     }
   }
+}
+
+@mixin border-box {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 @mixin page-box {
@@ -170,4 +177,45 @@
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@mixin wizard {
+  .step {
+    @include border-box;
+    background-color: $main-background-color;
+    padding-top: 5px;
+    border-top: none;
+    height: 78px;
+    /* Typography */
+    @include small-sans;
+    font-size: $font12px;
+    color: $light-grey-color;
+    h2 {
+      color: $light-grey-color;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+  .active {
+    /* Typography */
+    color: $text-color;
+    h2 {
+      color: darken($text-color, 5%);
+    }
+  }
+  .arrow, p {
+    text-align: center;
+  }
+  .arrow {
+    /* Typography */
+    @include serif;
+    font-size: 32px;
+    line-height: 78px;
+  }
+  .number {
+    /* Typography */
+    @include serif;
+    font-size: 32px;
+    font-weight: bold;
+  }
 }

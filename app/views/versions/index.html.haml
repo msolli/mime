@@ -4,13 +4,13 @@
 - content_for :header do
   <em>#{t('articles.version_log')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
-%aside.back-link
+%aside.back-link.grid_12
   = link_to '« ' + t('articles.back'), pretty_article_path(@article)
 
 - caption = link_to(@article.headword_presentation, pretty_article_path(@article)) + ' ' + t('articles.versions.count', :count => @versions.size + 1)
 
 
-= form_tag article_diff_path, :method => :get do
+= form_tag article_diff_path, :method => :get, :class => 'grid_12' do
   %table.versions{:caption => caption, :summary => t('articles.versions.summary')}
     %caption= caption
     %thead

@@ -1,8 +1,5 @@
 Mime::Application.routes.draw do
 
-  # IE7.js/Typekit workaround
-  match 'k/:something' => redirect("http://use.typekit.com/k/%{something}")
-
   devise_for :users, :module => 'users', do
     constraints :id => /[^\/]*/ do
       resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit] do
@@ -12,8 +9,9 @@ Mime::Application.routes.draw do
     get "users/current" => "users/sessions#current", :defaults => {:format => 'json'}
   end
 
-  resources :medias
-  match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
+  resources :images, :only => [:show]
+  # resources :medias
+  # match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
 
   match 'search', :to => 'search#new'
   match 'fastsearch', :to => 'json_search#new'
@@ -32,6 +30,7 @@ Mime::Application.routes.draw do
   constraints :id => /.*/ do
     resources :articles, :except => [:index] do
       resources :versions, :only => [:index]
+      resources :images, :only => [:index, :create, :update]
       resource :diff, :only => :show
       get :random, :on => :collection
     end

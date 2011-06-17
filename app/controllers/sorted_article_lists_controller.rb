@@ -17,4 +17,19 @@ class SortedArticleListsController < ApplicationController
       render :action => :new
     end
   end
+
+  def edit
+    @article_list = @page.sorted_article_lists.find(params[:id])
+  end
+
+  def update
+    @article_list = @page.sorted_article_lists.find(params[:id])
+    @article_list.attributes = params[:sorted_article_list]
+    if @article_list.save
+      redirect_to edit_page_path(@page)
+    else
+      flash.alert = t('article_lists.errors.save')
+      render :action => :edit
+    end
+  end
 end

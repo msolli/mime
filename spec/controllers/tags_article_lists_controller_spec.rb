@@ -72,7 +72,7 @@ describe TagsArticleListsController do
 
       context "with validation errors" do
         before do
-          post :create, sorted_article_list: Factory.attributes_for(:sorted_article_list, name: nil), page_id: page.id
+          post :create, tags_article_list: Factory.attributes_for(:tags_article_list, name: nil), page_id: page.id
         end
 
         it "renders the new template" do

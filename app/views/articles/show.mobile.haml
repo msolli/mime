@@ -14,10 +14,10 @@
       = render :partial => 'disambiguation', :locals => { :article => @article }
 
     .image-flicker
-      = render :partial => 'medias/image_in_article', :collection => @article.medias, :as => :image
-      - if @article.medias.size > 1
+      = render partial: 'images/show', collection: @article.images, as: :image
+      - if @article.images.any?
         .pagination
-          - @article.medias.size.times do |i|
+          - @article.images.size.times do |i|
             %span{:class => ('current' if i == 0)} •
     != @article.text
 

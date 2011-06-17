@@ -1,0 +1,205 @@
+.simple_form {
+  clear: both;
+  padding-top: 32px;
+
+  // Luft under tekstfelt
+  .input.string {
+    margin-bottom: 32px;
+  }
+  // ...men ikke i nested forms
+  & fieldset .input.string {
+    margin-bottom: 0;
+  }
+
+  // Ramme rundt fieldset, med legend oppå rammen øverst til venstre
+  fieldset {
+    @include border-box;
+    border: 1px solid $box-border-color;
+    padding: 16px 0;
+    margin-bottom: 32px;
+    legend {
+      margin: 0 10px;
+      padding: 0 5px;
+    }
+  }
+
+  input[type="text"], textarea {
+    @include border-box;
+    width: 100%;
+    border: 1px solid $box-border-color;
+    padding: 8px 4px 4px 4px;
+  }
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  .cke_editor_article_text_editor, .cke_editor_article_disambiguation_editor {
+    @include border-box;
+    margin-bottom: 32px;
+  }
+
+  #article_location {
+    @include rounded-corners(5px);
+    border: 1px solid $box-border-color;
+    height: 312px;
+    margin-bottom: 16px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 3px;
+    abbr {
+      padding-left: 1em;
+    }
+  }
+
+  .hint {
+    display: block;
+  }
+
+  #show-map-link, #hide-map-link {
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  &.sorted_article_list .collection_radio {
+    @include border-box;
+    @extend .grid_5;
+    @extend .alpha;
+    @extend .omega;
+    padding-left: 15px;
+  }
+
+  input[type="submit"] {
+    @include submit-button;
+  }
+
+  /* ----------------------------------------------------- */
+  /* Typografi                                            */
+
+  @include no-underline;
+
+  input, textarea, select {
+    @include small-sans;
+    font-size: $font12px;
+    color: $dark-grey-color;
+    &.headword {
+      @include serif;
+      font-size: $font32px;
+      font-weight: bold;
+      color: $dark-grey-color;
+    }
+  }
+
+  label {
+    @include small-sans;
+    color: $dark-grey-color;
+    font-size: $font12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    abbr {
+      text-transform: none;
+      color: $light-grey-color;
+      font-weight: normal;
+    }
+  }
+
+  .hint {
+    @include small-sans;
+    color: $light-grey-color;
+    font-size: $font12px;
+    font-style: italic;
+  }
+
+  .error {
+    @include small-sans;
+    color: red;
+    font-size: $font12px;
+  }
+
+  legend, legend label {
+    @include small-sans;
+    color: $dark-grey-color;
+    font-weight: bold;
+    text-transform: none;
+  }
+
+  #show-map-link, #hide-map-link {
+    @include small-sans;
+    font-size: $font12px;
+    text-decoration: none;
+    span:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .disabled {
+     label, button, input, optgroup, option, select, textarea {
+       color: $light-grey-color;
+     }
+  }
+
+  /* ----------------------------------------------------- */
+  /* Sideredigering                                        */
+  .add_child, .remove_child {
+    @include small-sans;
+    font-size: $font12px;
+  }
+
+  .nested-fields {
+    margin-bottom: 32px;
+  }
+
+  /* ----------------------------------------------------- */
+  /* Bildeopplasting og -redigering                        */
+  &.image {
+    padding-top: 0;
+
+    // Ikke luft under tekstfelt
+    .input.string {
+      margin-bottom: 0;
+    }
+
+    .license {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      a {
+        @include small-sans;
+        font-size: $font12px;
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------------------------- */
+/* Søk                                                   */
+/* ----------------------------------------------------- */
+.article-search {
+
+  input[type="text"] {
+    width: 200px;
+    border: 1px solid $box-border-color;
+    padding: 8px 4px 4px 4px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  input[type="submit"] {
+    @include submit-button;
+    top: 1px;
+  }
+
+  /* ----------------------------------------------------- */
+  /* Typography                                            */
+
+  input[type="text"] {
+    @include small-sans;
+    font-size: $font12px;
+    color: $dark-grey-color;
+  }
+
+}

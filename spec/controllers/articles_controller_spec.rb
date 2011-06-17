@@ -3,29 +3,29 @@
 require 'spec_helper'
 
 describe ArticlesController do
-  
+
   describe "mobile" do
     render_views
     before :each do
       Article.create!(:headword => 'foo', :text => 'bar')
       @request.host = 'mobil.example.com'
     end
-    
+
     it 'should have mobile format' do
       get :show, :slug => 'foo'
       @request.format.should == 'mobile'
     end
-    
+
     it "should serve layout if the request is not xhr" do
       get :show, :slug => 'foo'
       response.body.should match /^<!DOCTYPE html>/
     end
-    
+
     it "should not serve layout if request is xhr" do
       xhr :get, :show, :slug => 'foo'
       response.body.should match /^<div.*data-role=["']page["']/
     end
-    
+
   end
 
   describe "#new" do
@@ -40,17 +40,30 @@ describe ArticlesController do
     end
   end
 
+  describe "#new with headword" do
+    before :each do
+      get :new, headword: "foo"
+    end
+
+    it "is successful" do
+      response.should be_success
+    end
+
+    it "sets headword in article object" do
+      assigns(:article).headword.should == "foo"
+    end
+  end
+
   describe "#create" do
     context "with a valid article" do
       before :each do
-        post :create, :article => { :headword => "foo", :text => "bar" }
+        post :create, article: Factory.attributes_for(:article)
       end
       it "creates a new article" do
         assigns(:article).should_not be_nil
-        assigns(:article).headword.should == "foo"
       end
-      it "redirects to the article page" do
-        response.should redirect_to pretty_article_path(assigns(:article))
+      it "redirects to the edit article page" do
+        response.should redirect_to edit_article_path(assigns(:article))
       end
       it "sets a flash[:notice] message" do
         flash[:notice].should_not be_nil

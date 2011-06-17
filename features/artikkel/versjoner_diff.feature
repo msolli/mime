@@ -29,7 +29,7 @@ Egenskap: Se forskjellen på to versjoner av en artikkel
     Og jeg trykker "Sammenlign"
     Så skal jeg se "1" under "p:eq(1) del"
     Og jeg skal se "Linje 4" under "p:eq(2) ins"
-  
+
   Scenario: Lagt til bilde
     Gitt at artikkelen "Foo" har bilde
     Og at jeg legger til bildet "/spec/data/jpeg.jpeg" til artikkelen "Foo"

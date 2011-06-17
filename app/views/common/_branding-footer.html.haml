@@ -1,11 +1,10 @@
-#budstikka-footer-wrapper
-  #budstikka-footer
-
-    %p.logo
+.branding-footer-wrapper.clearfix
+  .container_12
+    .logo.grid_12
       = link_to image_tag('budstikka-grey.png', :alt => 'budstikka.no', :title => 'budstikka.no', :size => '153x32'), "http://www.budstikka.no"
 
-    .info
-      %p#copynote
+    .grid_3
+      %p
         &copy; Asker og Bærums Budstikke #{Date.today.year}
       %p
         Ansvarlig redaktør: #{mail_to "andreas.gjolme@budstikka.no", "Andreas Gjølme"}
@@ -16,17 +15,14 @@
         |
         = link_to "PFU", "http://www.pfu.no/simple.php", :target => '_blank'
 
-    %ul.info
+    %ul.grid_2
       %li= link_to "Kundesenter", "http://minside.budstikka.no/"
       %li= link_to "Abonnement", "http://abonnement.budstikka.no"
+      %li= link_to "Privatannonsering", "http://minside.budstikka.no/annonse/bestill"
       %li= link_to "Kontakt oss", "http://minside.budstikka.no/kontakt"
       %li= mail_to "tips@budstikka.no", "Tips oss"
 
-    .info
-      %p
-        = link_to "Privatannonsering", "http://minside.budstikka.no/annonse/bestill"
-
-    .info
+    .grid_6.push_1
       %p
         Nettredaksjon: #{mail_to "nett@budstikka.no"}
       %p

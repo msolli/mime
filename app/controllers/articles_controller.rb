@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   cache_sweeper :article_sweeper
+
   # Mobil kan spørre om artikkel både over xhr(uten layout), og via vanlig request(med layout). Derfor må vi skille i cache-stien også
   caches_action :show, :cache_path => Proc.new{ |c| # Må defineres _etter_ :before_filter
     opts = {:host => 'ableksikon.no'};
@@ -18,23 +19,20 @@ class ArticlesController < ApplicationController
   }
 
   def new
-    @article = Article.new
-    @article.build_location
-
+    @article = Article.new(headword: params[:headword])
     set_user_return_to new_article_path
   end
 
   def create
-    media_ids_from_async_upload = params[:article].delete(:media_ids_from_async_upload)
-    medias_attributes = params[:article].delete(:medias_attributes)
     @article = Article.new(params[:article])
-    @article.add_async_uploads(media_ids_from_async_upload)
-    add_medias!(medias_attributes)
     if @article.save
       add_author!
-      redirect_to pretty_article_path(@article), :notice => t('articles.saved')
+      redirect_to edit_article_path(@article), :notice => t('articles.created')
     else
-      flash.alert = t('articles.errors.save')
+      if @article.errors['headword'].first == t('mongoid.errors.models.article.attributes.headword.taken')
+        @existing_article = Article.where(:headword => /^#{Regexp.escape(deparameterize(params[:article][:headword]))}$/i).first
+      end
+      flash.alert = t('articles.errors.create')
       render :action => "new"
     end
   end

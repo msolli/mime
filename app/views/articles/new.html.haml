@@ -4,4 +4,36 @@
 - content_for :header do
   = t('articles.new')
 
-= render :partial => 'new_edit', :locals => { :article => @article }
+= render :partial => "common/flash"
+
+= simple_form_for setup_article(@article), html: { novalidate: true } do |f|
+
+  .grid_11.suffix_1
+    .new-article-wizard.clearfix
+      .step.active.grid_5.alpha
+        .grid_1.alpha
+          %p= t('words.step').capitalize
+          %p.number 1
+          %p= t('words.of', number: '2')
+        .grid_4.omega
+          %h2= t('articles.new_wizard.headword')
+          = t('articles.new_wizard.headword_desc')
+      .arrow.grid_1
+        &#8594;
+      .step.grid_5.omega
+        .grid_1.alpha
+          %p= t('words.step').capitalize
+          %p.number 2
+          %p= t('words.of', number: '2')
+        .grid_4.omega
+          %h2= t('articles.new_wizard.write')
+          = t('articles.new_wizard.write_desc')
+
+  .grid_7
+
+    = f.input :headword, required: false, input_html: { class: 'headword', autocomplete: 'off', autofocus: true }
+
+  .new-article-buttons.grid_3.prefix_2
+    = f.button :submit
+
+  = render :partial => 'existing', :locals => { :article => @existing_article }

@@ -20,7 +20,7 @@ class DiffsController < ApplicationController
       return
     else
       
-      {:@imgdiff => :medias, :@external_links_diff => :external_links}.each do |key, value|
+      {:@imgdiff => :images, :@external_links_diff => :external_links}.each do |key, value|
         instance_variable_set(key, {
           :removed  => @v2.send(value) - @v1.send(value),
           :added    => @v1.send(value) - @v2.send(value),
