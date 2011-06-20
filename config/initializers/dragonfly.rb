@@ -5,6 +5,9 @@ case Rails.env
 when "production"
   app.configure_with(:rails)
   app.configure_with(:heroku, ENV['S3_BUCKET'])
+  app.datastore.configure do |c|
+    c.region = 'eu-west-1'
+  end
 when "development"
   ## S3
   app.datastore = Dragonfly::DataStorage::S3DataStore.new
