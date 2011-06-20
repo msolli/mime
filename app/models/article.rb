@@ -47,8 +47,6 @@ class Article
   index "versions.headword"
   index [[ 'location.lat_lng', Mongo::GEO2D ]]
 
-  attr_accessor :media_ids_from_async_upload
-
   validates_presence_of :headword
   validates_uniqueness_of :headword, case_sensitive: false
   validates_associated :location, :external_links
@@ -112,19 +110,6 @@ class Article
   def delete
     self.headword = self.headword + " (#{I18n.t('words.deleted')}: #{Time.now.getutc})"
     delete_paranoia
-  end
-
-  def add_async_uploads(media_ids_from_async_upload)
-    _media_ids = media_ids_from_async_upload.to_s.strip.split.map{|__id| BSON::ObjectId.from_string(__id)}
-    unless _media_ids.blank?
-      Article.without_timestamps do
-        versionless do
-          Media.any_in(:_id => _media_ids).each do |media|
-            self.medias << media
-          end
-        end
-      end
-    end
   end
 
   class << self

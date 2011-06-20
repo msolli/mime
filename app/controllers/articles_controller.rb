@@ -52,7 +52,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article.add_async_uploads(params[:article].delete(:media_ids_from_async_upload))
     @article.attributes = params[:article]
     if @article.save
       add_author!
@@ -149,14 +148,6 @@ class ArticlesController < ApplicationController
       else
         @article.update_attributes!(:user_ids => [])
       end
-    end
-  end
-
-  def add_medias!(medias_attributes)
-    medias_attributes && medias_attributes.each_value do |m_attr|
-      m = Media.find(m_attr[:id])
-      m.update_attributes!(m_attr)
-      @article.medias << m unless @article.medias.include?(m)
     end
   end
 end
