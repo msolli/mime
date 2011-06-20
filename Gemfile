@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '= 3.0.5'
+gem 'rails', '>= 3.0.9'
 gem 'hassle', :require => false
 gem 'haml'
+gem 'sass'
 gem 'mongoid', :git => 'http://github.com/mongoid/mongoid.git'
 gem 'bson', '~> 1.3'
 gem 'bson_ext', '~> 1.3'

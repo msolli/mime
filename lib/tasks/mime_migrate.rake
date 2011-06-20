@@ -5,7 +5,7 @@ namespace :mime do
   namespace :migrate do
     
     desc "Migrerer bilder fra Media til Image"
-    task :medias => :environment do
+    task :medias, [] => [:environment] do
       Article.all.each do |article|
         next if (!article.respond_to?(:media_ids)) || article.media_ids.blank?
         Rails.logger.info "*** Article: #{article.headword}"
