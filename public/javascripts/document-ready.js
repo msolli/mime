@@ -94,7 +94,7 @@ $(document).ready(function() {
 		var selector = 'table.versions input[type="checkbox"]';
 		$(selector).click(function() {
 			if($(selector + ':checked').length > 2) {
-				alert('åhnånå. Du kan bare sammenligne to versjoner!');
+				alert('Du kan bare sammenligne to versjoner.');
 				return false;
 			}
 		});

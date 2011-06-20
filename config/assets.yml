@@ -1,5 +1,6 @@
 package_assets: on
 embed_assets: datauri
+javascript_compressor: uglifier
 
 javascripts:
   mobile:

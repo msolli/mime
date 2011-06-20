@@ -52,6 +52,10 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    POpen4 (0.1.4)
+      Platform (>= 0.4.0)
+      open4
+    Platform (0.4.0)
     ZenTest (4.4.2)
     abstract (1.0.0)
     actionmailer (3.0.9)
@@ -103,7 +107,6 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.1.9)
       ffi (~> 1.0.6)
-    closure-compiler (1.0.0)
     columnize (0.3.2)
     configuration (1.2.0)
     cucumber (0.10.7)
@@ -135,6 +138,7 @@ GEM
     exceptional (2.0.32)
       rack
     excon (0.6.3)
+    execjs (0.2.1)
     factory_girl (1.3.3)
     factory_girl_rails (1.0.1)
       factory_girl (~> 1.3)
@@ -186,9 +190,8 @@ GEM
     hpricot (0.8.3)
     htmldiff (0.0.1)
     i18n (0.5.0)
-    jammit (0.6.0)
-      closure-compiler (>= 0.1.0)
-      yui-compressor (>= 0.9.1)
+    jammit (0.6.3)
+      yui-compressor (>= 0.9.3)
     json (1.4.6)
     json_pure (1.5.2)
     launchy (0.3.7)
@@ -220,6 +223,7 @@ GEM
     oauth2 (0.1.1)
       faraday (~> 0.5.0)
       multi_json (~> 0.0.4)
+    open4 (1.0.1)
     orm_adapter (0.0.4)
     polyglot (0.3.1)
     pr_geohash (1.0.0)
@@ -310,6 +314,9 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.28)
+    uglifier (0.5.1)
+      execjs
+      json
     warden (1.0.3)
       rack (>= 1.0.0)
     will_paginate (3.0.pre2)
@@ -317,7 +324,8 @@ GEM
     xml-simple (1.0.12)
     xpath (0.1.4)
       nokogiri (~> 1.3)
-    yui-compressor (0.9.3)
+    yui-compressor (0.9.6)
+      POpen4 (>= 0.1.4)
 
 PLATFORMS
   ruby
@@ -371,5 +379,6 @@ DEPENDENCIES
   spork (~> 0.9.0.rc)
   sunspot_mongoid!
   sunspot_rails
+  uglifier
   will_paginate (~> 3.0.pre2)
   wirble
