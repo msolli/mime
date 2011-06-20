@@ -1,9 +1,9 @@
 %figure
   - i = image.file.thumb("366x>")
   - begin
-    = image_tag(i.url, class: 'article-image')
+    %img{src: i.url, class: 'article-image'}
   - rescue Dragonfly::DataStorage::DataNotFound
-    %img{:src => "http://dummyimage.com/388x291/bf/fff&text=#{i.uid}" }
+    %img{src: "http://dummyimage.com/388x291/bf/fff&text=#{i.uid}" }
   %figcaption
     = image.description
     %p.license
