@@ -19,7 +19,6 @@
   = include_stylesheets :all
   = favicon_link_tag
 
-  %script{:src => "http://use.typekit.com/odc3uil.js"}
   %script{:src => "/js/"}
 
   = yield :javascripts
@@ -28,29 +27,29 @@
   = csrf_meta_tag
 
 %body
-  %header
-    = render :partial => "common/branding-header"
+  = render :partial => "common/branding-header"
 
-    .wrapper
-      .title
-        = link_to(image_tag('logo-title.png', :size => '373x50', :alt => t('mime.title')), root_path)
-        %p= t('mime.header')
+  %header.container_12
+    .title.grid_6
+      = link_to(image_tag('logo-title.png', :size => '373x50', :alt => t('mime.title')), root_path)
+      %p= t('mime.header')
+    .top-right.grid_6
       = render :partial => "common/user-links"
       = render :partial => "common/search"
-    = render :partial => "common/nav"
 
-  #main{class: "#{controller_name} #{action_name}", role: 'main'}
+  = render :partial => "common/nav"
+
+  #main{:class => "#{controller_name} #{action_name}", role: 'main'}
     - if controller_name == 'articles'
-      %article
-        %header
+      %article.container_12.clearfix
+        %header.grid_12
           %h1<= yield :header
-        .wrapper
-          = yield
+        = yield
     - else
-      - if content_for? :header
-        %header
-          %h1<= yield :header
-      .wrapper
+      .container_12
+        - if content_for? :header
+          %header.grid_12
+            %h1<= yield :header
         = render :partial => "common/flash"
         = yield
 
@@ -58,8 +57,7 @@
     = render :partial => 'common/scores'
     = render :partial => 'common/google_analytics'
     - if content_for? :footer
-      .wrapper
-        = yield :footer
+      = yield :footer
     = render :partial => "common/branding-footer"
 
   - unless %w(edit new create update).include?(action_name)

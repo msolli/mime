@@ -1,24 +1,21 @@
-%li{class: [list.type.underscore, 'article_list', ("article-list-#{i}" unless list.type == 'ManualArticleList')]}
-  %h2
-    = list.name
+%li{class: [list.type.underscore, 'article_list', (list.type == 'ManualArticleList' ? "grid_12" : "article-list-#{i} grid_3")]}
+  %h2= list.name
 
   - unless %w{show index}.include? action_name
-    %p
-      %span.actions
-        = list.class.model_name.human
-        |
-        = link_to t('pages.edit').downcase, send("edit_page_#{list._type.underscore}_path", page._id, list._id)
-        |
-        = builder.hidden_field(:_destroy, class: "destroy")
-        = link_to(t('pages.delete').downcase, "#", class: "remove_list", id: "remove_list_#{list._id}")
-      %span.deleted
-        = t('pages.deleted').downcase
-        |
-        = link_to(t('pages.undo').downcase, "#", class: "undo_remove_list", id: "remove_list_#{list._id}")
+    .actions
+      = list.class.model_name.human
+      |
+      = link_to t('pages.edit').downcase, send("edit_page_#{list._type.underscore}_path", page._id, list._id)
+      |
+      = builder.hidden_field(:_destroy, class: "destroy")
+      = link_to(t('pages.delete').downcase, "#", class: "remove_list", id: "remove_list_#{list._id}")
+    .deleted
+      = t('pages.deleted').downcase
+      |
+      = link_to(t('pages.undo').downcase, "#", class: "undo_remove_list", id: "remove_list_#{list._id}")
 
   %ul
-    - list.current_articles.each do |a|
-      = render "#{list.type.underscore.pluralize}/show_in_page", a: a
+    = render partial: "#{list.type.underscore.pluralize}/show_in_page", collection: list.current_articles, as: :a, locals: { list_size: list.current_articles.size }
 
   - unless %w{show index}.include? action_name
     = builder.hidden_field(:id) unless builder.emitted_hidden_id?

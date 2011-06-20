@@ -11,8 +11,8 @@ jQuery.timeago.settings.strings = {
   hours: "rundt %d timer",
   day: "en dag",
   days: "%d dager",
-  month: "rundt en måned",
-  months: "%d måneder",
-  year: "rundt et år",
-  years: "%d år"
+  month: "rundt en m&aring;ned",
+  months: "%d m&aring;neder",
+  year: "rundt et &aring;r",
+  years: "%d &aring;r"
 };

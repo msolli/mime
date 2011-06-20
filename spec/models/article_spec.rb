@@ -162,9 +162,9 @@ describe Article do
   end
 
   it "has versioning" do
-    a = Article.create(:headword => 'foo')
+    a = Article.create(headword: 'foo')
     a.version.should == 1
-    a.save
+    a.update_attributes(headword: 'foobar')
     a.version.should == 2
   end
 

@@ -12,8 +12,9 @@ class Article
   references_and_referenced_in_many :users
   alias :authors :users
   alias :authors= :users=
-  
-  references_and_referenced_in_many :medias
+
+  # references_and_referenced_in_many :medias
+  has_and_belongs_to_many :images
   embeds_one :location
   embeds_many :external_links
 
@@ -46,14 +47,15 @@ class Article
   index "versions.headword"
   index [[ 'location.lat_lng', Mongo::GEO2D ]]
 
-  attr_accessor :media_ids_from_async_upload
-
   validates_presence_of :headword
-  validates_uniqueness_of :headword
+  validates_uniqueness_of :headword, case_sensitive: false
   validates_associated :location, :external_links
   
-  accepts_nested_attributes_for :location, :external_links, :medias, :allow_destroy => true, :reject_if => :all_blank
-  
+  accepts_nested_attributes_for :location, :medias, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :external_links,
+    :allow_destroy => true,
+    :reject_if => proc { |attributes| attributes.reject {|i| i.to_s == '_destroy'}.all? {|k,v| v.blank?} }
+
   # We do this because mongodb doesn't allow index fields to be null
   # They can however be absent from the document…
   before_validation :remove_empty_location
@@ -108,19 +110,6 @@ class Article
   def delete
     self.headword = self.headword + " (#{I18n.t('words.deleted')}: #{Time.now.getutc})"
     delete_paranoia
-  end
-
-  def add_async_uploads(media_ids_from_async_upload)
-    _media_ids = media_ids_from_async_upload.to_s.strip.split.map{|__id| BSON::ObjectId.from_string(__id)}
-    unless _media_ids.blank?
-      Article.without_timestamps do
-        versionless do
-          Media.any_in(:_id => _media_ids).each do |media|
-            self.medias << media
-          end
-        end
-      end
-    end
   end
 
   class << self

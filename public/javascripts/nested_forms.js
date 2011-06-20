@@ -20,7 +20,7 @@ $(document).ready(function() {
       if (hiddenField) {
         hiddenField.value = '1';
       }
-      $(this).parents('.fields').css('visibility', 'hidden').slideUp('fast');
+      $(this).closest('.nested-fields').css('visibility', 'hidden').slideUp('fast');
       return false;
     });
 
@@ -78,19 +78,4 @@ $(document).ready(function() {
       }
     }
   })();
-
-  // Adding / removing external links
-	(function() {
-		$('#external-links').find('button').click(function() {
-	    var li = $(this).closest('ol').parent();
-
-	    if ($(this).hasClass('add')) {
-	      mime.tools.input_cloner(li);
-	    } else if ($(this).hasClass('remove')) {
-	      if (!li.is(':only-child')) {
-	        li.remove();
-	      }
-	    }
-	  });
-	})();
 });

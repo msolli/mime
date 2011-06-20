@@ -1,13 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '= 3.0.5'
+gem 'rails', '>= 3.0.9'
 gem 'hassle', :require => false
 gem 'haml'
+gem 'sass'
 gem 'mongoid', :git => 'http://github.com/mongoid/mongoid.git'
-gem 'bson', '~> 1.0'
-gem 'bson_ext'
-gem 'mongo', '~> 1.0'
+gem 'bson', '~> 1.3'
+gem 'bson_ext', '~> 1.3'
 gem 'formtastic', '~> 1.1'
+gem 'simple_form'
 gem 'nokogiri'
 gem 'sax-machine'
 gem 'devise', :git => 'http://github.com/plataformatec/devise.git'
@@ -17,6 +18,7 @@ gem 'escape_utils' # A way to silence stupid stupid stupid Rack::Utils::escape
 gem 'ckeditor', :git => 'http://github.com/budstikka/rails-ckeditor.git', :branch => 'rails3'
 gem 'will_paginate', '~> 3.0.pre2'
 gem 'jammit'
+gem 'uglifier'
 gem 'asset_id', :git => 'git://github.com/msolli/asset_id.git'
 gem 'exceptional'
 
@@ -31,8 +33,8 @@ gem 'delayed_job_mongoid'
 gem 'heroku_delayed_job_autoscale'
 
 # attachment handling
-gem 'aws-s3', :require => 'aws/s3'
-gem 'dragonfly'
+gem 'fog'
+gem 'dragonfly', '~> 0.9.0'
 
 # Canonical urls
 gem 'rack-rewrite', :require => 'rack/rewrite'
@@ -51,17 +53,15 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'ruby-debug19'
-  gem 'passenger'
+  gem 'rails-footnotes'
 end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
-  gem 'capybara', '0.4.0'
-  gem 'selenium-webdriver', '0.1.2'
+  gem 'capybara', '~> 1.0'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'rspec-rails'
   gem 'fuubar'
   gem 'launchy'
   gem 'ruby-debug19'
@@ -70,4 +70,8 @@ group :test do
   gem 'autotest-rails'
 
   gem 'factory_girl_rails', :require => false
+end
+
+group :test, :development do
+  gem 'rspec-rails', '~> 2.6.0.rc6'
 end

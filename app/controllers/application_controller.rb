@@ -50,14 +50,11 @@ class ApplicationController < ActionController::Base
     else
       params[:id]
     end
-    rescue_connection_failure do
-      @article = Article.where(:headword => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
-    end
+    return unless @slug
+    @article = Article.where(:headword => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
     # Try to find an earlier version with the slug as headword
     unless @article
-      rescue_connection_failure do
-        @article = Article.where(:'versions.headword' => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
-      end
+      @article = Article.where(:'versions.headword' => /^#{Regexp.escape(deparameterize(@slug))}$/i).first
     end
   end
 
@@ -91,6 +88,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log(message)
+    message = message.to_s
     message += request_info if request
     Rails.env.production? ? puts(message) : Rails.logger.debug(message)
   end
@@ -98,17 +96,5 @@ class ApplicationController < ActionController::Base
   def action_not_found
     render :file => "#{Rails.public_path}/404.html", :status => :not_found, :layout => false
     log "ACTION NOT FOUND #{controller_name}##{action_name}"
-  end
-
-  def rescue_connection_failure(max_retries = 10)
-    retries = 0
-    begin
-      yield
-    rescue Mongo::ConnectionFailure => ex
-      retries += 1
-      raise ex if retries > max_retries
-      sleep(0.5)
-      retry
-    end
   end
 end

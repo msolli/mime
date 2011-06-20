@@ -5,7 +5,7 @@ no-NB:
     header: "Budstikkas store Asker og Bærum-leksikon"
     missing_frontpage: "Her mangler det visst en forside"
     join_us:
-      teaser: "Bli med å oppdatere leksikonet"
+      teaser: "Bli med å oppdatere leksikonet:"
       new_article: "Start en ny oppføring"
       
     mobile:
@@ -26,17 +26,20 @@ no-NB:
     messages:
       blank: kan ikke være tom
       invalid: er ugyldig
+      status_500: "Det er visst problemer med serveren. Vi har fått beskjed, og vil se på det så snart vi kan."
     attributes:
       headword:
         blank: Artikkelen må nok ha et oppslagsord.
         taken: Oppslagsordet du oppga fantes visst fra før. Vi har satt det tilbake til det det var.
-  tooltips:
-    articles:
-      headword: "Oppslagsord (må fylles ut)"
-  javascript_translations:
+
+  javascript:
     media:
       _destroy: Slett
       un_destroy: Behold
+    article:
+      map:
+        drag: Flytt for å angi ny plassering
+
   articles:
     new: Ny artikkel
     edit: Rediger
@@ -47,9 +50,11 @@ no-NB:
     version_log: Versjonslogg
     report_error: Tips om feil
     saved: Artikkelen er lagret
+    created: Artikkelen er opprettet. Nå gjenstår det bare å skrive den.
     redirected: "→ omdirigert fra %{from}"
     headword: Oppslagsord
     back: "Tilbake til artikkelen"
+    back_edit: "Tilbake til artikkelredigering"
     external_links: Eksterne lenker
     show_map: "Angi sted for denne artikkelen…"
     hide_map: "Fjern kartet"
@@ -58,14 +63,33 @@ no-NB:
     delete: "Slett artikkelen"
     confirm_delete: "Er du sikker på at du vil slette denne artikkelen?"
     deleted_html: "Artikkelen <em>%{headword}</em> er slettet"
+    cancel: Avbryt
     errors:
       save: "Artikkelen ble visst ikke lagret – sjekk feilene nedenfor:"
+      create: "Artikkelen ble ikke opprettet – sjekk feilene nedenfor."
       list: "Feil i disse feltene forhindret at artikkelen ble lagret:"
     login_teaser_html: "Du er ikke logget inn. Det er helt fint, for leksikonet er åpent for redigering av hvem som helst. Men hvis du ønsker navnet ditt under <em>Bidragsytere</em> eller i versjonsloggen, så må du først %{login_link}."
     login_link: logge inn
     editable_defaults:
       default: "Trykk på meg for å redigere %{value}."
     description_html: "%{headword} (artikkel i Budstikkas store Asker og Bærum-leksikon)"
+    new_wizard:
+      headword: "Velg et oppslagsord"
+      headword_desc: "Oppslagsordet er overskriften på artikkelen din. Det er også ordet artikkelen din vil finnes under i den alfabetiske oversikten."
+      write: "Skriv artikkelen"
+      write_desc: "Rediger artikkelen, og legg til bilder, kart, nøkkelord med mer."
+    images:
+      upload: Last opp bilder
+      add: Legg til bilder
+      upload_error: Det skjedde en feil under opplastingen. Prøv igjen.
+      upload_wizard:
+        edit_info: "Rediger bildeinfo"
+      in_article: Bilder i artikkelen
+      photographer: "Foto: %{author}"
+      no_images: "Det er ingen i bilder i denne artikkelen ennå."
+      license: Lisens
+      license_info_header: "Om lisensen på bilder du laster opp"
+      license_info_html: 'Bilder på ableksikon.no skal publiseres med Creative Commons-lisens. Denne lisensen gjør det mulig for oss, deg og alle brukerne våre å dele innholdet fritt og vederlagsfritt. Vilkårene er at opphavspersonen navngis, og at innholdet bare kan deles videre under samme lisens. Les mer om vilkår og rettigheter på <a href="%{url}" target="_blank">Creative Commons'' nettsider</a>.'
 
     versions:
       first: Første versjon
@@ -91,8 +115,12 @@ no-NB:
     tags: Nøkkelord
     no_tags: "Artikkelen har ingen nøkkelord. Bli med, bidra til leksikonet ved å %{add_tags_link}."
     add_tags: "legge til nøkkelord"
+
   external_links:
     external_links: Eksterne lenker
+    destroy: Slett
+    new: Ny ekstern lenke
+
   users:
     profile:
       profile: "Brukerprofil for %{for}"
@@ -118,12 +146,19 @@ no-NB:
         name_and_picture_desc: "Vi viser navnet ditt under \"Bidragsytere\" og i versjonsloggen for artikler du redigerer, og profilbildet vises sammen med navnet ditt der det gir mening."
         email: Epostadresse
         email_desc: "Du kan be om å få beskjed fra oss på epost når en artikkel blir oppdatert, f.eks. Vi deler ikke epostadressen din med noen."
+
   search:
+    search_result: Søkeresultat
     hits_and_total: "Viser %{showing} av %{total} treff"
     template:
       several_hits: "%{previous_label} Viser %{from}-%{to} av %{total_entries} treff %{next_label}"
       one_or_less_hits: "Viser %{count} av %{count} treff"
     error: "Vi har visst problemer med å få gjort søket ditt akkurat nå. Du kan alltids prøve igjen ved å laste siden på nytt."
+    no_hits: Søket ditt ga ingen treff på ableksikon.no.
+    contribute: "Har du kunnskap om det du søkte etter? Vi vil veldig gjerne ha ditt bidrag til leksikonet."
+    new_article_html: "Her kan du opprette en artikkel om <span>%{headword}</span>."
+    wikipedia_html: "Søk etter <span>%{q}</span> på norske Wikipedia."
+
   pages:
     new: Ny side
     edit: Rediger
@@ -151,20 +186,21 @@ no-NB:
       articles: Artikler
     errors:
       save: "Siden ble visst ikke lagret – sjekk feilene nedenfor:"
+
   article_lists:
     errors:
       save: "Lista ble visst ikke lagret – sjekk feilene nedenfor:"
+
   alphabetic:
     title: "Artikler på %{letter}"
     description_html: "Artikler på %{letter} i Budstikkas store Asker og Bærum-leksikon"
     intro: "Artikler på <strong>%{letter}</strong>"
+
   formtastic:
     required: påkrevet
     actions:
       create: Opprett
       update: Lagre
-      page:
-        publish: Publiser
     labels:
       other:
         'maptastic-search': 'Søk etter sted eller adresse:'
@@ -175,7 +211,6 @@ no-NB:
         tags: Nøkkelord
         disambiguation: "Andre betydninger"
       location: Posisjon
-      media:
       external_link:
         href: Adresse
         text: Lenketekst
@@ -200,6 +235,7 @@ no-NB:
         published_on: Dato
       section:
         name: Navn
+
   words:
     or: eller
     search: søk
@@ -207,6 +243,11 @@ no-NB:
     you: du
     your: din
     deleted: slettet
+    articles: artikler
+    required: påkrevet
+    step: skritt
+    of: av %{number}
+
   import:
     disambiguation:
       link_back_to: "%{headword} har flere betydninger. For andre betydninger, se %{headword_link}."
@@ -324,6 +365,19 @@ no-NB:
       format:
         delimiter: ""
 
+  helpers:
+    submit:
+      create: Opprett
+      update: Lagre
+      article:
+        create: Opprett →
+      page:
+        publish: Publiser
+      image:
+        create: Legg til →
+        update: Legg til →
+        updating: Legger til…
+
   activemodel:
     errors:
       template:
@@ -356,6 +410,11 @@ no-NB:
         even: "må være partall"
         record_invalid: "Det oppstod feil: {$errors}"
       models:
+        article:
+          attributes:
+            headword:
+              blank: "Artikkelen må nok ha oppslagsord"
+              taken: "Denne artikkelen finnes allerede:"
         manual_article_list:
           attributes:
             name:

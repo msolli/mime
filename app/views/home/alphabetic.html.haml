@@ -8,7 +8,7 @@
   -# Når Ruby 1.9.2 er støttet på Heroku, se http://unicode-utils.rubyforge.org/
   #{@letter.mb_chars.upcase.to_s} #{@letter.mb_chars.downcase.to_s}
 
-%section.alphabetic
+%section.alphabetic.grid_12
   %aside.intro!= t('alphabetic.intro', :letter => @letter.mb_chars.upcase)
   %ul
     - @articles.each do |article|

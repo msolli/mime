@@ -1,10 +1,11 @@
-.join-us-teaser
-  %span.teaser= t('mime.join_us.teaser')
-  = link_to t('mime.join_us.new_article'), new_article_path, :class => 'button'
+.join-us-teaser.grid_12
+  %span.prefix_1.grid_7.alpha= t('mime.join_us.teaser')
+  .grid_4.omega
+    = link_to t('mime.join_us.new_article'), new_article_path, :class => 'button'
 
 - @page.article_lists.each_with_index do |list, i|
   = render "pages/article_list", list: list, i: i
 
-.action-links
+.action-links.grid_12
   #edit_page_link{data: {page_id: @page.id}}
     = link_to t('pages.edit'), edit_page_path(@page), rel: 'nofollow'

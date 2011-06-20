@@ -11,16 +11,9 @@ Egenskap: Ny artikkel
     Og jeg fyller inn "article[headword]" med "Xyzzy-tittel"
 
     Scenario: opprette ny artikkel
-      Og jeg fyller inn "article[text]" med "Xyzzy-artikkeltekst"
       Når jeg trykker "Opprett"
-      Så skal jeg komme til artikkelvisning for "Xyzzy-tittel"
+      Så skal jeg komme til artikkelredigering for "Xyzzy-tittel"
       Og jeg skal se "Xyzzy-tittel"
-      Og jeg skal se "Xyzzy-artikkeltekst"
-
-    @javascript
-    Scenario: melding om at artikkel er opprettet
-      Når jeg trykker "Opprett"
-      Så skal jeg se "er lagret" under "#notice"
 
     Scenario: anonym bidragsyter
       Når jeg trykker "Opprett"

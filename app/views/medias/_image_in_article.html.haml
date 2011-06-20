@@ -1,7 +1,0 @@
-%figure
-  - i = image.file.thumb("388x>")
-  - begin
-    = df_image_tag(i.url)
-  - rescue Dragonfly::DataStorage::DataNotFound
-    %img{:src => "http://dummyimage.com/388x291/bf/fff&text=#{i.uid}" }
-  %figcaption= image.description

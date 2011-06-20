@@ -7,8 +7,7 @@ Spork.prefork do
   require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 
   require 'cucumber/formatter/unicode' # Remove this line if you don't want Cucumber Unicode support
-  require 'cucumber/rails/rspec'
-  require 'cucumber/rails/active_record'
+  require 'cucumber/rails'
   require 'cucumber/web/tableish'
 
   require 'capybara/rails'
@@ -21,9 +20,9 @@ Spork.prefork do
   # steps to use the XPath syntax.
   Capybara.default_selector = :css
   Capybara.register_driver :selenium do |app|
-    Capybara::Driver::Selenium.new(app, :browser => :firefox)
-  #  Capybara::Driver::Selenium.new(app, :browser => :firefox, :profile => "WebDriver")
-    # Capybara::Driver::Selenium.new(app, :browser => :chrome)
+    Capybara::Selenium::Driver.new(app, :browser => :firefox)
+    # Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => "WebDriver")
+    # Capybara::Selenium::Driver.new(app, :browser => :chrome)
   end
 
   # If you set this to false, any error raised from within your app will bubble

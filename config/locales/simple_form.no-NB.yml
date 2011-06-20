@@ -1,0 +1,48 @@
+no-NB:
+  simple_form:
+    "yes": 'Ja'
+    "no": 'Nei'
+    required:
+      text: 'påkrevet'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Some errors were found, please take a look:"
+    labels:
+      name: Navn
+      number_of_articles: Antall artikler
+      headword: Oppslagsord
+      published_on: Dato
+      tags: Nøkkelord
+      location: Kart
+      geocoding: 'Søk etter sted eller adresse:'
+      disambiguation: 'Andre betydninger'
+      external_links: 'Eksterne lenker'
+      href: Adresse
+      text: Lenketekst
+      sort_field: Sorteringsfelt
+      sort_direction: Retning
+      created_at: Opprettet
+      updated_at: Sist endret
+      asc: Stigende
+      desc: Synkende
+      images: Bilder
+      image:
+        description: Bildetekst
+        author: Fotograf
+
+    hints:
+      map: 'Klikk for å velge en posisjon. Dra markøren rundt for å etterjustere.'
+    # Labels and hints examples
+    # labels:
+    #   password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail para efetuar o sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   username: 'User name to sign in.'
+    #   password: 'No special characters, please.'

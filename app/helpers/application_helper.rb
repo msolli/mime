@@ -64,7 +64,7 @@ module ApplicationHelper
     options[:form_builder_local] ||= :f
 
     content_for :jstemplates do
-      content_tag(:div, :id => "#{association}_fields_template", :style => "display: none") do
+      content_tag(:div, :id => "#{association}_fields_template") do
         form_builder.fields_for(association, options[:object], :child_index => "new_#{association}") do |f|
           render(options[:partial], options[:form_builder_local] => f)
         end
@@ -82,5 +82,13 @@ module ApplicationHelper
 
   def add_list_link(association, parent)
     link_to(t("pages.#{association}.new"), send("new_page_#{association}_path", parent.id))
+  end
+
+  def alpha_omega(index, size)
+    if index == 0
+      'alpha'
+    elsif index == size - 1
+      'omega'
+    end
   end
 end

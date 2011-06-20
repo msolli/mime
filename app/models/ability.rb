@@ -9,6 +9,7 @@ class Ability
     elsif user.editor?
       can :manage, Page
       can :manage, ArticleList
+      can :manage, Image
     else
       can :read, :all
     end

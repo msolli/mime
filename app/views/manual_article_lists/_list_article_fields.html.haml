@@ -1,5 +1,4 @@
-%li.list-article.fields
-  %ol
-    = f.input :headword, required: true, input_html: { class: 'headword-autocomplete' }
-    = f.input :published_on, required: true, wrapper_html: { class: 'list-article-date' }, input_html: { class: 'date-field' }
-    %li= remove_child_link(t('pages.delete').downcase, f)
+.nested-fields.clearfix
+  = f.input :headword, required: true, wrapper_html: { class: 'grid_4' }, input_html: { class: 'headword-autocomplete' }
+  = f.input :published_on, required: true, wrapper_html: { class: 'grid_2' }, input_html: { class: 'date-field' }
+  .grid_6= remove_child_link(t('pages.delete').downcase, f)

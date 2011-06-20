@@ -29,13 +29,13 @@ Egenskap: Se forskjellen på to versjoner av en artikkel
     Og jeg trykker "Sammenlign"
     Så skal jeg se "1" under "p:eq(1) del"
     Og jeg skal se "Linje 4" under "p:eq(2) ins"
-  
+
   Scenario: Lagt til bilde
     Gitt at artikkelen "Foo" har bilde
     Og at jeg legger til bildet "/spec/data/jpeg.jpeg" til artikkelen "Foo"
     Når jeg står på versjonsloggen for "Foo"
     Og jeg krysser av "Aktiv versjon"
-    Og jeg krysser av "V 3"
+    Og jeg krysser av "Første versjon"
     Og jeg trykker "Sammenlign"
     Så skal ".meta .added figure" finnes
     

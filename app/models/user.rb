@@ -3,6 +3,7 @@ class User
   include Mongoid::Timestamps
 
   references_and_referenced_in_many :articles
+  has_many :images
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable and :timeoutable

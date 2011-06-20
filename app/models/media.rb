@@ -9,7 +9,7 @@ class Media
   field :author, :type => String
   field :file_uid, :type => String
   
-  attachment_accessor :file  
-  
-  validates_presence_of :file
+  # attachment_accessor :file
+
+  validates_presence_of :file, :author
 end
