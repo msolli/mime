@@ -56,8 +56,7 @@ end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
-  gem 'capybara', '~> 1.0.0.beta1'
-  gem 'selenium-webdriver', '0.1.2'
+  gem 'capybara', '~> 1.0'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
