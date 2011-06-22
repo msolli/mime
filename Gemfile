@@ -25,7 +25,7 @@ gem 'exceptional'
 gem 'sunspot_rails'
 gem 'sunspot_mongoid', :git => 'git://github.com/kabriel/sunspot_mongoid.git'
 
-gem 'mongo_store', :git => 'git://github.com/budstikka/mongo_store.git'
+gem 'mongo_store', git: 'git://github.com/budstikka/mongo_store.git', ref: 'bc6988060d4ab508901c'
 
 # Async jobs
 gem 'delayed_job'
