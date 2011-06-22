@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/budstikka/mongo_store.git
-  revision: 239c6afba8e78672aad00895d1dc97efc8eabb1f
+  revision: bc6988060d4ab508901c1088127b7b6f3b72dd0f
+  ref: bc6988060d4ab508901c
   specs:
     mongo_store (0.3.0)
       activesupport (>= 2.2)
