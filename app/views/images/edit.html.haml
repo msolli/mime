@@ -1,6 +1,6 @@
 %h2= t('articles.images.upload')
 
 .grid_2.alpha
-  = image_tag @image.file.thumb("140x>").url
+  = df_image_tag @image.file.thumb("140x>").url
 .grid_5.omega
   = render partial: 'new_edit', locals: { image: @image }

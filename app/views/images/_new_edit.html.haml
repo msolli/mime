@@ -2,7 +2,7 @@
 
   - if image.persisted?
     #image-in-article{style: "display: none;"}
-      = image_tag image.file.thumb("366x>").url
+      = df_image_tag image.file.thumb("366x>").url
 
   = f.input :description, as: :text, disabled: image.new?, input_html: { rows: 3 }
   = f.input :author, disabled: image.new?, required: false
