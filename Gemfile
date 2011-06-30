@@ -54,6 +54,7 @@ group :development do
   gem 'ruby_parser'
   gem 'ruby-debug19'
   gem 'rails-footnotes'
+  gem 'thin'
 end
 
 group :test do

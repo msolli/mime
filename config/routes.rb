@@ -9,10 +9,6 @@ Mime::Application.routes.draw do
     get "users/current" => "users/sessions#current", :defaults => {:format => 'json'}
   end
 
-  resources :images, :only => [:show]
-  # resources :medias
-  # match '/media(/:dragonfly)', :to => Dragonfly[:attachments]
-
   match 'search', :to => 'search#new'
   match 'fastsearch', :to => 'json_search#new'
   
