@@ -53,7 +53,6 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'ruby-debug19'
-  gem 'rails-footnotes'
   gem 'thin'
 end
 
@@ -69,7 +68,7 @@ group :test do
   gem 'spork', '~> 0.9.0.rc'
   gem 'ZenTest', '~> 4.4.2'
   gem 'autotest-rails'
-
+  gem 'selenium-webdriver', '~>0.2.2'
   gem 'factory_girl_rails', :require => false
 end
 

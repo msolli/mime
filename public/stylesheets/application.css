@@ -504,9 +504,11 @@ article, aside, footer, header, hgroup, nav, section, figure {
   display: block;
   margin: 0; }
 
+/* Temporarily moved to _css.erb
 body {
-  background: white url(/images/bg-nav.png) no-repeat top center; }
-
+  background: white url(/images/bg-nav.png) no-repeat top center;
+}
+*/
 header {
   position: relative; }
   header .title {
@@ -607,7 +609,9 @@ nav {
   behavior: url(/stylesheets/PIE.htc); }
 
 #main {
-  background: #efefef url(/images/bg-article-header.png) no-repeat top center; }
+  /* Temporarily moved to _css.erb
+  background: $main-background-color url(/images/bg-article-header.png) no-repeat top center;
+  */ }
   #main.home.index, #main.pages.show {
     background: white; }
   #main .article-search {
@@ -764,7 +768,15 @@ nav {
     background-color: #fff;
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 1px solid #cccccc; }
+    border: 1px solid #cccccc;
+    /* Temporarily moved to _css.erb
+    th .asc {
+      background-image: url(/images/icons/up_arrow.gif);
+    }
+    th .desc {
+      background-image: url(/images/icons/down_arrow.gif);
+    }
+    */ }
     #main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
       text-align: right; }
     #main table.versions td, #main table.versions th, #main table.articles td, #main table.articles th {
@@ -773,10 +785,6 @@ nav {
       padding-right: 12px;
       background-repeat: no-repeat;
       background-position: right center; }
-    #main table.versions th .asc, #main table.articles th .asc {
-      background-image: url(/images/icons/up_arrow.gif); }
-    #main table.versions th .desc, #main table.articles th .desc {
-      background-image: url(/images/icons/down_arrow.gif); }
     #main table.versions tr.current, #main table.articles tr.current {
       background: #d9e3e2; }
   #main .diff del {
@@ -955,7 +963,7 @@ a.button {
   #image-loader img {
     margin: 0 168px; }
 
-#upload-error {
+#upload-error, #upload-image {
   display: none; }
 
 .article_list {
@@ -1529,7 +1537,7 @@ aside.meta figcaption {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%; }
 
-#upload-error {
+#upload-error, #upload-no-support {
   font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
   font-size: 75%;
   color: #b72727; }
