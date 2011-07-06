@@ -1,10 +1,14 @@
 %h2= t('articles.images.upload')
 
+- session_key_name = Rails.application.config.session_options[:key]
+
 .grid_2.alpha
-  #upload-container{ data: { url: article_images_path }}
+  #upload-container{ data: { url: article_images_path, session_key: session_key_name, session_cookie: cookies[session_key_name] }}
     #thumb-placeholder
       = image_tag("ajax-loader.gif", id: 'thumb-loader')
-    = link_to("Last inn fil…", '#', id: 'upload-image')
+    = link_to(t('articles.images.add_file'), '#', id: 'upload-image')
+    #upload-no-support
+      = t('articles.images.no_flash')
     #upload-error
       = t('articles.images.upload_error')
       #upload-error-message

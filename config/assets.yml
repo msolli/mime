@@ -16,6 +16,7 @@ javascripts:
   all:
     - public/javascripts/webfont-loader.js
     - public/javascripts/modernizr-1.7.min.js
+    - public/javascripts/innershiv.js
     - public/javascripts/spring.js
     - public/javascripts/jquery/jquery-1.4.4.js
     - public/javascripts/jquery/jquery.ui/1.8.12/jquery.ui.core.js
@@ -34,8 +35,8 @@ javascripts:
     - public/javascripts/jquery/jquery.cookie/2010-01-08/jquery.cookie.js
     - public/javascripts/jquery/jquery.imgloaded/2010-08-23/ahpi.imgload.js
     - public/lib/plupload/plupload.js
-    - public/lib/plupload/plupload.html4.js
     - public/lib/plupload/plupload.html5.js
+    - public/lib/plupload/plupload.flash.js
     - public/javascripts/image-upload.js
     - public/javascripts/maptastic.js
     - public/javascripts/rails.js

@@ -3,9 +3,11 @@ article, aside, footer, header, hgroup, nav, section, figure {
   margin: 0;
 }
 
+/* Temporarily moved to _css.erb
 body {
   background: white url(/images/bg-nav.png) no-repeat top center;
 }
+*/
 
 header {
   @extend .clearfix;
@@ -76,7 +78,9 @@ nav {
 }
 
 #main {
+  /* Temporarily moved to _css.erb
   background: $main-background-color url(/images/bg-article-header.png) no-repeat top center;
+  */
 
   &.home.index, &.pages.show {
     background: white;
@@ -244,12 +248,14 @@ nav {
       background-repeat: no-repeat;
       background-position: right center;
     }
+    /* Temporarily moved to _css.erb
     th .asc {
       background-image: url(/images/icons/up_arrow.gif);
     }
     th .desc {
       background-image: url(/images/icons/down_arrow.gif);
     }
+    */
     tr.current {
       background: mix($message-notice-color, $main-background-color, 25%);
     }
@@ -357,7 +363,7 @@ a.button {
   display: none;
 }
 
-#upload-error {
+#upload-error, #upload-image {
   display: none;
 }
 
