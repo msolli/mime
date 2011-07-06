@@ -81,6 +81,8 @@ no-NB:
     images:
       upload: Last opp bilder
       add: Legg til bilder
+      add_file: Last inn fil…
+      no_flash: For å laste opp bilder trenger du en nyere nettleser, eller Adobe Flash.
       upload_error: Det skjedde en feil under opplastingen. Prøv igjen.
       upload_wizard:
         edit_info: "Rediger bildeinfo"

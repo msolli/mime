@@ -225,7 +225,7 @@ aside.meta {
   font-size: $font12px;
 }
 
-#upload-error {
+#upload-error, #upload-no-support {
   @include small-sans;
   font-size: $font12px;
   color: $error-color;

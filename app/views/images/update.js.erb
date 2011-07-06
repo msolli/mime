@@ -2,16 +2,16 @@
   var showImage,
       imageForm;
 
-  showImage = $("<%= escape_javascript(render partial: 'show', locals: { image: @image }) %>");
+  showImage = $(innerShiv("<%= escape_javascript(render partial: 'show', locals: { image: @image }) %>", false));
   showImage.css('display', 'none');
   showImage.prependTo($('#article-images')).fadeIn('fast');
   $('.no-images').fadeOut('fast').remove();
 
-  imageForm = $("<%= escape_javascript(render partial: 'new', locals: { image: Image.new }) %>");
+  imageForm = $(innerShiv("<%= escape_javascript(render partial: 'new', locals: { image: Image.new }) %>", false));
   $('#edit_image').fadeOut('fast', function() {
     $(this).html(imageForm);
     $(this).fadeIn('fast');
-    $('input:submit, a#upload-image').button();
+    $('input:submit').button();
     ImageUpload.init();
   });
 

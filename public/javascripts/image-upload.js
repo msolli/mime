@@ -3,12 +3,16 @@ var ImageUpload = (function() {
   var uploader,
 
   init = function() {
-    $('input:submit, #upload-image').button();
-    uploader = new plupload.Uploader({
-      runtimes: 'html5,html4',
+    var settings, session_key;
+    
+    $('input:submit').button();
+
+    settings = {
+      runtimes: 'html5,flash',
       browse_button: 'upload-image',
       container: 'upload-container',
       max_file_size: '10mb',
+      flash_swf_url: '/lib/plupload/plupload.flash.swf',
       multi_selection: false,
       multipart_params: {
         authenticity_token: $('meta[name="csrf-token"]').attr('content')
@@ -18,8 +22,15 @@ var ImageUpload = (function() {
         {title: 'Bilder', extensions: 'jpg,jpeg,gif,png'}
       ],
 
-      init: {
+      preinit: {
+        Init: function(up, params) {
+          log("Init");
+          $('#upload-image').css('display', 'inline-block').button();
+          $('#upload-no-support').hide();
+        }
+      },
 
+      init: {
         FilesAdded: function(up, files) {
           $('#thumb-loader').show();
           $('#upload-error').hide();
@@ -28,6 +39,8 @@ var ImageUpload = (function() {
         },
 
         FileUploaded: function(up, file, response) {
+          log("FileUploaded");
+          log(response);
           $('#edit_image').fadeOut('fast', function() {
             $(this).html(response.response);
             $(this).fadeIn('fast');
@@ -35,13 +48,20 @@ var ImageUpload = (function() {
         },
 
         Error: function(up, error) {
+          log("Error");
+          log(error);
           $('#thumb-loader').hide();
           $('#upload-error-message').html(error.message);
           $('#upload-error').show();
           $('#upload-image').button('enable');
         }
       }
-    });
+    };
+
+    session_key = $('#upload-container').data('session_key');
+  	settings.multipart_params[session_key] = $('#upload-container').data('session_cookie');
+
+    uploader = new plupload.Uploader(settings);
     uploader.init();
 
     $('form.image')

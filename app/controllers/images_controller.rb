@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   include Mongoid::Observing::Sweeping
 
+  before_filter :force_request_format_to_html, only: [:create]
   before_filter :find_article, only: [:index, :create, :update]
   before_filter :article_not_found, only: [:index]
 
@@ -23,7 +24,7 @@ class ImagesController < ApplicationController
     if @image.save
       render action: "edit", layout: false, status: :created
     else
-      render :json => @image.errors, :status => :unprocessable_entity
+      render nothing: true, status: :unprocessable_entity
     end
   end
 
@@ -37,4 +38,12 @@ class ImagesController < ApplicationController
       render :json => @image.errors, :status => :unprocessable_entity
     end
   end
+
+  private
+
+  ## Hack to force html format for responses to Plupload Flash runtime
+  def force_request_format_to_html
+    request.format = :html
+  end
+
 end
