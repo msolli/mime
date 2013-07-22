@@ -18,7 +18,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-ui-sass-rails'
-gem 'asset_sync'
+# gem 'asset_sync'
 # gem 'hassle', :require => false
 # gem 'jammit'
 # gem 'uglifier'
