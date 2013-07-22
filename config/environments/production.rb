@@ -72,6 +72,15 @@ Mime::Application.configure do
   config.active_support.deprecation = :notify
 
   # asset_id
+  # Compress JavaScripts and CSS
+  config.assets.compress = true
+
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = false
+
+  # Generate digests for assets URLs
+  config.assets.digest = true
+
   config.action_controller.asset_host = Proc.new do |source|
     unless source.starts_with?('/javascripts')
       'http://assets0.ableksikon.no'
