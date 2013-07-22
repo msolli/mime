@@ -6,9 +6,6 @@ MOBILE_USER_AGENTS = 'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericss
   'webos|amoi|novarra|cdm|alcatel|pocket|ipad|iphone|mobileexplorer|mobile'
 
 Mime::Application.configure do
-  # This must be required here (and not in Gemfile) for Rails.root to be set, which it needs.
-  require 'hassle'
-
   # Settings specified here will take precedence over those in config/environment.rb
 
   # The production environment is meant for finished, "live" apps.
