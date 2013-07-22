@@ -16,6 +16,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'asset_sync'
 # gem 'hassle', :require => false
 # gem 'jammit'
