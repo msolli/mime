@@ -35,13 +35,15 @@ Mime::Application.routes.draw do
   end
 
   # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å, /1, /2, ...
-  constraints(lambda { |req| req.params[:slug].size == 1 }) do
-    match '/:slug' => 'home#alphabetic', :as => :alphabetic, :slug => /.*/
-  end
+  constraints(lambda { |req| !req.params[:slug].match(/^assets/) }) do
+    constraints(lambda { |req| req.params[:slug].size == 1 }) do
+      match '/:slug' => 'home#alphabetic', :as => :alphabetic, :slug => /.*/
+    end
 
-  # Oppslagsord
-  constraints(lambda { |req| req.params[:slug].size >= 2 }) do
-    get '/:slug' => 'articles#show', :as => :pretty_article, :slug => /.*/
+    # Oppslagsord
+    constraints(lambda { |req| req.params[:slug].size >= 2 }) do
+      get '/:slug' => 'articles#show', :as => :pretty_article, :slug => /.*/
+    end
   end
 
   root :to => 'home#index'
