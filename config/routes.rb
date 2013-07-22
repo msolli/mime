@@ -1,6 +1,6 @@
 Mime::Application.routes.draw do
 
-  devise_for :users, :module => 'users', do
+  devise_for :users, :module => 'users' do
     constraints :id => /[^\/]*/ do
       resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit] do
         resources :articles, :path => 'artikler', :only => [:index]
