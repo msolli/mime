@@ -15,7 +15,7 @@ $(document).ready(function() {
       return false;
     });
 
-    $('form a.remove_child').live('click', function() {
+    $(document).on('click', 'form a.remove_child', function() {
       var hiddenField = $(this).prev('input[type=hidden]')[0];
       if (hiddenField) {
         hiddenField.value = '1';
@@ -24,7 +24,7 @@ $(document).ready(function() {
       return false;
     });
 
-    $('form a.remove_list').live('click', function() {
+    $(document).on('click', 'form a.remove_list', function() {
       var parent = $(this).closest('.article_list');
       var hiddenField = parent.find('input[type=hidden].destroy')[0];
       if (hiddenField) {
@@ -49,7 +49,7 @@ $(document).ready(function() {
       return false;
     });
 
-    $('form a.undo_remove_list').live('click', function() {
+    $(document).on('click', 'form a.undo_remove_list', function() {
       var parent = $(this).closest('.article_list');
       var hiddenField = parent.find('input[type=hidden].destroy')[0];
       if (hiddenField) {
