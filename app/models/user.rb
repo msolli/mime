@@ -11,6 +11,7 @@ class User
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   field :email
+  field :encrypted_password
   field :password
   field :name
   field :facebook_token
