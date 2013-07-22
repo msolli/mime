@@ -33,8 +33,7 @@ describe ManualArticleListsController do
         page = Factory(:page)
         list = Factory(:todays_articles)
         page.manual_article_lists << list
-        list.name = "Nytt navn"
-        put :update, id: list._id, page_id: page._id, manual_article_list: list.attributes
+        put :update, id: list._id, page_id: page._id, manual_article_list: { name: "Nytt navn" }
         response.should redirect_to(edit_page_path(page))
         assigns(:page).manual_article_lists.first.name.should == "Nytt navn"
       end
