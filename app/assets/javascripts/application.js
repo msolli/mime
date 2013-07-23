@@ -18,6 +18,7 @@
 //= require jquery.timeago/common/jquery.timeago.no
 //= require jquery.cookie/2010-01-08/jquery.cookie
 //= require jquery.imgloaded/2010-08-23/ahpi.imgload
+//= require ckeditor/init
 //= require plupload/plupload
 //= require plupload/plupload.html5
 //= require plupload/plupload.flash
