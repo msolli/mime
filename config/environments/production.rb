@@ -70,7 +70,7 @@ Mime::Application.configure do
 
   # asset_id
   # Compress JavaScripts and CSS
-  config.assets.compress = true
+  config.assets.compress = false
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
@@ -78,16 +78,16 @@ Mime::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.action_controller.asset_host = Proc.new do |source|
-    unless source.starts_with?('/javascripts')
-      'http://assets0.ableksikon.no'
-    end
-  end
-  config.action_controller.asset_path = Proc.new do |source|
-    unless source.starts_with?('/javascripts')
-      AssetID::S3.fingerprint(source)
-    else
-      source
-    end
-  end
+  # config.action_controller.asset_host = Proc.new do |source|
+  #   unless source.starts_with?('/javascripts')
+  #     'http://assets0.ableksikon.no'
+  #   end
+  # end
+  # config.action_controller.asset_path = Proc.new do |source|
+  #   unless source.starts_with?('/javascripts')
+  #     AssetID::S3.fingerprint(source)
+  #   else
+  #     source
+  #   end
+  # end
 end
