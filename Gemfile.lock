@@ -137,8 +137,6 @@ GEM
       multipart-post (~> 1.1)
       rack (~> 1.1)
     fattr (2.2.1)
-    faye-websocket (0.4.7)
-      eventmachine (>= 0.12.0)
     ffi (1.9.0)
     figaro (0.7.0)
       bundler (~> 1.0)
@@ -181,7 +179,6 @@ GEM
     hirb (0.3.6)
     hpricot (0.8.3)
     htmldiff (0.0.1)
-    http_parser.rb (0.5.3)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -236,12 +233,6 @@ GEM
       oauth2 (~> 0.5.0)
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
-    poltergeist (1.0.3)
-      capybara (~> 1.1)
-      childprocess (~> 0.3)
-      faye-websocket (~> 0.4.4)
-      http_parser.rb (~> 0.5.3)
-      multi_json (~> 1.0)
     polyglot (0.3.3)
     pr_geohash (1.0.0)
     rack (1.4.5)
@@ -405,7 +396,6 @@ DEPENDENCIES
   oa-oauth
   omniauth
   omniauth-facebook
-  poltergeist
   rack-rewrite
   rack-timeout
   rails (= 3.2.13)

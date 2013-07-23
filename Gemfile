@@ -106,7 +106,6 @@ group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
   gem 'capybara', '~> 1.0'
 
-  gem 'poltergeist'
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
   gem 'cucumber'
