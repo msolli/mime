@@ -12,7 +12,7 @@ var ImageUpload = (function() {
       browse_button: 'upload-image',
       container: 'upload-container',
       max_file_size: '10mb',
-      flash_swf_url: <%= javascript_path('plupload/plupload.flash.swf') %>,
+      flash_swf_url: '<%= javascript_path('plupload/plupload.flash.swf') %>',
       multi_selection: false,
       multipart_params: {
         authenticity_token: $('meta[name="csrf-token"]').attr('content')
