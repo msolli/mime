@@ -1,0 +1,9 @@
+*.psd
+*.pdf
+*.ai
+/features
+/spec
+/app/assets
+/lib/assets
+/vendor/assets
+/bin
