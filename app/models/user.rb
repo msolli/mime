@@ -22,6 +22,7 @@ class User
   field :last_sign_in_at
   field :last_sign_in_ip
   field :sign_in_count
+  field :remember_created_at
 
   index :email, :unique => true
 
