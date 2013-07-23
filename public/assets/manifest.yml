@@ -893,6 +893,8 @@ ckeditor/plugins/mimelink/images/link.png: ckeditor/plugins/mimelink/images/link
 ckeditor/plugins/mimelink/images/link/index.png: ckeditor/plugins/mimelink/images/link-31b483a2bc55683437742076b1438e1b.png
 ckeditor/plugins/mimelink/images/unlink.png: ckeditor/plugins/mimelink/images/unlink-48e296e2c732b3d5a5ca3adf918c7ba8.png
 ckeditor/plugins/mimelink/images/unlink/index.png: ckeditor/plugins/mimelink/images/unlink-48e296e2c732b3d5a5ca3adf918c7ba8.png
+ckeditor/plugins/mimelink/plugin.js: ckeditor/plugins/mimelink/plugin-e94f7336d0c95f915c32bcb24d393d19.js
+ckeditor/plugins/mimelink/plugin/index.js: ckeditor/plugins/mimelink/plugin-e94f7336d0c95f915c32bcb24d393d19.js
 jquery.imgloaded/2010-08-23/SOURCE: jquery.imgloaded/2010-08-23/SOURCE
 jquery.mobile-1.0a3/images/ajax-loader.png: jquery.mobile-1.0a3/images/ajax-loader-27c65463251e10a547d44f10a83e415e.png
 jquery.mobile-1.0a3/images/ajax-loader/index.png: jquery.mobile-1.0a3/images/ajax-loader-27c65463251e10a547d44f10a83e415e.png
