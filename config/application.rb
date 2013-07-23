@@ -5,6 +5,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "rails/test_unit/railtie"
+require 'sprockets/railtie'
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -66,5 +67,7 @@ module Mime
     config.assets.version = '1.0'
 
     config.assets.precompile += ['mobile.js', 'mobile.css']
+
+    config.assets.initialize_on_precompile = false
   end
 end
