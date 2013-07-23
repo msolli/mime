@@ -8,6 +8,8 @@ gem 'aws-s3', github: 'zeevex/aws-s3', ref: '406cdb5f6e0125fb9cc74246113870eba3b
 
 gem 'rails', '3.2.13'
 
+gem 'thin'
+
 # Asset pipeline
 group :assets do
   gem 'sass-rails', "  ~> 3.2.0"
