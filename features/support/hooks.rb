@@ -29,11 +29,17 @@ Before("@log_in_admin") do
 end
 
 def facebook_stub(profile = 'user_1')
-  Devise::OmniAuth.short_circuit_authorizers!
-  Devise::OmniAuth.stub!(:facebook) do |b|
-    b.post('/oauth/access_token') { [200, {}, ACCESS_TOKEN.to_json] }
-    b.get("/me?access_token=#{ACCESS_TOKEN[:access_token]}") { [200, {}, FACEBOOK_INFO[profile].to_json] }
-  end
+  # Devise::OmniAuth.short_circuit_authorizers!
+  OmniAuth.config.mock_auth[:facebook] = {
+    "provider" => "facebook",
+    "uid"      => "http://xxxx.com/openid?id=#{profile}",
+    "extra"    => {
+      "raw_info" => FACEBOOK_INFO[profile].to_json
+    },
+    "credentials" => {
+      "token" => "token-#{profile}"
+    }
+  }
 end
 
 def set_role(profile)
