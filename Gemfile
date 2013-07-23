@@ -87,23 +87,28 @@ group :development do
   # gem 'ruby-debug'
   # gem 'linecache19', '0.5.13'
   gem 'thin'
+
+  gem 'sunspot_solr'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
   gem 'capybara', '~> 1.0'
+  gem 'poltergeist'
   gem 'database_cleaner'
-  # gem 'cucumber-rails'
-  # gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber'
   gem 'fuubar'
   gem 'launchy'
   # gem 'ruby-debug'
   # gem 'linecache19', '0.5.13'
 
-  gem 'spork', '~> 0.9.0.rc'
   gem 'ZenTest', '~> 4.4.2'
   gem 'autotest-rails'
-  gem 'selenium-webdriver', '~>0.2.2'
+  gem 'selenium-webdriver'
   gem 'factory_girl_rails', :require => false
 end
 
