@@ -64,6 +64,7 @@ DatabaseCleaner.strategy = :truncation
 
 # Shortcircuit Devise url helpers
 OmniAuth.config.test_mode = true
+OmniAuth.config.full_host = 'http://example.com'
 
 I18n.locale = :'no-NB'
 
