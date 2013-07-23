@@ -17,6 +17,12 @@ class User
   field :facebook_token
   field :role, :default => "user"
 
+  field :current_sign_in_at
+  field :current_sign_in_ip
+  field :last_sign_in_at
+  field :last_sign_in_ip
+  field :sign_in_count
+
   index :email, :unique => true
 
   validates_presence_of :email
