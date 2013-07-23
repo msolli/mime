@@ -18218,7 +18218,7 @@ var ImageUpload = (function() {
       browse_button: 'upload-image',
       container: 'upload-container',
       max_file_size: '10mb',
-      flash_swf_url: http://assets0.ableksikon.no/assets/plupload/plupload.flash.swf,
+      flash_swf_url: /assets/plupload/plupload.flash.swf,
       multi_selection: false,
       multipart_params: {
         authenticity_token: $('meta[name="csrf-token"]').attr('content')

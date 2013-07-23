@@ -3096,22 +3096,22 @@ plupload_message i {
 
 /* line 1, ../../app/assets/stylesheets/backgrounds.css.scss */
 body {
-  background: white url(http://assets0.ableksikon.no/assets/bg-nav.png) no-repeat top center;
+  background: white url(/assets/bg-nav.png) no-repeat top center;
 }
 
 /* line 4, ../../app/assets/stylesheets/backgrounds.css.scss */
 #main {
-  background: #efefef url(http://assets0.ableksikon.no/assets/bg-article-header.png) no-repeat top center;
+  background: #efefef url(/assets/bg-article-header.png) no-repeat top center;
 }
 
 /* line 7, ../../app/assets/stylesheets/backgrounds.css.scss */
 table.articles th .asc {
-  background-image: url(http://assets0.ableksikon.no/assets/icons/up_arrow.gif);
+  background-image: url(/assets/icons/up_arrow.gif);
 }
 
 /* line 10, ../../app/assets/stylesheets/backgrounds.css.scss */
 table.articles th .desc {
-  background-image: url(http://assets0.ableksikon.no/assets/icons/down_arrow.gif);
+  background-image: url(/assets/icons/down_arrow.gif);
 }
 
 /*
@@ -3925,7 +3925,7 @@ button.ui-button::-moz-focus-inner {
 
 /* line 21, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.progressbar.css.scss */
 .ui-progressbar .ui-progressbar-overlay {
-  background: url("http://assets0.ableksikon.no/assets/jquery-ui/animated-overlay.gif");
+  background: url("/assets/jquery-ui/animated-overlay.gif");
   height: 100%;
   filter: alpha(opacity=25);
   opacity: 0.25;
@@ -4359,7 +4359,7 @@ body .ui-tooltip {
 /* line 33, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-widget-content {
   border: 1px solid #aaaaaa;
-  background: #c9c9c9 url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_inset-soft_50_c9c9c9_1x100.png") 50% bottom repeat-x;
+  background: #c9c9c9 url("/assets/jquery-ui/ui-bg_inset-soft_50_c9c9c9_1x100.png") 50% bottom repeat-x;
   color: #333333;
 }
 
@@ -4371,7 +4371,7 @@ body .ui-tooltip {
 /* line 41, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-widget-header {
   border: 1px solid #bbbbbb;
-  background: #dddddd url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_glass_35_dddddd_1x400.png") 50% 50% repeat-x;
+  background: #dddddd url("/assets/jquery-ui/ui-bg_glass_35_dddddd_1x400.png") 50% 50% repeat-x;
   color: #444444;
   font-weight: bold;
 }
@@ -4388,7 +4388,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   border: 1px solid #cccccc;
-  background: #eeeeee url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_glass_60_eeeeee_1x400.png") 50% 50% repeat-x;
+  background: #eeeeee url("/assets/jquery-ui/ui-bg_glass_60_eeeeee_1x400.png") 50% 50% repeat-x;
   font-weight: bold;
   color: #3383bb;
 }
@@ -4409,7 +4409,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
   border: 1px solid #bbbbbb;
-  background: #f8f8f8 url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_glass_100_f8f8f8_1x400.png") 50% 50% repeat-x;
+  background: #f8f8f8 url("/assets/jquery-ui/ui-bg_glass_100_f8f8f8_1x400.png") 50% 50% repeat-x;
   font-weight: bold;
   color: #599fcf;
 }
@@ -4428,7 +4428,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
   border: 1px solid #999999;
-  background: #999999 url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_inset-hard_75_999999_1x100.png") 50% 50% repeat-x;
+  background: #999999 url("/assets/jquery-ui/ui-bg_inset-hard_75_999999_1x100.png") 50% 50% repeat-x;
   font-weight: bold;
   color: white;
 }
@@ -4448,7 +4448,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
   border: 1px solid white;
-  background: #eeeeee url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_flat_55_eeeeee_40x100.png") 50% 50% repeat-x;
+  background: #eeeeee url("/assets/jquery-ui/ui-bg_flat_55_eeeeee_40x100.png") 50% 50% repeat-x;
   color: #444444;
 }
 
@@ -4464,7 +4464,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
   border: 1px solid #c0402a;
-  background: #c0402a url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_flat_55_c0402a_40x100.png") 50% 50% repeat-x;
+  background: #c0402a url("/assets/jquery-ui/ui-bg_flat_55_c0402a_40x100.png") 50% 50% repeat-x;
   color: white;
 }
 
@@ -4525,39 +4525,39 @@ body .ui-tooltip {
 /* line 163, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-icon,
 .ui-widget-content .ui-icon {
-  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_999999_256x240.png");
+  background-image: url("/assets/jquery-ui/ui-icons_999999_256x240.png");
 }
 
 /* line 166, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-widget-header .ui-icon {
-  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_999999_256x240.png");
+  background-image: url("/assets/jquery-ui/ui-icons_999999_256x240.png");
 }
 
 /* line 169, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-state-default .ui-icon {
-  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_70b2e1_256x240.png");
+  background-image: url("/assets/jquery-ui/ui-icons_70b2e1_256x240.png");
 }
 
 /* line 173, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {
-  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_3383bb_256x240.png");
+  background-image: url("/assets/jquery-ui/ui-icons_3383bb_256x240.png");
 }
 
 /* line 176, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-state-active .ui-icon {
-  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_454545_256x240.png");
+  background-image: url("/assets/jquery-ui/ui-icons_454545_256x240.png");
 }
 
 /* line 179, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-state-highlight .ui-icon {
-  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_3383bb_256x240.png");
+  background-image: url("/assets/jquery-ui/ui-icons_3383bb_256x240.png");
 }
 
 /* line 183, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_fbc856_256x240.png");
+  background-image: url("/assets/jquery-ui/ui-icons_fbc856_256x240.png");
 }
 
 /* positioning */
@@ -5475,7 +5475,7 @@ body .ui-tooltip {
 /* Overlays */
 /* line 396, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
 .ui-widget-overlay {
-  background: #eeeeee url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_flat_0_eeeeee_40x100.png") 50% 50% repeat-x;
+  background: #eeeeee url("/assets/jquery-ui/ui-bg_flat_0_eeeeee_40x100.png") 50% 50% repeat-x;
   opacity: 0.8;
   filter: Alpha(Opacity=80);
 }
@@ -5484,7 +5484,7 @@ body .ui-tooltip {
 .ui-widget-shadow {
   margin: -4px 0 0 -4px;
   padding: 4px;
-  background: #aaaaaa url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+  background: #aaaaaa url("/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
   opacity: 0.6;
   filter: Alpha(Opacity=60);
   border-radius: 0px;
