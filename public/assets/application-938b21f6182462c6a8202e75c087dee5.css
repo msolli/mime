@@ -1,0 +1,5491 @@
+@charset "UTF-8";
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 3.2.0
+build: 2676
+*/
+/*
+	TODO will need to remove settings on HTML since we can't namespace it.
+	TODO with the prefix, should I group by selector or property for weight savings?
+*/
+/* line 13, ../../app/assets/stylesheets/reset.css */
+html {
+  color: #000;
+  background: #FFF;
+}
+
+/*
+	TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+	TODO test putting a class on HEAD.
+		- Fails on FF. 
+*/
+/* line 48, ../../app/assets/stylesheets/reset.css */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 52, ../../app/assets/stylesheets/reset.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 57, ../../app/assets/stylesheets/reset.css */
+fieldset,
+img {
+  border: 0;
+}
+
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+/* line 71, ../../app/assets/stylesheets/reset.css */
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*
+	TODO Figure out where this list-style rule is best set. Hedger has a request to investigate.
+*/
+/* line 78, ../../app/assets/stylesheets/reset.css */
+li {
+  list-style: none;
+}
+
+/* line 83, ../../app/assets/stylesheets/reset.css */
+caption,
+th {
+  text-align: left;
+}
+
+/* line 91, ../../app/assets/stylesheets/reset.css */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* line 96, ../../app/assets/stylesheets/reset.css */
+q:before,
+q:after {
+  content: '';
+}
+
+/* line 100, ../../app/assets/stylesheets/reset.css */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+/* line 105, ../../app/assets/stylesheets/reset.css */
+sup {
+  vertical-align: text-top;
+}
+
+/* line 108, ../../app/assets/stylesheets/reset.css */
+sub {
+  vertical-align: text-bottom;
+}
+
+/* line 113, ../../app/assets/stylesheets/reset.css */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*to enable resizing for IE*/
+/* line 121, ../../app/assets/stylesheets/reset.css */
+input,
+textarea,
+select {
+  *font-size: 100%;
+}
+
+/*because legend doesn't inherit in IE */
+/* line 125, ../../app/assets/stylesheets/reset.css */
+legend {
+  color: #000;
+}
+
+/* -------------------------------------------------------------------------------------------------
+
+It's *strongly* suggested that you don't modify this file.  Instead, load a new stylesheet after
+this one in your layouts (eg formtastic_changes.css) and override the styles to suit your needs.
+This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+This stylesheet forms part of the Formtastic Rails Plugin
+(c) 2008 Justin French
+
+--------------------------------------------------------------------------------------------------*/
+/* NORMALIZE AND RESET - obviously inspired by Yahoo's reset.css, but scoped to just form.formtastic
+--------------------------------------------------------------------------------------------------*/
+/* line 15, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic, form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic select, form.formtastic p {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 16, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset {
+  border: 0;
+}
+
+/* line 17, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic em, form.formtastic strong {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 18, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic ol, form.formtastic ul {
+  list-style: none;
+}
+
+/* line 19, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic abbr, form.formtastic acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* line 20, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic input, form.formtastic textarea, form.formtastic select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* line 21, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic input, form.formtastic textarea, form.formtastic select {
+  font-size: 100%;
+}
+
+/* line 22, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic legend {
+  white-space: normal;
+  color: #000;
+}
+
+/* SEMANTIC ERRORS
+--------------------------------------------------------------------------------------------------*/
+/* line 27, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic ul.errors {
+  color: #cc0000;
+  margin: 0.5em 0 1.5em 25%;
+  list-style: square;
+}
+
+/* line 28, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic ul.errors li {
+  padding: 0;
+  border: none;
+  display: list-item;
+}
+
+/* FIELDSETS & LISTS
+--------------------------------------------------------------------------------------------------*/
+/* line 33, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset {
+  overflow: auto;
+}
+
+/* clearing contained floats */
+/* line 35, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset.buttons {
+  padding-left: 25%;
+}
+
+/* line 37, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset.buttons li {
+  float: left;
+  padding-right: 0.5em;
+}
+
+/* INPUT LIs
+--------------------------------------------------------------------------------------------------*/
+/* line 41, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li {
+  padding: 0.5em 0;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+}
+
+/* padding and negative margin juggling is for Firefox */
+/* line 42, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li {
+  overflow: auto;
+}
+
+/* clearing contained floats */
+/* LABELS
+--------------------------------------------------------------------------------------------------*/
+/* line 51, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li label {
+  display: block;
+  width: 25%;
+  float: left;
+  padding-top: .2em;
+}
+
+/* line 52, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li > li label {
+  line-height: 100%;
+  padding-top: 0;
+}
+
+/* line 53, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li > li label input {
+  line-height: 100%;
+  vertical-align: middle;
+  margin-top: -0.1em;
+}
+
+/* NESTED FIELDSETS AND LEGENDS (radio, check boxes and date/time inputs use nested fieldsets)
+--------------------------------------------------------------------------------------------------*/
+/* line 58, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li fieldset {
+  position: relative;
+}
+
+/* line 59, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li fieldset legend {
+  position: absolute;
+  width: 95%;
+  padding-top: 0.1em;
+  left: 0px;
+}
+
+/* line 60, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li fieldset legend span {
+  position: absolute;
+}
+
+/* line 61, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li fieldset legend.label label {
+  position: absolute;
+}
+
+/* line 62, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li fieldset ol {
+  float: left;
+  width: 74%;
+  margin: 0;
+  padding: 0 0 0 25%;
+}
+
+/* line 63, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li fieldset ol li {
+  padding: 0;
+  border: 0;
+}
+
+/* INLINE HINTS
+--------------------------------------------------------------------------------------------------*/
+/* line 68, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li p.inline-hints {
+  color: #666;
+  margin: 0.5em 0 0 25%;
+}
+
+/* INLINE ERRORS
+--------------------------------------------------------------------------------------------------*/
+/* line 73, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li p.inline-errors {
+  color: #cc0000;
+  margin: 0.5em 0 0 25%;
+}
+
+/* line 74, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li ul.errors {
+  color: #cc0000;
+  margin: 0.5em 0 0 25%;
+  list-style: square;
+}
+
+/* line 75, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li ul.errors li {
+  padding: 0;
+  border: none;
+  display: list-item;
+}
+
+/* STRING, NUMERIC, PASSWORD, EMAIL, URL, PHONE & SEARCH OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+/* line 86, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.string input,
+form.formtastic fieldset > ol > li.password input,
+form.formtastic fieldset > ol > li.numeric input,
+form.formtastic fieldset > ol > li.email input,
+form.formtastic fieldset > ol > li.url input,
+form.formtastic fieldset > ol > li.phone input,
+form.formtastic fieldset > ol > li.search input {
+  width: 72%;
+}
+
+/* line 94, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.string input[size],
+form.formtastic fieldset > ol > li.password input[size],
+form.formtastic fieldset > ol > li.numeric input[size],
+form.formtastic fieldset > ol > li.email input[size],
+form.formtastic fieldset > ol > li.url input[size],
+form.formtastic fieldset > ol > li.phone input[size],
+form.formtastic fieldset > ol > li.search input[size] {
+  width: auto;
+  max-width: 72%;
+}
+
+/* TEXTAREA OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+/* line 99, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.text textarea {
+  width: 72%;
+}
+
+/* line 100, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.text textarea[cols] {
+  width: auto;
+  max-width: 72%;
+}
+
+/* HIDDEN OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+/* line 105, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset ol li.hidden {
+  display: none;
+}
+
+/* BOOLEAN OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+/* line 109, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.boolean label {
+  padding-left: 25%;
+  width: auto;
+}
+
+/* line 110, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.boolean label input {
+  margin: 0 0.5em 0 0.2em;
+}
+
+/* RADIO OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+/* line 116, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.radio fieldset {
+  overflow: visible;
+}
+
+/* line 117, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.radio fieldset ol {
+  margin-bottom: -0.5em;
+}
+
+/* line 118, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.radio fieldset ol li {
+  margin: 0.1em 0 0.5em 0;
+  overflow: visible;
+}
+
+/* line 119, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.radio fieldset ol li label {
+  float: none;
+  width: 100%;
+}
+
+/* line 120, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.radio fieldset ol li label input {
+  margin-right: 0.2em;
+}
+
+/* CHECK BOXES (COLLECTION) OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+/* line 126, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.check_boxes fieldset {
+  overflow: visible;
+}
+
+/* line 127, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.check_boxes fieldset ol {
+  margin-bottom: -0.5em;
+}
+
+/* line 128, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.check_boxes fieldset ol li {
+  margin: 0.1em 0 0.5em 0;
+  overflow: visible;
+}
+
+/* line 129, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.check_boxes fieldset ol li label {
+  float: none;
+  width: 100%;
+}
+
+/* line 130, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.check_boxes fieldset ol li label input {
+  margin-right: 0.2em;
+}
+
+/* DATE & TIME OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+/* line 137, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.date fieldset ol li,
+form.formtastic fieldset > ol > li.time fieldset ol li,
+form.formtastic fieldset > ol > li.datetime fieldset ol li {
+  float: left;
+  width: auto;
+  margin: 0 .3em 0 0;
+}
+
+/* line 141, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.date fieldset ol li label,
+form.formtastic fieldset > ol > li.time fieldset ol li label,
+form.formtastic fieldset > ol > li.datetime fieldset ol li label {
+  display: none;
+}
+
+/* line 145, ../../app/assets/stylesheets/sass/_formtastic.scss */
+form.formtastic fieldset > ol > li.date fieldset ol li label input,
+form.formtastic fieldset > ol > li.time fieldset ol li label input,
+form.formtastic fieldset > ol > li.datetime fieldset ol li label input {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+	Variable Grid System.
+	Learn more ~ http://www.spry-soft.com/grids/
+	Based on 960 Grid System - http://960.gs/
+
+	Licensed under GPL and MIT.
+*/
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+/* line 12, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+/* line 32, ../../app/assets/stylesheets/sass/_grid.scss */
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.simple_form.sorted_article_list .collection_radio,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+  display: inline;
+  float: left;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+/* line 43, ../../app/assets/stylesheets/sass/_grid.scss */
+.alpha, .simple_form.sorted_article_list .collection_radio {
+  margin-left: 0;
+}
+
+/* line 47, ../../app/assets/stylesheets/sass/_grid.scss */
+.omega, .simple_form.sorted_article_list .collection_radio {
+  margin-right: 0;
+}
+
+/* Grid >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+/* line 54, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_1 {
+  width: 60px;
+}
+
+/* line 58, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_2 {
+  width: 140px;
+}
+
+/* line 62, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_3 {
+  width: 220px;
+}
+
+/* line 66, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_4 {
+  width: 300px;
+}
+
+/* line 70, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_5, .container_12 .simple_form.sorted_article_list .collection_radio, .simple_form.sorted_article_list .container_12 .collection_radio {
+  width: 380px;
+}
+
+/* line 74, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_6 {
+  width: 460px;
+}
+
+/* line 78, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_7 {
+  width: 540px;
+}
+
+/* line 82, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_8 {
+  width: 620px;
+}
+
+/* line 86, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_9 {
+  width: 700px;
+}
+
+/* line 90, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_10 {
+  width: 780px;
+}
+
+/* line 94, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_11 {
+  width: 860px;
+}
+
+/* line 98, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .grid_12 {
+  width: 940px;
+}
+
+/* Prefix Extra Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+/* line 107, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_1 {
+  padding-left: 80px;
+}
+
+/* line 111, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_2 {
+  padding-left: 160px;
+}
+
+/* line 115, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_3 {
+  padding-left: 240px;
+}
+
+/* line 119, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_4 {
+  padding-left: 320px;
+}
+
+/* line 123, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_5 {
+  padding-left: 400px;
+}
+
+/* line 127, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_6 {
+  padding-left: 480px;
+}
+
+/* line 131, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_7 {
+  padding-left: 560px;
+}
+
+/* line 135, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_8 {
+  padding-left: 640px;
+}
+
+/* line 139, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_9 {
+  padding-left: 720px;
+}
+
+/* line 143, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_10 {
+  padding-left: 800px;
+}
+
+/* line 147, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .prefix_11 {
+  padding-left: 880px;
+}
+
+/* Suffix Extra Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+/* line 156, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_1 {
+  padding-right: 80px;
+}
+
+/* line 160, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_2 {
+  padding-right: 160px;
+}
+
+/* line 164, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_3 {
+  padding-right: 240px;
+}
+
+/* line 168, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_4 {
+  padding-right: 320px;
+}
+
+/* line 172, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_5 {
+  padding-right: 400px;
+}
+
+/* line 176, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_6 {
+  padding-right: 480px;
+}
+
+/* line 180, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_7 {
+  padding-right: 560px;
+}
+
+/* line 184, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_8 {
+  padding-right: 640px;
+}
+
+/* line 188, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_9 {
+  padding-right: 720px;
+}
+
+/* line 192, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_10 {
+  padding-right: 800px;
+}
+
+/* line 196, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .suffix_11 {
+  padding-right: 880px;
+}
+
+/* Push Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+/* line 205, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_1 {
+  left: 80px;
+}
+
+/* line 209, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_2 {
+  left: 160px;
+}
+
+/* line 213, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_3 {
+  left: 240px;
+}
+
+/* line 217, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_4 {
+  left: 320px;
+}
+
+/* line 221, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_5 {
+  left: 400px;
+}
+
+/* line 225, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_6 {
+  left: 480px;
+}
+
+/* line 229, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_7 {
+  left: 560px;
+}
+
+/* line 233, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_8 {
+  left: 640px;
+}
+
+/* line 237, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_9 {
+  left: 720px;
+}
+
+/* line 241, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_10 {
+  left: 800px;
+}
+
+/* line 245, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .push_11 {
+  left: 880px;
+}
+
+/* Pull Space >> 12 Columns
+----------------------------------------------------------------------------------------------------*/
+/* line 254, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_1 {
+  left: -80px;
+}
+
+/* line 258, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_2 {
+  left: -160px;
+}
+
+/* line 262, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_3 {
+  left: -240px;
+}
+
+/* line 266, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_4 {
+  left: -320px;
+}
+
+/* line 270, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_5 {
+  left: -400px;
+}
+
+/* line 274, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_6 {
+  left: -480px;
+}
+
+/* line 278, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_7 {
+  left: -560px;
+}
+
+/* line 282, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_8 {
+  left: -640px;
+}
+
+/* line 286, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_9 {
+  left: -720px;
+}
+
+/* line 290, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_10 {
+  left: -800px;
+}
+
+/* line 294, ../../app/assets/stylesheets/sass/_grid.scss */
+.container_12 .pull_11 {
+  left: -880px;
+}
+
+/* Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+/* line 306, ../../app/assets/stylesheets/sass/_grid.scss */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+/* line 317, ../../app/assets/stylesheets/sass/_grid.scss */
+.clearfix:after, header:after, nav:after, #main .info:after, #main .back-link:after, #main:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* line 328, ../../app/assets/stylesheets/sass/_grid.scss */
+.clearfix, header, nav, #main .info, #main .back-link, #main {
+  display: inline-block;
+}
+
+/* line 332, ../../app/assets/stylesheets/sass/_grid.scss */
+* html .clearfix, * html header, * html nav, * html #main .info, #main * html .info, * html #main .back-link, #main * html .back-link, * html #main {
+  height: 1%;
+}
+
+/* line 336, ../../app/assets/stylesheets/sass/_grid.scss */
+.clearfix, header, nav, #main .info, #main .back-link, #main {
+  display: block;
+}
+
+/* line 1, ../../app/assets/stylesheets/sass/_layout.scss */
+article, aside, footer, header, hgroup, nav, section, figure {
+  display: block;
+  margin: 0;
+}
+
+/* Temporarily moved to _css.erb
+body {
+  background: white url(/images/bg-nav.png) no-repeat top center;
+}
+*/
+/* line 12, ../../app/assets/stylesheets/sass/_layout.scss */
+header {
+  position: relative;
+}
+/* line 16, ../../app/assets/stylesheets/sass/_layout.scss */
+header .title {
+  padding-top: 33px;
+}
+/* line 20, ../../app/assets/stylesheets/sass/_layout.scss */
+header .top-right {
+  height: 110px;
+}
+/* line 23, ../../app/assets/stylesheets/sass/_layout.scss */
+header .top-right #user-links {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+/* line 29, ../../app/assets/stylesheets/sass/_layout.scss */
+header .top-right #user-links ul li {
+  display: inline;
+  margin-left: 0.3em;
+}
+/* line 71, ../../app/assets/stylesheets/sass/_mixins.scss */
+header .top-right #user-links ul li.fb-button a {
+  font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
+  color: #3B5998;
+  background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
+  background-position: 0% -210px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0px 0px 0px 1px;
+  text-decoration: none;
+}
+/* line 81, ../../app/assets/stylesheets/sass/_mixins.scss */
+header .top-right #user-links ul li.fb-button a span.fb-button-text {
+  color: white;
+  display: block;
+  font-weight: bold;
+  margin: 0px 1px 0px 21px;
+  padding: 2px 6px 3px;
+  background: #4F6AA3;
+  border-bottom: 1px solid #29447E;
+  border-top: 1px solid #45619D;
+  text-shadow: none;
+}
+/* line 39, ../../app/assets/stylesheets/sass/_layout.scss */
+header .top-right .article-search {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 47, ../../app/assets/stylesheets/sass/_layout.scss */
+nav {
+  height: 50px;
+}
+/* line 50, ../../app/assets/stylesheets/sass/_layout.scss */
+nav ul {
+  margin-top: 22px;
+}
+/* line 52, ../../app/assets/stylesheets/sass/_layout.scss */
+nav ul ul {
+  padding: 0;
+  border: none;
+  display: inline;
+}
+/* line 56, ../../app/assets/stylesheets/sass/_layout.scss */
+nav ul ul li {
+  margin-right: 0.5em;
+}
+/* line 60, ../../app/assets/stylesheets/sass/_layout.scss */
+nav ul li {
+  display: inline;
+  margin-right: 1em;
+  padding: 6px 0px;
+}
+/* line 65, ../../app/assets/stylesheets/sass/_layout.scss */
+nav ul li.new a {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 4px 12px;
+  color: white;
+  background-color: #2f528f;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 28, ../../app/assets/stylesheets/sass/_mixins.scss */
+nav ul li.new a:hover {
+  background-color: #fab45b;
+}
+/* line 31, ../../app/assets/stylesheets/sass/_mixins.scss */
+nav ul li.new a:visited {
+  color: white;
+}
+
+/* line 72, ../../app/assets/stylesheets/sass/_layout.scss */
+#messages #notice {
+  color: white;
+  margin: 5px 0;
+  padding: 10px 10px 10px 29px;
+  background: #79aba8;
+  position: relative;
+  box-shadow: 0px 2px 10px #cccccc;
+  -moz-box-shadow: 0px 2px 10px #cccccc;
+  -webkit-box-shadow: 0px 2px 10px #cccccc;
+  behavior: url(/stylesheets/PIE.htc);
+  position: relative;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  behavior: url(/stylesheets/PIE.htc);
+}
+/* line 75, ../../app/assets/stylesheets/sass/_layout.scss */
+#messages #alert {
+  color: white;
+  margin: 5px 0;
+  padding: 10px 10px 10px 29px;
+  background: #ec661d;
+  position: relative;
+  box-shadow: 0px 2px 10px #cccccc;
+  -moz-box-shadow: 0px 2px 10px #cccccc;
+  -webkit-box-shadow: 0px 2px 10px #cccccc;
+  behavior: url(/stylesheets/PIE.htc);
+  position: relative;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  behavior: url(/stylesheets/PIE.htc);
+}
+
+/* line 80, ../../app/assets/stylesheets/sass/_layout.scss */
+#main {
+  /* Temporarily moved to _css.erb
+  background: $main-background-color url(/images/bg-article-header.png) no-repeat top center;
+  */
+}
+/* line 85, ../../app/assets/stylesheets/sass/_layout.scss */
+#main.home.index, #main.pages.show {
+  background: white;
+}
+/* line 89, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .article-search {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+/* line 94, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .info, #main .back-link {
+  padding-top: 2px;
+}
+/* line 98, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .info ul li, #main .back-link ul li {
+  display: inline;
+  margin-right: 0.5em;
+}
+/* line 101, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .info ul li img, #main .back-link ul li img {
+  vertical-align: bottom;
+}
+/* line 105, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .info ul li.edit-link, #main .back-link ul li.edit-link {
+  text-transform: uppercase;
+  background: #2f528f;
+  padding: 1px 0.4em 0px 0.4em;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+/* line 111, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .info ul li.edit-link a, #main .back-link ul li.edit-link a {
+  color: white;
+}
+/* line 119, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .disambiguation {
+  margin-top: 16px;
+}
+/* line 122, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .articletext {
+  margin-top: 1em;
+  overflow: visible;
+}
+/* line 9, ../../app/assets/stylesheets/sass/_dry.scss */
+#main .articletext p {
+  margin-bottom: 1em;
+}
+/* line 12, ../../app/assets/stylesheets/sass/_dry.scss */
+#main .articletext ul {
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+/* line 15, ../../app/assets/stylesheets/sass/_dry.scss */
+#main .articletext ul li {
+  list-style-type: disc;
+}
+/* line 19, ../../app/assets/stylesheets/sass/_dry.scss */
+#main .articletext table {
+  border: 1px solid #383838;
+}
+/* line 22, ../../app/assets/stylesheets/sass/_dry.scss */
+#main .articletext em {
+  font-style: italic;
+}
+/* line 25, ../../app/assets/stylesheets/sass/_dry.scss */
+#main .articletext strong {
+  font-weight: bold;
+}
+/* line 127, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper {
+  text-align: center;
+}
+/* line 130, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper .map {
+  height: 218px;
+  background-color: #fff;
+}
+/* line 135, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper a.smaller-map,
+#main aside.meta .map-wrapper a.bigger-map {
+  display: none;
+}
+/* line 138, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper.maximized a.smaller-map {
+  display: inline;
+}
+/* line 141, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper.minimized a.bigger-map {
+  display: inline;
+}
+/* line 146, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .added figure {
+  background-color: #abeebe;
+}
+/* line 149, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .removed figure {
+  background-color: #ff9098;
+}
+/* line 154, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper.minimized,
+#main aside.meta figure {
+  position: relative;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  background: white;
+  margin: 0 0 10px 0;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper.minimized img.article-image,
+#main aside.meta figure img.article-image {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  width: 366px;
+}
+/* line 168, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper.minimized figcaption,
+#main aside.meta figure figcaption {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+/* line 173, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.meta .map-wrapper.minimized figcaption .license,
+#main aside.meta figure figcaption .license {
+  text-align: right;
+  line-height: 18px;
+}
+/* line 180, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .external-links {
+  background: white;
+  border: 1px solid #cccccc;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+/* line 187, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .external-links ul li {
+  margin-left: 20px;
+  list-style: disc;
+}
+/* line 193, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .tags {
+  background: white;
+  border: 1px solid #cccccc;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+/* line 200, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .tags ul li {
+  display: inline;
+}
+/* line 202, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .tags ul li:after {
+  content: ", ";
+}
+/* line 205, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .tags ul li:last-of-type:after {
+  content: "";
+}
+/* line 211, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .article-bottom-ad {
+  background: white;
+  border: 1px solid #cccccc;
+  margin-bottom: 16px;
+  padding: 12px 12px 0 6px;
+}
+/* line 217, ../../app/assets/stylesheets/sass/_layout.scss */
+#main aside.intro {
+  color: white;
+  margin: 5px 0;
+  padding: 10px 10px 10px 29px;
+  background: #fcfcfc;
+  position: relative;
+  box-shadow: 0px 2px 10px #cccccc;
+  -moz-box-shadow: 0px 2px 10px #cccccc;
+  -webkit-box-shadow: 0px 2px 10px #cccccc;
+  behavior: url(/stylesheets/PIE.htc);
+  position: relative;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  behavior: url(/stylesheets/PIE.htc);
+  color: #383838;
+  border: 1px solid #cccccc;
+  position: relative;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  behavior: url(/stylesheets/PIE.htc);
+}
+/* line 220, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .facebook {
+  border: 1px solid #cccccc;
+  padding: 5px;
+  margin: 20px 0 5px 0;
+  background: white;
+}
+/* line 225, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .facebook p.fb-button {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+/* line 71, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main .facebook p.fb-button a {
+  font-family: 'lucida grande', Tahoma, Verdana, Arial, sans-serif;
+  color: #3B5998;
+  background: #29447e url(http://static.ak.fbcdn.net/rsrc.php/zL/r/FGFbc80dUKj.png) no-repeat;
+  background-position: 0% -210px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0px 0px 0px 1px;
+  text-decoration: none;
+}
+/* line 81, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main .facebook p.fb-button a span.fb-button-text {
+  color: white;
+  display: block;
+  font-weight: bold;
+  margin: 0px 1px 0px 21px;
+  padding: 2px 6px 3px;
+  background: #4F6AA3;
+  border-bottom: 1px solid #29447E;
+  border-top: 1px solid #45619D;
+  text-shadow: none;
+}
+/* line 232, ../../app/assets/stylesheets/sass/_layout.scss */
+#main table.versions + input[name="commit"] {
+  margin-top: 0;
+}
+/* line 235, ../../app/assets/stylesheets/sass/_layout.scss */
+#main table.versions, #main table.articles {
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  /* Temporarily moved to _css.erb
+  th .asc {
+    background-image: url(/images/icons/up_arrow.gif);
+  }
+  th .desc {
+    background-image: url(/images/icons/down_arrow.gif);
+  }
+  */
+}
+/* line 240, ../../app/assets/stylesheets/sass/_layout.scss */
+#main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
+  text-align: right;
+}
+/* line 243, ../../app/assets/stylesheets/sass/_layout.scss */
+#main table.versions td, #main table.versions th, #main table.articles td, #main table.articles th {
+  padding: 5px;
+}
+/* line 246, ../../app/assets/stylesheets/sass/_layout.scss */
+#main table.versions th .current, #main table.articles th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+/* line 259, ../../app/assets/stylesheets/sass/_layout.scss */
+#main table.versions tr.current, #main table.articles tr.current {
+  background: #d9e3e2;
+}
+/* line 265, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .diff del {
+  background-color: #ff9098;
+}
+/* line 268, ../../app/assets/stylesheets/sass/_layout.scss */
+#main .diff ins {
+  background-color: #abeebe;
+}
+
+/* line 276, ../../app/assets/stylesheets/sass/_layout.scss */
+header h1 {
+  padding-top: 16px;
+  padding-bottom: 2px;
+}
+
+/* line 282, ../../app/assets/stylesheets/sass/_layout.scss */
+.join-us-teaser {
+  padding: 30px 0;
+}
+/* line 284, ../../app/assets/stylesheets/sass/_layout.scss */
+.join-us-teaser a.button {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 4px 12px;
+  color: white;
+  background-color: #2f528f;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  float: left;
+  margin: 5px 0;
+}
+/* line 28, ../../app/assets/stylesheets/sass/_mixins.scss */
+.join-us-teaser a.button:hover {
+  background-color: #fab45b;
+}
+/* line 31, ../../app/assets/stylesheets/sass/_mixins.scss */
+.join-us-teaser a.button:visited {
+  color: white;
+}
+
+/* line 291, ../../app/assets/stylesheets/sass/_layout.scss */
+.action-links, .action-buttons {
+  margin-bottom: 32px;
+}
+
+/* line 295, ../../app/assets/stylesheets/sass/_layout.scss */
+.new-article-buttons {
+  margin-top: 28px;
+}
+
+/* line 299, ../../app/assets/stylesheets/sass/_layout.scss */
+.new-article-wizard {
+  border-top: 1px solid #cccccc;
+  padding-top: 8px;
+  margin-bottom: 32px;
+}
+/* line 183, ../../app/assets/stylesheets/sass/_mixins.scss */
+.new-article-wizard .step {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: #efefef;
+  padding-top: 5px;
+  border-top: none;
+  height: 78px;
+  /* Typography */
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #7a7a7a;
+}
+/* line 193, ../../app/assets/stylesheets/sass/_mixins.scss */
+.new-article-wizard .step h2 {
+  color: #7a7a7a;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* line 199, ../../app/assets/stylesheets/sass/_mixins.scss */
+.new-article-wizard .active {
+  /* Typography */
+  color: #383838;
+}
+/* line 202, ../../app/assets/stylesheets/sass/_mixins.scss */
+.new-article-wizard .active h2 {
+  color: #2b2b2b;
+}
+/* line 206, ../../app/assets/stylesheets/sass/_mixins.scss */
+.new-article-wizard .arrow, .new-article-wizard p {
+  text-align: center;
+}
+/* line 209, ../../app/assets/stylesheets/sass/_mixins.scss */
+.new-article-wizard .arrow {
+  /* Typography */
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 32px;
+  line-height: 78px;
+}
+/* line 215, ../../app/assets/stylesheets/sass/_mixins.scss */
+.new-article-wizard .number {
+  /* Typography */
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+/* line 305, ../../app/assets/stylesheets/sass/_layout.scss */
+.new-article-wizard .active {
+  position: relative;
+  box-shadow: 0px 2px 10px #777777;
+  -moz-box-shadow: 0px 2px 10px #777777;
+  -webkit-box-shadow: 0px 2px 10px #777777;
+  behavior: url(/stylesheets/PIE.htc);
+}
+
+/* line 310, ../../app/assets/stylesheets/sass/_layout.scss */
+.existing-article {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px solid #cccccc;
+}
+/* line 313, ../../app/assets/stylesheets/sass/_layout.scss */
+.existing-article h2.title {
+  background-color: #383838;
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 2px;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+.existing-article h2.title a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+.existing-article h2.title a:hover {
+  text-decoration: underline;
+}
+/* line 319, ../../app/assets/stylesheets/sass/_layout.scss */
+.existing-article h2.title a {
+  color: white;
+}
+
+/* line 325, ../../app/assets/stylesheets/sass/_layout.scss */
+.upload-button {
+  text-align: right;
+  margin: 12px 0;
+}
+
+/* line 330, ../../app/assets/stylesheets/sass/_layout.scss */
+a.button {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 4px 12px;
+  color: white;
+  background-color: #2f528f;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 28, ../../app/assets/stylesheets/sass/_mixins.scss */
+a.button:hover {
+  background-color: #fab45b;
+}
+/* line 31, ../../app/assets/stylesheets/sass/_mixins.scss */
+a.button:visited {
+  color: white;
+}
+
+/* line 334, ../../app/assets/stylesheets/sass/_layout.scss */
+.add-image {
+  text-align: right;
+}
+
+/* line 183, ../../app/assets/stylesheets/sass/_mixins.scss */
+.upload-wizard .step {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: #efefef;
+  padding-top: 5px;
+  border-top: none;
+  height: 78px;
+  /* Typography */
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #7a7a7a;
+}
+/* line 193, ../../app/assets/stylesheets/sass/_mixins.scss */
+.upload-wizard .step h2 {
+  color: #7a7a7a;
+  font-size: 15px;
+  font-weight: bold;
+}
+/* line 199, ../../app/assets/stylesheets/sass/_mixins.scss */
+.upload-wizard .active {
+  /* Typography */
+  color: #383838;
+}
+/* line 202, ../../app/assets/stylesheets/sass/_mixins.scss */
+.upload-wizard .active h2 {
+  color: #2b2b2b;
+}
+/* line 206, ../../app/assets/stylesheets/sass/_mixins.scss */
+.upload-wizard .arrow, .upload-wizard p {
+  text-align: center;
+}
+/* line 209, ../../app/assets/stylesheets/sass/_mixins.scss */
+.upload-wizard .arrow {
+  /* Typography */
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 32px;
+  line-height: 78px;
+}
+/* line 215, ../../app/assets/stylesheets/sass/_mixins.scss */
+.upload-wizard .number {
+  /* Typography */
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* line 342, ../../app/assets/stylesheets/sass/_layout.scss */
+.edit-image {
+  background: #efefef;
+}
+
+/* line 346, ../../app/assets/stylesheets/sass/_layout.scss */
+#thumb-placeholder {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 140px;
+  height: 105px;
+  border: 1px solid #cccccc;
+}
+/* line 351, ../../app/assets/stylesheets/sass/_layout.scss */
+#thumb-placeholder img {
+  height: 32px;
+  width: 32px;
+  margin: 36px 54px;
+  display: none;
+}
+
+/* line 359, ../../app/assets/stylesheets/sass/_layout.scss */
+#image-loader {
+  display: none;
+}
+/* line 360, ../../app/assets/stylesheets/sass/_layout.scss */
+#image-loader img {
+  margin: 0 168px;
+}
+
+/* line 366, ../../app/assets/stylesheets/sass/_layout.scss */
+#upload-error, #upload-image {
+  display: none;
+}
+
+/* line 370, ../../app/assets/stylesheets/sass/_layout.scss */
+.article_list {
+  margin-bottom: 32px;
+}
+/* line 372, ../../app/assets/stylesheets/sass/_layout.scss */
+.article_list .deleted {
+  display: none;
+}
+
+/* line 378, ../../app/assets/stylesheets/sass/_layout.scss */
+.manual_article_list img {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  height: 175px;
+  width: 220px;
+  margin-bottom: -40px;
+}
+/* line 384, ../../app/assets/stylesheets/sass/_layout.scss */
+.manual_article_list .caption {
+  position: relative;
+  -webkit-border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  /*
+    Firefox og IE/PIE støtter ikke avrundede hjørner på img, derfor tar vi ikke med dette ennå.
+    border-radius: 0px 0px $radius $radius;
+    -moz-border-radius-bottomleft: $radius;
+    -moz-border-radius-bottomright: $radius;
+    behavior: url(/stylesheets/PIE.htc);
+  */
+  behavior: url(/stylesheets/PIE.htc);
+  background-color: rgba(0, 0, 0, 0.6);
+  -pie-background: rgba(0, 0, 0, 0.6);
+  height: 36px;
+  line-height: 36px;
+  padding-left: 14px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 396, ../../app/assets/stylesheets/sass/_layout.scss */
+.sorted_article_list, .tags_article_list {
+  padding-top: 16px;
+  padding-bottom: 8px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+/* line 401, ../../app/assets/stylesheets/sass/_layout.scss */
+.sorted_article_list h2, .sorted_article_list .actions, .sorted_article_list .deleted, .tags_article_list h2, .tags_article_list .actions, .tags_article_list .deleted {
+  margin: 0 0 8px 14px;
+}
+/* line 404, ../../app/assets/stylesheets/sass/_layout.scss */
+.sorted_article_list ul, .tags_article_list ul {
+  margin-left: 14px;
+}
+/* line 406, ../../app/assets/stylesheets/sass/_layout.scss */
+.sorted_article_list ul li, .tags_article_list ul li {
+  margin-bottom: 8px;
+  width: 100%;
+  height: 16px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 415, ../../app/assets/stylesheets/sass/_layout.scss */
+.article_list_placeholder {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  float: left;
+  display: inline;
+  width: 218px;
+  height: 194px;
+  margin: 0 10px;
+}
+
+/* line 424, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-1 {
+  background-color: #98a8c8;
+}
+/* line 426, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-1 li a {
+  border-bottom: 1px solid #b9c4da;
+}
+/* line 428, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-1 li a:hover {
+  border-bottom: 1px solid #778cb6;
+}
+
+/* line 433, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-2 {
+  background-color: #b9bdd2;
+}
+/* line 435, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-2 li a {
+  border-bottom: 1px solid #d8dae6;
+}
+/* line 437, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-2 li a:hover {
+  border-bottom: 1px solid #9aa0be;
+}
+
+/* line 442, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-3 {
+  background-color: #9ebdbb;
+}
+/* line 444, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-3 li a {
+  border-bottom: 1px solid #bcd2d0;
+}
+/* line 446, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-3 li a:hover {
+  border-bottom: 1px solid #80a8a6;
+}
+
+/* line 451, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-4 {
+  background-color: #e7a76a;
+}
+/* line 453, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-4 li a {
+  border-bottom: 1px solid #eec196;
+}
+/* line 455, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-list-4 li a:hover {
+  border-bottom: 1px solid #e08d3e;
+}
+
+/* line 461, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-pagination {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+/* line 465, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-pagination .disabled {
+  visibility: hidden;
+}
+
+/* line 470, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-results {
+  margin-bottom: 16px;
+}
+/* line 473, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-results h2 {
+  margin-bottom: 2px;
+}
+/* line 476, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-results .highlight {
+  background-color: #F0F591;
+}
+/* line 479, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-results li {
+  margin-bottom: 16px;
+}
+/* line 482, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-results figure {
+  border: 1px solid #cccccc;
+  padding: 5px;
+  margin: 0;
+  background: white;
+}
+/* line 488, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-results figure img {
+  display: block;
+  border: 1px solid #ccc;
+}
+
+/* line 495, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-no-hits {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+/* line 498, ../../app/assets/stylesheets/sass/_layout.scss */
+.search-no-hits p {
+  margin-bottom: 16px;
+}
+
+/* line 503, ../../app/assets/stylesheets/sass/_layout.scss */
+#license-info {
+  margin-top: 32px;
+}
+
+/* line 507, ../../app/assets/stylesheets/sass/_layout.scss */
+footer {
+  clear: both;
+  /*  border-top: 2px solid $dark-grey-color;*/
+}
+
+/* line 513, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files {
+  float: right;
+  padding-left: 0;
+  width: 400px;
+}
+/* line 518, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files div#upload-container {
+  position: relative;
+  clear: both;
+}
+/* line 522, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files div#upload-container button {
+  position: absolute;
+  left: 0;
+  margin: 0 !important;
+}
+/* line 530, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol {
+  width: 400px;
+}
+/* line 533, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 539, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li {
+  float: left;
+}
+/* line 542, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li label, #main form.formtastic fieldset.files > ol > li ol li input {
+  width: 100%;
+}
+/* line 546, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+/* line 551, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.image {
+  width: 150px;
+}
+/* line 554, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.image img {
+  max-width: 140px;
+}
+/* line 558, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.progressbar {
+  position: relative;
+  width: 220px;
+  margin-right: 10px;
+  text-align: center;
+}
+/* line 564, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.progressbar .progress {
+  position: absolute;
+  background-color: #31528C;
+  height: 20px;
+  z-index: 10;
+  left: 0;
+}
+/* line 571, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.progressbar .progress-text {
+  position: relative;
+  z-index: 100;
+  color: #fff;
+}
+/* line 579, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.progressbar, #main form.formtastic fieldset.files > ol > li ol li.description {
+  width: 220px;
+  margin-right: 10px;
+}
+/* line 583, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.progressbar textarea, #main form.formtastic fieldset.files > ol > li ol li.description textarea {
+  width: 212px;
+}
+/* line 589, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.empty, #main form.formtastic fieldset.files > ol > li ol li.empty + li, #main form.formtastic fieldset.files > ol > li ol li.empty + li + li {
+  display: none;
+}
+/* line 597, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files textarea {
+  float: right;
+}
+/* line 602, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset {
+  overflow: visible;
+}
+/* line 605, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset legend {
+  padding-bottom: 10px;
+}
+/* line 612, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files button, #main form.formtastic fieldset#external-links button {
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+  cursor: pointer;
+}
+/* line 617, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files button.add, #main form.formtastic fieldset#external-links button.add {
+  display: none;
+}
+/* line 620, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files button.remove, #main form.formtastic fieldset#external-links button.remove {
+  display: inline;
+}
+/* line 625, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li, #main form.formtastic fieldset#external-links > ol > li {
+  padding: 5px 0;
+}
+/* line 629, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li:last-child > ol > li button.add, #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.add {
+  display: inline;
+}
+/* line 632, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li:last-child > ol > li button.remove, #main form.formtastic fieldset#external-links > ol > li:last-child > ol > li button.remove {
+  display: none;
+}
+/* line 637, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol, #main form.formtastic fieldset#external-links > ol > li ol {
+  overflow: hidden;
+}
+/* line 639, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li, #main form.formtastic fieldset#external-links > ol > li ol li {
+  float: left;
+}
+/* line 643, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.link-text label, #main form.formtastic fieldset#external-links > ol > li ol li.link-text label {
+  margin-left: 10px;
+}
+/* line 648, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li ol li.link-text + li input, #main form.formtastic fieldset#external-links > ol > li ol li.link-text + li input {
+  margin: 0 5px 0 10px;
+}
+/* line 656, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li label, #main form.formtastic fieldset#external-links > ol > li label {
+  float: left;
+  clear: left;
+}
+/* line 660, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.files > ol > li input[type="text"], #main form.formtastic fieldset#external-links > ol > li input[type="text"] {
+  float: left;
+  width: 140px;
+  margin-left: 10px;
+}
+/* line 668, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li {
+  width: 530px;
+  overflow: visible;
+}
+/* line 673, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li.error input[type="text"] {
+  border: 2px solid #b72727 !important;
+}
+/* line 678, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li .inline-errors {
+  margin: 0.5em 0 0 0;
+}
+/* line 681, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li ul {
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+/* line 684, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li ul li {
+  list-style-type: disc;
+}
+/* line 688, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li#article_location_attributes_map {
+  display: none;
+}
+/* line 693, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li input[type="text"].headword, #main form.formtastic fieldset > ol > li.string input[type="text"].headword, #main form.formtastic fieldset > ol > li.text input[type="text"].headword {
+  padding: 0.1em 0.2em 0 0.2em;
+  margin-top: 0.5em;
+}
+/* line 697, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li input[type="text"], #main form.formtastic fieldset > ol > li.string input[type="text"], #main form.formtastic fieldset > ol > li.text input[type="text"] {
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding: 0.5em 0.2em 0.5em 0.2em;
+}
+/* line 702, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li p.inline-hints, #main form.formtastic fieldset > ol > li.string p.inline-hints, #main form.formtastic fieldset > ol > li.text p.inline-hints {
+  margin-left: 0;
+}
+/* line 705, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li label, #main form.formtastic fieldset > ol > li.string label, #main form.formtastic fieldset > ol > li.text label {
+  float: none;
+  width: auto;
+  margin-bottom: 3px;
+}
+/* line 709, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li label abbr, #main form.formtastic fieldset > ol > li.string label abbr, #main form.formtastic fieldset > ol > li.text label abbr {
+  padding-left: 1em;
+}
+/* line 713, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li textarea, #main form.formtastic fieldset > ol > li.string textarea, #main form.formtastic fieldset > ol > li.text textarea {
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding: 0.2em;
+}
+/* line 718, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li .map-search, #main form.formtastic fieldset > ol > li.string .map-search, #main form.formtastic fieldset > ol > li.text .map-search {
+  height: 32px;
+}
+/* line 720, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li .map-search label, #main form.formtastic fieldset > ol > li.string .map-search label, #main form.formtastic fieldset > ol > li.text .map-search label {
+  line-height: 32px;
+  display: inline;
+}
+/* line 725, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li .map-search input, #main form.formtastic fieldset > ol > li.string .map-search input, #main form.formtastic fieldset > ol > li.text .map-search input {
+  float: right;
+  width: 270px;
+}
+/* line 730, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li .map, #main form.formtastic fieldset > ol > li.string .map, #main form.formtastic fieldset > ol > li.text .map {
+  height: 300px;
+}
+/* line 733, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li #show-map-link, #main form.formtastic fieldset > ol > li #hide-map-link, #main form.formtastic fieldset > ol > li.string #show-map-link, #main form.formtastic fieldset > ol > li.string #hide-map-link, #main form.formtastic fieldset > ol > li.text #show-map-link, #main form.formtastic fieldset > ol > li.text #hide-map-link {
+  line-height: 31px;
+}
+/* line 735, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li #show-map-link img, #main form.formtastic fieldset > ol > li #hide-map-link img, #main form.formtastic fieldset > ol > li.string #show-map-link img, #main form.formtastic fieldset > ol > li.string #hide-map-link img, #main form.formtastic fieldset > ol > li.text #show-map-link img, #main form.formtastic fieldset > ol > li.text #hide-map-link img {
+  margin-right: 5px;
+  vertical-align: text-bottom;
+}
+/* line 740, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li #file-upload-button, #main form.formtastic fieldset > ol > li.string #file-upload-button, #main form.formtastic fieldset > ol > li.text #file-upload-button {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 3px 12px;
+  color: white;
+  background: #2f528f;
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #355da2;
+  border-top-color: #29477c;
+  border-left-color: #29477c;
+}
+/* line 53, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main form.formtastic fieldset > ol > li #file-upload-button.hover, #main form.formtastic fieldset > ol > li #file-upload-button:hover, #main form.formtastic fieldset > ol > li.string #file-upload-button.hover, #main form.formtastic fieldset > ol > li.string #file-upload-button:hover, #main form.formtastic fieldset > ol > li.text #file-upload-button.hover, #main form.formtastic fieldset > ol > li.text #file-upload-button:hover {
+  background: #fab45b;
+  border: 1px solid #fbbf74;
+  border-top-color: #f9a942;
+  border-left-color: #f9a942;
+}
+/* line 60, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main form.formtastic fieldset > ol > li #file-upload-button.active, #main form.formtastic fieldset > ol > li #file-upload-button:active, #main form.formtastic fieldset > ol > li.string #file-upload-button.active, #main form.formtastic fieldset > ol > li.string #file-upload-button:active, #main form.formtastic fieldset > ol > li.text #file-upload-button.active, #main form.formtastic fieldset > ol > li.text #file-upload-button:active {
+  border: 1px solid #f9a942;
+  border-top-color: #fbbf74;
+  border-left-color: #fbbf74;
+}
+/* line 743, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset > ol > li#article_location_attributes_map, #main form.formtastic fieldset > ol > li.string#article_location_attributes_map, #main form.formtastic fieldset > ol > li.text#article_location_attributes_map {
+  position: relative;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 5px;
+  margin-top: -1em;
+  border: 1px solid #cccccc;
+}
+/* line 750, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.buttons {
+  padding-left: 0;
+  clear: both;
+}
+/* line 753, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic fieldset.buttons > ol > li {
+  width: auto;
+}
+/* line 758, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic .ckeditor .cke_skin_kama .cke_button .cke_button_mimeimage .cke_icon {
+  background-position: 0 -576px;
+}
+/* line 761, ../../app/assets/stylesheets/sass/_layout.scss */
+#main form.formtastic .ckeditor span.cke_skin_kama {
+  border: 1px solid #ccc;
+}
+
+/* line 767, ../../app/assets/stylesheets/sass/_layout.scss */
+#dialog_file_uploadUploader {
+  width: 130px;
+  height: 40px;
+}
+
+/* line 772, ../../app/assets/stylesheets/sass/_layout.scss */
+#cke_contents_article_text_editor {
+  height: 500px !important;
+}
+
+/* line 776, ../../app/assets/stylesheets/sass/_layout.scss */
+ul.search-completion {
+  position: absolute;
+  z-index: 12000;
+  background-color: #fff;
+  border-top: 1px solid #1A4A99;
+  font-size: 75%;
+  width: 300px;
+}
+/* line 784, ../../app/assets/stylesheets/sass/_layout.scss */
+ul.search-completion span {
+  width: 16px;
+  height: 16px;
+  background-image: url(/images/icons/cross.png);
+  cursor: pointer;
+  float: right;
+  margin-top: 1px;
+  margin-right: 1px;
+  position: relative;
+  top: -3px;
+}
+/* line 795, ../../app/assets/stylesheets/sass/_layout.scss */
+ul.search-completion span:hover {
+  position: relative;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  behavior: url(/stylesheets/PIE.htc);
+  border: 1px solid #ccc;
+  margin: 0;
+}
+/* line 802, ../../app/assets/stylesheets/sass/_layout.scss */
+ul.search-completion li {
+  padding: 4px 2px 2px;
+  border: 1px solid #1A4A99;
+  border-width: 0 1px 1px;
+  cursor: pointer;
+}
+/* line 808, ../../app/assets/stylesheets/sass/_layout.scss */
+ul.search-completion li:hover {
+  background-color: #ccc;
+}
+
+/* line 813, ../../app/assets/stylesheets/sass/_layout.scss */
+#bottom-ad {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/* line 818, ../../app/assets/stylesheets/sass/_layout.scss */
+#bottom-ad div {
+  margin: 0 auto;
+  width: 1280px;
+  height: 30px;
+}
+
+/* line 824, ../../app/assets/stylesheets/sass/_layout.scss */
+.article-bottom-ad {
+  margin-bottom: 15px;
+}
+
+/* line 828, ../../app/assets/stylesheets/sass/_layout.scss */
+.branding-header-wrapper {
+  background-color: #b4b4b4;
+  height: 36px;
+  padding-top: 4px;
+}
+
+/* line 834, ../../app/assets/stylesheets/sass/_layout.scss */
+.branding-footer-wrapper {
+  background-color: #b4b4b4;
+  color: #616161;
+  padding-bottom: 30px;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+.branding-footer-wrapper a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+.branding-footer-wrapper a:hover {
+  text-decoration: underline;
+}
+/* line 840, ../../app/assets/stylesheets/sass/_layout.scss */
+.branding-footer-wrapper a, .branding-footer-wrapper a:visited {
+  color: white;
+}
+/* line 844, ../../app/assets/stylesheets/sass/_layout.scss */
+.branding-footer-wrapper .logo {
+  height: 32px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+/* line 851, ../../app/assets/stylesheets/sass/_layout.scss */
+#edit_page_link {
+  display: none;
+}
+
+/* line 855, ../../app/assets/stylesheets/sass/_layout.scss */
+.ui-autocomplete-loading {
+  background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+}
+
+/* line 859, ../../app/assets/stylesheets/sass/_layout.scss */
+.ui-effects-transfer {
+  background: #efefef;
+  border: 2px dotted #cccccc;
+}
+
+/* line 864, ../../app/assets/stylesheets/sass/_layout.scss */
+#jstemplates {
+  display: none;
+}
+
+/* line 1, ../../app/assets/stylesheets/sass/_typography.scss */
+body {
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 100%;
+}
+
+/* line 7, ../../app/assets/stylesheets/sass/_typography.scss */
+header .title {
+  font-family: Arial, sans-serif;
+  font-size: 118.75%;
+  color: #1d386a;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+header .title a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+header .title a:hover {
+  text-decoration: underline;
+}
+/* line 13, ../../app/assets/stylesheets/sass/_typography.scss */
+header #user-links {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #383838;
+}
+
+/* line 24, ../../app/assets/stylesheets/sass/_typography.scss */
+nav {
+  font-weight: bold;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+nav a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* line 29, ../../app/assets/stylesheets/sass/_typography.scss */
+#messages {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+}
+
+/* line 33, ../../app/assets/stylesheets/sass/_typography.scss */
+#main {
+  color: #383838;
+}
+/* line 35, ../../app/assets/stylesheets/sass/_typography.scss */
+#main header h1 {
+  font-size: 200%;
+  font-weight: bold;
+  color: white;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main header h1 a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main header h1 a:hover {
+  text-decoration: underline;
+}
+/* line 40, ../../app/assets/stylesheets/sass/_typography.scss */
+#main header h1 a {
+  color: white;
+}
+/* line 49, ../../app/assets/stylesheets/sass/_typography.scss */
+#main .join-us-teaser span {
+  font-style: italic;
+  font-size: 200%;
+}
+/* line 55, ../../app/assets/stylesheets/sass/_typography.scss */
+#main aside.intro {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+}
+/* line 58, ../../app/assets/stylesheets/sass/_typography.scss */
+#main .alphabetic li {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  line-height: 1.67;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main .alphabetic li a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main .alphabetic li a:hover {
+  text-decoration: underline;
+}
+/* line 64, ../../app/assets/stylesheets/sass/_typography.scss */
+#main .facebook {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+/* line 68, ../../app/assets/stylesheets/sass/_typography.scss */
+#main .facebook dl dt {
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+/* line 81, ../../app/assets/stylesheets/sass/_typography.scss */
+#main table.versions, #main table.articles {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+}
+/* line 83, ../../app/assets/stylesheets/sass/_typography.scss */
+#main table.versions caption, #main table.versions tfoot, #main table.articles caption, #main table.articles tfoot {
+  font-size: 75%;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main table.versions tfoot a, #main table.articles tfoot a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main table.versions tfoot a:hover, #main table.articles tfoot a:hover {
+  text-decoration: underline;
+}
+/* line 89, ../../app/assets/stylesheets/sass/_typography.scss */
+#main table.versions th, #main table.articles th {
+  font-size: 75%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main table.versions th a, #main table.articles th a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+#main table.versions th a:hover, #main table.articles th a:hover {
+  text-decoration: underline;
+}
+
+/* line 100, ../../app/assets/stylesheets/sass/_typography.scss */
+article .articletext {
+  font-size: 100%;
+  line-height: 1.5;
+}
+/* line 103, ../../app/assets/stylesheets/sass/_typography.scss */
+article aside.disambiguation {
+  font-style: italic;
+  font-size: 87.5%;
+}
+/* line 107, ../../app/assets/stylesheets/sass/_typography.scss */
+article h2 {
+  font-size: 125%;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+/* line 112, ../../app/assets/stylesheets/sass/_typography.scss */
+article h3 {
+  font-size: 106.25%;
+  font-weight: bold;
+}
+/* line 117, ../../app/assets/stylesheets/sass/_typography.scss */
+article aside.image p {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: #45494f;
+  font-size: 75%;
+}
+/* line 121, ../../app/assets/stylesheets/sass/_typography.scss */
+article aside.image p:first-of-type {
+  margin-top: 5px;
+}
+/* line 126, ../../app/assets/stylesheets/sass/_typography.scss */
+article .tags, article .external-links {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: #45494f;
+  font-size: 75%;
+}
+/* line 130, ../../app/assets/stylesheets/sass/_typography.scss */
+article .tags h3, article .external-links h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* line 137, ../../app/assets/stylesheets/sass/_typography.scss */
+aside.info, aside.back-link, .redirected {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #7a7a7a;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+aside.info a, aside.back-link a, .redirected a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+aside.info a:hover, aside.back-link a:hover, .redirected a:hover {
+  text-decoration: underline;
+}
+
+/* line 145, ../../app/assets/stylesheets/sass/_typography.scss */
+aside.meta figcaption {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  line-height: 1.2em;
+  font-weight: normal;
+}
+
+/* line 153, ../../app/assets/stylesheets/sass/_typography.scss */
+.redirected {
+  font-style: italic;
+}
+
+/* line 157, ../../app/assets/stylesheets/sass/_typography.scss */
+.action-links, .action-buttons a {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+
+/* line 163, ../../app/assets/stylesheets/sass/_typography.scss */
+.article_list h2 {
+  font-size: 100%;
+  color: #222;
+  font-weight: bold;
+}
+/* line 168, ../../app/assets/stylesheets/sass/_typography.scss */
+.article_list .actions, .article_list .deleted {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: #7a7a7a;
+}
+
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+.manual_article_list a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+.manual_article_list a:hover {
+  text-decoration: underline;
+}
+/* line 178, ../../app/assets/stylesheets/sass/_typography.scss */
+.manual_article_list a.featured {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 185, ../../app/assets/stylesheets/sass/_typography.scss */
+.sorted_article_list li, .tags_article_list li {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+.sorted_article_list li a, .tags_article_list li a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+.sorted_article_list li a:hover, .tags_article_list li a:hover {
+  text-decoration: underline;
+}
+/* line 189, ../../app/assets/stylesheets/sass/_typography.scss */
+.sorted_article_list li a, .tags_article_list li a {
+  color: #383838;
+}
+/* line 191, ../../app/assets/stylesheets/sass/_typography.scss */
+.sorted_article_list li a:hover, .tags_article_list li a:hover {
+  text-decoration: none;
+}
+
+/* line 198, ../../app/assets/stylesheets/sass/_typography.scss */
+.search-pagination {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+
+/* line 204, ../../app/assets/stylesheets/sass/_typography.scss */
+.search-results h2 {
+  font-weight: bold;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+.search-results h2 a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+.search-results h2 a:hover {
+  text-decoration: underline;
+}
+/* line 208, ../../app/assets/stylesheets/sass/_typography.scss */
+.search-results a.full-url {
+  text-decoration: none;
+  color: #63995d;
+  font-size: 75%;
+}
+
+/* line 215, ../../app/assets/stylesheets/sass/_typography.scss */
+.search-no-hits {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+}
+/* line 217, ../../app/assets/stylesheets/sass/_typography.scss */
+.search-no-hits span {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 223, ../../app/assets/stylesheets/sass/_typography.scss */
+#license-info, .no-images {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+
+/* line 228, ../../app/assets/stylesheets/sass/_typography.scss */
+#upload-error, #upload-no-support {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #b72727;
+}
+
+/* line 234, ../../app/assets/stylesheets/sass/_typography.scss */
+#upload-error-message {
+  font-family: "Courier New", "Courier", monospace;
+  color: #7a7a7a;
+}
+
+/* line 240, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > legend {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  color: #45494f;
+}
+/* line 246, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li p.inline-errors, form.formtastic fieldset > ol > li .inline-errors, form.formtastic fieldset > ol > li.string p.inline-errors, form.formtastic fieldset > ol > li.string .inline-errors, form.formtastic fieldset > ol > li.text p.inline-errors, form.formtastic fieldset > ol > li.text .inline-errors {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #b72727;
+}
+/* line 250, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li p.inline-errors a, form.formtastic fieldset > ol > li .inline-errors a, form.formtastic fieldset > ol > li.string p.inline-errors a, form.formtastic fieldset > ol > li.string .inline-errors a, form.formtastic fieldset > ol > li.text p.inline-errors a, form.formtastic fieldset > ol > li.text .inline-errors a {
+  color: #b72727;
+  text-decoration-style: dashed;
+}
+/* line 255, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li p.inline-hints, form.formtastic fieldset > ol > li.string p.inline-hints, form.formtastic fieldset > ol > li.text p.inline-hints {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #7a7a7a;
+}
+/* line 260, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li input[type="text"].headword, form.formtastic fieldset > ol > li.string input[type="text"].headword, form.formtastic fieldset > ol > li.text input[type="text"].headword {
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 200%;
+  font-weight: bold;
+  color: #45494f;
+}
+/* line 266, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li input[type="text"], form.formtastic fieldset > ol > li.string input[type="text"], form.formtastic fieldset > ol > li.text input[type="text"] {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #45494f;
+}
+/* line 271, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li label, form.formtastic fieldset > ol > li.string label, form.formtastic fieldset > ol > li.text label {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: #45494f;
+  font-size: 75%;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* line 277, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li label abbr, form.formtastic fieldset > ol > li.string label abbr, form.formtastic fieldset > ol > li.text label abbr {
+  text-transform: none;
+  color: #7a7a7a;
+  font-weight: normal;
+}
+/* line 283, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li textarea, form.formtastic fieldset > ol > li.string textarea, form.formtastic fieldset > ol > li.text textarea {
+  color: #383838;
+  font-size: 100%;
+  line-height: 1.5;
+}
+/* line 292, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic fieldset > ol > li a, form.formtastic fieldset > ol > li.string a, form.formtastic fieldset > ol > li.text a {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+/* line 297, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic em {
+  font-style: italic;
+}
+/* line 300, ../../app/assets/stylesheets/sass/_typography.scss */
+form.formtastic strong {
+  font-weight: bold;
+}
+
+/* line 305, ../../app/assets/stylesheets/sass/_typography.scss */
+footer {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 68.75%;
+  color: #828589;
+}
+
+/* line 311, ../../app/assets/stylesheets/sass/_typography.scss */
+a {
+  color: #284d92;
+}
+/* line 313, ../../app/assets/stylesheets/sass/_typography.scss */
+a:hover {
+  text-decoration: underline;
+}
+/* line 316, ../../app/assets/stylesheets/sass/_typography.scss */
+a:visited {
+  color: #1d386a;
+}
+
+/* line 321, ../../app/assets/stylesheets/sass/_typography.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 324, ../../app/assets/stylesheets/sass/_typography.scss */
+em {
+  font-style: italic;
+}
+
+/* line 328, ../../app/assets/stylesheets/sass/_typography.scss */
+h2 {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: #2b2b2b;
+  font-size: 16px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+/* line 337, ../../app/assets/stylesheets/sass/_typography.scss */
+.map-wrapper > a {
+  font-size: 87.5%;
+  text-decoration: none;
+}
+/* line 340, ../../app/assets/stylesheets/sass/_typography.scss */
+.map-wrapper > a:hover {
+  text-decoration: underline;
+}
+
+/* line 1, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form {
+  clear: both;
+  padding-top: 32px;
+  /* ----------------------------------------------------- */
+  /* Typografi                                            */
+  /* ----------------------------------------------------- */
+  /* Sideredigering                                        */
+  /* ----------------------------------------------------- */
+  /* Bildeopplasting og -redigering                        */
+}
+/* line 6, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form .input.string {
+  margin-bottom: 32px;
+}
+/* line 10, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form fieldset .input.string {
+  margin-bottom: 0;
+}
+/* line 15, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form fieldset {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1px solid #cccccc;
+  padding: 16px 0;
+  margin-bottom: 32px;
+}
+/* line 20, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form fieldset legend {
+  margin: 0 10px;
+  padding: 0 5px;
+}
+/* line 26, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form input[type="text"], .simple_form textarea {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #cccccc;
+  padding: 8px 4px 4px 4px;
+}
+/* line 33, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form input[type="radio"] {
+  margin-right: 5px;
+}
+/* line 37, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form .cke_editor_article_text_editor, .simple_form .cke_editor_article_disambiguation_editor {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-bottom: 32px;
+}
+/* line 42, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form #article_location {
+  position: relative;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  behavior: url(/stylesheets/PIE.htc);
+  border: 1px solid #cccccc;
+  height: 312px;
+  margin-bottom: 16px;
+}
+/* line 49, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form label {
+  display: block;
+  margin-bottom: 3px;
+}
+/* line 52, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form label abbr {
+  padding-left: 1em;
+}
+/* line 57, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form .hint {
+  display: block;
+}
+/* line 61, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form #show-map-link, .simple_form #hide-map-link {
+  margin-bottom: 32px;
+  display: block;
+}
+/* line 66, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form.sorted_article_list .collection_radio {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding-left: 15px;
+}
+/* line 74, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form input[type="submit"] {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 3px 12px;
+  color: white;
+  background: #2f528f;
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #355da2;
+  border-top-color: #29477c;
+  border-left-color: #29477c;
+}
+/* line 53, ../../app/assets/stylesheets/sass/_mixins.scss */
+.simple_form input[type="submit"].hover, .simple_form input[type="submit"]:hover {
+  background: #fab45b;
+  border: 1px solid #fbbf74;
+  border-top-color: #f9a942;
+  border-left-color: #f9a942;
+}
+/* line 60, ../../app/assets/stylesheets/sass/_mixins.scss */
+.simple_form input[type="submit"].active, .simple_form input[type="submit"]:active {
+  border: 1px solid #f9a942;
+  border-top-color: #fbbf74;
+  border-left-color: #fbbf74;
+}
+/* line 159, ../../app/assets/stylesheets/sass/_mixins.scss */
+.simple_form a {
+  text-decoration: none;
+}
+/* line 161, ../../app/assets/stylesheets/sass/_mixins.scss */
+.simple_form a:hover {
+  text-decoration: underline;
+}
+/* line 83, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form input, .simple_form textarea, .simple_form select {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #45494f;
+}
+/* line 87, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form input.headword, .simple_form textarea.headword, .simple_form select.headword {
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 200%;
+  font-weight: bold;
+  color: #45494f;
+}
+/* line 95, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form label {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: #45494f;
+  font-size: 75%;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* line 101, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form label abbr {
+  text-transform: none;
+  color: #7a7a7a;
+  font-weight: normal;
+}
+/* line 108, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form .hint {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: #7a7a7a;
+  font-size: 75%;
+  font-style: italic;
+}
+/* line 115, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form .error {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: red;
+  font-size: 75%;
+}
+/* line 121, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form legend, .simple_form legend label {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  color: #45494f;
+  font-weight: bold;
+  text-transform: none;
+}
+/* line 128, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form #show-map-link, .simple_form #hide-map-link {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  text-decoration: none;
+}
+/* line 132, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form #show-map-link span:hover, .simple_form #hide-map-link span:hover {
+  text-decoration: underline;
+}
+/* line 138, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form .disabled label, .simple_form .disabled button, .simple_form .disabled input, .simple_form .disabled optgroup, .simple_form .disabled option, .simple_form .disabled select, .simple_form .disabled textarea {
+  color: #7a7a7a;
+}
+/* line 145, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form .add_child, .simple_form .remove_child {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+/* line 150, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form .nested-fields {
+  margin-bottom: 32px;
+}
+/* line 156, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form.image {
+  padding-top: 0;
+}
+/* line 160, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form.image .input.string {
+  margin-bottom: 0;
+}
+/* line 164, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form.image .license {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+/* line 167, ../../app/assets/stylesheets/sass/_forms.scss */
+.simple_form.image .license a {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+}
+
+/* ----------------------------------------------------- */
+/* Søk                                                   */
+/* ----------------------------------------------------- */
+/* line 179, ../../app/assets/stylesheets/sass/_forms.scss */
+.article-search {
+  /* ----------------------------------------------------- */
+  /* Typography                                            */
+}
+/* line 181, ../../app/assets/stylesheets/sass/_forms.scss */
+.article-search input[type="text"] {
+  width: 200px;
+  border: 1px solid #cccccc;
+  padding: 8px 4px 4px 4px;
+}
+/* line 186, ../../app/assets/stylesheets/sass/_forms.scss */
+.article-search input[type="text"]:focus {
+  outline: 0;
+}
+/* line 191, ../../app/assets/stylesheets/sass/_forms.scss */
+.article-search input[type="submit"] {
+  position: relative;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  behavior: url(/stylesheets/PIE.htc);
+  padding: 3px 12px;
+  color: white;
+  background: #2f528f;
+  font-family: "Droid Serif", "Cambria", Georgia, serif;
+  font-size: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #355da2;
+  border-top-color: #29477c;
+  border-left-color: #29477c;
+  top: 1px;
+}
+/* line 53, ../../app/assets/stylesheets/sass/_mixins.scss */
+.article-search input[type="submit"].hover, .article-search input[type="submit"]:hover {
+  background: #fab45b;
+  border: 1px solid #fbbf74;
+  border-top-color: #f9a942;
+  border-left-color: #f9a942;
+}
+/* line 60, ../../app/assets/stylesheets/sass/_mixins.scss */
+.article-search input[type="submit"].active, .article-search input[type="submit"]:active {
+  border: 1px solid #f9a942;
+  border-top-color: #fbbf74;
+  border-left-color: #fbbf74;
+}
+/* line 199, ../../app/assets/stylesheets/sass/_forms.scss */
+.article-search input[type="text"] {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 75%;
+  color: #45494f;
+}
+
+/*
+   Plupload
+------------------------------------------------------------------- */
+/* line 5, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_button {
+  cursor: pointer;
+}
+
+/* line 7, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_wrapper {
+  font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+}
+
+/* line 11, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload .plupload_container input {
+  width: 98%;
+}
+
+/* line 12, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload .plupload_filelist_footer {
+  border-width: 1px 0 0 0;
+}
+
+/* line 13, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload .plupload_filelist_header {
+  border-width: 0 0 1px 0;
+}
+
+/* line 14, ../../app/assets/stylesheets/sass/_plupload.scss */
+div.plupload .plupload_file {
+  border-width: 0 0 1px 0;
+}
+
+/* line 15, ../../app/assets/stylesheets/sass/_plupload.scss */
+div.plupload div.plupload_header {
+  border-width: 0 0 1px 0;
+  position: relative;
+}
+
+/* line 17, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_file .ui-icon {
+  cursor: pointer;
+}
+
+/* line 21, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_header_content {
+  padding: 8px 10px;
+}
+
+/* line 25, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_header_title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px 0 3px;
+}
+
+/* line 33, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_filelist,
+.plupload_filelist_content {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 40, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_cell {
+  padding: 8px 6px;
+}
+
+/* line 42, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_file {
+  border-left: none;
+  border-right: none;
+}
+
+/* line 47, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_scroll {
+  max-height: 180px;
+  min-height: 168px;
+  _height: 168px;
+  overflow-y: auto;
+}
+
+/* line 54, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_file_size, .plupload_file_status {
+  text-align: right;
+}
+
+/* line 55, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_file_size, .plupload_file_status {
+  width: 52px;
+}
+
+/* line 56, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_file_action {
+  width: 16px;
+}
+
+/* line 57, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_file_name {
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+/* line 62, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_file_rename {
+  width: 95%;
+}
+
+/* line 66, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_progress {
+  width: 60px;
+}
+
+/* line 67, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_progress_container {
+  padding: 1px;
+}
+
+/* Floats */
+/* line 72, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_right {
+  float: right;
+}
+
+/* line 73, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_left {
+  float: left;
+}
+
+/* line 74, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_clear, .plupload_clearer {
+  clear: both;
+}
+
+/* line 75, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_clearer, .plupload_progress_bar {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+}
+
+/* line 80, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_clearer {
+  height: 0;
+}
+
+/* Misc */
+/* line 83, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_hidden {
+  display: none;
+}
+
+/* line 84, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_droptext {
+  background: transparent;
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+  line-height: 165px;
+}
+
+/* line 92, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_buttons, .plupload_upload_status {
+  float: left;
+}
+
+/* line 94, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_message {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 102, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_message p {
+  padding: 0.7em;
+  margin: 0;
+}
+
+/* line 107, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_message strong {
+  font-weight: bold;
+}
+
+/* line 111, ../../app/assets/stylesheets/sass/_plupload.scss */
+plupload_message i {
+  font-style: italic;
+}
+
+/* line 115, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_message p span.ui-icon {
+  float: left;
+  margin-right: 0.3em;
+}
+
+/* line 121, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_header_content .ui-state-error,
+.plupload_header_content .ui-state-highlight {
+  border: none;
+}
+
+/* line 125, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload_message_close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+/* line 132, ../../app/assets/stylesheets/sass/_plupload.scss */
+.plupload .ui-sortable-placeholder {
+  height: 35px;
+}
+
+/* line 1, ../../app/assets/stylesheets/backgrounds.css.scss */
+body {
+  background: white url(http://assets0.ableksikon.no/assets/bg-nav-ce252d8cc1c4e4257b545386540e052b.png) no-repeat top center;
+}
+
+/* line 4, ../../app/assets/stylesheets/backgrounds.css.scss */
+#main {
+  background: #efefef url(http://assets0.ableksikon.no/assets/bg-article-header-8f24a4f20234f26448eb90d2c619b547.png) no-repeat top center;
+}
+
+/* line 7, ../../app/assets/stylesheets/backgrounds.css.scss */
+table.articles th .asc {
+  background-image: url(http://assets0.ableksikon.no/assets/icons/up_arrow-dcaf74d237f2811c15d1614684194154.gif);
+}
+
+/* line 10, ../../app/assets/stylesheets/backgrounds.css.scss */
+table.articles th .desc {
+  background-image: url(http://assets0.ableksikon.no/assets/icons/down_arrow-c03b14856a808abbfc88b2d3c3dc79fe.gif);
+}
+
+/*
+ * jQuery UI CSS Framework 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming
+ */
+/*
+ * jQuery UI CSS Framework 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming
+ */
+/*
+ * jQuery UI CSS Framework 1.10.0
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */
+/* Layout helpers
+----------------------------------*/
+/* line 14, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-helper-hidden {
+  display: none;
+}
+
+/* line 17, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* line 27, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+/* line 38, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 42, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-helper-clearfix:after {
+  clear: both;
+}
+
+/* line 45, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-helper-clearfix {
+  min-height: 0;
+  /* support: IE7 */
+}
+
+/* line 48, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: Alpha(Opacity=0);
+}
+
+/* line 58, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-front {
+  z-index: 100;
+}
+
+/* Interaction Cues
+----------------------------------*/
+/* line 65, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-state-disabled {
+  cursor: default !important;
+}
+
+/* Icons
+----------------------------------*/
+/* states and images */
+/* line 74, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+/* Misc visuals
+----------------------------------*/
+/* Overlays */
+/* line 86, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.core.css.scss */
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * jQuery UI Accordion 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Accordion#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.accordion.css.scss */
+.ui-accordion .ui-accordion-header {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  margin-top: 2px;
+  padding: .5em .5em .5em .7em;
+  min-height: 0;
+  /* support: IE7 */
+}
+
+/* line 20, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.accordion.css.scss */
+.ui-accordion .ui-accordion-icons {
+  padding-left: 2.2em;
+}
+
+/* line 23, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.accordion.css.scss */
+.ui-accordion .ui-accordion-noicons {
+  padding-left: .7em;
+}
+
+/* line 26, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.accordion.css.scss */
+.ui-accordion .ui-accordion-icons .ui-accordion-icons {
+  padding-left: 2.2em;
+}
+
+/* line 29, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.accordion.css.scss */
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+  position: absolute;
+  left: .5em;
+  top: 50%;
+  margin-top: -8px;
+}
+
+/* line 35, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.accordion.css.scss */
+.ui-accordion .ui-accordion-content {
+  padding: 1em 2.2em;
+  border-top: 0;
+  overflow: auto;
+}
+
+/*
+ * jQuery UI Autocomplete 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Autocomplete#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.autocomplete.css.scss */
+.ui-autocomplete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+
+/*
+ * jQuery UI Button 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Button#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  line-height: normal;
+  margin-right: .1em;
+  cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
+  overflow: visible;
+  /* removes extra width in IE */
+}
+
+/* line 27, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button,
+.ui-button:link,
+.ui-button:visited,
+.ui-button:hover,
+.ui-button:active {
+  text-decoration: none;
+}
+
+/* to make room for the icon, a width needs to be set here */
+/* line 31, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-icon-only {
+  width: 2.2em;
+}
+
+/* button elements seem to need a little more width */
+/* line 35, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+button.ui-button-icon-only {
+  width: 2.4em;
+}
+
+/* line 38, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-icons-only {
+  width: 3.4em;
+}
+
+/* line 41, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+button.ui-button-icons-only {
+  width: 3.7em;
+}
+
+/* button text element */
+/* line 46, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button .ui-button-text {
+  display: block;
+  line-height: normal;
+}
+
+/* line 50, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-text-only .ui-button-text {
+  padding: .4em 1em;
+}
+
+/* line 54, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-icon-only .ui-button-text,
+.ui-button-icons-only .ui-button-text {
+  padding: .4em;
+  text-indent: -9999999px;
+}
+
+/* line 59, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-text-icon-primary .ui-button-text,
+.ui-button-text-icons .ui-button-text {
+  padding: .4em 1em .4em 2.1em;
+}
+
+/* line 63, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-text-icon-secondary .ui-button-text,
+.ui-button-text-icons .ui-button-text {
+  padding: .4em 2.1em .4em 1em;
+}
+
+/* line 66, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-text-icons .ui-button-text {
+  padding-left: 2.1em;
+  padding-right: 2.1em;
+}
+
+/* no icon support for input elements, provide padding by default */
+/* line 71, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+input.ui-button {
+  padding: .4em 1em;
+}
+
+/* button icon element(s) */
+/* line 80, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-icon-only .ui-icon,
+.ui-button-text-icon-primary .ui-icon,
+.ui-button-text-icon-secondary .ui-icon,
+.ui-button-text-icons .ui-icon,
+.ui-button-icons-only .ui-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+}
+
+/* line 85, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-icon-only .ui-icon {
+  left: 50%;
+  margin-left: -8px;
+}
+
+/* line 91, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-text-icon-primary .ui-button-icon-primary,
+.ui-button-text-icons .ui-button-icon-primary,
+.ui-button-icons-only .ui-button-icon-primary {
+  left: .5em;
+}
+
+/* line 96, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-button-text-icon-secondary .ui-button-icon-secondary,
+.ui-button-text-icons .ui-button-icon-secondary,
+.ui-button-icons-only .ui-button-icon-secondary {
+  right: .5em;
+}
+
+/* button sets */
+/* line 101, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-buttonset {
+  margin-right: 7px;
+}
+
+/* line 104, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+.ui-buttonset .ui-button {
+  margin-left: 0;
+  margin-right: -.3em;
+}
+
+/* workarounds */
+/* reset extra padding in Firefox, see h5bp.com/l */
+/* line 112, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.button.css.scss */
+input.ui-button::-moz-focus-inner,
+button.ui-button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * jQuery UI Datepicker 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Datepicker#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker {
+  width: 17em;
+  padding: .2em .2em 0;
+  display: none;
+}
+
+/* line 17, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: .2em 0;
+}
+
+/* line 22, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 2px;
+  width: 1.8em;
+  height: 1.8em;
+}
+
+/* line 29, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+  top: 1px;
+}
+
+/* line 32, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-prev {
+  left: 2px;
+}
+
+/* line 35, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-next {
+  right: 2px;
+}
+
+/* line 38, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-prev-hover {
+  left: 1px;
+}
+
+/* line 41, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-next-hover {
+  right: 1px;
+}
+
+/* line 45, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+/* line 53, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  line-height: 1.8em;
+  text-align: center;
+}
+
+/* line 58, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0;
+}
+
+/* line 62, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker select.ui-datepicker-month-year {
+  width: 100%;
+}
+
+/* line 66, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 49%;
+}
+
+/* line 69, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker table {
+  width: 100%;
+  font-size: .9em;
+  border-collapse: collapse;
+  margin: 0 0 .4em;
+}
+
+/* line 75, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker th {
+  padding: .7em .3em;
+  text-align: center;
+  font-weight: bold;
+  border: 0;
+}
+
+/* line 81, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker td {
+  border: 0;
+  padding: 1px;
+}
+
+/* line 86, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker td span,
+.ui-datepicker td a {
+  display: block;
+  padding: .2em;
+  text-align: right;
+  text-decoration: none;
+}
+
+/* line 92, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: .7em 0 0 0;
+  padding: 0 .2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+/* line 100, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: .5em .2em .4em;
+  cursor: pointer;
+  padding: .2em .6em .3em .6em;
+  width: auto;
+  overflow: visible;
+}
+
+/* line 108, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left;
+}
+
+/* with multiple calendars */
+/* line 113, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker.ui-datepicker-multi {
+  width: auto;
+}
+
+/* line 116, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left;
+}
+
+/* line 119, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto .4em;
+}
+
+/* line 123, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%;
+}
+
+/* line 126, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%;
+}
+
+/* line 129, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%;
+}
+
+/* line 133, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0;
+}
+
+/* line 136, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left;
+}
+
+/* line 139, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0;
+}
+
+/* RTL support */
+/* line 146, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl {
+  direction: rtl;
+}
+
+/* line 149, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl .ui-datepicker-prev {
+  right: 2px;
+  left: auto;
+}
+
+/* line 153, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl .ui-datepicker-next {
+  left: 2px;
+  right: auto;
+}
+
+/* line 157, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+  right: 1px;
+  left: auto;
+}
+
+/* line 161, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+  left: 1px;
+  right: auto;
+}
+
+/* line 165, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+  clear: right;
+}
+
+/* line 168, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+  float: left;
+}
+
+/* line 172, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+  float: right;
+}
+
+/* line 176, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.datepicker.css.scss */
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px;
+}
+
+/*
+ * jQuery UI Dialog 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Dialog#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .2em;
+  outline: 0;
+}
+
+/* line 19, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog .ui-dialog-titlebar {
+  padding: .4em 1em;
+  position: relative;
+}
+
+/* line 23, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog .ui-dialog-title {
+  float: left;
+  margin: .1em 0;
+  white-space: nowrap;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 31, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog .ui-dialog-titlebar-close {
+  position: absolute;
+  right: .3em;
+  top: 50%;
+  width: 21px;
+  margin: -10px 0 0 0;
+  padding: 1px;
+  height: 20px;
+}
+
+/* line 40, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog .ui-dialog-content {
+  position: relative;
+  border: 0;
+  padding: .5em 1em;
+  background: none;
+  overflow: auto;
+}
+
+/* line 47, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog .ui-dialog-buttonpane {
+  text-align: left;
+  border-width: 1px 0 0 0;
+  background-image: none;
+  margin-top: .5em;
+  padding: .3em 1em .5em .4em;
+}
+
+/* line 54, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  float: right;
+}
+
+/* line 57, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog .ui-dialog-buttonpane button {
+  margin: .5em .4em .5em 0;
+  cursor: pointer;
+}
+
+/* line 61, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-dialog .ui-resizable-se {
+  width: 12px;
+  height: 12px;
+  right: -5px;
+  bottom: -5px;
+  background-position: 16px 16px;
+}
+
+/* line 68, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.dialog.css.scss */
+.ui-draggable .ui-dialog-titlebar {
+  cursor: move;
+}
+
+/*
+ * jQuery UI Menu 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Menu#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu {
+  list-style: none;
+  padding: 2px;
+  margin: 0;
+  display: block;
+  outline: none;
+}
+
+/* line 19, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-menu {
+  margin-top: -3px;
+  position: absolute;
+}
+
+/* line 23, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-menu-item {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* support: IE10, see #8844 */
+  list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+}
+
+/* line 30, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-menu-divider {
+  margin: 5px -2px 5px -2px;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  border-width: 1px 0 0 0;
+}
+
+/* line 37, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-menu-item a {
+  text-decoration: none;
+  display: block;
+  padding: 2px .4em;
+  line-height: 1.5;
+  min-height: 0;
+  /* support: IE7 */
+  font-weight: normal;
+}
+
+/* line 46, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active {
+  font-weight: normal;
+  margin: -1px;
+}
+
+/* line 51, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-state-disabled {
+  font-weight: normal;
+  margin: .4em 0 .2em;
+  line-height: 1.5;
+}
+
+/* line 56, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-state-disabled a {
+  cursor: default;
+}
+
+/* icon support */
+/* line 61, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu-icons {
+  position: relative;
+}
+
+/* line 64, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu-icons .ui-menu-item a {
+  position: relative;
+  padding-left: 2em;
+}
+
+/* left-aligned */
+/* line 70, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-icon {
+  position: absolute;
+  top: .2em;
+  left: .2em;
+}
+
+/* right-aligned */
+/* line 77, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.menu.css.scss */
+.ui-menu .ui-menu-icon {
+  position: static;
+  float: right;
+}
+
+/*
+ * jQuery UI Progressbar 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Progressbar#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.progressbar.css.scss */
+.ui-progressbar {
+  height: 2em;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* line 17, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.progressbar.css.scss */
+.ui-progressbar .ui-progressbar-value {
+  margin: -1px;
+  height: 100%;
+}
+
+/* line 21, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.progressbar.css.scss */
+.ui-progressbar .ui-progressbar-overlay {
+  background: url("http://assets0.ableksikon.no/assets/jquery-ui/animated-overlay-602eee4c79a4796b02bb6442948c9e28.gif");
+  height: 100%;
+  filter: alpha(opacity=25);
+  opacity: 0.25;
+}
+
+/* line 27, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.progressbar.css.scss */
+.ui-progressbar-indeterminate .ui-progressbar-value {
+  background-image: none;
+}
+
+/*
+ * jQuery UI Resizable 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable {
+  position: relative;
+}
+
+/* line 15, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  display: block;
+}
+
+/* line 21, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-disabled .ui-resizable-handle,
+.ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+
+/* line 24, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-n {
+  cursor: n-resize;
+  height: 7px;
+  width: 100%;
+  top: -5px;
+  left: 0;
+}
+
+/* line 31, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-s {
+  cursor: s-resize;
+  height: 7px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+/* line 38, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-e {
+  cursor: e-resize;
+  width: 7px;
+  right: -5px;
+  top: 0;
+  height: 100%;
+}
+
+/* line 45, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-w {
+  cursor: w-resize;
+  width: 7px;
+  left: -5px;
+  top: 0;
+  height: 100%;
+}
+
+/* line 52, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-se {
+  cursor: se-resize;
+  width: 12px;
+  height: 12px;
+  right: 1px;
+  bottom: 1px;
+}
+
+/* line 59, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-sw {
+  cursor: sw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  bottom: -5px;
+}
+
+/* line 66, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-nw {
+  cursor: nw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  top: -5px;
+}
+
+/* line 73, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.resizable.css.scss */
+.ui-resizable-ne {
+  cursor: ne-resize;
+  width: 9px;
+  height: 9px;
+  right: -5px;
+  top: -5px;
+}
+
+/*
+ * jQuery UI Selectable 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Selectable#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.selectable.css.scss */
+.ui-selectable-helper {
+  position: absolute;
+  z-index: 100;
+  border: 1px dotted black;
+}
+
+/*
+ * jQuery UI Slider 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Slider#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider {
+  position: relative;
+  text-align: left;
+}
+
+/* line 16, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1.2em;
+  height: 1.2em;
+  cursor: default;
+}
+
+/* line 23, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  border: 0;
+  background-position: 0 0;
+}
+
+/* For IE8 - See #6727 */
+/* line 34, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+  filter: inherit;
+}
+
+/* line 38, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-horizontal {
+  height: .8em;
+}
+
+/* line 41, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-horizontal .ui-slider-handle {
+  top: -.3em;
+  margin-left: -.6em;
+}
+
+/* line 45, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%;
+}
+
+/* line 49, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-horizontal .ui-slider-range-min {
+  left: 0;
+}
+
+/* line 52, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0;
+}
+
+/* line 56, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-vertical {
+  width: .8em;
+  height: 100px;
+}
+
+/* line 60, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-vertical .ui-slider-handle {
+  left: -.3em;
+  margin-left: 0;
+  margin-bottom: -.6em;
+}
+
+/* line 65, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-vertical .ui-slider-range {
+  left: 0;
+  width: 100%;
+}
+
+/* line 69, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-vertical .ui-slider-range-min {
+  bottom: 0;
+}
+
+/* line 72, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.slider.css.scss */
+.ui-slider-vertical .ui-slider-range-max {
+  top: 0;
+}
+
+/*
+ * jQuery UI Spinner 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Spinner#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.spinner.css.scss */
+.ui-spinner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0;
+  vertical-align: middle;
+}
+
+/* line 19, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.spinner.css.scss */
+.ui-spinner-input {
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 0;
+  margin: .2em 0;
+  vertical-align: middle;
+  margin-left: .4em;
+  margin-right: 22px;
+}
+
+/* line 29, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.spinner.css.scss */
+.ui-spinner-button {
+  width: 16px;
+  height: 50%;
+  font-size: .5em;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  cursor: default;
+  display: block;
+  overflow: hidden;
+  right: 0;
+}
+
+/* line 43, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.spinner.css.scss */
+.ui-spinner a.ui-spinner-button {
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+/* vertical centre icon */
+/* line 49, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.spinner.css.scss */
+.ui-spinner .ui-icon {
+  position: absolute;
+  margin-top: -8px;
+  top: 50%;
+  left: 0;
+}
+
+/* line 55, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.spinner.css.scss */
+.ui-spinner-up {
+  top: 0;
+}
+
+/* line 58, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.spinner.css.scss */
+.ui-spinner-down {
+  bottom: 0;
+}
+
+/* TR overrides */
+/* line 63, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.spinner.css.scss */
+.ui-spinner .ui-icon-triangle-1-s {
+  /* need to fix icons sprite */
+  background-position: -65px -16px;
+}
+
+/*
+ * jQuery UI Tabs 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */
+/* line 12, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tabs.css.scss */
+.ui-tabs {
+  position: relative;
+  /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+  padding: .2em;
+}
+
+/* line 16, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tabs.css.scss */
+.ui-tabs .ui-tabs-nav {
+  margin: 0;
+  padding: .2em .2em 0;
+}
+
+/* line 20, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tabs.css.scss */
+.ui-tabs .ui-tabs-nav li {
+  list-style: none;
+  float: left;
+  position: relative;
+  top: 0;
+  margin: 1px .2em 0 0;
+  border-bottom-width: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* line 30, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tabs.css.scss */
+.ui-tabs .ui-tabs-nav li a {
+  float: left;
+  padding: .5em 1em;
+  text-decoration: none;
+}
+
+/* line 35, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tabs.css.scss */
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  margin-bottom: -1px;
+  padding-bottom: 1px;
+}
+
+/* line 41, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tabs.css.scss */
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading a {
+  cursor: text;
+}
+
+/* line 45, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tabs.css.scss */
+.ui-tabs .ui-tabs-nav li a,
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a {
+  cursor: pointer;
+}
+
+/* line 48, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tabs.css.scss */
+.ui-tabs .ui-tabs-panel {
+  display: block;
+  border-width: 0;
+  padding: 1em 1.4em;
+  background: none;
+}
+
+/*
+ * jQuery UI Tooltip 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/* line 10, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tooltip.css.scss */
+.ui-tooltip {
+  padding: 8px;
+  position: absolute;
+  z-index: 9999;
+  max-width: 300px;
+  -webkit-box-shadow: 0 0 5px #aaa;
+  box-shadow: 0 0 5px #aaa;
+}
+
+/* line 18, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.tooltip.css.scss */
+body .ui-tooltip {
+  border-width: 2px;
+}
+
+/*
+ * jQuery UI CSS Framework 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ *
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/
+ */
+/* Component containers
+----------------------------------*/
+/* line 19, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget {
+  font-family: Trebuchet MS, Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+/* line 23, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget .ui-widget {
+  font-size: 1em;
+}
+
+/* line 29, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+  font-family: Trebuchet MS, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+}
+
+/* line 33, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget-content {
+  border: 1px solid #aaaaaa;
+  background: #c9c9c9 url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_inset-soft_50_c9c9c9_1x100-6ba933202f2c25aabd1ce61dfcbf07d3.png") 50% bottom repeat-x;
+  color: #333333;
+}
+
+/* line 38, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget-content a {
+  color: #333333;
+}
+
+/* line 41, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget-header {
+  border: 1px solid #bbbbbb;
+  background: #dddddd url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_glass_35_dddddd_1x400-4b9be38349dbc2a9f017e07502b2bedd.png") 50% 50% repeat-x;
+  color: #444444;
+  font-weight: bold;
+}
+
+/* line 47, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget-header a {
+  color: #444444;
+}
+
+/* Interaction states
+----------------------------------*/
+/* line 55, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  border: 1px solid #cccccc;
+  background: #eeeeee url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_glass_60_eeeeee_1x400-e3cd4b4dfee355343ea756eb1a91592b.png") 50% 50% repeat-x;
+  font-weight: bold;
+  color: #3383bb;
+}
+
+/* line 63, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+  color: #3383bb;
+  text-decoration: none;
+}
+
+/* line 72, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+  border: 1px solid #bbbbbb;
+  background: #f8f8f8 url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_glass_100_f8f8f8_1x400-058bc79f8acb7777ad73c6c6b611ac94.png") 50% 50% repeat-x;
+  font-weight: bold;
+  color: #599fcf;
+}
+
+/* line 81, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited {
+  color: #599fcf;
+  text-decoration: none;
+}
+
+/* line 87, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  border: 1px solid #999999;
+  background: #999999 url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_inset-hard_75_999999_1x100-68bcd18a19ced22f10b19ea07adc0971.png") 50% 50% repeat-x;
+  font-weight: bold;
+  color: white;
+}
+
+/* line 95, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+/* line 104, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+  border: 1px solid white;
+  background: #eeeeee url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_flat_55_eeeeee_40x100-ee25b11d81fc6870728ebe8c55fc6d56.png") 50% 50% repeat-x;
+  color: #444444;
+}
+
+/* line 111, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+  color: #444444;
+}
+
+/* line 116, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+  border: 1px solid #c0402a;
+  background: #c0402a url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_flat_55_c0402a_40x100-11c4be565ae170b84f9bfa7f1885ace8.png") 50% 50% repeat-x;
+  color: white;
+}
+
+/* line 123, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+  color: white;
+}
+
+/* line 128, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+  color: white;
+}
+
+/* line 133, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+  font-weight: bold;
+}
+
+/* line 138, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+  opacity: .7;
+  filter: Alpha(Opacity=70);
+  font-weight: normal;
+}
+
+/* line 145, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+  opacity: .35;
+  filter: Alpha(Opacity=35);
+  background-image: none;
+}
+
+/* line 150, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-disabled .ui-icon {
+  filter: Alpha(Opacity=35);
+  /* For IE8 - See #6059 */
+}
+
+/* Icons
+----------------------------------*/
+/* states and images */
+/* line 158, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* line 163, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon,
+.ui-widget-content .ui-icon {
+  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_999999_256x240-81a090e00ed6f2d362f73bf0702f115f.png");
+}
+
+/* line 166, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget-header .ui-icon {
+  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_999999_256x240-81a090e00ed6f2d362f73bf0702f115f.png");
+}
+
+/* line 169, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-default .ui-icon {
+  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_70b2e1_256x240-eba6bb1ee5c56edde0cf52961cf23068.png");
+}
+
+/* line 173, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_3383bb_256x240-7d4365e0a082552f9e5a3eedb72df1df.png");
+}
+
+/* line 176, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-active .ui-icon {
+  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_454545_256x240-045ed660fc048796b65dc92d9ae7623d.png");
+}
+
+/* line 179, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-highlight .ui-icon {
+  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_3383bb_256x240-7d4365e0a082552f9e5a3eedb72df1df.png");
+}
+
+/* line 183, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+  background-image: url("http://assets0.ableksikon.no/assets/jquery-ui/ui-icons_fbc856_256x240-9c01b3d973aa14e96eb39073caccef8c.png");
+}
+
+/* positioning */
+/* line 188, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-blank {
+  background-position: 16px 16px;
+}
+
+/* line 189, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-1-n {
+  background-position: 0 0;
+}
+
+/* line 190, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-1-ne {
+  background-position: -16px 0;
+}
+
+/* line 191, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-1-e {
+  background-position: -32px 0;
+}
+
+/* line 192, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-1-se {
+  background-position: -48px 0;
+}
+
+/* line 193, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-1-s {
+  background-position: -64px 0;
+}
+
+/* line 194, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-1-sw {
+  background-position: -80px 0;
+}
+
+/* line 195, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-1-w {
+  background-position: -96px 0;
+}
+
+/* line 196, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-1-nw {
+  background-position: -112px 0;
+}
+
+/* line 197, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-2-n-s {
+  background-position: -128px 0;
+}
+
+/* line 198, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-carat-2-e-w {
+  background-position: -144px 0;
+}
+
+/* line 199, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-1-n {
+  background-position: 0 -16px;
+}
+
+/* line 200, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-1-ne {
+  background-position: -16px -16px;
+}
+
+/* line 201, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-1-e {
+  background-position: -32px -16px;
+}
+
+/* line 202, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-1-se {
+  background-position: -48px -16px;
+}
+
+/* line 203, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+/* line 204, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-1-sw {
+  background-position: -80px -16px;
+}
+
+/* line 205, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-1-w {
+  background-position: -96px -16px;
+}
+
+/* line 206, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-1-nw {
+  background-position: -112px -16px;
+}
+
+/* line 207, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-2-n-s {
+  background-position: -128px -16px;
+}
+
+/* line 208, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-triangle-2-e-w {
+  background-position: -144px -16px;
+}
+
+/* line 209, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-1-n {
+  background-position: 0 -32px;
+}
+
+/* line 210, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-1-ne {
+  background-position: -16px -32px;
+}
+
+/* line 211, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-1-e {
+  background-position: -32px -32px;
+}
+
+/* line 212, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-1-se {
+  background-position: -48px -32px;
+}
+
+/* line 213, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-1-s {
+  background-position: -64px -32px;
+}
+
+/* line 214, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-1-sw {
+  background-position: -80px -32px;
+}
+
+/* line 215, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-1-w {
+  background-position: -96px -32px;
+}
+
+/* line 216, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-1-nw {
+  background-position: -112px -32px;
+}
+
+/* line 217, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-2-n-s {
+  background-position: -128px -32px;
+}
+
+/* line 218, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-2-ne-sw {
+  background-position: -144px -32px;
+}
+
+/* line 219, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-2-e-w {
+  background-position: -160px -32px;
+}
+
+/* line 220, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-2-se-nw {
+  background-position: -176px -32px;
+}
+
+/* line 221, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowstop-1-n {
+  background-position: -192px -32px;
+}
+
+/* line 222, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowstop-1-e {
+  background-position: -208px -32px;
+}
+
+/* line 223, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowstop-1-s {
+  background-position: -224px -32px;
+}
+
+/* line 224, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowstop-1-w {
+  background-position: -240px -32px;
+}
+
+/* line 225, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-1-n {
+  background-position: 0 -48px;
+}
+
+/* line 226, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-1-ne {
+  background-position: -16px -48px;
+}
+
+/* line 227, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-1-e {
+  background-position: -32px -48px;
+}
+
+/* line 228, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-1-se {
+  background-position: -48px -48px;
+}
+
+/* line 229, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-1-s {
+  background-position: -64px -48px;
+}
+
+/* line 230, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-1-sw {
+  background-position: -80px -48px;
+}
+
+/* line 231, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-1-w {
+  background-position: -96px -48px;
+}
+
+/* line 232, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-1-nw {
+  background-position: -112px -48px;
+}
+
+/* line 233, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-2-n-s {
+  background-position: -128px -48px;
+}
+
+/* line 234, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-2-ne-sw {
+  background-position: -144px -48px;
+}
+
+/* line 235, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-2-e-w {
+  background-position: -160px -48px;
+}
+
+/* line 236, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthick-2-se-nw {
+  background-position: -176px -48px;
+}
+
+/* line 237, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthickstop-1-n {
+  background-position: -192px -48px;
+}
+
+/* line 238, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthickstop-1-e {
+  background-position: -208px -48px;
+}
+
+/* line 239, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthickstop-1-s {
+  background-position: -224px -48px;
+}
+
+/* line 240, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowthickstop-1-w {
+  background-position: -240px -48px;
+}
+
+/* line 241, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowreturnthick-1-w {
+  background-position: 0 -64px;
+}
+
+/* line 242, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowreturnthick-1-n {
+  background-position: -16px -64px;
+}
+
+/* line 243, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowreturnthick-1-e {
+  background-position: -32px -64px;
+}
+
+/* line 244, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowreturnthick-1-s {
+  background-position: -48px -64px;
+}
+
+/* line 245, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowreturn-1-w {
+  background-position: -64px -64px;
+}
+
+/* line 246, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowreturn-1-n {
+  background-position: -80px -64px;
+}
+
+/* line 247, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowreturn-1-e {
+  background-position: -96px -64px;
+}
+
+/* line 248, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowreturn-1-s {
+  background-position: -112px -64px;
+}
+
+/* line 249, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowrefresh-1-w {
+  background-position: -128px -64px;
+}
+
+/* line 250, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowrefresh-1-n {
+  background-position: -144px -64px;
+}
+
+/* line 251, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowrefresh-1-e {
+  background-position: -160px -64px;
+}
+
+/* line 252, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrowrefresh-1-s {
+  background-position: -176px -64px;
+}
+
+/* line 253, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-4 {
+  background-position: 0 -80px;
+}
+
+/* line 254, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-arrow-4-diag {
+  background-position: -16px -80px;
+}
+
+/* line 255, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-extlink {
+  background-position: -32px -80px;
+}
+
+/* line 256, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-newwin {
+  background-position: -48px -80px;
+}
+
+/* line 257, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-refresh {
+  background-position: -64px -80px;
+}
+
+/* line 258, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-shuffle {
+  background-position: -80px -80px;
+}
+
+/* line 259, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-transfer-e-w {
+  background-position: -96px -80px;
+}
+
+/* line 260, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-transferthick-e-w {
+  background-position: -112px -80px;
+}
+
+/* line 261, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-folder-collapsed {
+  background-position: 0 -96px;
+}
+
+/* line 262, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-folder-open {
+  background-position: -16px -96px;
+}
+
+/* line 263, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-document {
+  background-position: -32px -96px;
+}
+
+/* line 264, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-document-b {
+  background-position: -48px -96px;
+}
+
+/* line 265, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-note {
+  background-position: -64px -96px;
+}
+
+/* line 266, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-mail-closed {
+  background-position: -80px -96px;
+}
+
+/* line 267, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-mail-open {
+  background-position: -96px -96px;
+}
+
+/* line 268, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-suitcase {
+  background-position: -112px -96px;
+}
+
+/* line 269, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-comment {
+  background-position: -128px -96px;
+}
+
+/* line 270, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-person {
+  background-position: -144px -96px;
+}
+
+/* line 271, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-print {
+  background-position: -160px -96px;
+}
+
+/* line 272, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-trash {
+  background-position: -176px -96px;
+}
+
+/* line 273, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-locked {
+  background-position: -192px -96px;
+}
+
+/* line 274, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-unlocked {
+  background-position: -208px -96px;
+}
+
+/* line 275, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-bookmark {
+  background-position: -224px -96px;
+}
+
+/* line 276, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-tag {
+  background-position: -240px -96px;
+}
+
+/* line 277, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-home {
+  background-position: 0 -112px;
+}
+
+/* line 278, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-flag {
+  background-position: -16px -112px;
+}
+
+/* line 279, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-calendar {
+  background-position: -32px -112px;
+}
+
+/* line 280, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-cart {
+  background-position: -48px -112px;
+}
+
+/* line 281, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-pencil {
+  background-position: -64px -112px;
+}
+
+/* line 282, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-clock {
+  background-position: -80px -112px;
+}
+
+/* line 283, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-disk {
+  background-position: -96px -112px;
+}
+
+/* line 284, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-calculator {
+  background-position: -112px -112px;
+}
+
+/* line 285, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-zoomin {
+  background-position: -128px -112px;
+}
+
+/* line 286, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-zoomout {
+  background-position: -144px -112px;
+}
+
+/* line 287, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-search {
+  background-position: -160px -112px;
+}
+
+/* line 288, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-wrench {
+  background-position: -176px -112px;
+}
+
+/* line 289, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-gear {
+  background-position: -192px -112px;
+}
+
+/* line 290, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-heart {
+  background-position: -208px -112px;
+}
+
+/* line 291, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-star {
+  background-position: -224px -112px;
+}
+
+/* line 292, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-link {
+  background-position: -240px -112px;
+}
+
+/* line 293, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-cancel {
+  background-position: 0 -128px;
+}
+
+/* line 294, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-plus {
+  background-position: -16px -128px;
+}
+
+/* line 295, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-plusthick {
+  background-position: -32px -128px;
+}
+
+/* line 296, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-minus {
+  background-position: -48px -128px;
+}
+
+/* line 297, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-minusthick {
+  background-position: -64px -128px;
+}
+
+/* line 298, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-close {
+  background-position: -80px -128px;
+}
+
+/* line 299, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-closethick {
+  background-position: -96px -128px;
+}
+
+/* line 300, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-key {
+  background-position: -112px -128px;
+}
+
+/* line 301, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-lightbulb {
+  background-position: -128px -128px;
+}
+
+/* line 302, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-scissors {
+  background-position: -144px -128px;
+}
+
+/* line 303, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-clipboard {
+  background-position: -160px -128px;
+}
+
+/* line 304, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-copy {
+  background-position: -176px -128px;
+}
+
+/* line 305, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-contact {
+  background-position: -192px -128px;
+}
+
+/* line 306, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-image {
+  background-position: -208px -128px;
+}
+
+/* line 307, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-video {
+  background-position: -224px -128px;
+}
+
+/* line 308, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-script {
+  background-position: -240px -128px;
+}
+
+/* line 309, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-alert {
+  background-position: 0 -144px;
+}
+
+/* line 310, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-info {
+  background-position: -16px -144px;
+}
+
+/* line 311, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-notice {
+  background-position: -32px -144px;
+}
+
+/* line 312, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-help {
+  background-position: -48px -144px;
+}
+
+/* line 313, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-check {
+  background-position: -64px -144px;
+}
+
+/* line 314, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-bullet {
+  background-position: -80px -144px;
+}
+
+/* line 315, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-radio-on {
+  background-position: -96px -144px;
+}
+
+/* line 316, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-radio-off {
+  background-position: -112px -144px;
+}
+
+/* line 317, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-pin-w {
+  background-position: -128px -144px;
+}
+
+/* line 318, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-pin-s {
+  background-position: -144px -144px;
+}
+
+/* line 319, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-play {
+  background-position: 0 -160px;
+}
+
+/* line 320, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-pause {
+  background-position: -16px -160px;
+}
+
+/* line 321, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-seek-next {
+  background-position: -32px -160px;
+}
+
+/* line 322, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-seek-prev {
+  background-position: -48px -160px;
+}
+
+/* line 323, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-seek-end {
+  background-position: -64px -160px;
+}
+
+/* line 324, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-seek-start {
+  background-position: -80px -160px;
+}
+
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+/* line 326, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-seek-first {
+  background-position: -80px -160px;
+}
+
+/* line 327, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-stop {
+  background-position: -96px -160px;
+}
+
+/* line 328, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-eject {
+  background-position: -112px -160px;
+}
+
+/* line 329, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-volume-off {
+  background-position: -128px -160px;
+}
+
+/* line 330, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-volume-on {
+  background-position: -144px -160px;
+}
+
+/* line 331, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-power {
+  background-position: 0 -176px;
+}
+
+/* line 332, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-signal-diag {
+  background-position: -16px -176px;
+}
+
+/* line 333, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-signal {
+  background-position: -32px -176px;
+}
+
+/* line 334, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-battery-0 {
+  background-position: -48px -176px;
+}
+
+/* line 335, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-battery-1 {
+  background-position: -64px -176px;
+}
+
+/* line 336, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-battery-2 {
+  background-position: -80px -176px;
+}
+
+/* line 337, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-battery-3 {
+  background-position: -96px -176px;
+}
+
+/* line 338, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-plus {
+  background-position: 0 -192px;
+}
+
+/* line 339, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-minus {
+  background-position: -16px -192px;
+}
+
+/* line 340, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-close {
+  background-position: -32px -192px;
+}
+
+/* line 341, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-triangle-e {
+  background-position: -48px -192px;
+}
+
+/* line 342, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-triangle-s {
+  background-position: -64px -192px;
+}
+
+/* line 343, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-triangle-w {
+  background-position: -80px -192px;
+}
+
+/* line 344, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-triangle-n {
+  background-position: -96px -192px;
+}
+
+/* line 345, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-arrow-e {
+  background-position: -112px -192px;
+}
+
+/* line 346, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-arrow-s {
+  background-position: -128px -192px;
+}
+
+/* line 347, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-arrow-w {
+  background-position: -144px -192px;
+}
+
+/* line 348, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-arrow-n {
+  background-position: -160px -192px;
+}
+
+/* line 349, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-zoomin {
+  background-position: -176px -192px;
+}
+
+/* line 350, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-zoomout {
+  background-position: -192px -192px;
+}
+
+/* line 351, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circle-check {
+  background-position: -208px -192px;
+}
+
+/* line 352, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circlesmall-plus {
+  background-position: 0 -208px;
+}
+
+/* line 353, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circlesmall-minus {
+  background-position: -16px -208px;
+}
+
+/* line 354, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-circlesmall-close {
+  background-position: -32px -208px;
+}
+
+/* line 355, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-squaresmall-plus {
+  background-position: -48px -208px;
+}
+
+/* line 356, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-squaresmall-minus {
+  background-position: -64px -208px;
+}
+
+/* line 357, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-squaresmall-close {
+  background-position: -80px -208px;
+}
+
+/* line 358, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-grip-dotted-vertical {
+  background-position: 0 -224px;
+}
+
+/* line 359, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-grip-dotted-horizontal {
+  background-position: -16px -224px;
+}
+
+/* line 360, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-grip-solid-vertical {
+  background-position: -32px -224px;
+}
+
+/* line 361, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-grip-solid-horizontal {
+  background-position: -48px -224px;
+}
+
+/* line 362, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-gripsmall-diagonal-se {
+  background-position: -64px -224px;
+}
+
+/* line 363, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-icon-grip-diagonal-se {
+  background-position: -80px -224px;
+}
+
+/* Misc visuals
+----------------------------------*/
+/* Corner radius */
+/* line 373, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+  border-top-left-radius: 6px;
+}
+
+/* line 379, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+  border-top-right-radius: 6px;
+}
+
+/* line 385, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+  border-bottom-left-radius: 6px;
+}
+
+/* line 391, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+  border-bottom-right-radius: 6px;
+}
+
+/* Overlays */
+/* line 396, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget-overlay {
+  background: #eeeeee url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_flat_0_eeeeee_40x100-ee25b11d81fc6870728ebe8c55fc6d56.png") 50% 50% repeat-x;
+  opacity: 0.8;
+  filter: Alpha(Opacity=80);
+}
+
+/* line 401, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/jquery-ui-sass-rails-4.0.3.0/app/assets/stylesheets/jquery.ui.theme.css.scss */
+.ui-widget-shadow {
+  margin: -4px 0 0 -4px;
+  padding: 4px;
+  background: #aaaaaa url("http://assets0.ableksikon.no/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100-64a990509e05884e0fb6e85eb7cf4991.png") 50% 50% repeat-x;
+  opacity: 0.6;
+  filter: Alpha(Opacity=60);
+  border-radius: 0px;
+}
