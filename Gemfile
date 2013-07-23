@@ -9,6 +9,7 @@ gem 'aws-s3', github: 'zeevex/aws-s3', ref: '406cdb5f6e0125fb9cc74246113870eba3b
 gem 'rails', '3.2.13'
 
 gem 'thin'
+gem 'eventmachine', "~>1.0.0"
 
 # Asset pipeline
 group :assets do
@@ -99,6 +100,7 @@ end
 group :test do
   # http://github.com/aslakhellesoy/cucumber-rails
   gem 'capybara', '~> 1.0'
+
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
