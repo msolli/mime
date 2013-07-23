@@ -49,7 +49,7 @@ Mime::Application.configure do
   config.serve_static_assets = true
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
-  config.action_controller.asset_host = "assets1.ableksikon.no"
+  config.action_controller.asset_host = "assets1.ableksikon.no.s3-external-3.amazonaws.com"
 
   # Devise wants this
   # TODO - pass på at dette virker med Heroku og Sendgrid
