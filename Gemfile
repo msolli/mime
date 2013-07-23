@@ -20,6 +20,7 @@ group :assets do
   gem "therubyracer", :require => 'v8'
 
   gem 'asset_sync'
+  gem 'turbo-sprockets-rails3'
 end
 
 gem 'jquery-rails'
