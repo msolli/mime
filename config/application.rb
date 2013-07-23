@@ -66,7 +66,7 @@ module Mime
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.assets.precompile += ['mobile.js', 'mobile.css', 'ckeditor/plugings/mimelink/plugin.js']
+    config.assets.precompile += ['mobile.js', 'mobile.css', 'ckeditor/plugins/mimelink/plugin.js']
 
     config.assets.initialize_on_precompile = false
   end
