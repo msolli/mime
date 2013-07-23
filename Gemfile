@@ -18,6 +18,8 @@ group :assets do
   gem 'uglifier'
 
   gem "therubyracer", :require => 'v8'
+
+  gem 'asset_sync'
 end
 
 gem 'jquery-rails'
@@ -120,6 +122,6 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.6.0.rc6'
-
-  gem 'figaro'
 end
+
+gem 'figaro'
