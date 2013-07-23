@@ -2,7 +2,7 @@ Mime::Application.routes.draw do
 
 #  mount Ckeditor::Engine => '/ckeditor'
 #
-  devise_for :users
+  devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
   devise_scope :user do
     constraints :id => /[^\/]*/ do
       resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit] do
