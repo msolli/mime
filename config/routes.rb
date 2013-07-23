@@ -2,7 +2,8 @@ Mime::Application.routes.draw do
 
 #  mount Ckeditor::Engine => '/ckeditor'
 #
-  devise_for :users, :module => 'users' do
+  devise_for :users
+  devise_scope :user do
     constraints :id => /[^\/]*/ do
       resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit] do
         resources :articles, :path => 'artikler', :only => [:index]
