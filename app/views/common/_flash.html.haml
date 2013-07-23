@@ -8,7 +8,7 @@
       {{if $value[0] == 'redirected_from'}}
         <li class="redirected"><%= "#{t('articles.redirected', :from => "{{html $value[1]}}")}" %></li>
       {{else}}
-        <li id="${$value[0]}">${$value[1]}</li>
+        <li id="${$value[0]}">{{html $value[1]}}</li>
       {{/if}}
     {{/each}}
   {{/if}}
