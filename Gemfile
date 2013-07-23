@@ -109,4 +109,6 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.6.0.rc6'
+
+  gem 'figaro'
 end

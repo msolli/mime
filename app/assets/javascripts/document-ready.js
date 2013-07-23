@@ -6,7 +6,6 @@ $(document).ready(function() {
   (function(){
     // Parse templates and append to #user-links and #messages
     var addUserData = function(data) {
-      console.log(data.user, data.flash)
       $('#user-links-tmpl').tmpl(data.user).appendTo('#user-links').hide().fadeIn('fast');
       if (data.flash) {
         $('#messages-tmpl').tmpl({ flash: data.flash }).appendTo('#messages').hide().fadeIn('fast');

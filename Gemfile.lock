@@ -118,6 +118,9 @@ GEM
       rack (~> 1.1)
     fattr (2.2.1)
     ffi (1.9.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fog (0.8.2)
       builder
       excon (~> 0.6.1)
