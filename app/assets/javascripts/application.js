@@ -13,11 +13,11 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.datepicker-no
 //= require jquery.ui.progressbar
-//= require jquery/jquery.templates/beta1/jquery.tmpl
-//= require jquery/jquery.timeago/0.9.2/jquery.timeago
-//= require jquery/jquery.timeago/common/jquery.timeago.no
-//= require jquery/jquery.cookie/2010-01-08/jquery.cookie
-//= require jquery/jquery.imgloaded/2010-08-23/ahpi.imgload
+//= require jquery.templates/beta1/jquery.tmpl
+//= require jquery.timeago/0.9.2/jquery.timeago
+//= require jquery.timeago/common/jquery.timeago.no
+//= require jquery.cookie/2010-01-08/jquery.cookie
+//= require jquery.imgloaded/2010-08-23/ahpi.imgload
 //= require plupload/plupload
 //= require plupload/plupload.html5
 //= require plupload/plupload.flash
