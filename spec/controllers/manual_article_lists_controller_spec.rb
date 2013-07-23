@@ -20,7 +20,7 @@ describe ManualArticleListsController do
         list_attributes['list_articles_attributes'] = {}
         list.list_articles.each_with_index do |a, i|
           article_attrs = a.attributes
-          article_attrs.delete(:_id)
+          article_attrs.delete('_id')
           list_attributes['list_articles_attributes'][i] = article_attrs
         end
         post :create, manual_article_list: list_attributes, page_id: page.id
