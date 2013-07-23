@@ -34,7 +34,7 @@ Mime::Application.configure do
     #   rack_env['HTTP_USER_AGENT'] =~ Regexp.new(MOBILE_USER_AGENTS)
     # }
     r301 %r{.*}, 'http://www.ableksikon.no$&', :if => Proc.new {|rack_env|
-      rack_env['HTTP_HOST'] !~ /^(www|mobil|mime-staging|localhost|10.0.2.2)/
+      rack_env['HTTP_HOST'] !~ /^(www|mobil|mime-staging|ableksikon-staging|localhost|10.0.2.2)/
     }
   end
 
