@@ -3,7 +3,5 @@ base_path = ''
 base_path << Rails.application.config.action_controller.asset_host
 base_path << Rails.application.config.assets.prefix
 base_path << '/ckeditor/'
-
-base_path = '//' + base_path unless base_path.match(/\A\/[^\/]/)
 %>
 window['CKEDITOR_BASEPATH'] = '<%= base_path %>';
