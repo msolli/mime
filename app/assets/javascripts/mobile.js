@@ -5,5 +5,5 @@
 //= require jquery.timeago/0.9.2/jquery.timeago
 //= require jquery.timeago/common/jquery.timeago.no
 //= require mobile/jquery-mobile-config
-//= require jquery.mobile-1.0a3/jquery.mobile-1.0a3
+//= require jquery.mobile/jquery.mobile-1.3.2
 //= require mobile/mobile-application

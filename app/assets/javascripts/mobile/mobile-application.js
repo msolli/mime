@@ -6,7 +6,7 @@
 				.eq(idx).addClass('current');
 	};
 	
-	$('.image-flicker figure').live('swipeleft', function(e) {
+	$(document).on('swipeleft', '.image-flicker figure', function(e) {
 		if($(this).siblings('figure').length > 0) {
 			var next = $(this).hide().next('figure');
 			if(next.length == 0) {
@@ -16,7 +16,7 @@
 		}
 	});
 
-	$('.image-flicker figure').live('swiperight', function(e) {
+	$(document).on('swiperight', '.image-flicker figure', function(e) {
 		if($(this).siblings('figure').length > 0) {
 			var next = $(this).hide().prev('figure');
 			if(next.length == 0) {

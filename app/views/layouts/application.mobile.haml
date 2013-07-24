@@ -6,8 +6,7 @@
     %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : t('mime.description')}
     %meta{:'http-equiv' => "content-language", :content => "no"}
     = yield :canonical
-    
-    %link{:type => 'text/css', :rel => 'stylesheet', :media => 'screen', :href => '/lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.min.css'}
+
     = stylesheet_link_tag 'mobile'
     = favicon_link_tag
 
