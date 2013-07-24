@@ -10,6 +10,7 @@ GIT
 GIT
   remote: git://github.com/kabriel/sunspot_mongoid.git
   revision: 7695fa299e7072ba41aab5197e53fbb3faffa47e
+  ref: 7695fa299e7072ba41aab5197e53fbb3faffa47e
   specs:
     sunspot_mongoid (0.3.2)
       mongoid

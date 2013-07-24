@@ -26,11 +26,6 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-ui-sass-rails'
-# gem 'asset_sync'
-# gem 'hassle', :require => false
-# gem 'jammit'
-# gem 'uglifier'
-# gem 'asset_id', :git => 'git://github.com/msolli/asset_id.git'
 
 # Template engine
 gem 'haml'
@@ -39,7 +34,7 @@ gem 'haml'
 gem 'mongoid'
 gem 'bson', '~> 1.3'
 gem 'bson_ext', '~> 1.3'
-gem 'mongo_store', git: 'git://github.com/budstikka/mongo_store.git', ref: 'bc6988060d4ab508901c'
+gem 'mongo_store', github: 'budstikka/mongo_store', ref: 'bc6988060d4ab508901c'
 
 # Authentication and authorization
 gem 'devise'
@@ -69,7 +64,7 @@ gem 'exceptional'
 
 # Search indexing
 gem 'sunspot_rails'
-gem 'sunspot_mongoid', :git => 'git://github.com/kabriel/sunspot_mongoid.git'
+gem 'sunspot_mongoid', github: 'kabriel/sunspot_mongoid', ref: '7695fa299e7072ba41aab5197e53fbb3faffa47e'
 
 # Async jobs
 gem 'delayed_job'
@@ -92,9 +87,6 @@ group :development do
   gem 'hirb'
   gem 'hpricot'
   gem 'ruby_parser'
-  # gem 'ruby-debug'
-  # gem 'linecache19', '0.5.13'
-  gem 'thin'
 
   gem 'sunspot_solr'
 
@@ -122,6 +114,5 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.6.0.rc6'
+  gem 'figaro'
 end
-
-gem 'figaro'
