@@ -26,6 +26,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-ui-sass-rails'
+gem 'plupload-rails'
 
 # Template engine
 gem 'haml'

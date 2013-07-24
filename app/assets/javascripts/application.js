@@ -20,9 +20,11 @@
 //= require jquery.imgloaded/2010-08-23/ahpi.imgload
 //= require ckeditor/basepath
 //= require ckeditor/init
-//= require plupload/plupload
-//= require plupload/plupload.html5
-//= require plupload/plupload.flash
+//= require plupload
+//= require plupload/i18n/no
+//= require plupload.settings     
+//= require plupload.html5        
+//= require plupload.flash        
 //= require image-upload
 //= require maptastic
 //= require jquery_ujs
