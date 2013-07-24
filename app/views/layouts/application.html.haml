@@ -16,13 +16,11 @@
 
   = yield :canonical
 
-  = include_stylesheets :all
+  = stylesheet_link_tag 'application'
   = favicon_link_tag
-
   %script{:src => "/js/"}
-
   = yield :javascripts
-  = include_javascripts :all
+  = javascript_include_tag 'application'
 
   = csrf_meta_tag
 

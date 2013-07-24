@@ -1,10 +1,10 @@
 class SearchController < ApplicationController
-  rescue_from RSolr::RequestError, :with => :solr_error
+  rescue_from RSolr::Error::Http, :with => :solr_error
   
   def new
     if params[:q]
       @search_result = Article.search do
-        keywords params[:q] do
+        fulltext params[:q] do
           highlight :text
         end
         

@@ -5,10 +5,16 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "rails/test_unit/railtie"
+require 'sprockets/railtie'
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+if defined?(Bundler)
+  # If you precompile assets before deploying to production, use this line
+  Bundler.require *Rails.groups(:assets => %w(development test))
+  # If you want your assets lazily compiled in production, use this line
+  # Bundler.require(:default, :assets, Rails.env)
+end
 
 require 'rails/generators'
 
@@ -19,7 +25,7 @@ module Mime
     # -- all .rb files in that directory are automatically loaded.
 
     # Add additional load paths for your own custom dirs
-    config.autoload_paths += %W( #{config.root}/lib #{config.root}/app/sweepers )
+    config.autoload_paths += %W( #{config.root}/lib #{config.root}/app/sweepers #{config.root}/app/middlewares )
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named
@@ -53,5 +59,15 @@ module Mime
 
     # Dragonfly
     config.middleware.insert 0, 'Dragonfly::Middleware', :images
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
+
+    config.assets.precompile += ['mobile.js', 'mobile.css', 'ckeditor/plugins/mimelink/plugin.js']
+
+    config.assets.initialize_on_precompile = false
   end
 end

@@ -81,6 +81,8 @@ no-NB:
     images:
       upload: Last opp bilder
       add: Legg til bilder
+      add_file: Last inn fil…
+      no_flash: For å laste opp bilder trenger du en nyere nettleser, eller Adobe Flash.
       upload_error: Det skjedde en feil under opplastingen. Prøv igjen.
       upload_wizard:
         edit_info: "Rediger bildeinfo"
@@ -275,11 +277,54 @@ no-NB:
       default: "%d.%m.%Y"
       short: "%e. %b"
       long: "%e. %B %Y"
-    day_names: [søndag, mandag, tirsdag, onsdag, torsdag, fredag, lørdag]
-    abbr_day_names: [søn, man, tir, ons, tor, fre, lør]
-    month_names: [~, januar, februar, mars, april, mai, juni, juli, august, september, oktober, november, desember]
-    abbr_month_names: [~, jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des]
-    order: [:day, :month, :year]
+    day_names:
+      - søndag
+      - mandag
+      - tirsdag
+      - onsdag
+      - torsdag
+      - fredag
+      - lørdag
+    abbr_day_names:
+      - søn
+      - man
+      - tir
+      - ons
+      - tor
+      - fre
+      - lør
+    month_names:
+      - ~
+      - januar
+      - februar
+      - mars
+      - april
+      - mai
+      - juni
+      - juli
+      - august
+      - september
+      - oktober
+      - november
+      - desember
+    abbr_month_names: 
+      - ~
+      - jan
+      - feb
+      - mar
+      - apr
+      - mai
+      - jun
+      - jul
+      - aug
+      - sep
+      - okt
+      - nov
+      - des
+    order:
+      - :day
+      - :month
+      - :year
   time:
     formats:
       default: "%A, %e. %B %Y, %H:%M"

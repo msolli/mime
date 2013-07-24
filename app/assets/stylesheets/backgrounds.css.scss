@@ -1,0 +1,12 @@
+body {
+  background: white image-url('bg-nav.png') no-repeat top center;
+}
+#main {
+  background: #efefef image-url('bg-article-header.png') no-repeat top center;
+}
+table.articles th .asc {
+  background-image: image-url('icons/up_arrow.gif');
+}
+table.articles th .desc {
+  background-image: image-url('icons/down_arrow.gif');
+}

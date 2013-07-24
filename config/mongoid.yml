@@ -13,6 +13,7 @@ development:
 
 test:
   <<: *defaults
+  logger: false
   database: mime_test
 
 # set these environment variables on your prod server
