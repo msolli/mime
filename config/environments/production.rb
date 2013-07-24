@@ -70,10 +70,11 @@ Mime::Application.configure do
 
   # asset_id
   # Compress JavaScripts and CSS
-  config.assets.compress = false
+  config.assets.compress = true
+  config.assets.js_compressor = Uglifier.new(:beautify => true) if defined? Uglifier
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
