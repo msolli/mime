@@ -49,11 +49,11 @@ Mime::Application.configure do
   config.serve_static_assets = true
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
-  config.action_controller.asset_host = "http://assets1.ableksikon.no.s3-external-3.amazonaws.com"
+  config.action_controller.asset_host = "http://#{ENV['S3_ASSETS_BUCKET']}.s3-external-3.amazonaws.com"
 
   # Devise wants this
   # TODO - pass på at dette virker med Heroku og Sendgrid
-  config.action_mailer.default_url_options = { :host => 'ableksikon.heroku.com' }
+  config.action_mailer.default_url_options = { :host => ENV['APP_HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false

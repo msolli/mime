@@ -3,7 +3,7 @@ if defined?(AssetSync)
     config.fog_provider = 'AWS'
     config.aws_access_key_id = ENV['S3_KEY']
     config.aws_secret_access_key = ENV['S3_SECRET']
-    config.fog_directory = 'assets1.ableksikon.no'
+    config.fog_directory = ENV['S3_ASSETS_BUCKET']
     
     # Increase upload performance by configuring your region
     config.fog_region = 'eu-west-1'
