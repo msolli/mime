@@ -5,7 +5,6 @@
   <em>#{t('articles.edit')}</em> – #{link_to(@article.headword_presentation, pretty_article_path(@article))}
 
 - content_for :javascripts do
-  = javascript_include_tag :ckeditor
   = render :partial => "common/googlemaps"
 
 = render :partial => 'info', :locals => { :article => @article }

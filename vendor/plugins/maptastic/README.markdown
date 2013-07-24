@@ -2,17 +2,21 @@
 
 ## Installation
 
-First, you'll need to install [Formtastic][1].
-
-Next, install Maptastic as a plugin:
-
-    script/plugin install git://github.com/pake007/maptastic.git (for Rails 2)
-    rails plugin install git://github.com/pake007/maptastic.git (for Rails 3)
+jQuery & Rails3 & [Formtastic][1] ver 2.0.0.pre & CoffeeScript.
 
 
-...and run the rake task to install the required js file into your javascripts directory. You will probably need to include this in your layouts, too.
+		
+You can install this as gem:
 
-    rake maptastic:install
+    gem install maptastic-form
+
+Also you'll need to copy the JS asset from:
+
+    https://github.com/Kasmanaft/maptastic/blob/master/assets/javascripts/maptastic.js
+
+Or copy CoffeScript from:
+
+    https://github.com/Kasmanaft/maptastic/blob/master/assets/coffeescript/maptastic.coffee
 
 You'll need to add the [Google Maps **V3**][3] script include in your page, above your semantic_form:
 
@@ -22,24 +26,31 @@ Note that you no longer need an API key with the latest Google Maps release.
 
 ## Usage
 
-Maptastic adds a new #multi_input method as well as the map control:
+Maptastic adds a new input type:
 
     <% semantic_form_for @venue do |f| %>
-      <%= f.multi_input :latitude, :longitude, :as => :map, :zoom => 10 %>
+      <%= f.input :your_map, :latitude=>'latitude_field', :longitude=>'longitude_field', :zoom=>'zoom_field', :as => :map %>
     <% end %>
 
-Note that the map input expects two parameters - a latitude and longitude. The order is important. The option zoom is optional, which defines the size of initial map.
-
-And also, I provide a new public function which can do the simple geocoding work. You can use this function in your js file:
-
-    MaptasticMap.findAddress(address)
-
-This will set your map center to the address you queried, the parameter address can be any of string, like "China, Shanghai, People Square".
+Note that the latitude, longitude and zoom is not . The order is not important.
 
 ## Development
 
-Maybe there will be more functions to added in. Or you can fork and enhance it by yourself, good luck!
+This gem is under development. It's pretty simple, and patches are very welcome.
 
-## Thanks
+[The Repo is available on GitHub][5]
 
-This repo is forked from MattHall/maptastic, thanks for his cool work!
+[Report bugs here][4]
+
+A [testbed app is available][6] to check that the changes made actually work as expected.
+
+## Project Info
+
+Copyright © 2010 [Matthew Hall][2], released under the MIT license.
+
+[1]:http://github.com/justinfrench/formtastic
+[2]:http://codebeef.com
+[3]:http://code.google.com/apis/maps/documentation/javascript/
+[4]:https://matt.purifyapp.com/projects/maptastic/issues
+[5]:http://github.com/MattHall/maptastic
+[6]:http://github.com/MattHall/maptastic-testbed

@@ -10,6 +10,7 @@ GIT
 GIT
   remote: git://github.com/kabriel/sunspot_mongoid.git
   revision: 7695fa299e7072ba41aab5197e53fbb3faffa47e
+  ref: 7695fa299e7072ba41aab5197e53fbb3faffa47e
   specs:
     sunspot_mongoid (0.3.2)
       mongoid
@@ -17,126 +18,113 @@ GIT
       sunspot_rails (>= 1.2.rc4)
 
 GIT
-  remote: git://github.com/msolli/asset_id.git
-  revision: d89b666d7f3f01523ae5241a0dd8f8a34d3bbf49
+  remote: git://github.com/zeevex/aws-s3.git
+  revision: 406cdb5f6e0125fb9cc74246113870eba3b9765c
+  ref: 406cdb5f6e0125fb9cc74246113870eba3b9765c
   specs:
-    asset_id (0.1.3)
-      aws-s3 (>= 0.6.2)
-      mime-types (>= 1.16)
-
-GIT
-  remote: http://github.com/budstikka/rails-ckeditor.git
-  revision: 89e1afcddecefe6d093bdb1f03c7a958a8493ef9
-  branch: rails3
-  specs:
-    ckeditor (3.4.3.pre)
-      mime-types (>= 1.16)
-
-GIT
-  remote: http://github.com/mongoid/mongoid.git
-  revision: 39ede2eae143feadc6f434b62f77d8002e26a977
-  specs:
-    mongoid (2.0.1)
-      activemodel (~> 3.0)
-      mongo (~> 1.3)
-      tzinfo (~> 0.3.22)
-
-GIT
-  remote: http://github.com/plataformatec/devise.git
-  revision: 971f68f97d472d4b3b9244594b85759ddf76d1ca
-  specs:
-    devise (1.2.rc)
-      bcrypt-ruby (~> 2.1.2)
-      orm_adapter (~> 0.0.3)
-      warden (~> 1.0.3)
-
-GEM
-  remote: http://rubygems.org/
-  specs:
-    POpen4 (0.1.4)
-      Platform (>= 0.4.0)
-      open4
-    Platform (0.4.0)
-    ZenTest (4.4.2)
-    abstract (1.0.0)
-    actionmailer (3.0.9)
-      actionpack (= 3.0.9)
-      mail (~> 2.2.19)
-    actionpack (3.0.9)
-      activemodel (= 3.0.9)
-      activesupport (= 3.0.9)
-      builder (~> 2.1.2)
-      erubis (~> 2.6.6)
-      i18n (~> 0.5.0)
-      rack (~> 1.2.1)
-      rack-mount (~> 0.6.14)
-      rack-test (~> 0.5.7)
-      tzinfo (~> 0.3.23)
-    activemodel (3.0.9)
-      activesupport (= 3.0.9)
-      builder (~> 2.1.2)
-      i18n (~> 0.5.0)
-    activerecord (3.0.9)
-      activemodel (= 3.0.9)
-      activesupport (= 3.0.9)
-      arel (~> 2.0.10)
-      tzinfo (~> 0.3.23)
-    activeresource (3.0.9)
-      activemodel (= 3.0.9)
-      activesupport (= 3.0.9)
-    activesupport (3.0.9)
-    addressable (2.2.2)
-    archive-tar-minitar (0.5.2)
-    arel (2.0.10)
-    autotest-rails (4.1.0)
-      ZenTest
-    aws-s3 (0.6.2)
+    aws-s3 (0.6.2.4)
       builder
       mime-types
       xml-simple
-    bcrypt-ruby (2.1.4)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ZenTest (4.4.2)
+    actionmailer (3.2.13)
+      actionpack (= 3.2.13)
+      mail (~> 2.5.3)
+    actionpack (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      journey (~> 1.0.4)
+      rack (~> 1.4.5)
+      rack-cache (~> 1.2)
+      rack-test (~> 0.6.1)
+      sprockets (~> 2.2.1)
+    activemodel (3.2.13)
+      activesupport (= 3.2.13)
+      builder (~> 3.0.0)
+    activerecord (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activeresource (3.2.13)
+      activemodel (= 3.2.13)
+      activesupport (= 3.2.13)
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
+      multi_json (~> 1.0)
+    addressable (2.3.5)
+    arel (3.0.2)
+    asset_sync (0.5.4)
+      activemodel
+      fog
+    autotest-rails (4.1.0)
+      ZenTest
+    bcrypt-ruby (3.1.1)
+    better_errors (0.9.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bson (1.3.0)
     bson_ext (1.3.0)
-    builder (2.1.2)
+    builder (3.0.4)
     cancan (1.5.0)
-    capybara (1.0.0)
+    capybara (1.1.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
-      selenium-webdriver (~> 0.2.0)
+      selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    childprocess (0.1.9)
-      ffi (~> 1.0.6)
-    columnize (0.3.2)
-    configuration (1.2.0)
-    cucumber (0.10.7)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
+    ckeditor (4.0.4)
+      mime-types
+      orm_adapter
+    coderay (1.0.9)
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.3)
+    cucumber (1.0.6)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
-      gherkin (~> 2.4.0)
+      gherkin (~> 2.4.18)
       json (>= 1.4.6)
-      term-ansicolor (>= 1.0.5)
-    cucumber-rails (0.5.2)
-      capybara (>= 1.0.0.rc1)
-      cucumber (>= 0.10.5)
-      nokogiri (>= 1.4.4)
-      rack-test (>= 0.5.7)
-    daemons (1.1.0)
+      term-ansicolor (>= 1.0.6)
+    cucumber-rails (1.0.2)
+      capybara (>= 1.0.0)
+      cucumber (~> 1.0.0)
+      nokogiri (>= 1.4.6)
+    daemons (1.1.9)
     database_cleaner (0.6.0)
-    delayed_job (2.1.2)
+    debug_inspector (0.0.2)
+    delayed_job (2.1.4)
       activesupport (~> 3.0)
       daemons
     delayed_job_mongoid (1.0.2)
       delayed_job (~> 2.1.1)
       mongoid (~> 2.0.0.rc)
-    diff-lcs (1.1.2)
+    devise (3.0.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.3)
+    diff-lcs (1.1.3)
     dragonfly (0.9.4)
       rack
-    erubis (2.6.6)
-      abstract (>= 1.0.0)
-    escape (0.0.4)
+    erubis (2.7.0)
     escape_utils (0.1.9)
-    eventmachine (0.12.10)
+    eventmachine (1.0.3)
     exceptional (2.0.32)
       rack
     excon (0.6.3)
@@ -145,12 +133,15 @@ GEM
     factory_girl_rails (1.0.1)
       factory_girl (~> 1.3)
       railties (>= 3.0.0)
-    faraday (0.5.4)
-      addressable (~> 2.2.2)
-      multipart-post (~> 1.1.0)
-      rack (>= 1.1.0, < 2)
-    fattr (2.2.0)
-    ffi (1.0.9)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
+    fattr (2.2.1)
+    ffi (1.9.0)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fog (0.8.2)
       builder
       excon (~> 0.6.1)
@@ -161,229 +152,270 @@ GEM
       nokogiri (>= 1.4.4)
       ruby-hmac
     formatador (0.1.4)
-    formtastic (1.2.3)
-      actionpack (>= 2.3.7)
-      activesupport (>= 2.3.7)
-      i18n (~> 0.4)
-    fuubar (0.0.3)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
+    fuubar (1.1.1)
       rspec (~> 2.0)
-      rspec-instafail (~> 0.1.4)
-      ruby-progressbar (~> 0.0.9)
-    gherkin (2.4.1)
+      rspec-instafail (~> 0.2.0)
+      ruby-progressbar (~> 1.0)
+    gherkin (2.4.21)
       json (>= 1.4.6)
-    haml (3.1.2)
+    haml (3.1.8)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
-    hassle (0.0.1)
-      haml
-      rack
-    heroku (1.17.6)
-      json (~> 1.4.6)
-      launchy (~> 0.3.2)
-      rest-client (>= 1.4.0, < 1.7.0)
+    hashie (2.0.5)
+    heroku (2.25.0)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.1)
+      rest-client (~> 1.6.1)
+      rubyzip
     heroku_delayed_job_autoscale (0.0.7)
       delayed_job (>= 2.1)
       heroku (>= 1)
       rush (>= 0.6)
+    hike (1.2.3)
     hirb (0.3.6)
     hpricot (0.8.3)
     htmldiff (0.0.1)
-    i18n (0.5.0)
-    jammit (0.6.3)
-      yui-compressor (>= 0.9.3)
-    json (1.4.6)
-    json_pure (1.5.3)
-    launchy (0.3.7)
-      configuration (>= 0.0.5)
-      rake (>= 0.8.1)
-    linecache19 (0.5.11)
-      ruby_core_source (>= 0.1.4)
-    mail (2.2.19)
-      activesupport (>= 2.3.6)
-      i18n (>= 0.4.0)
+    i18n (0.6.1)
+    journey (1.0.4)
+    jquery-rails (3.0.4)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.3)
+      jquery-rails
+      railties (>= 3.1.0)
+    jquery-ui-sass-rails (4.0.3.0)
+      jquery-rails
+      jquery-ui-rails (= 4.0.3)
+      railties (>= 3.1.0)
+    json (1.7.7)
+    launchy (2.0.3)
+    libv8 (3.11.8.17)
+    mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.16)
+    mime-types (1.23)
+    mini_portile (0.5.1)
     mongo (1.3.0)
       bson (>= 1.3.0)
-    multi_json (0.0.5)
-    multipart-post (1.1.0)
+    mongoid (2.0.2)
+      activemodel (~> 3.0)
+      mongo (~> 1.3)
+      tzinfo (~> 0.3.22)
+    multi_json (1.0.4)
+    multi_xml (0.4.4)
+    multipart-post (1.2.0)
     net-ssh (2.1.4)
-    nokogiri (1.4.6)
-    oa-core (0.1.6)
-      rack (~> 1.1)
-    oa-oauth (0.1.6)
-      multi_json (~> 0.0.2)
-      nokogiri (~> 1.4.2)
-      oa-core (= 0.1.6)
+    netrc (0.7.7)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    oa-core (0.3.2)
+    oa-oauth (0.3.2)
+      faraday (~> 0.7.3)
+      multi_json (~> 1.0.0)
+      multi_xml (~> 0.4.0)
+      oa-core (= 0.3.2)
       oauth (~> 0.4.0)
-      oauth2 (~> 0.1.0)
-    oauth (0.4.4)
-    oauth2 (0.1.1)
-      faraday (~> 0.5.0)
-      multi_json (~> 0.0.4)
-    open4 (1.0.1)
-    orm_adapter (0.0.4)
-    polyglot (0.3.1)
+      oauth2 (~> 0.5.0)
+    oauth (0.4.7)
+    oauth2 (0.5.2)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-facebook (1.2.0)
+      omniauth-oauth2 (~> 1.0.0)
+    omniauth-oauth2 (1.0.0)
+      oauth2 (~> 0.5.0)
+      omniauth (~> 1.0)
+    orm_adapter (0.4.0)
+    plupload-rails (1.0.6)
+      rails (~> 3.1)
+    polyglot (0.3.3)
     pr_geohash (1.0.0)
-    rack (1.2.3)
-    rack-mount (0.6.14)
-      rack (>= 1.0.0)
+    rack (1.4.5)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-rewrite (1.0.2)
-    rack-test (0.5.7)
+    rack-ssl (1.3.3)
+      rack
+    rack-test (0.6.2)
       rack (>= 1.0)
     rack-timeout (0.0.1)
-    rails (3.0.9)
-      actionmailer (= 3.0.9)
-      actionpack (= 3.0.9)
-      activerecord (= 3.0.9)
-      activeresource (= 3.0.9)
-      activesupport (= 3.0.9)
+    rails (3.2.13)
+      actionmailer (= 3.2.13)
+      actionpack (= 3.2.13)
+      activerecord (= 3.2.13)
+      activeresource (= 3.2.13)
+      activesupport (= 3.2.13)
       bundler (~> 1.0)
-      railties (= 3.0.9)
+      railties (= 3.2.13)
     rails3-generators (0.17.2)
       railties (>= 3.0.0)
-    railties (3.0.9)
-      actionpack (= 3.0.9)
-      activesupport (= 3.0.9)
+    railties (3.2.13)
+      actionpack (= 3.2.13)
+      activesupport (= 3.2.13)
+      rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
-      thor (~> 0.14.4)
-    rake (0.9.2)
-    rdoc (3.6.1)
-    rest-client (1.6.1)
+      thor (>= 0.14.6, < 2.0)
+    rake (10.1.0)
+    rdoc (3.12.2)
+      json (~> 1.4)
+    ref (1.0.5)
+    rest-client (1.6.7)
       mime-types (>= 1.16)
-    rsolr (0.12.1)
+    rsolr (1.0.9)
       builder (>= 2.1.2)
-    rspec (2.6.0.rc6)
-      rspec-core (= 2.6.0.rc6)
-      rspec-expectations (= 2.6.0.rc6)
-      rspec-mocks (= 2.6.0.rc6)
-    rspec-core (2.6.0.rc6)
-    rspec-expectations (2.6.0.rc6)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
-    rspec-instafail (0.1.5)
-    rspec-mocks (2.6.0.rc6)
-    rspec-rails (2.6.0.rc6)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec (= 2.6.0.rc6)
-    ruby-debug-base19 (0.11.24)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby_core_source (>= 0.1.4)
-    ruby-debug19 (0.11.6)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby-debug-base19 (>= 0.11.19)
+    rspec-instafail (0.2.4)
+    rspec-mocks (2.6.0)
+    rspec-rails (2.6.1)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.6.0)
     ruby-hmac (0.4.0)
-    ruby-progressbar (0.0.9)
-    ruby_core_source (0.1.4)
-      archive-tar-minitar (>= 0.5.2)
+    ruby-progressbar (1.1.1)
     ruby_parser (2.0.5)
       sexp_processor (~> 3.0)
-    rubyzip (0.9.4)
-    rush (0.6.7)
+    rubyzip (0.9.9)
+    rush (0.6.8)
       session
-    sass (3.1.3)
+    sass (3.2.9)
+    sass-rails (3.2.6)
+      railties (~> 3.2.0)
+      sass (>= 3.1.10)
+      tilt (~> 1.3)
     sax-machine (0.0.15)
       nokogiri (> 0.0.0)
-    selenium-webdriver (0.2.2)
-      childprocess (>= 0.1.9)
-      ffi (>= 1.0.7)
-      json_pure
+    selenium-webdriver (2.33.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
       rubyzip
+      websocket (~> 1.0.4)
     session (3.1.0)
       fattr
     sexp_processor (3.0.5)
     simple_form (1.3.1)
-    spork (0.9.0.rc8)
-    sunspot (1.2.1)
-      escape (= 0.0.4)
+    sprockets (2.2.2)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+    sunspot (2.0.0)
       pr_geohash (~> 1.0)
-      rsolr (= 0.12.1)
-    sunspot_rails (1.2.1)
+      rsolr (~> 1.0.7)
+    sunspot_rails (2.0.0)
       nokogiri
-      sunspot (= 1.2.1)
-    term-ansicolor (1.0.5)
+      sunspot (= 2.0.0)
+    sunspot_solr (2.0.0)
+    term-ansicolor (1.2.2)
+      tins (~> 0.8)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
     thin (1.2.11)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    thor (0.14.6)
-    treetop (1.4.9)
+    thor (0.18.1)
+    tilt (1.4.1)
+    tins (0.8.3)
+    treetop (1.4.14)
+      polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.28)
+    turbo-sprockets-rails3 (0.3.6)
+      railties (> 3.2.8, < 4.0.0)
+      sprockets (>= 2.0.0)
+    tzinfo (0.3.37)
     uglifier (0.5.1)
       execjs
       json
-    warden (1.0.3)
-      rack (>= 1.0.0)
+    warden (1.2.3)
+      rack (>= 1.0)
+    websocket (1.0.7)
     will_paginate (3.0.pre2)
     wirble (0.1.3)
-    xml-simple (1.0.12)
+    xml-simple (1.1.2)
     xpath (0.1.4)
       nokogiri (~> 1.3)
-    yui-compressor (0.9.6)
-      POpen4 (>= 0.1.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   ZenTest (~> 4.4.2)
-  asset_id!
+  asset_sync
   autotest-rails
+  aws-s3!
+  better_errors
+  binding_of_caller
   bson (~> 1.3)
   bson_ext (~> 1.3)
   cancan
   capybara (~> 1.0)
-  ckeditor!
+  ckeditor
+  coffee-rails (~> 3.2.0)
   cucumber
   cucumber-rails
   database_cleaner
   delayed_job
   delayed_job_mongoid
-  devise!
+  devise
   dragonfly (~> 0.9.0)
   escape_utils
+  eventmachine (~> 1.0.0)
   exceptional
   factory_girl_rails
+  figaro
   fog
-  formtastic (~> 1.1)
+  formtastic (~> 2.0)
   fuubar
   haml
   haml-rails
-  hassle
   heroku_delayed_job_autoscale
   hirb
   hpricot
   htmldiff
-  jammit
+  jquery-rails
+  jquery-ui-rails
+  jquery-ui-sass-rails
+  json (= 1.7.7)
   launchy
   mongo_store!
-  mongoid!
+  mongoid
   nokogiri
   oa-oauth
+  omniauth
+  omniauth-facebook
+  plupload-rails
   rack-rewrite
   rack-timeout
-  rails (>= 3.0.9)
+  rails (= 3.2.13)
   rails3-generators
   rspec-rails (~> 2.6.0.rc6)
-  ruby-debug19
   ruby_parser
-  sass
+  sass-rails (~> 3.2.0)
   sax-machine
-  selenium-webdriver (~> 0.2.2)
+  selenium-webdriver
   simple_form
-  spork (~> 0.9.0.rc)
   sunspot_mongoid!
   sunspot_rails
+  sunspot_solr
+  therubyracer
   thin
+  turbo-sprockets-rails3
   uglifier
   will_paginate (~> 3.0.pre2)
   wirble

@@ -6,15 +6,14 @@
     %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : t('mime.description')}
     %meta{:'http-equiv' => "content-language", :content => "no"}
     = yield :canonical
-    
-    %link{:type => 'text/css', :rel => 'stylesheet', :media => 'screen', :href => '/lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.min.css'}
-    = include_stylesheets :mobile
+
+    = stylesheet_link_tag 'mobile'
     = favicon_link_tag
 
     %script{:src => "/js/"}
 
     = yield :javascripts
-    = include_javascripts :mobile
+    = javascript_include_tag 'mobile'
 
     = csrf_meta_tag
 

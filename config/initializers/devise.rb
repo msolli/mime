@@ -77,7 +77,7 @@ Devise.setup do |config|
   config.remember_for = 2.weeks
 
   # If true, a valid remember token can be re-used between multiple browsers.
-  config.remember_across_browsers = true
+  # config.remember_across_browsers = true
 
   # If true, extends the user's remember period when remembered via cookie.
   config.extend_remember_period = true
@@ -164,7 +164,9 @@ Devise.setup do |config|
   # config.sign_out_via = :get
 
   # ==> OmniAuth
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], :client_options => {
+    :ssl => { :ca_file => ENV['CA_BUNDLE_PATH'] }
+  }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

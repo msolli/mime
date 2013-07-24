@@ -11,3 +11,6 @@ config/map.yml
 tmp/restart.txt
 solr/data/**/*
 config/asset_id.yml
+
+# Ignore application configuration
+/config/application.yml

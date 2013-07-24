@@ -1,6 +1,9 @@
 Mime::Application.routes.draw do
 
-  devise_for :users, :module => 'users', do
+#  mount Ckeditor::Engine => '/ckeditor'
+#
+  devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
+  devise_scope :user do
     constraints :id => /[^\/]*/ do
       resources :users, :path => 'bidragsytere', :controller => 'users/sessions', :only => [:show, :index, :edit] do
         resources :articles, :path => 'artikler', :only => [:index]
@@ -32,14 +35,16 @@ Mime::Application.routes.draw do
     end
   end
 
-  # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å, /1, /2, ...
-  constraints(lambda { |req| req.params[:slug].size == 1 }) do
-    match '/:slug' => 'home#alphabetic', :as => :alphabetic, :slug => /.*/
-  end
+  constraints(lambda { |req| !req.params[:slug].match(/^assets/) }) do
+    # /a, /A, /b, /B, ...,  /æ, /Æ, /ø, /Ø, /å, /Å, /1, /2, ...
+    constraints(lambda { |req| req.params[:slug].size == 1 }) do
+      match '/:slug' => 'home#alphabetic', :as => :alphabetic, :slug => /.*/
+    end
 
-  # Oppslagsord
-  constraints(lambda { |req| req.params[:slug].size >= 2 }) do
-    get '/:slug' => 'articles#show', :as => :pretty_article, :slug => /.*/
+    # Oppslagsord
+    constraints(lambda { |req| req.params[:slug].size >= 2 }) do
+      get '/:slug' => 'articles#show', :as => :pretty_article, :slug => /.*/
+    end
   end
 
   root :to => 'home#index'

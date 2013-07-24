@@ -6,9 +6,6 @@ MOBILE_USER_AGENTS = 'palm|blackberry|nokia|phone|midp|mobi|symbian|chtml|ericss
   'webos|amoi|novarra|cdm|alcatel|pocket|ipad|iphone|mobileexplorer|mobile'
 
 Mime::Application.configure do
-  # This must be required here (and not in Gemfile) for Rails.root to be set, which it needs.
-  require 'hassle'
-
   # Settings specified here will take precedence over those in config/environment.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -37,7 +34,7 @@ Mime::Application.configure do
     #   rack_env['HTTP_USER_AGENT'] =~ Regexp.new(MOBILE_USER_AGENTS)
     # }
     r301 %r{.*}, 'http://www.ableksikon.no$&', :if => Proc.new {|rack_env|
-      rack_env['HTTP_HOST'] !~ /^(www|mobil|mime-staging|localhost|10.0.2.2)/
+      rack_env['HTTP_HOST'] !~ /^(www|mobil|mime-staging|ableksikon-staging|localhost|10.0.2.2)/
     }
   end
 
@@ -52,11 +49,11 @@ Mime::Application.configure do
   config.serve_static_assets = true
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
-  config.action_controller.asset_host = "assets.ableksikon.no"
+  config.action_controller.asset_host = "http://#{ENV['S3_ASSETS_BUCKET']}.s3-external-3.amazonaws.com"
 
   # Devise wants this
   # TODO - pass på at dette virker med Heroku og Sendgrid
-  config.action_mailer.default_url_options = { :host => 'ableksikon.heroku.com' }
+  config.action_mailer.default_url_options = { :host => ENV['APP_HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
@@ -72,16 +69,26 @@ Mime::Application.configure do
   config.active_support.deprecation = :notify
 
   # asset_id
-  config.action_controller.asset_host = Proc.new do |source|
-    unless source.starts_with?('/javascripts')
-      'http://assets0.ableksikon.no'
-    end
-  end
-  config.action_controller.asset_path = Proc.new do |source|
-    unless source.starts_with?('/javascripts')
-      AssetID::S3.fingerprint(source)
-    else
-      source
-    end
-  end
+  # Compress JavaScripts and CSS
+  config.assets.compress = true
+  config.assets.js_compressor = Uglifier.new(:beautify => true) if defined? Uglifier
+
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = false
+
+  # Generate digests for assets URLs
+  config.assets.digest = true
+
+  # config.action_controller.asset_host = Proc.new do |source|
+  #   unless source.starts_with?('/javascripts')
+  #     'http://assets0.ableksikon.no'
+  #   end
+  # end
+  # config.action_controller.asset_path = Proc.new do |source|
+  #   unless source.starts_with?('/javascripts')
+  #     AssetID::S3.fingerprint(source)
+  #   else
+  #     source
+  #   end
+  # end
 end

@@ -1,0 +1,9 @@
+//= require webfont-loader
+//= require spring
+//= require jquery
+//= require jquery.templates/beta1/jquery.tmpl
+//= require jquery.timeago/0.9.2/jquery.timeago
+//= require jquery.timeago/common/jquery.timeago.no
+//= require mobile/jquery-mobile-config
+//= require jquery.mobile/jquery.mobile-1.3.2
+//= require mobile/mobile-application

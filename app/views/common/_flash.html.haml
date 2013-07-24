@@ -1,15 +1,14 @@
 %aside#messages.grid_12
 
 %script{:id => 'messages-tmpl', :type => 'text/x-jquery-tmpl'}
-  {{if $item.data.alert || $item.data.notice || $item.data.redirected_from}}
+  {{if $item.data.flash}}
   %ul
-    {{if $item.data.alert}}
-    %li#alert {{html alert}}
-    {{/if}}
-    {{if $item.data.notice}}
-    %li#notice {{html notice}}
-    {{/if}}
-    {{if $item.data.redirected_from}}
-    %li.redirected= "#{t('articles.redirected', :from => "{{html redirected_from}}")}"
-    {{/if}}
+    {{each $item.data.flash}}
+    :erb
+      {{if $value[0] == 'redirected_from'}}
+        <li class="redirected"><%= "#{t('articles.redirected', :from => "{{html $value[1]}}")}" %></li>
+      {{else}}
+        <li id="${$value[0]}">{{html $value[1]}}</li>
+      {{/if}}
+    {{/each}}
   {{/if}}

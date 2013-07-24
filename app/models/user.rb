@@ -11,10 +11,18 @@ class User
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   field :email
+  field :encrypted_password
   field :password
   field :name
   field :facebook_token
   field :role, :default => "user"
+
+  field :current_sign_in_at
+  field :current_sign_in_ip
+  field :last_sign_in_at
+  field :last_sign_in_ip
+  field :sign_in_count
+  field :remember_created_at
 
   index :email, :unique => true
 
@@ -50,8 +58,8 @@ class User
       Rails.logger.debug("auth_info: " + auth_info.to_json)
       Rails.logger.debug("signed_in_resource: " + signed_in_resource.to_json)
 
-      email = auth_info['extra']['user_hash']['email']
-      name = auth_info['extra']['user_hash']['name']
+      email = auth_info['extra']['raw_info']['email']
+      name = auth_info['extra']['raw_info']['name']
       access_token = auth_info['credentials']['token']
 
       # Link the account if an e-mail already exists in the database
