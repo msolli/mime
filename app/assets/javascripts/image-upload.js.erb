@@ -64,17 +64,17 @@ var ImageUpload = (function() {
     uploader = new plupload.Uploader(settings);
     uploader.init();
 
-    $('form.image')
-      .live('ajax:beforeSend', function(evt, xhr, settings) {
+    $(document)
+      .on('ajax:beforeSend', 'form.image', function(evt, xhr, settings) {
         $('#image-loader').show();
         $('span.error').remove();
       })
-      .live('ajax:success', function(evt, data, status, xhr) {
+      .on('ajax:success', 'form.image', function(evt, data, status, xhr) {
       })
-      .live('ajax:complete', function(evt, xhr, status) {
+      .on('ajax:complete', 'form.image', function(evt, xhr, status) {
         $('#image-loader').hide();
       })
-      .live('ajax:error', function(evt, xhr, status, error) {
+      .on('ajax:error', 'form.image', function(evt, xhr, status, error) {
         var errors,
             model;
 
